@@ -1,8 +1,28 @@
 <template>
-  <main>
-    <img src="/public/assets/recipes-logo.png" alt="logo" />
-    <h1>Hello World!</h1>
+  <main class="slds-p-around_medium">
+    <!-- Show gallery view when no component selected -->
+    <template if:true={showGallery}>
+      <div class="slds-text-heading_large slds-m-bottom_medium">
+        Generated LWC Components Gallery
+      </div>
+      <p>Select a component from the gallery to view it here.</p>
+      <p>Or open directly: <a href="/?component=counter">/?component=counter</a></p>
+    </template>
 
-    <main-accordion-group></main-accordion-group>
+    <!-- Show counter component when selected -->
+    <template if:true={showCounter}>
+      <div class="slds-m-bottom_medium">
+        <a href="/" class="slds-text-link">← Back to Gallery</a>
+      </div>
+
+      <div class="slds-box slds-box_small">
+        <h2 class="slds-text-heading_medium slds-m-bottom_small">
+          Component: counter
+        </h2>
+        <div class="slds-border_top slds-p-top_medium">
+          <c-counter></c-counter>
+        </div>
+      </div>
+    </template>
   </main>
 </template>
