@@ -1,4 +1,5 @@
 {
+  "basePath": "/eval-generated-comp-playground",
   "lwc": {
     "modules": [
       { "dir": "$rootDir/src/modules" },
