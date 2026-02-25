@@ -1,5 +1,9 @@
 {
   "assets": {
+    "/public/assets/slds-plus.css": {
+      "path": "/eval-generated-comp-playground/public/assets/slds-plus.css",
+      "mimeType": "text/css"
+    },
     "/eval-generated-comp-playground/public/slds/icons/License-for-icons.txt": {
       "path": "/eval-generated-comp-playground/public/slds/icons/License-for-icons.txt",
       "mimeType": "text/plain"
