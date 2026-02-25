@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Tabs Overview Details</masterLabel>
+    <description>A component that displays content in tabs with Overview, Details, and History sections.</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage">
+            <property name="showBorders" type="Boolean" label="Show Borders" description="Show borders around the tabs component" default="false" />
+            <property name="allowCustomContent" type="Boolean" label="Allow Custom Content" description="Enable to show only custom slot content, disable to show default content when slots are empty" default="false" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,91 @@
+<template>
+    <!-- Main container with SLDS data table styling -->
+    <div class="slds-card slds-p-around_medium">
+        <!-- Table header with title -->
+        <template lwc:if={showHeader}>
+            <div class="slds-p-bottom_small">
+                <h2 class="slds-text-heading_medium">Product List</h2>
+            </div>
+        </template>
+
+        <!-- Table container -->
+        <div class="slds-table_header-fixed_container" tabindex="0">
+            <div class="slds-scrollable_y">
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer"
+                       aria-label="Product Table" role="grid">
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <!-- Product Name column header - sortable, left-aligned -->
+                            <th scope="col" class="slds-text-title_caps slds-text-align_left" onclick={handleSortProductName}>
+                                <div class="slds-grid slds-grid_vertical-align-center">
+                                    <span class="slds-truncate">Product Name</span>
+                                    <span class="slds-icon_container slds-m-left_xx-small">
+                                        <lightning-icon
+                                            icon-name={productNameSortIcon}
+                                            size="xx-small"
+                                            alternative-text="Sort by Product Name"
+                                            class={productNameSortDirection}>
+                                        </lightning-icon>
+                                    </span>
+                                </div>
+                            </th>
+                            <!-- Price column header - sortable, right-aligned -->
+                            <th scope="col" class="slds-text-title_caps slds-text-align_right" onclick={handleSortPrice}>
+                                <div class="slds-grid slds-grid_vertical-align-center slds-grid_align-end">
+                                    <span class="slds-truncate">Price</span>
+                                    <span class="slds-icon_container slds-m-left_xx-small">
+                                        <lightning-icon
+                                            icon-name={priceSortIcon}
+                                            size="xx-small"
+                                            alternative-text="Sort by Price"
+                                            class={priceSortDirection}>
+                                        </lightning-icon>
+                                    </span>
+                                </div>
+                            </th>
+                            <!-- Category column header - center-aligned -->
+                            <th scope="col" class="slds-text-title_caps slds-text-align_center">
+                                <div class="slds-truncate">Category</div>
+                            </th>
+                            <!-- Stock Status column header - center-aligned -->
+                            <th scope="col" class="slds-text-title_caps slds-text-align_center">
+                                <div class="slds-truncate">Stock Status</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={sortedProducts} for:item="product">
+                            <tr key={product.id} class="slds-hint-parent">
+                                <!-- Product Name cell - left-aligned -->
+                                <td data-label="Product Name" class="slds-text-align_left">
+                                    <div class="slds-truncate" title={product.name}>{product.name}</div>
+                                </td>
+                                <!-- Price cell - right-aligned -->
+                                <td data-label="Price" class="slds-text-align_right">
+                                    <div class="slds-truncate" title={product.formattedPrice}>{product.formattedPrice}</div>
+                                </td>
+                                <!-- Category cell - center-aligned -->
+                                <td data-label="Category" class="slds-text-align_center">
+                                    <div class="slds-truncate" title={product.category}>{product.category}</div>
+                                </td>
+                                <!-- Stock Status cell with badge - center-aligned -->
+                                <td data-label="Stock Status" class="slds-text-align_center">
+                                    <div class="slds-grid slds-grid_align-center">
+                                        <span class={product.stockStatusClass}>{product.stockStatus}</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- No products message if table is empty -->
+        <template lwc:if={noProducts}>
+            <div class="slds-text-align_center slds-p-around_medium">
+                No products available.
+            </div>
+        </template>
+    </div>
+</template>

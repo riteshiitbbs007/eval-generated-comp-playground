@@ -1,0 +1,40 @@
+/* Using SLDS 2 styling hooks for proper theming */
+.slds-card {
+    background: var(--slds-g-color-surface-container-1);
+    border-radius: var(--slds-g-radius-border-1);
+    border: 1px solid var(--slds-g-color-border-1);
+    box-shadow: var(--slds-g-shadow-1);
+}
+
+.slds-text-heading_medium {
+    color: var(--slds-g-color-on-surface-3);
+    font-weight: var(--slds-g-font-weight-7);
+    line-height: var(--slds-g-font-lineheight-3);
+}
+
+.slds-form-element__label {
+    color: var(--slds-g-color-on-surface-2);
+    font-weight: var(--slds-g-font-weight-5);
+}
+
+.slds-required {
+    color: var(--slds-g-color-error-1);
+}
+
+.slds-form-element__help.slds-has-error {
+    color: var(--slds-g-color-error-1);
+}
+
+.slds-form-element_stacked {
+    margin-bottom: var(--slds-g-spacing-4);
+}
+
+/* Accessibility focus state for interactive elements */
+:host {
+    --slds-c-button-brand-color-background: var(--slds-g-color-accent-container-1);
+    --slds-c-button-brand-color-background-hover: var(--slds-g-color-accent-container-2);
+    --slds-c-button-brand-color-background-active: var(--slds-g-color-accent-container-3);
+    --slds-c-button-brand-color-border: var(--slds-g-color-border-accent-1);
+    --slds-c-button-brand-color-border-hover: var(--slds-g-color-border-accent-2);
+    --slds-c-button-brand-color-border-active: var(--slds-g-color-border-accent-3);
+}

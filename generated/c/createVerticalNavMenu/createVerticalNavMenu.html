@@ -1,0 +1,88 @@
+<template>
+    <!--
+        Vertical Navigation Menu Component
+        Using SLDS vertical navigation pattern with proper accessibility attributes
+    -->
+    <div class="slds-vertical-nav">
+        <nav role="navigation" aria-label="Vertical Navigation Menu">
+            <ul class="slds-nav-vertical slds-nav-vertical_shade" aria-describedby="nav-header">
+                <li class="slds-nav-vertical__item slds-is-active" data-item-name="dashboard">
+                    <a
+                        href="#"
+                        class="slds-nav-vertical__action"
+                        aria-current="page"
+                        onclick={handleNavClick}
+                    >
+                        <lightning-icon
+                            icon-name="utility:dashboard"
+                            size="x-small"
+                            class="slds-m-right_x-small"
+                            alternative-text="Dashboard icon">
+                        </lightning-icon>
+                        <span class="slds-truncate" title="Dashboard">{labels.dashboard}</span>
+                    </a>
+                </li>
+                <li class="slds-nav-vertical__item" data-item-name="reports">
+                    <a
+                        href="#"
+                        class="slds-nav-vertical__action"
+                        onclick={handleNavClick}
+                    >
+                        <lightning-icon
+                            icon-name="utility:chart"
+                            size="x-small"
+                            class="slds-m-right_x-small"
+                            alternative-text="Reports icon">
+                        </lightning-icon>
+                        <span class="slds-truncate" title="Reports">{labels.reports}</span>
+                    </a>
+                </li>
+                <li class="slds-nav-vertical__item" data-item-name="contacts">
+                    <a
+                        href="#"
+                        class="slds-nav-vertical__action"
+                        onclick={handleNavClick}
+                    >
+                        <lightning-icon
+                            icon-name="utility:user"
+                            size="x-small"
+                            class="slds-m-right_x-small"
+                            alternative-text="Contacts icon">
+                        </lightning-icon>
+                        <span class="slds-truncate" title="Contacts">{labels.contacts}</span>
+                    </a>
+                </li>
+                <li class="slds-nav-vertical__item" data-item-name="tasks">
+                    <a
+                        href="#"
+                        class="slds-nav-vertical__action"
+                        onclick={handleNavClick}
+                    >
+                        <lightning-icon
+                            icon-name="utility:task"
+                            size="x-small"
+                            class="slds-m-right_x-small"
+                            alternative-text="Tasks icon">
+                        </lightning-icon>
+                        <span class="slds-truncate" title="Tasks">{labels.tasks}</span>
+                    </a>
+                </li>
+                <li class="slds-nav-vertical__item" data-item-name="settings">
+                    <a
+                        href="#"
+                        class="slds-nav-vertical__action"
+                        onclick={handleNavClick}
+                    >
+                        <lightning-icon
+                            icon-name="utility:setup"
+                            size="x-small"
+                            class="slds-m-right_x-small"
+                            alternative-text="Settings icon">
+                        </lightning-icon>
+                        <span class="slds-truncate" title="Settings">{labels.settings}</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</template>
