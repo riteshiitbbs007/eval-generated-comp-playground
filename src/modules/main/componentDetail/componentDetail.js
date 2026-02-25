@@ -65,6 +65,12 @@ export default class ComponentDetail extends LightningElement {
   }
 
   get livePreviewUrl() {
-    return `/?component=${this.componentName}`;
+    const basePath = window.LWR?.env?.basePath || '';
+    return `${basePath}/?component=${this.componentName}`;
+  }
+
+  get backUrl() {
+    const basePath = window.LWR?.env?.basePath || '';
+    return `${basePath}/`;
   }
 }
