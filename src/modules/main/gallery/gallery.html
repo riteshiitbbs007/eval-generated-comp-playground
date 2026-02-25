@@ -1,0 +1,118 @@
+<template>
+  <div class="slds-p-around_medium" style="max-width: 1600px; margin: 0 auto;">
+    <div class="slds-page-header">
+      <div class="slds-page-header__row">
+        <div class="slds-page-header__col-title">
+          <div class="slds-media">
+            <div class="slds-media__body">
+              <h1 class="slds-page-header__title slds-m-right_small">
+                Generated Components Gallery
+              </h1>
+              <p class="slds-text-body_small slds-text-color_weak">
+                {components.length} component(s) generated
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <template if:true={loading}>
+      <div class="slds-align_absolute-center slds-m-top_xx-large">
+        <lightning-spinner alternative-text="Loading components..." size="large"></lightning-spinner>
+      </div>
+    </template>
+
+    <template if:true={error}>
+      <div class="slds-notify slds-notify_alert slds-theme_error slds-m-top_medium">
+        <span class="slds-icon_container slds-icon-utility-error">
+          <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+            <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#error"></use>
+          </svg>
+        </span>
+        <h2>{error}</h2>
+      </div>
+    </template>
+
+    <template if:true={hasComponents}>
+      <div class="gallery-grid slds-m-top_medium">
+        <template for:each={formattedComponents} for:item="component">
+          <article key={component.componentName} class="slds-card component-card">
+            <!-- Screenshot -->
+            <template if:true={component.screenshotUrls.desktop}>
+              <div class="screenshot-container">
+                <img
+                  src={component.screenshotUrls.desktop}
+                  alt={component.componentName}
+                  class="screenshot-preview"
+                  onclick={handleComponentSelect}
+                  data-name={component.componentName}
+                >
+              </div>
+            </template>
+
+            <!-- Component info -->
+            <div class="slds-card__body slds-card__body_inner slds-p-around_small">
+              <h2 class="slds-text-heading_small slds-truncate slds-m-bottom_xx-small" title={component.componentName}>
+                {component.componentName}
+              </h2>
+
+              <div class="slds-text-body_small slds-text-color_weak slds-m-bottom_x-small">
+                <div class="slds-grid slds-wrap">
+                  <div class="slds-col slds-size_1-of-1">
+                    {component.tier} • {component.complexity}
+                  </div>
+                </div>
+              </div>
+
+              <!-- Scores -->
+              <div class="score-badges slds-m-bottom_x-small">
+                <span class={component.readinessClass}>
+                  Score: {component.formattedScore}
+                </span>
+                <span class="slds-badge slds-badge_lightest">
+                  {component.violations.warnings}W {component.violations.errors}E
+                </span>
+              </div>
+
+              <!-- Token usage -->
+              <template if:true={component.tokenUsage}>
+                <div class="slds-text-body_small slds-text-color_weak">
+                  {component.formattedTokens} • {component.formattedCost}
+                </div>
+              </template>
+            </div>
+
+            <footer class="slds-card__footer">
+              <button
+                class="slds-button slds-button_brand slds-button_stretch"
+                onclick={handleComponentSelect}
+                data-name={component.componentName}
+              >
+                View Details
+              </button>
+            </footer>
+          </article>
+        </template>
+      </div>
+    </template>
+
+    <template if:false={hasComponents}>
+      <template if:false={loading}>
+        <div class="slds-align_absolute-center slds-m-top_xx-large">
+          <div class="slds-text-align_center">
+            <svg class="slds-icon slds-icon_large slds-icon-text-default" aria-hidden="true">
+              <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#knowledge_base"></use>
+            </svg>
+            <h2 class="slds-text-heading_medium slds-m-top_medium">
+              No components generated yet
+            </h2>
+            <p class="slds-text-body_regular slds-m-top_small">
+              Run the eval tests to generate components
+            </p>
+          </div>
+        </div>
+      </template>
+    </template>
+  </div>
+</template>

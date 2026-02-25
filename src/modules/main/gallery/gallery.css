@@ -1,0 +1,97 @@
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--lwc-spacingMedium, 1rem);
+}
+
+/* Responsive grid - show more cards on larger screens */
+@media (min-width: 1200px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 599px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.component-card {
+  transition: box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.component-card:hover {
+  box-shadow: var(--lwc-shadowButtonDepth2, 0 2px 8px rgba(0, 0, 0, 0.16));
+  cursor: pointer;
+}
+
+.screenshot-container {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background-color: var(--lwc-colorBackgroundAlt, #f3f2f2);
+  border-bottom: 1px solid var(--lwc-colorBorder, #c9c7c5);
+}
+
+.screenshot-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.score-badges {
+  display: flex;
+  gap: var(--lwc-spacingXxSmall, 0.25rem);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.score-badges > * {
+  padding: var(--lwc-spacingXxxSmall, 0.125rem) var(--lwc-spacingXxSmall, 0.25rem);
+  border-radius: var(--lwc-borderRadiusSmall, 0.125rem);
+  font-size: var(--lwc-fontSizeTextXSmall, 0.75rem);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.score-production {
+  background-color: var(--lwc-colorBackgroundSuccess, #4bca81);
+  color: var(--lwc-colorTextSuccess, #181818);
+}
+
+.score-prototype {
+  background-color: var(--lwc-colorBackgroundWarning, #fe9339);
+  color: var(--lwc-colorTextInverse, #ffffff);
+}
+
+.score-draft {
+  background-color: var(--lwc-colorBackgroundError, #ea001e);
+  color: var(--lwc-colorTextInverse, #ffffff);
+}
+
+.token-info {
+  font-size: var(--lwc-fontSizeTextXSmall, 0.75rem);
+}
+
+/* Card footer styling */
+.component-card .slds-card__footer {
+  margin-top: auto;
+  padding: var(--lwc-spacingXSmall, 0.5rem);
+}

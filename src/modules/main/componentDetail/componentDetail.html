@@ -1,0 +1,209 @@
+<template>
+  <div class="slds-container_center slds-container_large">
+    <!-- Navigation -->
+    <div class="slds-m-bottom_medium">
+      <a href="/" class="slds-button slds-button_neutral">
+        <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+          <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#back"></use>
+        </svg>
+        Back to Gallery
+      </a>
+    </div>
+
+    <template if:true={loading}>
+      <div class="slds-align_absolute-center slds-m-top_xx-large">
+        <lightning-spinner alternative-text="Loading component details..." size="medium"></lightning-spinner>
+      </div>
+    </template>
+
+    <template if:true={error}>
+      <div class="slds-notify slds-notify_alert slds-theme_error">
+        <h2>{error}</h2>
+      </div>
+    </template>
+
+    <template if:true={hasMetadata}>
+      <!-- Header -->
+      <div class="slds-page-header slds-m-bottom_medium">
+        <div class="slds-page-header__row">
+          <div class="slds-page-header__col-title">
+            <div class="slds-media">
+              <div class="slds-media__body">
+                <h1 class="slds-page-header__title">{componentName}</h1>
+                <p class="slds-text-body_small slds-text-color_weak">
+                  Generated on {formattedTimestamp}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="slds-page-header__col-actions">
+            <div class="slds-page-header__controls">
+              <a href={livePreviewUrl} class="slds-button slds-button_brand">
+                <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+                  <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#preview"></use>
+                </svg>
+                View Live Preview
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Two column layout -->
+      <div class="slds-grid slds-wrap slds-gutters_medium">
+        <!-- Left column: Metadata & Scores -->
+        <div class="slds-col slds-size_1-of-2 slds-large-size_1-of-2 slds-medium-size_1-of-1">
+          <!-- Metadata Card -->
+          <article class="slds-card slds-m-bottom_medium">
+            <div class="slds-card__header slds-grid">
+              <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__body">
+                  <h2 class="slds-card__header-title">
+                    <span>Component Information</span>
+                  </h2>
+                </div>
+              </header>
+            </div>
+            <div class="slds-card__body slds-card__body_inner">
+              <dl class="slds-dl_horizontal">
+                <dt class="slds-dl__label">Utterance:</dt>
+                <dd class="slds-dl__detail">{metadata.utterance}</dd>
+
+                <dt class="slds-dl__label">Tier:</dt>
+                <dd class="slds-dl__detail">{metadata.tier}</dd>
+
+                <dt class="slds-dl__label">Complexity:</dt>
+                <dd class="slds-dl__detail">{metadata.complexity}</dd>
+              </dl>
+            </div>
+          </article>
+
+          <!-- Scores Card -->
+          <article class="slds-card slds-m-bottom_medium">
+            <div class="slds-card__header slds-grid">
+              <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__body">
+                  <h2 class="slds-card__header-title">
+                    <span>Quality Scores</span>
+                  </h2>
+                </div>
+              </header>
+            </div>
+            <div class="slds-card__body slds-card__body_inner">
+              <div class="slds-m-bottom_small">
+                <span class={overallScoreClass}>
+                  Overall: {metadata.scores.overall}/3.0
+                </span>
+              </div>
+              <ul class="slds-list_dotted">
+                <li>SLDS Linter: {metadata.scores.slds_linter}/3.0</li>
+                <li>SLDS Quality: {metadata.scores.slds_quality}/3.0</li>
+                <li>PRD Compliance: {metadata.scores.prd_compliance}/3.0</li>
+                <li>Security: {metadata.scores.security}/3.0</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Violations Card -->
+          <article class="slds-card">
+            <div class="slds-card__header slds-grid">
+              <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__body">
+                  <h2 class="slds-card__header-title">
+                    <span>SLDS Violations</span>
+                  </h2>
+                </div>
+              </header>
+            </div>
+            <div class="slds-card__body slds-card__body_inner">
+              <ul class="slds-list_dotted">
+                <li>Errors: {metadata.violations.errors}</li>
+                <li>Warnings: {metadata.violations.warnings}</li>
+                <li>Notes: {metadata.violations.notes}</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <!-- Right column: Token Usage & Screenshots -->
+        <div class="slds-col slds-size_1-of-2 slds-large-size_1-of-2 slds-medium-size_1-of-1">
+          <!-- Token Usage Card -->
+          <template if:true={metadata.tokenUsage}>
+            <article class="slds-card slds-m-bottom_medium">
+              <div class="slds-card__header slds-grid">
+                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                  <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                      <span>💰 Token Usage & Cost</span>
+                    </h2>
+                  </div>
+                </header>
+              </div>
+              <div class="slds-card__body slds-card__body_inner">
+                <dl class="slds-dl_horizontal">
+                  <dt class="slds-dl__label">Model:</dt>
+                  <dd class="slds-dl__detail">{metadata.tokenUsage.modelName}</dd>
+
+                  <dt class="slds-dl__label">Tokens:</dt>
+                  <dd class="slds-dl__detail">{tokensSummary}</dd>
+
+                  <dt class="slds-dl__label">Total Cost:</dt>
+                  <dd class="slds-dl__detail"><strong>{formattedCost}</strong></dd>
+                </dl>
+              </div>
+            </article>
+          </template>
+
+          <!-- Screenshots Card -->
+          <template if:true={metadata.screenshotUrls}>
+            <article class="slds-card">
+              <div class="slds-card__header slds-grid">
+                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                  <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                      <span>Screenshots</span>
+                    </h2>
+                  </div>
+                </header>
+              </div>
+              <div class="slds-card__body slds-card__body_inner">
+                <template if:true={metadata.screenshotUrls.desktop}>
+                  <div class="slds-m-bottom_medium">
+                    <h3 class="slds-text-heading_small slds-m-bottom_x-small">Desktop</h3>
+                    <img
+                      src={metadata.screenshotUrls.desktop}
+                      alt="Desktop screenshot"
+                      class="screenshot-full"
+                    >
+                  </div>
+                </template>
+
+                <template if:true={metadata.screenshotUrls.mobile}>
+                  <div class="slds-m-bottom_medium">
+                    <h3 class="slds-text-heading_small slds-m-bottom_x-small">Mobile</h3>
+                    <img
+                      src={metadata.screenshotUrls.mobile}
+                      alt="Mobile screenshot"
+                      class="screenshot-full"
+                    >
+                  </div>
+                </template>
+
+                <template if:true={metadata.screenshotUrls.tablet}>
+                  <div>
+                    <h3 class="slds-text-heading_small slds-m-bottom_x-small">Tablet</h3>
+                    <img
+                      src={metadata.screenshotUrls.tablet}
+                      alt="Tablet screenshot"
+                      class="screenshot-full"
+                    >
+                  </div>
+                </template>
+              </div>
+            </article>
+          </template>
+        </div>
+      </div>
+    </template>
+  </div>
+</template>

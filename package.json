@@ -10,7 +10,7 @@
     "dev:compat": "lwr dev --mode compat",
     "build": "lwr build --clean",
     "build:prod-compat": "lwr build --clean --mode prod-compat",
-    "start": "lwr start",
+    "start": "PORT=3001 lwr start",
     "stage": "yarn build && yarn start",
     "stage:prod-compat": "yarn build:prod-compat && yarn start"
   },
@@ -32,6 +32,6 @@
     "node": ">=18.0.0"
   },
   "volta": {
-    "node": "20.16.0"
+    "node": "20.19.4"
   }
 }

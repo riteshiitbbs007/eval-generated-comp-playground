@@ -1,0 +1,103 @@
+import { LightningElement } from 'lwc';
+
+export default class Gallery extends LightningElement {
+  components = [];
+  loading = true;
+  error = null;
+
+  async connectedCallback() {
+    try {
+      await this.loadComponents();
+    } catch (err) {
+      this.error = err.message;
+      console.error('Error loading components:', err);
+    } finally {
+      this.loading = false;
+    }
+  }
+
+  async loadComponents() {
+    try {
+      // Fetch list of generated components
+      // We'll read metadata.json files from each component directory
+      const componentsToLoad = [
+        'createAlertsSuccessError',
+        'createContactCardWith',
+        'createDeleteConfirmationModal',
+        'createFaqAccordionWith',
+        'createFormNameEmail',
+        'createFormWithText',
+        'createPageHeaderWith',
+        'createPrimaryActionButton',
+        'createPrimaryButtonWith',
+        'createSortableTableProduct',
+        'createVerticalNavMenu'
+      ];
+
+      const loadedComponents = [];
+
+      for (const componentName of componentsToLoad) {
+        try {
+          // Load from generated/c/{componentName}/metadata.json
+          const response = await fetch(`/generated/c/${componentName}/metadata.json`);
+          if (response.ok) {
+            const metadata = await response.json();
+
+            // Auto-detect screenshots if not in metadata
+            if (!metadata.screenshotUrls) {
+              metadata.screenshotUrls = {
+                desktop: `/generated/c/${componentName}/screenshots/desktop.png`
+              };
+            }
+
+            // Add readiness class for color coding
+            metadata.readinessClass = this.getReadinessClass(metadata.scores?.overall || 0);
+
+            loadedComponents.push(metadata);
+          }
+        } catch (err) {
+          console.warn(`Could not load ${componentName}:`, err.message);
+        }
+      }
+
+      this.components = loadedComponents;
+
+      // Sort by timestamp (newest first)
+      this.components.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+    } catch (err) {
+      console.error('Error loading components:', err);
+      throw err;
+    }
+  }
+
+  getReadinessClass(score) {
+    if (score >= 2.5) return 'score-production';
+    if (score >= 2.0) return 'score-prototype';
+    return 'score-draft';
+  }
+
+  get hasComponents() {
+    return this.components.length > 0;
+  }
+
+  get formattedComponents() {
+    return this.components.map(comp => ({
+      ...comp,
+      formattedTimestamp: new Date(comp.timestamp).toLocaleString(),
+      formattedScore: comp.scores?.overall?.toFixed(2) || 'N/A',
+      formattedTokens: comp.tokenUsage?.totalTokens?.toLocaleString() || 'N/A',
+      formattedCost: comp.cost?.totalCost ? `$${comp.cost.totalCost.toFixed(4)}` : 'N/A',
+    }));
+  }
+
+  handleComponentSelect(event) {
+    const componentName = event.target.dataset.name;
+    if (componentName) {
+      this.dispatchEvent(new CustomEvent('componentselect', {
+        detail: { componentName },
+        bubbles: true,
+        composed: true
+      }));
+    }
+  }
+}

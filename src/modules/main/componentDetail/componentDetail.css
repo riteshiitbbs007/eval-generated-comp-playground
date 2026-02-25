@@ -1,0 +1,37 @@
+.screenshot-full {
+  width: 100%;
+  border: 1px solid var(--lwc-colorBorder, #c9c7c5);
+  border-radius: var(--lwc-borderRadiusMedium, 0.25rem);
+}
+
+.score-production,
+.score-prototype,
+.score-draft {
+  padding: var(--lwc-spacingXxxSmall, 0.125rem) var(--lwc-spacingXxSmall, 0.25rem);
+  border-radius: var(--lwc-borderRadiusSmall, 0.25rem);
+  font-size: var(--lwc-fontSizeTextMedium, 1rem);
+  font-weight: 700;
+}
+
+.score-production {
+  background-color: var(--lwc-colorBackgroundSuccess, #4bca81);
+  color: var(--lwc-colorTextSuccess, #181818);
+}
+
+.score-prototype {
+  background-color: var(--lwc-colorBackgroundWarning, #fe9339);
+  color: var(--lwc-colorTextInverse, #ffffff);
+}
+
+.score-draft {
+  background-color: var(--lwc-colorBackgroundError, #ea001e);
+  color: var(--lwc-colorTextInverse, #ffffff);
+}
+
+.slds-dl_horizontal dt {
+  width: 40%;
+}
+
+.slds-dl_horizontal dd {
+  width: 60%;
+}

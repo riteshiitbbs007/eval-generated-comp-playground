@@ -2,7 +2,8 @@
   "lwc": {
     "modules": [
       { "dir": "$rootDir/src/modules" },
-      { "npm": "lightning-base-components" }
+      { "npm": "lightning-base-components" },
+      { "dir": "$rootDir/generated" }
     ]
   },
   "routes": [
@@ -31,6 +32,10 @@
       "alias": "localAssets",
       "dir": "$rootDir/src/assets",
       "urlPath": "/public/assets"
+    },
+    {
+      "dir": "$rootDir/generated",
+      "urlPath": "/generated"
     }
   ]
 }
