@@ -60,16 +60,6 @@
       "dynamicImports": [],
       "integrity": "sha256-jMFhG6jjq3GR1iQ/+2HLFCeHJeU077i5QQw0Kp3qbzQ="
     },
-    "lightning/iconSvgTemplatesStandard|v/1_28_13-alpha": {
-      "version": "1.28.13-alpha",
-      "path": "/eval-generated-comp-playground/1/bundle/esm/l/en-US/bi/0/module/mi/lightning/iconSvgTemplatesStandard/v/1_28_13-alpha/s/sha256-zIQXts7ICf0Z7QbSck61IflwnIzPVFr1QgrQVW6EFnA/bundle_lightning_iconSvgTemplatesStandard.js",
-      "includedModules": [],
-      "imports": [
-        "lwc|v/8_20_1"
-      ],
-      "dynamicImports": [],
-      "integrity": "sha256-zIQXts7ICf0Z7QbSck61IflwnIzPVFr1QgrQVW6EFnA="
-    },
     "lightning/iconSvgTemplatesStandardRtl|v/1_28_13-alpha": {
       "version": "1.28.13-alpha",
       "path": "/eval-generated-comp-playground/1/bundle/esm/l/en-US/bi/0/module/mi/lightning/iconSvgTemplatesStandardRtl/v/1_28_13-alpha/s/sha256-CTSV0BMPTG-SKjlET7IxfOpMrUEkkCQKAK19XcFOE5E/bundle_lightning_iconSvgTemplatesStandardRtl.js",
@@ -79,6 +69,16 @@
       ],
       "dynamicImports": [],
       "integrity": "sha256-CTSV0BMPTG+SKjlET7IxfOpMrUEkkCQKAK19XcFOE5E="
+    },
+    "lightning/iconSvgTemplatesStandard|v/1_28_13-alpha": {
+      "version": "1.28.13-alpha",
+      "path": "/eval-generated-comp-playground/1/bundle/esm/l/en-US/bi/0/module/mi/lightning/iconSvgTemplatesStandard/v/1_28_13-alpha/s/sha256-zIQXts7ICf0Z7QbSck61IflwnIzPVFr1QgrQVW6EFnA/bundle_lightning_iconSvgTemplatesStandard.js",
+      "includedModules": [],
+      "imports": [
+        "lwc|v/8_20_1"
+      ],
+      "dynamicImports": [],
+      "integrity": "sha256-zIQXts7ICf0Z7QbSck61IflwnIzPVFr1QgrQVW6EFnA="
     },
     "lightning/iconSvgTemplatesUtilityRtl|v/1_28_13-alpha": {
       "version": "1.28.13-alpha",
@@ -100,14 +100,6 @@
       "dynamicImports": [],
       "integrity": "sha256-jKAKXj9Rn9Bv/mKOiL+UrbMlFQfKpvei/uaMYph/0qw="
     },
-    "lwc|v/8_20_1": {
-      "version": "8.20.1",
-      "path": "/eval-generated-comp-playground/1/bundle/esm/l/en-US/bi/0/module/mi/lwc/v/8_20_1/s/sha256-WFUZ-j_7b-yVnZMVs3rz-496x2a0HvOqDBhuK11zmIk/bundle_lwc.js",
-      "includedModules": [],
-      "imports": [],
-      "dynamicImports": [],
-      "integrity": "sha256-WFUZ+j/7b+yVnZMVs3rz+496x2a0HvOqDBhuK11zmIk="
-    },
     "@lwrjs/app-service/main/module/esm|v/0_18_1": {
       "version": "0.18.1",
       "path": "/eval-generated-comp-playground/1/bundle/esm/l/en-US/bi/0/module/mi/@lwrjs/app-service/main/module/esm/v/0_18_1/s/sha256-ln_ouPFj4OfcF0zjv1g8eDKRz6pDMlc9fIyyqlnJYQ4/bundle_@lwrjs_app-service_main_module_esm.js",
@@ -120,6 +112,14 @@
       ],
       "dynamicImports": [],
       "integrity": "sha256-ln/ouPFj4OfcF0zjv1g8eDKRz6pDMlc9fIyyqlnJYQ4="
+    },
+    "lwc|v/8_20_1": {
+      "version": "8.20.1",
+      "path": "/eval-generated-comp-playground/1/bundle/esm/l/en-US/bi/0/module/mi/lwc/v/8_20_1/s/sha256-WFUZ-j_7b-yVnZMVs3rz-496x2a0HvOqDBhuK11zmIk/bundle_lwc.js",
+      "includedModules": [],
+      "imports": [],
+      "dynamicImports": [],
+      "integrity": "sha256-WFUZ+j/7b+yVnZMVs3rz+496x2a0HvOqDBhuK11zmIk="
     },
     "lwr/esmLoader|v/0_18_1": {
       "version": "0.18.1",
@@ -147,7 +147,7 @@
     },
     "main/app|v/0_0_1": {
       "version": "0.0.1",
-      "path": "/eval-generated-comp-playground/1/bundle/esm/l/en-US/bi/0/module/mi/main/app/v/0_0_1/s/sha256-F7tFddMWCSSOtp-rmvvwiZEVwKLeqfCVf2kxVZ8j8-Y/bundle_main_app.js",
+      "path": "/eval-generated-comp-playground/1/bundle/esm/l/en-US/bi/0/module/mi/main/app/v/0_0_1/s/sha256-IQT1edGEZVXuOHqf4WdVp7EBoYacniuJJrFPjn4UUek/bundle_main_app.js",
       "includedModules": [],
       "imports": [
         "lwc|v/8_20_1",
@@ -165,7 +165,7 @@
         "lightning/iconSvgTemplatesDoctype|v/1_28_13-alpha",
         "lightning/iconSvgTemplatesCustom|v/1_28_13-alpha"
       ],
-      "integrity": "sha256-F7tFddMWCSSOtp+rmvvwiZEVwKLeqfCVf2kxVZ8j8+Y="
+      "integrity": "sha256-IQT1edGEZVXuOHqf4WdVp7EBoYacniuJJrFPjn4UUek="
     }
   }
 }
