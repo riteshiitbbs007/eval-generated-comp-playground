@@ -13,7 +13,7 @@
     "prebuild": "npm run generate:templates",
     "build": "lwr build --clean",
     "build:prod-compat": "lwr build --clean --mode prod-compat",
-    "start": "PORT=3001 lwr start",
+    "start": "lwr start",
     "stage": "yarn build && yarn start",
     "stage:prod-compat": "yarn build:prod-compat && yarn start"
   },
