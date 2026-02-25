@@ -82,8 +82,9 @@ export default class HelloWorldApp extends LightningElement {
 
   handleComponentSelect(event) {
     const componentName = event.detail.componentName;
-    // Navigate to detail view
-    window.location.href = \`/?detail=\${componentName}\`;
+    // Navigate to detail view with basePath
+    const basePath = window.LWR?.env?.basePath || '';
+    window.location.href = \`\${basePath}/?detail=\${componentName}\`;
   }
 
   get showGallery() {
