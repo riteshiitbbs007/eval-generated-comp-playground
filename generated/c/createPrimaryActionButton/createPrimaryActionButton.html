@@ -1,44 +1,23 @@
 <template>
-    <!--
-        Primary action button with icon and text
-        Following SLDS 2 guidelines with proper semantic HTML
-    -->
-    <button
-        class={buttonClass}
-        onclick={handleClick}
+    <!-- Primary action button with save icon -->
+    <button 
+        class="slds-button slds-button_brand" 
+        onclick={handleClick} 
+        title={buttonTitle}
+        aria-label={ariaLabel}
         disabled={disabled}
-        aria-disabled={disabled}
-        aria-label={computedAriaLabel}
-        type="button">
-
-        <!-- Icon rendering - conditionally positioned based on iconPosition -->
-        <template if:true={iconName}>
-            <template if:true={isIconLeft}>
-                <lightning-icon
-                    icon-name={iconName}
-                    size="x-small"
-                    alternative-text={iconAlternativeText}
-                    class={iconContainerClass}>
-                </lightning-icon>
-            </template>
-
-            <!-- Label is always displayed -->
-            <span class="slds-button__label">{label}</span>
-
-            <!-- Icon on the right side, if specified -->
-            <template if:true={isIconRight}>
-                <lightning-icon
-                    icon-name={iconName}
-                    size="x-small"
-                    alternative-text={iconAlternativeText}
-                    class={iconContainerClass}>
-                </lightning-icon>
-            </template>
-        </template>
-
-        <!-- If no icon is provided, just render the label -->
-        <template if:false={iconName}>
-            <span class="slds-button__label">{label}</span>
-        </template>
+    >
+        <!-- Left-aligned icon with proper spacing -->
+        <span class="slds-button__icon slds-button__icon_left">
+            <lightning-icon 
+                icon-name="utility:save" 
+                size="x-small" 
+                variant="inverse" 
+                alternative-text="Save Icon"
+            ></lightning-icon>
+        </span>
+        <!-- Button text -->
+        <span class="slds-assistive-text_focus">{buttonLabel}</span>
+        <span>{buttonLabel}</span>
     </button>
 </template>

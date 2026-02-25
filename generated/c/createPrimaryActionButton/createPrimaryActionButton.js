@@ -1,130 +1,52 @@
 import { LightningElement, api } from 'lwc';
 
 /**
- * @description Primary Action Button component with configurable label and icon
- * This component creates a button with an icon (by default "save") and a label (by default "Save Changes")
- * It follows SLDS 2 guidelines and design tokens
+ * @description Primary action button with save icon positioned on the left
+ * Uses SLDS brand button styling with appropriate sizing from the design system
  */
 export default class CreatePrimaryActionButton extends LightningElement {
     /**
-     * @description Text to display on the button
-     * @api
-     * @type {String}
-     * @default "Save Changes"
+     * @description Button label text
+     * @type {string}
+     * @default 'Save Changes'
      */
-    @api label = 'Save Changes';
+    @api buttonLabel = 'Save Changes';
 
     /**
-     * @description Button variant (brand, neutral, success, destructive)
-     * @api
-     * @type {String}
-     * @default "brand"
+     * @description Label for the button's title attribute providing additional context
+     * @type {string}
+     * @default 'Save Changes'
      */
-    @api variant = 'brand';
+    @api buttonTitle = 'Save Changes';
 
     /**
-     * @description Boolean to disable the button
-     * @api
-     * @type {Boolean}
+     * @description Aria label for screen readers
+     * @type {string}
+     */
+    @api ariaLabel = 'Save Changes';
+
+    /**
+     * @description Whether the button is disabled
+     * @type {boolean}
      * @default false
      */
     @api disabled = false;
 
     /**
-     * @description Icon name to display
-     * @api
-     * @type {String}
-     * @default "utility:save"
-     */
-    @api iconName = 'utility:save';
-
-    /**
-     * @description Position of the icon (left, right)
-     * @api
-     * @type {String}
-     * @default "left"
-     */
-    @api iconPosition = 'left';
-
-    /**
-     * @description Optional custom aria-label for accessibility
-     * @api
-     * @type {String}
-     */
-    @api ariaLabel;
-
-    /**
-     * @description Computed class for the button based on variant
-     * @returns {String} CSS class string
-     */
-    get buttonClass() {
-        const baseClasses = 'slds-button';
-        const variantClass = this.variant ? `slds-button_${this.variant}` : 'slds-button_brand';
-
-        return `${baseClasses} ${variantClass}`;
-    }
-
-    /**
-     * @description Computed class for the icon container
-     * @returns {String} CSS class string
-     */
-    get iconContainerClass() {
-        const baseClasses = 'slds-button__icon';
-        const positionClass = this.iconPosition === 'right' ? 'slds-button__icon_right' : 'slds-button__icon_left';
-
-        return `${baseClasses} ${positionClass}`;
-    }
-
-    /**
-     * @description Computed property to determine if icon should be on the left
-     * @returns {Boolean} True if icon position is left
-     */
-    get isIconLeft() {
-        return this.iconPosition === 'left';
-    }
-
-    /**
-     * @description Computed property to determine if icon should be on the right
-     * @returns {Boolean} True if icon position is right
-     */
-    get isIconRight() {
-        return this.iconPosition === 'right';
-    }
-
-    /**
-     * @description Computed alternative text for the icon
-     * @returns {String} Alternative text
-     */
-    get iconAlternativeText() {
-        return `${this.label} Icon`;
-    }
-
-    /**
-     * @description Computed aria-label for the button
-     * @returns {String} Aria label text
-     */
-    get computedAriaLabel() {
-        return this.ariaLabel || this.label;
-    }
-
-    /**
-     * @description Handle button click event
+     * @description Event fired when the button is clicked
      * @param {Event} event - The click event
      */
     handleClick(event) {
-        // Prevent default to avoid any unexpected navigation
-        event.preventDefault();
-
-        // If not disabled, dispatch a 'click' event
-        if (!this.disabled) {
-            // Create and dispatch a custom event
-            this.dispatchEvent(new CustomEvent('click', {
-                bubbles: true,
-                composed: true,
-                detail: {
-                    originalEvent: event
-                }
-            }));
+        // Prevent default behavior if needed
+        if (this.disabled) {
+            event.preventDefault();
+            return;
         }
+
+        // Dispatch a custom event when button is clicked
+        this.dispatchEvent(new CustomEvent('click', {
+            bubbles: true,
+            composed: true
+        }));
     }
 }

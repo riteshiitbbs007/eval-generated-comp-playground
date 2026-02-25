@@ -3,29 +3,18 @@
     <apiVersion>58.0</apiVersion>
     <isExposed>true</isExposed>
     <masterLabel>Primary Action Button</masterLabel>
-    <description>A configurable primary action button with icon and text following SLDS 2 guidelines</description>
+    <description>Primary action button with save icon positioned on the left</description>
     <targets>
         <target>lightning__AppPage</target>
         <target>lightning__RecordPage</target>
         <target>lightning__HomePage</target>
-        <target>lightning__FlowScreen</target>
     </targets>
     <targetConfigs>
-        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage,lightning__FlowScreen">
-            <property name="label" type="String" label="Button Label" default="Save Changes" description="Text to display on the button"/>
-            <property name="variant" type="String" label="Button Variant" default="brand" description="Button style variant">
-                <value>brand</value>
-                <value>neutral</value>
-                <value>success</value>
-                <value>destructive</value>
-            </property>
-            <property name="disabled" type="Boolean" label="Disabled" default="false" description="Whether the button is disabled"/>
-            <property name="iconName" type="String" label="Icon Name" default="utility:save" description="Name of the icon to display (e.g., utility:save)"/>
-            <property name="iconPosition" type="String" label="Icon Position" default="left" description="Position of the icon">
-                <value>left</value>
-                <value>right</value>
-            </property>
-            <property name="ariaLabel" type="String" label="Aria Label" description="Custom accessibility label for the button (optional)"/>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage">
+            <property name="buttonLabel" type="String" label="Button Label" description="Text displayed on the button" default="Save Changes" />
+            <property name="buttonTitle" type="String" label="Button Title" description="Title text that appears on hover" default="Save Changes" />
+            <property name="ariaLabel" type="String" label="Aria Label" description="Accessible label for screen readers" default="Save Changes" />
+            <property name="disabled" type="Boolean" label="Disabled" description="Whether the button is disabled" default="false" />
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

@@ -9,4 +9,12 @@
         <target>lightning__RecordPage</target>
         <target>lightning__HomePage</target>
     </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage">
+            <property name="hideHeader" type="Boolean" label="Hide Table Header" description="If true, hides the table header" default="false" />
+            <property name="showRowHover" type="Boolean" label="Show Row Hover Effect" description="If true, shows a hover effect on table rows" default="false" />
+            <property name="showStripedRows" type="Boolean" label="Show Striped Rows" description="If true, displays alternating row colors" default="false" />
+            <property name="products" type="String" label="Products JSON" description="JSON string representing product data (optional)" />
+        </targetConfig>
+    </targetConfigs>
 </LightningComponentBundle>

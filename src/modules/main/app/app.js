@@ -31,51 +31,55 @@ export default class HelloWorldApp extends LightningElement {
     return this.detailComponent !== null;
   }
 
-  get showCreatePrimaryButtonWith() {
-    return this.selectedComponent === 'createPrimaryButtonWith';
-  }
-
-  get showCreateFormNameEmail() {
-    return this.selectedComponent === 'createFormNameEmail';
-  }
-
-  get showCreateSortableTableProduct() {
-    return this.selectedComponent === 'createSortableTableProduct';
-  }
-
-  get showCreateDeleteConfirmationModal() {
-    return this.selectedComponent === 'createDeleteConfirmationModal';
-  }
-
-  get showCreatePageHeaderWith() {
-    return this.selectedComponent === 'createPageHeaderWith';
+  get showCreate3stepWizardWith() {
+    return this.selectedComponent === 'create3stepWizardWith';
   }
 
   get showCreateAlertsSuccessError() {
     return this.selectedComponent === 'createAlertsSuccessError';
   }
 
+  get showCreateContactCardWith() {
+    return this.selectedComponent === 'createContactCardWith';
+  }
+
+  get showCreateDeleteConfirmationModal() {
+    return this.selectedComponent === 'createDeleteConfirmationModal';
+  }
+
   get showCreateFaqAccordionWith() {
     return this.selectedComponent === 'createFaqAccordionWith';
+  }
+
+  get showCreateFormNameEmail() {
+    return this.selectedComponent === 'createFormNameEmail';
   }
 
   get showCreateFormWithText() {
     return this.selectedComponent === 'createFormWithText';
   }
 
-  get showCreateContactCardWith() {
-    return this.selectedComponent === 'createContactCardWith';
-  }
-
-  get showCreateVerticalNavMenu() {
-    return this.selectedComponent === 'createVerticalNavMenu';
+  get showCreatePageHeaderWith() {
+    return this.selectedComponent === 'createPageHeaderWith';
   }
 
   get showCreatePrimaryActionButton() {
     return this.selectedComponent === 'createPrimaryActionButton';
   }
 
-  get showCreateContactFormName() {
-    return this.selectedComponent === 'createContactFormName';
+  get showCreatePrimaryButtonWith() {
+    return this.selectedComponent === 'createPrimaryButtonWith';
+  }
+
+  get showCreateSortableTableProduct() {
+    return this.selectedComponent === 'createSortableTableProduct';
+  }
+
+  get showCreateTabsOverviewDetails() {
+    return this.selectedComponent === 'createTabsOverviewDetails';
+  }
+
+  get showCreateVerticalNavMenu() {
+    return this.selectedComponent === 'createVerticalNavMenu';
   }
 }
