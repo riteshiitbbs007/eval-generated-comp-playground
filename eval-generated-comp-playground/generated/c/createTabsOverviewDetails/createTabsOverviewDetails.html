@@ -1,0 +1,76 @@
+<template>
+    <!-- Tabs container using SLDS tabs component pattern -->
+    <div class="slds-tabs_default">
+        <ul class="slds-tabs_default__nav" role="tablist">
+            <li class="slds-tabs_default__item" role="presentation">
+                <a class="slds-tabs_default__link"
+                   role="tab"
+                   tabindex={overviewTabIndex}
+                   aria-selected={isOverviewActive}
+                   aria-controls="tab-overview-content"
+                   id="tab-overview"
+                   onclick={handleOverviewTab}>Overview</a>
+            </li>
+            <li class="slds-tabs_default__item" role="presentation">
+                <a class="slds-tabs_default__link"
+                   role="tab"
+                   tabindex={detailsTabIndex}
+                   aria-selected={isDetailsActive}
+                   aria-controls="tab-details-content"
+                   id="tab-details"
+                   onclick={handleDetailsTab}>Details</a>
+            </li>
+            <li class="slds-tabs_default__item" role="presentation">
+                <a class="slds-tabs_default__link"
+                   role="tab"
+                   tabindex={historyTabIndex}
+                   aria-selected={isHistoryActive}
+                   aria-controls="tab-history-content"
+                   id="tab-history"
+                   onclick={handleHistoryTab}>History</a>
+            </li>
+        </ul>
+        <div id="tab-overview-content"
+             class={overviewContentClass}
+             role="tabpanel"
+             aria-labelledby="tab-overview">
+            <div class="slds-p-around_medium">
+                <!-- Overview content -->
+                <template if:true={hasOverviewContent}>
+                    <slot name="overview-content"></slot>
+                </template>
+                <template if:false={hasOverviewContent}>
+                    <p>Overview content goes here. Use the overview-content slot to provide custom content.</p>
+                </template>
+            </div>
+        </div>
+        <div id="tab-details-content"
+             class={detailsContentClass}
+             role="tabpanel"
+             aria-labelledby="tab-details">
+            <div class="slds-p-around_medium">
+                <!-- Details content -->
+                <template if:true={hasDetailsContent}>
+                    <slot name="details-content"></slot>
+                </template>
+                <template if:false={hasDetailsContent}>
+                    <p>Details content goes here. Use the details-content slot to provide custom content.</p>
+                </template>
+            </div>
+        </div>
+        <div id="tab-history-content"
+             class={historyContentClass}
+             role="tabpanel"
+             aria-labelledby="tab-history">
+            <div class="slds-p-around_medium">
+                <!-- History content -->
+                <template if:true={hasHistoryContent}>
+                    <slot name="history-content"></slot>
+                </template>
+                <template if:false={hasHistoryContent}>
+                    <p>History content goes here. Use the history-content slot to provide custom content.</p>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,47 @@
+/**
+ * Vertical Navigation Menu Component Styles
+ * Using SLDS 2 styling hooks and BEM methodology
+ */
+
+.slds-vertical-nav {
+    background: var(--slds-g-color-surface-container-1);
+    border-radius: var(--slds-g-radius-border-1);
+    border: var(--slds-g-sizing-border-1) solid var(--slds-g-color-border-1);
+}
+
+.slds-nav-vertical__item {
+    position: relative;
+}
+
+.slds-nav-vertical__item a {
+    color: var(--slds-g-color-on-surface-2);
+    display: flex;
+    align-items: center;
+    padding: var(--slds-g-spacing-3) var(--slds-g-spacing-4);
+    line-height: var(--slds-g-font-lineheight-3);
+    border-left: var(--slds-g-spacing-1) solid transparent;
+}
+
+.slds-nav-vertical__item a:hover,
+.slds-nav-vertical__item a:focus {
+    text-decoration: none;
+    background: var(--slds-g-color-surface-container-2);
+    color: var(--slds-g-color-on-surface-3);
+    outline: none;
+}
+
+.slds-nav-vertical__item.slds-is-active a {
+    color: var(--slds-g-color-accent-2);
+    background: var(--slds-g-color-surface-container-2);
+    border-left: var(--slds-g-spacing-1) solid var(--slds-g-color-accent-2);
+    font-weight: var(--slds-g-font-weight-7);
+}
+
+.slds-nav-vertical__item lightning-icon {
+    --sds-c-icon-color-foreground-default: currentColor;
+}
+
+/* Accessibility - Focus styles */
+.slds-nav-vertical__item a:focus {
+    box-shadow: 0 0 0 1px var(--slds-g-color-accent-2) inset;
+}

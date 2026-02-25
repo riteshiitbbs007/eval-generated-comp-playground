@@ -1,0 +1,17 @@
+<template>
+    <!--
+        Primary Button with Save Icon Component
+        This component implements a primary button with a save icon following SLDS 2 standards
+        using lightning-button base component for accessibility and SLDS compliance
+    -->
+    <lightning-button
+        variant={variantComputed}
+        label={labelComputed}
+        icon-name="utility:save"
+        icon-position="left"
+        onclick={handleClick}
+        disabled={disabled}
+        class="slds-button_brand primary-save-button"
+        aria-label={ariaLabel}>
+    </lightning-button>
+</template>

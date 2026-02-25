@@ -1,0 +1,23 @@
+<template>
+    <!-- Primary action button with save icon -->
+    <button 
+        class="slds-button slds-button_brand" 
+        onclick={handleClick} 
+        title={buttonTitle}
+        aria-label={ariaLabel}
+        disabled={disabled}
+    >
+        <!-- Left-aligned icon with proper spacing -->
+        <span class="slds-button__icon slds-button__icon_left">
+            <lightning-icon 
+                icon-name="utility:save" 
+                size="x-small" 
+                variant="inverse" 
+                alternative-text="Save Icon"
+            ></lightning-icon>
+        </span>
+        <!-- Button text -->
+        <span class="slds-assistive-text_focus">{buttonLabel}</span>
+        <span>{buttonLabel}</span>
+    </button>
+</template>

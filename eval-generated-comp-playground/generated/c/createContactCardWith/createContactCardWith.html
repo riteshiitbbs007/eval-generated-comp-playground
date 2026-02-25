@@ -1,0 +1,51 @@
+<template>
+    <!-- Contact Card using SLDS 2 styling tokens and patterns -->
+    <div class="slds-card slds-p-around_medium">
+        <!-- Contact card header with avatar -->
+        <div class="slds-grid slds-grid_vertical-align-center slds-m-bottom_medium">
+            <!-- Avatar area -->
+            <div class="slds-m-right_medium">
+                <span class="slds-avatar slds-avatar_large">
+                    <img alt="Contact avatar" src={avatarUrl} title={avatarTitle} />
+                </span>
+            </div>
+            <!-- Name and title -->
+            <div class="slds-col">
+                <h2 class="slds-text-heading_medium slds-m-bottom_xx-small">{name}</h2>
+                <p class="slds-text-color_weak slds-text-body_small">{title}</p>
+            </div>
+        </div>
+
+        <!-- Contact details -->
+        <div class="slds-grid slds-grid_vertical">
+            <!-- Email -->
+            <div class="slds-grid slds-grid_vertical-align-center slds-m-bottom_small">
+                <lightning-icon icon-name="utility:email" size="x-small" class="slds-m-right_x-small" alternative-text="Email"></lightning-icon>
+                <a href={emailLink} aria-label={emailAriaLabel} class="slds-text-body_regular">{email}</a>
+            </div>
+
+            <!-- Phone -->
+            <div class="slds-grid slds-grid_vertical-align-center slds-m-bottom_medium">
+                <lightning-icon icon-name="utility:call" size="x-small" class="slds-m-right_x-small" alternative-text="Phone"></lightning-icon>
+                <a href={phoneLink} aria-label={phoneAriaLabel} class="slds-text-body_regular">{phone}</a>
+            </div>
+        </div>
+
+        <!-- Action buttons -->
+        <div class="slds-grid slds-grid_align-end slds-grid_vertical-align-center slds-m-top_medium">
+            <lightning-button
+                variant="neutral"
+                label="View Details"
+                class="slds-m-right_x-small"
+                title={viewDetailsTitle}
+                onclick={handleViewDetails}>
+            </lightning-button>
+            <lightning-button
+                variant="brand"
+                label="Contact"
+                title={contactTitle}
+                onclick={handleContact}>
+            </lightning-button>
+        </div>
+    </div>
+</template>
