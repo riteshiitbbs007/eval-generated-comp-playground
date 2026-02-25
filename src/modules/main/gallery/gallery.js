@@ -4,6 +4,7 @@ export default class Gallery extends LightningElement {
   components = [];
   loading = true;
   error = null;
+  searchTerm = '';
 
   async connectedCallback() {
     try {
@@ -75,8 +76,22 @@ export default class Gallery extends LightningElement {
     return this.components.length > 0;
   }
 
+  get filteredComponents() {
+    if (!this.searchTerm) {
+      return this.components;
+    }
+    const searchLower = this.searchTerm.toLowerCase();
+    return this.components.filter(comp =>
+      comp.componentName.toLowerCase().includes(searchLower)
+    );
+  }
+
+  get componentCount() {
+    return this.filteredComponents.length;
+  }
+
   get formattedComponents() {
-    return this.components.map(comp => {
+    return this.filteredComponents.map(comp => {
       const date = new Date(comp.timestamp);
       const formattedDate = `${String(date.getDate()).padStart(2, '0')}/${String(date.getMonth() + 1).padStart(2, '0')}/${date.getFullYear()}`;
 
@@ -90,6 +105,10 @@ export default class Gallery extends LightningElement {
         formattedCost: comp.cost?.totalCost ? `$${comp.cost.totalCost.toFixed(4)}` : 'N/A',
       };
     });
+  }
+
+  handleSearch(event) {
+    this.searchTerm = event.target.value;
   }
 
   handleComponentSelect(event) {

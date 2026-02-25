@@ -108,3 +108,28 @@
   margin-top: auto;
   padding: var(--lwc-spacingXSmall, 0.5rem);
 }
+
+/* Search input styling */
+.slds-page-header__col-actions {
+  display: flex;
+  align-items: center;
+}
+
+.slds-page-header__col-actions .slds-input {
+  min-width: 250px;
+}
+
+@media (max-width: 768px) {
+  .slds-page-header__row {
+    flex-direction: column;
+    gap: var(--lwc-spacingSmall, 0.75rem);
+  }
+
+  .slds-page-header__col-actions {
+    width: 100%;
+  }
+
+  .slds-page-header__col-actions .slds-input {
+    width: 100%;
+  }
+}

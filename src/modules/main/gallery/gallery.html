@@ -9,8 +9,24 @@
                 Generated Components Gallery
               </h1>
               <p class="slds-text-body_small slds-text-color_weak">
-                Total components: {components.length}
+                Total components: {componentCount}
               </p>
+            </div>
+          </div>
+        </div>
+        <div class="slds-page-header__col-actions">
+          <div class="slds-form-element">
+            <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+              <svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
+                <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#search"></use>
+              </svg>
+              <input
+                type="text"
+                class="slds-input"
+                placeholder="Search components..."
+                value={searchTerm}
+                oninput={handleSearch}
+              />
             </div>
           </div>
         </div>
