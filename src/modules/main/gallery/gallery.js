@@ -76,13 +76,20 @@ export default class Gallery extends LightningElement {
   }
 
   get formattedComponents() {
-    return this.components.map(comp => ({
-      ...comp,
-      formattedTimestamp: new Date(comp.timestamp).toLocaleString(),
-      formattedScore: comp.scores?.overall?.toFixed(2) || 'N/A',
-      formattedTokens: comp.tokenUsage?.totalTokens?.toLocaleString() || 'N/A',
-      formattedCost: comp.cost?.totalCost ? `$${comp.cost.totalCost.toFixed(4)}` : 'N/A',
-    }));
+    return this.components.map(comp => {
+      const date = new Date(comp.timestamp);
+      const formattedDate = `${String(date.getDate()).padStart(2, '0')}/${String(date.getMonth() + 1).padStart(2, '0')}/${date.getFullYear()}`;
+
+      return {
+        ...comp,
+        formattedDate,
+        formattedTimestamp: new Date(comp.timestamp).toLocaleString(),
+        formattedScore: comp.scores?.overall?.toFixed(2) || 'N/A',
+        formattedSldsScore: comp.scores?.slds_linter?.toFixed(2) || 'N/A',
+        formattedTokens: comp.tokenUsage?.totalTokens?.toLocaleString() || 'N/A',
+        formattedCost: comp.cost?.totalCost ? `$${comp.cost.totalCost.toFixed(4)}` : 'N/A',
+      };
+    });
   }
 
   handleComponentSelect(event) {

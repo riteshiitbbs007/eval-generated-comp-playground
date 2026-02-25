@@ -1,11 +1,17 @@
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: var(--lwc-spacingMedium, 1rem);
 }
 
 /* Responsive grid - show more cards on larger screens */
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
+  .gallery-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
   .gallery-grid {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -43,10 +49,11 @@
 
 .screenshot-container {
   width: 100%;
-  height: 180px;
+  height: 150px;
   overflow: hidden;
   background-color: var(--lwc-colorBackgroundAlt, #f3f2f2);
-  border-bottom: 1px solid var(--lwc-colorBorder, #c9c7c5);
+  border: 1px solid var(--lwc-colorBorder, #c9c7c5);
+  border-radius: var(--lwc-borderRadiusSmall, 0.25rem);
 }
 
 .screenshot-preview {
@@ -56,18 +63,24 @@
   cursor: pointer;
 }
 
-.score-badges {
+.score-section {
   display: flex;
-  gap: var(--lwc-spacingXxSmall, 0.25rem);
-  flex-wrap: wrap;
+  gap: var(--lwc-spacingSmall, 0.75rem);
   align-items: center;
+  font-size: var(--lwc-fontSizeTextSmall, 0.875rem);
 }
 
-.score-badges > * {
-  padding: var(--lwc-spacingXxxSmall, 0.125rem) var(--lwc-spacingXxSmall, 0.25rem);
-  border-radius: var(--lwc-borderRadiusSmall, 0.125rem);
-  font-size: var(--lwc-fontSizeTextXSmall, 0.75rem);
+.score-overall {
+  padding: var(--lwc-spacingXxxSmall, 0.125rem) var(--lwc-spacingXxSmall, 0.5rem);
+  border-radius: var(--lwc-borderRadiusSmall, 0.25rem);
+  background-color: var(--lwc-colorBackgroundSuccess, #4bca81);
+  color: white;
   font-weight: 600;
+  white-space: nowrap;
+}
+
+.score-slds {
+  font-weight: 400;
   white-space: nowrap;
 }
 

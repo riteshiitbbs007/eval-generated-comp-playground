@@ -9,7 +9,7 @@
                 Generated Components Gallery
               </h1>
               <p class="slds-text-body_small slds-text-color_weak">
-                {components.length} component(s) generated
+                Total components: {components.length}
               </p>
             </div>
           </div>
@@ -38,49 +38,43 @@
       <div class="gallery-grid slds-m-top_medium">
         <template for:each={formattedComponents} for:item="component">
           <article key={component.componentName} class="slds-card component-card">
-            <!-- Screenshot -->
-            <template if:true={component.screenshotUrls.desktop}>
-              <div class="screenshot-container">
-                <img
-                  src={component.screenshotUrls.desktop}
-                  alt={component.componentName}
-                  class="screenshot-preview"
-                  onclick={handleComponentSelect}
-                  data-name={component.componentName}
-                >
-              </div>
-            </template>
-
             <!-- Component info -->
             <div class="slds-card__body slds-card__body_inner slds-p-around_small">
               <h2 class="slds-text-heading_small slds-truncate slds-m-bottom_xx-small" title={component.componentName}>
                 {component.componentName}
               </h2>
 
-              <div class="slds-text-body_small slds-text-color_weak slds-m-bottom_x-small">
-                <div class="slds-grid slds-wrap">
-                  <div class="slds-col slds-size_1-of-1">
-                    {component.tier} • {component.complexity}
-                  </div>
-                </div>
+              <div class="slds-text-body_small slds-text-color_weak slds-m-bottom_small">
+                {component.tier} • {component.complexity} • {component.formattedDate}
               </div>
 
-              <!-- Scores -->
-              <div class="score-badges slds-m-bottom_x-small">
-                <span class={component.readinessClass}>
-                  Score: {component.formattedScore}
-                </span>
-                <span class="slds-badge slds-badge_lightest">
-                  {component.violations.warnings}W {component.violations.errors}E
-                </span>
-              </div>
-
-              <!-- Token usage -->
-              <template if:true={component.tokenUsage}>
-                <div class="slds-text-body_small slds-text-color_weak">
-                  {component.formattedTokens} • {component.formattedCost}
+              <!-- Screenshot -->
+              <template if:true={component.screenshotUrls.desktop}>
+                <div class="screenshot-container slds-m-bottom_small">
+                  <img
+                    src={component.screenshotUrls.desktop}
+                    alt={component.componentName}
+                    class="screenshot-preview"
+                    onclick={handleComponentSelect}
+                    data-name={component.componentName}
+                  >
                 </div>
               </template>
+
+              <!-- Scores -->
+              <div class="score-section slds-m-bottom_x-small">
+                <span class="score-overall">
+                  Overall: {component.formattedScore}
+                </span>
+                <span class="score-slds slds-text-color_weak">
+                  SLDS: {component.formattedSldsScore}
+                </span>
+              </div>
+
+              <!-- Violations -->
+              <div class="slds-text-body_small slds-text-color_weak slds-m-bottom_small">
+                Violations: {component.violations.warnings}W {component.violations.errors}E
+              </div>
             </div>
 
             <footer class="slds-card__footer">
