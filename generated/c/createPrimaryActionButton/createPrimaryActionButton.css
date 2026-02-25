@@ -1,0 +1,136 @@
+/*
+ * Primary Action Button component CSS
+ * Using SLDS 2 design tokens for consistent styling
+ */
+
+.slds-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--slds-g-spacing-2) var(--slds-g-spacing-4);
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    border-radius: var(--slds-g-radius-border-1);
+    line-height: var(--slds-g-font-lineheight-3);
+    transition: color 0.05s linear, background-color 0.05s linear;
+    font-family: var(--slds-g-font-family-base);
+    font-weight: var(--slds-g-font-weight-5);
+}
+
+/* Brand button styles */
+.slds-button_brand {
+    background-color: var(--slds-g-color-accent-container-1);
+    border-color: var(--slds-g-color-border-accent-1);
+    color: var(--slds-g-color-on-accent-1);
+}
+
+.slds-button_brand:hover:not(:disabled),
+.slds-button_brand:focus:not(:disabled) {
+    background-color: var(--slds-g-color-accent-container-2);
+    border-color: var(--slds-g-color-border-accent-2);
+    color: var(--slds-g-color-on-accent-2);
+}
+
+.slds-button_brand:active:not(:disabled) {
+    background-color: var(--slds-g-color-accent-container-3);
+    border-color: var(--slds-g-color-border-accent-3);
+    color: var(--slds-g-color-on-accent-3);
+}
+
+/* Neutral button styles */
+.slds-button_neutral {
+    background-color: var(--slds-g-color-surface-container-1);
+    border-color: var(--slds-g-color-border-1);
+    color: var(--slds-g-color-on-surface-1);
+}
+
+.slds-button_neutral:hover:not(:disabled),
+.slds-button_neutral:focus:not(:disabled) {
+    background-color: var(--slds-g-color-surface-container-2);
+    border-color: var(--slds-g-color-border-2);
+    color: var(--slds-g-color-on-surface-2);
+}
+
+.slds-button_neutral:active:not(:disabled) {
+    background-color: var(--slds-g-color-surface-container-3);
+    border-color: var(--slds-g-color-border-2);
+    color: var(--slds-g-color-on-surface-2);
+}
+
+/* Success button styles */
+.slds-button_success {
+    background-color: var(--slds-g-color-success-container-1);
+    border-color: var(--slds-g-color-border-success-1);
+    color: var(--slds-g-color-on-success-1);
+}
+
+.slds-button_success:hover:not(:disabled),
+.slds-button_success:focus:not(:disabled) {
+    background-color: var(--slds-g-color-success-container-2);
+    border-color: var(--slds-g-color-border-success-2);
+    color: var(--slds-g-color-on-success-2);
+}
+
+.slds-button_success:active:not(:disabled) {
+    background-color: var(--slds-g-color-success-container-3);
+    border-color: var(--slds-g-color-border-success-3);
+    color: var(--slds-g-color-on-success-3);
+}
+
+/* Destructive button styles */
+.slds-button_destructive {
+    background-color: var(--slds-g-color-error-container-1);
+    border-color: var(--slds-g-color-border-error-1);
+    color: var(--slds-g-color-on-error-1);
+}
+
+.slds-button_destructive:hover:not(:disabled),
+.slds-button_destructive:focus:not(:disabled) {
+    background-color: var(--slds-g-color-error-container-2);
+    border-color: var(--slds-g-color-border-error-2);
+    color: var(--slds-g-color-on-error-2);
+}
+
+.slds-button_destructive:active:not(:disabled) {
+    background-color: var(--slds-g-color-error-container-3);
+    border-color: var(--slds-g-color-border-error-3);
+    color: var(--slds-g-color-on-error-3);
+}
+
+/* Disabled button styles */
+.slds-button:disabled {
+    background-color: var(--slds-g-color-disabled-container-1);
+    border-color: var(--slds-g-color-border-disabled-1);
+    color: var(--slds-g-color-on-disabled-1);
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+/* Focus styles for accessibility */
+.slds-button:focus {
+    outline: 0;
+    box-shadow: 0 0 3px var(--slds-g-color-accent-1);
+}
+
+/* Button label styling */
+.slds-button__label {
+    display: inline-flex;
+    align-items: center;
+    line-height: var(--slds-g-font-lineheight-3);
+}
+
+/* Icon styling */
+.slds-button__icon {
+    display: inline-flex;
+    align-items: center;
+}
+
+.slds-button__icon_left {
+    margin-right: var(--slds-g-spacing-2);
+}
+
+.slds-button__icon_right {
+    margin-left: var(--slds-g-spacing-2);
+}

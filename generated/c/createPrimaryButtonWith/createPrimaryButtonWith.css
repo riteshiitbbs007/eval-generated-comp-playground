@@ -1,0 +1,33 @@
+/**
+ * Primary button with save icon styling using SLDS 2 styling hooks
+ * Uses component scoped styling hooks (--slds-c-*) to customize button appearance
+ * While respecting global styling hooks (--slds-g-*)
+ */
+.primary-save-button {
+    /* Primary button brand styling using SLDS 2 styling hooks */
+    --slds-c-button-brand-color-background: var(--slds-g-color-accent-container-1);
+    --slds-c-button-brand-color-background-hover: var(--slds-g-color-accent-container-2);
+    --slds-c-button-brand-color-background-active: var(--slds-g-color-accent-container-3);
+    --slds-c-button-brand-color-border: var(--slds-g-color-border-accent-1);
+    --slds-c-button-brand-color-border-hover: var(--slds-g-color-border-accent-2);
+    --slds-c-button-brand-color-border-active: var(--slds-g-color-border-accent-3);
+    --slds-c-button-brand-text-color: var(--slds-g-color-on-accent-1);
+    --slds-c-button-brand-text-color-hover: var(--slds-g-color-on-accent-2);
+    --slds-c-button-brand-text-color-active: var(--slds-g-color-on-accent-3);
+
+    /* Focus and disabled styling */
+    --slds-c-button-brand-color-border-focus: var(--slds-g-color-border-accent-3);
+    --slds-c-button-shadow-focus: 0 0 3px var(--slds-g-color-accent-container-3);
+    --slds-c-button-disabled-color-background: var(--slds-g-color-palette-neutral-80);
+    --slds-c-button-disabled-color-border: var(--slds-g-color-palette-neutral-80);
+    --slds-c-button-disabled-text-color: var(--slds-g-color-palette-neutral-30);
+
+    /* Ensure consistent spacing using SLDS 2 spacing hooks */
+    --slds-c-button-spacing-block-start: var(--slds-g-spacing-2);
+    --slds-c-button-spacing-block-end: var(--slds-g-spacing-2);
+    --slds-c-button-spacing-inline-start: var(--slds-g-spacing-4);
+    --slds-c-button-spacing-inline-end: var(--slds-g-spacing-4);
+
+    /* Border radius using proper SLDS 2 styling hooks */
+    --slds-c-button-radius-border: var(--slds-g-radius-border-1);
+}

@@ -31,30 +31,6 @@ export default class HelloWorldApp extends LightningElement {
     return this.detailComponent !== null;
   }
 
-  get showCounter() {
-    return this.selectedComponent === 'counter';
-  }
-
-  get showPrimaryActionButton() {
-    return this.selectedComponent === 'primaryActionButtonWithSaveIcon';
-  }
-
-  get showPrimaryButtonWithASaveIcon() {
-    return this.selectedComponent === 'primaryButtonWithASaveIcon';
-  }
-
-  get showPrimaryActionButtonWithASave() {
-    return this.selectedComponent === 'primaryActionButtonWithASave';
-  }
-
-  get showSortableTableProductNamePriceCategory() {
-    return this.selectedComponent === 'sortableTableProductNamePriceCategory';
-  }
-
-  get showCardGrid4ColumnsDesktop2() {
-    return this.selectedComponent === 'cardGrid4ColumnsDesktop2';
-  }
-
   get showCreatePrimaryButtonWith() {
     return this.selectedComponent === 'createPrimaryButtonWith';
   }

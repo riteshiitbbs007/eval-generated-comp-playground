@@ -1,0 +1,84 @@
+/* Use SLDS styling hooks for colors */
+.slds-card {
+    background: var(--slds-g-color-surface-container-1, var(--slds-g-color-palette-neutral-95));
+    border: 1px solid var(--slds-g-color-border-1, var(--slds-g-color-palette-neutral-80));
+    border-radius: var(--slds-g-radius-border-1, 0.25rem);
+}
+
+.slds-card__header {
+    padding: var(--slds-g-spacing-3, 0.75rem) var(--slds-g-spacing-4, 1rem);
+    margin: 0;
+    border-bottom: 1px solid var(--slds-g-color-border-1, var(--slds-g-color-palette-neutral-80));
+}
+
+.slds-card__header-title {
+    font-weight: var(--slds-g-font-weight-7, 700);
+    color: var(--slds-g-color-on-surface-2, var(--slds-g-color-palette-neutral-30));
+}
+
+.slds-card__body {
+    padding: var(--slds-g-spacing-3, 0.75rem);
+}
+
+/* Table styling */
+.slds-table {
+    background-color: var(--slds-g-color-surface-container-1, var(--slds-g-color-palette-neutral-100));
+}
+
+.slds-table th {
+    background-color: var(--slds-g-color-surface-container-1, var(--slds-g-color-palette-neutral-95));
+    font-weight: var(--slds-g-font-weight-7, 700);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    box-shadow: 0 1px 0 var(--slds-g-color-border-1, var(--slds-g-color-palette-neutral-80));
+}
+
+/* Style for sortable columns */
+.slds-is-sortable .slds-th__action {
+    display: flex;
+    align-items: center;
+    margin-left: var(--slds-g-spacing-2, 0.5rem);
+}
+
+/* Status color indicators */
+.slds-text-color_success {
+    color: var(--slds-g-color-success-1, var(--slds-g-color-palette-green-50));
+}
+
+.slds-text-color_warning {
+    color: var(--slds-g-color-warning-1, var(--slds-g-color-palette-orange-50));
+}
+
+.slds-text-color_error {
+    color: var(--slds-g-color-error-1, var(--slds-g-color-palette-red-50));
+}
+
+/* Focus state for accessibility */
+:focus {
+    outline: 2px solid var(--slds-g-color-accent-1, var(--slds-g-color-palette-brand-40));
+    outline-offset: 2px;
+}
+
+/* Ensure proper spacing between table elements */
+.slds-table td {
+    padding: var(--slds-g-spacing-3, 0.75rem) var(--slds-g-spacing-2, 0.5rem);
+}
+
+/* Make sorting icons more visible on hover */
+.slds-is-sortable:hover .slds-is-sortable__icon {
+    opacity: 1;
+}
+
+.slds-is-sortable__icon {
+    opacity: 0.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 48rem) {
+    .slds-table_header-fixed_container,
+    .slds-scrollable_y {
+        height: auto;
+        max-height: 400px;
+    }
+}

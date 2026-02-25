@@ -1,0 +1,90 @@
+<template>
+    <div class="slds-card">
+        <div class="slds-card__header">
+            <h2 class="slds-card__header-title">Contact Form</h2>
+        </div>
+        <div class="slds-card__body slds-p-around_medium">
+            <form class="slds-form" novalidate>
+                <!-- Name field -->
+                <div class="slds-form-element slds-form-element_stacked slds-m-bottom_small" data-field="name">
+                    <label class="slds-form-element__label" for="name-input">
+                        <abbr class="slds-required" title="required">*</abbr> Name
+                    </label>
+                    <div class="slds-form-element__control">
+                        <lightning-input 
+                            class="name-input" 
+                            type="text" 
+                            name="name" 
+                            id="name-input" 
+                            value={formData.name}
+                            required
+                            onchange={handleInputChange} 
+                            onblur={handleBlur}
+                            variant="standard"
+                            data-field="name">
+                        </lightning-input>
+                    </div>
+                    <template if:true={errors.name.show}>
+                        <div class="slds-form-element__help slds-has-error">{errors.name.message}</div>
+                    </template>
+                </div>
+
+                <!-- Email field -->
+                <div class="slds-form-element slds-form-element_stacked slds-m-bottom_small" data-field="email">
+                    <label class="slds-form-element__label" for="email-input">
+                        <abbr class="slds-required" title="required">*</abbr> Email
+                    </label>
+                    <div class="slds-form-element__control">
+                        <lightning-input 
+                            class="email-input" 
+                            type="email" 
+                            name="email" 
+                            id="email-input" 
+                            value={formData.email}
+                            required
+                            onchange={handleInputChange} 
+                            onblur={handleBlur}
+                            variant="standard"
+                            data-field="email">
+                        </lightning-input>
+                    </div>
+                    <template if:true={errors.email.show}>
+                        <div class="slds-form-element__help slds-has-error">{errors.email.message}</div>
+                    </template>
+                </div>
+
+                <!-- Message field -->
+                <div class="slds-form-element slds-form-element_stacked slds-m-bottom_medium" data-field="message">
+                    <label class="slds-form-element__label" for="message-input">
+                        <abbr class="slds-required" title="required">*</abbr> Message
+                    </label>
+                    <div class="slds-form-element__control">
+                        <lightning-textarea 
+                            class="message-input" 
+                            name="message" 
+                            id="message-input" 
+                            value={formData.message}
+                            required
+                            onchange={handleInputChange} 
+                            onblur={handleBlur}
+                            variant="standard"
+                            data-field="message">
+                        </lightning-textarea>
+                    </div>
+                    <template if:true={errors.message.show}>
+                        <div class="slds-form-element__help slds-has-error">{errors.message.message}</div>
+                    </template>
+                </div>
+            </form>
+        </div>
+        <div class="slds-card__footer slds-text-align_right">
+            <lightning-button 
+                variant="brand" 
+                label="Submit" 
+                title="Submit Form" 
+                onclick={handleSubmit}
+                class="slds-m-right_x-small">
+            </lightning-button>
+        </div>
+    </div>
+</template>

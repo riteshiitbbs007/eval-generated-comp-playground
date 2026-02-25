@@ -1,0 +1,97 @@
+<template>
+    <div class="slds-card">
+        <div class="slds-card__header">
+            <h2 class="slds-card__header-title">
+                <span class="slds-text-heading_medium">Product Table</span>
+            </h2>
+        </div>
+        <div class="slds-card__body">
+            <div class="slds-table_header-fixed_container" tabindex="0">
+                <div class="slds-scrollable_y" style="height: 300px;">
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped slds-table_fixed-layout slds-table_header-fixed" 
+                           aria-label="Product Table" role="grid">
+                        <thead>
+                            <tr class="slds-line-height_reset">
+                                <th scope="col" class="slds-is-sortable slds-is-resizable" aria-sort="none" data-field="productName">
+                                    <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                        <span class="slds-truncate" title="Product Name">Product Name</span>
+                                        <a class="slds-th__action slds-text-link_reset" href="javascript:void(0);" onclick={handleSort} data-field="productName">
+                                            <lightning-icon icon-name="utility:arrowup" size="xx-small" 
+                                                class="slds-icon slds-icon-text-default slds-is-sortable__icon" 
+                                                alternative-text="Sort" data-field="productName">
+                                            </lightning-icon>
+                                        </a>
+                                    </div>
+                                </th>
+                                <th scope="col" class="slds-is-sortable slds-is-resizable" aria-sort="none" data-field="price">
+                                    <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                        <span class="slds-truncate" title="Price">Price</span>
+                                        <a class="slds-th__action slds-text-link_reset" href="javascript:void(0);" onclick={handleSort} data-field="price">
+                                            <lightning-icon icon-name="utility:arrowup" size="xx-small" 
+                                                class="slds-icon slds-icon-text-default slds-is-sortable__icon" 
+                                                alternative-text="Sort" data-field="price">
+                                            </lightning-icon>
+                                        </a>
+                                    </div>
+                                </th>
+                                <th scope="col" class="slds-is-sortable slds-is-resizable" aria-sort="none" data-field="category">
+                                    <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                        <span class="slds-truncate" title="Category">Category</span>
+                                        <a class="slds-th__action slds-text-link_reset" href="javascript:void(0);" onclick={handleSort} data-field="category">
+                                            <lightning-icon icon-name="utility:arrowup" size="xx-small" 
+                                                class="slds-icon slds-icon-text-default slds-is-sortable__icon" 
+                                                alternative-text="Sort" data-field="category">
+                                            </lightning-icon>
+                                        </a>
+                                    </div>
+                                </th>
+                                <th scope="col" class="slds-is-sortable slds-is-resizable" aria-sort="none" data-field="stockStatus">
+                                    <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                        <span class="slds-truncate" title="Stock Status">Stock Status</span>
+                                        <a class="slds-th__action slds-text-link_reset" href="javascript:void(0);" onclick={handleSort} data-field="stockStatus">
+                                            <lightning-icon icon-name="utility:arrowup" size="xx-small" 
+                                                class="slds-icon slds-icon-text-default slds-is-sortable__icon" 
+                                                alternative-text="Sort" data-field="stockStatus">
+                                            </lightning-icon>
+                                        </a>
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template if:true={hasProducts}>
+                                <template for:each={sortedProducts} for:item="product">
+                                    <tr key={product.id} class="slds-hint-parent">
+                                        <td data-label="Product Name">
+                                            <div class="slds-truncate" title={product.productName}>{product.productName}</div>
+                                        </td>
+                                        <td data-label="Price">
+                                            <div class="slds-truncate" title={product.formattedPrice}>{product.formattedPrice}</div>
+                                        </td>
+                                        <td data-label="Category">
+                                            <div class="slds-truncate" title={product.category}>{product.category}</div>
+                                        </td>
+                                        <td data-label="Stock Status">
+                                            <div class="slds-grid slds-grid_vertical-align-center">
+                                                <span class={product.stockStatusClass}>{product.stockStatus}</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </template>
+                            </template>
+                            <template if:false={hasProducts}>
+                                <tr>
+                                    <td colspan="4">
+                                        <div class="slds-text-align_center slds-p-around_medium">
+                                            No products available
+                                        </div>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
