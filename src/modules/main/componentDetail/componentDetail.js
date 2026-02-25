@@ -16,7 +16,8 @@ export default class ComponentDetail extends LightningElement {
   async loadMetadata() {
     try {
       // Load from generated/c/{componentName}/metadata.json
-      const response = await fetch(`/generated/c/${this.componentName}/metadata.json`);
+      const basePath = window.LWR?.env?.basePath || '';
+      const response = await fetch(`${basePath}/generated/c/${this.componentName}/metadata.json`);
       if (!response.ok) {
         throw new Error(`Failed to load metadata: ${response.statusText}`);
       }
@@ -25,7 +26,7 @@ export default class ComponentDetail extends LightningElement {
       // Auto-detect screenshots if missing
       if (!this.metadata.screenshotUrls) {
         this.metadata.screenshotUrls = {
-          desktop: `/generated/c/${this.componentName}/screenshots/desktop.png`
+          desktop: `${basePath}/generated/c/${this.componentName}/screenshots/desktop.png`
         };
       }
     } catch (err) {
