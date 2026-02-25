@@ -18,6 +18,8 @@
     "stage:prod-compat": "yarn build:prod-compat && yarn start"
   },
   "dependencies": {
+    "@lwc/engine-dom": "^8.20.1",
+    "@lwc/synthetic-shadow": "^8.20.1",
     "@salesforce-ux/design-system": "^2.26.2",
     "lightning-base-components": "^1.28.13-alpha",
     "lwc": "8.20.1",
