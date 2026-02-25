@@ -1,0 +1,60 @@
+/**
+ * Primary Action Button Styling
+ * Using SLDS styling hooks for interactive elements
+ */
+
+/* Button with proper hover and focus states */
+.slds-button_brand {
+    /* Use SLDS styling hooks for brand button */
+    background-color: var(--slds-g-color-accent-container-1);
+    border-color: var(--slds-g-color-border-accent-1);
+    color: var(--slds-g-color-on-accent-1);
+    
+    /* Use SLDS spacing utilities for padding */
+    padding-left: var(--slds-g-spacing-3);
+    padding-right: var(--slds-g-spacing-3);
+    
+    /* Transition for smooth state changes */
+    transition: background-color 0.1s linear, 
+                border-color 0.1s linear, 
+                color 0.1s linear;
+}
+
+/* Hover state */
+.slds-button_brand:hover {
+    background-color: var(--slds-g-color-accent-container-2);
+    border-color: var(--slds-g-color-border-accent-2);
+    color: var(--slds-g-color-on-accent-2);
+}
+
+/* Focus state */
+.slds-button_brand:focus {
+    box-shadow: 0 0 3px var(--slds-g-color-accent-1);
+    outline: none;
+}
+
+/* Focus visible state for keyboard navigation */
+.slds-button_brand:focus-visible {
+    outline: 2px solid var(--slds-g-color-accent-1);
+    outline-offset: 1px;
+}
+
+/* Active state */
+.slds-button_brand:active {
+    background-color: var(--slds-g-color-accent-container-3);
+    border-color: var(--slds-g-color-border-accent-3);
+    color: var(--slds-g-color-on-accent-3);
+}
+
+/* Disabled state */
+.slds-button_brand:disabled {
+    background-color: var(--slds-g-color-disabled-container-1);
+    border-color: var(--slds-g-color-border-disabled-1);
+    color: var(--slds-g-color-on-disabled-1);
+    cursor: not-allowed;
+}
+
+/* Icon spacing */
+.slds-button__icon_left {
+    margin-right: var(--slds-g-spacing-2);
+}

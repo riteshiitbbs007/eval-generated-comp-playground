@@ -1,0 +1,146 @@
+/* Container */
+.faqAccordion-container {
+  padding: var(--slds-g-spacing-5);
+  background-color: var(--slds-g-color-surface-1);
+  border-radius: var(--slds-g-radius-2);
+}
+
+.faqAccordion-title {
+  font-weight: var(--slds-g-font-weight-7);
+  color: var(--slds-g-color-on-surface-3);
+  margin-bottom: var(--slds-g-spacing-5);
+  margin-top: 0;
+}
+
+/* Accordion Wrapper */
+.faqAccordion-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--slds-g-spacing-3);
+}
+
+/* Individual Sections */
+.faqAccordion-section {
+  border: 1px solid var(--slds-g-color-border-1);
+  border-radius: var(--slds-g-radius-2);
+  background-color: var(--slds-g-color-surface-1);
+  overflow: hidden;
+}
+
+/* Section Header (Button) */
+.faqAccordion-sectionHeader {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: var(--slds-g-spacing-4);
+  background-color: var(--slds-g-color-surface-2);
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--slds-g-font-family);
+  font-size: var(--slds-g-font-size-base);
+  color: var(--slds-g-color-on-surface-2);
+  transition: background-color 0.2s ease;
+}
+
+/* Hover State */
+.faqAccordion-sectionHeader:hover {
+  background-color: var(--slds-g-color-surface-3);
+}
+
+/* Focus State - Keyboard Navigation */
+.faqAccordion-sectionHeader:focus {
+  outline: 2px solid var(--slds-g-color-accent-1);
+  outline-offset: -2px;
+  box-shadow: inset 0 0 0 2px var(--slds-g-color-surface-1),
+              inset 0 0 0 4px var(--slds-g-color-accent-1);
+}
+
+/* Active/Expanded State */
+.faqAccordion-sectionHeader[aria-expanded="true"] {
+  background-color: var(--slds-g-color-surface-3);
+  color: var(--slds-g-color-on-surface-3);
+}
+
+/* Section Title */
+.faqAccordion-sectionTitle {
+  margin: 0;
+  padding: 0;
+  font-size: var(--slds-g-font-size-base);
+  font-weight: var(--slds-g-font-weight-6);
+  color: inherit;
+  flex: 1;
+}
+
+/* Expand/Collapse Icon */
+.faqAccordion-expandIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: var(--slds-g-spacing-3);
+  color: var(--slds-g-color-neutral-700);
+  user-select: none;
+}
+
+/* Rotate icon for expanded state */
+.faqAccordion-sectionHeader[aria-expanded="true"] .faqAccordion-icon {
+  transform: rotate(0deg);
+  transition: transform 0.2s ease;
+}
+
+.faqAccordion-sectionHeader[aria-expanded="false"] .faqAccordion-icon {
+  transform: rotate(-90deg); 
+  transition: transform 0.2s ease;
+}
+
+/* Section Content */
+.faqAccordion-sectionContent {
+  max-height: 0;
+  overflow: hidden;
+  background-color: var(--slds-g-color-surface-1);
+  transition: max-height 0.3s ease;
+}
+
+.faqAccordion-sectionContent--expanded {
+  max-height: 500px;
+  padding: var(--slds-g-spacing-4);
+}
+
+/* Section Body */
+.faqAccordion-sectionBody {
+  color: var(--slds-g-color-on-surface-2);
+  font-size: var(--slds-g-font-size-base);
+  line-height: var(--slds-g-font-lineheight-3);
+}
+
+.faqAccordion-sectionBody p {
+  margin: 0 0 var(--slds-g-spacing-2) 0;
+}
+
+.faqAccordion-sectionBody p:last-child {
+  margin-bottom: 0;
+}
+
+.faqAccordion-sectionBody ul {
+  margin: var(--slds-g-spacing-2) 0;
+  padding-left: var(--slds-g-spacing-5);
+}
+
+.faqAccordion-sectionBody li {
+  margin-bottom: var(--slds-g-spacing-2);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .faqAccordion-container {
+    padding: var(--slds-g-spacing-3);
+  }
+  
+  .faqAccordion-sectionHeader {
+    padding: var(--slds-g-spacing-3);
+  }
+  
+  .faqAccordion-sectionContent--expanded {
+    padding: var(--slds-g-spacing-3);
+  }
+}

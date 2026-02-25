@@ -1,0 +1,32 @@
+/* SLDS 2 compliant styling using design tokens and styling hooks */
+
+:host {
+    display: block;
+}
+
+.slds-tabs_default {
+    border: 1px solid var(--slds-g-color-border-1);
+    border-radius: var(--slds-g-radius-border-1);
+}
+
+/* Custom active tab styling */
+.slds-tabs_default__item:hover:after {
+    background-color: var(--slds-g-color-accent-2);
+}
+
+.slds-tabs_default__item.slds-is-active:after {
+    background-color: var(--slds-g-color-accent-1);
+    height: 3px;
+}
+
+/* Tab content styling */
+.slds-tabs_default__content {
+    padding: var(--slds-g-spacing-3);
+}
+
+/* Focus state for improved accessibility */
+.slds-tabs_default__link:focus {
+    outline: none;
+    box-shadow: 0 0 3px var(--slds-g-color-accent-1);
+    text-decoration: underline;
+}
