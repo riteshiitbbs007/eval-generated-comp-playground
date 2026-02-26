@@ -21,7 +21,8 @@ BEGIN
 END;
 $$ language 'plpgsql';
 
--- Create trigger to auto-update updated_at
+-- Create trigger to auto-update updated_at (drop first to make idempotent)
+DROP TRIGGER IF EXISTS update_component_notes_updated_at ON component_notes;
 CREATE TRIGGER update_component_notes_updated_at BEFORE UPDATE
 ON component_notes FOR EACH ROW
 EXECUTE FUNCTION update_updated_at_column();
