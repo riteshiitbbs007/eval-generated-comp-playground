@@ -158,3 +158,52 @@
     width: 100%;
   }
 }
+
+/* Date-based accordion styling */
+.gallery-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lwc-spacingMedium, 1rem);
+}
+
+.date-group {
+  border: 1px solid var(--lwc-colorBorder, #c9c7c5);
+  border-radius: var(--lwc-borderRadiusMedium, 0.25rem);
+  background-color: var(--lwc-colorBackground, #ffffff);
+  padding: var(--lwc-spacingSmall, 0.75rem);
+}
+
+.date-group-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: var(--lwc-spacingSmall, 0.75rem);
+  background-color: var(--lwc-colorBackgroundAlt, #f3f2f2);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-radius: var(--lwc-borderRadiusSmall, 0.25rem);
+  margin-bottom: var(--lwc-spacingXSmall, 0.5rem);
+}
+
+.date-group-header:hover {
+  background-color: var(--lwc-colorBackgroundRowHover, #eaeaea);
+}
+
+.date-group-header .slds-icon {
+  fill: var(--lwc-colorTextDefault, #181818);
+  flex-shrink: 0;
+}
+
+.date-group-title {
+  font-weight: 700;
+  font-size: var(--lwc-fontSizeTextLarge, 1rem);
+  color: var(--lwc-colorTextDefault, #181818);
+}
+
+.date-group-count {
+  margin-left: var(--lwc-spacingXxSmall, 0.5rem);
+  font-size: var(--lwc-fontSizeTextMedium, 0.875rem);
+  color: var(--lwc-colorTextWeak, #706e6b);
+  font-weight: 400;
+}

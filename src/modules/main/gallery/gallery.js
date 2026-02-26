@@ -6,6 +6,7 @@ export default class Gallery extends LightningElement {
   loading = true;
   error = null;
   searchTerm = '';
+  openSections = ['today']; // Default: today section open
 
   async connectedCallback() {
     try {
@@ -143,5 +144,69 @@ export default class Gallery extends LightningElement {
         composed: true
       }));
     }
+  }
+
+  getDateGroup(dateString) {
+    const date = new Date(dateString);
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const componentDate = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+    const diffMs = today - componentDate;
+    const diffDays = Math.floor(diffMs / 86400000);
+
+    if (diffDays === 0) {
+      return { id: 'today', label: 'Today', order: 1 };
+    } else if (diffDays === 1) {
+      return { id: 'yesterday', label: 'Yesterday', order: 2 };
+    } else if (diffDays < 7) {
+      const dayName = date.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' });
+      return { id: `day-${diffDays}`, label: dayName, order: 3 + diffDays };
+    } else {
+      const monthYear = date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+      const monthKey = `${date.getFullYear()}-${date.getMonth()}`;
+      return { id: monthKey, label: monthYear, order: 100 + (now.getFullYear() - date.getFullYear()) * 12 + (now.getMonth() - date.getMonth()) };
+    }
+  }
+
+  handleToggleSection(event) {
+    const sectionId = event.currentTarget.dataset.sectionId;
+    if (this.openSections.includes(sectionId)) {
+      this.openSections = this.openSections.filter(id => id !== sectionId);
+    } else {
+      this.openSections = [...this.openSections, sectionId];
+    }
+  }
+
+  get groupedComponents() {
+    if (!this.formattedComponents || this.formattedComponents.length === 0) {
+      return [];
+    }
+
+    // Group components by date
+    const groups = {};
+    this.formattedComponents.forEach(comp => {
+      const dateGroup = this.getDateGroup(comp.timestamp);
+      if (!groups[dateGroup.id]) {
+        groups[dateGroup.id] = {
+          id: dateGroup.id,
+          label: dateGroup.label,
+          order: dateGroup.order,
+          components: [],
+          count: 0
+        };
+      }
+      groups[dateGroup.id].components.push(comp);
+      groups[dateGroup.id].count++;
+    });
+
+    // Convert to array and sort by order
+    const groupArray = Object.values(groups).sort((a, b) => a.order - b.order);
+
+    // Add isOpen property
+    return groupArray.map(group => ({
+      ...group,
+      isOpen: this.openSections.includes(group.id),
+      countLabel: group.count === 1 ? '1 component' : `${group.count} components`
+    }));
   }
 }
