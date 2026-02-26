@@ -2,18 +2,34 @@ import { LightningElement } from 'lwc';
 
 export default class Gallery extends LightningElement {
   components = [];
+  noteCounts = {};
   loading = true;
   error = null;
   searchTerm = '';
 
   async connectedCallback() {
     try {
-      await this.loadComponents();
+      await Promise.all([
+        this.loadComponents(),
+        this.loadNoteCounts()
+      ]);
     } catch (err) {
       this.error = err.message;
       console.error('Error loading components:', err);
     } finally {
       this.loading = false;
+    }
+  }
+
+  async loadNoteCounts() {
+    try {
+      const response = await fetch('/api/notes/counts');
+      if (response.ok) {
+        this.noteCounts = await response.json();
+      }
+    } catch (err) {
+      console.warn('Could not load note counts:', err);
+      // Don't fail the whole page if note counts fail
     }
   }
 
@@ -94,6 +110,7 @@ export default class Gallery extends LightningElement {
     return this.filteredComponents.map(comp => {
       const date = new Date(comp.timestamp);
       const formattedDate = `${String(date.getDate()).padStart(2, '0')}/${String(date.getMonth() + 1).padStart(2, '0')}/${date.getFullYear()}`;
+      const noteCount = this.noteCounts[comp.componentName] || 0;
 
       return {
         ...comp,
@@ -103,6 +120,9 @@ export default class Gallery extends LightningElement {
         formattedSldsScore: comp.scores?.slds_linter?.toFixed(2) || 'N/A',
         formattedTokens: comp.tokenUsage?.totalTokens?.toLocaleString() || 'N/A',
         formattedCost: comp.cost?.totalCost ? `$${comp.cost.totalCost.toFixed(4)}` : 'N/A',
+        noteCount,
+        hasNotes: noteCount > 0,
+        notesLabel: noteCount === 1 ? 'note' : 'notes'
       };
     });
   }

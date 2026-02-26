@@ -4,6 +4,27 @@ import { schemas, validate } from '../middleware/validation.js';
 
 const router = express.Router();
 
+// GET /api/notes/counts - Get note counts for all components
+router.get('/counts', async (req, res, next) => {
+  try {
+    const result = await db.query(
+      `SELECT component_name, COUNT(*)::int as count
+       FROM component_notes
+       GROUP BY component_name`
+    );
+
+    // Convert to object map { componentName: count }
+    const counts = {};
+    result.rows.forEach(row => {
+      counts[row.component_name] = row.count;
+    });
+
+    res.json(counts);
+  } catch (err) {
+    next(err);
+  }
+});
+
 // GET /api/notes/:componentName - Get all notes for a component
 router.get('/:componentName', async (req, res, next) => {
   try {

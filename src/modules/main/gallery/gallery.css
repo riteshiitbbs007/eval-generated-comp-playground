@@ -109,6 +109,31 @@
   padding: var(--lwc-spacingXSmall, 0.5rem);
 }
 
+/* Component header with note badge */
+.component-header {
+  display: flex;
+  align-items: center;
+  gap: var(--lwc-spacingXxSmall, 0.5rem);
+}
+
+.note-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px 6px;
+  background-color: var(--lwc-colorBackgroundInfo, #d8edff);
+  color: var(--lwc-colorTextBrand, #0176d3);
+  border-radius: var(--lwc-borderRadiusMedium, 0.25rem);
+  font-size: var(--lwc-fontSizeTextXSmall, 0.75rem);
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.note-badge .slds-icon {
+  fill: currentColor;
+}
+
 /* Search input styling */
 .slds-page-header__col-actions {
   display: flex;

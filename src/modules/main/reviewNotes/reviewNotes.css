@@ -1,6 +1,48 @@
-.notes-list {
+.notes-accordion {
   max-height: 600px;
   overflow-y: auto;
+}
+
+.date-group {
+  border: 1px solid var(--lwc-colorBorder, #c9c7c5);
+  border-radius: var(--lwc-borderRadiusMedium, 0.25rem);
+  background-color: var(--lwc-colorBackground, #ffffff);
+}
+
+.date-group-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: var(--lwc-spacingSmall, 0.75rem);
+  background-color: var(--lwc-colorBackgroundAlt, #f3f2f2);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.date-group-header:hover {
+  background-color: var(--lwc-colorBackgroundRowHover, #eaeaea);
+}
+
+.date-group-header .slds-icon {
+  fill: var(--lwc-colorTextDefault, #181818);
+  flex-shrink: 0;
+}
+
+.date-group-title {
+  font-weight: 600;
+  font-size: var(--lwc-fontSizeTextMedium, 0.875rem);
+  color: var(--lwc-colorTextDefault, #181818);
+}
+
+.date-group-count {
+  margin-left: var(--lwc-spacingXxSmall, 0.5rem);
+  font-size: var(--lwc-fontSizeTextSmall, 0.8125rem);
+  color: var(--lwc-colorTextWeak, #706e6b);
+}
+
+.date-group-content {
+  padding: var(--lwc-spacingSmall, 0.75rem);
 }
 
 .note-card {
@@ -28,20 +70,20 @@
 }
 
 /* Scrollbar styling */
-.notes-list::-webkit-scrollbar {
+.notes-accordion::-webkit-scrollbar {
   width: 8px;
 }
 
-.notes-list::-webkit-scrollbar-track {
+.notes-accordion::-webkit-scrollbar-track {
   background: var(--lwc-colorBackgroundAlt, #f3f2f2);
   border-radius: 4px;
 }
 
-.notes-list::-webkit-scrollbar-thumb {
+.notes-accordion::-webkit-scrollbar-thumb {
   background: var(--lwc-colorBorder, #c9c7c5);
   border-radius: 4px;
 }
 
-.notes-list::-webkit-scrollbar-thumb:hover {
+.notes-accordion::-webkit-scrollbar-thumb:hover {
   background: var(--lwc-colorBorderPrimary, #0176d3);
 }
