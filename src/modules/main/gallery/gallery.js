@@ -112,6 +112,8 @@ export default class Gallery extends LightningElement {
       const formattedDate = `${String(date.getDate()).padStart(2, '0')}/${String(date.getMonth() + 1).padStart(2, '0')}/${date.getFullYear()}`;
       const noteCount = this.noteCounts[comp.componentName] || 0;
 
+      const notesLabel = noteCount === 1 ? 'note' : 'notes';
+
       return {
         ...comp,
         formattedDate,
@@ -122,7 +124,8 @@ export default class Gallery extends LightningElement {
         formattedCost: comp.cost?.totalCost ? `$${comp.cost.totalCost.toFixed(4)}` : 'N/A',
         noteCount,
         hasNotes: noteCount > 0,
-        notesLabel: noteCount === 1 ? 'note' : 'notes'
+        notesLabel,
+        notesTooltip: `${noteCount} ${notesLabel}`
       };
     });
   }

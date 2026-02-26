@@ -61,7 +61,7 @@
                   {component.componentName}
                 </h2>
                 <template if:true={component.hasNotes}>
-                  <span class="note-badge" title="{component.noteCount} {component.notesLabel}">
+                  <span class="note-badge" title={component.notesTooltip}>
                     <svg class="slds-icon slds-icon_xx-small" aria-hidden="true">
                       <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#note"></use>
                     </svg>
