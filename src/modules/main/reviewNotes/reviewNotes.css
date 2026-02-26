@@ -1,0 +1,47 @@
+.notes-list {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.note-card {
+  background-color: var(--lwc-colorBackground, #ffffff);
+  border: 1px solid var(--lwc-colorBorder, #c9c7c5);
+  border-radius: var(--lwc-borderRadiusMedium, 0.25rem);
+  position: relative;
+}
+
+.note-header {
+  padding-bottom: var(--lwc-spacingXxSmall, 0.25rem);
+  border-bottom: 1px solid var(--lwc-colorBorder, #ecebea);
+}
+
+.note-text {
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.5;
+}
+
+.note-actions {
+  display: flex;
+  gap: var(--lwc-spacingXxSmall, 0.25rem);
+  justify-content: flex-end;
+}
+
+/* Scrollbar styling */
+.notes-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.notes-list::-webkit-scrollbar-track {
+  background: var(--lwc-colorBackgroundAlt, #f3f2f2);
+  border-radius: 4px;
+}
+
+.notes-list::-webkit-scrollbar-thumb {
+  background: var(--lwc-colorBorder, #c9c7c5);
+  border-radius: 4px;
+}
+
+.notes-list::-webkit-scrollbar-thumb:hover {
+  background: var(--lwc-colorBorderPrimary, #0176d3);
+}

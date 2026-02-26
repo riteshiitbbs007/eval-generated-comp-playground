@@ -1,0 +1,151 @@
+<template>
+  <article class="slds-card">
+    <div class="slds-card__header slds-grid">
+      <header class="slds-media slds-media_center slds-has-flexi-truncate">
+        <div class="slds-media__body">
+          <h2 class="slds-card__header-title">
+            <span>📝 Review Notes</span>
+          </h2>
+        </div>
+        <div class="slds-no-flex">
+          <span class="slds-badge">{notesCount} {notesLabel}</span>
+        </div>
+      </header>
+    </div>
+
+    <div class="slds-card__body slds-card__body_inner">
+      <!-- Loading State -->
+      <template if:true={loading}>
+        <div class="slds-align_absolute-center slds-m-vertical_medium">
+          <lightning-spinner alternative-text="Loading notes..." size="small"></lightning-spinner>
+        </div>
+      </template>
+
+      <!-- Error State -->
+      <template if:true={error}>
+        <div class="slds-notify slds-notify_alert slds-theme_error slds-m-bottom_medium">
+          <span class="slds-icon_container slds-icon-utility-error slds-m-right_x-small">
+            <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+              <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#error"></use>
+            </svg>
+          </span>
+          <h2 class="slds-text-body_small">{error}</h2>
+        </div>
+      </template>
+
+      <!-- Add Note Form -->
+      <template if:false={loading}>
+        <div class="slds-form slds-m-bottom_medium">
+          <div class="slds-form-element">
+            <label class="slds-form-element__label" for="note-textarea">
+              <abbr class="slds-required" title="required">*</abbr> Note
+            </label>
+            <div class="slds-form-element__control">
+              <textarea
+                id="note-textarea"
+                class="slds-textarea"
+                placeholder="Enter your review note..."
+                value={noteText}
+                oninput={handleNoteTextChange}
+                rows="4"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="slds-form-element slds-m-top_small">
+            <label class="slds-form-element__label" for="author-input">
+              Author Name (Optional)
+            </label>
+            <div class="slds-form-element__control">
+              <input
+                type="text"
+                id="author-input"
+                class="slds-input"
+                placeholder="Your name"
+                value={authorName}
+                oninput={handleAuthorNameChange}
+              />
+            </div>
+          </div>
+
+          <div class="slds-m-top_small">
+            <button
+              class="slds-button slds-button_brand"
+              onclick={handleSaveNote}
+              disabled={isSaveDisabled}
+            >
+              <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+                <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#add"></use>
+              </svg>
+              Add Note
+            </button>
+          </div>
+        </div>
+      </template>
+
+      <!-- Notes List -->
+      <template if:true={hasNotes}>
+        <div class="notes-list">
+          <template for:each={notes} for:item="note">
+            <div key={note.id} class="note-card slds-box slds-box_x-small slds-m-bottom_small">
+              <div class="note-header slds-grid slds-grid_align-spread slds-m-bottom_x-small">
+                <div class="slds-col">
+                  <template if:true={note.author_name}>
+                    <span class="slds-text-body_small slds-text-color_default">
+                      <strong>{note.author_name}</strong>
+                    </span>
+                  </template>
+                  <template if:false={note.author_name}>
+                    <span class="slds-text-body_small slds-text-color_weak">
+                      <em>Anonymous</em>
+                    </span>
+                  </template>
+                </div>
+                <div class="slds-col slds-no-flex">
+                  <span class="slds-text-body_small slds-text-color_weak">
+                    {note.formattedDate}
+                  </span>
+                </div>
+              </div>
+
+              <div class="note-text slds-text-body_regular slds-m-bottom_x-small">
+                {note.note_text}
+              </div>
+
+              <div class="note-actions">
+                <button
+                  class="slds-button slds-button_icon slds-button_icon-border-filled"
+                  onclick={handleDeleteNote}
+                  data-note-id={note.id}
+                  title="Delete note"
+                >
+                  <svg class="slds-button__icon" aria-hidden="true">
+                    <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#delete"></use>
+                  </svg>
+                  <span class="slds-assistive-text">Delete note</span>
+                </button>
+              </div>
+            </div>
+          </template>
+        </div>
+      </template>
+
+      <!-- Empty State -->
+      <template if:true={showEmptyState}>
+        <div class="slds-align_absolute-center slds-m-vertical_large">
+          <div class="slds-text-align_center">
+            <svg class="slds-icon slds-icon_large slds-icon-text-default" aria-hidden="true">
+              <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#notes"></use>
+            </svg>
+            <h3 class="slds-text-heading_small slds-m-top_small">
+              No notes yet
+            </h3>
+            <p class="slds-text-body_regular slds-text-color_weak slds-m-top_x-small">
+              Add your first review note for this component
+            </p>
+          </div>
+        </div>
+      </template>
+    </div>
+  </article>
+</template>
