@@ -19,10 +19,16 @@ const COMPONENTS_JSON_PATH = path.join(__dirname, '..', 'generated', 'components
 
 /**
  * Convert camelCase component name to kebab-case for HTML tags
- * Example: createPrimaryButtonWith -> create-primary-button-with
+ * Handles consecutive uppercase letters correctly
+ * Examples:
+ *   primaryButtonWithASaveIcon -> primary-button-with-a-save-icon
+ *   createPrimaryButtonWith -> create-primary-button-with
  */
 function toKebabCase(str) {
-  return str.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
+  return str
+    .replace(/([a-z0-9])([A-Z])/g, '$1-$2')  // lowercase/digit followed by uppercase
+    .replace(/([A-Z])([A-Z][a-z])/g, '$1-$2') // uppercase followed by uppercase+lowercase
+    .toLowerCase();
 }
 
 /**
@@ -34,7 +40,8 @@ function capitalize(str) {
 }
 
 /**
- * Scan generated/c/ directory and return all component names
+ * Scan generated/c/ directory and return all component info
+ * Returns array of { folderName, componentName } objects
  */
 function scanComponents() {
   if (!fs.existsSync(GENERATED_DIR)) {
@@ -44,20 +51,46 @@ function scanComponents() {
 
   const entries = fs.readdirSync(GENERATED_DIR, { withFileTypes: true });
 
-  return entries
+  const components = entries
     .filter(entry => entry.isDirectory())
-    .map(entry => entry.name)
-    .sort(); // Alphabetical order for consistency
+    .map(entry => {
+      const folderName = entry.name;
+
+      // Try to read metadata.json to get clean component name
+      const metadataPath = path.join(GENERATED_DIR, folderName, 'metadata.json');
+
+      if (fs.existsSync(metadataPath)) {
+        try {
+          const metadata = JSON.parse(fs.readFileSync(metadataPath, 'utf8'));
+          return {
+            folderName: folderName,
+            componentName: metadata.componentName || folderName
+          };
+        } catch (err) {
+          console.warn(`⚠️  Failed to read metadata for ${folderName}, using folder name`);
+        }
+      }
+
+      // Fallback: use folder name (for backwards compatibility with old components)
+      return {
+        folderName: folderName,
+        componentName: folderName
+      };
+    })
+    .sort((a, b) => a.componentName.localeCompare(b.componentName)); // Sort by component name
+
+  return components;
 }
 
 /**
  * Generate app.js content with all component getters
  */
 function generateAppJs(components) {
-  const getters = components.map(name => {
-    const methodName = `show${capitalize(name)}`;
+  const getters = components.map(({ folderName, componentName }) => {
+    // Direct use - no sanitization needed (UUID has no hyphen!)
+    const methodName = `show${capitalize(componentName)}`;
     return `  get ${methodName}() {
-    return this.selectedComponent === '${name}';
+    return this.selectedComponent === '${componentName}';
   }`;
   }).join('\n\n');
 
@@ -103,11 +136,12 @@ ${getters}
  * Generate app.html content with all component templates
  */
 function generateAppHtml(components) {
-  const templates = components.map(name => {
-    const methodName = `show${capitalize(name)}`;
-    const tagName = toKebabCase(name);
+  const templates = components.map(({ folderName, componentName }) => {
+    // Direct use - no sanitization needed (UUID has no hyphen!)
+    const methodName = `show${capitalize(componentName)}`;
+    const tagName = toKebabCase(componentName);
 
-    return `  <!-- Show ${name} component when selected -->
+    return `  <!-- Show ${folderName} component when selected -->
   <template if:true={${methodName}}>
     <div class="slds-m-bottom_medium">
       <a href="/" class="slds-text-link">← Back to Gallery</a>
@@ -115,7 +149,7 @@ function generateAppHtml(components) {
 
     <div class="slds-box slds-box_small">
       <h2 class="slds-text-heading_medium slds-m-bottom_small">
-        Component: ${name}
+        Component: ${folderName}
       </h2>
       <div class="slds-border_top slds-p-top_medium">
         <c-${tagName}></c-${tagName}>
@@ -147,7 +181,7 @@ ${templates}
  */
 function generateComponentsManifest(components) {
   return JSON.stringify({
-    components: components,
+    components: components.map(c => c.folderName), // Gallery uses folder names for routing
     count: components.length,
     lastUpdated: new Date().toISOString()
   }, null, 2);
@@ -166,7 +200,13 @@ function main() {
   }
 
   console.log(`✅ Found ${components.length} components:`);
-  components.forEach(name => console.log(`   - ${name}`));
+  components.forEach(({ folderName, componentName }) => {
+    if (folderName === componentName) {
+      console.log(`   - ${folderName}`);
+    } else {
+      console.log(`   - ${folderName} (component: ${componentName})`);
+    }
+  });
 
   console.log('\n📝 Generating app.js...');
   const appJsContent = generateAppJs(components);

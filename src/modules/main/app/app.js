@@ -82,4 +82,12 @@ export default class HelloWorldApp extends LightningElement {
   get showCreateVerticalNavMenu() {
     return this.selectedComponent === 'createVerticalNavMenu';
   }
+
+  get showPrimaryButtonWithASaveIcon2a4b46ee() {
+    return this.selectedComponent === 'primaryButtonWithASaveIcon2a4b46ee';
+  }
+
+  get showPrimaryButtonWithASaveIcon3f0774ab() {
+    return this.selectedComponent === 'primaryButtonWithASaveIcon3f0774ab';
+  }
 }

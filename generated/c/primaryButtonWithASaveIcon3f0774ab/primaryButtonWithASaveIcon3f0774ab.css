@@ -1,0 +1,37 @@
+/**
+ * Primary button with save icon styling
+ */
+.slds-button {
+    /* Use styling hooks for theme awareness */
+    color: var(--slds-g-color-on-accent-1);
+    background-color: var(--slds-g-color-accent-container-1);
+    border-color: var(--slds-g-color-border-accent-1);
+    border-radius: var(--slds-g-radius-border-1);
+    padding: var(--slds-g-spacing-2) var(--slds-g-spacing-4);
+    font-weight: var(--slds-g-font-weight-5);
+    transition: all 0.2s ease;
+}
+
+.slds-button:hover {
+    background-color: var(--slds-g-color-accent-container-2);
+    color: var(--slds-g-color-on-accent-2);
+    border-color: var(--slds-g-color-border-accent-2);
+}
+
+.slds-button:active {
+    background-color: var(--slds-g-color-accent-container-3);
+    color: var(--slds-g-color-on-accent-3);
+    border-color: var(--slds-g-color-border-accent-3);
+}
+
+.slds-button:focus {
+    outline: none;
+    box-shadow: 0 0 3px var(--slds-g-color-accent-1);
+}
+
+.slds-button:disabled {
+    background-color: var(--slds-g-color-disabled-container-1);
+    color: var(--slds-g-color-on-disabled-1);
+    border-color: var(--slds-g-color-border-disabled-1);
+    cursor: not-allowed;
+}
