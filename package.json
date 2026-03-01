@@ -17,7 +17,9 @@
     "start": "node server/index.js",
     "start:lwr": "lwr start",
     "stage": "yarn build && yarn start",
-    "stage:prod-compat": "yarn build:prod-compat && yarn start"
+    "stage:prod-compat": "yarn build:prod-compat && yarn start",
+    "screenshots": "node scripts/capture-screenshots.js",
+    "screenshots:all": "node scripts/capture-screenshots.js --all"
   },
   "dependencies": {
     "@salesforce-ux/design-system": "^2.26.2",
@@ -31,7 +33,8 @@
     "pg": "^8.11.3"
   },
   "devDependencies": {
-    "nodemon": "^3.0.2"
+    "nodemon": "^3.0.2",
+    "playwright": "^1.58.2"
   },
   "overrides": {
     "@lwc/compiler": "8.20.1",
