@@ -1,0 +1,44 @@
+<template>
+  <div class="slds-card">
+    <div class="slds-card__body slds-card__body_inner">
+      <!-- FAQ Accordion Container -->
+      <ul class="slds-accordion" role="list">
+        <!-- Dynamic Iteration for Each Section -->
+        <template for:each={sections} for:item="section" for:index="index">
+          <li key={section.id} class="slds-accordion__list-item">
+            <section class={section.sectionClass}>
+              <div class="slds-accordion__summary">
+                <h3 class="slds-accordion__summary-heading">
+                  <button
+                    aria-controls={section.accordionId}
+                    aria-expanded={section.expandedState}
+                    class="slds-button slds-button_reset slds-accordion__summary-action"
+                    onclick={toggleSection}
+                    data-section={index}>
+                    <template if:true={showIcons}>
+                      <span class="slds-icon_container slds-icon-utility-chevronright">
+                        <lightning-icon
+                          icon-name="utility:chevronright"
+                          size="x-small"
+                          class="slds-accordion__summary-action-icon slds-icon-text-default section-icon"
+                          alternative-text="Toggle section">
+                        </lightning-icon>
+                      </span>
+                    </template>
+                    <span class="slds-accordion__summary-content">{section.question}</span>
+                  </button>
+                </h3>
+              </div>
+              <div
+                aria-hidden={section.ariaHidden}
+                class="slds-accordion__content"
+                id={section.accordionId}>
+                <p>{section.answer}</p>
+              </div>
+            </section>
+          </li>
+        </template>
+      </ul>
+    </div>
+  </div>
+</template>

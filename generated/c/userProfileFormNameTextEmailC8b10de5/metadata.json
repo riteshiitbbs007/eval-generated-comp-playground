@@ -1,0 +1,29 @@
+{
+  "folderName": "userProfileFormNameTextEmail-C09-Moderate-20260228",
+  "componentName": "userProfileFormNameTextEmailC8b10de5",
+  "csvId": "C09",
+  "variant": "Moderate",
+  "timestamp": "2026-02-28T16:12:20.726Z",
+  "utterance": "User profile form: name (text), email, phone, country (dropdown), interests (checkbox group), bio (textarea). 2-column layout",
+  "tier": "Tier 2",
+  "complexity": "Intermediate",
+  "scores": {
+    "slds_linter": 0.5740000000000001,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.79
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 77,
+    "notes": 0
+  },
+  "utteranceId": "C09",
+  "errorsByType": {
+    "slds/no-slds-class-overrides": 24,
+    "slds/no-slds-var-without-fallback": 45,
+    "slds/no-hardcoded-values-slds2": 7,
+    "slds/no-slds-namespace-for-custom-hooks": 1
+  }
+}

@@ -7,6 +7,27 @@ export default class Gallery extends LightningElement {
   error = null;
   searchTerm = '';
   openSections = ['today']; // Default: today section open
+  errorBreakdownStates = {}; // Track which cards have error breakdown expanded
+
+  /**
+   * Strips the 8-character hex UUID suffix from component name for display
+   * @param {string} componentName - Full component name with UUID
+   * @returns {string} Display name without UUID
+   */
+  stripUuidFromName(componentName) {
+    if (!componentName) return '';
+
+    // Check if name ends with 8 hex characters (UUID pattern)
+    const uuidPattern = /[a-f0-9]{8}$/i;
+
+    if (uuidPattern.test(componentName)) {
+      // Strip last 8 characters
+      return componentName.slice(0, -8);
+    }
+
+    // Return as-is if no UUID found
+    return componentName;
+  }
 
   async connectedCallback() {
     try {
@@ -66,6 +87,9 @@ export default class Gallery extends LightningElement {
             // Add readiness class for color coding
             metadata.readinessClass = this.getReadinessClass(metadata.scores?.overall || 0);
 
+            // Create display name by stripping UUID
+            metadata.displayName = this.stripUuidFromName(metadata.componentName);
+
             loadedComponents.push(metadata);
           }
         } catch (err) {
@@ -99,6 +123,7 @@ export default class Gallery extends LightningElement {
     }
     const searchLower = this.searchTerm.toLowerCase();
     return this.components.filter(comp =>
+      comp.displayName.toLowerCase().includes(searchLower) ||
       comp.componentName.toLowerCase().includes(searchLower)
     );
   }
@@ -126,7 +151,23 @@ export default class Gallery extends LightningElement {
         noteCount,
         hasNotes: noteCount > 0,
         notesLabel,
-        notesTooltip: `${noteCount} ${notesLabel}`
+        notesTooltip: `${noteCount} ${notesLabel}`,
+
+        // NEW FIELDS
+        hasLangsmithUrl: !!comp.langsmithRunUrl,
+        langsmithRunUrl: comp.langsmithRunUrl || null,
+        utteranceId: comp.utteranceId || null,
+        variant: comp.variant || null,
+        hasErrorsByType: comp.errorsByType && Object.keys(comp.errorsByType).length > 0,
+        errorTypeEntries: comp.errorsByType
+          ? Object.entries(comp.errorsByType)
+              .sort((a, b) => b[1] - a[1])
+              .map(([type, count]) => ({ type, count }))
+          : [],
+        totalErrorBreakdown: comp.errorsByType
+          ? Object.values(comp.errorsByType).reduce((sum, count) => sum + count, 0)
+          : 0,
+        showErrorBreakdown: this.errorBreakdownStates[comp.componentName] || false
       };
     });
   }
@@ -144,6 +185,13 @@ export default class Gallery extends LightningElement {
         composed: true
       }));
     }
+  }
+
+  handleToggleErrorBreakdown(event) {
+    const componentName = event.currentTarget.dataset.component;
+    this.errorBreakdownStates[componentName] = !this.errorBreakdownStates[componentName];
+    // Force re-render
+    this.components = [...this.components];
   }
 
   getDateGroup(dateString) {

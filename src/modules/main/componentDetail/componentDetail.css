@@ -35,3 +35,53 @@
 .slds-dl_horizontal dd {
   width: 60%;
 }
+
+/* Utterance ID container */
+.utterance-id-container {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--lwc-spacingXxSmall, 0.5rem);
+}
+
+.utterance-id-code {
+  background-color: var(--lwc-colorBackgroundAlt2, #ecebea);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: 'Courier New', Consolas, monospace;
+  font-size: var(--lwc-fontSizeTextSmall, 0.875rem);
+  color: var(--lwc-colorTextDefault, #181818);
+  font-weight: 500;
+}
+
+/* LangSmith link */
+.langsmith-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.langsmith-link:hover {
+  text-decoration: underline;
+}
+
+.langsmith-link .slds-icon {
+  fill: var(--lwc-colorBrand, #0176d3);
+}
+
+/* Error breakdown detail view */
+.error-breakdown-detail {
+  background-color: var(--lwc-colorBackgroundAlt, #f3f2f2);
+  padding: var(--lwc-spacingSmall, 0.75rem);
+  border-radius: var(--lwc-borderRadiusMedium, 0.25rem);
+  border: 1px solid var(--lwc-colorBorder, #c9c7c5);
+}
+
+.error-type-badge {
+  background-color: var(--lwc-colorBackgroundAlt2, #ecebea);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: 'Courier New', Consolas, monospace;
+  font-size: var(--lwc-fontSizeTextSmall, 0.875rem);
+  color: var(--lwc-colorTextError, #c23934);
+  font-weight: 600;
+}

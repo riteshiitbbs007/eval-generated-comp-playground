@@ -29,7 +29,7 @@
           <div class="slds-page-header__col-title">
             <div class="slds-media">
               <div class="slds-media__body">
-                <h1 class="slds-page-header__title">{componentName}</h1>
+                <h1 class="slds-page-header__title">{displayName}</h1>
                 <p class="slds-text-body_small slds-text-color_weak">
                   Generated on {formattedTimestamp}
                 </p>
@@ -69,11 +69,53 @@
                 <dt class="slds-dl__label">Utterance:</dt>
                 <dd class="slds-dl__detail">{metadata.utterance}</dd>
 
+                <!-- NEW: Utterance ID with copy button -->
+                <template if:true={hasUtteranceId}>
+                  <dt class="slds-dl__label">Utterance ID:</dt>
+                  <dd class="slds-dl__detail">
+                    <div class="utterance-id-container">
+                      <code class="utterance-id-code">{utteranceId}</code>
+                      <button
+                        class="slds-button slds-button_icon slds-button_icon-border-filled slds-button_icon-x-small"
+                        onclick={handleCopyUtteranceId}
+                        title="Copy utterance ID">
+                        <svg class="slds-button__icon slds-button__icon_x-small" aria-hidden="true">
+                          <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#copy"></use>
+                        </svg>
+                        <span class="slds-assistive-text">Copy utterance ID</span>
+                      </button>
+                    </div>
+                  </dd>
+                </template>
+
                 <dt class="slds-dl__label">Tier:</dt>
                 <dd class="slds-dl__detail">{metadata.tier}</dd>
 
                 <dt class="slds-dl__label">Complexity:</dt>
                 <dd class="slds-dl__detail">{metadata.complexity}</dd>
+
+                <!-- NEW: Variant -->
+                <template if:true={hasVariant}>
+                  <dt class="slds-dl__label">Variant:</dt>
+                  <dd class="slds-dl__detail">{variant}</dd>
+                </template>
+
+                <!-- NEW: LangSmith Run Link -->
+                <template if:true={hasLangsmithUrl}>
+                  <dt class="slds-dl__label">LangSmith Run:</dt>
+                  <dd class="slds-dl__detail">
+                    <a
+                      href={langsmithRunUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="slds-text-link langsmith-link">
+                      <svg class="slds-icon slds-icon_xx-small slds-m-right_xx-small" aria-hidden="true">
+                        <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#new_window"></use>
+                      </svg>
+                      View in LangSmith
+                    </a>
+                  </dd>
+                </template>
               </dl>
             </div>
           </article>
@@ -116,11 +158,35 @@
               </header>
             </div>
             <div class="slds-card__body slds-card__body_inner">
-              <ul class="slds-list_dotted">
+              <!-- Summary -->
+              <ul class="slds-list_dotted slds-m-bottom_medium">
                 <li>Errors: {metadata.violations.errors}</li>
                 <li>Warnings: {metadata.violations.warnings}</li>
                 <li>Notes: {metadata.violations.notes}</li>
               </ul>
+
+              <!-- NEW: Error breakdown by type -->
+              <template if:true={hasErrorsByType}>
+                <div class="error-breakdown-detail">
+                  <h3 class="slds-text-heading_small slds-m-bottom_small">
+                    Error Breakdown by Type
+                  </h3>
+                  <ul class="slds-list_vertical slds-has-dividers_top-space">
+                    <template for:each={errorsByType} for:item="error">
+                      <li key={error.type} class="slds-item slds-p-vertical_x-small">
+                        <div class="slds-grid slds-grid_align-spread">
+                          <div class="slds-col">
+                            <code class="error-type-badge">{error.type}</code>
+                          </div>
+                          <div class="slds-col slds-no-flex">
+                            <span class="slds-badge slds-theme_error">{error.count}</span>
+                          </div>
+                        </div>
+                      </li>
+                    </template>
+                  </ul>
+                </div>
+              </template>
             </div>
           </article>
         </div>

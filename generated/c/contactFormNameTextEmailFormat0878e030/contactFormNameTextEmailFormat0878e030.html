@@ -1,0 +1,82 @@
+<template>
+    <div class="slds-form contact-form">
+        <div class="slds-form-element" data-field="name">
+            <label class="slds-form-element__label" for="name">Name</label>
+            <div class="slds-form-element__control">
+                <input type="text"
+                       id="name"
+                       class={nameInputClass}
+                       placeholder="Enter your name"
+                       onblur={handleNameBlur}
+                       onchange={handleNameChange}
+                       aria-describedby={nameHasError}
+                       required />
+            </div>
+            <template if:true={hasNameError}>
+                <div class="slds-form-element__help slds-has-error" id="name-error" role="alert">
+                    <lightning-icon icon-name="utility:error"
+                                    size="x-small"
+                                    class="slds-icon slds-icon_x-small slds-icon-text-error slds-m-right_x-small"
+                                    alternative-text="Error">
+                    </lightning-icon>
+                    {nameErrorMessage}
+                </div>
+            </template>
+        </div>
+
+        <div class="slds-form-element slds-m-top_medium" data-field="email">
+            <label class="slds-form-element__label" for="email">Email</label>
+            <div class="slds-form-element__control">
+                <input type="email"
+                       id="email"
+                       class={emailInputClass}
+                       placeholder="Enter your email"
+                       onblur={handleEmailBlur}
+                       onchange={handleEmailChange}
+                       aria-describedby={emailHasError}
+                       required />
+            </div>
+            <template if:true={hasEmailError}>
+                <div class="slds-form-element__help slds-has-error" id="email-error" role="alert">
+                    <lightning-icon icon-name="utility:error"
+                                    size="x-small"
+                                    class="slds-icon slds-icon_x-small slds-icon-text-error slds-m-right_x-small"
+                                    alternative-text="Error">
+                    </lightning-icon>
+                    {emailErrorMessage}
+                </div>
+            </template>
+        </div>
+
+        <div class="slds-form-element slds-m-top_medium" data-field="message">
+            <label class="slds-form-element__label" for="message">Message</label>
+            <div class="slds-form-element__control">
+                <textarea id="message"
+                          class={messageInputClass}
+                          placeholder="Enter your message (min 10 characters)"
+                          onblur={handleMessageBlur}
+                          onchange={handleMessageChange}
+                          aria-describedby={messageHasError}
+                          required></textarea>
+            </div>
+            <template if:true={hasMessageError}>
+                <div class="slds-form-element__help slds-has-error" id="message-error" role="alert">
+                    <lightning-icon icon-name="utility:error"
+                                    size="x-small"
+                                    class="slds-icon slds-icon_x-small slds-icon-text-error slds-m-right_x-small"
+                                    alternative-text="Error">
+                    </lightning-icon>
+                    {messageErrorMessage}
+                </div>
+            </template>
+        </div>
+
+        <div class="slds-m-top_medium">
+            <lightning-button variant="brand"
+                              label="Submit"
+                              onclick={handleSubmit}
+                              disabled={isSubmitDisabled}>
+            </lightning-button>
+        </div>
+    </div>
+</template>

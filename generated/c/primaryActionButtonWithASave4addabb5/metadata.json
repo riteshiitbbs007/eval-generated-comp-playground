@@ -1,0 +1,31 @@
+{
+  "folderName": "primaryActionButtonWithASave-C01-Moderate-20260228",
+  "componentName": "primaryActionButtonWithASave4addabb5",
+  "csvId": "C01",
+  "variant": "Moderate",
+  "timestamp": "2026-02-28T15:28:40.957Z",
+  "utterance": "Create a primary action button with a \"save\" icon on the left and text \"Save Changes\"",
+  "tier": "Tier 1",
+  "complexity": "Simple",
+  "scores": {
+    "slds_linter": 0.7149999999999999,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.86
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 27,
+    "notes": 0
+  },
+  "utteranceId": "C01",
+  "errorsByType": {
+    "slds/no-hardcoded-values-slds2": 3,
+    "slds/no-slds-class-overrides": 7,
+    "slds/no-slds-var-without-fallback": 17
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/primaryActionButtonWithASave4addabb5/screenshots/desktop.png"
+  }
+}
