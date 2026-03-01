@@ -178,7 +178,7 @@
   border-radius: var(--lwc-borderRadiusMedium, 0.25rem);
   background-color: var(--lwc-colorBackground, #ffffff);
   padding: var(--lwc-spacingSmall, 0.75rem);
-  width: 100%;
+  width: 100vw;
   max-width: 100%;
   min-width: 0;
   box-sizing: border-box;
