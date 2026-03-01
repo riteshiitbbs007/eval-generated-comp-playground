@@ -3,7 +3,9 @@
   grid-template-columns: repeat(4, 1fr);
   gap: var(--lwc-spacingMedium, 1rem);
   width: 100%;
+  max-width: 100%;
   box-sizing: border-box;
+  margin: 0;
 }
 
 /* Responsive grid - show more cards on larger screens */
@@ -167,6 +169,7 @@
   flex-direction: column;
   gap: var(--lwc-spacingMedium, 1rem);
   width: 100%;
+  max-width: 100%;
   box-sizing: border-box;
 }
 
@@ -176,11 +179,18 @@
   background-color: var(--lwc-colorBackground, #ffffff);
   padding: var(--lwc-spacingSmall, 0.75rem);
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .date-group-header {
   width: 100%;
+  min-width: 100%;
+  max-width: 100%;
   display: flex;
   align-items: center;
   padding: var(--lwc-spacingSmall, 0.75rem);
@@ -190,6 +200,8 @@
   transition: background-color 0.2s ease;
   border-radius: var(--lwc-borderRadiusSmall, 0.25rem);
   margin-bottom: var(--lwc-spacingXSmall, 0.5rem);
+  flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 .date-group-header:hover {
@@ -212,6 +224,95 @@
   font-size: var(--lwc-fontSizeTextMedium, 0.875rem);
   color: var(--lwc-colorTextWeak, #706e6b);
   font-weight: 400;
+}
+
+/* Ensure consistent width for accordion when collapsed */
+.date-group .gallery-grid {
+  width: 100%;
+  max-width: 100%;
+  flex: 1;
+}
+
+/* Remove any unwanted margins that might affect width */
+.gallery-accordion .date-group {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Ensure parent container respects full width */
+.gallery-accordion {
+  align-self: stretch;
+}
+
+/* Make sure the header content doesn't overflow */
+.date-group-header {
+  overflow: hidden;
+}
+
+.date-group-title,
+.date-group-count {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Metadata badges styling */
+.metadata-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.metadata-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+/* Utterance ID badge - simple, minimal style */
+.utterance-badge {
+  background-color: #f4f6f9;
+  border: 1px solid #d8dde6;
+  color: #3e3e3c;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Courier New', monospace;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.utterance-badge:hover {
+  background-color: #e8ecf3;
+  border-color: #c5ccd9;
+}
+
+/* Variant badge - colorful, stands out */
+.variant-badge {
+  background-color: #d8edff;
+  border: 1px solid #1b96ff;
+  color: #014486;
+  padding-left: 6px;
+}
+
+.variant-badge:hover {
+  background-color: #c2e5ff;
+  border-color: #0176d3;
+}
+
+.variant-badge .slds-icon {
+  fill: #0176d3;
+  flex-shrink: 0;
+}
+
+.metadata-badge-text {
+  font-weight: 600;
+  letter-spacing: 0.2px;
 }
 
 /* Error breakdown styling */

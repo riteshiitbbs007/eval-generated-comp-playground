@@ -85,3 +85,114 @@
   color: var(--lwc-colorTextError, #c23934);
   font-weight: 600;
 }
+
+/* Code Viewer Styles */
+.code-viewer-content {
+  background-color: #1e1e1e;
+  border: 1px solid #3e3e42;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.code-viewer {
+  max-height: 600px;
+  overflow: auto;
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  position: relative;
+}
+
+.code-block {
+  margin: 0;
+  padding: 1.25rem 1.5rem;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Menlo', 'Consolas', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  white-space: pre;
+  overflow-x: auto;
+  tab-size: 2;
+  -moz-tab-size: 2;
+  letter-spacing: 0.2px;
+  font-variant-ligatures: none;
+  counter-reset: line-number;
+}
+
+.code-block code {
+  font-family: inherit;
+  color: inherit;
+  background: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+/* Tab styling */
+.slds-tabs_default__nav {
+  background-color: #2d2d30;
+  border-bottom: 1px solid #3e3e42;
+  padding: 0;
+  margin: 0;
+}
+
+.slds-tabs_default__nav li {
+  margin: 0;
+}
+
+.slds-tabs_default__link {
+  color: #969696 !important;
+  border: none !important;
+  padding: 10px 20px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+  background-color: transparent !important;
+}
+
+.slds-tabs_default__link:hover {
+  color: #e0e0e0 !important;
+  background-color: #3e3e42 !important;
+}
+
+.slds-tabs_default__nav .slds-is-active .slds-tabs_default__link {
+  color: #ffffff !important;
+  background-color: #1e1e1e !important;
+  border: none !important;
+  border-bottom: 2px solid #0098ff !important;
+  padding-bottom: 8px !important;
+}
+
+/* Scrollbar styling for code viewer - VS Code style */
+.code-viewer::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+.code-viewer::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+.code-viewer::-webkit-scrollbar-thumb {
+  background: #424242;
+  border: 3px solid #1e1e1e;
+  border-radius: 7px;
+}
+
+.code-viewer::-webkit-scrollbar-thumb:hover {
+  background: #4e4e4e;
+}
+
+.code-viewer::-webkit-scrollbar-corner {
+  background: #1e1e1e;
+}
+
+/* Better text selection in code viewer */
+.code-viewer ::selection {
+  background-color: #264f78;
+  color: #ffffff;
+}
+
+.code-viewer ::-moz-selection {
+  background-color: #264f78;
+  color: #ffffff;
+}

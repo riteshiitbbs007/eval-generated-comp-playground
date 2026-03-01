@@ -270,6 +270,84 @@
           </template>
         </div>
 
+        <!-- Source Code Viewer Section (Full Width) -->
+        <div class="slds-col slds-size_1-of-1 slds-m-top_medium">
+          <article class="slds-card">
+            <div class="slds-card__header slds-grid">
+              <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__body">
+                  <h2 class="slds-card__header-title">
+                    <span>Source Code</span>
+                  </h2>
+                </div>
+              </header>
+            </div>
+            <div class="slds-card__body">
+              <!-- Code Tabs -->
+              <div class="slds-tabs_default">
+                <ul class="slds-tabs_default__nav" role="tablist">
+                  <li class={htmlTabClass} role="presentation">
+                    <a
+                      class="slds-tabs_default__link"
+                      role="tab"
+                      tabindex="0"
+                      aria-selected={isHtmlTabActive}
+                      data-tab="html"
+                      onclick={handleCodeTabChange}>
+                      HTML
+                    </a>
+                  </li>
+                  <li class={cssTabClass} role="presentation">
+                    <a
+                      class="slds-tabs_default__link"
+                      role="tab"
+                      tabindex="0"
+                      aria-selected={isCssTabActive}
+                      data-tab="css"
+                      onclick={handleCodeTabChange}>
+                      CSS
+                    </a>
+                  </li>
+                  <li class={jsTabClass} role="presentation">
+                    <a
+                      class="slds-tabs_default__link"
+                      role="tab"
+                      tabindex="0"
+                      aria-selected={isJsTabActive}
+                      data-tab="js"
+                      onclick={handleCodeTabChange}>
+                      JS
+                    </a>
+                  </li>
+                </ul>
+
+                <!-- Code Content -->
+                <div class="slds-tabs_default__content code-viewer-content">
+                  <template if:true={loadingCode}>
+                    <div class="slds-text-align_center slds-p-around_medium">
+                      <lightning-spinner alternative-text="Loading code..." size="small"></lightning-spinner>
+                    </div>
+                  </template>
+
+                  <template if:true={codeError}>
+                    <div class="slds-text-color_error slds-p-around_medium">
+                      {codeError}
+                    </div>
+                  </template>
+
+                  <template if:false={loadingCode}>
+                    <template if:false={codeError}>
+                      <div class="code-viewer">
+                        <pre class="code-block"><code>{activeSourceCode}</code></pre>
+                      </div>
+                    </template>
+                  </template>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
         <!-- Review Notes Section (Full Width) -->
         <div class="slds-col slds-size_1-of-1 slds-m-top_medium">
           <main-review-notes component-name={componentName}></main-review-notes>

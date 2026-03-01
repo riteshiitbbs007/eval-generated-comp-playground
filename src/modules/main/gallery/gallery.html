@@ -101,6 +101,25 @@
                         • {component.formattedDate}
                       </div>
 
+                      <!-- Utterance ID and Variant badges -->
+                      <template if:true={component.hasMetadataBadges}>
+                        <div class="metadata-badges slds-m-bottom_small">
+                          <template if:true={component.utteranceId}>
+                            <span class="metadata-badge utterance-badge" title="Utterance ID">
+                              {component.utteranceIdShort}
+                            </span>
+                          </template>
+                          <template if:true={component.variant}>
+                            <span class="metadata-badge variant-badge" title="Variant">
+                              <svg class="slds-icon slds-icon_xx-small" aria-hidden="true">
+                                <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#layers"></use>
+                              </svg>
+                              <span class="metadata-badge-text">{component.variant}</span>
+                            </span>
+                          </template>
+                        </div>
+                      </template>
+
                       <!-- Screenshot -->
                       <template if:true={component.screenshotUrls.desktop}>
                         <div class="screenshot-container slds-m-bottom_small">

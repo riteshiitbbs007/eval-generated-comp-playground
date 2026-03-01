@@ -7,6 +7,16 @@ export default class ComponentDetail extends LightningElement {
   loading = true;
   error = null;
 
+  // Code viewer state
+  activeCodeTab = 'html';
+  sourceCode = {
+    html: '',
+    css: '',
+    js: ''
+  };
+  loadingCode = false;
+  codeError = null;
+
   /**
    * Strips the 8-character hex UUID suffix from component name for display
    * @param {string} componentName - Full component name with UUID
@@ -33,7 +43,10 @@ export default class ComponentDetail extends LightningElement {
 
   async connectedCallback() {
     if (this.componentName) {
-      await this.loadMetadata();
+      await Promise.all([
+        this.loadMetadata(),
+        this.loadSourceCode()
+      ]);
     }
   }
 
@@ -140,5 +153,78 @@ export default class ComponentDetail extends LightningElement {
           console.error('Failed to copy:', err);
         });
     }
+  }
+
+  async loadSourceCode() {
+    if (!this.componentName) return;
+
+    this.loadingCode = true;
+    this.codeError = null;
+
+    try {
+      const basePath = `/generated/c/${this.componentName}`;
+      const files = ['html', 'css', 'js'];
+
+      const results = await Promise.all(
+        files.map(ext =>
+          fetch(`${basePath}/${this.componentName}.${ext}`)
+            .then(res => res.ok ? res.text() : '')
+            .catch(() => '')
+        )
+      );
+
+      this.sourceCode = {
+        html: results[0] || '// No HTML file found',
+        css: results[1] || '/* No CSS file found */',
+        js: results[2] || '// No JS file found'
+      };
+
+    } catch (err) {
+      this.codeError = 'Failed to load source code';
+      console.error('Error loading source code:', err);
+    } finally {
+      this.loadingCode = false;
+    }
+  }
+
+  handleCodeTabChange(event) {
+    this.activeCodeTab = event.target.dataset.tab;
+  }
+
+  get activeSourceCode() {
+    return this.sourceCode[this.activeCodeTab] || '';
+  }
+
+  get isHtmlTabActive() {
+    return this.activeCodeTab === 'html';
+  }
+
+  get isCssTabActive() {
+    return this.activeCodeTab === 'css';
+  }
+
+  get isJsTabActive() {
+    return this.activeCodeTab === 'js';
+  }
+
+  get htmlTabClass() {
+    return this.activeCodeTab === 'html' ? 'slds-is-active' : '';
+  }
+
+  get cssTabClass() {
+    return this.activeCodeTab === 'css' ? 'slds-is-active' : '';
+  }
+
+  get jsTabClass() {
+    return this.activeCodeTab === 'js' ? 'slds-is-active' : '';
+  }
+
+  get codeLanguage() {
+    const languageMap = {
+      html: 'HTML',
+      css: 'CSS',
+      js: 'JavaScript'
+    };
+    return languageMap[this.activeCodeTab] || 'Code';
   }
 }
