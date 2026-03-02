@@ -1,3 +1,83 @@
+/* Gallery Container - Full viewport */
+.gallery-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Fixed Header at Top */
+.gallery-header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--lwc-colorBackground, #ffffff);
+  border-bottom: 1px solid var(--lwc-colorBorder, #c9c7c5);
+  box-shadow: var(--lwc-shadowHeader, 0 2px 4px rgba(0, 0, 0, 0.07));
+}
+
+/* Header Content with Max Width */
+.gallery-header-content {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: var(--lwc-spacingMedium, 1rem);
+}
+
+/* Scrollable Content Area */
+.gallery-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: var(--lwc-spacingMedium, 1rem);
+  margin-top: 120px; /* Height of fixed header */
+  max-width: 1600px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar styling for content area */
+.gallery-content::-webkit-scrollbar {
+  width: 12px;
+}
+
+.gallery-content::-webkit-scrollbar-track {
+  background: var(--lwc-colorBackgroundAlt, #f3f2f2);
+}
+
+.gallery-content::-webkit-scrollbar-thumb {
+  background: var(--lwc-colorBorder, #c9c7c5);
+  border-radius: 6px;
+}
+
+.gallery-content::-webkit-scrollbar-thumb:hover {
+  background: var(--lwc-colorBorderStrong, #706e6b);
+}
+
+/* Responsive header adjustments */
+@media (max-width: 768px) {
+  .gallery-content {
+    margin-top: 160px; /* More height on mobile for wrapped header */
+  }
+
+  .gallery-header-content {
+    padding: var(--lwc-spacingSmall, 0.75rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-content {
+    margin-top: 180px; /* Even more height for small mobile */
+  }
+}
+
+/* Grid Layout */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

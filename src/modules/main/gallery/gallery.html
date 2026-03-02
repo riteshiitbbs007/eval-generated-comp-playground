@@ -1,37 +1,45 @@
 <template>
-  <div class="slds-p-around_medium" style="max-width: 1600px; margin: 0 auto;">
-    <div class="slds-page-header">
-      <div class="slds-page-header__row">
-        <div class="slds-page-header__col-title">
-          <div class="slds-media">
-            <div class="slds-media__body">
-              <h1 class="slds-page-header__title slds-m-right_small">
-                Generated Components Gallery
-              </h1>
-              <p class="slds-text-body_small slds-text-color_weak">
-                Total components: {componentCount}
-              </p>
+  <div class="gallery-container">
+    <!-- Fixed Header -->
+    <div class="gallery-header-fixed">
+      <div class="gallery-header-content">
+        <div class="slds-page-header">
+          <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+              <div class="slds-media">
+                <div class="slds-media__body">
+                  <h1 class="slds-page-header__title slds-m-right_small">
+                    Generated Components Gallery
+                  </h1>
+                  <p class="slds-text-body_small slds-text-color_weak">
+                    Total components: {componentCount}
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="slds-page-header__col-actions">
-          <div class="slds-form-element">
-            <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
-              <svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
-                <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#search"></use>
-              </svg>
-              <input
-                type="text"
-                class="slds-input"
-                placeholder="Search components..."
-                value={searchTerm}
-                oninput={handleSearch}
-              />
+            <div class="slds-page-header__col-actions">
+              <div class="slds-form-element">
+                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                  <svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
+                    <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#search"></use>
+                  </svg>
+                  <input
+                    type="text"
+                    class="slds-input"
+                    placeholder="Search components..."
+                    value={searchTerm}
+                    oninput={handleSearch}
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Scrollable Content -->
+    <div class="gallery-content">
 
     <template if:true={loading}>
       <div class="slds-align_absolute-center slds-m-top_xx-large">
@@ -216,5 +224,8 @@
         </div>
       </template>
     </template>
+    </div>
+    <!-- End .gallery-content -->
   </div>
+  <!-- End .gallery-container -->
 </template>
