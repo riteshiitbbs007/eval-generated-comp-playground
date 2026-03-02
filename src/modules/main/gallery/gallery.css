@@ -6,6 +6,7 @@
   max-width: 100%;
   box-sizing: border-box;
   margin: 0;
+  align-items: start;
 }
 
 /* Responsive grid - show more cards on larger screens */
@@ -44,6 +45,21 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  align-self: start;
+}
+
+/* Override SLDS adjacent sibling margin that causes misalignment in grid */
+.gallery-grid .slds-card + .slds-card {
+  margin-block-start: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Reset all card margins in grid to ensure alignment */
+.gallery-grid .slds-card {
+  margin-block-start: 0 !important;
+  margin-block-end: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .component-card:hover {
