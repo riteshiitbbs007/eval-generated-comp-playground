@@ -189,6 +189,12 @@ export default class Gallery extends LightningElement {
     }
   }
 
+  handleShowOnboarding() {
+    // Clear onboarding localStorage and refresh page
+    localStorage.removeItem('lwc-gallery-onboarding-completed');
+    window.location.reload();
+  }
+
   handleToggleErrorBreakdown(event) {
     const componentName = event.currentTarget.dataset.component;
     this.errorBreakdownStates[componentName] = !this.errorBreakdownStates[componentName];

@@ -159,6 +159,9 @@ function generateAppHtml(components) {
   }).join('\n  \n');
 
   return `<template>
+  <!-- Onboarding Modal (shows on first visit) -->
+  <main-onboarding-modal></main-onboarding-modal>
+
   <main class="slds-p-around_medium">
     <!-- Show gallery view when no component selected -->
     <template if:true={showGallery}>
