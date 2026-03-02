@@ -15,45 +15,29 @@ export default class Utterances extends LightningElement {
       this.loading = true;
       this.error = '';
 
-      // Fetch component manifest
-      const manifestResponse = await fetch('/generated/components.json');
-      if (!manifestResponse.ok) {
-        throw new Error('Could not load components manifest');
+      // Fetch CSV file
+      const response = await fetch('/public/assets/utterances.csv');
+      if (!response.ok) {
+        throw new Error('Could not load utterances CSV file');
       }
 
-      const manifest = await manifestResponse.json();
-      const componentsToLoad = manifest.components || [];
+      const csvText = await response.text();
+      const parsedData = this.parseCSV(csvText);
 
-      const loadedComponents = [];
+      // Transform CSV rows into component objects
+      const loadedComponents = parsedData.map((row, index) => ({
+        componentName: `utterance-${row.ID || index}`,
+        displayName: `${row.ID || ''} - ${row.Variant || 'Standard'}`,
+        utterance: row.Utterance || 'No utterance available',
+        utteranceId: null,
+        tier: row.Tier || 'N/A',
+        complexity: row.Complexity || 'N/A',
+        variant: row.Variant || null,
+        timestamp: new Date().toISOString(),
+        csvId: row.ID || null,
+      }));
 
-      // Load each component's metadata to get utterance
-      for (const componentName of componentsToLoad) {
-        try {
-          const response = await fetch(`/generated/c/${componentName}/metadata.json`);
-          if (response.ok) {
-            const metadata = await response.json();
-
-            loadedComponents.push({
-              componentName: metadata.componentName,
-              displayName: this.stripUuidFromName(metadata.componentName),
-              utterance: metadata.utterance || 'No utterance available',
-              utteranceId: metadata.utteranceId || null,
-              tier: metadata.tier || 'N/A',
-              complexity: metadata.complexity || 'N/A',
-              variant: metadata.variant || null,
-              timestamp: metadata.timestamp,
-              csvId: metadata.csvId || null,
-            });
-          }
-        } catch (err) {
-          console.warn(`Could not load ${componentName}:`, err.message);
-        }
-      }
-
-      // Sort by timestamp (newest first)
-      this.components = loadedComponents.sort(
-        (a, b) => new Date(b.timestamp) - new Date(a.timestamp)
-      );
+      this.components = loadedComponents;
 
     } catch (error) {
       console.error('Error loading utterances:', error);
@@ -61,6 +45,59 @@ export default class Utterances extends LightningElement {
     } finally {
       this.loading = false;
     }
+  }
+
+  parseCSV(text) {
+    const lines = text.split('\n').filter(line => line.trim());
+    if (lines.length === 0) return [];
+
+    const headers = this.parseCSVLine(lines[0]);
+    const rows = [];
+
+    for (let i = 1; i < lines.length; i++) {
+      const values = this.parseCSVLine(lines[i]);
+      if (values.length > 0) {
+        const row = {};
+        headers.forEach((header, index) => {
+          row[header] = values[index] || '';
+        });
+        rows.push(row);
+      }
+    }
+
+    return rows;
+  }
+
+  parseCSVLine(line) {
+    const result = [];
+    let current = '';
+    let inQuotes = false;
+
+    for (let i = 0; i < line.length; i++) {
+      const char = line[i];
+      const nextChar = line[i + 1];
+
+      if (char === '"') {
+        if (inQuotes && nextChar === '"') {
+          // Escaped quote
+          current += '"';
+          i++;
+        } else {
+          // Toggle quote state
+          inQuotes = !inQuotes;
+        }
+      } else if (char === ',' && !inQuotes) {
+        // End of field
+        result.push(current.trim());
+        current = '';
+      } else {
+        current += char;
+      }
+    }
+
+    // Add last field
+    result.push(current.trim());
+    return result;
   }
 
   stripUuidFromName(componentName) {
@@ -77,8 +114,8 @@ export default class Utterances extends LightningElement {
   }
 
   handleViewComponent(event) {
-    const componentName = event.target.dataset.component;
-    window.location.href = `/?component=${componentName}`;
+    // CSV utterances don't have corresponding components, navigate to gallery
+    window.location.href = '/';
   }
 
   handleCopyUtterance(event) {

@@ -2,6 +2,11 @@
   <!-- Onboarding Modal (shows on first visit) -->
   <main-onboarding-modal></main-onboarding-modal>
 
+  <!-- Show utterances view when view=utterances (outside main for full-page layout) -->
+  <template if:true={showUtterances}>
+    <main-utterances></main-utterances>
+  </template>
+
   <main class="slds-p-around_medium">
     <!-- Show gallery view when no component selected -->
     <template if:true={showGallery}>
@@ -11,11 +16,6 @@
     <!-- Show component detail view when detail parameter is set -->
     <template if:true={showDetail}>
       <main-component-detail component-name={detailComponent}></main-component-detail>
-    </template>
-
-    <!-- Show utterances view when view=utterances -->
-    <template if:true={showUtterances}>
-      <main-utterances></main-utterances>
     </template>
 
   <!-- Show 4AlertsSuccessGreenErrorRedFcf679ff component when selected -->

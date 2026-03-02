@@ -99,17 +99,21 @@ function generateAppJs(components) {
 export default class HelloWorldApp extends LightningElement {
   selectedComponent = null;
   detailComponent = null;
+  viewName = null;
 
   connectedCallback() {
-    // Parse query parameters: ?component=componentName or ?detail=componentName
+    // Parse query parameters: ?component=componentName or ?detail=componentName or ?view=viewName
     const params = new URLSearchParams(window.location.search);
     const componentName = params.get('component');
     const detailName = params.get('detail');
+    const view = params.get('view');
 
     if (componentName) {
       this.selectedComponent = componentName;
     } else if (detailName) {
       this.detailComponent = detailName;
+    } else if (view) {
+      this.viewName = view;
     }
   }
 
@@ -120,11 +124,15 @@ export default class HelloWorldApp extends LightningElement {
   }
 
   get showGallery() {
-    return !this.selectedComponent && !this.detailComponent;
+    return !this.selectedComponent && !this.detailComponent && !this.viewName;
   }
 
   get showDetail() {
     return this.detailComponent !== null;
+  }
+
+  get showUtterances() {
+    return this.viewName === 'utterances';
   }
 
 ${getters}
@@ -161,6 +169,11 @@ function generateAppHtml(components) {
   return `<template>
   <!-- Onboarding Modal (shows on first visit) -->
   <main-onboarding-modal></main-onboarding-modal>
+
+  <!-- Show utterances view when view=utterances (outside main for full-page layout) -->
+  <template if:true={showUtterances}>
+    <main-utterances></main-utterances>
+  </template>
 
   <main class="slds-p-around_medium">
     <!-- Show gallery view when no component selected -->
