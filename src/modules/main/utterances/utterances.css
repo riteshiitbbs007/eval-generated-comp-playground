@@ -1,0 +1,163 @@
+/* Utterances Container */
+.utterances-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Fixed Header */
+.utterances-header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--lwc-colorBackground, #ffffff);
+  border-bottom: 1px solid var(--lwc-colorBorder, #c9c7c5);
+  box-shadow: var(--lwc-shadowHeader, 0 2px 4px rgba(0, 0, 0, 0.07));
+}
+
+.utterances-header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--lwc-spacingMedium, 1rem);
+}
+
+/* Scrollable Content */
+.utterances-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: var(--lwc-spacingMedium, 1rem);
+  margin-top: 150px;
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Utterances List */
+.utterances-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lwc-spacingMedium, 1rem);
+}
+
+/* Utterance Card */
+.utterance-card {
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.utterance-card:hover {
+  box-shadow: var(--lwc-shadowButtonDepth2, 0 4px 12px rgba(0, 0, 0, 0.12));
+  transform: translateY(-2px);
+}
+
+/* Utterance Header */
+.utterance-header {
+  border-bottom: 1px solid var(--lwc-colorBorder, #e5e5e5);
+  padding-bottom: var(--lwc-spacingSmall, 0.75rem);
+}
+
+.utterance-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--lwc-spacingSmall, 0.75rem);
+  margin-bottom: var(--lwc-spacingXxSmall, 0.5rem);
+}
+
+.utterance-badges {
+  display: flex;
+  gap: var(--lwc-spacingXxSmall, 0.5rem);
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.utterance-id-badge {
+  background-color: #f4f6f9;
+  color: #3e3e3c;
+  font-family: 'SF Mono', 'Monaco', monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.variant-badge-small {
+  background-color: #d8edff;
+  color: #014486;
+  font-size: 0.75rem;
+}
+
+.utterance-meta {
+  display: flex;
+  gap: var(--lwc-spacingXxSmall, 0.5rem);
+}
+
+/* Utterance Text */
+.utterance-text-container {
+  background-color: var(--lwc-colorBackgroundAlt, #f3f2f2);
+  border-left: 3px solid var(--lwc-colorBrand, #0176d3);
+  padding: var(--lwc-spacingSmall, 0.75rem);
+  border-radius: var(--lwc-borderRadiusSmall, 0.25rem);
+}
+
+.utterance-text {
+  font-size: var(--lwc-fontSizeTextMedium, 0.9375rem);
+  line-height: 1.6;
+  color: var(--lwc-colorTextDefault, #181818);
+  font-style: italic;
+}
+
+/* Actions */
+.utterance-actions {
+  display: flex;
+  gap: var(--lwc-spacingXxSmall, 0.5rem);
+  justify-content: flex-end;
+}
+
+/* Scrollbar Styling */
+.utterances-content::-webkit-scrollbar {
+  width: 12px;
+}
+
+.utterances-content::-webkit-scrollbar-track {
+  background: var(--lwc-colorBackgroundAlt, #f3f2f2);
+}
+
+.utterances-content::-webkit-scrollbar-thumb {
+  background: var(--lwc-colorBorder, #c9c7c5);
+  border-radius: 6px;
+}
+
+.utterances-content::-webkit-scrollbar-thumb:hover {
+  background: var(--lwc-colorBorderStrong, #706e6b);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .utterances-content {
+    margin-top: 180px;
+  }
+
+  .utterance-title-row {
+    flex-direction: column;
+    gap: var(--lwc-spacingXxSmall, 0.5rem);
+  }
+
+  .utterance-badges {
+    align-self: flex-start;
+  }
+
+  .utterance-actions {
+    flex-direction: column;
+  }
+
+  .utterance-actions button {
+    width: 100%;
+  }
+}

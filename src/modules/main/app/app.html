@@ -13,6 +13,11 @@
       <main-component-detail component-name={detailComponent}></main-component-detail>
     </template>
 
+    <!-- Show utterances view when view=utterances -->
+    <template if:true={showUtterances}>
+      <main-utterances></main-utterances>
+    </template>
+
   <!-- Show 4AlertsSuccessGreenErrorRedFcf679ff component when selected -->
   <template if:true={show4AlertsSuccessGreenErrorRedFcf679ff}>
     <div class="slds-m-bottom_medium">

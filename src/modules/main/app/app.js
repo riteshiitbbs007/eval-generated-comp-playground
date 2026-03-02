@@ -3,17 +3,21 @@ import { LightningElement } from 'lwc';
 export default class HelloWorldApp extends LightningElement {
   selectedComponent = null;
   detailComponent = null;
+  currentView = null;
 
   connectedCallback() {
-    // Parse query parameters: ?component=componentName or ?detail=componentName
+    // Parse query parameters: ?component=componentName or ?detail=componentName or ?view=viewName
     const params = new URLSearchParams(window.location.search);
     const componentName = params.get('component');
     const detailName = params.get('detail');
+    const viewName = params.get('view');
 
     if (componentName) {
       this.selectedComponent = componentName;
     } else if (detailName) {
       this.detailComponent = detailName;
+    } else if (viewName) {
+      this.currentView = viewName;
     }
   }
 
@@ -24,11 +28,15 @@ export default class HelloWorldApp extends LightningElement {
   }
 
   get showGallery() {
-    return !this.selectedComponent && !this.detailComponent;
+    return !this.selectedComponent && !this.detailComponent && !this.currentView;
   }
 
   get showDetail() {
     return this.detailComponent !== null;
+  }
+
+  get showUtterances() {
+    return this.currentView === 'utterances';
   }
 
   get show4AlertsSuccessGreenErrorRedFcf679ff() {
