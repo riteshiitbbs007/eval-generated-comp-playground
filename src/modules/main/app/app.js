@@ -3,17 +3,21 @@ import { LightningElement } from 'lwc';
 export default class HelloWorldApp extends LightningElement {
   selectedComponent = null;
   detailComponent = null;
+  viewName = null;
 
   connectedCallback() {
-    // Parse query parameters: ?component=componentName or ?detail=componentName
+    // Parse query parameters: ?component=componentName or ?detail=componentName or ?view=viewName
     const params = new URLSearchParams(window.location.search);
     const componentName = params.get('component');
     const detailName = params.get('detail');
+    const view = params.get('view');
 
     if (componentName) {
       this.selectedComponent = componentName;
     } else if (detailName) {
       this.detailComponent = detailName;
+    } else if (view) {
+      this.viewName = view;
     }
   }
 
@@ -24,11 +28,23 @@ export default class HelloWorldApp extends LightningElement {
   }
 
   get showGallery() {
-    return !this.selectedComponent && !this.detailComponent;
+    return !this.selectedComponent && !this.detailComponent && !this.viewName;
   }
 
   get showDetail() {
     return this.detailComponent !== null;
+  }
+
+  get showUtterances() {
+    return this.viewName === 'utterances';
+  }
+
+  get show4AlertsSuccessGreenErrorRedFcf679ff() {
+    return this.selectedComponent === '4AlertsSuccessGreenErrorRedFcf679ff';
+  }
+
+  get showContactFormNameTextEmailFormat0878e030() {
+    return this.selectedComponent === 'contactFormNameTextEmailFormat0878e030';
   }
 
   get showCreate3stepWizardWith() {
@@ -81,5 +97,37 @@ export default class HelloWorldApp extends LightningElement {
 
   get showCreateVerticalNavMenu() {
     return this.selectedComponent === 'createVerticalNavMenu';
+  }
+
+  get showFaqAccordionWith3SectionsEach2efd09a1() {
+    return this.selectedComponent === 'faqAccordionWith3SectionsEach2efd09a1';
+  }
+
+  get showPageHeaderJohnSmithWithAccount3b74227d() {
+    return this.selectedComponent === 'pageHeaderJohnSmithWithAccount3b74227d';
+  }
+
+  get showPrimaryActionButtonWithASave4addabb5() {
+    return this.selectedComponent === 'primaryActionButtonWithASave4addabb5';
+  }
+
+  get showPrimaryButtonWithASaveIcon2a4b46ee() {
+    return this.selectedComponent === 'primaryButtonWithASaveIcon2a4b46ee';
+  }
+
+  get showPrimaryButtonWithASaveIcon3f0774ab() {
+    return this.selectedComponent === 'primaryButtonWithASaveIcon3f0774ab';
+  }
+
+  get showPrimaryButtonWithASaveIcon55f94f20() {
+    return this.selectedComponent === 'primaryButtonWithASaveIcon55f94f20';
+  }
+
+  get showResponsiveProductCardGridWith611d4397d() {
+    return this.selectedComponent === 'responsiveProductCardGridWith611d4397d';
+  }
+
+  get showUserProfileFormNameTextEmailC8b10de5() {
+    return this.selectedComponent === 'userProfileFormNameTextEmailC8b10de5';
   }
 }

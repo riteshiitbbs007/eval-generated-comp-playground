@@ -1,0 +1,113 @@
+export const onboardingData = {
+  version: '1.0.0',
+  storageKey: 'lwc-gallery-onboarding-completed',
+  steps: [
+    {
+      id: 'welcome',
+      title: 'Welcome to LWC Component Gallery',
+      heading: 'Your AI-Generated Component Showcase',
+      content: `<p class='slds-text-body_regular slds-m-bottom_medium'>This gallery displays Lightning Web Components generated and evaluated by AI with SLDS compliance scoring.</p><p class='slds-text-body_regular slds-m-bottom_medium'><strong>What you'll see:</strong></p><ul class='slds-list_dotted slds-m-left_medium'><li>✨ AI-generated LWC components</li><li>📊 Quality scores and compliance ratings</li><li>🔍 Detailed SLDS violation breakdowns</li><li>📸 Component screenshots and live previews</li></ul>`,
+      icon: 'utility:info',
+      illustration: 'no_content',
+    },
+    {
+      id: 'scoring-system',
+      title: 'Understanding the Scoring System',
+      heading: 'How Component Quality is Measured',
+      content: `<p class='slds-text-body_regular slds-m-bottom_medium'>Each component receives a <strong>readiness score (1-3)</strong> based on four weighted dimensions:</p><div class='slds-box slds-box_x-small slds-theme_shade slds-m-bottom_small'><div class='slds-grid slds-gutters_small'><div class='slds-col slds-size_1-of-2'><strong>SLDS Linter (3x)</strong><br/>Deterministic violation checks</div><div class='slds-col slds-size_1-of-2'><strong>SLDS Quality (2x)</strong><br/>Design system adherence</div></div></div><div class='slds-box slds-box_x-small slds-theme_shade slds-m-bottom_small'><div class='slds-grid slds-gutters_small'><div class='slds-col slds-size_1-of-2'><strong>PRD Compliance (2x)</strong><br/>Functional requirements</div><div class='slds-col slds-size_1-of-2'><strong>Security (1x)</strong><br/>Best security practices</div></div></div><p class='slds-text-body_small slds-m-top_medium'><strong>Formula:</strong> score = (slds_linter×3 + slds_quality×2 + prd×2 + security×1) / 8</p><p class='slds-text-body_small slds-m-top_small'><strong>Readiness Levels:</strong></p><ul class='slds-list_dotted slds-m-left_medium slds-text-body_small'><li>🟢 <strong>Production-Ready:</strong> ≥ 2.5</li><li>🟡 <strong>Prototype:</strong> ≥ 2.0</li><li>🔴 <strong>Draft:</strong> < 2.0</li></ul>`,
+      icon: 'utility:chart',
+      illustration: 'metrics',
+    },
+    {
+      id: 'rule-weights',
+      title: 'SLDS Rule Weights',
+      heading: 'How Violations Impact Scores',
+      content: `<p class='slds-text-body_regular slds-m-bottom_medium'>SLDS linter violations are weighted by severity. The system uses <strong>dynamic averaging</strong> - only violated rules are included in scoring, and each rule's score is averaged equally.</p><div class='slds-box slds-box_x-small slds-theme_info slds-m-bottom_medium'><p class='slds-text-body_small'><strong>How Dynamic Averaging Works:</strong></p><ol class='slds-list_ordered slds-m-left_medium slds-text-body_small'><li>Only rules with violations are scored</li><li>Each violated rule gets a score based on its penalty</li><li>All violated rule scores are averaged (equal weight: 1)</li><li>Final score = average of violated rule scores</li></ol></div><div class='slds-m-bottom_medium'><div class='slds-text-heading_small slds-m-bottom_x-small'>🔴 Critical (0.30-0.40) — Must Fix</div><ul class='slds-list_dotted slds-m-left_medium slds-text-body_small'><li><strong>no-deprecated-tokens-slds1</strong> (0.40) - Using SLDS 1.x deprecated tokens</li><li><strong>no-unsupported-hooks-slds2</strong> (0.40) - Unsupported SLDS 2 hooks</li><li><strong>modal-close-button-issue</strong> (0.35) - Modal accessibility violations</li></ul></div><div class='slds-m-bottom_medium'><div class='slds-text-heading_small slds-m-bottom_x-small'>🟠 High (0.20-0.25) — Important</div><ul class='slds-list_dotted slds-m-left_medium slds-text-body_small'><li><strong>enforce-bem-usage</strong> (0.25) - BEM methodology violations</li><li><strong>no-deprecated-classes-slds2</strong> (0.25) - Deprecated SLDS 2 classes</li></ul></div><div class='slds-m-bottom_medium'><div class='slds-text-heading_small slds-m-bottom_x-small'>🟡 Medium (0.10-0.15) — Recommended</div><ul class='slds-list_dotted slds-m-left_medium slds-text-body_small'><li><strong>no-slds-class-overrides</strong> (0.10) - Overriding SLDS classes</li><li><strong>no-hardcoded-values-slds2</strong> (0.10) - Hardcoded values vs tokens</li></ul></div><div class='slds-m-bottom_medium'><div class='slds-text-heading_small slds-m-bottom_x-small'>🟢 Low (0.025-0.08) — Best Practice</div><ul class='slds-list_dotted slds-m-left_medium slds-text-body_small'><li><strong>bem-naming</strong> (0.05) - BEM naming suggestions</li><li><strong>no-slds-var-without-fallback</strong> (0.025) - Missing fallbacks</li></ul></div>`,
+      icon: 'utility:rules',
+      illustration: 'warning',
+    },
+    {
+      id: 'example-calculation',
+      title: 'Example Calculation',
+      heading: 'See How Dynamic Averaging Works',
+      content: `<p class='slds-text-body_regular slds-m-bottom_medium'>Let's calculate the SLDS Linter score for a component with violations in 2 rules:</p><div class='slds-box slds-box_x-small slds-theme_default slds-m-bottom_medium'><div class='slds-text-heading_small slds-m-bottom_x-small'>SLDS Violations</div><ul class='slds-list_dotted slds-m-left_medium slds-text-body_small'><li><strong>Rule A:</strong> no-slds-class-overrides (penalty: 0.10) - 5 violations</li><li><strong>Rule B:</strong> bem-naming (penalty: 0.05) - 3 violations</li></ul></div><div class='slds-box slds-box_x-small slds-theme_info slds-m-bottom_medium'><div class='slds-text-heading_small slds-m-bottom_x-small'>Step-by-Step Calculation</div><ol class='slds-list_ordered slds-m-left_medium slds-text-body_small'><li><strong>Identify violated rules:</strong> Only Rules A and B (2 rules)</li><li><strong>Calculate each rule's score:</strong><ul class='slds-list_dotted slds-m-left_medium'><li>Rule A: Uses inverse_count with penalty 0.10</li><li>Rule B: Uses inverse_count with penalty 0.05</li></ul></li><li><strong>Average the scores:</strong> (Rule A score + Rule B score) / 2</li><li><strong>Result:</strong> SLDS Linter dimension score</li></ol></div><div class='slds-box slds-box_x-small slds-theme_success slds-m-bottom_medium'><div class='slds-text-heading_small slds-m-bottom_x-small'>Final Weighted Score</div><p class='slds-text-body_small slds-m-bottom_x-small'>Assuming SLDS Linter = 0.82 (after averaging):</p><p class='slds-text-body_small slds-m-left_medium'><strong>Weighted Score:</strong></p><p class='slds-text-body_small slds-m-left_medium'>= (0.82 × 3) + (1.0 × 2) + (1.0 × 2) + (1.0 × 1)</p><p class='slds-text-body_small slds-m-left_medium'>= 2.46 + 2.0 + 2.0 + 1.0 = 7.46</p><p class='slds-text-body_small slds-m-top_x-small'><strong>Overall Score:</strong> 7.46 / 8 = <strong>0.933</strong></p><p class='slds-text-body_small slds-m-top_x-small'><strong>Readiness:</strong> 0.933 × 3 = <strong>2.80/3.0</strong></p><p class='slds-text-body_small slds-m-top_x-small'><span class='slds-badge slds-theme_success'>Production-Ready</span> (≥ 2.5)</p></div><p class='slds-text-body_small slds-text-color_weak'><strong>Key Insight:</strong> Only violated rules affect the score. Components with no violations in a rule get perfect scores for that rule, not penalized by other components' violations.</p>`,
+      icon: 'utility:case',
+      illustration: 'preview',
+    },
+    {
+      id: 'features',
+      title: 'Gallery Features',
+      heading: 'What You Can Do Here',
+      content: `<p class='slds-text-body_regular slds-m-bottom_medium'>Explore the gallery with these powerful features:</p><ul class='slds-list_dotted slds-m-left_medium slds-m-bottom_medium'><li><strong>🔍 Search & Filter:</strong> Find components by name, score, or utterance ID</li><li><strong>📊 Sort Options:</strong> Order by score, date, or violation count</li><li><strong>📸 Visual Previews:</strong> See component screenshots before diving in</li><li><strong>🔎 Detailed View:</strong> Click any component for full analysis</li><li><strong>📝 Violation Breakdown:</strong> See exactly which rules were violated</li><li><strong>🎯 Score Insights:</strong> Understand why components scored the way they did</li></ul><p class='slds-text-body_regular slds-m-top_medium'><strong>Ready to explore?</strong> Close this guide and start browsing AI-generated components!</p>`,
+      icon: 'utility:features',
+      illustration: 'open_road',
+    },
+  ],
+  ruleWeightCategories: {
+    critical: {
+      label: 'Critical',
+      range: '0.30-0.40',
+      color: 'error',
+      description: 'Must fix for production',
+      rules: {
+        'slds/lwc-token-to-slds-hook': 0.4,
+        'slds/no-deprecated-tokens-slds1': 0.4,
+        'slds/no-unsupported-hooks-slds2': 0.4,
+        'slds/enforce-component-hook-naming-convention': 0.35,
+        'slds/modal-close-button-issue': 0.35,
+      },
+    },
+    high: {
+      label: 'High',
+      range: '0.20-0.25',
+      color: 'warning',
+      description: 'Important for design consistency',
+      rules: {
+        'slds/enforce-bem-usage': 0.25,
+        'slds/no-deprecated-classes-slds2': 0.25,
+      },
+    },
+    medium: {
+      label: 'Medium',
+      range: '0.10-0.15',
+      color: 'default',
+      description: 'Compatibility and best practices',
+      rules: {
+        'slds/no-slds-namespace-for-custom-hooks': 0.15,
+        'slds/no-slds-class-overrides': 0.1,
+        'slds/no-slds-private-var': 0.1,
+        'slds/no-hardcoded-values-slds2': 0.1,
+      },
+    },
+    low: {
+      label: 'Low',
+      range: '0.025-0.08',
+      color: 'success',
+      description: 'Nice to have improvements',
+      rules: {
+        'slds/bem-naming': 0.05,
+        'slds/enforce-sds-to-slds-hooks': 0.05,
+        'slds/no-sldshook-fallback-for-lwctoken': 0.05,
+        'slds/reduce-annotations': 0.05,
+        'slds/no-slds-var-without-fallback': 0.025,
+      },
+    },
+  },
+  scoringModes: {
+    standard: {
+      label: 'Standard',
+      multiplier: 1.0,
+      description: 'Default balanced scoring',
+    },
+    strict: {
+      label: 'Strict',
+      multiplier: 1.5,
+      description: 'Higher penalties for production',
+    },
+    lenient: {
+      label: 'Lenient',
+      multiplier: 0.5,
+      description: 'Lower penalties for prototypes',
+    },
+  },
+};

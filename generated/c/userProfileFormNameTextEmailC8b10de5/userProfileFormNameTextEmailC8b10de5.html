@@ -1,0 +1,127 @@
+<template>
+    <div class="slds-card slds-card_boundary">
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                        <span class="slds-text-heading_medium">User Profile</span>
+                    </h2>
+                </div>
+            </header>
+        </div>
+        <div class="slds-card__body slds-card__body_inner">
+            <form class="slds-form" onsubmit={handleSubmit}>
+                <div class="slds-grid slds-wrap slds-gutters">
+                    <!-- Left Column -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-right_medium">
+                        <!-- Name -->
+                        <div class="slds-form-element slds-form-element_stacked slds-m-bottom_small">
+                            <label class="slds-form-element__label" for="name">
+                                <abbr class="slds-required" title="required">*</abbr> Name
+                            </label>
+                            <div class="slds-form-element__control">
+                                <input type="text" id="name"
+                                       class={nameInputClass}
+                                       value={name}
+                                       onchange={handleNameChange}
+                                       required/>
+                                <template if:true={nameHasError}>
+                                    <div class="slds-form-element__help" id="name-error">{nameErrorMessage}</div>
+                                </template>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="slds-form-element slds-form-element_stacked slds-m-bottom_small">
+                            <label class="slds-form-element__label" for="email">
+                                <abbr class="slds-required" title="required">*</abbr> Email
+                            </label>
+                            <div class="slds-form-element__control">
+                                <input type="email" id="email"
+                                       class={emailInputClass}
+                                       value={email}
+                                       onchange={handleEmailChange}
+                                       required/>
+                                <template if:true={emailHasError}>
+                                    <div class="slds-form-element__help" id="email-error">{emailErrorMessage}</div>
+                                </template>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="slds-form-element slds-form-element_stacked slds-m-bottom_small">
+                            <label class="slds-form-element__label" for="phone">Phone</label>
+                            <div class="slds-form-element__control">
+                                <input type="tel" id="phone"
+                                       class="slds-input"
+                                       value={phone}
+                                       onchange={handlePhoneChange}/>
+                            </div>
+                        </div>
+
+                        <!-- Country -->
+                        <div class="slds-form-element slds-form-element_stacked slds-m-bottom_small">
+                            <label class="slds-form-element__label" for="country">Country</label>
+                            <div class="slds-form-element__control">
+                                <div class="slds-select_container">
+                                    <select id="country"
+                                            class="slds-select"
+                                            onchange={handleCountryChange}>
+                                        <option value="">Select Country</option>
+                                        <template for:each={countries} for:item="country">
+                                            <option key={country.value}
+                                                    value={country.value}
+                                                    selected={country.selected}>
+                                                {country.label}
+                                            </option>
+                                        </template>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <!-- Interests -->
+                        <fieldset class="slds-form-element slds-form-element_stacked slds-m-bottom_small">
+                            <legend class="slds-form-element__legend slds-form-element__label">Interests</legend>
+                            <div class="slds-form-element__control">
+                                <template for:each={interests} for:item="interest">
+                                    <div key={interest.value} class="slds-checkbox">
+                                        <input type="checkbox"
+                                               id={interest.id}
+                                               name="interests"
+                                               value={interest.value}
+                                               checked={interest.checked}
+                                               onchange={handleInterestChange} />
+                                        <label class="slds-checkbox__label" for={interest.id}>
+                                            <span class="slds-checkbox_faux"></span>
+                                            <span class="slds-form-element__label">{interest.label}</span>
+                                        </label>
+                                    </div>
+                                </template>
+                            </div>
+                        </fieldset>
+
+                        <!-- Bio -->
+                        <div class="slds-form-element slds-form-element_stacked">
+                            <label class="slds-form-element__label" for="bio">Bio</label>
+                            <div class="slds-form-element__control">
+                                <textarea id="bio"
+                                          class="slds-textarea"
+                                          placeholder="Tell us about yourself..."
+                                          onchange={handleBioChange}>{bio}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slds-grid slds-grid_align-end slds-m-top_medium">
+                    <button class="slds-button slds-button_neutral" type="button" onclick={handleCancel}>Cancel</button>
+                    <button class="slds-button slds-button_brand" type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</template>

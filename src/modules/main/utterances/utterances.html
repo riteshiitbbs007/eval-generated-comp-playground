@@ -1,0 +1,149 @@
+<template>
+  <div class="utterances-container">
+    <!-- Fixed Header -->
+    <div class="utterances-header-fixed">
+      <div class="utterances-header-content">
+        <div class="slds-page-header">
+          <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+              <div class="slds-media">
+                <div class="slds-media__body">
+                  <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+                    <div>
+                      <h1 class="slds-page-header__title slds-m-right_small">
+                        Component Utterances
+                      </h1>
+                      <p class="slds-text-body_small slds-text-color_weak">
+                        {componentCount} utterances
+                      </p>
+                    </div>
+                    <div>
+                      <a href="/" class="slds-button slds-button_neutral">
+                        <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+                          <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#back"></use>
+                        </svg>
+                        Back to Gallery
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slds-page-header__row slds-m-top_small">
+            <div class="slds-form-element" style="width: 100%;">
+              <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                <svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
+                  <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#search"></use>
+                </svg>
+                <input
+                  type="text"
+                  class="slds-input"
+                  placeholder="Search utterances or components..."
+                  value={searchTerm}
+                  oninput={handleSearch}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scrollable Content -->
+    <div class="utterances-content">
+      <template if:true={loading}>
+        <div class="slds-align_absolute-center slds-m-top_xx-large">
+          <lightning-spinner alternative-text="Loading utterances..." size="large"></lightning-spinner>
+        </div>
+      </template>
+
+      <template if:true={error}>
+        <div class="slds-notify slds-notify_alert slds-theme_error slds-m-top_medium">
+          <h2>{error}</h2>
+        </div>
+      </template>
+
+      <template if:true={hasComponents}>
+        <div class="utterances-list">
+          <template for:each={formattedComponents} for:item="component">
+            <article key={component.componentName} class="slds-card utterance-card">
+              <div class="slds-card__body slds-card__body_inner">
+                <!-- Header -->
+                <div class="utterance-header slds-m-bottom_small">
+                  <div class="utterance-title-row">
+                    <h3 class="slds-text-heading_small">{component.displayName}</h3>
+                    <div class="utterance-badges">
+                      <template if:true={component.hasUtteranceId}>
+                        <span class="slds-badge utterance-id-badge" title="Utterance ID">
+                          {component.utteranceIdShort}
+                        </span>
+                      </template>
+                      <template if:true={component.hasVariant}>
+                        <span class="slds-badge slds-badge_lightest variant-badge-small">
+                          {component.variant}
+                        </span>
+                      </template>
+                    </div>
+                  </div>
+                  <div class="utterance-meta slds-text-body_small slds-text-color_weak">
+                    {component.tier} • {component.complexity}
+                    <template if:true={component.csvId}>
+                      • ID: {component.csvId}
+                    </template>
+                  </div>
+                </div>
+
+                <!-- Utterance Text -->
+                <div class="utterance-text-container slds-m-bottom_small">
+                  <div class="utterance-text">
+                    "{component.utterance}"
+                  </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="utterance-actions">
+                  <button
+                    class="slds-button slds-button_neutral slds-button_small"
+                    data-utterance={component.utterance}
+                    onclick={handleCopyUtterance}>
+                    <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+                      <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#copy"></use>
+                    </svg>
+                    Copy
+                  </button>
+                  <button
+                    class="slds-button slds-button_neutral slds-button_small"
+                    onclick={handleViewComponent}>
+                    <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+                      <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#back"></use>
+                    </svg>
+                    Back to Gallery
+                  </button>
+                </div>
+              </div>
+            </article>
+          </template>
+        </div>
+      </template>
+
+      <template if:false={hasComponents}>
+        <template if:false={loading}>
+          <div class="slds-align_absolute-center slds-m-top_xx-large">
+            <div class="slds-text-align_center">
+              <svg class="slds-icon slds-icon_large slds-icon-text-default" aria-hidden="true">
+                <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#no_data"></use>
+              </svg>
+              <h2 class="slds-text-heading_medium slds-m-top_medium">
+                No utterances found
+              </h2>
+              <p class="slds-text-body_regular slds-m-top_small">
+                Try adjusting your search
+              </p>
+            </div>
+          </div>
+        </template>
+      </template>
+    </div>
+  </div>
+</template>

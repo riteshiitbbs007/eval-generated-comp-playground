@@ -29,7 +29,7 @@
           <div class="slds-page-header__col-title">
             <div class="slds-media">
               <div class="slds-media__body">
-                <h1 class="slds-page-header__title">{componentName}</h1>
+                <h1 class="slds-page-header__title">{displayName}</h1>
                 <p class="slds-text-body_small slds-text-color_weak">
                   Generated on {formattedTimestamp}
                 </p>
@@ -69,11 +69,53 @@
                 <dt class="slds-dl__label">Utterance:</dt>
                 <dd class="slds-dl__detail">{metadata.utterance}</dd>
 
+                <!-- NEW: Utterance ID with copy button -->
+                <template if:true={hasUtteranceId}>
+                  <dt class="slds-dl__label">Utterance ID:</dt>
+                  <dd class="slds-dl__detail">
+                    <div class="utterance-id-container">
+                      <code class="utterance-id-code">{utteranceId}</code>
+                      <button
+                        class="slds-button slds-button_icon slds-button_icon-border-filled slds-button_icon-x-small"
+                        onclick={handleCopyUtteranceId}
+                        title="Copy utterance ID">
+                        <svg class="slds-button__icon slds-button__icon_x-small" aria-hidden="true">
+                          <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#copy"></use>
+                        </svg>
+                        <span class="slds-assistive-text">Copy utterance ID</span>
+                      </button>
+                    </div>
+                  </dd>
+                </template>
+
                 <dt class="slds-dl__label">Tier:</dt>
                 <dd class="slds-dl__detail">{metadata.tier}</dd>
 
                 <dt class="slds-dl__label">Complexity:</dt>
                 <dd class="slds-dl__detail">{metadata.complexity}</dd>
+
+                <!-- NEW: Variant -->
+                <template if:true={hasVariant}>
+                  <dt class="slds-dl__label">Variant:</dt>
+                  <dd class="slds-dl__detail">{variant}</dd>
+                </template>
+
+                <!-- NEW: LangSmith Run Link -->
+                <template if:true={hasLangsmithUrl}>
+                  <dt class="slds-dl__label">LangSmith Run:</dt>
+                  <dd class="slds-dl__detail">
+                    <a
+                      href={langsmithRunUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="slds-text-link langsmith-link">
+                      <svg class="slds-icon slds-icon_xx-small slds-m-right_xx-small" aria-hidden="true">
+                        <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#new_window"></use>
+                      </svg>
+                      View in LangSmith
+                    </a>
+                  </dd>
+                </template>
               </dl>
             </div>
           </article>
@@ -92,14 +134,14 @@
             <div class="slds-card__body slds-card__body_inner">
               <div class="slds-m-bottom_small">
                 <span class={overallScoreClass}>
-                  Overall: {metadata.scores.overall}/3.0
+                  Overall: {metadata.scores.overall}
                 </span>
               </div>
               <ul class="slds-list_dotted">
-                <li>SLDS Linter: {metadata.scores.slds_linter}/3.0</li>
-                <li>SLDS Quality: {metadata.scores.slds_quality}/3.0</li>
-                <li>PRD Compliance: {metadata.scores.prd_compliance}/3.0</li>
-                <li>Security: {metadata.scores.security}/3.0</li>
+                <li>SLDS Linter: {metadata.scores.slds_linter}</li>
+                <li>SLDS Quality: {metadata.scores.slds_quality}</li>
+                <li>PRD Compliance: {metadata.scores.prd_compliance}</li>
+                <li>Security: {metadata.scores.security}</li>
               </ul>
             </div>
           </article>
@@ -116,11 +158,35 @@
               </header>
             </div>
             <div class="slds-card__body slds-card__body_inner">
-              <ul class="slds-list_dotted">
+              <!-- Summary -->
+              <ul class="slds-list_dotted slds-m-bottom_medium">
                 <li>Errors: {metadata.violations.errors}</li>
                 <li>Warnings: {metadata.violations.warnings}</li>
                 <li>Notes: {metadata.violations.notes}</li>
               </ul>
+
+              <!-- NEW: Error breakdown by type -->
+              <template if:true={hasErrorsByType}>
+                <div class="error-breakdown-detail">
+                  <h3 class="slds-text-heading_small slds-m-bottom_small">
+                    Error Breakdown by Type
+                  </h3>
+                  <ul class="slds-list_vertical slds-has-dividers_top-space">
+                    <template for:each={errorsByType} for:item="error">
+                      <li key={error.type} class="slds-item slds-p-vertical_x-small">
+                        <div class="slds-grid slds-grid_align-spread">
+                          <div class="slds-col">
+                            <code class="error-type-badge">{error.type}</code>
+                          </div>
+                          <div class="slds-col slds-no-flex">
+                            <span class="slds-badge slds-theme_error">{error.count}</span>
+                          </div>
+                        </div>
+                      </li>
+                    </template>
+                  </ul>
+                </div>
+              </template>
             </div>
           </article>
         </div>
@@ -202,6 +268,89 @@
               </div>
             </article>
           </template>
+        </div>
+
+        <!-- Source Code Viewer Section (Full Width) -->
+        <div class="slds-col slds-size_1-of-1 slds-m-top_medium">
+          <article class="slds-card">
+            <div class="slds-card__header slds-grid">
+              <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__body">
+                  <h2 class="slds-card__header-title">
+                    <span>Source Code</span>
+                  </h2>
+                </div>
+              </header>
+            </div>
+            <div class="slds-card__body">
+              <!-- Code Tabs -->
+              <div class="slds-tabs_default">
+                <ul class="slds-tabs_default__nav" role="tablist">
+                  <li class={htmlTabClass} role="presentation">
+                    <a
+                      class="slds-tabs_default__link"
+                      role="tab"
+                      tabindex="0"
+                      aria-selected={isHtmlTabActive}
+                      data-tab="html"
+                      onclick={handleCodeTabChange}>
+                      HTML
+                    </a>
+                  </li>
+                  <li class={cssTabClass} role="presentation">
+                    <a
+                      class="slds-tabs_default__link"
+                      role="tab"
+                      tabindex="0"
+                      aria-selected={isCssTabActive}
+                      data-tab="css"
+                      onclick={handleCodeTabChange}>
+                      CSS
+                    </a>
+                  </li>
+                  <li class={jsTabClass} role="presentation">
+                    <a
+                      class="slds-tabs_default__link"
+                      role="tab"
+                      tabindex="0"
+                      aria-selected={isJsTabActive}
+                      data-tab="js"
+                      onclick={handleCodeTabChange}>
+                      JS
+                    </a>
+                  </li>
+                </ul>
+
+                <!-- Code Content -->
+                <div class="slds-tabs_default__content code-viewer-content">
+                  <template if:true={loadingCode}>
+                    <div class="slds-text-align_center slds-p-around_medium">
+                      <lightning-spinner alternative-text="Loading code..." size="small"></lightning-spinner>
+                    </div>
+                  </template>
+
+                  <template if:true={codeError}>
+                    <div class="slds-text-color_error slds-p-around_medium">
+                      {codeError}
+                    </div>
+                  </template>
+
+                  <template if:false={loadingCode}>
+                    <template if:false={codeError}>
+                      <div class="code-viewer">
+                        <pre class="code-block"><code>{activeSourceCode}</code></pre>
+                      </div>
+                    </template>
+                  </template>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Review Notes Section (Full Width) -->
+        <div class="slds-col slds-size_1-of-1 slds-m-top_medium">
+          <main-review-notes component-name={componentName}></main-review-notes>
         </div>
       </div>
     </template>

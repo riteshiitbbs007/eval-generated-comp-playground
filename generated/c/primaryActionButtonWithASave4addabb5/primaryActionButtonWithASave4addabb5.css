@@ -1,0 +1,53 @@
+:host {
+    display: inline-block;
+    width: 100%;
+}
+
+.slds-button {
+    /* Use SLDS styling hooks for color and spacing */
+    background: var(--slds-g-color-accent-container-1);
+    color: var(--slds-g-color-on-accent-1);
+    border: 1px solid var(--slds-g-color-border-accent-1);
+    border-radius: var(--slds-g-radius-border-1);
+    padding: var(--slds-g-spacing-2) var(--slds-g-spacing-4);
+    font-weight: var(--slds-g-font-weight-5);
+    line-height: var(--slds-g-font-lineheight-3);
+    transition: all 0.2s ease;
+}
+
+.slds-button:hover {
+    background: var(--slds-g-color-accent-container-2);
+    color: var(--slds-g-color-on-accent-2);
+    border-color: var(--slds-g-color-border-accent-2);
+}
+
+.slds-button:active {
+    background: var(--slds-g-color-accent-container-3);
+    color: var(--slds-g-color-on-accent-3);
+    border-color: var(--slds-g-color-border-accent-3);
+    transform: scale(0.98);
+}
+
+.slds-button:disabled {
+    background: var(--slds-g-color-disabled-container-1);
+    color: var(--slds-g-color-on-disabled-1);
+    border-color: var(--slds-g-color-disabled-1);
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.slds-button:focus {
+    outline: none;
+    box-shadow: 0 0 3px 2px var(--slds-g-color-accent-1);
+}
+
+.slds-button__icon_left {
+    margin-right: var(--slds-g-spacing-2);
+}
+
+.slds-truncate {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

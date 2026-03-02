@@ -1,4 +1,12 @@
 <template>
+  <!-- Onboarding Modal (shows on first visit) -->
+  <main-onboarding-modal></main-onboarding-modal>
+
+  <!-- Show utterances view when view=utterances (outside main for full-page layout) -->
+  <template if:true={showUtterances}>
+    <main-utterances></main-utterances>
+  </template>
+
   <main class="slds-p-around_medium">
     <!-- Show gallery view when no component selected -->
     <template if:true={showGallery}>
@@ -10,6 +18,38 @@
       <main-component-detail component-name={detailComponent}></main-component-detail>
     </template>
 
+  <!-- Show 4AlertsSuccessGreenErrorRedFcf679ff component when selected -->
+  <template if:true={show4AlertsSuccessGreenErrorRedFcf679ff}>
+    <div class="slds-m-bottom_medium">
+      <a href="/" class="slds-text-link">← Back to Gallery</a>
+    </div>
+
+    <div class="slds-box slds-box_small">
+      <h2 class="slds-text-heading_medium slds-m-bottom_small">
+        Component: 4AlertsSuccessGreenErrorRedFcf679ff
+      </h2>
+      <div class="slds-border_top slds-p-top_medium">
+        <c-4-alerts-success-green-error-red-fcf679ff></c-4-alerts-success-green-error-red-fcf679ff>
+      </div>
+    </div>
+  </template>
+  
+  <!-- Show contactFormNameTextEmailFormat0878e030 component when selected -->
+  <template if:true={showContactFormNameTextEmailFormat0878e030}>
+    <div class="slds-m-bottom_medium">
+      <a href="/" class="slds-text-link">← Back to Gallery</a>
+    </div>
+
+    <div class="slds-box slds-box_small">
+      <h2 class="slds-text-heading_medium slds-m-bottom_small">
+        Component: contactFormNameTextEmailFormat0878e030
+      </h2>
+      <div class="slds-border_top slds-p-top_medium">
+        <c-contact-form-name-text-email-format0878e030></c-contact-form-name-text-email-format0878e030>
+      </div>
+    </div>
+  </template>
+  
   <!-- Show create3stepWizardWith component when selected -->
   <template if:true={showCreate3stepWizardWith}>
     <div class="slds-m-bottom_medium">
@@ -214,6 +254,134 @@
       </h2>
       <div class="slds-border_top slds-p-top_medium">
         <c-create-vertical-nav-menu></c-create-vertical-nav-menu>
+      </div>
+    </div>
+  </template>
+  
+  <!-- Show faqAccordionWith3SectionsEach2efd09a1 component when selected -->
+  <template if:true={showFaqAccordionWith3SectionsEach2efd09a1}>
+    <div class="slds-m-bottom_medium">
+      <a href="/" class="slds-text-link">← Back to Gallery</a>
+    </div>
+
+    <div class="slds-box slds-box_small">
+      <h2 class="slds-text-heading_medium slds-m-bottom_small">
+        Component: faqAccordionWith3SectionsEach2efd09a1
+      </h2>
+      <div class="slds-border_top slds-p-top_medium">
+        <c-faq-accordion-with3-sections-each2efd09a1></c-faq-accordion-with3-sections-each2efd09a1>
+      </div>
+    </div>
+  </template>
+  
+  <!-- Show pageHeaderJohnSmithWithAccount3b74227d component when selected -->
+  <template if:true={showPageHeaderJohnSmithWithAccount3b74227d}>
+    <div class="slds-m-bottom_medium">
+      <a href="/" class="slds-text-link">← Back to Gallery</a>
+    </div>
+
+    <div class="slds-box slds-box_small">
+      <h2 class="slds-text-heading_medium slds-m-bottom_small">
+        Component: pageHeaderJohnSmithWithAccount3b74227d
+      </h2>
+      <div class="slds-border_top slds-p-top_medium">
+        <c-page-header-john-smith-with-account3b74227d></c-page-header-john-smith-with-account3b74227d>
+      </div>
+    </div>
+  </template>
+  
+  <!-- Show primaryActionButtonWithASave4addabb5 component when selected -->
+  <template if:true={showPrimaryActionButtonWithASave4addabb5}>
+    <div class="slds-m-bottom_medium">
+      <a href="/" class="slds-text-link">← Back to Gallery</a>
+    </div>
+
+    <div class="slds-box slds-box_small">
+      <h2 class="slds-text-heading_medium slds-m-bottom_small">
+        Component: primaryActionButtonWithASave4addabb5
+      </h2>
+      <div class="slds-border_top slds-p-top_medium">
+        <c-primary-action-button-with-a-save4addabb5></c-primary-action-button-with-a-save4addabb5>
+      </div>
+    </div>
+  </template>
+  
+  <!-- Show primaryButtonWithASaveIcon2a4b46ee component when selected -->
+  <template if:true={showPrimaryButtonWithASaveIcon2a4b46ee}>
+    <div class="slds-m-bottom_medium">
+      <a href="/" class="slds-text-link">← Back to Gallery</a>
+    </div>
+
+    <div class="slds-box slds-box_small">
+      <h2 class="slds-text-heading_medium slds-m-bottom_small">
+        Component: primaryButtonWithASaveIcon2a4b46ee
+      </h2>
+      <div class="slds-border_top slds-p-top_medium">
+        <c-primary-button-with-a-save-icon2a4b46ee></c-primary-button-with-a-save-icon2a4b46ee>
+      </div>
+    </div>
+  </template>
+  
+  <!-- Show primaryButtonWithASaveIcon3f0774ab component when selected -->
+  <template if:true={showPrimaryButtonWithASaveIcon3f0774ab}>
+    <div class="slds-m-bottom_medium">
+      <a href="/" class="slds-text-link">← Back to Gallery</a>
+    </div>
+
+    <div class="slds-box slds-box_small">
+      <h2 class="slds-text-heading_medium slds-m-bottom_small">
+        Component: primaryButtonWithASaveIcon3f0774ab
+      </h2>
+      <div class="slds-border_top slds-p-top_medium">
+        <c-primary-button-with-a-save-icon3f0774ab></c-primary-button-with-a-save-icon3f0774ab>
+      </div>
+    </div>
+  </template>
+  
+  <!-- Show primaryButtonWithASaveIcon55f94f20 component when selected -->
+  <template if:true={showPrimaryButtonWithASaveIcon55f94f20}>
+    <div class="slds-m-bottom_medium">
+      <a href="/" class="slds-text-link">← Back to Gallery</a>
+    </div>
+
+    <div class="slds-box slds-box_small">
+      <h2 class="slds-text-heading_medium slds-m-bottom_small">
+        Component: primaryButtonWithASaveIcon55f94f20
+      </h2>
+      <div class="slds-border_top slds-p-top_medium">
+        <c-primary-button-with-a-save-icon55f94f20></c-primary-button-with-a-save-icon55f94f20>
+      </div>
+    </div>
+  </template>
+  
+  <!-- Show responsiveProductCardGridWith611d4397d component when selected -->
+  <template if:true={showResponsiveProductCardGridWith611d4397d}>
+    <div class="slds-m-bottom_medium">
+      <a href="/" class="slds-text-link">← Back to Gallery</a>
+    </div>
+
+    <div class="slds-box slds-box_small">
+      <h2 class="slds-text-heading_medium slds-m-bottom_small">
+        Component: responsiveProductCardGridWith611d4397d
+      </h2>
+      <div class="slds-border_top slds-p-top_medium">
+        <c-responsive-product-card-grid-with611d4397d></c-responsive-product-card-grid-with611d4397d>
+      </div>
+    </div>
+  </template>
+  
+  <!-- Show userProfileFormNameTextEmailC8b10de5 component when selected -->
+  <template if:true={showUserProfileFormNameTextEmailC8b10de5}>
+    <div class="slds-m-bottom_medium">
+      <a href="/" class="slds-text-link">← Back to Gallery</a>
+    </div>
+
+    <div class="slds-box slds-box_small">
+      <h2 class="slds-text-heading_medium slds-m-bottom_small">
+        Component: userProfileFormNameTextEmailC8b10de5
+      </h2>
+      <div class="slds-border_top slds-p-top_medium">
+        <c-user-profile-form-name-text-email-c8b10de5></c-user-profile-form-name-text-email-c8b10de5>
       </div>
     </div>
   </template>

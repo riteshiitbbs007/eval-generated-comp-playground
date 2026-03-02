@@ -1,0 +1,99 @@
+/* Host element styling */
+:host {
+  display: block;
+}
+
+/* Card styling using SLDS styling hooks */
+.slds-card {
+  background: var(--slds-g-color-surface-container-1);
+  border: 1px solid var(--slds-g-color-border-1);
+  border-radius: var(--slds-g-radius-border-1);
+  box-shadow: var(--slds-g-shadow-1);
+  margin-bottom: var(--slds-g-spacing-4);
+}
+
+.slds-card__body_inner {
+  padding: var(--slds-g-spacing-4);
+}
+
+/* Accordion styling */
+.slds-accordion {
+  background-color: var(--slds-g-color-surface-1);
+}
+
+.slds-accordion__section {
+  border-bottom: 1px solid var(--slds-g-color-border-1);
+  margin-bottom: 0;
+}
+
+.slds-accordion__section:last-child {
+  border-bottom: none;
+}
+
+.slds-accordion__summary-heading {
+  font-weight: var(--slds-g-font-weight-6);
+}
+
+.slds-accordion__summary-action {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: var(--slds-g-spacing-3);
+  color: var(--slds-g-color-on-surface-3);
+  transition: background-color 0.1s ease-in-out;
+}
+
+.slds-accordion__summary-content {
+  color: var(--slds-g-color-on-surface-3);
+  font-weight: var(--slds-g-font-weight-6);
+  padding-left: var(--slds-g-spacing-2);
+}
+
+.slds-accordion__content {
+  color: var(--slds-g-color-on-surface-2);
+  padding: var(--slds-g-spacing-4);
+  line-height: var(--slds-g-font-lineheight-3);
+  background-color: var(--slds-g-color-surface-container-1);
+}
+
+/* Animation for chevron icon rotation */
+.slds-accordion__section.slds-is-open .section-icon {
+  transform: rotate(90deg);
+  transition: transform 0.2s ease-in-out;
+}
+
+.section-icon {
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Accessibility: focus state with high-contrast outline */
+.slds-accordion__summary-action:focus {
+  outline: 2px solid var(--slds-g-color-accent-1);
+  outline-offset: 1px;
+  box-shadow: var(--slds-g-shadow-focus);
+}
+
+/* Interactive states */
+.slds-accordion__summary-action:hover {
+  background-color: var(--slds-g-color-surface-container-2);
+  text-decoration: none;
+}
+
+.slds-accordion__summary-action:hover .slds-accordion__summary-content {
+  color: var(--slds-g-color-accent-1);
+}
+
+.slds-accordion__summary-action:active {
+  background-color: var(--slds-g-color-surface-container-3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 48rem) {
+  .slds-accordion__summary-action {
+    padding: var(--slds-g-spacing-2);
+  }
+
+  .slds-accordion__content {
+    padding: var(--slds-g-spacing-3);
+  }
+}

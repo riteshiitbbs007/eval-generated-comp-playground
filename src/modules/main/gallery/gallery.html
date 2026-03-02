@@ -1,21 +1,45 @@
 <template>
-  <div class="slds-p-around_medium" style="max-width: 1600px; margin: 0 auto;">
-    <div class="slds-page-header">
-      <div class="slds-page-header__row">
-        <div class="slds-page-header__col-title">
-          <div class="slds-media">
-            <div class="slds-media__body">
-              <h1 class="slds-page-header__title slds-m-right_small">
-                Generated Components Gallery
-              </h1>
-              <p class="slds-text-body_small slds-text-color_weak">
-                {components.length} component(s) generated
-              </p>
+  <div class="gallery-container">
+    <!-- Fixed Header -->
+    <div class="gallery-header-fixed">
+      <div class="gallery-header-content">
+        <div class="slds-page-header">
+          <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+              <div class="slds-media">
+                <div class="slds-media__body">
+                  <h1 class="slds-page-header__title slds-m-right_small">
+                    Generated Components Gallery
+                  </h1>
+                  <p class="slds-text-body_small slds-text-color_weak">
+                    Total components: {componentCount}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="slds-page-header__col-actions">
+              <div class="slds-form-element">
+                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                  <svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
+                    <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#search"></use>
+                  </svg>
+                  <input
+                    type="text"
+                    class="slds-input"
+                    placeholder="Search components..."
+                    value={searchTerm}
+                    oninput={handleSearch}
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Scrollable Content -->
+    <div class="gallery-content">
 
     <template if:true={loading}>
       <div class="slds-align_absolute-center slds-m-top_xx-large">
@@ -35,64 +59,150 @@
     </template>
 
     <template if:true={hasComponents}>
-      <div class="gallery-grid slds-m-top_medium">
-        <template for:each={formattedComponents} for:item="component">
-          <article key={component.componentName} class="slds-card component-card">
-            <!-- Screenshot -->
-            <template if:true={component.screenshotUrls.desktop}>
-              <div class="screenshot-container">
-                <img
-                  src={component.screenshotUrls.desktop}
-                  alt={component.componentName}
-                  class="screenshot-preview"
-                  onclick={handleComponentSelect}
-                  data-name={component.componentName}
-                >
+      <div class="gallery-accordion slds-m-top_medium">
+        <template for:each={groupedComponents} for:item="group">
+          <div key={group.id} class="date-group slds-m-bottom_medium">
+            <!-- Date Group Header -->
+            <button
+              class="date-group-header slds-button slds-button_reset"
+              onclick={handleToggleSection}
+              data-section-id={group.id}
+            >
+              <svg class="slds-icon slds-icon_small slds-m-right_x-small" aria-hidden="true">
+                <template if:true={group.isOpen}>
+                  <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#chevrondown"></use>
+                </template>
+                <template if:false={group.isOpen}>
+                  <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#chevronright"></use>
+                </template>
+              </svg>
+              <span class="date-group-title">{group.label}</span>
+              <span class="date-group-count">({group.countLabel})</span>
+            </button>
+
+            <!-- Date Group Content -->
+            <template if:true={group.isOpen}>
+              <div class="gallery-grid slds-m-top_small">
+                <template for:each={group.components} for:item="component">
+                  <article key={component.componentName} class="slds-card component-card">
+                    <!-- Component info -->
+                    <div class="slds-card__body slds-card__body_inner slds-p-around_small">
+                      <div class="component-header slds-m-bottom_xx-small">
+                        <h2 class="slds-text-heading_small slds-truncate" title={component.displayName}>
+                          {component.displayName}
+                        </h2>
+                        <template if:true={component.hasNotes}>
+                          <span class="note-badge" title={component.notesTooltip}>
+                            <svg class="slds-icon slds-icon_xx-small" aria-hidden="true">
+                              <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#note"></use>
+                            </svg>
+                            {component.noteCount}
+                          </span>
+                        </template>
+                      </div>
+
+                      <div class="slds-text-body_small slds-text-color_weak slds-m-bottom_small">
+                        {component.tier} • {component.complexity}
+                        <template if:true={component.variant}>
+                          • {component.variant}
+                        </template>
+                        • {component.formattedDate}
+                      </div>
+
+                      <!-- Utterance ID and Variant badges -->
+                      <template if:true={component.hasMetadataBadges}>
+                        <div class="metadata-badges slds-m-bottom_small">
+                          <template if:true={component.utteranceId}>
+                            <span class="metadata-badge utterance-badge" title="Utterance ID">
+                              {component.utteranceIdShort}
+                            </span>
+                          </template>
+                          <template if:true={component.variant}>
+                            <span class="metadata-badge variant-badge" title="Variant">
+                              <svg class="slds-icon slds-icon_xx-small" aria-hidden="true">
+                                <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#layers"></use>
+                              </svg>
+                              <span class="metadata-badge-text">{component.variant}</span>
+                            </span>
+                          </template>
+                        </div>
+                      </template>
+
+                      <!-- Screenshot -->
+                      <template if:true={component.screenshotUrls.desktop}>
+                        <div class="screenshot-container slds-m-bottom_small">
+                          <img
+                            src={component.screenshotUrls.desktop}
+                            alt={component.componentName}
+                            class="screenshot-preview"
+                            onclick={handleComponentSelect}
+                            data-name={component.componentName}
+                          >
+                        </div>
+                      </template>
+
+                      <!-- Scores -->
+                      <div class="score-section slds-m-bottom_x-small">
+                        <span class="score-overall">
+                          Overall: {component.formattedScore}
+                        </span>
+                        <span class="score-slds slds-text-color_weak">
+                          SLDS: {component.formattedSldsScore}
+                        </span>
+                      </div>
+
+                      <!-- Violations -->
+                      <div class="slds-text-body_small slds-text-color_weak slds-m-bottom_small">
+                        Violations: {component.violations.warnings}W {component.violations.errors}E
+                      </div>
+
+                      <!-- Error Breakdown -->
+                      <template if:true={component.hasErrorsByType}>
+                        <div class="error-breakdown slds-m-bottom_small">
+                          <button
+                            class="error-breakdown-toggle"
+                            onclick={handleToggleErrorBreakdown}
+                            data-component={component.componentName}>
+                            <svg class="slds-icon slds-icon_xx-small slds-m-right_xx-small" aria-hidden="true">
+                              <template if:true={component.showErrorBreakdown}>
+                                <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#chevrondown"></use>
+                              </template>
+                              <template if:false={component.showErrorBreakdown}>
+                                <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#chevronright"></use>
+                              </template>
+                            </svg>
+                            <span class="slds-text-body_small slds-text-color_weak">
+                              {component.totalErrorBreakdown} errors by type
+                            </span>
+                          </button>
+
+                          <template if:true={component.showErrorBreakdown}>
+                            <ul class="error-type-list slds-m-top_xx-small slds-m-left_medium">
+                              <template for:each={component.errorTypeEntries} for:item="entry">
+                                <li key={entry.type} class="slds-text-body_small">
+                                  <code class="error-type-code">{entry.type}</code>: {entry.count}
+                                </li>
+                              </template>
+                            </ul>
+                          </template>
+                        </div>
+                      </template>
+                    </div>
+
+                    <footer class="slds-card__footer">
+                      <button
+                        class="slds-button slds-button_brand slds-button_stretch"
+                        onclick={handleComponentSelect}
+                        data-name={component.componentName}
+                      >
+                        View Details
+                      </button>
+                    </footer>
+                  </article>
+                </template>
               </div>
             </template>
-
-            <!-- Component info -->
-            <div class="slds-card__body slds-card__body_inner slds-p-around_small">
-              <h2 class="slds-text-heading_small slds-truncate slds-m-bottom_xx-small" title={component.componentName}>
-                {component.componentName}
-              </h2>
-
-              <div class="slds-text-body_small slds-text-color_weak slds-m-bottom_x-small">
-                <div class="slds-grid slds-wrap">
-                  <div class="slds-col slds-size_1-of-1">
-                    {component.tier} • {component.complexity}
-                  </div>
-                </div>
-              </div>
-
-              <!-- Scores -->
-              <div class="score-badges slds-m-bottom_x-small">
-                <span class={component.readinessClass}>
-                  Score: {component.formattedScore}
-                </span>
-                <span class="slds-badge slds-badge_lightest">
-                  {component.violations.warnings}W {component.violations.errors}E
-                </span>
-              </div>
-
-              <!-- Token usage -->
-              <template if:true={component.tokenUsage}>
-                <div class="slds-text-body_small slds-text-color_weak">
-                  {component.formattedTokens} • {component.formattedCost}
-                </div>
-              </template>
-            </div>
-
-            <footer class="slds-card__footer">
-              <button
-                class="slds-button slds-button_brand slds-button_stretch"
-                onclick={handleComponentSelect}
-                data-name={component.componentName}
-              >
-                View Details
-              </button>
-            </footer>
-          </article>
+          </div>
         </template>
       </div>
     </template>
@@ -114,5 +224,33 @@
         </div>
       </template>
     </template>
+    </div>
+    <!-- End .gallery-content -->
+
+    <!-- Footer -->
+    <footer class="gallery-footer">
+      <div class="footer-content">
+        <div class="footer-left">
+          <p class="slds-text-body_small slds-text-color_weak">
+            Made with ❤️ by UXF Tooling Team • 2026
+          </p>
+        </div>
+        <div class="footer-right">
+          <a href="/?view=utterances" class="slds-button slds-button_neutral slds-button_small">
+            <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+              <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#textbox"></use>
+            </svg>
+            View Utterances
+          </a>
+          <button class="slds-button slds-button_neutral slds-button_small" onclick={handleShowOnboarding}>
+            <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+              <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#info"></use>
+            </svg>
+            View Tutorial
+          </button>
+        </div>
+      </div>
+    </footer>
   </div>
+  <!-- End .gallery-container -->
 </template>

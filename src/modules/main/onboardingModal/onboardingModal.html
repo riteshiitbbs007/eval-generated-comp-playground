@@ -1,0 +1,105 @@
+<template>
+  <!-- Onboarding Modal -->
+  <template if:true={isOpen}>
+    <!-- Modal Backdrop -->
+    <section
+      role="dialog"
+      tabindex="-1"
+      class="slds-modal slds-fade-in-open slds-modal_large"
+      aria-modal="true"
+      aria-labelledby="modal-heading"
+    >
+      <div class="slds-modal__container">
+        <!-- Modal Header -->
+        <header class="slds-modal__header">
+          <button
+            class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+            title="Close"
+            onclick={handleClose}
+          >
+            <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+              <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#close"></use>
+            </svg>
+            <span class="slds-assistive-text">Close</span>
+          </button>
+          <h2 id="modal-heading" class="slds-modal__title slds-hyphenate">
+            {currentStep.title}
+          </h2>
+          <p class="slds-m-top_x-small slds-text-body_small slds-text-color_weak">
+            {progressLabel}
+          </p>
+        </header>
+
+        <!-- Modal Body -->
+        <div class="slds-modal__content slds-p-around_medium" id="modal-content">
+          <!-- Progress Bar -->
+          <div class="slds-progress-bar slds-progress-bar_large slds-m-bottom_large" aria-valuemin="0" aria-valuemax="100" aria-valuenow={progressPercent} role="progressbar">
+            <span class="slds-progress-bar__value" style={progressBarStyle}>
+              <span class="slds-assistive-text">{progressLabel}</span>
+            </span>
+          </div>
+
+          <!-- Step Content Container -->
+          <div class="onboarding-content">
+            <!-- Step Heading -->
+            <template if:true={currentStep.heading}>
+              <h3 class="slds-text-heading_medium slds-m-bottom_medium">
+                {currentStep.heading}
+              </h3>
+            </template>
+
+            <!-- Step Content (HTML injected via renderedCallback) -->
+            <div class="slds-text-longform" lwc:dom="manual"></div>
+          </div>
+
+          <!-- Step Indicators -->
+          <div class="step-indicators-container">
+            <ul class="slds-progress slds-progress_horizontal" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={progressPercent}>
+              <template for:each={stepsWithClasses} for:item="step">
+                <li
+                  key={step.id}
+                  class={step.className}
+                  data-index={step.index}
+                  onclick={handleStepClick}
+                >
+                  <button class="slds-progress__marker" data-index={step.index} aria-label={step.ariaLabel}>
+                    <span class="slds-assistive-text">Step {step.index}</span>
+                  </button>
+                </li>
+              </template>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Modal Footer -->
+        <footer class="slds-modal__footer">
+          <div class="slds-grid slds-grid_align-spread">
+            <!-- Left: Skip/Previous -->
+            <div class="slds-col">
+              <template if:true={isFirstStep}>
+                <button class="slds-button slds-button_neutral" onclick={handleSkip}>
+                  Skip Tutorial
+                </button>
+              </template>
+              <template if:false={isFirstStep}>
+                <button class="slds-button slds-button_neutral" onclick={handlePrevious}>
+                  Previous
+                </button>
+              </template>
+            </div>
+
+            <!-- Right: Next/Get Started -->
+            <div class="slds-col">
+              <button class="slds-button slds-button_brand" onclick={handleNext}>
+                {nextButtonLabel}
+              </button>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+    <!-- Modal Backdrop -->
+    <div class="slds-backdrop slds-backdrop_open"></div>
+  </template>
+</template>

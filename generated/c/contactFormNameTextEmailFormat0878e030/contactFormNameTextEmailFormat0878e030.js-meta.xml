@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Contact Form with Validation</masterLabel>
+    <description>Contact form with name (text), email (format validation), and message (textarea with min 10 chars validation)</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage,lightningCommunity__Page">
+            <property name="showSuccessMessage" type="Boolean" label="Show Success Message" description="Display a success message after form submission" default="false" />
+            <property name="successMessage" type="String" label="Success Message" description="Message to display after successful form submission" default="Form submitted successfully!" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

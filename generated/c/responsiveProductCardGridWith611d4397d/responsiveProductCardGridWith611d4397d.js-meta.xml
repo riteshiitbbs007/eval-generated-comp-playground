@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Responsive Product Card Grid With 6</masterLabel>
+    <description>Displays a responsive product card grid with 6 products. Adapts to 4 columns on desktop, 2 columns on tablet, and 1 column on mobile.</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage,lightningCommunity__Default">
+            <property name="gridLabel" type="String" label="Grid Label" description="Alternative text for the product grid" default="Product Grid" />
+            <property name="showPrices" type="Boolean" label="Show Prices" description="Whether to show product prices" default="false" />
+            <property name="showDescriptions" type="Boolean" label="Show Descriptions" description="Whether to show product descriptions" default="false" />
+            <property name="showBadges" type="Boolean" label="Show Badges" description="Whether to show badges for new products" default="false" />
+            <property name="showButtons" type="Boolean" label="Show Buttons" description="Whether to show action buttons" default="false" />
+            <property name="compactLayout" type="Boolean" label="Compact Layout" description="Whether to display products in a compact layout" default="false" />
+            <property name="highlightNew" type="Boolean" label="Highlight New Products" description="Whether to highlight new products" default="false" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

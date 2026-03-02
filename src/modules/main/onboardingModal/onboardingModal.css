@@ -1,0 +1,195 @@
+/* Onboarding Modal Custom Styles */
+
+/* Modal container width - 50-60% of viewport */
+.slds-modal__container {
+  width: 55%;
+  max-width: 900px;
+  min-width: 600px;
+}
+
+/* Modal header - center aligned */
+.slds-modal__header {
+  text-align: center;
+  padding: 1.5rem 3rem 1rem 3rem;
+}
+
+.slds-modal__header .slds-modal__title {
+  margin: 0 auto;
+}
+
+/* Modal content - better spacing */
+.slds-modal__content {
+  padding: 2rem 3rem !important;
+  min-height: 400px;
+}
+
+/* Progress bar styling */
+.slds-progress-bar {
+  margin-bottom: 1.5rem !important;
+}
+
+/* Content area - centered and well-spaced */
+.onboarding-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* Step heading */
+.onboarding-content h3 {
+  text-align: center;
+  margin-top: 0 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Enhanced text formatting for onboarding steps */
+.slds-text-longform p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.slds-text-longform ul {
+  margin-bottom: 1rem;
+  margin-left: 1.5rem;
+}
+
+.slds-text-longform ol {
+  margin-bottom: 1rem;
+  margin-left: 1.5rem;
+}
+
+.slds-text-longform li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Box elements - better spacing */
+.slds-text-longform .slds-box {
+  margin-bottom: 1rem !important;
+  padding: 1rem !important;
+}
+
+/* Step indicators container - centered and spaced */
+.step-indicators-container {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Center the step indicators */
+.slds-progress.slds-progress_horizontal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Step indicator items */
+.slds-progress__item {
+  flex: 0 0 auto;
+  margin: 0 0.5rem;
+}
+
+/* Step indicator buttons */
+.slds-progress__marker {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  width: 1rem;
+  height: 1rem;
+  min-width: 1rem;
+  border-radius: 50%;
+}
+
+.slds-progress__marker:hover {
+  transform: scale(1.2);
+}
+
+/* Active and completed states */
+.slds-progress__item.slds-is-active .slds-progress__marker {
+  background-color: #0176d3;
+  border-color: #0176d3;
+  transform: scale(1.1);
+}
+
+.slds-progress__item.slds-is-completed .slds-progress__marker {
+  background-color: #2e844a;
+  border-color: #2e844a;
+}
+
+/* Modal footer - better alignment */
+.slds-modal__footer {
+  padding: 1rem 3rem 1.5rem 3rem;
+}
+
+.slds-modal__footer .slds-grid {
+  width: 100%;
+}
+
+/* Smooth transitions for content changes */
+.slds-modal__content {
+  transition: opacity 0.2s ease;
+}
+
+/* Badge styling */
+.slds-text-longform .slds-badge {
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+}
+
+/* Grid styling for boxes */
+.slds-text-longform .slds-grid {
+  gap: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .slds-modal__container {
+    width: 70%;
+    min-width: 500px;
+  }
+
+  .slds-modal__header {
+    padding: 1.5rem 2rem 1rem 2rem;
+  }
+
+  .slds-modal__content {
+    padding: 1.5rem 2rem !important;
+  }
+
+  .slds-modal__footer {
+    padding: 1rem 2rem 1.5rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .slds-modal__container {
+    width: 90%;
+    min-width: 0;
+  }
+
+  .slds-modal__header {
+    padding: 1rem 1.5rem;
+  }
+
+  .slds-modal__content {
+    padding: 1rem 1.5rem !important;
+    min-height: 300px;
+  }
+
+  .slds-modal__footer {
+    padding: 1rem 1.5rem;
+  }
+
+  .onboarding-content {
+    max-width: 100%;
+  }
+
+  .slds-text-longform ul,
+  .slds-text-longform ol {
+    margin-left: 1rem;
+  }
+}

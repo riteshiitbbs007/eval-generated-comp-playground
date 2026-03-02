@@ -8,22 +8,35 @@
     "clean": "rimraf node_modules __lwr_cache__ site",
     "generate:templates": "node scripts/generate-app-templates.js",
     "predev": "npm run generate:templates",
-    "dev": "npx --no-install lwr dev",
-    "dev:compat": "npx --no-install lwr dev --mode compat",
+    "dev": "lwr dev",
+    "dev:compat": "lwr dev --mode compat",
+    "dev:api": "nodemon server/index.js",
     "prebuild": "npm run generate:templates",
-    "build": "npx --no-install lwr build --clean",
-    "build:prod-compat": "npx --no-install lwr build --clean --mode prod-compat",
-    "start": "PORT=3001 npx --no-install lwr start",
+    "build": "lwr build --clean",
+    "build:prod-compat": "lwr build --clean --mode prod-compat",
+    "start": "node server/index.js",
+    "start:lwr": "lwr start",
     "stage": "yarn build && yarn start",
-    "stage:prod-compat": "yarn build:prod-compat && yarn start"
+    "stage:prod-compat": "yarn build:prod-compat && yarn start",
+    "screenshots": "node scripts/capture-screenshots.js",
+    "screenshots:all": "node scripts/capture-screenshots.js --all"
   },
   "dependencies": {
     "@lwc/engine-dom": "^8.20.1",
     "@lwc/synthetic-shadow": "^8.20.1",
     "@salesforce-ux/design-system": "^2.26.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "joi": "^17.11.0",
     "lightning-base-components": "^1.28.13-alpha",
     "lwc": "8.20.1",
-    "lwr": "0.18.1"
+    "lwr": "0.18.1",
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "playwright": "^1.58.2"
   },
   "overrides": {
     "@lwc/compiler": "8.20.1",

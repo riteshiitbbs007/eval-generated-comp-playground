@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>FAQ Accordion with 3 Sections</masterLabel>
+    <description>An accessible accordion component that displays FAQ questions and answers, with 3 sections where each section has a question header and answer body. The first section is expanded by default, and chevron icons rotate on expand/collapse.</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage,lightningCommunity__Default">
+            <property name="allowMultiple" type="Boolean" label="Allow Multiple Sections Open" description="When true, allows multiple sections to be expanded at the same time" default="false" />
+            <property name="showIcons" type="Boolean" label="Show Icons" description="Controls visibility of chevron icons" default="false" />
+            <property name="allowCollapse" type="Boolean" label="Allow All Sections to Collapse" description="When true, allows all sections to be collapsed at once" default="false" />
+            <property name="sections" type="String" label="FAQ Sections (JSON)" description="Optional JSON array of section objects with 'question' and 'answer' properties. Example: [{'question':'How do I reset my password?','answer':'Click Forgot Password'}]" required="false" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
