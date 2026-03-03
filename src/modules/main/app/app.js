@@ -123,6 +123,10 @@ export default class HelloWorldApp extends LightningElement {
     return this.selectedComponent === 'primaryButtonWithASaveIcon55f94f20';
   }
 
+  get showPrimaryButtonWithASaveIconC0e76cf4() {
+    return this.selectedComponent === 'primaryButtonWithASaveIconC0e76cf4';
+  }
+
   get showResponsiveProductCardGridWith611d4397d() {
     return this.selectedComponent === 'responsiveProductCardGridWith611d4397d';
   }

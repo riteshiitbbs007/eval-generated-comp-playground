@@ -1,0 +1,81 @@
+/**
+ * Primary Button with Save Icon - Styling
+ *
+ * Uses SLDS 2 styling hooks (--slds-g-*) instead of hardcoded values
+ * Follows SLDS design system standards for consistency and theme support
+ */
+
+/**
+ * Component host styling
+ * Ensures proper display and layout behavior
+ */
+:host {
+    display: inline-block;
+}
+
+/**
+ * Custom button styling overrides using SLDS styling hooks
+ * Note: lightning-button handles most styling, but we can customize
+ * specific aspects using component-specific styling hooks
+ */
+lightning-button {
+    /**
+     * Ensure button maintains consistent spacing
+     * Uses SLDS spacing scale: spacing-2 = 8px
+     */
+    --slds-c-button-spacing-block-start: var(--slds-g-spacing-2);
+    --slds-c-button-spacing-block-end: var(--slds-g-spacing-2);
+    --slds-c-button-spacing-inline-start: var(--slds-g-spacing-4);
+    --slds-c-button-spacing-inline-end: var(--slds-g-spacing-4);
+
+    /**
+     * Typography settings using SLDS font hooks
+     * font-weight-5 = medium (500)
+     */
+    --slds-c-button-text-font-weight: var(--slds-g-font-weight-5);
+    --slds-c-button-text-font-size: var(--slds-g-font-size-base);
+
+    /**
+     * Border radius using SLDS radius hooks
+     * Creates consistent rounded corners across themes
+     */
+    --slds-c-button-radius-border: var(--slds-g-radius-border-1);
+}
+
+/**
+ * Focus state styling
+ * Ensures visible focus indicator for keyboard navigation (WCAG 2.1 requirement)
+ */
+lightning-button:focus-within {
+    /**
+     * Use accent color for focus ring
+     * Provides clear visual feedback for keyboard users
+     */
+    outline: 2px solid var(--slds-g-color-accent-1);
+    outline-offset: 2px;
+}
+
+/**
+ * Disabled state styling
+ * Provides clear visual feedback when button is disabled
+ */
+lightning-button[disabled] {
+    /**
+     * Use semantic disabled colors from SLDS
+     * Ensures proper contrast and consistent disabled appearance
+     */
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/**
+ * Icon spacing customization
+ * Ensures proper spacing between icon and text
+ */
+lightning-button::part(icon) {
+    /**
+     * Icon margin using SLDS spacing hooks
+     * spacing-2 = 8px for comfortable icon-to-text spacing
+     */
+    margin-inline-end: var(--slds-g-spacing-2);
+}

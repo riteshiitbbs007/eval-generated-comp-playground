@@ -1,0 +1,21 @@
+<template>
+    <!--
+        Primary Button with Save Icon
+        
+        Uses lightning-button with icon-name for SLDS compliance
+        Follows SLDS 2 standards with proper accessibility attributes
+        
+        CRITICAL: No template literals in HTML attributes (causes LWC1058)
+        All dynamic text uses computed getters from JavaScript
+    -->
+    <lightning-button
+        variant="brand"
+        label={label}
+        title={buttonAriaLabel}
+        icon-name="utility:save"
+        icon-position="left"
+        disabled={disabled}
+        onclick={handleClick}
+        class="slds-m-around_small">
+    </lightning-button>
+</template>
