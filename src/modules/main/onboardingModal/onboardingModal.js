@@ -16,6 +16,16 @@ export default class OnboardingModal extends LightningElement {
   connectedCallback() {
     console.log('[Onboarding] Component connected');
     console.log('[Onboarding] Steps loaded:', this.steps?.length);
+
+    // Check if onboarding is disabled via URL parameter (for screenshot automation)
+    const urlParams = new URLSearchParams(window.location.search);
+    const onboardingDisabled = urlParams.get('noOnboarding') === 'true' || urlParams.get('screenshot') === 'true';
+
+    if (onboardingDisabled) {
+      console.log('[Onboarding] Disabled via URL parameter');
+      return;
+    }
+
     // Check if user has completed onboarding
     const completed = this.checkOnboardingCompleted();
     console.log('[Onboarding] Completed?', completed);
