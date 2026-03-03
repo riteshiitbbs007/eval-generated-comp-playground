@@ -128,6 +128,32 @@ export default class ComponentDetail extends LightningElement {
     return this.metadata?.variant || null;
   }
 
+  get hasModel() {
+    return !!this.metadata?.model;
+  }
+
+  get model() {
+    return this.metadata?.model || null;
+  }
+
+  get modelProvider() {
+    return this.metadata?.modelProvider || null;
+  }
+
+  get modelDisplay() {
+    if (!this.hasModel) return null;
+    const provider = this.modelProvider ? ` (${this.modelProvider})` : '';
+    return `${this.model}${provider}`;
+  }
+
+  get hasTestConfig() {
+    return !!this.metadata?.testConfig;
+  }
+
+  get testConfig() {
+    return this.metadata?.testConfig || null;
+  }
+
   get hasErrorsByType() {
     return this.metadata?.errorsByType && Object.keys(this.metadata.errorsByType).length > 0;
   }

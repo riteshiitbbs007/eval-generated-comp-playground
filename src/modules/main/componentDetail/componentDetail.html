@@ -100,6 +100,24 @@
                   <dd class="slds-dl__detail">{variant}</dd>
                 </template>
 
+                <!-- NEW: Model Information -->
+                <template if:true={hasModel}>
+                  <dt class="slds-dl__label">Model:</dt>
+                  <dd class="slds-dl__detail">
+                    <span class="slds-badge slds-badge_lightest">{modelDisplay}</span>
+                  </dd>
+                </template>
+
+                <!-- NEW: Test Configuration -->
+                <template if:true={hasTestConfig}>
+                  <template if:true={testConfig.csvUtteranceFilter}>
+                    <dt class="slds-dl__label">CSV Filter:</dt>
+                    <dd class="slds-dl__detail">
+                      <code>{testConfig.csvUtteranceFilter}</code>
+                    </dd>
+                  </template>
+                </template>
+
                 <!-- NEW: LangSmith Run Link -->
                 <template if:true={hasLangsmithUrl}>
                   <dt class="slds-dl__label">LangSmith Run:</dt>
