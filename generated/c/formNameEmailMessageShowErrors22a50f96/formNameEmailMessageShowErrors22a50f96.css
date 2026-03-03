@@ -1,0 +1,45 @@
+/**
+ * Form component styling using SLDS design tokens
+ * Follows SLDS 2 design system guidelines
+ */
+
+/* Success alert styling with SLDS design tokens */
+.slds-alert_success {
+    background-color: var(--slds-g-color-success-container-1, #4bca81);
+    color: var(--slds-g-color-on-success-1, #181818);
+    border: 1px solid var(--slds-g-color-border-success-1, #2e844a);
+    border-radius: var(--slds-g-border-radius-medium, 0.25rem);
+    padding: var(--slds-g-spacing-medium, 1rem);
+    margin-bottom: var(--slds-g-spacing-medium, 1rem);
+}
+
+/* Form container with SLDS box styling */
+.slds-box {
+    background-color: var(--slds-g-color-surface-container-1, #ffffff);
+    border: 1px solid var(--slds-g-color-border-1, #c9c9c9);
+    border-radius: var(--slds-g-border-radius-medium, 0.25rem);
+    padding: var(--slds-g-spacing-large, 1.5rem);
+}
+
+/* Form heading styling */
+.slds-text-heading_medium {
+    color: var(--slds-g-color-on-surface-1, #181818);
+    font-size: var(--slds-g-font-size-5, 1rem);
+    font-weight: var(--slds-g-font-weight-bold, 700);
+    line-height: var(--slds-g-line-height-heading, 1.25);
+}
+
+/* Bottom margin for form heading */
+.slds-m-bottom_medium {
+    margin-bottom: var(--slds-g-spacing-medium, 1rem);
+}
+
+/* Top margin for submit button */
+.slds-m-top_medium {
+    margin-top: var(--slds-g-spacing-medium, 1rem);
+}
+
+/* Right align submit button */
+.slds-text-align_right {
+    text-align: right;
+}

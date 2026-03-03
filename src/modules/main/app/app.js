@@ -103,8 +103,16 @@ export default class HelloWorldApp extends LightningElement {
     return this.selectedComponent === 'faqAccordionWith3SectionsEach2efd09a1';
   }
 
+  get showFormNameEmailMessageShowErrors22a50f96() {
+    return this.selectedComponent === 'formNameEmailMessageShowErrors22a50f96';
+  }
+
   get showPageHeaderJohnSmithWithAccount3b74227d() {
     return this.selectedComponent === 'pageHeaderJohnSmithWithAccount3b74227d';
+  }
+
+  get showPageHeaderWithTitleAndAction35185f19() {
+    return this.selectedComponent === 'pageHeaderWithTitleAndAction35185f19';
   }
 
   get showPrimaryActionButtonWithASave4addabb5() {
