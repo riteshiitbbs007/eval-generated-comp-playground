@@ -1,0 +1,75 @@
+/**
+ * SLDS 2 Alert Component Styles
+ * Uses semantic feedback color styling hooks for WCAG 2.1 AA compliance
+ */
+
+/* Base alert styles */
+.alert {
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Success Alert - Green */
+.alert--success {
+    background-color: var(--slds-g-color-success-container-1);
+    color: var(--slds-g-color-on-success-1);
+}
+
+.alert__icon--success {
+    --slds-c-icon-color-foreground: var(--slds-g-color-on-success-1);
+    --slds-c-icon-color-foreground-default: var(--slds-g-color-on-success-1);
+}
+
+/* Error Alert - Red */
+.alert--error {
+    background-color: var(--slds-g-color-error-container-1);
+    color: var(--slds-g-color-on-error-1);
+}
+
+.alert__icon--error {
+    --slds-c-icon-color-foreground: var(--slds-g-color-on-error-1);
+    --slds-c-icon-color-foreground-default: var(--slds-g-color-on-error-1);
+}
+
+/* Warning Alert - Orange */
+.alert--warning {
+    background-color: var(--slds-g-color-warning-container-1);
+    color: var(--slds-g-color-on-warning-1);
+}
+
+.alert__icon--warning {
+    --slds-c-icon-color-foreground: var(--slds-g-color-on-warning-1);
+    --slds-c-icon-color-foreground-default: var(--slds-g-color-on-warning-1);
+}
+
+/* Info Alert - Blue */
+.alert--info {
+    background-color: var(--slds-g-color-info-container-1);
+    color: var(--slds-g-color-on-info-1);
+}
+
+.alert__icon--info {
+    --slds-c-icon-color-foreground: var(--slds-g-color-on-info-1);
+    --slds-c-icon-color-foreground-default: var(--slds-g-color-on-info-1);
+}
+
+/* Alert content styles */
+.alert__title {
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+.alert__message {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 48em) {
+    .alert {
+        margin-bottom: 0.75rem;
+    }
+}

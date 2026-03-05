@@ -39,8 +39,16 @@ export default class HelloWorldApp extends LightningElement {
     return this.viewName === 'utterances';
   }
 
+  get show4AlertsSuccessErrorWarningInfo49684baf() {
+    return this.selectedComponent === '4AlertsSuccessErrorWarningInfo49684baf';
+  }
+
   get show4AlertsSuccessGreenErrorRedFcf679ff() {
     return this.selectedComponent === '4AlertsSuccessGreenErrorRedFcf679ff';
+  }
+
+  get showContactCardWithAvatarNameTitle569326e5() {
+    return this.selectedComponent === 'contactCardWithAvatarNameTitle569326e5';
   }
 
   get showContactFormNameTextEmailFormat0878e030() {

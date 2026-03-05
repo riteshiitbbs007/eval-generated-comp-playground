@@ -1,0 +1,42 @@
+{
+  "folderName": "component-4AlertsSuccessErrorWarningInfo-C07-Simple-20260304",
+  "componentName": "4AlertsSuccessErrorWarningInfo49684baf",
+  "csvId": "C07",
+  "variant": "Simple",
+  "timestamp": "2026-03-03T18:46:48.713Z",
+  "utterance": "Create 4 alerts: Success, Error, Warning, Info with icons",
+  "tier": "Tier 2",
+  "complexity": "Intermediate",
+  "scores": {
+    "slds_linter": 0.7,
+    "slds_quality": 0.7,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.63
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 22,
+    "notes": 0
+  },
+  "utteranceId": "C07",
+  "errorsByType": {
+    "slds/no-hardcoded-values-slds2": 6,
+    "slds/no-slds-var-without-fallback": 16
+  },
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/93b654aa-481e-4d32-9aee-2eb7b1c4cfdd/r/019cb502-e495-7000-8000-07ddb1149f1f",
+  "langsmithRunId": "019cb502-e495-7000-8000-07ddb1149f1f",
+  "langsmithProjectName": "clear-force-63",
+  "langsmithTraceId": "019cb502-e495-7000-8000-07ddb1149f1f",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C07:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/4AlertsSuccessErrorWarningInfo49684baf/screenshots/desktop.png"
+  }
+}
