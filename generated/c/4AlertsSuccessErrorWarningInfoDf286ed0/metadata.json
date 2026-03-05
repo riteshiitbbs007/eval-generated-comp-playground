@@ -1,0 +1,42 @@
+{
+  "folderName": "component-4AlertsSuccessErrorWarningInfo-C07-Simple-20260305",
+  "componentName": "4AlertsSuccessErrorWarningInfoDf286ed0",
+  "csvId": "C07",
+  "variant": "Simple",
+  "timestamp": "2026-03-05T12:11:19.662Z",
+  "utterance": "Create 4 alerts: Success, Error, Warning, Info with icons",
+  "tier": "Tier 2",
+  "complexity": "Intermediate",
+  "scores": {
+    "slds_linter": 0.61,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.71
+  },
+  "violations": {
+    "errors": 3,
+    "warnings": 2,
+    "notes": 0
+  },
+  "utteranceId": "C07",
+  "errorsByType": {
+    "slds/lwc-token-to-slds-hook": 3,
+    "slds/no-slds-namespace-for-custom-hooks": 2
+  },
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/7cee0f21-0118-498a-bc71-7dee401a87ab/r/019cbde5-6f61-7000-8000-0559d7f786b3",
+  "langsmithRunId": "019cbde5-6f61-7000-8000-0559d7f786b3",
+  "langsmithProjectName": "cooked-bag-58",
+  "langsmithTraceId": "019cbde5-6f61-7000-8000-0559d7f786b3",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C06-C09:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/4AlertsSuccessErrorWarningInfoDf286ed0/screenshots/desktop.png"
+  }
+}

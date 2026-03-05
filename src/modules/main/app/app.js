@@ -43,6 +43,10 @@ export default class HelloWorldApp extends LightningElement {
     return this.selectedComponent === '4AlertsSuccessErrorWarningInfo49684baf';
   }
 
+  get show4AlertsSuccessErrorWarningInfoDf286ed0() {
+    return this.selectedComponent === '4AlertsSuccessErrorWarningInfoDf286ed0';
+  }
+
   get show4AlertsSuccessGreenErrorRedFcf679ff() {
     return this.selectedComponent === '4AlertsSuccessGreenErrorRedFcf679ff';
   }
@@ -111,8 +115,16 @@ export default class HelloWorldApp extends LightningElement {
     return this.selectedComponent === 'faqAccordionWith3SectionsEach2efd09a1';
   }
 
+  get showFaqAccordionWith3SectionsFirstBe7ac560() {
+    return this.selectedComponent === 'faqAccordionWith3SectionsFirstBe7ac560';
+  }
+
   get showFormNameEmailMessageShowErrors22a50f96() {
     return this.selectedComponent === 'formNameEmailMessageShowErrors22a50f96';
+  }
+
+  get showFormWithTextEmailPhoneDropdownE48117d4() {
+    return this.selectedComponent === 'formWithTextEmailPhoneDropdownE48117d4';
   }
 
   get showPageHeaderJohnSmithWithAccount3b74227d() {
@@ -121,6 +133,10 @@ export default class HelloWorldApp extends LightningElement {
 
   get showPageHeaderWithTitleAndAction35185f19() {
     return this.selectedComponent === 'pageHeaderWithTitleAndAction35185f19';
+  }
+
+  get showPageHeaderWithTitleAndActionFb7c8482() {
+    return this.selectedComponent === 'pageHeaderWithTitleAndActionFb7c8482';
   }
 
   get showPrimaryActionButtonWithASave4addabb5() {
