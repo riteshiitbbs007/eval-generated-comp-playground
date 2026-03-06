@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>Sortable product table displaying Product Name, Price, Category, and Stock Status with SLDS 2 compliance</description>
+    <isExposed>false</isExposed>
+    <masterLabel>Sortable Product Table</masterLabel>
+</LightningComponentBundle>

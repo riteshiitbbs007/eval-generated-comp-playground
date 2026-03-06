@@ -1,0 +1,183 @@
+<template>
+    <!-- Sortable Product Table Component -->
+    <div class="slds-card">
+        <!-- Card Header -->
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                        <span class="slds-text-heading_small">Product Catalog</span>
+                    </h2>
+                </div>
+            </header>
+        </div>
+
+        <!-- Card Body with Table -->
+        <div class="slds-card__body slds-card__body_inner">
+            <!-- Responsive table container -->
+            <div class="slds-table_container">
+                <table
+                    class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered"
+                    role="grid"
+                    aria-label="Product catalog table"
+                >
+                    <!-- Table Header -->
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <!-- Product Name Column -->
+                            <th
+                                class="slds-text-title_caps sortable-header"
+                                scope="col"
+                                role="columnheader"
+                                aria-sort={nameSortAriaSort}
+                            >
+                                <button
+                                    class="slds-th__action slds-text-link_reset"
+                                    type="button"
+                                    onclick={handleSortByName}
+                                    aria-label={nameSortAriaLabel}
+                                >
+                                    <span class="slds-assistive-text">Sort by: </span>
+                                    <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                        <span class="slds-truncate" title="Product Name">Product Name</span>
+                                        <span class="slds-icon_container slds-icon-utility-arrowdown">
+                                            <lightning-icon
+                                                icon-name={nameSortIcon}
+                                                size="x-small"
+                                                alternative-text={nameSortIconAlt}
+                                                class="slds-m-left_x-small"
+                                            ></lightning-icon>
+                                        </span>
+                                    </div>
+                                </button>
+                            </th>
+
+                            <!-- Price Column -->
+                            <th
+                                class="slds-text-title_caps sortable-header"
+                                scope="col"
+                                role="columnheader"
+                                aria-sort={priceSortAriaSort}
+                            >
+                                <button
+                                    class="slds-th__action slds-text-link_reset"
+                                    type="button"
+                                    onclick={handleSortByPrice}
+                                    aria-label={priceSortAriaLabel}
+                                >
+                                    <span class="slds-assistive-text">Sort by: </span>
+                                    <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                        <span class="slds-truncate" title="Price">Price</span>
+                                        <span class="slds-icon_container slds-icon-utility-arrowdown">
+                                            <lightning-icon
+                                                icon-name={priceSortIcon}
+                                                size="x-small"
+                                                alternative-text={priceSortIconAlt}
+                                                class="slds-m-left_x-small"
+                                            ></lightning-icon>
+                                        </span>
+                                    </div>
+                                </button>
+                            </th>
+
+                            <!-- Category Column -->
+                            <th
+                                class="slds-text-title_caps sortable-header"
+                                scope="col"
+                                role="columnheader"
+                                aria-sort={categorySortAriaSort}
+                            >
+                                <button
+                                    class="slds-th__action slds-text-link_reset"
+                                    type="button"
+                                    onclick={handleSortByCategory}
+                                    aria-label={categorySortAriaLabel}
+                                >
+                                    <span class="slds-assistive-text">Sort by: </span>
+                                    <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                        <span class="slds-truncate" title="Category">Category</span>
+                                        <span class="slds-icon_container slds-icon-utility-arrowdown">
+                                            <lightning-icon
+                                                icon-name={categorySortIcon}
+                                                size="x-small"
+                                                alternative-text={categorySortIconAlt}
+                                                class="slds-m-left_x-small"
+                                            ></lightning-icon>
+                                        </span>
+                                    </div>
+                                </button>
+                            </th>
+
+                            <!-- Stock Status Column (conditional) -->
+                            <template lwc:if={showStockStatus}>
+                                <th
+                                    class="slds-text-title_caps sortable-header"
+                                    scope="col"
+                                    role="columnheader"
+                                    aria-sort={stockSortAriaSort}
+                                >
+                                    <button
+                                        class="slds-th__action slds-text-link_reset"
+                                        type="button"
+                                        onclick={handleSortByStock}
+                                        aria-label={stockSortAriaLabel}
+                                    >
+                                        <span class="slds-assistive-text">Sort by: </span>
+                                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                            <span class="slds-truncate" title="Stock Status">Stock Status</span>
+                                            <span class="slds-icon_container slds-icon-utility-arrowdown">
+                                                <lightning-icon
+                                                    icon-name={stockSortIcon}
+                                                    size="x-small"
+                                                    alternative-text={stockSortIconAlt}
+                                                    class="slds-m-left_x-small"
+                                                ></lightning-icon>
+                                            </span>
+                                        </div>
+                                    </button>
+                                </th>
+                            </template>
+                        </tr>
+                    </thead>
+
+                    <!-- Table Body -->
+                    <tbody>
+                        <template for:each={sortedProducts} for:item="product">
+                            <tr key={product.id} class="slds-hint-parent">
+                                <!-- Product Name -->
+                                <td role="gridcell">
+                                    <div class="slds-truncate" title={product.name}>
+                                        {product.name}
+                                    </div>
+                                </td>
+
+                                <!-- Price -->
+                                <td role="gridcell">
+                                    <div class="slds-truncate" title={product.formattedPrice}>
+                                        {product.formattedPrice}
+                                    </div>
+                                </td>
+
+                                <!-- Category -->
+                                <td role="gridcell">
+                                    <div class="slds-truncate" title={product.category}>
+                                        {product.category}
+                                    </div>
+                                </td>
+
+                                <!-- Stock Status with Badge (conditional) -->
+                                <template lwc:if={showStockStatus}>
+                                    <td role="gridcell">
+                                        <span class={product.stockBadgeClass}>
+                                            {product.stock}
+                                        </span>
+                                    </td>
+                                </template>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</template>
