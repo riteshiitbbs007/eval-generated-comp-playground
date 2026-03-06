@@ -1,0 +1,228 @@
+/* FAQ Accordion Component Styling - SLDS 2 Compliance */
+/* Uses SLDS styling hooks, BEM methodology, and follows accessibility guidelines */
+
+:host {
+    /* Component host styling */
+    display: block;
+}
+
+.slds-accordion {
+    /* Main container styling using semantic surface colors */
+    background: var(--slds-g-color-surface-container-1);
+    color: var(--slds-g-color-on-surface-2);
+    border: 1px solid var(--slds-g-color-border-1);
+    border-radius: var(--slds-g-radius-border-1);
+    font-family: var(--slds-g-font-family-base);
+    box-shadow: var(--slds-g-shadow-1);
+}
+
+.slds-accordion__section {
+    /* Individual section container */
+    position: relative;
+    border-bottom: 1px solid var(--slds-g-color-border-1);
+}
+
+.slds-accordion__section:last-child {
+    border-bottom: none;
+}
+
+.slds-accordion__summary {
+    /* Summary container - maintains structure */
+    position: relative;
+}
+
+.slds-accordion__summary-heading {
+    /* Reset default heading styles */
+    margin: 0;
+    font-size: var(--slds-g-font-size-base);
+    font-weight: var(--slds-g-font-weight-4);
+}
+
+.slds-accordion__summary-action {
+    /* Interactive button styling with semantic colors */
+    width: 100%;
+    padding: var(--slds-g-spacing-4);
+    background: transparent;
+    color: var(--slds-g-color-on-surface-2);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--slds-g-spacing-3);
+    font-family: var(--slds-g-font-family-base);
+    font-size: var(--slds-g-font-size-base);
+    font-weight: var(--slds-g-font-weight-5);
+    line-height: var(--slds-g-font-lineheight-3);
+    text-align: left;
+    transition: all 0.2s ease;
+    outline-offset: -2px;
+}
+
+.slds-accordion__summary-action:hover {
+    /* Hover state using accent colors */
+    background: var(--slds-g-color-accent-container-1);
+    color: var(--slds-g-color-on-accent-1);
+}
+
+.slds-accordion__summary-action:focus {
+    /* Focus state for keyboard navigation */
+    outline: 2px solid var(--slds-g-color-accent-1);
+    background: var(--slds-g-color-accent-container-1);
+    color: var(--slds-g-color-on-accent-1);
+}
+
+.slds-accordion__summary-action:active {
+    /* Active/pressed state */
+    background: var(--slds-g-color-accent-container-2);
+    color: var(--slds-g-color-on-accent-2);
+}
+
+.slds-accordion__summary-action-icon {
+    /* Icon styling with smooth rotation */
+    transition: transform 0.25s ease;
+    flex-shrink: 0;
+    color: inherit;
+}
+
+/* Icon rotation for expanded sections */
+.slds-accordion__section[data-expanded="true"] .slds-accordion__summary-action-icon {
+    transform: rotate(90deg);
+}
+
+.slds-accordion__summary-content {
+    /* Question text styling */
+    flex: 1;
+    min-width: 0; /* Prevents text overflow in flex */
+}
+
+.slds-accordion__content-wrapper {
+    /* Content container with smooth expand/collapse animation */
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Expanded content state */
+.slds-accordion__section[data-expanded="true"] .slds-accordion__content-wrapper {
+    max-height: 500px; /* Reasonable max to allow transition */
+}
+
+/* Collapsed content state */
+.slds-accordion__section[data-expanded="false"] .slds-accordion__content-wrapper {
+    max-height: 0;
+}
+
+.slds-accordion__content {
+    /* Answer content styling */
+    padding: 0 var(--slds-g-spacing-4) var(--slds-g-spacing-4);
+    color: var(--slds-g-color-on-surface-2);
+    font-size: var(--slds-g-font-size-base);
+    line-height: var(--slds-g-font-lineheight-4);
+}
+
+.slds-accordion__content p {
+    /* Reset paragraph margins for consistent spacing */
+    margin: 0;
+    padding-top: var(--slds-g-spacing-2);
+}
+
+/* Enhanced focus styles for better accessibility */
+.slds-accordion__summary-action:focus-visible {
+    outline: 2px solid var(--slds-g-color-accent-1);
+    outline-offset: -2px;
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+    .slds-accordion__summary-action {
+        padding: var(--slds-g-spacing-3);
+        font-size: 0.875rem;
+        gap: var(--slds-g-spacing-2);
+    }
+    
+    .slds-accordion__content {
+        padding: 0 var(--slds-g-spacing-3) var(--slds-g-spacing-3);
+        font-size: 0.875rem;
+    }
+    
+    .slds-accordion__content p {
+        padding-top: var(--slds-g-spacing-2);
+    }
+}
+
+/* Tablet breakpoint optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .slds-accordion__summary-action {
+        padding: var(--slds-g-spacing-4) var(--slds-g-spacing-5);
+    }
+    
+    .slds-accordion__content {
+        padding: 0 var(--slds-g-spacing-5) var(--slds-g-spacing-4);
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .slds-accordion {
+        border-width: 2px;
+    }
+    
+    .slds-accordion__section {
+        border-bottom-width: 2px;
+    }
+    
+    .slds-accordion__summary-action:focus {
+        outline-width: 3px;
+    }
+}
+
+/* Reduced motion support for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .slds-accordion__summary-action,
+    .slds-accordion__summary-action-icon,
+    .slds-accordion__content-wrapper {
+        transition: none;
+    }
+}
+
+/* Print styles for better document printing */
+@media print {
+    .slds-accordion__content-wrapper {
+        max-height: none !important;
+        overflow: visible !important;
+    }
+    
+    .slds-accordion__summary-action-icon {
+        display: none;
+    }
+    
+    .slds-accordion__summary-action {
+        padding: var(--slds-g-spacing-2);
+        background: none !important;
+        color: black !important;
+    }
+    
+    .slds-accordion__content {
+        padding: var(--slds-g-spacing-2) var(--slds-g-spacing-4);
+        page-break-inside: avoid;
+    }
+}
+
+/* Dark mode is automatically handled by SLDS styling hooks */
+/* Colors adapt based on the current theme without additional CSS */
+
+/* Loading state (for future enhancement) */
+.slds-accordion--loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Error state styling (for future enhancement) */
+.slds-accordion--error .slds-accordion__summary-action {
+    color: var(--slds-g-color-on-error-1);
+    background: var(--slds-g-color-error-container-1);
+}
+
+/* Success state styling (for future enhancement) */
+.slds-accordion--success .slds-accordion {
+    border-color: var(--slds-g-color-success-1);
+}

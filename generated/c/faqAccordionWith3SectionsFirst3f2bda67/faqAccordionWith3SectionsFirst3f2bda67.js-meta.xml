@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>FAQ Accordion with 3 Sections</masterLabel>
+    <description>An accessible FAQ accordion component with 3 sections where the first section is expanded by default. Follows SLDS 2 design patterns and best practices.</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage,lightningCommunity__Page,lightningCommunity__Default">
+            <property
+                name="variant"
+                type="String"
+                default="base"
+                label="Variant"
+                description="Visual variant for the accordion (base)"/>
+            <property
+                name="allowMultipleOpen"
+                type="Boolean"
+                default="false"
+                label="Allow Multiple Sections Open"
+                description="When enabled, multiple accordion sections can be open simultaneously"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,43 @@
+{
+  "folderName": "faqAccordionWith3SectionsFirst-C08-Simple-20260306",
+  "componentName": "faqAccordionWith3SectionsFirst9b5a8af1",
+  "csvId": "C08",
+  "variant": "Simple",
+  "timestamp": "2026-03-06T13:23:55.504Z",
+  "utterance": "Create FAQ accordion with 3 sections, first expanded",
+  "tier": "Tier 2",
+  "complexity": "Intermediate",
+  "scores": {
+    "slds_linter": 0.4,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.55
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 83,
+    "notes": 0
+  },
+  "utteranceId": "C08",
+  "errorsByType": {
+    "slds/no-slds-class-overrides": 29,
+    "slds/no-slds-var-without-fallback": 42,
+    "slds/no-hardcoded-values-slds2": 12
+  },
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/a0b2f39e-1d22-4e5b-8e80-90db926b9c2b/r/019cc34e-31ed-7000-8000-062702285347",
+  "langsmithRunId": "019cc34e-31ed-7000-8000-062702285347",
+  "langsmithProjectName": "reflecting-turn-37",
+  "langsmithTraceId": "019cc34e-31ed-7000-8000-062702285347",
+  "model": "claude-4-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C08:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/faqAccordionWith3SectionsFirst9b5a8af1/screenshots/desktop.png"
+  }
+}

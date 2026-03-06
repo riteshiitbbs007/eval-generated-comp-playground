@@ -115,6 +115,18 @@ export default class HelloWorldApp extends LightningElement {
     return this.selectedComponent === 'faqAccordionWith3SectionsEach2efd09a1';
   }
 
+  get showFaqAccordionWith3SectionsFirst3f2bda67() {
+    return this.selectedComponent === 'faqAccordionWith3SectionsFirst3f2bda67';
+  }
+
+  get showFaqAccordionWith3SectionsFirst827fabec() {
+    return this.selectedComponent === 'faqAccordionWith3SectionsFirst827fabec';
+  }
+
+  get showFaqAccordionWith3SectionsFirst9b5a8af1() {
+    return this.selectedComponent === 'faqAccordionWith3SectionsFirst9b5a8af1';
+  }
+
   get showFaqAccordionWith3SectionsFirstBe7ac560() {
     return this.selectedComponent === 'faqAccordionWith3SectionsFirstBe7ac560';
   }
