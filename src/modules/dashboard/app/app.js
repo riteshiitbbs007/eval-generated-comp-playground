@@ -151,4 +151,10 @@ export default class DashboardApp extends LightningElement {
       }
     }, 0);
   }
+
+  handleShowTutorial() {
+    // Clear onboarding localStorage and refresh page to show tutorial
+    localStorage.removeItem('lwc-gallery-onboarding-completed');
+    window.location.reload();
+  }
 }
