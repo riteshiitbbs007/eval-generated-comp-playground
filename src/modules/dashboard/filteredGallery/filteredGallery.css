@@ -87,11 +87,6 @@
   color: white;
 }
 
-.quality-gate-failed {
-  background: #706e6b;
-  color: white;
-}
-
 .component-header {
   display: flex;
   align-items: center;

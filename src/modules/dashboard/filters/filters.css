@@ -59,16 +59,6 @@
   border-color: var(--lwc-colorBackgroundWarning, #fe9339);
 }
 
-.filter-button-neutral.filter-button-active {
-  background: #706e6b;
-  border-color: #706e6b;
-}
-
-.filter-button-error.filter-button-active {
-  background: var(--lwc-colorBackgroundError, #ea001e);
-  border-color: var(--lwc-colorBackgroundError, #ea001e);
-}
-
 .checkbox-group {
   display: flex;
   flex-direction: column;

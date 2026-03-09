@@ -7,7 +7,7 @@
     <!-- Quality Gate Cards -->
     <div class="slds-grid slds-gutters slds-wrap">
       <!-- Production-Ready -->
-      <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4">
+      <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
         <div class="metric-card metric-card-success slds-box" onclick={filterProduction}>
           <div class="metric-icon">
             <lightning-icon icon-name={productionIcon} alternative-text={productionLabel} size="large"></lightning-icon>
@@ -22,7 +22,7 @@
       </div>
 
       <!-- Prototype -->
-      <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4">
+      <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
         <div class="metric-card metric-card-info slds-box" onclick={filterPrototype}>
           <div class="metric-icon">
             <lightning-icon icon-name={prototypeIcon} alternative-text={prototypeLabel} size="large"></lightning-icon>
@@ -37,7 +37,7 @@
       </div>
 
       <!-- Draft -->
-      <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4">
+      <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
         <div class="metric-card metric-card-warning slds-box" onclick={filterDraft}>
           <div class="metric-icon">
             <lightning-icon icon-name={draftIcon} alternative-text={draftLabel} size="large"></lightning-icon>
@@ -47,21 +47,6 @@
             <div class="metric-label">{draftLabel}</div>
             <div class="metric-percentage">{draftPercent}%</div>
             <div class="metric-criteria">{draftCriteria}</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Draft (< 1.0) -->
-      <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4">
-        <div class="metric-card metric-card-neutral slds-box" onclick={filterFailed}>
-          <div class="metric-icon">
-            <lightning-icon icon-name={failedIcon} alternative-text={failedLabel} size="large"></lightning-icon>
-          </div>
-          <div class="metric-content">
-            <div class="metric-value">{failedCount}</div>
-            <div class="metric-label">{failedLabel}</div>
-            <div class="metric-percentage">{failedPercent}%</div>
-            <div class="metric-criteria">{failedCriteria}</div>
           </div>
         </div>
       </div>

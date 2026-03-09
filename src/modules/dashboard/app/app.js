@@ -70,8 +70,6 @@ export default class DashboardApp extends LightningElement {
       quickFilter = 'prototype';
     } else if (qualityGate === 'draft') {
       quickFilter = 'draft';
-    } else if (qualityGate === 'failed') {
-      quickFilter = 'failed';
     }
 
     // Create filter criteria using config max score

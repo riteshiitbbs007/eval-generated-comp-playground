@@ -69,8 +69,7 @@ export default class FilteredGallery extends LightningElement {
       // Quick filter using config
       if (this.filters.quickFilter === 'production' && score < 3.0) return false;
       if (this.filters.quickFilter === 'prototype' && (score < 2.0 || score >= 3.0)) return false;
-      if (this.filters.quickFilter === 'draft' && (score < 1.0 || score >= 2.0)) return false;
-      if (this.filters.quickFilter === 'failed' && score >= 1.0) return false;
+      if (this.filters.quickFilter === 'draft' && score >= 2.0) return false;
 
       // Score range
       if (score < this.filters.scoreRange.min || score > this.filters.scoreRange.max) return false;

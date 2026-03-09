@@ -27,14 +27,6 @@
   border-left: 4px solid var(--lwc-colorBackgroundWarning, #fe9339);
 }
 
-.metric-card-neutral {
-  border-left: 4px solid #706e6b;
-}
-
-.metric-card-error {
-  border-left: 4px solid var(--lwc-colorBackgroundError, #ea001e);
-}
-
 .metric-icon {
   margin-right: var(--lwc-spacingMedium, 1rem);
   display: flex;
@@ -55,14 +47,6 @@
 
 .metric-card-warning .metric-icon {
   color: var(--lwc-colorBackgroundWarning, #fe9339);
-}
-
-.metric-card-neutral .metric-icon {
-  color: #706e6b;
-}
-
-.metric-card-error .metric-icon {
-  color: var(--lwc-colorBackgroundError, #ea001e);
 }
 
 .metric-content {

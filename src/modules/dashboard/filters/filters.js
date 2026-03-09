@@ -51,12 +51,8 @@ export default class DashboardFilters extends LightningElement {
   get draftCount() {
     return this.components.filter(c => {
       const score = c.scores?.overall || 0;
-      return score >= 1.0 && score < 2.0;
+      return score < 2.0;
     }).length;
-  }
-
-  get failedCount() {
-    return this.components.filter(c => (c.scores?.overall || 0) < 1.0).length;
   }
 
   // Button classes
@@ -81,12 +77,6 @@ export default class DashboardFilters extends LightningElement {
   get draftButtonClass() {
     return this.activeQuickFilter === 'draft'
       ? 'filter-button filter-button-active filter-button-warning'
-      : 'filter-button';
-  }
-
-  get failedButtonClass() {
-    return this.activeQuickFilter === 'failed'
-      ? 'filter-button filter-button-active filter-button-neutral'
       : 'filter-button';
   }
 
@@ -143,11 +133,6 @@ export default class DashboardFilters extends LightningElement {
 
   handleShowDraft() {
     this.activeQuickFilter = 'draft';
-    this.emitFilterChange();
-  }
-
-  handleShowFailed() {
-    this.activeQuickFilter = 'failed';
     this.emitFilterChange();
   }
 

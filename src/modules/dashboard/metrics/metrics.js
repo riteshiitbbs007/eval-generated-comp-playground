@@ -41,18 +41,6 @@ export default class DashboardMetrics extends LightningElement {
     return `utility:${QUALITY_GATE_CONFIG.draft.icon}`;
   }
 
-  get failedLabel() {
-    return QUALITY_GATE_CONFIG.failed.label;
-  }
-
-  get failedCriteria() {
-    return getQualityGateDescription('failed');
-  }
-
-  get failedIcon() {
-    return `utility:${QUALITY_GATE_CONFIG.failed.icon}`;
-  }
-
   get totalComponents() {
     return this.components.length;
   }
@@ -84,23 +72,13 @@ export default class DashboardMetrics extends LightningElement {
   get draftCount() {
     return this.components.filter(c => {
       const score = c.scores?.overall || 0;
-      return score >= 1.0 && score < 2.0;
+      return score < 2.0;
     }).length;
   }
 
   get draftPercent() {
     return this.totalComponents > 0
       ? Math.round((this.draftCount / this.totalComponents) * 100)
-      : 0;
-  }
-
-  get failedCount() {
-    return this.components.filter(c => (c.scores?.overall || 0) < 1.0).length;
-  }
-
-  get failedPercent() {
-    return this.totalComponents > 0
-      ? Math.round((this.failedCount / this.totalComponents) * 100)
       : 0;
   }
 
@@ -141,12 +119,6 @@ export default class DashboardMetrics extends LightningElement {
   filterDraft() {
     this.dispatchEvent(new CustomEvent('filterbyquality', {
       detail: { qualityGate: 'draft' }
-    }));
-  }
-
-  filterFailed() {
-    this.dispatchEvent(new CustomEvent('filterbyquality', {
-      detail: { qualityGate: 'failed' }
     }));
   }
 }

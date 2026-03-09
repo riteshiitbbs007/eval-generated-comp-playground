@@ -7,8 +7,7 @@
  * Quality Gates:
  * - production: score ≥ 3.0 → "Production-Ready"
  * - prototype: score ≥ 2.0 and < 3.0 → "Prototype"
- * - draft: score ≥ 1.0 and < 2.0 → "Draft"
- * - failed: score < 1.0 → "Draft" (default label)
+ * - draft: score ≥ 0 and < 2.0 → "Draft"
  */
 
 export const QUALITY_GATE_CONFIG = {
@@ -30,18 +29,10 @@ export const QUALITY_GATE_CONFIG = {
   },
   draft: {
     label: 'Draft',
-    minScore: 1.0,
+    minScore: 0,
     maxScore: 2.0,
     color: '#fe9339', // Warning orange
     badgeClass: 'quality-gate-draft',
-    icon: 'edit'
-  },
-  failed: {
-    label: 'Draft',
-    minScore: 0,
-    maxScore: 1.0,
-    color: '#706e6b', // Gray
-    badgeClass: 'quality-gate-failed',
     icon: 'edit'
   }
 };
@@ -49,17 +40,15 @@ export const QUALITY_GATE_CONFIG = {
 /**
  * Determine quality gate for a given score
  * @param {number} score - The overall component score
- * @returns {string} - Quality gate key ('production', 'prototype', 'draft', or 'failed')
+ * @returns {string} - Quality gate key ('production', 'prototype', or 'draft')
  */
 export function getQualityGate(score) {
   if (score >= 3.0) {
     return 'production';
   } else if (score >= 2.0) {
     return 'prototype';
-  } else if (score >= 1.0) {
-    return 'draft';
   } else {
-    return 'failed';
+    return 'draft';
   }
 }
 
@@ -87,9 +76,7 @@ export function getQualityGateDescription(gate) {
   } else if (gate === 'prototype') {
     return `Score 2.0-3.0`;
   } else if (gate === 'draft') {
-    return `Score 1.0-2.0`;
-  } else if (gate === 'failed') {
-    return `Score < 1.0`;
+    return `Score < 2.0`;
   }
   return '';
 }

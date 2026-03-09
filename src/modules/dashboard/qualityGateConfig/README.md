@@ -27,17 +27,9 @@ prototype: {
 
 draft: {
   label: 'Draft',
-  minScore: 1.0,
+  minScore: 0,
   maxScore: 2.0,
   color: '#fe9339',
-  icon: 'edit'
-}
-
-failed: {
-  label: 'Draft',
-  minScore: 0,
-  maxScore: 1.0,
-  color: '#706e6b',
   icon: 'edit'
 }
 ```
@@ -96,7 +88,6 @@ This change will automatically update:
 
 Components naturally progress through stages as they improve:
 
-1. **Draft (< 1.0)**: Initial attempts, significant issues
-2. **Draft (1.0-2.0)**: Basic functionality, needs refinement
-3. **Prototype (2.0-3.0)**: Functional, testing and validation needed
-4. **Production-Ready (≥ 3.0)**: High quality, ready for production use
+1. **Draft (< 2.0)**: Initial development, needs refinement and improvements
+2. **Prototype (2.0-3.0)**: Functional, testing and validation needed
+3. **Production-Ready (≥ 3.0)**: High quality, ready for production use
