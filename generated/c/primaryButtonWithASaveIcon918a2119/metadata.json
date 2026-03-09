@@ -1,0 +1,45 @@
+{
+  "folderName": "primaryButtonWithASaveIcon-C01-Simple-20260309",
+  "componentName": "primaryButtonWithASaveIcon918a2119",
+  "csvId": "C01",
+  "variant": "Simple",
+  "timestamp": "2026-03-09T13:51:26.475Z",
+  "utterance": "Create a primary button with a save icon",
+  "tier": "Tier 1",
+  "complexity": "Simple",
+  "scores": {
+    "slds_linter": 0.82,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.87,
+    "overall_readiness_label": "Prototype"
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 10,
+    "notes": 0
+  },
+  "utteranceId": "C01",
+  "errorsByType": {
+    "slds/no-slds-var-without-fallback": 4,
+    "slds/no-hardcoded-values-slds2": 2,
+    "slds/no-unsupported-hooks-slds2": 2,
+    "slds/enforce-sds-to-slds-hooks": 2
+  },
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/91639135-1332-421b-95a8-96111f001aa4/r/019cd2db-3b2e-7000-8000-03342f547e4b",
+  "langsmithRunId": "019cd2db-3b2e-7000-8000-03342f547e4b",
+  "langsmithProjectName": "flowery-record-54",
+  "langsmithTraceId": "019cd2db-3b2e-7000-8000-03342f547e4b",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C01:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/primaryButtonWithASaveIcon918a2119/screenshots/desktop.png"
+  }
+}

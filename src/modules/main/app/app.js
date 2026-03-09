@@ -181,6 +181,10 @@ export default class HelloWorldApp extends LightningElement {
     return this.selectedComponent === 'primaryButtonWithASaveIcon55f94f20';
   }
 
+  get showPrimaryButtonWithASaveIcon918a2119() {
+    return this.selectedComponent === 'primaryButtonWithASaveIcon918a2119';
+  }
+
   get showPrimaryButtonWithASaveIconC0e76cf4() {
     return this.selectedComponent === 'primaryButtonWithASaveIconC0e76cf4';
   }
