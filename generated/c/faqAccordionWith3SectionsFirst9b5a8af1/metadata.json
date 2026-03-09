@@ -29,7 +29,7 @@
   "langsmithRunId": "019cc34e-31ed-7000-8000-062702285347",
   "langsmithProjectName": "reflecting-turn-37",
   "langsmithTraceId": "019cc34e-31ed-7000-8000-062702285347",
-  "model": "claude-4-sonnet",
+  "model": "claude-4-5-sonnet",
   "modelProvider": "anthropic",
   "testConfig": {
     "csvUtteranceFilter": "C08:Simple",
