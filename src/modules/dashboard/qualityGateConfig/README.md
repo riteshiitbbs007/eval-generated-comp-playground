@@ -10,27 +10,35 @@ Edit `qualityGateConfig.js` to modify the score thresholds and labels for qualit
 
 ```javascript
 production: {
-  label: 'Production Ready',
-  minScore: 2.5,
+  label: 'Production-Ready',
+  minScore: 3.0,
   maxScore: 3.0,
   color: '#4bca81',
   icon: 'success'
 }
 
-needsWork: {
-  label: 'Needs Work',
+prototype: {
+  label: 'Prototype',
   minScore: 2.0,
-  maxScore: 2.5,
+  maxScore: 3.0,
+  color: '#0176d3',
+  icon: 'custom_custom95'
+}
+
+draft: {
+  label: 'Draft',
+  minScore: 1.0,
+  maxScore: 2.0,
   color: '#fe9339',
-  icon: 'warning'
+  icon: 'edit'
 }
 
 failed: {
-  label: 'Failed',
+  label: 'Draft',
   minScore: 0,
-  maxScore: 2.0,
-  color: '#ea001e',
-  icon: 'error'
+  maxScore: 1.0,
+  color: '#706e6b',
+  icon: 'edit'
 }
 ```
 
@@ -67,12 +75,12 @@ To adjust quality standards for your organization:
 3. Optionally update labels, colors, and icons
 4. Run `npm run build` to apply changes
 
-Example - stricter production standards:
+Example - Different threshold for prototype stage:
 
 ```javascript
-production: {
-  label: 'Production Ready',
-  minScore: 2.8,  // Raised from 2.5
+prototype: {
+  label: 'Prototype',
+  minScore: 2.5,  // Raised from 2.0
   maxScore: 3.0,
   // ...
 }
@@ -83,3 +91,12 @@ This change will automatically update:
 - Filter logic
 - Component quality badges
 - Quick filter behavior
+
+## Quality Gate Progression
+
+Components naturally progress through stages as they improve:
+
+1. **Draft (< 1.0)**: Initial attempts, significant issues
+2. **Draft (1.0-2.0)**: Basic functionality, needs refinement
+3. **Prototype (2.0-3.0)**: Functional, testing and validation needed
+4. **Production-Ready (≥ 3.0)**: High quality, ready for production use
