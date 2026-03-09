@@ -1,0 +1,196 @@
+<template>
+  <div class="filter-panel slds-card">
+    <div class="slds-card__header">
+      <h3 class="slds-card__header-title slds-text-heading_small">
+        Filters
+      </h3>
+    </div>
+
+    <div class="slds-card__body slds-card__body_inner">
+
+      <!-- Quick Filters -->
+      <div class="filter-section slds-m-bottom_medium">
+        <h4 class="slds-text-heading_x-small slds-m-bottom_x-small">Quick Filters</h4>
+        <div class="quick-filters">
+          <button
+            class={allButtonClass}
+            onclick={handleShowAll}>
+            All ({totalCount})
+          </button>
+          <button
+            class={productionButtonClass}
+            onclick={handleShowProduction}>
+            ✅ Production ({productionCount})
+          </button>
+          <button
+            class={needsWorkButtonClass}
+            onclick={handleShowNeedsWork}>
+            ⚠️ Needs Work ({needsWorkCount})
+          </button>
+          <button
+            class={failedButtonClass}
+            onclick={handleShowFailed}>
+            ❌ Failed ({failedCount})
+          </button>
+        </div>
+      </div>
+
+      <!-- Readiness Score Range -->
+      <div class="filter-section slds-m-bottom_medium">
+        <h4 class="slds-text-heading_x-small slds-m-bottom_x-small">Readiness Score</h4>
+        <div class="slds-form-element">
+          <label class="slds-form-element__label" for="score-min">
+            Min Score: {minScore}
+          </label>
+          <input
+            type="range"
+            id="score-min"
+            class="slds-slider__range"
+            min="0"
+            max="3"
+            step="0.1"
+            value={minScore}
+            oninput={handleMinScoreChange} />
+        </div>
+        <div class="slds-form-element slds-m-top_x-small">
+          <label class="slds-form-element__label" for="score-max">
+            Max Score: {maxScore}
+          </label>
+          <input
+            type="range"
+            id="score-max"
+            class="slds-slider__range"
+            min="0"
+            max="3"
+            step="0.1"
+            value={maxScore}
+            oninput={handleMaxScoreChange} />
+        </div>
+      </div>
+
+      <!-- SLDS Compliance -->
+      <div class="filter-section slds-m-bottom_medium">
+        <h4 class="slds-text-heading_x-small slds-m-bottom_x-small">SLDS Compliance</h4>
+        <div class="slds-form-element">
+          <label class="slds-form-element__label" for="slds-min">
+            Min Compliance: {minSldsCompliance}%
+          </label>
+          <input
+            type="range"
+            id="slds-min"
+            class="slds-slider__range"
+            min="0"
+            max="100"
+            step="1"
+            value={minSldsCompliance}
+            oninput={handleMinSldsChange} />
+        </div>
+      </div>
+
+      <!-- Tier Filter -->
+      <div class="filter-section slds-m-bottom_medium">
+        <h4 class="slds-text-heading_x-small slds-m-bottom_x-small">Tier</h4>
+        <div class="checkbox-group">
+          <template for:each={tierOptions} for:item="option">
+            <div key={option.value} class="slds-checkbox">
+              <input
+                type="checkbox"
+                id={option.id}
+                value={option.value}
+                checked={option.checked}
+                onchange={handleTierChange} />
+              <label class="slds-checkbox__label" for={option.id}>
+                <span class="slds-checkbox_faux"></span>
+                <span class="slds-form-element__label">{option.label}</span>
+              </label>
+            </div>
+          </template>
+        </div>
+      </div>
+
+      <!-- Complexity Filter -->
+      <div class="filter-section slds-m-bottom_medium">
+        <h4 class="slds-text-heading_x-small slds-m-bottom_x-small">Complexity</h4>
+        <div class="checkbox-group">
+          <template for:each={complexityOptions} for:item="option">
+            <div key={option.value} class="slds-checkbox">
+              <input
+                type="checkbox"
+                id={option.id}
+                value={option.value}
+                checked={option.checked}
+                onchange={handleComplexityChange} />
+              <label class="slds-checkbox__label" for={option.id}>
+                <span class="slds-checkbox_faux"></span>
+                <span class="slds-form-element__label">{option.label}</span>
+              </label>
+            </div>
+          </template>
+        </div>
+      </div>
+
+      <!-- Variant Filter -->
+      <div class="filter-section slds-m-bottom_medium">
+        <h4 class="slds-text-heading_x-small slds-m-bottom_x-small">Variant</h4>
+        <div class="checkbox-group">
+          <template for:each={variantOptions} for:item="option">
+            <div key={option.value} class="slds-checkbox">
+              <input
+                type="checkbox"
+                id={option.id}
+                value={option.value}
+                checked={option.checked}
+                onchange={handleVariantChange} />
+              <label class="slds-checkbox__label" for={option.id}>
+                <span class="slds-checkbox_faux"></span>
+                <span class="slds-form-element__label">{option.label}</span>
+              </label>
+            </div>
+          </template>
+        </div>
+      </div>
+
+      <!-- Model Filter -->
+      <div class="filter-section slds-m-bottom_medium">
+        <h4 class="slds-text-heading_x-small slds-m-bottom_x-small">Model</h4>
+        <div class="checkbox-group">
+          <template for:each={modelOptions} for:item="option">
+            <div key={option.value} class="slds-checkbox">
+              <input
+                type="checkbox"
+                id={option.id}
+                value={option.value}
+                checked={option.checked}
+                onchange={handleModelChange} />
+              <label class="slds-checkbox__label" for={option.id}>
+                <span class="slds-checkbox_faux"></span>
+                <span class="slds-form-element__label">{option.label}</span>
+              </label>
+            </div>
+          </template>
+        </div>
+      </div>
+
+      <!-- Utterance ID Search -->
+      <div class="filter-section slds-m-bottom_medium">
+        <h4 class="slds-text-heading_x-small slds-m-bottom_x-small">Utterance ID</h4>
+        <div class="slds-form-element">
+          <input
+            type="text"
+            class="slds-input"
+            placeholder="e.g., C01, C02..."
+            value={utteranceIdFilter}
+            oninput={handleUtteranceIdChange} />
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="filter-actions">
+        <button class="slds-button slds-button_neutral slds-button_stretch" onclick={handleReset}>
+          Reset Filters
+        </button>
+      </div>
+
+    </div>
+  </div>
+</template>

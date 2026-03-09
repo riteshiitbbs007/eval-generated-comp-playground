@@ -18,18 +18,30 @@
               </div>
             </div>
             <div class="slds-page-header__col-actions">
-              <div class="slds-form-element">
-                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
-                  <svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
-                    <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#search"></use>
-                  </svg>
-                  <input
-                    type="text"
-                    class="slds-input"
-                    placeholder="Search components..."
-                    value={searchTerm}
-                    oninput={handleSearch}
-                  />
+              <div class="slds-grid slds-gutters_x-small">
+                <div class="slds-col">
+                  <a href="/?view=dashboard" class="slds-button slds-button_neutral">
+                    <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+                      <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#metrics"></use>
+                    </svg>
+                    Dashboard
+                  </a>
+                </div>
+                <div class="slds-col">
+                  <div class="slds-form-element">
+                    <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                      <svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
+                        <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#search"></use>
+                      </svg>
+                      <input
+                        type="text"
+                        class="slds-input"
+                        placeholder="Search components..."
+                        value={searchTerm}
+                        oninput={handleSearch}
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

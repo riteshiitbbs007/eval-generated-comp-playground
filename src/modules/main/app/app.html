@@ -7,6 +7,11 @@
     <main-utterances></main-utterances>
   </template>
 
+  <!-- Show dashboard view when view=dashboard (outside main for full-page layout) -->
+  <template if:true={showDashboard}>
+    <dashboard-app></dashboard-app>
+  </template>
+
   <main class="slds-p-around_medium">
     <!-- Show gallery view when no component selected -->
     <template if:true={showGallery}>
@@ -21,7 +26,7 @@
   <!-- Show 4AlertsSuccessErrorWarningInfo49684baf component when selected -->
   <template if:true={show4AlertsSuccessErrorWarningInfo49684baf}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -37,7 +42,7 @@
   <!-- Show 4AlertsSuccessErrorWarningInfoDf286ed0 component when selected -->
   <template if:true={show4AlertsSuccessErrorWarningInfoDf286ed0}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -53,7 +58,7 @@
   <!-- Show 4AlertsSuccessGreenErrorRedFcf679ff component when selected -->
   <template if:true={show4AlertsSuccessGreenErrorRedFcf679ff}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -69,7 +74,7 @@
   <!-- Show contactCardWithAvatarNameTitle569326e5 component when selected -->
   <template if:true={showContactCardWithAvatarNameTitle569326e5}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -85,7 +90,7 @@
   <!-- Show contactFormNameTextEmailFormat0878e030 component when selected -->
   <template if:true={showContactFormNameTextEmailFormat0878e030}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -101,7 +106,7 @@
   <!-- Show create3stepWizardWith component when selected -->
   <template if:true={showCreate3stepWizardWith}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -117,7 +122,7 @@
   <!-- Show createAlertsSuccessError component when selected -->
   <template if:true={showCreateAlertsSuccessError}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -133,7 +138,7 @@
   <!-- Show createContactCardWith component when selected -->
   <template if:true={showCreateContactCardWith}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -149,7 +154,7 @@
   <!-- Show createDeleteConfirmationModal component when selected -->
   <template if:true={showCreateDeleteConfirmationModal}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -165,7 +170,7 @@
   <!-- Show createFaqAccordionWith component when selected -->
   <template if:true={showCreateFaqAccordionWith}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -181,7 +186,7 @@
   <!-- Show createFormNameEmail component when selected -->
   <template if:true={showCreateFormNameEmail}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -197,7 +202,7 @@
   <!-- Show createFormWithText component when selected -->
   <template if:true={showCreateFormWithText}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -213,7 +218,7 @@
   <!-- Show createPageHeaderWith component when selected -->
   <template if:true={showCreatePageHeaderWith}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -229,7 +234,7 @@
   <!-- Show createPrimaryActionButton component when selected -->
   <template if:true={showCreatePrimaryActionButton}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -245,7 +250,7 @@
   <!-- Show createPrimaryButtonWith component when selected -->
   <template if:true={showCreatePrimaryButtonWith}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -261,7 +266,7 @@
   <!-- Show createSortableTableProduct component when selected -->
   <template if:true={showCreateSortableTableProduct}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -277,7 +282,7 @@
   <!-- Show createTabsOverviewDetails component when selected -->
   <template if:true={showCreateTabsOverviewDetails}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -293,7 +298,7 @@
   <!-- Show createVerticalNavMenu component when selected -->
   <template if:true={showCreateVerticalNavMenu}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -309,7 +314,7 @@
   <!-- Show faqAccordionWith3SectionsEach2efd09a1 component when selected -->
   <template if:true={showFaqAccordionWith3SectionsEach2efd09a1}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -325,7 +330,7 @@
   <!-- Show faqAccordionWith3SectionsFirst3f2bda67 component when selected -->
   <template if:true={showFaqAccordionWith3SectionsFirst3f2bda67}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -341,7 +346,7 @@
   <!-- Show faqAccordionWith3SectionsFirst827fabec component when selected -->
   <template if:true={showFaqAccordionWith3SectionsFirst827fabec}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -357,7 +362,7 @@
   <!-- Show faqAccordionWith3SectionsFirst9b5a8af1 component when selected -->
   <template if:true={showFaqAccordionWith3SectionsFirst9b5a8af1}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -373,7 +378,7 @@
   <!-- Show faqAccordionWith3SectionsFirstBe7ac560 component when selected -->
   <template if:true={showFaqAccordionWith3SectionsFirstBe7ac560}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -389,7 +394,7 @@
   <!-- Show formNameEmailMessageShowErrors22a50f96 component when selected -->
   <template if:true={showFormNameEmailMessageShowErrors22a50f96}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -405,7 +410,7 @@
   <!-- Show formNameEmailMessageShowErrorsE34f2b6d component when selected -->
   <template if:true={showFormNameEmailMessageShowErrorsE34f2b6d}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -421,7 +426,7 @@
   <!-- Show formWithTextEmailPhoneDropdownE48117d4 component when selected -->
   <template if:true={showFormWithTextEmailPhoneDropdownE48117d4}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -437,7 +442,7 @@
   <!-- Show pageHeaderJohnSmithWithAccount3b74227d component when selected -->
   <template if:true={showPageHeaderJohnSmithWithAccount3b74227d}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -453,7 +458,7 @@
   <!-- Show pageHeaderWithTitleAndAction35185f19 component when selected -->
   <template if:true={showPageHeaderWithTitleAndAction35185f19}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -469,7 +474,7 @@
   <!-- Show pageHeaderWithTitleAndActionFb7c8482 component when selected -->
   <template if:true={showPageHeaderWithTitleAndActionFb7c8482}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -485,7 +490,7 @@
   <!-- Show primaryActionButtonWithASave4addabb5 component when selected -->
   <template if:true={showPrimaryActionButtonWithASave4addabb5}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -501,7 +506,7 @@
   <!-- Show primaryButtonWithASaveIcon2a4b46ee component when selected -->
   <template if:true={showPrimaryButtonWithASaveIcon2a4b46ee}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -517,7 +522,7 @@
   <!-- Show primaryButtonWithASaveIcon38dac3a6 component when selected -->
   <template if:true={showPrimaryButtonWithASaveIcon38dac3a6}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -533,7 +538,7 @@
   <!-- Show primaryButtonWithASaveIcon3f0774ab component when selected -->
   <template if:true={showPrimaryButtonWithASaveIcon3f0774ab}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -549,7 +554,7 @@
   <!-- Show primaryButtonWithASaveIcon55f94f20 component when selected -->
   <template if:true={showPrimaryButtonWithASaveIcon55f94f20}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -565,7 +570,7 @@
   <!-- Show primaryButtonWithASaveIconC0e76cf4 component when selected -->
   <template if:true={showPrimaryButtonWithASaveIconC0e76cf4}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -581,7 +586,7 @@
   <!-- Show responsiveProductCardGridWith611d4397d component when selected -->
   <template if:true={showResponsiveProductCardGridWith611d4397d}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -597,7 +602,7 @@
   <!-- Show sortableTableProductNamePriceCategory5f50fe64 component when selected -->
   <template if:true={showSortableTableProductNamePriceCategory5f50fe64}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -613,7 +618,7 @@
   <!-- Show userProfileFormNameTextEmailC8b10de5 component when selected -->
   <template if:true={showUserProfileFormNameTextEmailC8b10de5}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">

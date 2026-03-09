@@ -124,7 +124,8 @@ export default class HelloWorldApp extends LightningElement {
   }
 
   get showGallery() {
-    return !this.selectedComponent && !this.detailComponent && !this.viewName;
+    // Gallery is deprecated - dashboard is now the default
+    return false;
   }
 
   get showDetail() {
@@ -133,6 +134,11 @@ export default class HelloWorldApp extends LightningElement {
 
   get showUtterances() {
     return this.viewName === 'utterances';
+  }
+
+  get showDashboard() {
+    // Dashboard is the default view - show when no specific route is selected
+    return !this.selectedComponent && !this.detailComponent && this.viewName !== 'utterances';
   }
 
 ${getters}
@@ -152,7 +158,7 @@ function generateAppHtml(components) {
     return `  <!-- Show ${folderName} component when selected -->
   <template if:true={${methodName}}>
     <div class="slds-m-bottom_medium">
-      <a href="/" class="slds-text-link">← Back to Gallery</a>
+      <a href="/" class="slds-text-link">← Back to Dashboard</a>
     </div>
 
     <div class="slds-box slds-box_small">
@@ -173,6 +179,11 @@ function generateAppHtml(components) {
   <!-- Show utterances view when view=utterances (outside main for full-page layout) -->
   <template if:true={showUtterances}>
     <main-utterances></main-utterances>
+  </template>
+
+  <!-- Show dashboard view when view=dashboard (outside main for full-page layout) -->
+  <template if:true={showDashboard}>
+    <dashboard-app></dashboard-app>
   </template>
 
   <main class="slds-p-around_medium">
@@ -196,8 +207,35 @@ ${templates}
  * Generate components.json manifest for gallery to consume
  */
 function generateComponentsManifest(components) {
+  // Load full metadata for each component
+  const componentsWithMetadata = components.map(({ folderName }) => {
+    const metadataPath = path.join(GENERATED_DIR, folderName, 'metadata.json');
+
+    if (fs.existsSync(metadataPath)) {
+      try {
+        const metadata = JSON.parse(fs.readFileSync(metadataPath, 'utf8'));
+        return {
+          componentName: folderName,
+          ...metadata
+        };
+      } catch (err) {
+        console.warn(`⚠️  Failed to read metadata for ${folderName}`);
+      }
+    }
+
+    // Fallback for components without metadata
+    return {
+      componentName: folderName,
+      tier: 'Unknown',
+      complexity: 'Unknown',
+      scores: { overall: 0, slds_linter: 0 },
+      violations: { warnings: 0, errors: 0 },
+      timestamp: new Date().toISOString()
+    };
+  });
+
   return JSON.stringify({
-    components: components.map(c => c.folderName), // Gallery uses folder names for routing
+    components: componentsWithMetadata,
     count: components.length,
     lastUpdated: new Date().toISOString()
   }, null, 2);

@@ -1,0 +1,89 @@
+<template>
+  <div class="dashboard-container">
+    <!-- Fixed Header -->
+    <header class="dashboard-header-fixed">
+      <div class="dashboard-header-content">
+        <div class="slds-grid slds-grid_vertical-align-center">
+          <div class="slds-col slds-size_1-of-2">
+            <h1 class="slds-text-heading_large slds-m-bottom_xx-small">Component Evaluation Dashboard</h1>
+            <p class="slds-text-body_small slds-text-color_weak">
+              Comprehensive overview of AI-generated LWC components with advanced filtering and quality metrics
+            </p>
+          </div>
+          <div class="slds-col slds-size_1-of-2">
+            <div class="slds-form-element">
+              <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                <svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
+                  <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#search"></use>
+                </svg>
+                <input
+                  type="text"
+                  class="slds-input"
+                  placeholder="Search components..."
+                  value={searchTerm}
+                  oninput={handleSearch}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Loading State -->
+    <template if:true={isLoading}>
+      <div class="slds-align_absolute-center slds-m-top_xx-large">
+        <lightning-spinner alternative-text="Loading components..." size="large"></lightning-spinner>
+      </div>
+    </template>
+
+    <!-- Error State -->
+    <template if:true={error}>
+      <div class="slds-m-around_medium">
+        <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+          <span class="slds-assistive-text">error</span>
+          <h2>Error loading components: {error}</h2>
+        </div>
+      </div>
+    </template>
+
+    <!-- Dashboard Content -->
+    <template if:false={isLoading}>
+      <template if:false={error}>
+        <div class="dashboard-content">
+          <!-- Metrics Overview -->
+          <div class="metrics-section slds-m-around_medium">
+            <dashboard-metrics
+              components={components}
+              onfilterbyquality={handleFilterByQuality}>
+            </dashboard-metrics>
+          </div>
+
+          <!-- Main Layout: Filters + Gallery -->
+          <div class="main-layout slds-grid slds-wrap slds-gutters">
+            <!-- Filters Sidebar -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-4 slds-large-size_1-of-5">
+              <div class="slds-m-around_medium">
+                <dashboard-filters
+                  components={components}
+                  onfilterchange={handleFilterChange}>
+                </dashboard-filters>
+              </div>
+            </div>
+
+            <!-- Gallery -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_3-of-4 slds-large-size_4-of-5">
+              <div class="slds-m-around_medium">
+                <dashboard-filtered-gallery
+                  components={components}
+                  filters={currentFilters}
+                  oncomponentselect={handleComponentSelect}>
+                </dashboard-filtered-gallery>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+    </template>
+  </div>
+</template>

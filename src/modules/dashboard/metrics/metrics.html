@@ -1,0 +1,83 @@
+<template>
+  <div class="metrics-overview">
+    <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+      Component Quality Overview
+    </h2>
+
+    <!-- Quality Gate Cards -->
+    <div class="slds-grid slds-gutters slds-wrap">
+      <!-- Production Ready -->
+      <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+        <div class="metric-card metric-card-success slds-box" onclick={filterProduction}>
+          <div class="metric-icon">
+            <lightning-icon icon-name="utility:success" alternative-text="Production Ready" size="large"></lightning-icon>
+          </div>
+          <div class="metric-content">
+            <div class="metric-value">{productionReadyCount}</div>
+            <div class="metric-label">Production Ready</div>
+            <div class="metric-percentage">{productionReadyPercent}%</div>
+            <div class="metric-criteria">Score ≥ 2.5</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Needs Work -->
+      <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+        <div class="metric-card metric-card-warning slds-box" onclick={filterNeedsWork}>
+          <div class="metric-icon">
+            <lightning-icon icon-name="utility:warning" alternative-text="Needs Work" size="large"></lightning-icon>
+          </div>
+          <div class="metric-content">
+            <div class="metric-value">{needsWorkCount}</div>
+            <div class="metric-label">Needs Work</div>
+            <div class="metric-percentage">{needsWorkPercent}%</div>
+            <div class="metric-criteria">Score 2.0-2.5</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Failed -->
+      <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+        <div class="metric-card metric-card-error slds-box" onclick={filterFailed}>
+          <div class="metric-icon">
+            <lightning-icon icon-name="utility:error" alternative-text="Failed" size="large"></lightning-icon>
+          </div>
+          <div class="metric-content">
+            <div class="metric-value">{failedCount}</div>
+            <div class="metric-label">Failed</div>
+            <div class="metric-percentage">{failedPercent}%</div>
+            <div class="metric-criteria">Score &lt; 2.0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Summary Stats -->
+    <div class="slds-grid slds-gutters slds-wrap slds-m-top_medium">
+      <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4">
+        <div class="summary-stat slds-box slds-text-align_center">
+          <div class="stat-value">{averageScore}</div>
+          <div class="stat-label">Avg Score</div>
+        </div>
+      </div>
+      <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4">
+        <div class="summary-stat slds-box slds-text-align_center">
+          <div class="stat-value">{sldsCompliance}%</div>
+          <div class="stat-label">SLDS Compliance</div>
+        </div>
+      </div>
+      <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4">
+        <div class="summary-stat slds-box slds-text-align_center">
+          <div class="stat-value">{avgViolations}</div>
+          <div class="stat-label">Avg Violations</div>
+        </div>
+      </div>
+      <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4">
+        <div class="summary-stat slds-box slds-text-align_center">
+          <div class="stat-value">{totalComponents}</div>
+          <div class="stat-label">Total Components</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

@@ -28,7 +28,8 @@ export default class HelloWorldApp extends LightningElement {
   }
 
   get showGallery() {
-    return !this.selectedComponent && !this.detailComponent && !this.viewName;
+    // Gallery is deprecated - dashboard is now the default
+    return false;
   }
 
   get showDetail() {
@@ -37,6 +38,11 @@ export default class HelloWorldApp extends LightningElement {
 
   get showUtterances() {
     return this.viewName === 'utterances';
+  }
+
+  get showDashboard() {
+    // Dashboard is the default view - show when no specific route is selected
+    return !this.selectedComponent && !this.detailComponent && this.viewName !== 'utterances';
   }
 
   get show4AlertsSuccessErrorWarningInfo49684baf() {
