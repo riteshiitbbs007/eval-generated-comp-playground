@@ -159,7 +159,8 @@ export default class Gallery extends LightningElement {
         utteranceId: comp.utteranceId || null,
         utteranceIdShort: comp.utteranceId ? comp.utteranceId.substring(0, 8) : null,
         variant: comp.variant || null,
-        hasMetadataBadges: !!comp.utteranceId || !!comp.variant,
+        model: comp.model || null,
+        hasMetadataBadges: !!comp.utteranceId || !!comp.variant || !!comp.model,
         hasErrorsByType: comp.errorsByType && Object.keys(comp.errorsByType).length > 0,
         errorTypeEntries: comp.errorsByType
           ? Object.entries(comp.errorsByType)

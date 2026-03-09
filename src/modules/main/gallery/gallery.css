@@ -406,6 +406,24 @@
   flex-shrink: 0;
 }
 
+/* Model badge - AI model identifier */
+.model-badge {
+  background-color: #fdf6e3;
+  border: 1px solid #ffb75d;
+  color: #514f4d;
+  padding-left: 6px;
+}
+
+.model-badge:hover {
+  background-color: #ffecc2;
+  border-color: #fe9339;
+}
+
+.model-badge .slds-icon {
+  fill: #fe9339;
+  flex-shrink: 0;
+}
+
 .metadata-badge-text {
   font-weight: 600;
   letter-spacing: 0.2px;
