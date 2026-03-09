@@ -66,8 +66,10 @@ export default class DashboardApp extends LightningElement {
     let quickFilter = 'all';
     if (qualityGate === 'production') {
       quickFilter = 'production';
-    } else if (qualityGate === 'needs-work') {
-      quickFilter = 'needs-work';
+    } else if (qualityGate === 'prototype') {
+      quickFilter = 'prototype';
+    } else if (qualityGate === 'draft') {
+      quickFilter = 'draft';
     } else if (qualityGate === 'failed') {
       quickFilter = 'failed';
     }

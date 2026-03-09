@@ -49,9 +49,19 @@
   border-color: var(--lwc-colorBackgroundSuccess, #4bca81);
 }
 
+.filter-button-info.filter-button-active {
+  background: #0176d3;
+  border-color: #0176d3;
+}
+
 .filter-button-warning.filter-button-active {
   background: var(--lwc-colorBackgroundWarning, #fe9339);
   border-color: var(--lwc-colorBackgroundWarning, #fe9339);
+}
+
+.filter-button-neutral.filter-button-active {
+  background: #706e6b;
+  border-color: #706e6b;
 }
 
 .filter-button-error.filter-button-active {

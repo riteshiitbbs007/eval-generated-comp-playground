@@ -19,8 +19,16 @@
   border-left: 4px solid var(--lwc-colorBackgroundSuccess, #4bca81);
 }
 
+.metric-card-info {
+  border-left: 4px solid #0176d3;
+}
+
 .metric-card-warning {
   border-left: 4px solid var(--lwc-colorBackgroundWarning, #fe9339);
+}
+
+.metric-card-neutral {
+  border-left: 4px solid #706e6b;
 }
 
 .metric-card-error {
@@ -41,8 +49,16 @@
   color: var(--lwc-colorBackgroundSuccess, #4bca81);
 }
 
+.metric-card-info .metric-icon {
+  color: #0176d3;
+}
+
 .metric-card-warning .metric-icon {
   color: var(--lwc-colorBackgroundWarning, #fe9339);
+}
+
+.metric-card-neutral .metric-icon {
+  color: #706e6b;
 }
 
 .metric-card-error .metric-icon {

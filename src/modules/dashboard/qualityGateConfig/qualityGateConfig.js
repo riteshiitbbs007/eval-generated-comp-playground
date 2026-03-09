@@ -4,49 +4,60 @@
  * Configure the score thresholds and labels for component quality classification.
  * This configuration is used across the dashboard to determine quality gates.
  *
- * Adjust these values to match your quality standards:
- * - production: Components ready for production use
- * - needsWork: Components that need improvements
- * - failed: Components that don't meet minimum standards
+ * Quality Gates:
+ * - production: score ≥ 3.0 → "Production-Ready"
+ * - prototype: score ≥ 2.0 and < 3.0 → "Prototype"
+ * - draft: score ≥ 1.0 and < 2.0 → "Draft"
+ * - failed: score < 1.0 → "Draft" (default label)
  */
 
 export const QUALITY_GATE_CONFIG = {
   production: {
-    label: 'Production Ready',
-    minScore: 2.5,
+    label: 'Production-Ready',
+    minScore: 3.0,
     maxScore: 3.0,
     color: '#4bca81', // Success green
     badgeClass: 'quality-gate-production',
     icon: 'success'
   },
-  needsWork: {
-    label: 'Needs Work',
+  prototype: {
+    label: 'Prototype',
     minScore: 2.0,
-    maxScore: 2.5,
+    maxScore: 3.0,
+    color: '#0176d3', // Blue
+    badgeClass: 'quality-gate-prototype',
+    icon: 'custom_custom95' // flask icon
+  },
+  draft: {
+    label: 'Draft',
+    minScore: 1.0,
+    maxScore: 2.0,
     color: '#fe9339', // Warning orange
-    badgeClass: 'quality-gate-needs-work',
-    icon: 'warning'
+    badgeClass: 'quality-gate-draft',
+    icon: 'edit'
   },
   failed: {
-    label: 'Failed',
+    label: 'Draft',
     minScore: 0,
-    maxScore: 2.0,
-    color: '#ea001e', // Error red
+    maxScore: 1.0,
+    color: '#706e6b', // Gray
     badgeClass: 'quality-gate-failed',
-    icon: 'error'
+    icon: 'edit'
   }
 };
 
 /**
  * Determine quality gate for a given score
  * @param {number} score - The overall component score
- * @returns {string} - Quality gate key ('production', 'needsWork', or 'failed')
+ * @returns {string} - Quality gate key ('production', 'prototype', 'draft', or 'failed')
  */
 export function getQualityGate(score) {
-  if (score >= QUALITY_GATE_CONFIG.production.minScore) {
+  if (score >= 3.0) {
     return 'production';
-  } else if (score >= QUALITY_GATE_CONFIG.needsWork.minScore) {
-    return 'needsWork';
+  } else if (score >= 2.0) {
+    return 'prototype';
+  } else if (score >= 1.0) {
+    return 'draft';
   } else {
     return 'failed';
   }
@@ -73,9 +84,12 @@ export function getQualityGateDescription(gate) {
 
   if (gate === 'production') {
     return `Score ≥ ${config.minScore}`;
-  } else if (gate === 'needsWork') {
-    return `Score ${config.minScore}-${config.maxScore}`;
-  } else {
-    return `Score < ${config.maxScore}`;
+  } else if (gate === 'prototype') {
+    return `Score 2.0-3.0`;
+  } else if (gate === 'draft') {
+    return `Score 1.0-2.0`;
+  } else if (gate === 'failed') {
+    return `Score < 1.0`;
   }
+  return '';
 }

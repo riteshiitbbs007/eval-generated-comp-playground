@@ -77,13 +77,18 @@
   color: white;
 }
 
-.quality-gate-needs-work {
+.quality-gate-prototype {
+  background: #0176d3;
+  color: white;
+}
+
+.quality-gate-draft {
   background: var(--lwc-colorBackgroundWarning, #fe9339);
   color: white;
 }
 
 .quality-gate-failed {
-  background: var(--lwc-colorBackgroundError, #ea001e);
+  background: #706e6b;
   color: white;
 }
 

@@ -41,18 +41,22 @@ export default class DashboardFilters extends LightningElement {
     return this.components.filter(c => c.scores?.overall >= minScore).length;
   }
 
-  get needsWorkCount() {
-    const minScore = QUALITY_GATE_CONFIG.needsWork.minScore;
-    const maxScore = QUALITY_GATE_CONFIG.needsWork.maxScore;
+  get prototypeCount() {
     return this.components.filter(c => {
       const score = c.scores?.overall || 0;
-      return score >= minScore && score < maxScore;
+      return score >= 2.0 && score < 3.0;
+    }).length;
+  }
+
+  get draftCount() {
+    return this.components.filter(c => {
+      const score = c.scores?.overall || 0;
+      return score >= 1.0 && score < 2.0;
     }).length;
   }
 
   get failedCount() {
-    const maxScore = QUALITY_GATE_CONFIG.failed.maxScore;
-    return this.components.filter(c => (c.scores?.overall || 0) < maxScore).length;
+    return this.components.filter(c => (c.scores?.overall || 0) < 1.0).length;
   }
 
   // Button classes
@@ -68,15 +72,21 @@ export default class DashboardFilters extends LightningElement {
       : 'filter-button';
   }
 
-  get needsWorkButtonClass() {
-    return this.activeQuickFilter === 'needs-work'
+  get prototypeButtonClass() {
+    return this.activeQuickFilter === 'prototype'
+      ? 'filter-button filter-button-active filter-button-info'
+      : 'filter-button';
+  }
+
+  get draftButtonClass() {
+    return this.activeQuickFilter === 'draft'
       ? 'filter-button filter-button-active filter-button-warning'
       : 'filter-button';
   }
 
   get failedButtonClass() {
     return this.activeQuickFilter === 'failed'
-      ? 'filter-button filter-button-active filter-button-error'
+      ? 'filter-button filter-button-active filter-button-neutral'
       : 'filter-button';
   }
 
@@ -126,8 +136,13 @@ export default class DashboardFilters extends LightningElement {
     this.emitFilterChange();
   }
 
-  handleShowNeedsWork() {
-    this.activeQuickFilter = 'needs-work';
+  handleShowPrototype() {
+    this.activeQuickFilter = 'prototype';
+    this.emitFilterChange();
+  }
+
+  handleShowDraft() {
+    this.activeQuickFilter = 'draft';
     this.emitFilterChange();
   }
 

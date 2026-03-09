@@ -67,9 +67,10 @@ export default class FilteredGallery extends LightningElement {
       const sldsScore = (comp.scores?.slds_linter || 0) * 100;
 
       // Quick filter using config
-      if (this.filters.quickFilter === 'production' && score < QUALITY_GATE_CONFIG.production.minScore) return false;
-      if (this.filters.quickFilter === 'needs-work' && (score < QUALITY_GATE_CONFIG.needsWork.minScore || score >= QUALITY_GATE_CONFIG.needsWork.maxScore)) return false;
-      if (this.filters.quickFilter === 'failed' && score >= QUALITY_GATE_CONFIG.failed.maxScore) return false;
+      if (this.filters.quickFilter === 'production' && score < 3.0) return false;
+      if (this.filters.quickFilter === 'prototype' && (score < 2.0 || score >= 3.0)) return false;
+      if (this.filters.quickFilter === 'draft' && (score < 1.0 || score >= 2.0)) return false;
+      if (this.filters.quickFilter === 'failed' && score >= 1.0) return false;
 
       // Score range
       if (score < this.filters.scoreRange.min || score > this.filters.scoreRange.max) return false;

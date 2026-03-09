@@ -20,17 +20,22 @@
           <button
             class={productionButtonClass}
             onclick={handleShowProduction}>
-            ✅ Production ({productionCount})
+            ✅ Production-Ready ({productionCount})
           </button>
           <button
-            class={needsWorkButtonClass}
-            onclick={handleShowNeedsWork}>
-            ⚠️ Needs Work ({needsWorkCount})
+            class={prototypeButtonClass}
+            onclick={handleShowPrototype}>
+            🧪 Prototype ({prototypeCount})
+          </button>
+          <button
+            class={draftButtonClass}
+            onclick={handleShowDraft}>
+            📝 Draft ({draftCount})
           </button>
           <button
             class={failedButtonClass}
             onclick={handleShowFailed}>
-            ❌ Failed ({failedCount})
+            📄 Draft ({failedCount})
           </button>
         </div>
       </div>

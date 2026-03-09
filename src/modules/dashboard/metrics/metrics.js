@@ -17,16 +17,28 @@ export default class DashboardMetrics extends LightningElement {
     return `utility:${QUALITY_GATE_CONFIG.production.icon}`;
   }
 
-  get needsWorkLabel() {
-    return QUALITY_GATE_CONFIG.needsWork.label;
+  get prototypeLabel() {
+    return QUALITY_GATE_CONFIG.prototype.label;
   }
 
-  get needsWorkCriteria() {
-    return getQualityGateDescription('needsWork');
+  get prototypeCriteria() {
+    return getQualityGateDescription('prototype');
   }
 
-  get needsWorkIcon() {
-    return `utility:${QUALITY_GATE_CONFIG.needsWork.icon}`;
+  get prototypeIcon() {
+    return `utility:${QUALITY_GATE_CONFIG.prototype.icon}`;
+  }
+
+  get draftLabel() {
+    return QUALITY_GATE_CONFIG.draft.label;
+  }
+
+  get draftCriteria() {
+    return getQualityGateDescription('draft');
+  }
+
+  get draftIcon() {
+    return `utility:${QUALITY_GATE_CONFIG.draft.icon}`;
   }
 
   get failedLabel() {
@@ -56,24 +68,34 @@ export default class DashboardMetrics extends LightningElement {
       : 0;
   }
 
-  get needsWorkCount() {
-    const minScore = QUALITY_GATE_CONFIG.needsWork.minScore;
-    const maxScore = QUALITY_GATE_CONFIG.needsWork.maxScore;
+  get prototypeCount() {
     return this.components.filter(c => {
       const score = c.scores?.overall || 0;
-      return score >= minScore && score < maxScore;
+      return score >= 2.0 && score < 3.0;
     }).length;
   }
 
-  get needsWorkPercent() {
+  get prototypePercent() {
     return this.totalComponents > 0
-      ? Math.round((this.needsWorkCount / this.totalComponents) * 100)
+      ? Math.round((this.prototypeCount / this.totalComponents) * 100)
+      : 0;
+  }
+
+  get draftCount() {
+    return this.components.filter(c => {
+      const score = c.scores?.overall || 0;
+      return score >= 1.0 && score < 2.0;
+    }).length;
+  }
+
+  get draftPercent() {
+    return this.totalComponents > 0
+      ? Math.round((this.draftCount / this.totalComponents) * 100)
       : 0;
   }
 
   get failedCount() {
-    const maxScore = QUALITY_GATE_CONFIG.failed.maxScore;
-    return this.components.filter(c => (c.scores?.overall || 0) < maxScore).length;
+    return this.components.filter(c => (c.scores?.overall || 0) < 1.0).length;
   }
 
   get failedPercent() {
@@ -110,9 +132,15 @@ export default class DashboardMetrics extends LightningElement {
     }));
   }
 
-  filterNeedsWork() {
+  filterPrototype() {
     this.dispatchEvent(new CustomEvent('filterbyquality', {
-      detail: { qualityGate: 'needs-work' }
+      detail: { qualityGate: 'prototype' }
+    }));
+  }
+
+  filterDraft() {
+    this.dispatchEvent(new CustomEvent('filterbyquality', {
+      detail: { qualityGate: 'draft' }
     }));
   }
 
