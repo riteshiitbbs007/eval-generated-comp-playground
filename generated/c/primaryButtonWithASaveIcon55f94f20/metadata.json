@@ -27,5 +27,7 @@
     "desktop": "generated/c/primaryButtonWithASaveIcon55f94f20/screenshots/desktop.png"
   },
   "model": "claude-3-7-sonnet",
-  "modelProvider": "anthropic"
+  "modelProvider": "anthropic",
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/datasets/8b3bfd1c-8b88-4d04-bddf-41857eeb48a8?search=helpful-walk-7-bf30cd",
+  "langsmithExperiment": "helpful-walk-7-bf30cd"
 }

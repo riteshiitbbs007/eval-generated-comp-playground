@@ -29,5 +29,7 @@
     "desktop": "generated/c/primaryButtonWithASaveIconC0e76cf4/screenshots/desktop.png"
   },
   "model": "claude-4-5-sonnet",
-  "modelProvider": "anthropic"
+  "modelProvider": "anthropic",
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/datasets/8b3bfd1c-8b88-4d04-bddf-41857eeb48a8?search=aching-circle-64",
+  "langsmithExperiment": "aching-circle-64"
 }
