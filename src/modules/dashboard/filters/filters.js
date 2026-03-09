@@ -1,12 +1,13 @@
 import { LightningElement, api } from 'lwc';
+import { QUALITY_GATE_CONFIG } from 'dashboard/qualityGateConfig';
 
 export default class DashboardFilters extends LightningElement {
   @api components = [];
 
-  // Filter state
+  // Filter state - using config for defaults
   activeQuickFilter = 'all';
   minScore = 0;
-  maxScore = 3;
+  maxScore = QUALITY_GATE_CONFIG.production.maxScore;
   minSldsCompliance = 0;
   utteranceIdFilter = '';
 
@@ -36,18 +37,22 @@ export default class DashboardFilters extends LightningElement {
   }
 
   get productionCount() {
-    return this.components.filter(c => c.scores?.overall >= 2.5).length;
+    const minScore = QUALITY_GATE_CONFIG.production.minScore;
+    return this.components.filter(c => c.scores?.overall >= minScore).length;
   }
 
   get needsWorkCount() {
+    const minScore = QUALITY_GATE_CONFIG.needsWork.minScore;
+    const maxScore = QUALITY_GATE_CONFIG.needsWork.maxScore;
     return this.components.filter(c => {
       const score = c.scores?.overall || 0;
-      return score >= 2.0 && score < 2.5;
+      return score >= minScore && score < maxScore;
     }).length;
   }
 
   get failedCount() {
-    return this.components.filter(c => (c.scores?.overall || 0) < 2.0).length;
+    const maxScore = QUALITY_GATE_CONFIG.failed.maxScore;
+    return this.components.filter(c => (c.scores?.overall || 0) < maxScore).length;
   }
 
   // Button classes
@@ -194,7 +199,7 @@ export default class DashboardFilters extends LightningElement {
   handleReset() {
     this.activeQuickFilter = 'all';
     this.minScore = 0;
-    this.maxScore = 3;
+    this.maxScore = QUALITY_GATE_CONFIG.production.maxScore;
     this.minSldsCompliance = 0;
     this.utteranceIdFilter = '';
     this.selectedTiers = new Set(['Tier 1', 'Tier 2', 'Tier 3']);

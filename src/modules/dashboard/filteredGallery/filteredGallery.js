@@ -1,4 +1,5 @@
 import { LightningElement, api } from 'lwc';
+import { QUALITY_GATE_CONFIG, getQualityGate } from 'dashboard/qualityGateConfig';
 
 export default class FilteredGallery extends LightningElement {
   _components = [];
@@ -65,10 +66,10 @@ export default class FilteredGallery extends LightningElement {
       const score = comp.scores?.overall || 0;
       const sldsScore = (comp.scores?.slds_linter || 0) * 100;
 
-      // Quick filter
-      if (this.filters.quickFilter === 'production' && score < 2.5) return false;
-      if (this.filters.quickFilter === 'needs-work' && (score < 2.0 || score >= 2.5)) return false;
-      if (this.filters.quickFilter === 'failed' && score >= 2.0) return false;
+      // Quick filter using config
+      if (this.filters.quickFilter === 'production' && score < QUALITY_GATE_CONFIG.production.minScore) return false;
+      if (this.filters.quickFilter === 'needs-work' && (score < QUALITY_GATE_CONFIG.needsWork.minScore || score >= QUALITY_GATE_CONFIG.needsWork.maxScore)) return false;
+      if (this.filters.quickFilter === 'failed' && score >= QUALITY_GATE_CONFIG.failed.maxScore) return false;
 
       // Score range
       if (score < this.filters.scoreRange.min || score > this.filters.scoreRange.max) return false;
@@ -150,16 +151,10 @@ export default class FilteredGallery extends LightningElement {
     const sldsScore = Math.round((comp.scores?.slds_linter || 0) * 100);
     const createdDate = new Date(comp.timestamp);
 
-    // Quality gate
-    let qualityGate = 'failed';
-    let qualityGateLabel = 'Failed';
-    if (score >= 2.5) {
-      qualityGate = 'production';
-      qualityGateLabel = 'Production Ready';
-    } else if (score >= 2.0) {
-      qualityGate = 'needs-work';
-      qualityGateLabel = 'Needs Work';
-    }
+    // Determine quality gate using config
+    const qualityGate = getQualityGate(score);
+    const qualityGateConfig = QUALITY_GATE_CONFIG[qualityGate];
+    const qualityGateLabel = qualityGateConfig.label;
 
     return {
       ...comp,
@@ -169,7 +164,7 @@ export default class FilteredGallery extends LightningElement {
       formattedDate: this.formatDate(createdDate),
       qualityGate,
       qualityGateLabel,
-      qualityGateBadgeClass: `quality-gate-badge quality-gate-${qualityGate}`,
+      qualityGateBadgeClass: `quality-gate-badge ${qualityGateConfig.badgeClass}`,
       hasMetadataBadges: !!comp.utteranceId || !!comp.variant || !!comp.model,
       screenshotUrls: comp.screenshotUrls || {}
     };

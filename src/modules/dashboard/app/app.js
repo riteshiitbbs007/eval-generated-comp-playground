@@ -1,4 +1,5 @@
 import { LightningElement } from 'lwc';
+import { QUALITY_GATE_CONFIG } from 'dashboard/qualityGateConfig';
 
 export default class DashboardApp extends LightningElement {
   components = [];
@@ -71,10 +72,10 @@ export default class DashboardApp extends LightningElement {
       quickFilter = 'failed';
     }
 
-    // Create filter criteria
+    // Create filter criteria using config max score
     const filterCriteria = {
       quickFilter,
-      scoreRange: { min: 0, max: 3 },
+      scoreRange: { min: 0, max: QUALITY_GATE_CONFIG.production.maxScore },
       sldsCompliance: 0,
       tiers: ['Tier 1', 'Tier 2', 'Tier 3'],
       complexities: ['Simple', 'Intermediate', 'Advanced'],
