@@ -18,5 +18,9 @@
   },
   "screenshotUrls": {
     "desktop": "generated/c/createTabsOverviewDetails/screenshots/desktop.png"
-  }
+  },
+  "utteranceId": "C13",
+  "variant": "Simple",
+  "model": "claude-3-7-sonnet",
+  "modelProvider": "anthropic"
 }

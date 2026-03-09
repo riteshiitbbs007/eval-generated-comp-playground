@@ -18,5 +18,9 @@
   },
   "screenshotUrls": {
     "desktop": "/generated/c/createPrimaryActionButton/screenshots/desktop.png"
-  }
+  },
+  "utteranceId": "C01",
+  "variant": "Moderate",
+  "model": "claude-3-7-sonnet",
+  "modelProvider": "anthropic"
 }

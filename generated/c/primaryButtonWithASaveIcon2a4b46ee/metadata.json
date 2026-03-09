@@ -21,5 +21,8 @@
   },
   "screenshotUrls": {
     "desktop": "generated/c/primaryButtonWithASaveIcon2a4b46ee/screenshots/desktop.png"
-  }
+  },
+  "utteranceId": "C01",
+  "model": "claude-3-7-sonnet",
+  "modelProvider": "anthropic"
 }

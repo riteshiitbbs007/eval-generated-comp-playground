@@ -15,5 +15,9 @@
     "errors": 1,
     "warnings": 18,
     "notes": 0
-  }
+  },
+  "utteranceId": "C04",
+  "variant": "Simple",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic"
 }

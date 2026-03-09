@@ -18,5 +18,9 @@
   },
   "screenshotUrls": {
     "desktop": "generated/c/create3stepWizardWith/screenshots/desktop.png"
-  }
+  },
+  "utteranceId": "C14",
+  "variant": "Simple",
+  "model": "claude-3-7-sonnet",
+  "modelProvider": "anthropic"
 }

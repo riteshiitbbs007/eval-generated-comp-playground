@@ -26,5 +26,7 @@
   },
   "screenshotUrls": {
     "desktop": "generated/c/responsiveProductCardGridWith611d4397d/screenshots/desktop.png"
-  }
+  },
+  "model": "claude-3-7-sonnet",
+  "modelProvider": "anthropic"
 }

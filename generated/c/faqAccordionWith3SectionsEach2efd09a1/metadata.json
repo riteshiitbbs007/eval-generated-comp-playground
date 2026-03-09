@@ -25,5 +25,7 @@
     "slds/no-slds-var-without-fallback": 24,
     "slds/no-hardcoded-values-slds2": 4,
     "slds/no-slds-namespace-for-custom-hooks": 1
-  }
+  },
+  "model": "claude-3-7-sonnet",
+  "modelProvider": "anthropic"
 }

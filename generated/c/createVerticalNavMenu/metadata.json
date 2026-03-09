@@ -18,5 +18,9 @@
   },
   "screenshotUrls": {
     "desktop": "/generated/c/createVerticalNavMenu/screenshots/desktop.png"
-  }
+  },
+  "utteranceId": "C11",
+  "variant": "Simple",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic"
 }
