@@ -1,0 +1,63 @@
+/**
+ * Sortable Product Table Styles
+ * Uses SLDS 2 design tokens for theme-aware, accessible styling
+ */
+
+/* Table header button hover and focus states */
+.slds-th__action:hover {
+    background-color: var(--slds-g-color-surface-container-2);
+    color: var(--slds-g-color-on-surface-3);
+}
+
+.slds-th__action:focus {
+    outline: none;
+    box-shadow: var(--slds-g-shadow-inset-focus);
+    background-color: var(--slds-g-color-surface-container-2);
+}
+
+.slds-th__action:active {
+    background-color: var(--slds-g-color-surface-container-3);
+}
+
+/* Sortable column header styling */
+.slds-is-sortable {
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Table cell padding for better readability */
+td {
+    padding: var(--slds-g-spacing-2) var(--slds-g-spacing-3);
+}
+
+th {
+    padding: 0;
+}
+
+/* Sort icon container spacing */
+.slds-icon_container {
+    margin-left: var(--slds-g-spacing-1);
+}
+
+/* Table row hover effect */
+tr.slds-hint-parent:hover {
+    background-color: var(--slds-g-color-surface-container-1);
+}
+
+/* Responsive table container */
+.slds-scrollable_x {
+    overflow-x: auto;
+}
+
+/* Badge styling for stock status */
+lightning-badge {
+    display: inline-block;
+}
+
+/* Ensure proper spacing in table cells */
+.slds-truncate {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

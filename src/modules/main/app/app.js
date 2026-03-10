@@ -57,6 +57,10 @@ export default class HelloWorldApp extends LightningElement {
     return this.selectedComponent === '4AlertsSuccessGreenErrorRedFcf679ff';
   }
 
+  get showCardGrid4ColumnsDesktop2Cb530bec() {
+    return this.selectedComponent === 'cardGrid4ColumnsDesktop2Cb530bec';
+  }
+
   get showContactCardWithAvatarNameTitle569326e5() {
     return this.selectedComponent === 'contactCardWithAvatarNameTitle569326e5';
   }
@@ -117,6 +121,10 @@ export default class HelloWorldApp extends LightningElement {
     return this.selectedComponent === 'createVerticalNavMenu';
   }
 
+  get showDeleteConfirmationModalWithCancelAnd27019baa() {
+    return this.selectedComponent === 'deleteConfirmationModalWithCancelAnd27019baa';
+  }
+
   get showFaqAccordionWith3SectionsEach2efd09a1() {
     return this.selectedComponent === 'faqAccordionWith3SectionsEach2efd09a1';
   }
@@ -139,6 +147,10 @@ export default class HelloWorldApp extends LightningElement {
 
   get showFormNameEmailMessageShowErrors22a50f96() {
     return this.selectedComponent === 'formNameEmailMessageShowErrors22a50f96';
+  }
+
+  get showFormNameEmailMessageShowErrorsC304cee9() {
+    return this.selectedComponent === 'formNameEmailMessageShowErrorsC304cee9';
   }
 
   get showFormNameEmailMessageShowErrorsE34f2b6d() {
@@ -195,6 +207,10 @@ export default class HelloWorldApp extends LightningElement {
 
   get showSortableTableProductNamePriceCategory5f50fe64() {
     return this.selectedComponent === 'sortableTableProductNamePriceCategory5f50fe64';
+  }
+
+  get showSortableTableProductNamePriceCategoryA2ca861d() {
+    return this.selectedComponent === 'sortableTableProductNamePriceCategoryA2ca861d';
   }
 
   get showUserProfileFormNameTextEmailC8b10de5() {

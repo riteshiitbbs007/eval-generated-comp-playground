@@ -291,10 +291,11 @@ function saveTrendsData(data) {
   fs.writeFileSync(TRENDS_FILE, JSON.stringify(data, null, 2), 'utf-8');
 }
 
-// Check if snapshot exists for today
-function hasTodaySnapshot(trendsData) {
+// Remove existing snapshot for today if it exists
+function removeTodaySnapshot(trendsData) {
   const today = new Date().toISOString().split('T')[0];
-  return trendsData.snapshots.some(s => s.date === today);
+  trendsData.snapshots = trendsData.snapshots.filter(s => s.date !== today);
+  return trendsData;
 }
 
 // Generate snapshot
@@ -347,13 +348,10 @@ function main() {
     process.exit(0);
   }
 
-  const trendsData = loadTrendsData();
+  let trendsData = loadTrendsData();
 
-  // Check if we already have a snapshot for today
-  if (hasTodaySnapshot(trendsData)) {
-    // Silently skip - already captured today
-    process.exit(0);
-  }
+  // Remove existing snapshot for today if it exists (will be replaced with updated data)
+  trendsData = removeTodaySnapshot(trendsData);
 
   // Add new snapshot
   trendsData.snapshots.push(snapshot);

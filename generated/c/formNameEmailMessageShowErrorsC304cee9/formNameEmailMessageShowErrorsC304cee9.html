@@ -1,0 +1,63 @@
+<template>
+    <lightning-card title="Contact Form" icon-name="standard:contact">
+        <div class="slds-p-around_medium">
+            <!-- Name Field -->
+            <lightning-input
+                label="Name"
+                name="name"
+                value={nameValue}
+                onchange={handleNameChange}
+                required
+                message-when-value-missing="Name is required"
+                class="slds-m-bottom_small"
+            ></lightning-input>
+
+            <!-- Email Field -->
+            <lightning-input
+                type="email"
+                label="Email"
+                name="email"
+                value={emailValue}
+                onchange={handleEmailChange}
+                required
+                message-when-value-missing="Email is required"
+                class="slds-m-bottom_small"
+            ></lightning-input>
+
+            <!-- Message Field -->
+            <lightning-textarea
+                label="Message"
+                name="message"
+                value={messageValue}
+                onchange={handleMessageChange}
+                required
+                message-when-value-missing="Message is required"
+                class="slds-m-bottom_small"
+            ></lightning-textarea>
+
+            <!-- Submit Button -->
+            <div class="slds-m-top_medium slds-text-align_right">
+                <lightning-button
+                    variant="brand"
+                    label="Submit"
+                    title="Submit form"
+                    onclick={handleSubmit}
+                    class="slds-m-left_x-small"
+                ></lightning-button>
+            </div>
+
+            <!-- Success Message -->
+            <template lwc:if={showSuccess}>
+                <div class="slds-m-top_medium">
+                    <div class="slds-notify slds-notify_alert slds-alert_success" role="alert">
+                        <span class="slds-assistive-text">success</span>
+                        <span class="slds-icon_container slds-icon-utility-success slds-m-right_x-small">
+                            <lightning-icon icon-name="utility:success" alternative-text="success" size="x-small" variant="inverse"></lightning-icon>
+                        </span>
+                        <h2>{successMessage}</h2>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

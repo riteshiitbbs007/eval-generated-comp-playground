@@ -5658,8 +5658,8 @@
       }
     },
     {
-      "id": "snapshot-2026-03-10T12-09-03-688Z",
-      "timestamp": "2026-03-10T12:09:03.688Z",
+      "id": "snapshot-2026-03-10T14-30-12-505Z",
+      "timestamp": "2026-03-10T14:30:12.505Z",
       "date": "2026-03-10",
       "components": [
         {
@@ -5727,6 +5727,28 @@
           },
           "qualityGate": "prototype",
           "timestamp": "2026-02-28T16:00:46.693Z"
+        },
+        {
+          "componentName": "cardGrid4ColumnsDesktop2Cb530bec",
+          "utteranceId": "C05",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "scores": {
+            "overall": 2.96,
+            "slds_linter": 0.94,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 2,
+            "errors": 0,
+            "total": 2
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-10T13:56:06.162Z"
         },
         {
           "componentName": "contactCardWithAvatarNameTitle569326e5",
@@ -6059,6 +6081,28 @@
           "timestamp": "2026-02-22T17:26:59.000Z"
         },
         {
+          "componentName": "deleteConfirmationModalWithCancelAnd27019baa",
+          "utteranceId": "C04",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "scores": {
+            "overall": 2.67,
+            "slds_linter": 0.559,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 62,
+            "errors": 1,
+            "total": 63
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-10T13:54:09.673Z"
+        },
+        {
           "componentName": "faqAccordionWith3SectionsEach2efd09a1",
           "utteranceId": "C08",
           "variant": "Moderate",
@@ -6189,6 +6233,28 @@
           },
           "qualityGate": "prototype",
           "timestamp": "2026-03-03T13:41:31.994Z"
+        },
+        {
+          "componentName": "formNameEmailMessageShowErrorsC304cee9",
+          "utteranceId": "C02",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "scores": {
+            "overall": 2.86,
+            "slds_linter": 0.8109999999999999,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 17,
+            "errors": 0,
+            "total": 17
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-10T13:46:35.279Z"
         },
         {
           "componentName": "formNameEmailMessageShowErrorsE34f2b6d",
@@ -6499,6 +6565,28 @@
           "timestamp": "2026-03-06T14:29:48.179Z"
         },
         {
+          "componentName": "sortableTableProductNamePriceCategoryA2ca861d",
+          "utteranceId": "C03",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "scores": {
+            "overall": 2.83,
+            "slds_linter": 0.7689999999999999,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 17,
+            "errors": 0,
+            "total": 17
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-10T13:49:18.195Z"
+        },
+        {
           "componentName": "userProfileFormNameTextEmailC8b10de5",
           "utteranceId": "C09",
           "variant": "Moderate",
@@ -6681,26 +6769,26 @@
         "Simple-Batch7": {
           "variant": "Simple",
           "batchNumber": 7,
-          "avgTimestamp": "2026-03-09T13:51:26.475Z",
+          "avgTimestamp": "2026-03-10T01:53:46.318Z",
           "dateRange": {
             "first": "2026-03-09T13:51:26.475Z",
-            "last": "2026-03-09T13:51:26.475Z"
+            "last": "2026-03-10T13:56:06.162Z"
           },
-          "count": 1,
+          "count": 5,
           "metrics": {
-            "avgOverallScore": 2.87,
-            "avgSldsScore": 0.82,
-            "avgViolations": 10,
-            "minScore": 2.87,
-            "maxScore": 2.87,
-            "stdDev": 0,
+            "avgOverallScore": 2.84,
+            "avgSldsScore": 0.78,
+            "avgViolations": 21.8,
+            "minScore": 2.67,
+            "maxScore": 2.96,
+            "stdDev": 0.09,
             "distribution": {
               "production": 0,
-              "prototype": 1,
+              "prototype": 5,
               "draft": 0
             },
             "models": {
-              "claude-4-5-sonnet": 1
+              "claude-4-5-sonnet": 5
             }
           }
         },
@@ -6758,19 +6846,19 @@
         }
       },
       "summary": {
-        "totalComponents": 39,
+        "totalComponents": 43,
         "avgOverallScore": 2.78,
-        "avgSldsScore": 0.68,
+        "avgSldsScore": 0.69,
         "qualityDistribution": {
           "production": 0,
-          "prototype": 39,
+          "prototype": 43,
           "draft": 0
         }
       }
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-03-10T12:09:03.688Z",
+    "lastUpdated": "2026-03-10T14:30:12.505Z",
     "totalSnapshots": 9,
     "dateRange": {
       "first": "2026-02-22",
