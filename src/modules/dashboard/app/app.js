@@ -8,6 +8,7 @@ export default class DashboardApp extends LightningElement {
   isLoading = true;
   error = null;
   searchTerm = '';
+  currentTab = 'overview';
 
   connectedCallback() {
     this.loadComponents();
@@ -156,5 +157,29 @@ export default class DashboardApp extends LightningElement {
     // Clear onboarding localStorage and refresh page to show tutorial
     localStorage.removeItem('lwc-gallery-onboarding-completed');
     window.location.reload();
+  }
+
+  handleTabChange(event) {
+    this.currentTab = event.target.dataset.tab;
+  }
+
+  get isOverviewTab() {
+    return this.currentTab === 'overview';
+  }
+
+  get isTrendsTab() {
+    return this.currentTab === 'trends';
+  }
+
+  get overviewTabClass() {
+    return this.currentTab === 'overview'
+      ? 'slds-tabs_default__item slds-is-active'
+      : 'slds-tabs_default__item';
+  }
+
+  get trendsTabClass() {
+    return this.currentTab === 'trends'
+      ? 'slds-tabs_default__item slds-is-active'
+      : 'slds-tabs_default__item';
   }
 }

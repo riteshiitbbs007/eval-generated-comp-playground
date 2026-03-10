@@ -11,7 +11,7 @@
     "dev": "lwr dev",
     "dev:compat": "lwr dev --mode compat",
     "dev:api": "nodemon server/index.js",
-    "prebuild": "npm run generate:templates",
+    "prebuild": "npm run generate:templates && npm run trends:snapshot:quiet",
     "build": "lwr build --clean",
     "build:prod-compat": "lwr build --clean --mode prod-compat",
     "start": "node server/index.js",
@@ -19,10 +19,16 @@
     "stage": "yarn build && yarn start",
     "stage:prod-compat": "yarn build:prod-compat && yarn start",
     "screenshots": "node scripts/capture-screenshots.js",
-    "screenshots:all": "node scripts/capture-screenshots.js --all"
+    "screenshots:all": "node scripts/capture-screenshots.js --all",
+    "trends:snapshot": "node scripts/generate-trends-snapshot.cjs",
+    "trends:snapshot:quiet": "node scripts/generate-trends-snapshot-quiet.cjs",
+    "trends:backfill": "node scripts/backfill-trends-snapshots.cjs",
+    "trends:analyze": "node scripts/analyze-trends.cjs",
+    "trends:export": "node scripts/export-trends.cjs"
   },
   "dependencies": {
     "@salesforce-ux/design-system": "^2.26.2",
+    "chart.js": "^4.4.1",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "express-rate-limit": "^7.1.5",

@@ -47,10 +47,52 @@
       </div>
     </template>
 
+    <!-- Tabs Navigation -->
+    <template if:false={isLoading}>
+      <template if:false={error}>
+        <div class="tabs-container slds-m-top_medium">
+          <div class="slds-tabs_default">
+            <ul class="slds-tabs_default__nav" role="tablist">
+              <li class={overviewTabClass} title="Overview" role="presentation">
+                <a
+                  class="slds-tabs_default__link"
+                  href="javascript:void(0);"
+                  role="tab"
+                  tabindex={isOverviewTab}
+                  aria-selected={isOverviewTab}
+                  aria-controls="overview-content"
+                  data-tab="overview"
+                  onclick={handleTabChange}
+                >
+                  Overview
+                </a>
+              </li>
+              <li class={trendsTabClass} title="Trends" role="presentation">
+                <a
+                  class="slds-tabs_default__link"
+                  href="javascript:void(0);"
+                  role="tab"
+                  tabindex={isTrendsTab}
+                  aria-selected={isTrendsTab}
+                  aria-controls="trends-content"
+                  data-tab="trends"
+                  onclick={handleTabChange}
+                >
+                  Trends
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </template>
+    </template>
+
     <!-- Dashboard Content -->
     <template if:false={isLoading}>
       <template if:false={error}>
-        <div class="dashboard-content">
+        <!-- Overview Tab Content -->
+        <template if:true={isOverviewTab}>
+        <div class="dashboard-content" id="overview-content" role="tabpanel">
           <!-- Metrics Overview -->
           <div class="metrics-section slds-m-around_medium">
             <dashboard-metrics
@@ -83,6 +125,14 @@
             </div>
           </div>
         </div>
+        </template>
+
+        <!-- Trends Tab Content -->
+        <template if:true={isTrendsTab}>
+          <div class="dashboard-content" id="trends-content" role="tabpanel">
+            <dashboard-trends></dashboard-trends>
+          </div>
+        </template>
 
         <!-- Footer -->
         <footer class="dashboard-footer">
