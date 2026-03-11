@@ -1,0 +1,116 @@
+/**
+ * Contact Card Styling
+ * Uses SLDS 2.x design tokens and semantic styling hooks
+ * Follows BEM methodology for custom class names
+ */
+
+/* Card Container */
+.contact-card {
+    /* Use semantic surface container for card background */
+    background: var(--slds-g-color-surface-container-1);
+
+    /* Border using SLDS border tokens */
+    border: 1px solid var(--slds-g-color-border-1);
+    border-radius: var(--slds-g-radius-border-1);
+
+    /* Elevation using SLDS shadow tokens */
+    box-shadow: var(--slds-g-shadow-1);
+}
+
+/* Contact Name Styling */
+.contact-name {
+    /* Use semantic on-surface color for text */
+    color: var(--slds-g-color-on-surface-3);
+
+    /* Typography using SLDS font tokens */
+    font-family: var(--slds-g-font-family-base);
+    font-size: 1.125rem; /* 18px - use rem values */
+    font-weight: var(--slds-g-font-weight-7); /* Bold */
+    line-height: var(--slds-g-font-lineheight-2);
+}
+
+/* Contact Title Styling */
+.contact-title {
+    /* Use de-emphasized color for secondary text */
+    color: var(--slds-g-color-on-surface-2);
+
+    /* Spacing using SLDS spacing tokens */
+    margin-top: var(--slds-g-spacing-1);
+
+    /* Typography */
+    font-family: var(--slds-g-font-family-base);
+    font-weight: var(--slds-g-font-weight-4); /* Regular */
+}
+
+/* Contact Info Item Spacing */
+.contact-info-item {
+    /* Vertical spacing between contact info items */
+    margin-bottom: var(--slds-g-spacing-3);
+}
+
+.contact-info-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Contact Link Styling */
+.contact-link {
+    /* Use accent colors for interactive elements */
+    color: var(--slds-g-color-accent-1);
+    text-decoration: none;
+
+    /* Typography */
+    font-family: var(--slds-g-font-family-base);
+    font-weight: var(--slds-g-font-weight-5); /* Medium */
+
+    /* Transition for smooth hover effect */
+    transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+    /* Hover state using numbered accent variant */
+    color: var(--slds-g-color-accent-2);
+    text-decoration: underline;
+}
+
+.contact-link:active {
+    /* Active state using numbered accent variant */
+    color: var(--slds-g-color-accent-3);
+}
+
+.contact-link:focus {
+    /* Focus state for accessibility */
+    outline: 2px solid var(--slds-g-color-accent-1);
+    outline-offset: var(--slds-g-spacing-1);
+    border-radius: var(--slds-g-radius-border-1);
+}
+
+/* Card Footer Styling */
+.slds-card__footer {
+    /* Background for footer section */
+    background: var(--slds-g-color-surface-container-1);
+
+    /* Border separator */
+    border-top: 1px solid var(--slds-g-color-border-1);
+
+    /* Padding using SLDS spacing tokens */
+    padding: var(--slds-g-spacing-3) var(--slds-g-spacing-4);
+}
+
+/* Button Group Alignment */
+.slds-button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--slds-g-spacing-2);
+}
+
+/* Responsive Design - Mobile Adjustments */
+@media (max-width: 768px) {
+    .contact-name {
+        font-size: 1rem; /* Smaller on mobile */
+    }
+
+    .slds-button-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

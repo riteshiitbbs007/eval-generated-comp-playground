@@ -49,6 +49,10 @@ export default class HelloWorldApp extends LightningElement {
     return this.selectedComponent === '4AlertsSuccessErrorWarningInfo49684baf';
   }
 
+  get show4AlertsSuccessErrorWarningInfo5edbfc89() {
+    return this.selectedComponent === '4AlertsSuccessErrorWarningInfo5edbfc89';
+  }
+
   get show4AlertsSuccessErrorWarningInfoDf286ed0() {
     return this.selectedComponent === '4AlertsSuccessErrorWarningInfoDf286ed0';
   }
@@ -63,6 +67,10 @@ export default class HelloWorldApp extends LightningElement {
 
   get showContactCardWithAvatarNameTitle569326e5() {
     return this.selectedComponent === 'contactCardWithAvatarNameTitle569326e5';
+  }
+
+  get showContactCardWithAvatarNameTitleDc584ab4() {
+    return this.selectedComponent === 'contactCardWithAvatarNameTitleDc584ab4';
   }
 
   get showContactFormNameTextEmailFormat0878e030() {
@@ -129,6 +137,10 @@ export default class HelloWorldApp extends LightningElement {
     return this.selectedComponent === 'faqAccordionWith3SectionsEach2efd09a1';
   }
 
+  get showFaqAccordionWith3SectionsFirst0be93d5c() {
+    return this.selectedComponent === 'faqAccordionWith3SectionsFirst0be93d5c';
+  }
+
   get showFaqAccordionWith3SectionsFirst3f2bda67() {
     return this.selectedComponent === 'faqAccordionWith3SectionsFirst3f2bda67';
   }
@@ -157,6 +169,10 @@ export default class HelloWorldApp extends LightningElement {
     return this.selectedComponent === 'formNameEmailMessageShowErrorsE34f2b6d';
   }
 
+  get showFormWithTextEmailPhoneDropdown51b9ac1e() {
+    return this.selectedComponent === 'formWithTextEmailPhoneDropdown51b9ac1e';
+  }
+
   get showFormWithTextEmailPhoneDropdownE48117d4() {
     return this.selectedComponent === 'formWithTextEmailPhoneDropdownE48117d4';
   }
@@ -167,6 +183,10 @@ export default class HelloWorldApp extends LightningElement {
 
   get showPageHeaderWithTitleAndAction35185f19() {
     return this.selectedComponent === 'pageHeaderWithTitleAndAction35185f19';
+  }
+
+  get showPageHeaderWithTitleAndAction8b50d63c() {
+    return this.selectedComponent === 'pageHeaderWithTitleAndAction8b50d63c';
   }
 
   get showPageHeaderWithTitleAndActionFb7c8482() {

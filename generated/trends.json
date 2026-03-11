@@ -6855,14 +6855,1349 @@
           "draft": 0
         }
       }
+    },
+    {
+      "id": "snapshot-2026-03-11T07-13-40-493Z",
+      "timestamp": "2026-03-11T07:13:40.493Z",
+      "date": "2026-03-11",
+      "components": [
+        {
+          "componentName": "4AlertsSuccessErrorWarningInfo49684baf",
+          "utteranceId": "C07",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "overall": 2.63,
+            "slds_linter": 0.7,
+            "slds_quality": 0.7,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 22,
+            "errors": 0,
+            "total": 22
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-03T18:46:48.713Z"
+        },
+        {
+          "componentName": "4AlertsSuccessErrorWarningInfo5edbfc89",
+          "utteranceId": "C07",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "overall": 2.61,
+            "slds_linter": 0.874,
+            "slds_quality": 0.4,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 17,
+            "errors": 0,
+            "total": 17
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-11T06:31:57.092Z"
+        },
+        {
+          "componentName": "4AlertsSuccessErrorWarningInfoDf286ed0",
+          "utteranceId": "C07",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "overall": 2.71,
+            "slds_linter": 0.61,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 2,
+            "errors": 3,
+            "total": 5
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-05T12:11:19.662Z"
+        },
+        {
+          "componentName": "4AlertsSuccessGreenErrorRedFcf679ff",
+          "utteranceId": "C07",
+          "variant": "Moderate",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "overall": 2.87,
+            "slds_linter": 0.73,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 27,
+            "errors": 0,
+            "total": 27
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-28T16:00:46.693Z"
+        },
+        {
+          "componentName": "cardGrid4ColumnsDesktop2Cb530bec",
+          "utteranceId": "C05",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "scores": {
+            "overall": 2.96,
+            "slds_linter": 0.94,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 2,
+            "errors": 0,
+            "total": 2
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-10T13:56:06.162Z"
+        },
+        {
+          "componentName": "contactCardWithAvatarNameTitle569326e5",
+          "utteranceId": "C10",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "overall": 2.6,
+            "slds_linter": 0.46900000000000003,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 44,
+            "errors": 0,
+            "total": 44
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-05T08:08:37.735Z"
+        },
+        {
+          "componentName": "contactCardWithAvatarNameTitleDc584ab4",
+          "utteranceId": "C10",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "overall": 2.79,
+            "slds_linter": 0.724,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 31,
+            "errors": 0,
+            "total": 31
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-11T06:42:31.682Z"
+        },
+        {
+          "componentName": "contactFormNameTextEmailFormat0878e030",
+          "utteranceId": "C02",
+          "variant": "Moderate",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "scores": {
+            "overall": 2.72,
+            "slds_linter": 0.73,
+            "slds_quality": 1,
+            "prd_compliance": 0.7,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 21,
+            "errors": 0,
+            "total": 21
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-28T15:33:54.967Z"
+        },
+        {
+          "componentName": "create3stepWizardWith",
+          "utteranceId": "C14",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 3",
+          "complexity": "Advanced",
+          "scores": {
+            "overall": 2.77,
+            "slds_linter": 0.544,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 57,
+            "errors": 0,
+            "total": 57
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-25T12:19:04.351Z"
+        },
+        {
+          "componentName": "createAlertsSuccessError",
+          "utteranceId": "C07",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "overall": 2.93,
+            "slds_linter": 0.8589999999999999,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 13,
+            "errors": 0,
+            "total": 13
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-22T14:33:38.849Z"
+        },
+        {
+          "componentName": "createContactCardWith",
+          "utteranceId": "C10",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "overall": 2.74,
+            "slds_linter": 0.7689999999999999,
+            "slds_quality": 1,
+            "prd_compliance": 0.7,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 19,
+            "errors": 0,
+            "total": 19
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-22T17:23:01.487Z"
+        },
+        {
+          "componentName": "createDeleteConfirmationModal",
+          "utteranceId": "C04",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "scores": {
+            "overall": 2.88,
+            "slds_linter": 0.766,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 18,
+            "errors": 1,
+            "total": 19
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-22T10:46:11.778Z"
+        },
+        {
+          "componentName": "createFaqAccordionWith",
+          "utteranceId": "C08",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "overall": 2.82,
+            "slds_linter": 0.64,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 42,
+            "errors": 0,
+            "total": 42
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-22T15:38:23.388Z"
+        },
+        {
+          "componentName": "createFormNameEmail",
+          "utteranceId": "C02",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "scores": {
+            "overall": 2.86,
+            "slds_linter": 0.7089999999999999,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 25,
+            "errors": 0,
+            "total": 25
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-22T09:59:02.779Z"
+        },
+        {
+          "componentName": "createFormWithText",
+          "utteranceId": "C09",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "overall": 2.9,
+            "slds_linter": 0.7959999999999999,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 27,
+            "errors": 0,
+            "total": 27
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-22T16:40:51.064Z"
+        },
+        {
+          "componentName": "createPageHeaderWith",
+          "utteranceId": "C06",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "overall": 2.69,
+            "slds_linter": 0.679,
+            "slds_quality": 0.7,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 15,
+            "errors": 0,
+            "total": 15
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-22T11:58:06.565Z"
+        },
+        {
+          "componentName": "createPrimaryActionButton",
+          "utteranceId": "C01",
+          "variant": "Moderate",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "scores": {
+            "overall": 2.63,
+            "slds_linter": 0.559,
+            "slds_quality": 1,
+            "prd_compliance": 0.7,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 67,
+            "errors": 0,
+            "total": 67
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-25T09:12:46.436Z"
+        },
+        {
+          "componentName": "createPrimaryButtonWith",
+          "utteranceId": "C01",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "scores": {
+            "overall": 2.85,
+            "slds_linter": 0.7,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 20,
+            "errors": 0,
+            "total": 20
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-22T09:52:07.140Z"
+        },
+        {
+          "componentName": "createSortableTableProduct",
+          "utteranceId": "C03",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "scores": {
+            "overall": 2.79,
+            "slds_linter": 0.5800000000000001,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 18,
+            "errors": 0,
+            "total": 18
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-22T10:38:34.011Z"
+        },
+        {
+          "componentName": "createTabsOverviewDetails",
+          "utteranceId": "C13",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "overall": 2.77,
+            "slds_linter": 0.829,
+            "slds_quality": 1,
+            "prd_compliance": 0.7,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 13,
+            "errors": 0,
+            "total": 13
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-25T11:45:34.342Z"
+        },
+        {
+          "componentName": "createVerticalNavMenu",
+          "utteranceId": "C11",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "overall": 2.88,
+            "slds_linter": 0.7629999999999999,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 26,
+            "errors": 0,
+            "total": 26
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-22T17:26:59.000Z"
+        },
+        {
+          "componentName": "deleteConfirmationModalWithCancelAnd27019baa",
+          "utteranceId": "C04",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "scores": {
+            "overall": 2.67,
+            "slds_linter": 0.559,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 62,
+            "errors": 1,
+            "total": 63
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-10T13:54:09.673Z"
+        },
+        {
+          "componentName": "faqAccordionWith3SectionsEach2efd09a1",
+          "utteranceId": "C08",
+          "variant": "Moderate",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "overall": 2.84,
+            "slds_linter": 0.6759999999999999,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 42,
+            "errors": 0,
+            "total": 42
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-28T16:07:01.978Z"
+        },
+        {
+          "componentName": "faqAccordionWith3SectionsFirst0be93d5c",
+          "utteranceId": "C08",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "overall": 2.93,
+            "slds_linter": 0.91,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 9,
+            "errors": 0,
+            "total": 9
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-11T06:36:05.827Z"
+        },
+        {
+          "componentName": "faqAccordionWith3SectionsFirst3f2bda67",
+          "utteranceId": "C08",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "overall": 2.64,
+            "slds_linter": 0.52,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 55,
+            "errors": 0,
+            "total": 55
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-06T13:32:30.374Z"
+        },
+        {
+          "componentName": "faqAccordionWith3SectionsFirst827fabec",
+          "utteranceId": "C08",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "overall": 2.57,
+            "slds_linter": 0.43000000000000005,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 25,
+            "errors": 0,
+            "total": 25
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-06T09:08:05.476Z"
+        },
+        {
+          "componentName": "faqAccordionWith3SectionsFirst9b5a8af1",
+          "utteranceId": "C08",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "overall": 2.55,
+            "slds_linter": 0.4,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 83,
+            "errors": 0,
+            "total": 83
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-06T13:23:55.504Z"
+        },
+        {
+          "componentName": "faqAccordionWith3SectionsFirstBe7ac560",
+          "utteranceId": "C08",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "overall": 2.91,
+            "slds_linter": 0.88,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 15,
+            "errors": 0,
+            "total": 15
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-05T12:14:22.751Z"
+        },
+        {
+          "componentName": "formNameEmailMessageShowErrors22a50f96",
+          "utteranceId": "C02",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "scores": {
+            "overall": 2.75,
+            "slds_linter": 0.661,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 16,
+            "errors": 0,
+            "total": 16
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-03T13:41:31.994Z"
+        },
+        {
+          "componentName": "formNameEmailMessageShowErrorsC304cee9",
+          "utteranceId": "C02",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "scores": {
+            "overall": 2.86,
+            "slds_linter": 0.8109999999999999,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 17,
+            "errors": 0,
+            "total": 17
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-10T13:46:35.279Z"
+        },
+        {
+          "componentName": "formNameEmailMessageShowErrorsE34f2b6d",
+          "utteranceId": "C02",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "scores": {
+            "overall": 2.91,
+            "slds_linter": 0.874,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 16,
+            "errors": 0,
+            "total": 16
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-06T14:24:43.310Z"
+        },
+        {
+          "componentName": "formWithTextEmailPhoneDropdown51b9ac1e",
+          "utteranceId": "C09",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "overall": 2.8,
+            "slds_linter": 0.73,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 27,
+            "errors": 0,
+            "total": 27
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-11T06:38:29.422Z"
+        },
+        {
+          "componentName": "formWithTextEmailPhoneDropdownE48117d4",
+          "utteranceId": "C09",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "overall": 2.78,
+            "slds_linter": 0.712,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 30,
+            "errors": 0,
+            "total": 30
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-05T12:19:11.395Z"
+        },
+        {
+          "componentName": "pageHeaderJohnSmithWithAccount3b74227d",
+          "utteranceId": "C06",
+          "variant": "Moderate",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "overall": 2.88,
+            "slds_linter": 0.766,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 23,
+            "errors": 0,
+            "total": 23
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-28T15:57:29.547Z"
+        },
+        {
+          "componentName": "pageHeaderWithTitleAndAction35185f19",
+          "utteranceId": "C06",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "overall": 2.66,
+            "slds_linter": 0.55,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 17,
+            "errors": 0,
+            "total": 17
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-03T15:56:23.241Z"
+        },
+        {
+          "componentName": "pageHeaderWithTitleAndAction8b50d63c",
+          "utteranceId": "C06",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "overall": 2.73,
+            "slds_linter": 0.646,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 31,
+            "errors": 0,
+            "total": 31
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-11T06:29:37.224Z"
+        },
+        {
+          "componentName": "pageHeaderWithTitleAndActionFb7c8482",
+          "utteranceId": "C06",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "overall": 2.69,
+            "slds_linter": 0.5800000000000001,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 43,
+            "errors": 0,
+            "total": 43
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-05T12:07:34.827Z"
+        },
+        {
+          "componentName": "primaryActionButtonWithASave4addabb5",
+          "utteranceId": "C01",
+          "variant": "Moderate",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "scores": {
+            "overall": 2.86,
+            "slds_linter": 0.7149999999999999,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 27,
+            "errors": 0,
+            "total": 27
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-28T15:28:40.957Z"
+        },
+        {
+          "componentName": "primaryButtonWithASaveIcon2a4b46ee",
+          "utteranceId": "C01",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "scores": {
+            "overall": 2.88,
+            "slds_linter": 0.7509999999999999,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 26,
+            "errors": 0,
+            "total": 26
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-28T06:41:48.679Z"
+        },
+        {
+          "componentName": "primaryButtonWithASaveIcon38dac3a6",
+          "utteranceId": "C01",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "scores": {
+            "overall": 2.8,
+            "slds_linter": 0.9339999999999999,
+            "slds_quality": 1,
+            "prd_compliance": 0.7,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 7,
+            "errors": 0,
+            "total": 7
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-06T14:21:55.996Z"
+        },
+        {
+          "componentName": "primaryButtonWithASaveIcon3f0774ab",
+          "utteranceId": "C01",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "scores": {
+            "overall": 2.87,
+            "slds_linter": 0.7389999999999999,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 20,
+            "errors": 0,
+            "total": 20
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-27T11:15:02.333Z"
+        },
+        {
+          "componentName": "primaryButtonWithASaveIcon55f94f20",
+          "utteranceId": "C01",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "scores": {
+            "overall": 2.85,
+            "slds_linter": 0.7,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 5,
+            "errors": 0,
+            "total": 5
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-28T15:16:49.441Z"
+        },
+        {
+          "componentName": "primaryButtonWithASaveIcon918a2119",
+          "utteranceId": "C01",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "scores": {
+            "overall": 2.87,
+            "slds_linter": 0.82,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 10,
+            "errors": 0,
+            "total": 10
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-09T13:51:26.475Z"
+        },
+        {
+          "componentName": "primaryButtonWithASaveIconC0e76cf4",
+          "utteranceId": "C01",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "scores": {
+            "overall": 2.91,
+            "slds_linter": 0.874,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 12,
+            "errors": 0,
+            "total": 12
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-03T11:53:39.609Z"
+        },
+        {
+          "componentName": "responsiveProductCardGridWith611d4397d",
+          "utteranceId": "C05",
+          "variant": "Moderate",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "scores": {
+            "overall": 2.55,
+            "slds_linter": 0.4,
+            "slds_quality": 1,
+            "prd_compliance": 0.7,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 60,
+            "errors": 0,
+            "total": 60
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-28T15:44:17.400Z"
+        },
+        {
+          "componentName": "sortableTableProductNamePriceCategory5f50fe64",
+          "utteranceId": "C03",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "scores": {
+            "overall": 2.74,
+            "slds_linter": 0.649,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 34,
+            "errors": 0,
+            "total": 34
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-06T14:29:48.179Z"
+        },
+        {
+          "componentName": "sortableTableProductNamePriceCategoryA2ca861d",
+          "utteranceId": "C03",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "scores": {
+            "overall": 2.83,
+            "slds_linter": 0.7689999999999999,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 17,
+            "errors": 0,
+            "total": 17
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-10T13:49:18.195Z"
+        },
+        {
+          "componentName": "userProfileFormNameTextEmailC8b10de5",
+          "utteranceId": "C09",
+          "variant": "Moderate",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "overall": 2.79,
+            "slds_linter": 0.5740000000000001,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 77,
+            "errors": 0,
+            "total": 77
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-28T16:12:20.726Z"
+        }
+      ],
+      "batches": {
+        "Simple-Batch1": {
+          "variant": "Simple",
+          "batchNumber": 1,
+          "avgTimestamp": "2026-02-22T10:55:06.852Z",
+          "dateRange": {
+            "first": "2026-02-22T09:52:07.140Z",
+            "last": "2026-02-22T11:58:06.565Z"
+          },
+          "count": 5,
+          "metrics": {
+            "avgOverallScore": 2.81,
+            "avgSldsScore": 0.69,
+            "avgViolations": 19.4,
+            "minScore": 2.69,
+            "maxScore": 2.88,
+            "stdDev": 0.07,
+            "distribution": {
+              "production": 0,
+              "prototype": 5,
+              "draft": 0
+            },
+            "models": {
+              "claude-3-7-sonnet": 5
+            }
+          }
+        },
+        "Simple-Batch2": {
+          "variant": "Simple",
+          "batchNumber": 2,
+          "avgTimestamp": "2026-02-22T16:00:18.924Z",
+          "dateRange": {
+            "first": "2026-02-22T14:33:38.849Z",
+            "last": "2026-02-22T17:26:59.000Z"
+          },
+          "count": 5,
+          "metrics": {
+            "avgOverallScore": 2.85,
+            "avgSldsScore": 0.77,
+            "avgViolations": 25.4,
+            "minScore": 2.74,
+            "maxScore": 2.93,
+            "stdDev": 0.07,
+            "distribution": {
+              "production": 0,
+              "prototype": 5,
+              "draft": 0
+            },
+            "models": {
+              "claude-3-7-sonnet": 5
+            }
+          }
+        },
+        "Simple-Batch3": {
+          "variant": "Simple",
+          "batchNumber": 3,
+          "avgTimestamp": "2026-02-27T01:31:11.891Z",
+          "dateRange": {
+            "first": "2026-02-25T11:45:34.342Z",
+            "last": "2026-02-28T15:16:49.441Z"
+          },
+          "count": 5,
+          "metrics": {
+            "avgOverallScore": 2.83,
+            "avgSldsScore": 0.71,
+            "avgViolations": 24.2,
+            "minScore": 2.77,
+            "maxScore": 2.88,
+            "stdDev": 0.05,
+            "distribution": {
+              "production": 0,
+              "prototype": 5,
+              "draft": 0
+            },
+            "models": {
+              "claude-3-7-sonnet": 5
+            }
+          }
+        },
+        "Simple-Batch4": {
+          "variant": "Simple",
+          "batchNumber": 4,
+          "avgTimestamp": "2026-03-04T10:01:08.672Z",
+          "dateRange": {
+            "first": "2026-03-03T11:53:39.609Z",
+            "last": "2026-03-05T08:08:37.735Z"
+          },
+          "count": 5,
+          "metrics": {
+            "avgOverallScore": 2.71,
+            "avgSldsScore": 0.65,
+            "avgViolations": 22.2,
+            "minScore": 2.6,
+            "maxScore": 2.91,
+            "stdDev": 0.11,
+            "distribution": {
+              "production": 0,
+              "prototype": 5,
+              "draft": 0
+            },
+            "models": {
+              "claude-4-5-sonnet": 5
+            }
+          }
+        },
+        "Simple-Batch5": {
+          "variant": "Simple",
+          "batchNumber": 5,
+          "avgTimestamp": "2026-03-05T22:37:50.151Z",
+          "dateRange": {
+            "first": "2026-03-05T12:07:34.827Z",
+            "last": "2026-03-06T09:08:05.476Z"
+          },
+          "count": 5,
+          "metrics": {
+            "avgOverallScore": 2.73,
+            "avgSldsScore": 0.64,
+            "avgViolations": 23.6,
+            "minScore": 2.57,
+            "maxScore": 2.91,
+            "stdDev": 0.11,
+            "distribution": {
+              "production": 0,
+              "prototype": 5,
+              "draft": 0
+            },
+            "models": {
+              "claude-4-5-sonnet": 5
+            }
+          }
+        },
+        "Simple-Batch6": {
+          "variant": "Simple",
+          "batchNumber": 6,
+          "avgTimestamp": "2026-03-06T13:56:51.841Z",
+          "dateRange": {
+            "first": "2026-03-06T13:23:55.504Z",
+            "last": "2026-03-06T14:29:48.179Z"
+          },
+          "count": 5,
+          "metrics": {
+            "avgOverallScore": 2.73,
+            "avgSldsScore": 0.68,
+            "avgViolations": 39,
+            "minScore": 2.55,
+            "maxScore": 2.91,
+            "stdDev": 0.12,
+            "distribution": {
+              "production": 0,
+              "prototype": 5,
+              "draft": 0
+            },
+            "models": {
+              "claude-4-5-sonnet": 5
+            }
+          }
+        },
+        "Simple-Batch7": {
+          "variant": "Simple",
+          "batchNumber": 7,
+          "avgTimestamp": "2026-03-10T01:53:46.318Z",
+          "dateRange": {
+            "first": "2026-03-09T13:51:26.475Z",
+            "last": "2026-03-10T13:56:06.162Z"
+          },
+          "count": 5,
+          "metrics": {
+            "avgOverallScore": 2.84,
+            "avgSldsScore": 0.78,
+            "avgViolations": 21.8,
+            "minScore": 2.67,
+            "maxScore": 2.96,
+            "stdDev": 0.09,
+            "distribution": {
+              "production": 0,
+              "prototype": 5,
+              "draft": 0
+            },
+            "models": {
+              "claude-4-5-sonnet": 5
+            }
+          }
+        },
+        "Simple-Batch8": {
+          "variant": "Simple",
+          "batchNumber": 8,
+          "avgTimestamp": "2026-03-11T06:36:04.453Z",
+          "dateRange": {
+            "first": "2026-03-11T06:29:37.224Z",
+            "last": "2026-03-11T06:42:31.682Z"
+          },
+          "count": 5,
+          "metrics": {
+            "avgOverallScore": 2.77,
+            "avgSldsScore": 0.78,
+            "avgViolations": 23,
+            "minScore": 2.61,
+            "maxScore": 2.93,
+            "stdDev": 0.1,
+            "distribution": {
+              "production": 0,
+              "prototype": 5,
+              "draft": 0
+            },
+            "models": {
+              "claude-4-5-sonnet": 5
+            }
+          }
+        },
+        "Moderate-Batch1": {
+          "variant": "Moderate",
+          "batchNumber": 1,
+          "avgTimestamp": "2026-02-27T00:35:07.991Z",
+          "dateRange": {
+            "first": "2026-02-25T09:12:46.436Z",
+            "last": "2026-02-28T15:57:29.547Z"
+          },
+          "count": 5,
+          "metrics": {
+            "avgOverallScore": 2.73,
+            "avgSldsScore": 0.63,
+            "avgViolations": 39.6,
+            "minScore": 2.55,
+            "maxScore": 2.88,
+            "stdDev": 0.13,
+            "distribution": {
+              "production": 0,
+              "prototype": 5,
+              "draft": 0
+            },
+            "models": {
+              "claude-3-7-sonnet": 5
+            }
+          }
+        },
+        "Moderate-Batch2": {
+          "variant": "Moderate",
+          "batchNumber": 2,
+          "avgTimestamp": "2026-02-28T16:06:33.709Z",
+          "dateRange": {
+            "first": "2026-02-28T16:00:46.693Z",
+            "last": "2026-02-28T16:12:20.726Z"
+          },
+          "count": 3,
+          "metrics": {
+            "avgOverallScore": 2.83,
+            "avgSldsScore": 0.66,
+            "avgViolations": 48.7,
+            "minScore": 2.79,
+            "maxScore": 2.87,
+            "stdDev": 0.03,
+            "distribution": {
+              "production": 0,
+              "prototype": 3,
+              "draft": 0
+            },
+            "models": {
+              "claude-3-7-sonnet": 3
+            }
+          }
+        }
+      },
+      "summary": {
+        "totalComponents": 48,
+        "avgOverallScore": 2.78,
+        "avgSldsScore": 0.7,
+        "qualityDistribution": {
+          "production": 0,
+          "prototype": 48,
+          "draft": 0
+        }
+      }
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-03-10T14:30:12.505Z",
-    "totalSnapshots": 9,
+    "lastUpdated": "2026-03-11T07:13:40.493Z",
+    "totalSnapshots": 10,
     "dateRange": {
       "first": "2026-02-22",
-      "last": "2026-03-10"
+      "last": "2026-03-11"
     }
   }
 }
