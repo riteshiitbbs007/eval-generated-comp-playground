@@ -6857,8 +6857,8 @@
       }
     },
     {
-      "id": "snapshot-2026-03-11T07-13-40-493Z",
-      "timestamp": "2026-03-11T07:13:40.493Z",
+      "id": "snapshot-2026-03-11T07-45-02-254Z",
+      "timestamp": "2026-03-11T07:45:02.254Z",
       "date": "2026-03-11",
       "components": [
         {
@@ -7916,6 +7916,28 @@
           },
           "qualityGate": "prototype",
           "timestamp": "2026-02-28T16:12:20.726Z"
+        },
+        {
+          "componentName": "verticalNavMenuWith5Items47126c35",
+          "utteranceId": "C11",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "overall": 2.76,
+            "slds_linter": 0.685,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 30,
+            "errors": 0,
+            "total": 30
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-11T07:25:11.151Z"
         }
       ],
       "batches": {
@@ -8127,6 +8149,32 @@
             }
           }
         },
+        "Simple-Batch9": {
+          "variant": "Simple",
+          "batchNumber": 9,
+          "avgTimestamp": "2026-03-11T07:25:11.151Z",
+          "dateRange": {
+            "first": "2026-03-11T07:25:11.151Z",
+            "last": "2026-03-11T07:25:11.151Z"
+          },
+          "count": 1,
+          "metrics": {
+            "avgOverallScore": 2.76,
+            "avgSldsScore": 0.69,
+            "avgViolations": 30,
+            "minScore": 2.76,
+            "maxScore": 2.76,
+            "stdDev": 0,
+            "distribution": {
+              "production": 0,
+              "prototype": 1,
+              "draft": 0
+            },
+            "models": {
+              "claude-4-5-sonnet": 1
+            }
+          }
+        },
         "Moderate-Batch1": {
           "variant": "Moderate",
           "batchNumber": 1,
@@ -8181,19 +8229,19 @@
         }
       },
       "summary": {
-        "totalComponents": 48,
+        "totalComponents": 49,
         "avgOverallScore": 2.78,
         "avgSldsScore": 0.7,
         "qualityDistribution": {
           "production": 0,
-          "prototype": 48,
+          "prototype": 49,
           "draft": 0
         }
       }
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-03-11T07:13:40.493Z",
+    "lastUpdated": "2026-03-11T07:45:02.254Z",
     "totalSnapshots": 10,
     "dateRange": {
       "first": "2026-02-22",

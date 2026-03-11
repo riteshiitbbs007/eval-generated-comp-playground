@@ -236,4 +236,8 @@ export default class HelloWorldApp extends LightningElement {
   get showUserProfileFormNameTextEmailC8b10de5() {
     return this.selectedComponent === 'userProfileFormNameTextEmailC8b10de5';
   }
+
+  get showVerticalNavMenuWith5Items47126c35() {
+    return this.selectedComponent === 'verticalNavMenuWith5Items47126c35';
+  }
 }
