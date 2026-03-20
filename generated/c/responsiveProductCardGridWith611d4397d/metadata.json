@@ -8,11 +8,11 @@
   "tier": "Tier 1",
   "complexity": "Simple",
   "scores": {
-    "slds_linter": 0.4,
+    "slds_linter": 0.27,
     "slds_quality": 1,
     "prd_compliance": 0.7,
     "security": 1,
-    "overall": 2.55
+    "overall": 2.3
   },
   "violations": {
     "errors": 0,
@@ -30,5 +30,30 @@
   "model": "claude-3-7-sonnet",
   "modelProvider": "anthropic",
   "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/datasets/8b3bfd1c-8b88-4d04-bddf-41857eeb48a8?search=ordinary-insurance-12",
-  "langsmithExperiment": "ordinary-insurance-12"
+  "langsmithExperiment": "ordinary-insurance-12",
+  "originalScoresV0": {
+    "slds_linter": 0.4,
+    "slds_quality": 1,
+    "prd_compliance": 0.7,
+    "security": 1,
+    "overall": 2.55
+  },
+  "_scoreHistory": {
+    "originalScoresV0": {
+      "date": "2026-03-18T13:56:12.648Z",
+      "reason": "Score recalculation/metadata update",
+      "changedFields": [
+        {
+          "field": "overall",
+          "old": 2.55,
+          "new": 2.3
+        },
+        {
+          "field": "slds_linter",
+          "old": 0.4,
+          "new": 0.27
+        }
+      ]
+    }
+  }
 }

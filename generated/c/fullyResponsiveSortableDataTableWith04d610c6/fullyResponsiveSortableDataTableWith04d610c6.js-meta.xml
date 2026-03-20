@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>Fully responsive sortable data table component with SLDS 2 semantic badges, desktop table view, and mobile card stacking. Displays 10 sample products with sortable Product Name and Price columns, neutral Category badges, and semantic Stock Status badges (success/warning/error).</description>
+    <isExposed>false</isExposed>
+    <masterLabel>Fully Responsive Sortable Data Table</masterLabel>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+</LightningComponentBundle>

@@ -1,0 +1,59 @@
+<template>
+    <!-- Page Header Container with SLDS 2 styling -->
+    <header class="page-header" role="banner">
+        <div class="slds-grid slds-grid_vertical-align-center slds-wrap">
+            <!-- Left Section: Icon and Text -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_8-of-12">
+                <div class="slds-media slds-media_center">
+                    <!-- Account Icon at Standard Size -->
+                    <div class="slds-media__figure">
+                        <lightning-icon
+                            icon-name="standard:account"
+                            alternative-text="Account"
+                            size="medium"
+                            class="account-icon">
+                        </lightning-icon>
+                    </div>
+                    <!-- Title and Subtitle -->
+                    <div class="slds-media__body">
+                        <h1 class="page-header__title">
+                            John Smith
+                        </h1>
+                        <p class="page-header__subtitle">
+                            Account • Customer
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Section: Button Group -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12">
+                <div class="slds-button-group button-group" role="group" aria-label="Page actions">
+                    <!-- Edit Button (Neutral Variant) -->
+                    <lightning-button
+                        variant="neutral"
+                        label="Edit"
+                        onclick={handleEdit}
+                        aria-label="Edit John Smith">
+                    </lightning-button>
+
+                    <!-- Delete Button (Destructive Variant) -->
+                    <lightning-button
+                        variant="destructive"
+                        label="Delete"
+                        onclick={handleDelete}
+                        aria-label="Delete John Smith">
+                    </lightning-button>
+
+                    <!-- Clone Button (Neutral Variant) -->
+                    <lightning-button
+                        variant="neutral"
+                        label="Clone"
+                        onclick={handleClone}
+                        aria-label="Clone John Smith">
+                    </lightning-button>
+                </div>
+            </div>
+        </div>
+    </header>
+</template>

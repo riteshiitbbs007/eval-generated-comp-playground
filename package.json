@@ -18,13 +18,17 @@
     "start:lwr": "lwr start",
     "stage": "yarn build && yarn start",
     "stage:prod-compat": "yarn build:prod-compat && yarn start",
-    "screenshots": "node scripts/capture-screenshots.js",
-    "screenshots:all": "node scripts/capture-screenshots.js --all",
+    "screenshots": "node scripts/capture-screenshots.js && node scripts/fix-missing-screenshot-urls.cjs && npm run generate:templates",
+    "screenshots:all": "node scripts/capture-screenshots.js --all && node scripts/fix-missing-screenshot-urls.cjs && npm run generate:templates",
     "trends:snapshot": "node scripts/generate-trends-snapshot.cjs",
     "trends:snapshot:quiet": "node scripts/generate-trends-snapshot-quiet.cjs",
     "trends:backfill": "node scripts/backfill-trends-snapshots.cjs",
     "trends:analyze": "node scripts/analyze-trends.cjs",
-    "trends:export": "node scripts/export-trends.cjs"
+    "trends:export": "node scripts/export-trends.cjs",
+    "trends:migrate": "node scripts/migrate-trends-with-updated-scores.cjs",
+    "trends:migrate:dry-run": "node scripts/migrate-trends-with-updated-scores.cjs --dry-run",
+    "scores:migrate": "node scripts/migrate-component-scores-with-versioning.cjs",
+    "scores:migrate:dry-run": "node scripts/migrate-component-scores-with-versioning.cjs --dry-run"
   },
   "dependencies": {
     "@salesforce-ux/design-system": "^2.26.2",

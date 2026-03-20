@@ -1,0 +1,73 @@
+{
+  "folderName": "comprehensiveContactFormWithNameField-C02-Detailed-20260312",
+  "componentName": "comprehensiveContactFormWithNameField62170281",
+  "csvId": "C02",
+  "variant": "Detailed",
+  "timestamp": "2026-03-12T10:27:23.785Z",
+  "utterance": "Create a comprehensive contact form with name field (required, maximum 100 characters, letters and spaces only), email field (required with proper email validation), and message field (required, minimum 10 characters, maximum 500 characters, with visible rows and character counter showing current and max). Use stacked form layout with proper spacing from SLDS spacing scale between fields. Display validation errors on blur or form submit below each field using SLDS error styling with error icon from utility icons. Add a submit button using brand styling at full width with appropriate button sizing from the design system",
+  "tier": "Tier 1",
+  "complexity": "Simple",
+  "scores": {
+    "slds_linter": 0.48,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.61,
+    "overall_readiness_label": "Prototype"
+  },
+  "violations": {
+    "errors": 3,
+    "warnings": 21,
+    "notes": 0
+  },
+  "utteranceId": "C02",
+  "errorsByType": {
+    "slds/no-deprecated-classes-slds2": 3,
+    "slds/no-hardcoded-values-slds2": 12,
+    "slds/no-slds-class-overrides": 9
+  },
+  "sldsToolsEnabled": false,
+  "testMode": "baseline",
+  "baseline_slds": true,
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/d1acde78-f61a-47ae-a9c5-2426e952a0b8/r/019ce191-d296-7000-8000-0409db19f947",
+  "langsmithRunId": "019ce191-d296-7000-8000-0409db19f947",
+  "langsmithProjectName": "abandoned-show-4",
+  "langsmithTraceId": "019ce191-d296-7000-8000-0409db19f947",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C02-C04:Detailed",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/comprehensiveContactFormWithNameField62170281/screenshots/desktop.png"
+  },
+  "originalScoresV0": {
+    "slds_linter": 0.49600000000000005,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.62,
+    "overall_readiness_label": "Prototype"
+  },
+  "_scoreHistory": {
+    "originalScoresV0": {
+      "date": "2026-03-18T13:56:09.939Z",
+      "reason": "Score recalculation/metadata update",
+      "changedFields": [
+        {
+          "field": "overall",
+          "old": 2.62,
+          "new": 2.61
+        },
+        {
+          "field": "slds_linter",
+          "old": 0.49600000000000005,
+          "new": 0.48
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>Page Header with Account Icon - Displays account information with icon, title, subtitle, and action buttons. SLDS 2 compliant with styling hooks for colors, spacing, and typography.</description>
+    <isExposed>false</isExposed>
+    <masterLabel>Page Header with Account Icon</masterLabel>
+</LightningComponentBundle>

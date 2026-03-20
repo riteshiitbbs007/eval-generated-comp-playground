@@ -45,6 +45,26 @@ export default class HelloWorldApp extends LightningElement {
     return !this.selectedComponent && !this.detailComponent && this.viewName !== 'utterances';
   }
 
+  get show3stepWizardWithProgressIndicatorAnd6d616c77() {
+    return this.selectedComponent === '3stepWizardWithProgressIndicatorAnd6d616c77';
+  }
+
+  get show3stepWizardWithProgressIndicatorAndDf82874b() {
+    return this.selectedComponent === '3stepWizardWithProgressIndicatorAndDf82874b';
+  }
+
+  get show3stepWizardWithProgressIndicatorAndE642eb6c() {
+    return this.selectedComponent === '3stepWizardWithProgressIndicatorAndE642eb6c';
+  }
+
+  get show3stepWizardWithProgressIndicatorAndEcf1468f() {
+    return this.selectedComponent === '3stepWizardWithProgressIndicatorAndEcf1468f';
+  }
+
+  get show3stepWizardWithProgressIndicatorAndFdafd964() {
+    return this.selectedComponent === '3stepWizardWithProgressIndicatorAndFdafd964';
+  }
+
   get show4AlertsSuccessErrorWarningInfo49684baf() {
     return this.selectedComponent === '4AlertsSuccessErrorWarningInfo49684baf';
   }
@@ -61,8 +81,32 @@ export default class HelloWorldApp extends LightningElement {
     return this.selectedComponent === '4AlertsSuccessGreenErrorRedFcf679ff';
   }
 
+  get show4NotificationAlertsWithProperSlds078ff351() {
+    return this.selectedComponent === '4NotificationAlertsWithProperSlds078ff351';
+  }
+
+  get show4NotificationAlertsWithProperSldsE39d2043() {
+    return this.selectedComponent === '4NotificationAlertsWithProperSldsE39d2043';
+  }
+
   get showCardGrid4ColumnsDesktop2Cb530bec() {
     return this.selectedComponent === 'cardGrid4ColumnsDesktop2Cb530bec';
+  }
+
+  get showComprehensiveContactFormWithNameField62170281() {
+    return this.selectedComponent === 'comprehensiveContactFormWithNameField62170281';
+  }
+
+  get showComprehensiveContactFormWithNameFieldD7678868() {
+    return this.selectedComponent === 'comprehensiveContactFormWithNameFieldD7678868';
+  }
+
+  get showConfirmationModalForDeletionUsingSlds3d1fd5f6() {
+    return this.selectedComponent === 'confirmationModalForDeletionUsingSlds3d1fd5f6';
+  }
+
+  get showConfirmationModalForDeletionUsingSldsE9111a18() {
+    return this.selectedComponent === 'confirmationModalForDeletionUsingSldsE9111a18';
   }
 
   get showContactCardWithAvatarNameTitle569326e5() {
@@ -173,12 +217,48 @@ export default class HelloWorldApp extends LightningElement {
     return this.selectedComponent === 'formWithTextEmailPhoneDropdown51b9ac1e';
   }
 
+  get showFormWithTextEmailPhoneDropdown78286eb8() {
+    return this.selectedComponent === 'formWithTextEmailPhoneDropdown78286eb8';
+  }
+
+  get showFormWithTextEmailPhoneDropdownC0001f11() {
+    return this.selectedComponent === 'formWithTextEmailPhoneDropdownC0001f11';
+  }
+
   get showFormWithTextEmailPhoneDropdownE48117d4() {
     return this.selectedComponent === 'formWithTextEmailPhoneDropdownE48117d4';
   }
 
+  get showFullyResponsiveSortableDataTableWith04d610c6() {
+    return this.selectedComponent === 'fullyResponsiveSortableDataTableWith04d610c6';
+  }
+
+  get showFullyResponsiveSortableDataTableWith19dc0622() {
+    return this.selectedComponent === 'fullyResponsiveSortableDataTableWith19dc0622';
+  }
+
   get showPageHeaderJohnSmithWithAccount3b74227d() {
     return this.selectedComponent === 'pageHeaderJohnSmithWithAccount3b74227d';
+  }
+
+  get showPageHeaderWithAccountIconAt4af92c6c() {
+    return this.selectedComponent === 'pageHeaderWithAccountIconAt4af92c6c';
+  }
+
+  get showPageHeaderWithAccountIconAtE401ca11() {
+    return this.selectedComponent === 'pageHeaderWithAccountIconAtE401ca11';
+  }
+
+  get showPageHeaderWithAccountIconAtEb418c9d() {
+    return this.selectedComponent === 'pageHeaderWithAccountIconAtEb418c9d';
+  }
+
+  get showPageHeaderWithAccountIconAtEc3a4c6f() {
+    return this.selectedComponent === 'pageHeaderWithAccountIconAtEc3a4c6f';
+  }
+
+  get showPageHeaderWithAccountIconAtFb064716() {
+    return this.selectedComponent === 'pageHeaderWithAccountIconAtFb064716';
   }
 
   get showPageHeaderWithTitleAndAction35185f19() {
@@ -197,6 +277,14 @@ export default class HelloWorldApp extends LightningElement {
     return this.selectedComponent === 'primaryActionButtonWithASave4addabb5';
   }
 
+  get showPrimaryActionButtonWithSaveIcon7194c020() {
+    return this.selectedComponent === 'primaryActionButtonWithSaveIcon7194c020';
+  }
+
+  get showPrimaryActionButtonWithSaveIcon88c7b8d3() {
+    return this.selectedComponent === 'primaryActionButtonWithSaveIcon88c7b8d3';
+  }
+
   get showPrimaryButtonWithASaveIcon2a4b46ee() {
     return this.selectedComponent === 'primaryButtonWithASaveIcon2a4b46ee';
   }
@@ -213,12 +301,28 @@ export default class HelloWorldApp extends LightningElement {
     return this.selectedComponent === 'primaryButtonWithASaveIcon55f94f20';
   }
 
+  get showPrimaryButtonWithASaveIcon60431c36() {
+    return this.selectedComponent === 'primaryButtonWithASaveIcon60431c36';
+  }
+
   get showPrimaryButtonWithASaveIcon918a2119() {
     return this.selectedComponent === 'primaryButtonWithASaveIcon918a2119';
   }
 
+  get showPrimaryButtonWithASaveIcon9de0b8a7() {
+    return this.selectedComponent === 'primaryButtonWithASaveIcon9de0b8a7';
+  }
+
   get showPrimaryButtonWithASaveIconC0e76cf4() {
     return this.selectedComponent === 'primaryButtonWithASaveIconC0e76cf4';
+  }
+
+  get showResponsiveProductCardGridUsingSlds4991e3f6() {
+    return this.selectedComponent === 'responsiveProductCardGridUsingSlds4991e3f6';
+  }
+
+  get showResponsiveProductCardGridUsingSldsFdf13664() {
+    return this.selectedComponent === 'responsiveProductCardGridUsingSldsFdf13664';
   }
 
   get showResponsiveProductCardGridWith611d4397d() {
@@ -237,7 +341,23 @@ export default class HelloWorldApp extends LightningElement {
     return this.selectedComponent === 'userProfileFormNameTextEmailC8b10de5';
   }
 
+  get showVerticalNavMenuWith5Items423ecf65() {
+    return this.selectedComponent === 'verticalNavMenuWith5Items423ecf65';
+  }
+
   get showVerticalNavMenuWith5Items47126c35() {
     return this.selectedComponent === 'verticalNavMenuWith5Items47126c35';
+  }
+
+  get showVerticalNavMenuWith5Items5d1eaf1e() {
+    return this.selectedComponent === 'verticalNavMenuWith5Items5d1eaf1e';
+  }
+
+  get showVerticalNavMenuWith5Items887d3dcb() {
+    return this.selectedComponent === 'verticalNavMenuWith5Items887d3dcb';
+  }
+
+  get showVerticalNavMenuWith5Items97833370() {
+    return this.selectedComponent === 'verticalNavMenuWith5Items97833370';
   }
 }

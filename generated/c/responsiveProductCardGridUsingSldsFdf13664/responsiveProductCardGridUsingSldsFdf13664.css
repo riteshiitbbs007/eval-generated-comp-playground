@@ -1,0 +1,93 @@
+/**
+ * Product card styling with SLDS elevation tokens and hover effects
+ */
+
+/* Product card base styling */
+.product-card {
+    /* Use SLDS border radius from design system */
+    border-radius: var(--slds-c-card-radius-border, 0.25rem);
+
+    /* Apply elevation shadow using SLDS elevation tokens */
+    box-shadow: var(--slds-c-card-shadow, 0 2px 2px 0 rgba(0, 0, 0, 0.1));
+
+    /* Smooth transition for hover effects using SLDS motion timing */
+    transition: box-shadow 0.15s ease-in-out, transform 0.15s ease-in-out;
+
+    /* Full height for consistent card appearance */
+    height: 100%;
+
+    /* Flex display to ensure content fills card properly */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Product card hover state with enhanced elevation */
+.product-card:hover {
+    /* Elevated shadow on hover using SLDS interaction styling */
+    box-shadow: var(--slds-c-card-shadow-hover, 0 4px 8px 0 rgba(0, 0, 0, 0.15));
+
+    /* Subtle lift effect on hover */
+    transform: translateY(-2px);
+
+    /* Cursor to indicate interactivity */
+    cursor: pointer;
+}
+
+/* Product image container styling */
+.product-image-container {
+    /* Full width container */
+    width: 100%;
+
+    /* Fixed aspect ratio for consistent card heights */
+    aspect-ratio: 4 / 3;
+
+    /* Ensure image container doesn't overflow */
+    overflow: hidden;
+
+    /* Background color for image loading state */
+    background-color: var(--slds-g-color-neutral-base-95, #f3f3f3);
+
+    /* Apply border radius to image container */
+    border-radius: var(--slds-c-card-radius-border, 0.25rem) var(--slds-c-card-radius-border, 0.25rem) 0 0;
+}
+
+/* Product image styling */
+.product-image {
+    /* Fill container while maintaining aspect ratio */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    /* Smooth image scaling on hover */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Image zoom effect on card hover */
+.product-card:hover .product-image {
+    /* Subtle zoom effect */
+    transform: scale(1.05);
+}
+
+/* Product price styling with emphasis */
+.product-price {
+    /* Use SLDS color token for price emphasis */
+    color: var(--slds-g-color-success-base-50, #027e46);
+
+    /* Bold font weight for price visibility */
+    font-weight: var(--slds-c-card-font-weight, 700);
+
+    /* Larger font size for price */
+    font-size: var(--slds-c-card-font-size, 1.125rem);
+}
+
+/* Card body spacing adjustments */
+.slds-card__body_inner {
+    /* Consistent padding using SLDS spacing tokens */
+    padding: var(--slds-c-card-spacing-block, 1rem) var(--slds-c-card-spacing-inline, 1rem);
+}
+
+/* Ensure cards fill column height in grid */
+.slds-col > .product-card {
+    /* Flex to fill available space */
+    flex: 1;
+}

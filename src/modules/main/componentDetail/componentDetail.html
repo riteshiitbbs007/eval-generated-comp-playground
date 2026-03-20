@@ -138,6 +138,33 @@
             </div>
           </article>
 
+          <!-- Notes Card (if notes exist) -->
+          <template if:true={hasNotes}>
+            <article class="slds-card slds-m-bottom_medium">
+              <div class="slds-card__header slds-grid">
+                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                  <div class="slds-media__figure">
+                    <svg class="slds-icon slds-icon_small slds-icon-text-warning" aria-hidden="true">
+                      <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#warning"></use>
+                    </svg>
+                  </div>
+                  <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                      <span>Important Notes</span>
+                    </h2>
+                  </div>
+                </header>
+              </div>
+              <div class="slds-card__body slds-card__body_inner">
+                <ul class="slds-list_dotted">
+                  <template for:each={notes} for:item="note">
+                    <li key={note} class="slds-text-body_small">{note}</li>
+                  </template>
+                </ul>
+              </div>
+            </article>
+          </template>
+
           <!-- Scores Card -->
           <article class="slds-card slds-m-bottom_medium">
             <div class="slds-card__header slds-grid">

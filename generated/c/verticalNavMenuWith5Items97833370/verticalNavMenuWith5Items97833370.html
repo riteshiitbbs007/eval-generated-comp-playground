@@ -1,0 +1,114 @@
+<template>
+    <!-- Vertical Navigation Menu with 5 Items -->
+    <!-- Implements SLDS vertical navigation pattern with keyboard support -->
+    <nav class="slds-nav-vertical" aria-label="Main Navigation" role="navigation">
+        <div class="slds-nav-vertical__section">
+            <ul>
+                <!-- Navigation Item: Dashboard -->
+                <li class={dashboardItemClass}>
+                    <a
+                        href="#"
+                        class="slds-nav-vertical__action"
+                        aria-current={dashboardAriaCurrent}
+                        data-item="dashboard"
+                        onclick={handleNavClick}
+                        onkeydown={handleKeyDown}
+                    >
+                        <template lwc:if={showIcons}>
+                            <lightning-icon
+                                icon-name="utility:home"
+                                size="x-small"
+                                class="slds-m-right_x-small"
+                            ></lightning-icon>
+                        </template>
+                        <span class="slds-nav-vertical__action-text">Dashboard</span>
+                    </a>
+                </li>
+
+                <!-- Navigation Item: Reports -->
+                <li class={reportsItemClass}>
+                    <a
+                        href="#"
+                        class="slds-nav-vertical__action"
+                        aria-current={reportsAriaCurrent}
+                        data-item="reports"
+                        onclick={handleNavClick}
+                        onkeydown={handleKeyDown}
+                    >
+                        <template lwc:if={showIcons}>
+                            <lightning-icon
+                                icon-name="utility:chart"
+                                size="x-small"
+                                class="slds-m-right_x-small"
+                            ></lightning-icon>
+                        </template>
+                        <span class="slds-nav-vertical__action-text">Reports</span>
+                    </a>
+                </li>
+
+                <!-- Navigation Item: Analytics -->
+                <li class={analyticsItemClass}>
+                    <a
+                        href="#"
+                        class="slds-nav-vertical__action"
+                        aria-current={analyticsAriaCurrent}
+                        data-item="analytics"
+                        onclick={handleNavClick}
+                        onkeydown={handleKeyDown}
+                    >
+                        <template lwc:if={showIcons}>
+                            <lightning-icon
+                                icon-name="utility:analytics"
+                                size="x-small"
+                                class="slds-m-right_x-small"
+                            ></lightning-icon>
+                        </template>
+                        <span class="slds-nav-vertical__action-text">Analytics</span>
+                    </a>
+                </li>
+
+                <!-- Navigation Item: Settings -->
+                <li class={settingsItemClass}>
+                    <a
+                        href="#"
+                        class="slds-nav-vertical__action"
+                        aria-current={settingsAriaCurrent}
+                        data-item="settings"
+                        onclick={handleNavClick}
+                        onkeydown={handleKeyDown}
+                    >
+                        <template lwc:if={showIcons}>
+                            <lightning-icon
+                                icon-name="utility:settings"
+                                size="x-small"
+                                class="slds-m-right_x-small"
+                            ></lightning-icon>
+                        </template>
+                        <span class="slds-nav-vertical__action-text">Settings</span>
+                    </a>
+                </li>
+
+                <!-- Navigation Item: Help -->
+                <li class={helpItemClass}>
+                    <a
+                        href="#"
+                        class="slds-nav-vertical__action"
+                        aria-current={helpAriaCurrent}
+                        data-item="help"
+                        onclick={handleNavClick}
+                        onkeydown={handleKeyDown}
+                    >
+                        <template lwc:if={showIcons}>
+                            <lightning-icon
+                                icon-name="utility:help"
+                                size="x-small"
+                                class="slds-m-right_x-small"
+                            ></lightning-icon>
+                        </template>
+                        <span class="slds-nav-vertical__action-text">Help</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</template>

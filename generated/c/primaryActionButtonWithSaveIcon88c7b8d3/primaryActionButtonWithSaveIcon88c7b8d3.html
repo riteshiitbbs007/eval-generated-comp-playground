@@ -1,0 +1,19 @@
+<template>
+    <!--
+        Primary Action Button with Save Icon
+        Implements SLDS brand button styling with icon positioned on the left
+        Uses lightning-button base component for proper SLDS compliance
+    -->
+    <div class="slds-p-around_medium">
+        <lightning-button
+            variant="brand"
+            label="Save Changes"
+            title="Save Changes"
+            icon-name="utility:save"
+            icon-position="left"
+            class="primary-action-button"
+            onclick={handleSaveClick}
+            disabled={isDisabled}
+        ></lightning-button>
+    </div>
+</template>

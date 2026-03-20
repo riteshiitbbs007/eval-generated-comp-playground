@@ -1,0 +1,72 @@
+{
+  "folderName": "fullyResponsiveSortableDataTableWith-C03-Detailed-20260312",
+  "componentName": "fullyResponsiveSortableDataTableWith19dc0622",
+  "csvId": "C03",
+  "variant": "Detailed",
+  "timestamp": "2026-03-12T10:32:00.198Z",
+  "utterance": "Create a fully responsive sortable data table with Product Name column (left-aligned, sortable, using appropriate column width from SLDS sizing), Price column (right-aligned, currency format, sortable, appropriate width), Category column (center-aligned with neutral badge, appropriate width), and Stock Status column (center-aligned with semantic badges - In Stock uses success colors, Low Stock uses warning colors, Out of Stock uses error colors, appropriate width). Include 10 sample products. Use SLDS table styling with proper border utilities and fixed layout classes. Header rows and data rows should use standard SLDS table sizing. On mobile viewports, use SLDS responsive table stacking to show as cards with field labels",
+  "tier": "Tier 1",
+  "complexity": "Simple",
+  "scores": {
+    "slds_linter": 0.67,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.75,
+    "overall_readiness_label": "Prototype"
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 13,
+    "notes": 0
+  },
+  "utteranceId": "C03",
+  "errorsByType": {
+    "slds/no-hardcoded-values-slds2": 8,
+    "slds/no-slds-class-overrides": 5
+  },
+  "sldsToolsEnabled": false,
+  "testMode": "baseline",
+  "baseline_slds": true,
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/d1acde78-f61a-47ae-a9c5-2426e952a0b8/r/019ce196-3bf6-7000-8000-0608750394e6",
+  "langsmithRunId": "019ce196-3bf6-7000-8000-0608750394e6",
+  "langsmithProjectName": "abandoned-show-4",
+  "langsmithTraceId": "019ce196-3bf6-7000-8000-0608750394e6",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C02-C04:Detailed",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/fullyResponsiveSortableDataTableWith19dc0622/screenshots/desktop.png"
+  },
+  "originalScoresV0": {
+    "slds_linter": 0.61,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.71,
+    "overall_readiness_label": "Prototype"
+  },
+  "_scoreHistory": {
+    "originalScoresV0": {
+      "date": "2026-03-18T13:56:11.466Z",
+      "reason": "Score recalculation/metadata update",
+      "changedFields": [
+        {
+          "field": "overall",
+          "old": 2.71,
+          "new": 2.75
+        },
+        {
+          "field": "slds_linter",
+          "old": 0.61,
+          "new": 0.67
+        }
+      ]
+    }
+  }
+}

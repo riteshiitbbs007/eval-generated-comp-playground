@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>3-Step Wizard Component with Progress Indicator and Navigation Buttons. This component provides a guided multi-step experience with visual progress tracking, back/next navigation, and accessibility features.</description>
+    <isExposed>false</isExposed>
+    <masterLabel>3-Step Wizard with Progress Indicator</masterLabel>
+</LightningComponentBundle>

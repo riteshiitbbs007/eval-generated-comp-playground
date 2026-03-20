@@ -1,0 +1,51 @@
+/**
+ * Custom styling for 3-Step Wizard Component
+ */
+
+/* Ensure path indicator is fully visible */
+.slds-path {
+    margin-bottom: 1rem;
+}
+
+/* Step content container styling */
+.slds-box {
+    min-height: 300px;
+}
+
+/* Form element spacing */
+.slds-form__item {
+    margin-bottom: 1rem;
+}
+
+/* Review section styling */
+.slds-text-title {
+    font-weight: bold;
+    color: #3e3e3c;
+    margin-bottom: 0.5rem;
+}
+
+/* Progress indicator customization */
+.slds-path__item.slds-is-complete .slds-path__link {
+    cursor: pointer;
+}
+
+.slds-path__item.slds-is-incomplete .slds-path__link {
+    cursor: not-allowed;
+}
+
+/* Navigation button container */
+.slds-m-top_medium {
+    display: flex;
+    align-items: center;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .slds-path__nav {
+        flex-direction: column;
+    }
+
+    .slds-path__item {
+        width: 100%;
+    }
+}

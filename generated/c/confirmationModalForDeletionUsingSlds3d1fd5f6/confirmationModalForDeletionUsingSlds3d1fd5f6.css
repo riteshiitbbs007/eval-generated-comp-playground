@@ -1,0 +1,164 @@
+/**
+ * Confirmation Modal for Deletion - SLDS 2 Compliant Styling
+ *
+ * Uses SLDS design tokens (--slds-*) for all styling values
+ * Follows SLDS 2.x patterns and semantic color system
+ * No hard-coded values - all styling is theme-aware
+ */
+
+/**
+ * Modal Header Customization
+ * Ensures proper spacing and alignment for warning icon and title
+ */
+.slds-modal__header {
+    /* Use SLDS spacing tokens for consistent padding */
+    padding: var(--slds-g-spacing-4);
+}
+
+/**
+ * Modal Header Content
+ * Centers the warning icon and title
+ */
+.slds-modal__header-content {
+    display: flex;
+    align-items: center;
+}
+
+/**
+ * Warning Icon Styling
+ * Uses SLDS semantic warning colors for visual feedback
+ */
+.slds-media__figure {
+    /* Use SLDS spacing token for consistent margin */
+    margin-right: var(--slds-g-spacing-3);
+}
+
+/**
+ * Modal Heading Typography
+ * Uses SLDS typography tokens for consistent font styling
+ */
+.slds-text-heading_medium {
+    /* SLDS utility class handles font-size, weight, and line-height */
+    /* Uses --slds-g-font-weight-6 and appropriate font-size */
+    color: var(--slds-g-color-on-surface-3);
+}
+
+/**
+ * Modal Body Content
+ * Uses SLDS spacing and typography tokens
+ */
+.slds-modal__content {
+    /* Padding handled by slds-p-around_medium utility class */
+    /* Uses --slds-g-spacing-4 for all sides */
+}
+
+/**
+ * Body Text Styling
+ * Uses SLDS typography tokens for readable text
+ */
+.slds-text-body_regular {
+    /* Font family */
+    font-family: var(--slds-g-font-family-base);
+
+    /* Font size - use base size for body text */
+    font-size: var(--slds-g-font-size-base);
+
+    /* Font weight - regular weight for body text */
+    font-weight: var(--slds-g-font-weight-4);
+
+    /* Line height for readable text */
+    line-height: var(--slds-g-font-lineheight-3);
+
+    /* Text color - standard on-surface color for readability */
+    color: var(--slds-g-color-on-surface-2);
+}
+
+/**
+ * Modal Footer Button Alignment
+ * Ensures buttons are right-aligned with proper spacing
+ */
+.slds-modal__footer {
+    /* Use SLDS spacing tokens for padding */
+    padding: var(--slds-g-spacing-4);
+
+    /* Right-align buttons as per SLDS best practices */
+    display: flex;
+    justify-content: flex-end;
+
+    /* Space between buttons */
+    gap: var(--slds-g-spacing-2);
+}
+
+/**
+ * Backdrop Overlay
+ * Uses SLDS semantic surface color for modal backdrop
+ */
+.slds-backdrop {
+    /* Background color uses SLDS overlay token */
+    background-color: var(--slds-g-color-overlay-backdrop);
+}
+
+/**
+ * Close Button Focus State
+ * Ensures visible focus indicator for accessibility
+ */
+.slds-modal__close:focus {
+    /* Use SLDS accent color for focus outline */
+    outline: 2px solid var(--slds-g-color-accent-1);
+    outline-offset: 2px;
+}
+
+/**
+ * Lightning Button Focus States
+ * Custom focus styling for lightning-button components
+ */
+lightning-button:focus-within {
+    /* Ensure focus is visible for keyboard navigation */
+    outline: 2px solid var(--slds-g-color-accent-1);
+    outline-offset: 2px;
+    border-radius: var(--slds-g-radius-border-1);
+}
+
+/**
+ * Modal Animation
+ * Uses SLDS fade-in animation classes
+ * No custom animations needed - SLDS handles transitions
+ */
+.slds-modal.slds-fade-in-open {
+    /* Animation handled by SLDS utility classes */
+    /* Uses CSS transitions defined in SLDS framework */
+}
+
+/**
+ * Responsive Modal Sizing
+ * Medium modal adapts to viewport size
+ */
+.slds-modal_medium .slds-modal__container {
+    /* Max width handled by SLDS modal utility class */
+    /* Uses responsive breakpoints for mobile/tablet/desktop */
+}
+
+/**
+ * Accessibility: High Contrast Mode Support
+ * Ensures modal is visible in Windows High Contrast mode
+ */
+@media (prefers-contrast: high) {
+    .slds-modal__header,
+    .slds-modal__content,
+    .slds-modal__footer {
+        /* Ensure borders are visible in high contrast */
+        border: 1px solid currentColor;
+    }
+}
+
+/**
+ * Accessibility: Reduced Motion Support
+ * Respects user preference for reduced animations
+ */
+@media (prefers-reduced-motion: reduce) {
+    .slds-modal.slds-fade-in-open {
+        /* Remove animations for users who prefer reduced motion */
+        animation: none;
+        transition: none;
+    }
+}

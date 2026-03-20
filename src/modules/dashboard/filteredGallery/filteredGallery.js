@@ -166,7 +166,11 @@ export default class FilteredGallery extends LightningElement {
       qualityGateLabel,
       qualityGateBadgeClass: `quality-gate-badge ${qualityGateConfig.badgeClass}`,
       hasMetadataBadges: !!comp.utteranceId || !!comp.variant || !!comp.model,
-      screenshotUrls: comp.screenshotUrls || {}
+      screenshotUrls: comp.screenshotUrls || {},
+      hasBaselineSlds: comp.baseline_slds === true,
+      baselineSldsLabel: 'Baseline SLDS',
+      hasMetadataNotes: comp.notes && Array.isArray(comp.notes) && comp.notes.length > 0,
+      metadataNotesCount: comp.notes?.length || 0
     };
   }
 

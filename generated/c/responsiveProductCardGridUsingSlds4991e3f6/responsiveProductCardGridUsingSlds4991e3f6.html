@@ -1,0 +1,40 @@
+<template>
+    <!--
+        Responsive Product Card Grid Component
+        Uses SLDS grid system for responsive layout:
+        - Desktop (large): 4 columns (slds-size_1-of-4)
+        - Tablet (medium): 2 columns (slds-medium-size_1-of-2)
+        - Mobile (small): 1 column (slds-size_1-of-1)
+    -->
+    <div class="slds-grid slds-wrap slds-gutters">
+        <!-- Iterate through products array to render each product card -->
+        <template for:each={products} for:item="product">
+            <div key={product.id} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4">
+                <!-- Product Card with hover effects -->
+                <article class="product-card">
+                    <!-- Product Image Section -->
+                    <div class="product-card__image-container">
+                        <img
+                            src={product.imageUrl}
+                            alt={product.imageAlt}
+                            class="product-card__image"
+                        />
+                    </div>
+
+                    <!-- Product Details Section -->
+                    <div class="product-card__content">
+                        <!-- Product Title -->
+                        <h3 class="product-card__title">
+                            {product.name}
+                        </h3>
+
+                        <!-- Product Price -->
+                        <p class="product-card__price">
+                            {product.price}
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </template>
+    </div>
+</template>

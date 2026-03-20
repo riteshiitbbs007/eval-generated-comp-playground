@@ -11,7 +11,7 @@ const path = require('path');
 const GENERATED_DIR = path.join(__dirname, '..', 'generated', 'c');
 
 function fixMissingScreenshotUrls() {
-  console.log('🔍 Checking for missing screenshotUrls in metadata...\n');
+  console.log('\n🔧 Updating metadata files with screenshot URLs...\n');
 
   const componentDirs = fs.readdirSync(GENERATED_DIR, { withFileTypes: true })
     .filter(entry => entry.isDirectory())
@@ -57,13 +57,10 @@ function fixMissingScreenshotUrls() {
     fixed++;
   }
 
-  console.log(`\n📊 Summary:`);
-  console.log(`   Fixed: ${fixed}`);
-  console.log(`   Skipped: ${skipped}`);
-  console.log(`   Total: ${componentDirs.length}`);
-
   if (fixed > 0) {
-    console.log('\n💡 Run "npm run generate:templates" to update components.json');
+    console.log(`\n✅ Updated ${fixed} metadata file${fixed === 1 ? '' : 's'} with screenshot URLs`);
+  } else {
+    console.log(`\n✅ All metadata files already have screenshot URLs (checked ${componentDirs.length} components)`);
   }
 }
 

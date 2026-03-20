@@ -1,0 +1,16 @@
+<template>
+    <!-- Primary button with save icon using Lightning Base Component -->
+    <!-- Uses variant="brand" for primary button styling (SLDS best practice) -->
+    <!-- Icon positioned before text using icon-position="left" -->
+    <lightning-button
+        variant="brand"
+        label={label}
+        title={title}
+        icon-name="utility:save"
+        icon-position="left"
+        onclick={handleClick}
+        disabled={disabled}
+        class="slds-m-around_small"
+    >
+    </lightning-button>
+</template>

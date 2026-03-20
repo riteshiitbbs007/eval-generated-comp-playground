@@ -1,0 +1,25 @@
+/**
+ * Vertical Navigation Menu Styles
+ * Uses SLDS vertical navigation styling with custom enhancements
+ */
+
+/* Ensure the navigation takes full height and has proper spacing */
+:host {
+    display: block;
+}
+
+/* Additional styling for navigation container if needed */
+.slds-nav-vertical {
+    /* SLDS classes handle all base styling */
+}
+
+/* Ensure active state is visually distinct (SLDS handles this but can be enhanced) */
+.slds-nav-vertical__item.slds-is-active .slds-nav-vertical__action {
+    /* SLDS provides the active styling, additional customization can go here if needed */
+}
+
+/* Ensure proper hover and focus states */
+.slds-nav-vertical__action:hover,
+.slds-nav-vertical__action:focus {
+    /* SLDS provides hover/focus styling */
+}

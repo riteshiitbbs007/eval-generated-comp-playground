@@ -1,0 +1,97 @@
+/**
+ * Vertical Navigation Menu Component Styles
+ *
+ * Implements SLDS 2.x vertical navigation pattern using design tokens
+ * All styling uses SLDS hooks for theme-awareness and accessibility
+ */
+
+/* Navigation container styling */
+.slds-nav-vertical {
+    background: var(--slds-g-color-surface-container-1);
+    border: 1px solid var(--slds-g-color-border-1);
+    border-radius: var(--slds-g-radius-border-1);
+    padding: var(--slds-g-spacing-2) 0;
+}
+
+/* Navigation action links */
+.slds-nav-vertical__action {
+    display: flex;
+    align-items: center;
+    padding: var(--slds-g-spacing-2) var(--slds-g-spacing-4);
+    color: var(--slds-g-color-on-surface-2);
+    text-decoration: none;
+    transition: background-color 0.15s ease-in-out;
+    font-family: var(--slds-g-font-family-base);
+    font-size: var(--slds-g-font-size-base);
+    font-weight: var(--slds-g-font-weight-4);
+    line-height: var(--slds-g-font-lineheight-3);
+}
+
+/* Hover state */
+.slds-nav-vertical__action:hover {
+    background: var(--slds-g-color-surface-container-2);
+    color: var(--slds-g-color-on-surface-3);
+    text-decoration: none;
+}
+
+/* Focus state for keyboard navigation */
+.slds-nav-vertical__action:focus {
+    outline: none;
+    box-shadow: inset 0 0 0 2px var(--slds-g-color-accent-1);
+    background: var(--slds-g-color-surface-container-2);
+}
+
+/* Active state */
+.slds-is-active .slds-nav-vertical__action {
+    background: var(--slds-g-color-accent-container-1);
+    color: var(--slds-g-color-on-accent-1);
+    font-weight: var(--slds-g-font-weight-6);
+}
+
+/* Active item hover state */
+.slds-is-active .slds-nav-vertical__action:hover {
+    background: var(--slds-g-color-accent-container-2);
+    color: var(--slds-g-color-on-accent-2);
+}
+
+/* Active item focus state */
+.slds-is-active .slds-nav-vertical__action:focus {
+    background: var(--slds-g-color-accent-container-2);
+    box-shadow: inset 0 0 0 2px var(--slds-g-color-accent-1);
+}
+
+/* Navigation list styling */
+.slds-nav-vertical__section ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation item spacing */
+.slds-nav-vertical__item {
+    margin-bottom: var(--slds-g-spacing-1);
+}
+
+.slds-nav-vertical__item:last-child {
+    margin-bottom: 0;
+}
+
+/* Icon styling within navigation items */
+.slds-nav-vertical__action lightning-icon {
+    flex-shrink: 0;
+}
+
+/* Navigation action text */
+.slds-nav-vertical__action-text {
+    flex-grow: 1;
+}
+
+/* Ensure icons in active state use correct color */
+.slds-is-active .slds-nav-vertical__action lightning-icon {
+    --slds-c-icon-color-foreground: var(--slds-g-color-on-accent-1);
+}
+
+/* Ensure icons in hover state use correct color */
+.slds-nav-vertical__action:hover lightning-icon {
+    --slds-c-icon-color-foreground: var(--slds-g-color-on-surface-3);
+}

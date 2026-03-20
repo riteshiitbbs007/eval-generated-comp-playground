@@ -1,0 +1,47 @@
+/**
+ * Three-Step Wizard Component Styles
+ * Provides additional styling to enhance SLDS progress indicator
+ * and ensure consistent wizard experience
+ */
+
+/* Progress indicator container spacing */
+.slds-progress {
+    margin-bottom: 0;
+}
+
+/* Ensure proper icon sizing in step content */
+.slds-icon {
+    fill: currentColor;
+}
+
+/* Step content area minimum height for consistency */
+.slds-card__body {
+    min-height: 200px;
+}
+
+/* Navigation footer spacing */
+.slds-card__footer {
+    padding: 1rem;
+    border-top: 1px solid var(--slds-g-color-border-base-4, #e5e5e5);
+}
+
+/* Ensure buttons maintain proper spacing */
+.slds-grid_align-spread {
+    width: 100%;
+}
+
+/* Step content alignment */
+.slds-text-align_center {
+    text-align: center;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .slds-progress__list {
+        flex-direction: column;
+    }
+
+    .slds-progress__item {
+        width: 100%;
+    }
+}

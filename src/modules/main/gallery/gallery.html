@@ -97,9 +97,23 @@
               <div class="gallery-grid slds-m-top_small">
                 <template for:each={group.components} for:item="component">
                   <article key={component.componentName} class="slds-card component-card">
+                    <!-- Baseline SLDS Badge -->
+                    <template if:true={component.hasBaselineSlds}>
+                      <div class="baseline-slds-badge">
+                        {component.baselineSldsLabel}
+                      </div>
+                    </template>
+
                     <!-- Component info -->
                     <div class="slds-card__body slds-card__body_inner slds-p-around_small">
                       <div class="component-header slds-m-bottom_xx-small">
+                        <template if:true={component.hasMetadataNotes}>
+                          <span class="warning-badge" title="Component has important notes - click View Details to read">
+                            <svg class="slds-icon slds-icon_xx-small" aria-hidden="true">
+                              <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#warning"></use>
+                            </svg>
+                          </span>
+                        </template>
                         <h2 class="slds-text-heading_small slds-truncate" title={component.displayName}>
                           {component.displayName}
                         </h2>

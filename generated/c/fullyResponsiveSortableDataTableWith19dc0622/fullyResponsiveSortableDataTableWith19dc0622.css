@@ -1,0 +1,46 @@
+/**
+ * Custom styles for the responsive sortable data table
+ * Leveraging SLDS utilities for most styling
+ */
+
+/* Ensure table cells maintain proper spacing in stacked mobile view */
+.slds-table_stacked td {
+    padding: 0.5rem;
+}
+
+/* Ensure sort icons are properly aligned */
+.slds-th__action lightning-icon {
+    flex-shrink: 0;
+}
+
+/* Ensure proper truncation for long product names */
+.slds-truncate {
+    max-width: 100%;
+}
+
+/* Enhance badge visibility */
+.slds-badge {
+    font-weight: 600;
+}
+
+/* Ensure proper spacing for table container */
+.slds-box {
+    background-color: #ffffff;
+}
+
+/* Responsive adjustments for mobile stacked view */
+@media (max-width: 48em) {
+    /* Ensure labels are visible in stacked view */
+    .slds-table_stacked td:before {
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        color: #3e3e3c;
+    }
+
+    /* Center badges in mobile view */
+    .slds-badge {
+        display: inline-block;
+        margin-top: 0.25rem;
+    }
+}

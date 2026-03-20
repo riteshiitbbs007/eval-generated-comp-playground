@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>false</isExposed>
+    <description>Component displaying 4 notification alerts with proper SLDS styling including success, error, warning, and info alerts. Each alert features an icon, message text, and close button with full width layout.</description>
+    <masterLabel>4 Notification Alerts With Proper SLDS</masterLabel>
+</LightningComponentBundle>

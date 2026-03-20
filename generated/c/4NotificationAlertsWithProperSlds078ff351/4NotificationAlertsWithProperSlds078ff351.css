@@ -1,0 +1,12 @@
+/**
+ * Component-specific styles for notification alerts
+ * SLDS provides most styling through utility classes
+ */
+
+/* Ensure full width for all alerts */
+:host {
+    display: block;
+    width: 100%;
+}
+
+/* Additional custom styling if needed */

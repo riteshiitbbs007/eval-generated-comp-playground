@@ -169,6 +169,14 @@ export default class ComponentDetail extends LightningElement {
     return this.errorsByType.reduce((sum, item) => sum + item.count, 0);
   }
 
+  get hasNotes() {
+    return this.metadata?.notes && Array.isArray(this.metadata.notes) && this.metadata.notes.length > 0;
+  }
+
+  get notes() {
+    return this.metadata?.notes || [];
+  }
+
   handleCopyUtteranceId() {
     if (this.utteranceId) {
       navigator.clipboard.writeText(this.utteranceId)

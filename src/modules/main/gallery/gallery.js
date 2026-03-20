@@ -170,7 +170,11 @@ export default class Gallery extends LightningElement {
         totalErrorBreakdown: comp.errorsByType
           ? Object.values(comp.errorsByType).reduce((sum, count) => sum + count, 0)
           : 0,
-        showErrorBreakdown: this.errorBreakdownStates[comp.componentName] || false
+        showErrorBreakdown: this.errorBreakdownStates[comp.componentName] || false,
+        hasBaselineSlds: comp.baseline_slds === true,
+        baselineSldsLabel: 'Baseline SLDS',
+        hasMetadataNotes: comp.notes && Array.isArray(comp.notes) && comp.notes.length > 0,
+        metadataNotesCount: comp.notes?.length || 0
       };
     });
   }

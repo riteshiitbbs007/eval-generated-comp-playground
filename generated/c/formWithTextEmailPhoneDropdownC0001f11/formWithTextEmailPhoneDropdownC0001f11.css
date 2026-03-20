@@ -1,0 +1,65 @@
+/**
+ * Form Component Styles
+ * 
+ * Uses SLDS 2 design tokens for theme-aware styling
+ * Follows SLDS spacing and typography patterns
+ */
+
+/* Success notification styling */
+.slds-theme_success {
+    background-color: var(--slds-g-color-success-container-1);
+    color: var(--slds-g-color-on-success-1);
+    border-left: 4px solid var(--slds-g-color-success-1);
+    border-radius: var(--slds-g-radius-border-1);
+    padding: var(--slds-g-spacing-2) var(--slds-g-spacing-4);
+}
+
+/* Form container spacing */
+.slds-form {
+    margin-top: var(--slds-g-spacing-2);
+}
+
+/* Ensure consistent spacing between form rows */
+.slds-col {
+    margin-bottom: var(--slds-g-spacing-3);
+}
+
+/* Button group alignment */
+.slds-text-align_right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Enhanced focus states for accessibility */
+lightning-input:focus-within,
+lightning-combobox:focus-within,
+lightning-checkbox-group:focus-within,
+lightning-textarea:focus-within {
+    outline: 2px solid var(--slds-g-color-accent-1);
+    outline-offset: 2px;
+    border-radius: var(--slds-g-radius-border-1);
+}
+
+/* Card content padding override for consistent spacing */
+lightning-card {
+    --sds-c-card-spacing-block: var(--slds-g-spacing-4);
+    --sds-c-card-spacing-inline: var(--slds-g-spacing-4);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 48rem) {
+    .slds-text-align_right {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .slds-text-align_right lightning-button {
+        margin-bottom: var(--slds-g-spacing-2);
+        width: 100%;
+    }
+    
+    .slds-text-align_right lightning-button:last-child {
+        margin-bottom: 0;
+    }
+}

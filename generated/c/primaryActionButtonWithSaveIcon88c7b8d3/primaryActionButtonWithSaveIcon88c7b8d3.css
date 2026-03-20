@@ -1,0 +1,28 @@
+/**
+ * Primary Action Button with Save Icon Styles
+ *
+ * Implements SLDS 2 styling hooks for theme-aware, accessible design.
+ * All colors, spacing, and sizing use SLDS design tokens to ensure
+ * consistency across themes and proper accessibility compliance.
+ */
+
+/**
+ * Focus State Enhancement
+ * Ensures keyboard navigation has visible focus indicator
+ * Critical for WCAG 2.1 accessibility compliance
+ */
+.primary-action-button:focus-visible {
+    outline-offset: var(--slds-g-spacing-1);
+}
+
+/**
+ * Note: The lightning-button component automatically handles:
+ * - Brand variant styling with SLDS design tokens
+ * - Hover and active states using accent color progression
+ * - Icon positioning and spacing using SLDS spacing utilities
+ * - Disabled state styling with proper accessibility
+ * - Responsive behavior across screen sizes and themes
+ *
+ * The focus-visible enhancement above provides additional visual feedback
+ * for keyboard navigation while maintaining SLDS compliance.
+ */

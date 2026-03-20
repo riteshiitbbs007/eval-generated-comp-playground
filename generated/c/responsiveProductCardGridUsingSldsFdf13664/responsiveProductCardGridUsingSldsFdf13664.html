@@ -1,0 +1,39 @@
+<template>
+    <!-- Responsive product grid container using SLDS grid system -->
+    <div class="slds-grid slds-wrap slds-gutters">
+        <!-- Iterate through products array and display each as a card -->
+        <template for:each={products} for:item="product">
+            <!--
+                Responsive column sizing:
+                - slds-size_1-of-1: Mobile (full width)
+                - slds-medium-size_1-of-2: Tablet (half width - 2 columns)
+                - slds-large-size_1-of-4: Desktop (quarter width - 4 columns)
+            -->
+            <div key={product.id} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4">
+                <!-- Product card with hover effects -->
+                <article class="slds-card product-card">
+                    <!-- Product image container -->
+                    <div class="slds-card__header">
+                        <div class="product-image-container">
+                            <img
+                                src={product.imageUrl}
+                                alt={product.imageAlt}
+                                class="product-image"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Product details: title and price -->
+                    <div class="slds-card__body slds-card__body_inner">
+                        <h3 class="slds-text-heading_small slds-truncate" title={product.name}>
+                            {product.name}
+                        </h3>
+                        <p class="slds-text-body_regular slds-m-top_x-small product-price">
+                            {product.formattedPrice}
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </template>
+    </div>
+</template>

@@ -1,0 +1,74 @@
+{
+  "folderName": "component-4NotificationAlertsWithProperSlds-C07-Detailed-20260312",
+  "componentName": "4NotificationAlertsWithProperSldsE39d2043",
+  "csvId": "C07",
+  "variant": "Detailed",
+  "timestamp": "2026-03-12T18:01:34.490Z",
+  "utterance": "Create 4 notification alerts with proper SLDS styling and full width. Success alert uses success background and foreground colors. Error alert uses error background and foreground colors. Warning alert uses warning background and foreground colors. Info alert uses brand background and foreground colors. Each alert should include an icon at standard size with proper spacing, message text using standard text sizing, and close button at appropriate size positioned right. Use SLDS border-radius utilities",
+  "tier": "Tier 2",
+  "complexity": "Intermediate",
+  "scores": {
+    "slds_linter": 0.58,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.69,
+    "overall_readiness_label": "Prototype"
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 17,
+    "notes": 0
+  },
+  "utteranceId": "C07",
+  "errorsByType": {
+    "slds/no-hardcoded-values-slds2": 6,
+    "slds/no-unsupported-hooks-slds2": 4,
+    "slds/enforce-sds-to-slds-hooks": 4,
+    "slds/no-slds-namespace-for-custom-hooks": 3
+  },
+  "sldsToolsEnabled": true,
+  "testMode": "normal",
+  "baseline_slds": false,
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/ad619e5b-4b5c-4da9-bc6f-4427b61c16da/r/019ce331-ddb1-7000-8000-0632c32ba635",
+  "langsmithRunId": "019ce331-ddb1-7000-8000-0632c32ba635",
+  "langsmithProjectName": "passionate-coffee-53",
+  "langsmithTraceId": "019ce331-ddb1-7000-8000-0632c32ba635",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C05-C07:Detailed",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/4NotificationAlertsWithProperSldsE39d2043/screenshots/desktop.png"
+  },
+  "originalScoresV0": {
+    "slds_linter": 0.538,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.66,
+    "overall_readiness_label": "Prototype"
+  },
+  "_scoreHistory": {
+    "originalScoresV0": {
+      "date": "2026-03-18T13:56:09.838Z",
+      "reason": "Score recalculation/metadata update",
+      "changedFields": [
+        {
+          "field": "overall",
+          "old": 2.66,
+          "new": 2.69
+        },
+        {
+          "field": "slds_linter",
+          "old": 0.538,
+          "new": 0.58
+        }
+      ]
+    }
+  }
+}

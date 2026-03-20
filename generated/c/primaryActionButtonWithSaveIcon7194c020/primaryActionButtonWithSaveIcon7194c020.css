@@ -1,0 +1,18 @@
+/**
+ * Primary Action Button with Save Icon Styles
+ *
+ * Uses SLDS styling hooks to customize button appearance
+ * without directly overriding SLDS classes
+ */
+
+/* Use CSS custom properties on :host to customize SLDS button styling */
+:host {
+    /* Customize brand button hover state using SLDS styling hooks */
+    --slds-c-button-brand-color-background-hover: var(--lwc-brandAccessible, rgb(0, 112, 210));
+
+    /* Customize brand button focus state for enhanced accessibility */
+    --slds-c-button-brand-shadow-focus: 0 0 0 2px var(--lwc-colorBorder, rgb(0, 95, 178));
+
+    /* Customize icon spacing using SLDS spacing tokens */
+    --slds-c-icon-spacing-inline-end: var(--lwc-spacingXxSmall, 0.25rem);
+}
