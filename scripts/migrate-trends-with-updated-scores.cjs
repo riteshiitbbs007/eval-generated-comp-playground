@@ -108,16 +108,18 @@ function migrateComponentData(componentData, currentMetadata) {
     return componentData;
   }
 
-  // Check if scores changed
-  const hasChanges = scoresChanged(componentData.scores, current.scores);
+  // Check if scores or baseline_slds changed
+  const hasScoreChanges = scoresChanged(componentData.scores, current.scores);
+  const baselineChanged = (componentData.baseline_slds !== current.baseline_slds);
 
-  if (hasChanges) {
+  if (hasScoreChanges || baselineChanged) {
     stats.migratedComponents++;
 
-    // Update only the scores - no bloat, no duplication
+    // Update scores and baseline_slds
     return {
       ...componentData,
-      scores: current.scores  // Update with new scores only
+      scores: current.scores,
+      baseline_slds: current.baseline_slds || false
     };
   } else {
     stats.unchangedComponents++;

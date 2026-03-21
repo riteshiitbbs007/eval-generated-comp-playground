@@ -149,7 +149,7 @@
               </div>
               <div class="component-checkboxes">
                 <template for:each={availableComponents} for:item="component">
-                  <label key={component.value} class="slds-checkbox">
+                  <label key={component.value} class="slds-checkbox" data-is-baseline={component.isBaseline}>
                     <input
                       type="checkbox"
                       name={component.value}

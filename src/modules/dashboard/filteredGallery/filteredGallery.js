@@ -96,6 +96,9 @@ export default class FilteredGallery extends LightningElement {
         if (!utteranceId.includes(searchTerm)) return false;
       }
 
+      // Baseline SLDS filter
+      if (this.filters.baselineOnly && !comp.baseline_slds) return false;
+
       return true;
     });
   }
@@ -156,9 +159,23 @@ export default class FilteredGallery extends LightningElement {
     const qualityGateConfig = QUALITY_GATE_CONFIG[qualityGate];
     const qualityGateLabel = qualityGateConfig.label;
 
+    // Build enhanced display name: C14:Simple [Baseline]
+    let enhancedDisplayName = '';
+    if (comp.utteranceId && comp.variant) {
+      enhancedDisplayName = `${comp.utteranceId}:${comp.variant}`;
+      if (comp.baseline_slds === true) {
+        enhancedDisplayName += ' [Baseline]';
+      }
+    } else {
+      enhancedDisplayName = this.formatDisplayName(comp.componentName);
+      if (comp.baseline_slds === true) {
+        enhancedDisplayName += ' [Baseline]';
+      }
+    }
+
     return {
       ...comp,
-      displayName: this.formatDisplayName(comp.componentName),
+      displayName: enhancedDisplayName,
       formattedScore: score.toFixed(2),
       formattedSldsScore: `${sldsScore}%`,
       formattedDate: this.formatDate(createdDate),

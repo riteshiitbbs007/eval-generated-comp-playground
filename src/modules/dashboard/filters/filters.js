@@ -10,10 +10,11 @@ export default class DashboardFilters extends LightningElement {
   maxScore = QUALITY_GATE_CONFIG.production.maxScore;
   minSldsCompliance = 0;
   utteranceIdFilter = '';
+  baselineOnly = false;
 
   selectedTiers = new Set(['Tier 1', 'Tier 2', 'Tier 3']);
   selectedComplexities = new Set(['Simple', 'Intermediate', 'Advanced']);
-  selectedVariants = new Set(['Simple', 'Moderate', 'Complex']);
+  selectedVariants = new Set(['Simple', 'Moderate', 'Detailed']);
   selectedModels = new Set();
 
   connectedCallback() {
@@ -53,6 +54,10 @@ export default class DashboardFilters extends LightningElement {
       const score = c.scores?.overall || 0;
       return score < 2.0;
     }).length;
+  }
+
+  get baselineCount() {
+    return this.components.filter(c => c.baseline_slds === true).length;
   }
 
   // Button classes
@@ -101,7 +106,7 @@ export default class DashboardFilters extends LightningElement {
     return [
       { id: 'variant-simple', value: 'Simple', label: 'Simple', checked: this.selectedVariants.has('Simple') },
       { id: 'variant-moderate', value: 'Moderate', label: 'Moderate', checked: this.selectedVariants.has('Moderate') },
-      { id: 'variant-complex', value: 'Complex', label: 'Complex', checked: this.selectedVariants.has('Complex') }
+      { id: 'variant-detailed', value: 'Detailed', label: 'Detailed', checked: this.selectedVariants.has('Detailed') }
     ];
   }
 
@@ -196,15 +201,21 @@ export default class DashboardFilters extends LightningElement {
     this.emitFilterChange();
   }
 
+  handleBaselineChange(event) {
+    this.baselineOnly = event.target.checked;
+    this.emitFilterChange();
+  }
+
   handleReset() {
     this.activeQuickFilter = 'all';
     this.minScore = 0;
     this.maxScore = QUALITY_GATE_CONFIG.production.maxScore;
     this.minSldsCompliance = 0;
     this.utteranceIdFilter = '';
+    this.baselineOnly = false;
     this.selectedTiers = new Set(['Tier 1', 'Tier 2', 'Tier 3']);
     this.selectedComplexities = new Set(['Simple', 'Intermediate', 'Advanced']);
-    this.selectedVariants = new Set(['Simple', 'Moderate', 'Complex']);
+    this.selectedVariants = new Set(['Simple', 'Moderate', 'Detailed']);
     this.updateModelOptions();
     this.emitFilterChange();
   }
@@ -219,7 +230,8 @@ export default class DashboardFilters extends LightningElement {
         complexities: Array.from(this.selectedComplexities),
         variants: Array.from(this.selectedVariants),
         models: Array.from(this.selectedModels),
-        utteranceId: this.utteranceIdFilter
+        utteranceId: this.utteranceIdFilter,
+        baselineOnly: this.baselineOnly
       }
     }));
   }

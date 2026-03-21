@@ -210,16 +210,19 @@ export default class Trends extends LightningElement {
     const chartData = JSON.parse(JSON.stringify({
       labels: snapshots.map(s => s.date),
       datasets: this.selectedComponents.map((combination, index) => {
-        // Parse utteranceId:variant
-        const [utteranceId, variant] = combination.split(':');
+        // Parse utteranceId:variant:baseline
+        const [utteranceId, variant, isBaselineStr] = combination.split(':');
+        const isBaseline = isBaselineStr === 'true';
 
         // Collect metadata for each snapshot point
         const dataPoints = snapshots.map(snapshot => {
           if (!snapshot.components) return null;
 
-          // Find all components matching this utteranceId:variant combination
+          // Find all components matching this utteranceId:variant:baseline combination
           const matchingComponents = snapshot.components.filter(c =>
-            c.utteranceId === utteranceId && c.variant === variant
+            c.utteranceId === utteranceId &&
+            c.variant === variant &&
+            (c.baseline_slds === true) === isBaseline
           );
 
           if (matchingComponents.length === 0) return null;
@@ -241,8 +244,9 @@ export default class Trends extends LightningElement {
           };
         });
 
+        const baselineLabel = isBaseline ? ' [Baseline]' : '';
         return {
-          label: `${utteranceId} - ${variant}`,
+          label: `${utteranceId} - ${variant}${baselineLabel}`,
           data: dataPoints.map(dp => dp?.score || null),
           metadata: dataPoints.map(dp => dp ? { model: dp.model, count: dp.count } : null),
           borderColor: colors[index % colors.length],
@@ -339,29 +343,42 @@ export default class Trends extends LightningElement {
       return;
     }
 
-    // Get unique utteranceId:variant combinations
+    // Get unique utteranceId:variant:baseline combinations
     const combinationMap = new Map();
     latestSnapshot.components.forEach(c => {
       if (c.utteranceId && c.variant) {
-        const key = `${c.utteranceId}:${c.variant}`;
+        const isBaseline = c.baseline_slds === true;
+        // Key includes baseline status to separate baseline from non-baseline
+        const key = `${c.utteranceId}:${c.variant}:${isBaseline}`;
+
         if (!combinationMap.has(key)) {
+          const baselineLabel = isBaseline ? ' [Baseline]' : '';
+
           combinationMap.set(key, {
-            label: `${c.utteranceId} - ${c.variant}`,
+            label: `${c.utteranceId} - ${c.variant}${baselineLabel}`,
             value: key,
             utteranceId: c.utteranceId,
             variant: c.variant,
+            isBaseline: isBaseline,
             checked: this.selectedComponents.includes(key)
           });
         }
       }
     });
 
-    // Sort by utteranceId first, then variant
+    // Sort by utteranceId first, then variant, then baseline (baseline comes first)
     this.componentList = Array.from(combinationMap.values()).sort((a, b) => {
       const aNum = parseInt(a.utteranceId.replace('C', ''), 10);
       const bNum = parseInt(b.utteranceId.replace('C', ''), 10);
       if (aNum !== bNum) return aNum - bNum;
-      return a.variant.localeCompare(b.variant);
+
+      const variantCompare = a.variant.localeCompare(b.variant);
+      if (variantCompare !== 0) return variantCompare;
+
+      // Baseline comes before non-baseline
+      if (a.isBaseline && !b.isBaseline) return -1;
+      if (!a.isBaseline && b.isBaseline) return 1;
+      return 0;
     });
   }
 

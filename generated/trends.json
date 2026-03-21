@@ -6888,7 +6888,8 @@
             "total": 15
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T11:22:42.437Z"
+          "timestamp": "2026-03-11T11:22:42.437Z",
+          "baseline_slds": true
         },
         {
           "componentName": "3stepWizardWithProgressIndicatorAndDf82874b",
@@ -6911,7 +6912,8 @@
             "total": 36
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T12:26:23.186Z"
+          "timestamp": "2026-03-11T12:26:23.186Z",
+          "baseline_slds": true
         },
         {
           "componentName": "3stepWizardWithProgressIndicatorAndE642eb6c",
@@ -6934,7 +6936,8 @@
             "total": 16
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T10:54:23.196Z"
+          "timestamp": "2026-03-11T10:54:23.196Z",
+          "baseline_slds": true
         },
         {
           "componentName": "3stepWizardWithProgressIndicatorAndEcf1468f",
@@ -6957,7 +6960,8 @@
             "total": 63
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T12:34:04.896Z"
+          "timestamp": "2026-03-11T12:34:04.896Z",
+          "baseline_slds": false
         },
         {
           "componentName": "3stepWizardWithProgressIndicatorAndFdafd964",
@@ -7714,7 +7718,8 @@
             "total": 11
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T11:31:18.085Z"
+          "timestamp": "2026-03-11T11:31:18.085Z",
+          "baseline_slds": true
         },
         {
           "componentName": "formWithTextEmailPhoneDropdownC0001f11",
@@ -7737,7 +7742,8 @@
             "total": 26
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T11:35:00.665Z"
+          "timestamp": "2026-03-11T11:35:00.665Z",
+          "baseline_slds": false
         },
         {
           "componentName": "formWithTextEmailPhoneDropdownE48117d4",
@@ -8115,7 +8121,8 @@
             "total": 36
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T10:24:38.253Z"
+          "timestamp": "2026-03-11T10:24:38.253Z",
+          "baseline_slds": false
         },
         {
           "componentName": "verticalNavMenuWith5Items47126c35",
@@ -8148,11 +8155,12 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
-            "overall": 3,
             "slds_linter": 1,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 3,
+            "overall_readiness_label": "Production-Ready"
           },
           "violations": {
             "warnings": 0,
@@ -8160,7 +8168,8 @@
             "total": 0
           },
           "qualityGate": "production",
-          "timestamp": "2026-03-11T11:59:48.976Z"
+          "timestamp": "2026-03-11T11:59:48.976Z",
+          "baseline_slds": true
         },
         {
           "componentName": "verticalNavMenuWith5Items887d3dcb",
@@ -8183,7 +8192,8 @@
             "total": 4
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T10:43:57.489Z"
+          "timestamp": "2026-03-11T10:43:57.489Z",
+          "baseline_slds": true
         },
         {
           "componentName": "verticalNavMenuWith5Items97833370",
@@ -8206,7 +8216,8 @@
             "total": 40
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T12:04:30.402Z"
+          "timestamp": "2026-03-11T12:04:30.402Z",
+          "baseline_slds": false
         }
       ],
       "batches": {
@@ -8586,7 +8597,8 @@
             "total": 15
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T11:22:42.437Z"
+          "timestamp": "2026-03-11T11:22:42.437Z",
+          "baseline_slds": true
         },
         {
           "componentName": "3stepWizardWithProgressIndicatorAndDf82874b",
@@ -8609,7 +8621,8 @@
             "total": 36
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T12:26:23.186Z"
+          "timestamp": "2026-03-11T12:26:23.186Z",
+          "baseline_slds": true
         },
         {
           "componentName": "3stepWizardWithProgressIndicatorAndE642eb6c",
@@ -8632,7 +8645,8 @@
             "total": 16
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T10:54:23.196Z"
+          "timestamp": "2026-03-11T10:54:23.196Z",
+          "baseline_slds": true
         },
         {
           "componentName": "3stepWizardWithProgressIndicatorAndEcf1468f",
@@ -8655,7 +8669,8 @@
             "total": 63
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T12:34:04.896Z"
+          "timestamp": "2026-03-11T12:34:04.896Z",
+          "baseline_slds": false
         },
         {
           "componentName": "3stepWizardWithProgressIndicatorAndFdafd964",
@@ -8790,7 +8805,8 @@
             "total": 3
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:45:55.275Z"
+          "timestamp": "2026-03-12T17:45:55.275Z",
+          "baseline_slds": true
         },
         {
           "componentName": "4NotificationAlertsWithProperSldsE39d2043",
@@ -8813,7 +8829,8 @@
             "total": 17
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T18:01:34.490Z"
+          "timestamp": "2026-03-12T18:01:34.490Z",
+          "baseline_slds": false
         },
         {
           "componentName": "cardGrid4ColumnsDesktop2Cb530bec",
@@ -8859,7 +8876,8 @@
             "total": 24
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:27:23.785Z"
+          "timestamp": "2026-03-12T10:27:23.785Z",
+          "baseline_slds": true
         },
         {
           "componentName": "comprehensiveContactFormWithNameFieldD7678868",
@@ -8882,7 +8900,8 @@
             "total": 23
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:40:39.115Z"
+          "timestamp": "2026-03-12T10:40:39.115Z",
+          "baseline_slds": false
         },
         {
           "componentName": "confirmationModalForDeletionUsingSlds3d1fd5f6",
@@ -8905,7 +8924,8 @@
             "total": 31
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:50:21.342Z"
+          "timestamp": "2026-03-12T10:50:21.342Z",
+          "baseline_slds": false
         },
         {
           "componentName": "confirmationModalForDeletionUsingSldsE9111a18",
@@ -8928,7 +8948,8 @@
             "total": 5
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:35:54.681Z"
+          "timestamp": "2026-03-12T10:35:54.681Z",
+          "baseline_slds": true
         },
         {
           "componentName": "contactCardWithAvatarNameTitle569326e5",
@@ -9550,7 +9571,8 @@
             "total": 11
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T11:31:18.085Z"
+          "timestamp": "2026-03-11T11:31:18.085Z",
+          "baseline_slds": true
         },
         {
           "componentName": "formWithTextEmailPhoneDropdownC0001f11",
@@ -9573,7 +9595,8 @@
             "total": 26
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T11:35:00.665Z"
+          "timestamp": "2026-03-11T11:35:00.665Z",
+          "baseline_slds": false
         },
         {
           "componentName": "formWithTextEmailPhoneDropdownE48117d4",
@@ -9618,7 +9641,8 @@
             "total": 34
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:46:10.681Z"
+          "timestamp": "2026-03-12T10:46:10.681Z",
+          "baseline_slds": false
         },
         {
           "componentName": "fullyResponsiveSortableDataTableWith19dc0622",
@@ -9641,7 +9665,8 @@
             "total": 13
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:32:00.198Z"
+          "timestamp": "2026-03-12T10:32:00.198Z",
+          "baseline_slds": true
         },
         {
           "componentName": "pageHeaderJohnSmithWithAccount3b74227d",
@@ -9686,7 +9711,8 @@
             "total": 8
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:42:24.521Z"
+          "timestamp": "2026-03-12T17:42:24.521Z",
+          "baseline_slds": true
         },
         {
           "componentName": "pageHeaderWithAccountIconAtEc3a4c6f",
@@ -9709,7 +9735,8 @@
             "total": 24
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:57:00.364Z"
+          "timestamp": "2026-03-12T17:57:00.364Z",
+          "baseline_slds": false
         },
         {
           "componentName": "pageHeaderWithAccountIconAtFb064716",
@@ -9732,7 +9759,8 @@
             "total": 34
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T18:18:46.902Z"
+          "timestamp": "2026-03-12T18:18:46.902Z",
+          "baseline_slds": false
         },
         {
           "componentName": "pageHeaderWithTitleAndAction35185f19",
@@ -9844,7 +9872,8 @@
             "total": 5
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T09:25:15.420Z"
+          "timestamp": "2026-03-12T09:25:15.420Z",
+          "baseline_slds": true
         },
         {
           "componentName": "primaryActionButtonWithSaveIcon88c7b8d3",
@@ -9867,7 +9896,8 @@
             "total": 1
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T09:28:52.613Z"
+          "timestamp": "2026-03-12T09:28:52.613Z",
+          "baseline_slds": false
         },
         {
           "componentName": "primaryButtonWithASaveIcon2a4b46ee",
@@ -10023,7 +10053,8 @@
             "total": 23
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:52:14.072Z"
+          "timestamp": "2026-03-12T17:52:14.072Z",
+          "baseline_slds": false
         },
         {
           "componentName": "responsiveProductCardGridUsingSldsFdf13664",
@@ -10046,7 +10077,8 @@
             "total": 12
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:40:15.414Z"
+          "timestamp": "2026-03-12T17:40:15.414Z",
+          "baseline_slds": true
         },
         {
           "componentName": "responsiveProductCardGridWith611d4397d",
@@ -10158,7 +10190,8 @@
             "total": 36
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T10:24:38.253Z"
+          "timestamp": "2026-03-11T10:24:38.253Z",
+          "baseline_slds": false
         },
         {
           "componentName": "verticalNavMenuWith5Items47126c35",
@@ -10191,11 +10224,12 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
-            "overall": 3,
             "slds_linter": 1,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 3,
+            "overall_readiness_label": "Production-Ready"
           },
           "violations": {
             "warnings": 0,
@@ -10203,7 +10237,8 @@
             "total": 0
           },
           "qualityGate": "production",
-          "timestamp": "2026-03-11T11:59:48.976Z"
+          "timestamp": "2026-03-11T11:59:48.976Z",
+          "baseline_slds": true
         },
         {
           "componentName": "verticalNavMenuWith5Items887d3dcb",
@@ -10226,7 +10261,8 @@
             "total": 4
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T10:43:57.489Z"
+          "timestamp": "2026-03-11T10:43:57.489Z",
+          "baseline_slds": true
         },
         {
           "componentName": "verticalNavMenuWith5Items97833370",
@@ -10249,7 +10285,8 @@
             "total": 40
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T12:04:30.402Z"
+          "timestamp": "2026-03-11T12:04:30.402Z",
+          "baseline_slds": false
         }
       ],
       "batches": {
@@ -10629,7 +10666,8 @@
             "total": 15
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T11:22:42.437Z"
+          "timestamp": "2026-03-11T11:22:42.437Z",
+          "baseline_slds": true
         },
         {
           "componentName": "3stepWizardWithProgressIndicatorAndDf82874b",
@@ -10652,7 +10690,8 @@
             "total": 36
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T12:26:23.186Z"
+          "timestamp": "2026-03-11T12:26:23.186Z",
+          "baseline_slds": true
         },
         {
           "componentName": "3stepWizardWithProgressIndicatorAndE642eb6c",
@@ -10675,7 +10714,8 @@
             "total": 16
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T10:54:23.196Z"
+          "timestamp": "2026-03-11T10:54:23.196Z",
+          "baseline_slds": true
         },
         {
           "componentName": "3stepWizardWithProgressIndicatorAndEcf1468f",
@@ -10698,7 +10738,8 @@
             "total": 63
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T12:34:04.896Z"
+          "timestamp": "2026-03-11T12:34:04.896Z",
+          "baseline_slds": false
         },
         {
           "componentName": "3stepWizardWithProgressIndicatorAndFdafd964",
@@ -10833,7 +10874,8 @@
             "total": 3
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:45:55.275Z"
+          "timestamp": "2026-03-12T17:45:55.275Z",
+          "baseline_slds": true
         },
         {
           "componentName": "4NotificationAlertsWithProperSldsE39d2043",
@@ -10856,7 +10898,8 @@
             "total": 17
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T18:01:34.490Z"
+          "timestamp": "2026-03-12T18:01:34.490Z",
+          "baseline_slds": false
         },
         {
           "componentName": "cardGrid4ColumnsDesktop2Cb530bec",
@@ -10902,7 +10945,8 @@
             "total": 24
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:27:23.785Z"
+          "timestamp": "2026-03-12T10:27:23.785Z",
+          "baseline_slds": true
         },
         {
           "componentName": "comprehensiveContactFormWithNameFieldD7678868",
@@ -10925,7 +10969,8 @@
             "total": 23
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:40:39.115Z"
+          "timestamp": "2026-03-12T10:40:39.115Z",
+          "baseline_slds": false
         },
         {
           "componentName": "confirmationModalForDeletionUsingSlds3d1fd5f6",
@@ -10948,7 +10993,8 @@
             "total": 31
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:50:21.342Z"
+          "timestamp": "2026-03-12T10:50:21.342Z",
+          "baseline_slds": false
         },
         {
           "componentName": "confirmationModalForDeletionUsingSldsE9111a18",
@@ -10971,7 +11017,8 @@
             "total": 5
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:35:54.681Z"
+          "timestamp": "2026-03-12T10:35:54.681Z",
+          "baseline_slds": true
         },
         {
           "componentName": "contactCardWithAvatarNameTitle569326e5",
@@ -11593,7 +11640,8 @@
             "total": 11
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T11:31:18.085Z"
+          "timestamp": "2026-03-11T11:31:18.085Z",
+          "baseline_slds": true
         },
         {
           "componentName": "formWithTextEmailPhoneDropdownC0001f11",
@@ -11616,7 +11664,8 @@
             "total": 26
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T11:35:00.665Z"
+          "timestamp": "2026-03-11T11:35:00.665Z",
+          "baseline_slds": false
         },
         {
           "componentName": "formWithTextEmailPhoneDropdownE48117d4",
@@ -11661,7 +11710,8 @@
             "total": 34
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:46:10.681Z"
+          "timestamp": "2026-03-12T10:46:10.681Z",
+          "baseline_slds": false
         },
         {
           "componentName": "fullyResponsiveSortableDataTableWith19dc0622",
@@ -11684,7 +11734,8 @@
             "total": 13
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:32:00.198Z"
+          "timestamp": "2026-03-12T10:32:00.198Z",
+          "baseline_slds": true
         },
         {
           "componentName": "pageHeaderJohnSmithWithAccount3b74227d",
@@ -11729,7 +11780,8 @@
             "total": 8
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:42:24.521Z"
+          "timestamp": "2026-03-12T17:42:24.521Z",
+          "baseline_slds": true
         },
         {
           "componentName": "pageHeaderWithAccountIconAtEc3a4c6f",
@@ -11752,7 +11804,8 @@
             "total": 24
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:57:00.364Z"
+          "timestamp": "2026-03-12T17:57:00.364Z",
+          "baseline_slds": false
         },
         {
           "componentName": "pageHeaderWithAccountIconAtFb064716",
@@ -11775,7 +11828,8 @@
             "total": 34
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T18:18:46.902Z"
+          "timestamp": "2026-03-12T18:18:46.902Z",
+          "baseline_slds": false
         },
         {
           "componentName": "pageHeaderWithTitleAndAction35185f19",
@@ -11887,7 +11941,8 @@
             "total": 5
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T09:25:15.420Z"
+          "timestamp": "2026-03-12T09:25:15.420Z",
+          "baseline_slds": true
         },
         {
           "componentName": "primaryActionButtonWithSaveIcon88c7b8d3",
@@ -11910,7 +11965,8 @@
             "total": 1
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T09:28:52.613Z"
+          "timestamp": "2026-03-12T09:28:52.613Z",
+          "baseline_slds": false
         },
         {
           "componentName": "primaryButtonWithASaveIcon2a4b46ee",
@@ -12066,7 +12122,8 @@
             "total": 23
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:52:14.072Z"
+          "timestamp": "2026-03-12T17:52:14.072Z",
+          "baseline_slds": false
         },
         {
           "componentName": "responsiveProductCardGridUsingSldsFdf13664",
@@ -12089,7 +12146,8 @@
             "total": 12
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:40:15.414Z"
+          "timestamp": "2026-03-12T17:40:15.414Z",
+          "baseline_slds": true
         },
         {
           "componentName": "responsiveProductCardGridWith611d4397d",
@@ -12201,7 +12259,8 @@
             "total": 36
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T10:24:38.253Z"
+          "timestamp": "2026-03-11T10:24:38.253Z",
+          "baseline_slds": false
         },
         {
           "componentName": "verticalNavMenuWith5Items47126c35",
@@ -12234,11 +12293,12 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
-            "overall": 3,
             "slds_linter": 1,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 3,
+            "overall_readiness_label": "Production-Ready"
           },
           "violations": {
             "warnings": 0,
@@ -12246,7 +12306,8 @@
             "total": 0
           },
           "qualityGate": "production",
-          "timestamp": "2026-03-11T11:59:48.976Z"
+          "timestamp": "2026-03-11T11:59:48.976Z",
+          "baseline_slds": true
         },
         {
           "componentName": "verticalNavMenuWith5Items887d3dcb",
@@ -12269,7 +12330,8 @@
             "total": 4
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T10:43:57.489Z"
+          "timestamp": "2026-03-11T10:43:57.489Z",
+          "baseline_slds": true
         },
         {
           "componentName": "verticalNavMenuWith5Items97833370",
@@ -12292,7 +12354,8 @@
             "total": 40
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T12:04:30.402Z"
+          "timestamp": "2026-03-11T12:04:30.402Z",
+          "baseline_slds": false
         }
       ],
       "batches": {
@@ -12672,7 +12735,8 @@
             "total": 15
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T11:22:42.437Z"
+          "timestamp": "2026-03-11T11:22:42.437Z",
+          "baseline_slds": true
         },
         {
           "componentName": "3stepWizardWithProgressIndicatorAndDf82874b",
@@ -12695,7 +12759,8 @@
             "total": 36
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T12:26:23.186Z"
+          "timestamp": "2026-03-11T12:26:23.186Z",
+          "baseline_slds": true
         },
         {
           "componentName": "3stepWizardWithProgressIndicatorAndE642eb6c",
@@ -12718,7 +12783,8 @@
             "total": 16
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T10:54:23.196Z"
+          "timestamp": "2026-03-11T10:54:23.196Z",
+          "baseline_slds": true
         },
         {
           "componentName": "3stepWizardWithProgressIndicatorAndEcf1468f",
@@ -12741,7 +12807,8 @@
             "total": 63
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T12:34:04.896Z"
+          "timestamp": "2026-03-11T12:34:04.896Z",
+          "baseline_slds": false
         },
         {
           "componentName": "3stepWizardWithProgressIndicatorAndFdafd964",
@@ -12876,7 +12943,8 @@
             "total": 3
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:45:55.275Z"
+          "timestamp": "2026-03-12T17:45:55.275Z",
+          "baseline_slds": true
         },
         {
           "componentName": "4NotificationAlertsWithProperSldsE39d2043",
@@ -12899,7 +12967,8 @@
             "total": 17
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T18:01:34.490Z"
+          "timestamp": "2026-03-12T18:01:34.490Z",
+          "baseline_slds": false
         },
         {
           "componentName": "cardGrid4ColumnsDesktop2Cb530bec",
@@ -12945,7 +13014,8 @@
             "total": 24
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:27:23.785Z"
+          "timestamp": "2026-03-12T10:27:23.785Z",
+          "baseline_slds": true
         },
         {
           "componentName": "comprehensiveContactFormWithNameFieldD7678868",
@@ -12968,7 +13038,8 @@
             "total": 23
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:40:39.115Z"
+          "timestamp": "2026-03-12T10:40:39.115Z",
+          "baseline_slds": false
         },
         {
           "componentName": "confirmationModalForDeletionUsingSlds3d1fd5f6",
@@ -12991,7 +13062,8 @@
             "total": 31
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:50:21.342Z"
+          "timestamp": "2026-03-12T10:50:21.342Z",
+          "baseline_slds": false
         },
         {
           "componentName": "confirmationModalForDeletionUsingSldsE9111a18",
@@ -13014,7 +13086,8 @@
             "total": 5
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:35:54.681Z"
+          "timestamp": "2026-03-12T10:35:54.681Z",
+          "baseline_slds": true
         },
         {
           "componentName": "contactCardWithAvatarNameTitle569326e5",
@@ -13636,7 +13709,8 @@
             "total": 11
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T11:31:18.085Z"
+          "timestamp": "2026-03-11T11:31:18.085Z",
+          "baseline_slds": true
         },
         {
           "componentName": "formWithTextEmailPhoneDropdownC0001f11",
@@ -13659,7 +13733,8 @@
             "total": 26
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T11:35:00.665Z"
+          "timestamp": "2026-03-11T11:35:00.665Z",
+          "baseline_slds": false
         },
         {
           "componentName": "formWithTextEmailPhoneDropdownE48117d4",
@@ -13704,7 +13779,8 @@
             "total": 34
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:46:10.681Z"
+          "timestamp": "2026-03-12T10:46:10.681Z",
+          "baseline_slds": false
         },
         {
           "componentName": "fullyResponsiveSortableDataTableWith19dc0622",
@@ -13727,7 +13803,8 @@
             "total": 13
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:32:00.198Z"
+          "timestamp": "2026-03-12T10:32:00.198Z",
+          "baseline_slds": true
         },
         {
           "componentName": "pageHeaderJohnSmithWithAccount3b74227d",
@@ -13772,7 +13849,8 @@
             "total": 7
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-16T07:47:35.362Z"
+          "timestamp": "2026-03-16T07:47:35.362Z",
+          "baseline_slds": true
         },
         {
           "componentName": "pageHeaderWithAccountIconAtE401ca11",
@@ -13795,7 +13873,8 @@
             "total": 23
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-16T07:40:45.548Z"
+          "timestamp": "2026-03-16T07:40:45.548Z",
+          "baseline_slds": false
         },
         {
           "componentName": "pageHeaderWithAccountIconAtEb418c9d",
@@ -13818,7 +13897,8 @@
             "total": 8
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:42:24.521Z"
+          "timestamp": "2026-03-12T17:42:24.521Z",
+          "baseline_slds": true
         },
         {
           "componentName": "pageHeaderWithAccountIconAtEc3a4c6f",
@@ -13841,7 +13921,8 @@
             "total": 24
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:57:00.364Z"
+          "timestamp": "2026-03-12T17:57:00.364Z",
+          "baseline_slds": false
         },
         {
           "componentName": "pageHeaderWithAccountIconAtFb064716",
@@ -13864,7 +13945,8 @@
             "total": 34
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T18:18:46.902Z"
+          "timestamp": "2026-03-12T18:18:46.902Z",
+          "baseline_slds": false
         },
         {
           "componentName": "pageHeaderWithTitleAndAction35185f19",
@@ -13976,7 +14058,8 @@
             "total": 5
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T09:25:15.420Z"
+          "timestamp": "2026-03-12T09:25:15.420Z",
+          "baseline_slds": true
         },
         {
           "componentName": "primaryActionButtonWithSaveIcon88c7b8d3",
@@ -13999,7 +14082,8 @@
             "total": 1
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T09:28:52.613Z"
+          "timestamp": "2026-03-12T09:28:52.613Z",
+          "baseline_slds": false
         },
         {
           "componentName": "primaryButtonWithASaveIcon2a4b46ee",
@@ -14155,7 +14239,8 @@
             "total": 23
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:52:14.072Z"
+          "timestamp": "2026-03-12T17:52:14.072Z",
+          "baseline_slds": false
         },
         {
           "componentName": "responsiveProductCardGridUsingSldsFdf13664",
@@ -14178,7 +14263,8 @@
             "total": 12
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:40:15.414Z"
+          "timestamp": "2026-03-12T17:40:15.414Z",
+          "baseline_slds": true
         },
         {
           "componentName": "responsiveProductCardGridWith611d4397d",
@@ -14290,7 +14376,8 @@
             "total": 36
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T10:24:38.253Z"
+          "timestamp": "2026-03-11T10:24:38.253Z",
+          "baseline_slds": false
         },
         {
           "componentName": "verticalNavMenuWith5Items47126c35",
@@ -14323,11 +14410,12 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
-            "overall": 3,
             "slds_linter": 1,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 3,
+            "overall_readiness_label": "Production-Ready"
           },
           "violations": {
             "warnings": 0,
@@ -14335,7 +14423,8 @@
             "total": 0
           },
           "qualityGate": "production",
-          "timestamp": "2026-03-11T11:59:48.976Z"
+          "timestamp": "2026-03-11T11:59:48.976Z",
+          "baseline_slds": true
         },
         {
           "componentName": "verticalNavMenuWith5Items887d3dcb",
@@ -14358,7 +14447,8 @@
             "total": 4
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T10:43:57.489Z"
+          "timestamp": "2026-03-11T10:43:57.489Z",
+          "baseline_slds": true
         },
         {
           "componentName": "verticalNavMenuWith5Items97833370",
@@ -14381,7 +14471,8 @@
             "total": 40
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T12:04:30.402Z"
+          "timestamp": "2026-03-11T12:04:30.402Z",
+          "baseline_slds": false
         }
       ],
       "batches": {
@@ -14761,7 +14852,8 @@
             "total": 15
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T11:22:42.437Z"
+          "timestamp": "2026-03-11T11:22:42.437Z",
+          "baseline_slds": true
         },
         {
           "componentName": "3stepWizardWithProgressIndicatorAndDf82874b",
@@ -14784,7 +14876,8 @@
             "total": 36
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T12:26:23.186Z"
+          "timestamp": "2026-03-11T12:26:23.186Z",
+          "baseline_slds": true
         },
         {
           "componentName": "3stepWizardWithProgressIndicatorAndE642eb6c",
@@ -14807,7 +14900,8 @@
             "total": 16
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T10:54:23.196Z"
+          "timestamp": "2026-03-11T10:54:23.196Z",
+          "baseline_slds": true
         },
         {
           "componentName": "3stepWizardWithProgressIndicatorAndEcf1468f",
@@ -14830,7 +14924,8 @@
             "total": 63
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T12:34:04.896Z"
+          "timestamp": "2026-03-11T12:34:04.896Z",
+          "baseline_slds": false
         },
         {
           "componentName": "3stepWizardWithProgressIndicatorAndFdafd964",
@@ -14965,7 +15060,8 @@
             "total": 3
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:45:55.275Z"
+          "timestamp": "2026-03-12T17:45:55.275Z",
+          "baseline_slds": true
         },
         {
           "componentName": "4NotificationAlertsWithProperSldsE39d2043",
@@ -14988,7 +15084,8 @@
             "total": 17
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T18:01:34.490Z"
+          "timestamp": "2026-03-12T18:01:34.490Z",
+          "baseline_slds": false
         },
         {
           "componentName": "cardGrid4ColumnsDesktop2Cb530bec",
@@ -15034,7 +15131,8 @@
             "total": 24
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:27:23.785Z"
+          "timestamp": "2026-03-12T10:27:23.785Z",
+          "baseline_slds": true
         },
         {
           "componentName": "comprehensiveContactFormWithNameFieldD7678868",
@@ -15057,7 +15155,8 @@
             "total": 23
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:40:39.115Z"
+          "timestamp": "2026-03-12T10:40:39.115Z",
+          "baseline_slds": false
         },
         {
           "componentName": "confirmationModalForDeletionUsingSlds3d1fd5f6",
@@ -15080,7 +15179,8 @@
             "total": 31
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:50:21.342Z"
+          "timestamp": "2026-03-12T10:50:21.342Z",
+          "baseline_slds": false
         },
         {
           "componentName": "confirmationModalForDeletionUsingSldsE9111a18",
@@ -15103,7 +15203,8 @@
             "total": 5
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:35:54.681Z"
+          "timestamp": "2026-03-12T10:35:54.681Z",
+          "baseline_slds": true
         },
         {
           "componentName": "contactCardWithAvatarNameTitle569326e5",
@@ -15725,7 +15826,8 @@
             "total": 11
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T11:31:18.085Z"
+          "timestamp": "2026-03-11T11:31:18.085Z",
+          "baseline_slds": true
         },
         {
           "componentName": "formWithTextEmailPhoneDropdownC0001f11",
@@ -15748,7 +15850,8 @@
             "total": 26
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T11:35:00.665Z"
+          "timestamp": "2026-03-11T11:35:00.665Z",
+          "baseline_slds": false
         },
         {
           "componentName": "formWithTextEmailPhoneDropdownE48117d4",
@@ -15793,7 +15896,8 @@
             "total": 34
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:46:10.681Z"
+          "timestamp": "2026-03-12T10:46:10.681Z",
+          "baseline_slds": false
         },
         {
           "componentName": "fullyResponsiveSortableDataTableWith19dc0622",
@@ -15816,7 +15920,8 @@
             "total": 13
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:32:00.198Z"
+          "timestamp": "2026-03-12T10:32:00.198Z",
+          "baseline_slds": true
         },
         {
           "componentName": "pageHeaderJohnSmithWithAccount3b74227d",
@@ -15861,7 +15966,8 @@
             "total": 7
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-16T07:47:35.362Z"
+          "timestamp": "2026-03-16T07:47:35.362Z",
+          "baseline_slds": true
         },
         {
           "componentName": "pageHeaderWithAccountIconAtE401ca11",
@@ -15884,7 +15990,8 @@
             "total": 23
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-16T07:40:45.548Z"
+          "timestamp": "2026-03-16T07:40:45.548Z",
+          "baseline_slds": false
         },
         {
           "componentName": "pageHeaderWithAccountIconAtEb418c9d",
@@ -15907,7 +16014,8 @@
             "total": 8
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:42:24.521Z"
+          "timestamp": "2026-03-12T17:42:24.521Z",
+          "baseline_slds": true
         },
         {
           "componentName": "pageHeaderWithAccountIconAtEc3a4c6f",
@@ -15930,7 +16038,8 @@
             "total": 24
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:57:00.364Z"
+          "timestamp": "2026-03-12T17:57:00.364Z",
+          "baseline_slds": false
         },
         {
           "componentName": "pageHeaderWithAccountIconAtFb064716",
@@ -15953,7 +16062,8 @@
             "total": 34
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T18:18:46.902Z"
+          "timestamp": "2026-03-12T18:18:46.902Z",
+          "baseline_slds": false
         },
         {
           "componentName": "pageHeaderWithTitleAndAction35185f19",
@@ -16065,7 +16175,8 @@
             "total": 5
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T09:25:15.420Z"
+          "timestamp": "2026-03-12T09:25:15.420Z",
+          "baseline_slds": true
         },
         {
           "componentName": "primaryActionButtonWithSaveIcon88c7b8d3",
@@ -16088,7 +16199,8 @@
             "total": 1
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T09:28:52.613Z"
+          "timestamp": "2026-03-12T09:28:52.613Z",
+          "baseline_slds": false
         },
         {
           "componentName": "primaryButtonWithASaveIcon2a4b46ee",
@@ -16244,7 +16356,8 @@
             "total": 23
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:52:14.072Z"
+          "timestamp": "2026-03-12T17:52:14.072Z",
+          "baseline_slds": false
         },
         {
           "componentName": "responsiveProductCardGridUsingSldsFdf13664",
@@ -16267,7 +16380,8 @@
             "total": 12
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:40:15.414Z"
+          "timestamp": "2026-03-12T17:40:15.414Z",
+          "baseline_slds": true
         },
         {
           "componentName": "responsiveProductCardGridWith611d4397d",
@@ -16379,7 +16493,8 @@
             "total": 36
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T10:24:38.253Z"
+          "timestamp": "2026-03-11T10:24:38.253Z",
+          "baseline_slds": false
         },
         {
           "componentName": "verticalNavMenuWith5Items47126c35",
@@ -16412,11 +16527,12 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
-            "overall": 3,
             "slds_linter": 1,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 3,
+            "overall_readiness_label": "Production-Ready"
           },
           "violations": {
             "warnings": 0,
@@ -16424,7 +16540,8 @@
             "total": 0
           },
           "qualityGate": "production",
-          "timestamp": "2026-03-11T11:59:48.976Z"
+          "timestamp": "2026-03-11T11:59:48.976Z",
+          "baseline_slds": true
         },
         {
           "componentName": "verticalNavMenuWith5Items887d3dcb",
@@ -16447,7 +16564,8 @@
             "total": 4
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T10:43:57.489Z"
+          "timestamp": "2026-03-11T10:43:57.489Z",
+          "baseline_slds": true
         },
         {
           "componentName": "verticalNavMenuWith5Items97833370",
@@ -16470,7 +16588,8 @@
             "total": 40
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T12:04:30.402Z"
+          "timestamp": "2026-03-11T12:04:30.402Z",
+          "baseline_slds": false
         }
       ],
       "batches": {
@@ -16837,11 +16956,12 @@
           "tier": "Tier 3",
           "complexity": "Advanced",
           "scores": {
-            "overall": 2.57,
             "slds_linter": 0.63,
             "slds_quality": 1,
             "prd_compliance": 0.7,
-            "security": 1
+            "security": 1,
+            "overall": 2.57,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 15,
@@ -16849,7 +16969,8 @@
             "total": 15
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T11:22:42.437Z"
+          "timestamp": "2026-03-11T11:22:42.437Z",
+          "baseline_slds": true
         },
         {
           "componentName": "3stepWizardWithProgressIndicatorAndDf82874b",
@@ -16859,11 +16980,12 @@
           "tier": "Tier 3",
           "complexity": "Advanced",
           "scores": {
-            "overall": 2.53,
             "slds_linter": 0.37,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.53,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 36,
@@ -16871,7 +16993,8 @@
             "total": 36
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T12:26:23.186Z"
+          "timestamp": "2026-03-11T12:26:23.186Z",
+          "baseline_slds": true
         },
         {
           "componentName": "3stepWizardWithProgressIndicatorAndE642eb6c",
@@ -16881,11 +17004,12 @@
           "tier": "Tier 3",
           "complexity": "Advanced",
           "scores": {
-            "overall": 2.6,
             "slds_linter": 0.66,
             "slds_quality": 1,
             "prd_compliance": 0.7,
-            "security": 1
+            "security": 1,
+            "overall": 2.6,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 16,
@@ -16893,7 +17017,8 @@
             "total": 16
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T10:54:23.196Z"
+          "timestamp": "2026-03-11T10:54:23.196Z",
+          "baseline_slds": true
         },
         {
           "componentName": "3stepWizardWithProgressIndicatorAndEcf1468f",
@@ -16903,11 +17028,12 @@
           "tier": "Tier 3",
           "complexity": "Advanced",
           "scores": {
-            "overall": 2.45,
             "slds_linter": 0.26,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.45,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 63,
@@ -16915,7 +17041,8 @@
             "total": 63
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T12:34:04.896Z"
+          "timestamp": "2026-03-11T12:34:04.896Z",
+          "baseline_slds": false
         },
         {
           "componentName": "3stepWizardWithProgressIndicatorAndFdafd964",
@@ -17035,11 +17162,12 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
-            "overall": 2.93,
             "slds_linter": 0.91,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.93,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 1,
@@ -17047,7 +17175,8 @@
             "total": 3
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:45:55.275Z"
+          "timestamp": "2026-03-12T17:45:55.275Z",
+          "baseline_slds": true
         },
         {
           "componentName": "4NotificationAlertsWithProperSldsE39d2043",
@@ -17057,11 +17186,12 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
-            "overall": 2.69,
             "slds_linter": 0.58,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.69,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 17,
@@ -17069,7 +17199,8 @@
             "total": 17
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T18:01:34.490Z"
+          "timestamp": "2026-03-12T18:01:34.490Z",
+          "baseline_slds": false
         },
         {
           "componentName": "cardGrid4ColumnsDesktop2Cb530bec",
@@ -17101,11 +17232,12 @@
           "tier": "Tier 1",
           "complexity": "Simple",
           "scores": {
-            "overall": 2.61,
             "slds_linter": 0.48,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.61,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 21,
@@ -17113,7 +17245,8 @@
             "total": 24
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:27:23.785Z"
+          "timestamp": "2026-03-12T10:27:23.785Z",
+          "baseline_slds": true
         },
         {
           "componentName": "comprehensiveContactFormWithNameFieldD7678868",
@@ -17123,11 +17256,12 @@
           "tier": "Tier 1",
           "complexity": "Simple",
           "scores": {
-            "overall": 2.63,
             "slds_linter": 0.5,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.63,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 23,
@@ -17135,7 +17269,8 @@
             "total": 23
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:40:39.115Z"
+          "timestamp": "2026-03-12T10:40:39.115Z",
+          "baseline_slds": false
         },
         {
           "componentName": "confirmationModalForDeletionUsingSlds3d1fd5f6",
@@ -17145,11 +17280,12 @@
           "tier": "Tier 1",
           "complexity": "Simple",
           "scores": {
-            "overall": 2.52,
             "slds_linter": 0.36,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.52,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 30,
@@ -17157,7 +17293,8 @@
             "total": 31
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:50:21.342Z"
+          "timestamp": "2026-03-12T10:50:21.342Z",
+          "baseline_slds": false
         },
         {
           "componentName": "confirmationModalForDeletionUsingSldsE9111a18",
@@ -17167,11 +17304,12 @@
           "tier": "Tier 1",
           "complexity": "Simple",
           "scores": {
-            "overall": 2.72,
             "slds_linter": 0.83,
             "slds_quality": 1,
             "prd_compliance": 0.7,
-            "security": 1
+            "security": 1,
+            "overall": 2.72,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 4,
@@ -17179,7 +17317,8 @@
             "total": 5
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:35:54.681Z"
+          "timestamp": "2026-03-12T10:35:54.681Z",
+          "baseline_slds": true
         },
         {
           "componentName": "contactCardWithAvatarNameTitle569326e5",
@@ -17783,11 +17922,12 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
-            "overall": 2.76,
             "slds_linter": 0.68,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.76,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 11,
@@ -17795,7 +17935,8 @@
             "total": 11
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T11:31:18.085Z"
+          "timestamp": "2026-03-11T11:31:18.085Z",
+          "baseline_slds": true
         },
         {
           "componentName": "formWithTextEmailPhoneDropdownC0001f11",
@@ -17805,11 +17946,12 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
-            "overall": 2.6,
             "slds_linter": 0.47,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.6,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 26,
@@ -17817,7 +17959,8 @@
             "total": 26
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T11:35:00.665Z"
+          "timestamp": "2026-03-11T11:35:00.665Z",
+          "baseline_slds": false
         },
         {
           "componentName": "formWithTextEmailPhoneDropdownE48117d4",
@@ -17849,11 +17992,12 @@
           "tier": "Tier 1",
           "complexity": "Simple",
           "scores": {
-            "overall": 2.53,
             "slds_linter": 0.37,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.53,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 34,
@@ -17861,7 +18005,8 @@
             "total": 34
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:46:10.681Z"
+          "timestamp": "2026-03-12T10:46:10.681Z",
+          "baseline_slds": false
         },
         {
           "componentName": "fullyResponsiveSortableDataTableWith19dc0622",
@@ -17871,11 +18016,12 @@
           "tier": "Tier 1",
           "complexity": "Simple",
           "scores": {
-            "overall": 2.75,
             "slds_linter": 0.67,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.75,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 13,
@@ -17883,7 +18029,8 @@
             "total": 13
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:32:00.198Z"
+          "timestamp": "2026-03-12T10:32:00.198Z",
+          "baseline_slds": true
         },
         {
           "componentName": "pageHeaderJohnSmithWithAccount3b74227d",
@@ -17915,11 +18062,12 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
-            "overall": 2.9,
             "slds_linter": 0.86,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.9,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 7,
@@ -17927,7 +18075,8 @@
             "total": 7
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-16T07:47:35.362Z"
+          "timestamp": "2026-03-16T07:47:35.362Z",
+          "baseline_slds": true
         },
         {
           "componentName": "pageHeaderWithAccountIconAtE401ca11",
@@ -17937,11 +18086,12 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
-            "overall": 2.66,
             "slds_linter": 0.54,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.66,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 23,
@@ -17949,7 +18099,8 @@
             "total": 23
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-16T07:40:45.548Z"
+          "timestamp": "2026-03-16T07:40:45.548Z",
+          "baseline_slds": false
         },
         {
           "componentName": "pageHeaderWithAccountIconAtEb418c9d",
@@ -17959,11 +18110,12 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
-            "overall": 2.88,
             "slds_linter": 0.84,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.88,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 8,
@@ -17971,7 +18123,8 @@
             "total": 8
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:42:24.521Z"
+          "timestamp": "2026-03-12T17:42:24.521Z",
+          "baseline_slds": true
         },
         {
           "componentName": "pageHeaderWithAccountIconAtEc3a4c6f",
@@ -17981,11 +18134,12 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
-            "overall": 2.65,
             "slds_linter": 0.53,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.65,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 24,
@@ -17993,7 +18147,8 @@
             "total": 24
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:57:00.364Z"
+          "timestamp": "2026-03-12T17:57:00.364Z",
+          "baseline_slds": false
         },
         {
           "componentName": "pageHeaderWithAccountIconAtFb064716",
@@ -18003,11 +18158,12 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
-            "overall": 2.54,
             "slds_linter": 0.38,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.54,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 34,
@@ -18015,7 +18171,8 @@
             "total": 34
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T18:18:46.902Z"
+          "timestamp": "2026-03-12T18:18:46.902Z",
+          "baseline_slds": false
         },
         {
           "componentName": "pageHeaderWithTitleAndAction35185f19",
@@ -18113,11 +18270,12 @@
           "tier": "Tier 1",
           "complexity": "Simple",
           "scores": {
-            "overall": 2.81,
             "slds_linter": 0.75,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.81,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 2,
@@ -18125,7 +18283,8 @@
             "total": 5
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T09:25:15.420Z"
+          "timestamp": "2026-03-12T09:25:15.420Z",
+          "baseline_slds": true
         },
         {
           "componentName": "primaryActionButtonWithSaveIcon88c7b8d3",
@@ -18135,11 +18294,12 @@
           "tier": "Tier 1",
           "complexity": "Simple",
           "scores": {
-            "overall": 2.96,
             "slds_linter": 0.95,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.96,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 1,
@@ -18147,7 +18307,8 @@
             "total": 1
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T09:28:52.613Z"
+          "timestamp": "2026-03-12T09:28:52.613Z",
+          "baseline_slds": false
         },
         {
           "componentName": "primaryButtonWithASaveIcon2a4b46ee",
@@ -18245,11 +18406,12 @@
           "tier": "Tier 1",
           "complexity": "Simple",
           "scores": {
-            "overall": 2.81,
             "slds_linter": 0.95,
             "slds_quality": 1,
             "prd_compliance": 0.7,
-            "security": 1
+            "security": 1,
+            "overall": 2.81,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 1,
@@ -18257,7 +18419,8 @@
             "total": 1
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-17T08:14:00.301Z"
+          "timestamp": "2026-03-17T08:14:00.301Z",
+          "baseline_slds": false
         },
         {
           "componentName": "primaryButtonWithASaveIcon918a2119",
@@ -18289,11 +18452,12 @@
           "tier": "Tier 1",
           "complexity": "Simple",
           "scores": {
-            "overall": 2.96,
             "slds_linter": 0.95,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.96,
+            "overall_readiness_label": "Production-Ready"
           },
           "violations": {
             "warnings": 4,
@@ -18301,7 +18465,8 @@
             "total": 4
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-17T08:16:33.740Z"
+          "timestamp": "2026-03-17T08:16:33.740Z",
+          "baseline_slds": false
         },
         {
           "componentName": "primaryButtonWithASaveIconC0e76cf4",
@@ -18333,11 +18498,12 @@
           "tier": "Tier 1",
           "complexity": "Simple",
           "scores": {
-            "overall": 2.65,
             "slds_linter": 0.53,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.65,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 23,
@@ -18345,7 +18511,8 @@
             "total": 23
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:52:14.072Z"
+          "timestamp": "2026-03-12T17:52:14.072Z",
+          "baseline_slds": false
         },
         {
           "componentName": "responsiveProductCardGridUsingSldsFdf13664",
@@ -18355,11 +18522,12 @@
           "tier": "Tier 1",
           "complexity": "Simple",
           "scores": {
-            "overall": 2.69,
             "slds_linter": 0.59,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.69,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 12,
@@ -18367,7 +18535,8 @@
             "total": 12
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:40:15.414Z"
+          "timestamp": "2026-03-12T17:40:15.414Z",
+          "baseline_slds": true
         },
         {
           "componentName": "responsiveProductCardGridWith611d4397d",
@@ -18465,11 +18634,12 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
-            "overall": 2.54,
             "slds_linter": 0.38,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.54,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 36,
@@ -18477,7 +18647,8 @@
             "total": 36
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T10:24:38.253Z"
+          "timestamp": "2026-03-11T10:24:38.253Z",
+          "baseline_slds": false
         },
         {
           "componentName": "verticalNavMenuWith5Items47126c35",
@@ -18509,11 +18680,12 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
-            "overall": 3,
             "slds_linter": 1,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 3,
+            "overall_readiness_label": "Production-Ready"
           },
           "violations": {
             "warnings": 0,
@@ -18521,7 +18693,8 @@
             "total": 0
           },
           "qualityGate": "production",
-          "timestamp": "2026-03-11T11:59:48.976Z"
+          "timestamp": "2026-03-11T11:59:48.976Z",
+          "baseline_slds": true
         },
         {
           "componentName": "verticalNavMenuWith5Items887d3dcb",
@@ -18531,11 +18704,12 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
-            "overall": 2.96,
             "slds_linter": 0.94,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.96,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 4,
@@ -18543,7 +18717,8 @@
             "total": 4
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T10:43:57.489Z"
+          "timestamp": "2026-03-11T10:43:57.489Z",
+          "baseline_slds": true
         },
         {
           "componentName": "verticalNavMenuWith5Items97833370",
@@ -18553,11 +18728,12 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
-            "overall": 2.54,
             "slds_linter": 0.38,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.54,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 40,
@@ -18565,7 +18741,8 @@
             "total": 40
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T12:04:30.402Z"
+          "timestamp": "2026-03-11T12:04:30.402Z",
+          "baseline_slds": false
         }
       ],
       "batches": {
@@ -18920,8 +19097,8 @@
       }
     },
     {
-      "id": "snapshot-2026-03-20T04-56-54-991Z",
-      "timestamp": "2026-03-20T04:56:54.991Z",
+      "id": "snapshot-2026-03-20T05-49-53-469Z",
+      "timestamp": "2026-03-20T05:49:53.469Z",
       "date": "2026-03-20",
       "components": [
         {
@@ -18932,11 +19109,12 @@
           "tier": "Tier 3",
           "complexity": "Advanced",
           "scores": {
-            "overall": 2.57,
             "slds_linter": 0.63,
             "slds_quality": 1,
             "prd_compliance": 0.7,
-            "security": 1
+            "security": 1,
+            "overall": 2.57,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 15,
@@ -18944,7 +19122,8 @@
             "total": 15
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T11:22:42.437Z"
+          "timestamp": "2026-03-11T11:22:42.437Z",
+          "baseline_slds": true
         },
         {
           "componentName": "3stepWizardWithProgressIndicatorAndDf82874b",
@@ -18954,11 +19133,12 @@
           "tier": "Tier 3",
           "complexity": "Advanced",
           "scores": {
-            "overall": 2.53,
             "slds_linter": 0.37,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.53,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 36,
@@ -18966,7 +19146,8 @@
             "total": 36
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T12:26:23.186Z"
+          "timestamp": "2026-03-11T12:26:23.186Z",
+          "baseline_slds": true
         },
         {
           "componentName": "3stepWizardWithProgressIndicatorAndE642eb6c",
@@ -18976,11 +19157,12 @@
           "tier": "Tier 3",
           "complexity": "Advanced",
           "scores": {
-            "overall": 2.6,
             "slds_linter": 0.66,
             "slds_quality": 1,
             "prd_compliance": 0.7,
-            "security": 1
+            "security": 1,
+            "overall": 2.6,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 16,
@@ -18988,7 +19170,8 @@
             "total": 16
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T10:54:23.196Z"
+          "timestamp": "2026-03-11T10:54:23.196Z",
+          "baseline_slds": true
         },
         {
           "componentName": "3stepWizardWithProgressIndicatorAndEcf1468f",
@@ -18998,11 +19181,12 @@
           "tier": "Tier 3",
           "complexity": "Advanced",
           "scores": {
-            "overall": 2.45,
             "slds_linter": 0.26,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.45,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 63,
@@ -19010,7 +19194,8 @@
             "total": 63
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T12:34:04.896Z"
+          "timestamp": "2026-03-11T12:34:04.896Z",
+          "baseline_slds": false
         },
         {
           "componentName": "3stepWizardWithProgressIndicatorAndFdafd964",
@@ -19130,11 +19315,12 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
-            "overall": 2.93,
             "slds_linter": 0.91,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.93,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 1,
@@ -19142,7 +19328,8 @@
             "total": 3
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:45:55.275Z"
+          "timestamp": "2026-03-12T17:45:55.275Z",
+          "baseline_slds": true
         },
         {
           "componentName": "4NotificationAlertsWithProperSldsE39d2043",
@@ -19152,11 +19339,12 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
-            "overall": 2.69,
             "slds_linter": 0.58,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.69,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 17,
@@ -19164,7 +19352,8 @@
             "total": 17
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T18:01:34.490Z"
+          "timestamp": "2026-03-12T18:01:34.490Z",
+          "baseline_slds": false
         },
         {
           "componentName": "cardGrid4ColumnsDesktop2Cb530bec",
@@ -19196,11 +19385,12 @@
           "tier": "Tier 1",
           "complexity": "Simple",
           "scores": {
-            "overall": 2.61,
             "slds_linter": 0.48,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.61,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 21,
@@ -19208,7 +19398,8 @@
             "total": 24
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:27:23.785Z"
+          "timestamp": "2026-03-12T10:27:23.785Z",
+          "baseline_slds": true
         },
         {
           "componentName": "comprehensiveContactFormWithNameFieldD7678868",
@@ -19218,11 +19409,12 @@
           "tier": "Tier 1",
           "complexity": "Simple",
           "scores": {
-            "overall": 2.63,
             "slds_linter": 0.5,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.63,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 23,
@@ -19230,7 +19422,8 @@
             "total": 23
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:40:39.115Z"
+          "timestamp": "2026-03-12T10:40:39.115Z",
+          "baseline_slds": false
         },
         {
           "componentName": "confirmationModalForDeletionUsingSlds3d1fd5f6",
@@ -19240,11 +19433,12 @@
           "tier": "Tier 1",
           "complexity": "Simple",
           "scores": {
-            "overall": 2.52,
             "slds_linter": 0.36,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.52,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 30,
@@ -19252,7 +19446,8 @@
             "total": 31
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:50:21.342Z"
+          "timestamp": "2026-03-12T10:50:21.342Z",
+          "baseline_slds": false
         },
         {
           "componentName": "confirmationModalForDeletionUsingSldsE9111a18",
@@ -19262,11 +19457,12 @@
           "tier": "Tier 1",
           "complexity": "Simple",
           "scores": {
-            "overall": 2.72,
             "slds_linter": 0.83,
             "slds_quality": 1,
             "prd_compliance": 0.7,
-            "security": 1
+            "security": 1,
+            "overall": 2.72,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 4,
@@ -19274,7 +19470,8 @@
             "total": 5
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:35:54.681Z"
+          "timestamp": "2026-03-12T10:35:54.681Z",
+          "baseline_slds": true
         },
         {
           "componentName": "contactCardWithAvatarNameTitle569326e5",
@@ -19878,11 +20075,12 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
-            "overall": 2.76,
             "slds_linter": 0.68,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.76,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 11,
@@ -19890,7 +20088,8 @@
             "total": 11
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T11:31:18.085Z"
+          "timestamp": "2026-03-11T11:31:18.085Z",
+          "baseline_slds": true
         },
         {
           "componentName": "formWithTextEmailPhoneDropdownC0001f11",
@@ -19900,11 +20099,12 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
-            "overall": 2.6,
             "slds_linter": 0.47,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.6,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 26,
@@ -19912,7 +20112,8 @@
             "total": 26
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T11:35:00.665Z"
+          "timestamp": "2026-03-11T11:35:00.665Z",
+          "baseline_slds": false
         },
         {
           "componentName": "formWithTextEmailPhoneDropdownE48117d4",
@@ -19944,11 +20145,12 @@
           "tier": "Tier 1",
           "complexity": "Simple",
           "scores": {
-            "overall": 2.53,
             "slds_linter": 0.37,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.53,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 34,
@@ -19956,7 +20158,8 @@
             "total": 34
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:46:10.681Z"
+          "timestamp": "2026-03-12T10:46:10.681Z",
+          "baseline_slds": false
         },
         {
           "componentName": "fullyResponsiveSortableDataTableWith19dc0622",
@@ -19966,11 +20169,12 @@
           "tier": "Tier 1",
           "complexity": "Simple",
           "scores": {
-            "overall": 2.75,
             "slds_linter": 0.67,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.75,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 13,
@@ -19978,7 +20182,8 @@
             "total": 13
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T10:32:00.198Z"
+          "timestamp": "2026-03-12T10:32:00.198Z",
+          "baseline_slds": true
         },
         {
           "componentName": "pageHeaderJohnSmithWithAccount3b74227d",
@@ -20010,11 +20215,12 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
-            "overall": 2.9,
             "slds_linter": 0.86,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.9,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 7,
@@ -20022,7 +20228,8 @@
             "total": 7
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-16T07:47:35.362Z"
+          "timestamp": "2026-03-16T07:47:35.362Z",
+          "baseline_slds": true
         },
         {
           "componentName": "pageHeaderWithAccountIconAtE401ca11",
@@ -20032,11 +20239,12 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
-            "overall": 2.66,
             "slds_linter": 0.54,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.66,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 23,
@@ -20044,7 +20252,8 @@
             "total": 23
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-16T07:40:45.548Z"
+          "timestamp": "2026-03-16T07:40:45.548Z",
+          "baseline_slds": false
         },
         {
           "componentName": "pageHeaderWithAccountIconAtEb418c9d",
@@ -20054,11 +20263,12 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
-            "overall": 2.88,
             "slds_linter": 0.84,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.88,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 8,
@@ -20066,7 +20276,8 @@
             "total": 8
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:42:24.521Z"
+          "timestamp": "2026-03-12T17:42:24.521Z",
+          "baseline_slds": true
         },
         {
           "componentName": "pageHeaderWithAccountIconAtEc3a4c6f",
@@ -20076,11 +20287,12 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
-            "overall": 2.65,
             "slds_linter": 0.53,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.65,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 24,
@@ -20088,7 +20300,8 @@
             "total": 24
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:57:00.364Z"
+          "timestamp": "2026-03-12T17:57:00.364Z",
+          "baseline_slds": false
         },
         {
           "componentName": "pageHeaderWithAccountIconAtFb064716",
@@ -20098,11 +20311,12 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
-            "overall": 2.54,
             "slds_linter": 0.38,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.54,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 34,
@@ -20110,7 +20324,8 @@
             "total": 34
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T18:18:46.902Z"
+          "timestamp": "2026-03-12T18:18:46.902Z",
+          "baseline_slds": false
         },
         {
           "componentName": "pageHeaderWithTitleAndAction35185f19",
@@ -20208,11 +20423,12 @@
           "tier": "Tier 1",
           "complexity": "Simple",
           "scores": {
-            "overall": 2.81,
             "slds_linter": 0.75,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.81,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 2,
@@ -20220,7 +20436,8 @@
             "total": 5
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T09:25:15.420Z"
+          "timestamp": "2026-03-12T09:25:15.420Z",
+          "baseline_slds": true
         },
         {
           "componentName": "primaryActionButtonWithSaveIcon88c7b8d3",
@@ -20230,11 +20447,12 @@
           "tier": "Tier 1",
           "complexity": "Simple",
           "scores": {
-            "overall": 2.96,
             "slds_linter": 0.95,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.96,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 1,
@@ -20242,7 +20460,8 @@
             "total": 1
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T09:28:52.613Z"
+          "timestamp": "2026-03-12T09:28:52.613Z",
+          "baseline_slds": false
         },
         {
           "componentName": "primaryButtonWithASaveIcon2a4b46ee",
@@ -20340,11 +20559,12 @@
           "tier": "Tier 1",
           "complexity": "Simple",
           "scores": {
-            "overall": 2.81,
             "slds_linter": 0.95,
             "slds_quality": 1,
             "prd_compliance": 0.7,
-            "security": 1
+            "security": 1,
+            "overall": 2.81,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 1,
@@ -20352,7 +20572,8 @@
             "total": 1
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-17T08:14:00.301Z"
+          "timestamp": "2026-03-17T08:14:00.301Z",
+          "baseline_slds": false
         },
         {
           "componentName": "primaryButtonWithASaveIcon918a2119",
@@ -20384,11 +20605,12 @@
           "tier": "Tier 1",
           "complexity": "Simple",
           "scores": {
-            "overall": 2.96,
             "slds_linter": 0.95,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.96,
+            "overall_readiness_label": "Production-Ready"
           },
           "violations": {
             "warnings": 4,
@@ -20396,7 +20618,8 @@
             "total": 4
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-17T08:16:33.740Z"
+          "timestamp": "2026-03-17T08:16:33.740Z",
+          "baseline_slds": false
         },
         {
           "componentName": "primaryButtonWithASaveIconC0e76cf4",
@@ -20428,11 +20651,12 @@
           "tier": "Tier 1",
           "complexity": "Simple",
           "scores": {
-            "overall": 2.65,
             "slds_linter": 0.53,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.65,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 23,
@@ -20440,7 +20664,8 @@
             "total": 23
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:52:14.072Z"
+          "timestamp": "2026-03-12T17:52:14.072Z",
+          "baseline_slds": false
         },
         {
           "componentName": "responsiveProductCardGridUsingSldsFdf13664",
@@ -20450,11 +20675,12 @@
           "tier": "Tier 1",
           "complexity": "Simple",
           "scores": {
-            "overall": 2.69,
             "slds_linter": 0.59,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.69,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 12,
@@ -20462,7 +20688,8 @@
             "total": 12
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-12T17:40:15.414Z"
+          "timestamp": "2026-03-12T17:40:15.414Z",
+          "baseline_slds": true
         },
         {
           "componentName": "responsiveProductCardGridWith611d4397d",
@@ -20560,11 +20787,12 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
-            "overall": 2.54,
             "slds_linter": 0.38,
             "slds_quality": 1,
             "prd_compliance": 1,
-            "security": 1
+            "security": 1,
+            "overall": 2.54,
+            "overall_readiness_label": "Prototype"
           },
           "violations": {
             "warnings": 36,
@@ -20572,7 +20800,8 @@
             "total": 36
           },
           "qualityGate": "prototype",
-          "timestamp": "2026-03-11T10:24:38.253Z"
+          "timestamp": "2026-03-11T10:24:38.253Z",
+          "baseline_slds": false
         },
         {
           "componentName": "verticalNavMenuWith5Items47126c35",
@@ -20604,6 +20833,2184 @@
           "tier": "Tier 2",
           "complexity": "Intermediate",
           "scores": {
+            "slds_linter": 1,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1,
+            "overall": 3,
+            "overall_readiness_label": "Production-Ready"
+          },
+          "violations": {
+            "warnings": 0,
+            "errors": 0,
+            "total": 0
+          },
+          "qualityGate": "production",
+          "timestamp": "2026-03-11T11:59:48.976Z",
+          "baseline_slds": true
+        },
+        {
+          "componentName": "verticalNavMenuWith5Items887d3dcb",
+          "utteranceId": "C11",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "slds_linter": 0.94,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1,
+            "overall": 2.96,
+            "overall_readiness_label": "Prototype"
+          },
+          "violations": {
+            "warnings": 4,
+            "errors": 0,
+            "total": 4
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-11T10:43:57.489Z",
+          "baseline_slds": true
+        },
+        {
+          "componentName": "verticalNavMenuWith5Items97833370",
+          "utteranceId": "C11",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "scores": {
+            "slds_linter": 0.38,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1,
+            "overall": 2.54,
+            "overall_readiness_label": "Prototype"
+          },
+          "violations": {
+            "warnings": 40,
+            "errors": 0,
+            "total": 40
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-11T12:04:30.402Z",
+          "baseline_slds": false
+        }
+      ],
+      "batches": {
+        "Simple-Batch1": {
+          "variant": "Simple",
+          "batchNumber": 1,
+          "avgTimestamp": "2026-02-22T10:55:06.852Z",
+          "dateRange": {
+            "first": "2026-02-22T09:52:07.140Z",
+            "last": "2026-02-22T11:58:06.565Z"
+          },
+          "count": 5,
+          "metrics": {
+            "avgOverallScore": 2.81,
+            "avgSldsScore": 0.69,
+            "avgViolations": 19.4,
+            "minScore": 2.69,
+            "maxScore": 2.88,
+            "stdDev": 0.07,
+            "distribution": {
+              "production": 0,
+              "prototype": 5,
+              "draft": 0
+            },
+            "models": {
+              "claude-3-7-sonnet": 5
+            }
+          }
+        },
+        "Simple-Batch2": {
+          "variant": "Simple",
+          "batchNumber": 2,
+          "avgTimestamp": "2026-02-22T16:00:18.924Z",
+          "dateRange": {
+            "first": "2026-02-22T14:33:38.849Z",
+            "last": "2026-02-22T17:26:59.000Z"
+          },
+          "count": 5,
+          "metrics": {
+            "avgOverallScore": 2.85,
+            "avgSldsScore": 0.77,
+            "avgViolations": 25.4,
+            "minScore": 2.74,
+            "maxScore": 2.93,
+            "stdDev": 0.07,
+            "distribution": {
+              "production": 0,
+              "prototype": 5,
+              "draft": 0
+            },
+            "models": {
+              "claude-3-7-sonnet": 5
+            }
+          }
+        },
+        "Simple-Batch3": {
+          "variant": "Simple",
+          "batchNumber": 3,
+          "avgTimestamp": "2026-02-27T01:31:11.891Z",
+          "dateRange": {
+            "first": "2026-02-25T11:45:34.342Z",
+            "last": "2026-02-28T15:16:49.441Z"
+          },
+          "count": 5,
+          "metrics": {
+            "avgOverallScore": 2.84,
+            "avgSldsScore": 0.75,
+            "avgViolations": 24.2,
+            "minScore": 2.77,
+            "maxScore": 2.9,
+            "stdDev": 0.06,
+            "distribution": {
+              "production": 0,
+              "prototype": 5,
+              "draft": 0
+            },
+            "models": {
+              "claude-3-7-sonnet": 5
+            }
+          }
+        },
+        "Simple-Batch4": {
+          "variant": "Simple",
+          "batchNumber": 4,
+          "avgTimestamp": "2026-03-04T10:01:08.672Z",
+          "dateRange": {
+            "first": "2026-03-03T11:53:39.609Z",
+            "last": "2026-03-05T08:08:37.735Z"
+          },
+          "count": 5,
+          "metrics": {
+            "avgOverallScore": 2.66,
+            "avgSldsScore": 0.59,
+            "avgViolations": 22.2,
+            "minScore": 2.51,
+            "maxScore": 2.77,
+            "stdDev": 0.11,
+            "distribution": {
+              "production": 0,
+              "prototype": 5,
+              "draft": 0
+            },
+            "models": {
+              "claude-4-5-sonnet": 5
+            }
+          }
+        },
+        "Simple-Batch5": {
+          "variant": "Simple",
+          "batchNumber": 5,
+          "avgTimestamp": "2026-03-05T22:37:50.151Z",
+          "dateRange": {
+            "first": "2026-03-05T12:07:34.827Z",
+            "last": "2026-03-06T09:08:05.476Z"
+          },
+          "count": 5,
+          "metrics": {
+            "avgOverallScore": 2.67,
+            "avgSldsScore": 0.56,
+            "avgViolations": 23.6,
+            "minScore": 2.54,
+            "maxScore": 2.81,
+            "stdDev": 0.1,
+            "distribution": {
+              "production": 0,
+              "prototype": 5,
+              "draft": 0
+            },
+            "models": {
+              "claude-4-5-sonnet": 5
+            }
+          }
+        },
+        "Simple-Batch6": {
+          "variant": "Simple",
+          "batchNumber": 6,
+          "avgTimestamp": "2026-03-06T13:56:51.841Z",
+          "dateRange": {
+            "first": "2026-03-06T13:23:55.504Z",
+            "last": "2026-03-06T14:29:48.179Z"
+          },
+          "count": 5,
+          "metrics": {
+            "avgOverallScore": 2.59,
+            "avgSldsScore": 0.49,
+            "avgViolations": 39,
+            "minScore": 2.45,
+            "maxScore": 2.77,
+            "stdDev": 0.14,
+            "distribution": {
+              "production": 0,
+              "prototype": 5,
+              "draft": 0
+            },
+            "models": {
+              "claude-4-5-sonnet": 5
+            }
+          }
+        },
+        "Simple-Batch7": {
+          "variant": "Simple",
+          "batchNumber": 7,
+          "avgTimestamp": "2026-03-10T01:53:46.318Z",
+          "dateRange": {
+            "first": "2026-03-09T13:51:26.475Z",
+            "last": "2026-03-10T13:56:06.162Z"
+          },
+          "count": 5,
+          "metrics": {
+            "avgOverallScore": 2.75,
+            "avgSldsScore": 0.67,
+            "avgViolations": 21.8,
+            "minScore": 2.43,
+            "maxScore": 2.96,
+            "stdDev": 0.18,
+            "distribution": {
+              "production": 0,
+              "prototype": 5,
+              "draft": 0
+            },
+            "models": {
+              "claude-4-5-sonnet": 5
+            }
+          }
+        },
+        "Simple-Batch8": {
+          "variant": "Simple",
+          "batchNumber": 8,
+          "avgTimestamp": "2026-03-11T06:36:04.453Z",
+          "dateRange": {
+            "first": "2026-03-11T06:29:37.224Z",
+            "last": "2026-03-11T06:42:31.682Z"
+          },
+          "count": 5,
+          "metrics": {
+            "avgOverallScore": 2.62,
+            "avgSldsScore": 0.57,
+            "avgViolations": 23,
+            "minScore": 2.47,
+            "maxScore": 2.91,
+            "stdDev": 0.16,
+            "distribution": {
+              "production": 0,
+              "prototype": 5,
+              "draft": 0
+            },
+            "models": {
+              "claude-4-5-sonnet": 5
+            }
+          }
+        },
+        "Simple-Batch9": {
+          "variant": "Simple",
+          "batchNumber": 9,
+          "avgTimestamp": "2026-03-11T09:14:18.727Z",
+          "dateRange": {
+            "first": "2026-03-11T07:25:11.151Z",
+            "last": "2026-03-11T11:03:26.303Z"
+          },
+          "count": 5,
+          "metrics": {
+            "avgOverallScore": 2.61,
+            "avgSldsScore": 0.55,
+            "avgViolations": 32.2,
+            "minScore": 2.3,
+            "maxScore": 2.96,
+            "stdDev": 0.21,
+            "distribution": {
+              "production": 0,
+              "prototype": 5,
+              "draft": 0
+            },
+            "models": {
+              "claude-4-5-sonnet": 5
+            }
+          }
+        },
+        "Simple-Batch10": {
+          "variant": "Simple",
+          "batchNumber": 10,
+          "avgTimestamp": "2026-03-11T11:43:36.419Z",
+          "dateRange": {
+            "first": "2026-03-11T11:22:42.437Z",
+            "last": "2026-03-11T12:04:30.402Z"
+          },
+          "count": 5,
+          "metrics": {
+            "avgOverallScore": 2.69,
+            "avgSldsScore": 0.63,
+            "avgViolations": 18.4,
+            "minScore": 2.54,
+            "maxScore": 3,
+            "stdDev": 0.17,
+            "distribution": {
+              "production": 1,
+              "prototype": 4,
+              "draft": 0
+            },
+            "models": {
+              "claude-4-5-sonnet": 5
+            }
+          }
+        },
+        "Simple-Batch11": {
+          "variant": "Simple",
+          "batchNumber": 11,
+          "avgTimestamp": "2026-03-14T10:21:28.463Z",
+          "dateRange": {
+            "first": "2026-03-11T12:26:23.186Z",
+            "last": "2026-03-17T08:16:33.740Z"
+          },
+          "count": 4,
+          "metrics": {
+            "avgOverallScore": 2.69,
+            "avgSldsScore": 0.63,
+            "avgViolations": 26,
+            "minScore": 2.45,
+            "maxScore": 2.96,
+            "stdDev": 0.21,
+            "distribution": {
+              "production": 0,
+              "prototype": 4,
+              "draft": 0
+            },
+            "models": {
+              "claude-4-5-sonnet": 4
+            }
+          }
+        },
+        "Moderate-Batch1": {
+          "variant": "Moderate",
+          "batchNumber": 1,
+          "avgTimestamp": "2026-02-27T00:35:07.991Z",
+          "dateRange": {
+            "first": "2026-02-25T09:12:46.436Z",
+            "last": "2026-02-28T15:57:29.547Z"
+          },
+          "count": 5,
+          "metrics": {
+            "avgOverallScore": 2.55,
+            "avgSldsScore": 0.48,
+            "avgViolations": 39.6,
+            "minScore": 2.3,
+            "maxScore": 2.65,
+            "stdDev": 0.14,
+            "distribution": {
+              "production": 0,
+              "prototype": 5,
+              "draft": 0
+            },
+            "models": {
+              "claude-3-7-sonnet": 5
+            }
+          }
+        },
+        "Moderate-Batch2": {
+          "variant": "Moderate",
+          "batchNumber": 2,
+          "avgTimestamp": "2026-02-28T16:06:33.709Z",
+          "dateRange": {
+            "first": "2026-02-28T16:00:46.693Z",
+            "last": "2026-02-28T16:12:20.726Z"
+          },
+          "count": 3,
+          "metrics": {
+            "avgOverallScore": 2.55,
+            "avgSldsScore": 0.39,
+            "avgViolations": 48.7,
+            "minScore": 2.45,
+            "maxScore": 2.65,
+            "stdDev": 0.08,
+            "distribution": {
+              "production": 0,
+              "prototype": 3,
+              "draft": 0
+            },
+            "models": {
+              "claude-3-7-sonnet": 3
+            }
+          }
+        }
+      },
+      "summary": {
+        "totalComponents": 79,
+        "avgOverallScore": 2.69,
+        "avgSldsScore": 0.61,
+        "qualityDistribution": {
+          "production": 1,
+          "prototype": 78,
+          "draft": 0
+        }
+      }
+    },
+    {
+      "id": "snapshot-2026-03-21T15-28-16-636Z",
+      "timestamp": "2026-03-21T15:28:16.636Z",
+      "date": "2026-03-21",
+      "components": [
+        {
+          "componentName": "3stepWizardWithProgressIndicatorAnd6d616c77",
+          "utteranceId": "C14",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 3",
+          "complexity": "Advanced",
+          "baseline_slds": true,
+          "scores": {
+            "overall": 2.57,
+            "slds_linter": 0.63,
+            "slds_quality": 1,
+            "prd_compliance": 0.7,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 15,
+            "errors": 0,
+            "total": 15
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-11T11:22:42.437Z"
+        },
+        {
+          "componentName": "3stepWizardWithProgressIndicatorAndDf82874b",
+          "utteranceId": "C14",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 3",
+          "complexity": "Advanced",
+          "baseline_slds": true,
+          "scores": {
+            "overall": 2.53,
+            "slds_linter": 0.37,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 36,
+            "errors": 0,
+            "total": 36
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-11T12:26:23.186Z"
+        },
+        {
+          "componentName": "3stepWizardWithProgressIndicatorAndE642eb6c",
+          "utteranceId": "C14",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 3",
+          "complexity": "Advanced",
+          "baseline_slds": true,
+          "scores": {
+            "overall": 2.6,
+            "slds_linter": 0.66,
+            "slds_quality": 1,
+            "prd_compliance": 0.7,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 16,
+            "errors": 0,
+            "total": 16
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-11T10:54:23.196Z"
+        },
+        {
+          "componentName": "3stepWizardWithProgressIndicatorAndEcf1468f",
+          "utteranceId": "C14",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 3",
+          "complexity": "Advanced",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.45,
+            "slds_linter": 0.26,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 63,
+            "errors": 0,
+            "total": 63
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-11T12:34:04.896Z"
+        },
+        {
+          "componentName": "3stepWizardWithProgressIndicatorAndFdafd964",
+          "utteranceId": "C14",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 3",
+          "complexity": "Advanced",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.3,
+            "slds_linter": 0.26,
+            "slds_quality": 1,
+            "prd_compliance": 0.7,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 75,
+            "errors": 0,
+            "total": 75
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-11T11:03:26.303Z"
+        },
+        {
+          "componentName": "4AlertsSuccessErrorWarningInfo49684baf",
+          "utteranceId": "C07",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.51,
+            "slds_linter": 0.54,
+            "slds_quality": 0.7,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 22,
+            "errors": 0,
+            "total": 22
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-03T18:46:48.713Z"
+        },
+        {
+          "componentName": "4AlertsSuccessErrorWarningInfo5edbfc89",
+          "utteranceId": "C07",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.47,
+            "slds_linter": 0.69,
+            "slds_quality": 0.4,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 17,
+            "errors": 0,
+            "total": 17
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-11T06:31:57.092Z"
+        },
+        {
+          "componentName": "4AlertsSuccessErrorWarningInfoDf286ed0",
+          "utteranceId": "C07",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.81,
+            "slds_linter": 0.75,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 2,
+            "errors": 3,
+            "total": 5
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-05T12:11:19.662Z"
+        },
+        {
+          "componentName": "4AlertsSuccessGreenErrorRedFcf679ff",
+          "utteranceId": "C07",
+          "variant": "Moderate",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.65,
+            "slds_linter": 0.53,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 27,
+            "errors": 0,
+            "total": 27
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-28T16:00:46.693Z"
+        },
+        {
+          "componentName": "4NotificationAlertsWithProperSlds078ff351",
+          "utteranceId": "C07",
+          "variant": "Detailed",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": true,
+          "scores": {
+            "overall": 2.93,
+            "slds_linter": 0.91,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 1,
+            "errors": 2,
+            "total": 3
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-12T17:45:55.275Z"
+        },
+        {
+          "componentName": "4NotificationAlertsWithProperSldsE39d2043",
+          "utteranceId": "C07",
+          "variant": "Detailed",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.69,
+            "slds_linter": 0.58,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 17,
+            "errors": 0,
+            "total": 17
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-12T18:01:34.490Z"
+        },
+        {
+          "componentName": "cardGrid4ColumnsDesktop2Cb530bec",
+          "utteranceId": "C05",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.96,
+            "slds_linter": 0.95,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 2,
+            "errors": 0,
+            "total": 2
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-10T13:56:06.162Z"
+        },
+        {
+          "componentName": "comprehensiveContactFormWithNameField62170281",
+          "utteranceId": "C02",
+          "variant": "Detailed",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": true,
+          "scores": {
+            "overall": 2.61,
+            "slds_linter": 0.48,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 21,
+            "errors": 3,
+            "total": 24
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-12T10:27:23.785Z"
+        },
+        {
+          "componentName": "comprehensiveContactFormWithNameFieldD7678868",
+          "utteranceId": "C02",
+          "variant": "Detailed",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.63,
+            "slds_linter": 0.5,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 23,
+            "errors": 0,
+            "total": 23
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-12T10:40:39.115Z"
+        },
+        {
+          "componentName": "confirmationModalForDeletionUsingSlds3d1fd5f6",
+          "utteranceId": "C04",
+          "variant": "Detailed",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.52,
+            "slds_linter": 0.36,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 30,
+            "errors": 1,
+            "total": 31
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-12T10:50:21.342Z"
+        },
+        {
+          "componentName": "confirmationModalForDeletionUsingSldsE9111a18",
+          "utteranceId": "C04",
+          "variant": "Detailed",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": true,
+          "scores": {
+            "overall": 2.72,
+            "slds_linter": 0.83,
+            "slds_quality": 1,
+            "prd_compliance": 0.7,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 4,
+            "errors": 1,
+            "total": 5
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-12T10:35:54.681Z"
+        },
+        {
+          "componentName": "contactCardWithAvatarNameTitle569326e5",
+          "utteranceId": "C10",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.54,
+            "slds_linter": 0.39,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 44,
+            "errors": 0,
+            "total": 44
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-05T08:08:37.735Z"
+        },
+        {
+          "componentName": "contactCardWithAvatarNameTitleDc584ab4",
+          "utteranceId": "C10",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.54,
+            "slds_linter": 0.39,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 31,
+            "errors": 0,
+            "total": 31
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-11T06:42:31.682Z"
+        },
+        {
+          "componentName": "contactFormNameTextEmailFormat0878e030",
+          "utteranceId": "C02",
+          "variant": "Moderate",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.5,
+            "slds_linter": 0.53,
+            "slds_quality": 1,
+            "prd_compliance": 0.7,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 21,
+            "errors": 0,
+            "total": 21
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-28T15:33:54.967Z"
+        },
+        {
+          "componentName": "create3stepWizardWith",
+          "utteranceId": "C14",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 3",
+          "complexity": "Advanced",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.77,
+            "slds_linter": 0.544,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 57,
+            "errors": 0,
+            "total": 57
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-25T12:19:04.351Z"
+        },
+        {
+          "componentName": "createAlertsSuccessError",
+          "utteranceId": "C07",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.93,
+            "slds_linter": 0.8589999999999999,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 13,
+            "errors": 0,
+            "total": 13
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-22T14:33:38.849Z"
+        },
+        {
+          "componentName": "createContactCardWith",
+          "utteranceId": "C10",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.74,
+            "slds_linter": 0.7689999999999999,
+            "slds_quality": 1,
+            "prd_compliance": 0.7,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 19,
+            "errors": 0,
+            "total": 19
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-22T17:23:01.487Z"
+        },
+        {
+          "componentName": "createDeleteConfirmationModal",
+          "utteranceId": "C04",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.88,
+            "slds_linter": 0.766,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 18,
+            "errors": 1,
+            "total": 19
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-22T10:46:11.778Z"
+        },
+        {
+          "componentName": "createFaqAccordionWith",
+          "utteranceId": "C08",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.82,
+            "slds_linter": 0.64,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 42,
+            "errors": 0,
+            "total": 42
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-22T15:38:23.388Z"
+        },
+        {
+          "componentName": "createFormNameEmail",
+          "utteranceId": "C02",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.86,
+            "slds_linter": 0.7089999999999999,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 25,
+            "errors": 0,
+            "total": 25
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-22T09:59:02.779Z"
+        },
+        {
+          "componentName": "createFormWithText",
+          "utteranceId": "C09",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.9,
+            "slds_linter": 0.7959999999999999,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 27,
+            "errors": 0,
+            "total": 27
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-22T16:40:51.064Z"
+        },
+        {
+          "componentName": "createPageHeaderWith",
+          "utteranceId": "C06",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.69,
+            "slds_linter": 0.679,
+            "slds_quality": 0.7,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 15,
+            "errors": 0,
+            "total": 15
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-22T11:58:06.565Z"
+        },
+        {
+          "componentName": "createPrimaryActionButton",
+          "utteranceId": "C01",
+          "variant": "Moderate",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.63,
+            "slds_linter": 0.559,
+            "slds_quality": 1,
+            "prd_compliance": 0.7,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 67,
+            "errors": 0,
+            "total": 67
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-25T09:12:46.436Z"
+        },
+        {
+          "componentName": "createPrimaryButtonWith",
+          "utteranceId": "C01",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.85,
+            "slds_linter": 0.7,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 20,
+            "errors": 0,
+            "total": 20
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-22T09:52:07.140Z"
+        },
+        {
+          "componentName": "createSortableTableProduct",
+          "utteranceId": "C03",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.79,
+            "slds_linter": 0.5800000000000001,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 18,
+            "errors": 0,
+            "total": 18
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-22T10:38:34.011Z"
+        },
+        {
+          "componentName": "createTabsOverviewDetails",
+          "utteranceId": "C13",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.77,
+            "slds_linter": 0.829,
+            "slds_quality": 1,
+            "prd_compliance": 0.7,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 13,
+            "errors": 0,
+            "total": 13
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-25T11:45:34.342Z"
+        },
+        {
+          "componentName": "createVerticalNavMenu",
+          "utteranceId": "C11",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.88,
+            "slds_linter": 0.7629999999999999,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 26,
+            "errors": 0,
+            "total": 26
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-22T17:26:59.000Z"
+        },
+        {
+          "componentName": "deleteConfirmationModalWithCancelAnd27019baa",
+          "utteranceId": "C04",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.43,
+            "slds_linter": 0.24,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 62,
+            "errors": 1,
+            "total": 63
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-10T13:54:09.673Z"
+        },
+        {
+          "componentName": "faqAccordionWith3SectionsEach2efd09a1",
+          "utteranceId": "C08",
+          "variant": "Moderate",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.54,
+            "slds_linter": 0.38,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 42,
+            "errors": 0,
+            "total": 42
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-28T16:07:01.978Z"
+        },
+        {
+          "componentName": "faqAccordionWith3SectionsFirst0be93d5c",
+          "utteranceId": "C08",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.91,
+            "slds_linter": 0.88,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 9,
+            "errors": 0,
+            "total": 9
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-11T06:36:05.827Z"
+        },
+        {
+          "componentName": "faqAccordionWith3SectionsFirst3f2bda67",
+          "utteranceId": "C08",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.45,
+            "slds_linter": 0.26,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 55,
+            "errors": 0,
+            "total": 55
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-06T13:32:30.374Z"
+        },
+        {
+          "componentName": "faqAccordionWith3SectionsFirst827fabec",
+          "utteranceId": "C08",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.64,
+            "slds_linter": 0.52,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 25,
+            "errors": 0,
+            "total": 25
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-06T09:08:05.476Z"
+        },
+        {
+          "componentName": "faqAccordionWith3SectionsFirst9b5a8af1",
+          "utteranceId": "C08",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.45,
+            "slds_linter": 0.26,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 83,
+            "errors": 0,
+            "total": 83
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-06T13:23:55.504Z"
+        },
+        {
+          "componentName": "faqAccordionWith3SectionsFirstBe7ac560",
+          "utteranceId": "C08",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.77,
+            "slds_linter": 0.69,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 15,
+            "errors": 0,
+            "total": 15
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-05T12:14:22.751Z"
+        },
+        {
+          "componentName": "formNameEmailMessageShowErrors22a50f96",
+          "utteranceId": "C02",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.74,
+            "slds_linter": 0.65,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 16,
+            "errors": 0,
+            "total": 16
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-03T13:41:31.994Z"
+        },
+        {
+          "componentName": "formNameEmailMessageShowErrorsC304cee9",
+          "utteranceId": "C02",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.76,
+            "slds_linter": 0.68,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 17,
+            "errors": 0,
+            "total": 17
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-10T13:46:35.279Z"
+        },
+        {
+          "componentName": "formNameEmailMessageShowErrorsE34f2b6d",
+          "utteranceId": "C02",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.77,
+            "slds_linter": 0.69,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 16,
+            "errors": 0,
+            "total": 16
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-06T14:24:43.310Z"
+        },
+        {
+          "componentName": "formWithTextEmailPhoneDropdown51b9ac1e",
+          "utteranceId": "C09",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.65,
+            "slds_linter": 0.53,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 27,
+            "errors": 0,
+            "total": 27
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-11T06:38:29.422Z"
+        },
+        {
+          "componentName": "formWithTextEmailPhoneDropdown78286eb8",
+          "utteranceId": "C09",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": true,
+          "scores": {
+            "overall": 2.76,
+            "slds_linter": 0.68,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 11,
+            "errors": 0,
+            "total": 11
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-11T11:31:18.085Z"
+        },
+        {
+          "componentName": "formWithTextEmailPhoneDropdownC0001f11",
+          "utteranceId": "C09",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.6,
+            "slds_linter": 0.47,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 26,
+            "errors": 0,
+            "total": 26
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-11T11:35:00.665Z"
+        },
+        {
+          "componentName": "formWithTextEmailPhoneDropdownE48117d4",
+          "utteranceId": "C09",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.6,
+            "slds_linter": 0.47,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 30,
+            "errors": 0,
+            "total": 30
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-05T12:19:11.395Z"
+        },
+        {
+          "componentName": "fullyResponsiveSortableDataTableWith04d610c6",
+          "utteranceId": "C03",
+          "variant": "Detailed",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.53,
+            "slds_linter": 0.37,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 34,
+            "errors": 0,
+            "total": 34
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-12T10:46:10.681Z"
+        },
+        {
+          "componentName": "fullyResponsiveSortableDataTableWith19dc0622",
+          "utteranceId": "C03",
+          "variant": "Detailed",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": true,
+          "scores": {
+            "overall": 2.75,
+            "slds_linter": 0.67,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 13,
+            "errors": 0,
+            "total": 13
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-12T10:32:00.198Z"
+        },
+        {
+          "componentName": "pageHeaderJohnSmithWithAccount3b74227d",
+          "utteranceId": "C06",
+          "variant": "Moderate",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.65,
+            "slds_linter": 0.53,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 23,
+            "errors": 0,
+            "total": 23
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-28T15:57:29.547Z"
+        },
+        {
+          "componentName": "pageHeaderWithAccountIconAt4af92c6c",
+          "utteranceId": "C06",
+          "variant": "Detailed",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": true,
+          "scores": {
+            "overall": 2.9,
+            "slds_linter": 0.86,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 7,
+            "errors": 0,
+            "total": 7
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-16T07:47:35.362Z"
+        },
+        {
+          "componentName": "pageHeaderWithAccountIconAtE401ca11",
+          "utteranceId": "C06",
+          "variant": "Detailed",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.66,
+            "slds_linter": 0.54,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 23,
+            "errors": 0,
+            "total": 23
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-16T07:40:45.548Z"
+        },
+        {
+          "componentName": "pageHeaderWithAccountIconAtEb418c9d",
+          "utteranceId": "C06",
+          "variant": "Detailed",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": true,
+          "scores": {
+            "overall": 2.88,
+            "slds_linter": 0.84,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 8,
+            "errors": 0,
+            "total": 8
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-12T17:42:24.521Z"
+        },
+        {
+          "componentName": "pageHeaderWithAccountIconAtEc3a4c6f",
+          "utteranceId": "C06",
+          "variant": "Detailed",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.65,
+            "slds_linter": 0.53,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 24,
+            "errors": 0,
+            "total": 24
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-12T17:57:00.364Z"
+        },
+        {
+          "componentName": "pageHeaderWithAccountIconAtFb064716",
+          "utteranceId": "C06",
+          "variant": "Detailed",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.54,
+            "slds_linter": 0.38,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 34,
+            "errors": 0,
+            "total": 34
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-12T18:18:46.902Z"
+        },
+        {
+          "componentName": "pageHeaderWithTitleAndAction35185f19",
+          "utteranceId": "C06",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.75,
+            "slds_linter": 0.66,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 17,
+            "errors": 0,
+            "total": 17
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-03T15:56:23.241Z"
+        },
+        {
+          "componentName": "pageHeaderWithTitleAndAction8b50d63c",
+          "utteranceId": "C06",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.54,
+            "slds_linter": 0.38,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 31,
+            "errors": 0,
+            "total": 31
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-11T06:29:37.224Z"
+        },
+        {
+          "componentName": "pageHeaderWithTitleAndActionFb7c8482",
+          "utteranceId": "C06",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.54,
+            "slds_linter": 0.38,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 43,
+            "errors": 0,
+            "total": 43
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-05T12:07:34.827Z"
+        },
+        {
+          "componentName": "primaryActionButtonWithASave4addabb5",
+          "utteranceId": "C01",
+          "variant": "Moderate",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.65,
+            "slds_linter": 0.53,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 27,
+            "errors": 0,
+            "total": 27
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-28T15:28:40.957Z"
+        },
+        {
+          "componentName": "primaryActionButtonWithSaveIcon7194c020",
+          "utteranceId": "C01",
+          "variant": "Detailed",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": true,
+          "scores": {
+            "overall": 2.81,
+            "slds_linter": 0.75,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 2,
+            "errors": 3,
+            "total": 5
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-12T09:25:15.420Z"
+        },
+        {
+          "componentName": "primaryActionButtonWithSaveIcon88c7b8d3",
+          "utteranceId": "C01",
+          "variant": "Detailed",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.96,
+            "slds_linter": 0.95,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 1,
+            "errors": 0,
+            "total": 1
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-12T09:28:52.613Z"
+        },
+        {
+          "componentName": "primaryButtonWithASaveIcon2a4b46ee",
+          "utteranceId": "C01",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.88,
+            "slds_linter": 0.7509999999999999,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 26,
+            "errors": 0,
+            "total": 26
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-28T06:41:48.679Z"
+        },
+        {
+          "componentName": "primaryButtonWithASaveIcon38dac3a6",
+          "utteranceId": "C01",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.75,
+            "slds_linter": 0.87,
+            "slds_quality": 1,
+            "prd_compliance": 0.7,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 7,
+            "errors": 0,
+            "total": 7
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-06T14:21:55.996Z"
+        },
+        {
+          "componentName": "primaryButtonWithASaveIcon3f0774ab",
+          "utteranceId": "C01",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.87,
+            "slds_linter": 0.7389999999999999,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 20,
+            "errors": 0,
+            "total": 20
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-27T11:15:02.333Z"
+        },
+        {
+          "componentName": "primaryButtonWithASaveIcon55f94f20",
+          "utteranceId": "C01",
+          "variant": "Simple",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.9,
+            "slds_linter": 0.87,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 5,
+            "errors": 0,
+            "total": 5
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-28T15:16:49.441Z"
+        },
+        {
+          "componentName": "primaryButtonWithASaveIcon60431c36",
+          "utteranceId": "C01",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.81,
+            "slds_linter": 0.95,
+            "slds_quality": 1,
+            "prd_compliance": 0.7,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 1,
+            "errors": 0,
+            "total": 1
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-17T08:14:00.301Z"
+        },
+        {
+          "componentName": "primaryButtonWithASaveIcon918a2119",
+          "utteranceId": "C01",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.84,
+            "slds_linter": 0.78,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 10,
+            "errors": 0,
+            "total": 10
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-09T13:51:26.475Z"
+        },
+        {
+          "componentName": "primaryButtonWithASaveIcon9de0b8a7",
+          "utteranceId": "C01",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.96,
+            "slds_linter": 0.95,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 4,
+            "errors": 0,
+            "total": 4
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-17T08:16:33.740Z"
+        },
+        {
+          "componentName": "primaryButtonWithASaveIconC0e76cf4",
+          "utteranceId": "C01",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.77,
+            "slds_linter": 0.69,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 12,
+            "errors": 0,
+            "total": 12
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-03T11:53:39.609Z"
+        },
+        {
+          "componentName": "responsiveProductCardGridUsingSlds4991e3f6",
+          "utteranceId": "C05",
+          "variant": "Detailed",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.65,
+            "slds_linter": 0.53,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 23,
+            "errors": 0,
+            "total": 23
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-12T17:52:14.072Z"
+        },
+        {
+          "componentName": "responsiveProductCardGridUsingSldsFdf13664",
+          "utteranceId": "C05",
+          "variant": "Detailed",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": true,
+          "scores": {
+            "overall": 2.69,
+            "slds_linter": 0.59,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 12,
+            "errors": 0,
+            "total": 12
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-12T17:40:15.414Z"
+        },
+        {
+          "componentName": "responsiveProductCardGridWith611d4397d",
+          "utteranceId": "C05",
+          "variant": "Moderate",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.3,
+            "slds_linter": 0.27,
+            "slds_quality": 1,
+            "prd_compliance": 0.7,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 60,
+            "errors": 0,
+            "total": 60
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-28T15:44:17.400Z"
+        },
+        {
+          "componentName": "sortableTableProductNamePriceCategory5f50fe64",
+          "utteranceId": "C03",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.54,
+            "slds_linter": 0.38,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 34,
+            "errors": 0,
+            "total": 34
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-06T14:29:48.179Z"
+        },
+        {
+          "componentName": "sortableTableProductNamePriceCategoryA2ca861d",
+          "utteranceId": "C03",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 1",
+          "complexity": "Simple",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.76,
+            "slds_linter": 0.68,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 17,
+            "errors": 0,
+            "total": 17
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-10T13:49:18.195Z"
+        },
+        {
+          "componentName": "userProfileFormNameTextEmailC8b10de5",
+          "utteranceId": "C09",
+          "variant": "Moderate",
+          "model": "claude-3-7-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.45,
+            "slds_linter": 0.26,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 77,
+            "errors": 0,
+            "total": 77
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-02-28T16:12:20.726Z"
+        },
+        {
+          "componentName": "verticalNavMenuWith5Items423ecf65",
+          "utteranceId": "C11",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.54,
+            "slds_linter": 0.38,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 36,
+            "errors": 0,
+            "total": 36
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-11T10:24:38.253Z"
+        },
+        {
+          "componentName": "verticalNavMenuWith5Items47126c35",
+          "utteranceId": "C11",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": false,
+          "scores": {
+            "overall": 2.65,
+            "slds_linter": 0.53,
+            "slds_quality": 1,
+            "prd_compliance": 1,
+            "security": 1
+          },
+          "violations": {
+            "warnings": 30,
+            "errors": 0,
+            "total": 30
+          },
+          "qualityGate": "prototype",
+          "timestamp": "2026-03-11T07:25:11.151Z"
+        },
+        {
+          "componentName": "verticalNavMenuWith5Items5d1eaf1e",
+          "utteranceId": "C11",
+          "variant": "Simple",
+          "model": "claude-4-5-sonnet",
+          "tier": "Tier 2",
+          "complexity": "Intermediate",
+          "baseline_slds": true,
+          "scores": {
             "overall": 3,
             "slds_linter": 1,
             "slds_quality": 1,
@@ -20625,6 +23032,7 @@
           "model": "claude-4-5-sonnet",
           "tier": "Tier 2",
           "complexity": "Intermediate",
+          "baseline_slds": true,
           "scores": {
             "overall": 2.96,
             "slds_linter": 0.94,
@@ -20647,6 +23055,7 @@
           "model": "claude-4-5-sonnet",
           "tier": "Tier 2",
           "complexity": "Intermediate",
+          "baseline_slds": false,
           "scores": {
             "overall": 2.54,
             "slds_linter": 0.38,
@@ -21016,11 +23425,11 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-03-20T04:56:54.991Z",
-    "totalSnapshots": 16,
+    "lastUpdated": "2026-03-21T15:28:16.636Z",
+    "totalSnapshots": 17,
     "dateRange": {
       "first": "2026-02-22",
-      "last": "2026-03-20"
+      "last": "2026-03-21"
     }
   }
 }

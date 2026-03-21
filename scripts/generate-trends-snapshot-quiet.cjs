@@ -188,6 +188,7 @@ function formatComponentData(component) {
     model: component.model,
     tier: component.tier,
     complexity: component.complexity,
+    baseline_slds: component.baseline_slds || false,
     scores: {
       overall: component.scores?.overall || 0,
       slds_linter: component.scores?.slds_linter || 0,

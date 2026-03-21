@@ -80,7 +80,7 @@ export default class DashboardApp extends LightningElement {
       sldsCompliance: 0,
       tiers: ['Tier 1', 'Tier 2', 'Tier 3'],
       complexities: ['Simple', 'Intermediate', 'Advanced'],
-      variants: ['Simple', 'Moderate', 'Complex'],
+      variants: ['Simple', 'Moderate', 'Detailed'],
       models: [...new Set(this.components.map(c => c.model).filter(m => m))],
       utteranceId: ''
     };

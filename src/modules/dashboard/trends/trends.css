@@ -301,3 +301,19 @@ code {
     flex-wrap: wrap;
   }
 }
+
+/* Baseline component styling */
+.slds-checkbox[data-is-baseline="true"] {
+  background-color: rgba(127, 141, 225, 0.08);
+  border-left: 3px solid #7f8de1;
+  padding-left: 0.625rem;
+  font-weight: 500;
+}
+
+.slds-checkbox[data-is-baseline="true"]:hover {
+  background-color: rgba(127, 141, 225, 0.15);
+}
+
+.slds-checkbox[data-is-baseline="true"] .slds-form-element__label {
+  color: #4c4398;
+}
