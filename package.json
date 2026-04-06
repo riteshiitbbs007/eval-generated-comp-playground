@@ -14,6 +14,7 @@
     "prebuild": "npm run generate:templates && npm run trends:snapshot:quiet",
     "build": "lwr build --clean",
     "build:prod-compat": "lwr build --clean --mode prod-compat",
+    "heroku-postbuild": "npm run generate:templates && npm run trends:snapshot:quiet && lwr build --clean",
     "start": "node server/index.js",
     "start:lwr": "lwr start",
     "stage": "yarn build && yarn start",
