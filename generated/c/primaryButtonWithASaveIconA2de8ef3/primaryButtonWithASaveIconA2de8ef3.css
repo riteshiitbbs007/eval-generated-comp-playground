@@ -1,0 +1,129 @@
+/**
+ * Primary Button with Save Icon - SLDS 2 Compliant Styling
+ * 
+ * Uses SLDS styling hooks for theme-aware, accessible styling
+ * Follows semantic color system and proper spacing patterns
+ */
+
+/* Host element styling */
+:host {
+    display: inline-block;
+}
+
+/* Custom button styling using SLDS 2 styling hooks */
+lightning-button {
+    /* Ensure proper font family inheritance */
+    font-family: var(--slds-g-font-family-base);
+}
+
+/* Enhanced primary button styling using semantic hooks */
+:host lightning-button[variant="brand"] {
+    /* Use accent colors for primary button theming */
+    --slds-c-button-brand-color-background: var(--slds-g-color-accent-container-1);
+    --slds-c-button-brand-text-color: var(--slds-g-color-on-accent-1);
+    --slds-c-button-brand-color-border: var(--slds-g-color-border-accent-1);
+    
+    /* Hover state using accent-2 for progression */
+    --slds-c-button-brand-color-background-hover: var(--slds-g-color-accent-container-2);
+    --slds-c-button-brand-text-color-hover: var(--slds-g-color-on-accent-2);
+    --slds-c-button-brand-color-border-hover: var(--slds-g-color-border-accent-2);
+    
+    /* Active state using accent-3 for final progression */
+    --slds-c-button-brand-color-background-active: var(--slds-g-color-accent-container-3);
+    --slds-c-button-brand-text-color-active: var(--slds-g-color-on-accent-3);
+    --slds-c-button-brand-color-border-active: var(--slds-g-color-border-accent-3);
+    
+    /* Focus state for accessibility */
+    --slds-c-button-brand-shadow-focus: 0 0 0 2px var(--slds-g-color-accent-container-1);
+    
+    /* Ensure proper spacing using SLDS hooks */
+    --slds-c-button-spacing-inline-start: var(--slds-g-spacing-4);
+    --slds-c-button-spacing-inline-end: var(--slds-g-spacing-4);
+    --slds-c-button-spacing-block-start: var(--slds-g-spacing-2);
+    --slds-c-button-spacing-block-end: var(--slds-g-spacing-2);
+    
+    /* Typography using SLDS font hooks */
+    --slds-c-button-font-weight: var(--slds-g-font-weight-5); /* Medium weight */
+    --slds-c-button-font-size: var(--slds-g-font-size-base);
+    --slds-c-button-line-height: var(--slds-g-font-lineheight-3);
+    
+    /* Border radius using SLDS hook */
+    --slds-c-button-radius-border: var(--slds-g-radius-border-1);
+}
+
+/* Icon styling within the button */
+:host lightning-button lightning-primitive-icon {
+    /* Ensure icon inherits proper color */
+    --slds-c-icon-color-foreground-default: currentColor;
+    
+    /* Icon spacing using SLDS hooks */
+    margin-inline-end: var(--slds-g-spacing-1);
+}
+
+/* Help text styling using semantic hooks */
+.slds-form-element__help {
+    color: var(--slds-g-color-on-surface-1); /* De-emphasized text */
+    font-size: 0.75rem; /* Smaller than base font size */
+    font-weight: var(--slds-g-font-weight-4); /* Regular weight */
+    line-height: var(--slds-g-font-lineheight-3);
+    margin-top: var(--slds-g-spacing-1); /* Minimal top spacing */
+}
+
+/* Disabled state styling */
+:host lightning-button[disabled] {
+    /* Use semantic disabled colors */
+    --slds-c-button-brand-color-background: var(--slds-g-color-disabled-container-1);
+    --slds-c-button-brand-text-color: var(--slds-g-color-on-disabled-1);
+    --slds-c-button-brand-color-border: var(--slds-g-color-border-disabled-1);
+    
+    /* Remove hover/active states when disabled */
+    --slds-c-button-brand-color-background-hover: var(--slds-g-color-disabled-container-1);
+    --slds-c-button-brand-text-color-hover: var(--slds-g-color-on-disabled-1);
+    --slds-c-button-brand-color-border-hover: var(--slds-g-color-border-disabled-1);
+    
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* Responsive adjustments using SLDS grid patterns */
+@media (max-width: 768px) {
+    /* Ensure button remains accessible on mobile */
+    :host lightning-button {
+        /* Maintain minimum touch target size (44px) */
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* High contrast mode adjustments for accessibility */
+@media (prefers-contrast: high) {
+    :host lightning-button[variant="brand"] {
+        /* Enhance borders for high contrast */
+        --slds-c-button-brand-color-border: var(--slds-g-color-border-accent-1);
+        border-width: 2px;
+    }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+    :host lightning-button {
+        /* Remove transitions for users who prefer reduced motion */
+        transition: none;
+    }
+}
+
+/* Focus-visible for better keyboard navigation */
+:host lightning-button:focus-visible {
+    /* Enhanced focus ring using accent colors */
+    outline: 2px solid var(--slds-g-color-accent-1);
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    :host {
+        /* Ensure button is visible in print */
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+    }
+}

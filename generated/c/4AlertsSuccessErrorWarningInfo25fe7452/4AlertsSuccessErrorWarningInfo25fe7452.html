@@ -1,0 +1,74 @@
+<template>
+    <!-- Container with responsive grid layout -->
+    <div class="slds-grid slds-wrap slds-gutters">
+        
+        <!-- Success Alert -->
+        <div class="slds-col slds-size_1-of-1 slds-m-bottom_small">
+            <div class="alert-success" role="alert">
+                <span class="slds-assistive-text">Success</span>
+                <lightning-icon 
+                    icon-name="utility:success" 
+                    alternative-text="Success" 
+                    size="small"
+                    class="alert-icon">
+                </lightning-icon>
+                <div class="alert-content">
+                    <h2 class="alert-heading">Success</h2>
+                    <p class="alert-message">Your operation completed successfully.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error Alert -->
+        <div class="slds-col slds-size_1-of-1 slds-m-bottom_small">
+            <div class="alert-error" role="alert">
+                <span class="slds-assistive-text">Error</span>
+                <lightning-icon 
+                    icon-name="utility:error" 
+                    alternative-text="Error" 
+                    size="small"
+                    class="alert-icon">
+                </lightning-icon>
+                <div class="alert-content">
+                    <h2 class="alert-heading">Error</h2>
+                    <p class="alert-message">An error occurred that needs to be addressed before proceeding.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Warning Alert -->
+        <div class="slds-col slds-size_1-of-1 slds-m-bottom_small">
+            <div class="alert-warning" role="alert">
+                <span class="slds-assistive-text">Warning</span>
+                <lightning-icon 
+                    icon-name="utility:warning" 
+                    alternative-text="Warning" 
+                    size="small"
+                    class="alert-icon">
+                </lightning-icon>
+                <div class="alert-content">
+                    <h2 class="alert-heading">Warning</h2>
+                    <p class="alert-message">Please be aware of potential issues before continuing.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Alert -->
+        <div class="slds-col slds-size_1-of-1">
+            <div class="alert-info" role="alert">
+                <span class="slds-assistive-text">Info</span>
+                <lightning-icon 
+                    icon-name="utility:info" 
+                    alternative-text="Info" 
+                    size="small"
+                    class="alert-icon">
+                </lightning-icon>
+                <div class="alert-content">
+                    <h2 class="alert-heading">Information</h2>
+                    <p class="alert-message">Here is some helpful information for you.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</template>

@@ -1,0 +1,46 @@
+{
+  "folderName": "faqAccordionWith3SectionsFirst-C08-Simple-20260403",
+  "componentName": "faqAccordionWith3SectionsFirstC9585d16",
+  "csvId": "C08",
+  "variant": "Simple",
+  "timestamp": "2026-04-03T09:29:10.345Z",
+  "utterance": "Create FAQ accordion with 3 sections, first expanded",
+  "tier": "Tier 2",
+  "complexity": "Intermediate",
+  "scores": {
+    "slds_linter": 0.95,
+    "slds_quality": 0.4,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.66,
+    "overall_readiness_label": "Prototype"
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 2,
+    "notes": 0
+  },
+  "utteranceId": "C08",
+  "errorsByType": {
+    "slds/no-slds-class-overrides": 1,
+    "slds/no-hardcoded-values-slds2": 1
+  },
+  "sldsToolsEnabled": false,
+  "testMode": "baseline",
+  "baseline_slds": true,
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/4511a871-6284-47fc-9e4a-b2a40f1c8980/r/019d52aa-fbdc-7000-8000-048a1f15a16f",
+  "langsmithRunId": "019d52aa-fbdc-7000-8000-048a1f15a16f",
+  "langsmithProjectName": "notable-touch-80",
+  "langsmithTraceId": "019d52aa-fbdc-7000-8000-048a1f15a16f",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C06-C09:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/faqAccordionWith3SectionsFirstC9585d16/screenshots/desktop.png"
+  }
+}

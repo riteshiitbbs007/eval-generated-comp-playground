@@ -1,0 +1,25 @@
+/**
+ * SLDS 2 Styling for Primary Button with Save Icon
+ * 
+ * This CSS uses SLDS styling hooks for theme-aware, accessible design.
+ * All styling is achieved through SLDS utility classes in the HTML template.
+ * 
+ * The lightning-button component automatically handles:
+ * - Accent color backgrounds (--slds-g-color-accent-container-1/2/3)
+ * - Text colors (--slds-g-color-on-accent-1/2/3)
+ * - Border colors (--slds-g-color-border-accent-*)
+ * - Spacing using SLDS spacing scale
+ * - Focus states for accessibility
+ * - Hover/active state transitions
+ * 
+ * No custom CSS overrides are needed as lightning-button follows
+ * SLDS 2 design tokens and styling hooks automatically.
+ */
+
+/* 
+ * Spacing utility class applied via HTML:
+ * slds-m-around_medium = var(--slds-g-spacing-4) = 16px margin on all sides
+ * 
+ * This provides appropriate spacing between the button and surrounding content
+ * following the SLDS grid system and spacing scale.
+ */

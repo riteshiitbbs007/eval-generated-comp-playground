@@ -1,0 +1,21 @@
+<template>
+    <!-- Primary Save Button with Icon following SLDS 2 compliance -->
+    <lightning-button
+        variant="brand"
+        label="Save"
+        title="Save changes"
+        icon-name="utility:save"
+        icon-position="left"
+        class="slds-m-around_small"
+        onclick={handleSave}
+        disabled={isDisabled}
+        aria-describedby={helpTextId}>
+    </lightning-button>
+    
+    <!-- Optional help text for accessibility -->
+    <template lwc:if={showHelpText}>
+        <div id={helpTextId} class="slds-form-element__help slds-text-color_weak slds-m-top_xx-small">
+            {helpText}
+        </div>
+    </template>
+</template>

@@ -1,0 +1,46 @@
+{
+  "folderName": "faqAccordionWith3SectionsFirst-C08-Simple-20260402",
+  "componentName": "faqAccordionWith3SectionsFirstEbbf5b6c",
+  "csvId": "C08",
+  "variant": "Simple",
+  "timestamp": "2026-04-02T09:17:12.664Z",
+  "utterance": "Create FAQ accordion with 3 sections, first expanded",
+  "tier": "Tier 2",
+  "complexity": "Intermediate",
+  "scores": {
+    "slds_linter": 0.39,
+    "slds_quality": 0.4,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.24,
+    "overall_readiness_label": "Prototype"
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 31,
+    "notes": 0
+  },
+  "utteranceId": "C08",
+  "errorsByType": {
+    "slds/no-slds-var-without-fallback": 25,
+    "slds/no-hardcoded-values-slds2": 6
+  },
+  "sldsToolsEnabled": true,
+  "testMode": "normal",
+  "baseline_slds": false,
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/927d351a-767d-4b19-a15e-3e3c6da31799/r/019d4d78-0612-7000-8000-07cdf4b5b1ff",
+  "langsmithRunId": "019d4d78-0612-7000-8000-07cdf4b5b1ff",
+  "langsmithProjectName": "earnest-nation-12",
+  "langsmithTraceId": "019d4d78-0612-7000-8000-07cdf4b5b1ff",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C03-C10:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/faqAccordionWith3SectionsFirstEbbf5b6c/screenshots/desktop.png"
+  }
+}

@@ -1,0 +1,94 @@
+/* Success Alert Styles - Uses SLDS 2 semantic feedback color hooks */
+.alert-success {
+    background-color: var(--slds-g-color-success-container-1);
+    color: var(--slds-g-color-on-success-1);
+    border-left-width: 4px;
+    border-left-style: solid;
+    border-left-color: var(--slds-g-color-border-success-1);
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.alert-success .alert-icon {
+    --slds-c-icon-color-foreground: var(--slds-g-color-success-1);
+    flex-shrink: 0;
+    margin-right: 0.5rem;
+}
+
+/* Error Alert Styles - Uses SLDS 2 semantic feedback color hooks */
+.alert-error {
+    background-color: var(--slds-g-color-error-container-1);
+    color: var(--slds-g-color-on-error-1);
+    border-left-width: 4px;
+    border-left-style: solid;
+    border-left-color: var(--slds-g-color-border-error-1);
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.alert-error .alert-icon {
+    --slds-c-icon-color-foreground: var(--slds-g-color-error-1);
+    flex-shrink: 0;
+    margin-right: 0.5rem;
+}
+
+/* Warning Alert Styles - Uses SLDS 2 semantic feedback color hooks */
+.alert-warning {
+    background-color: var(--slds-g-color-warning-container-1);
+    color: var(--slds-g-color-on-warning-1);
+    border-left-width: 4px;
+    border-left-style: solid;
+    border-left-color: var(--slds-g-color-border-warning-1);
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.alert-warning .alert-icon {
+    --slds-c-icon-color-foreground: var(--slds-g-color-warning-1);
+    flex-shrink: 0;
+    margin-right: 0.5rem;
+}
+
+/* Info Alert Styles - Uses SLDS 2 semantic feedback color hooks */
+.alert-info {
+    background-color: var(--slds-g-color-info-container-1);
+    color: var(--slds-g-color-on-info-1);
+    border-left-width: 4px;
+    border-left-style: solid;
+    border-left-color: var(--slds-g-color-border-info-1);
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.alert-info .alert-icon {
+    --slds-c-icon-color-foreground: var(--slds-g-color-info-1);
+    flex-shrink: 0;
+    margin-right: 0.5rem;
+}
+
+/* Common Alert Content Styles */
+.alert-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.alert-heading {
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin: 0 0 0.25rem 0;
+    line-height: 1.25;
+}
+
+.alert-message {
+    font-size: 0.8125rem;
+    margin: 0;
+    line-height: 1.5;
+}

@@ -1,0 +1,43 @@
+{
+  "folderName": "primaryButtonWithASaveIcon-C01-Simple-20260401",
+  "componentName": "primaryButtonWithASaveIcon3c7169e7",
+  "csvId": "C01",
+  "variant": "Simple",
+  "timestamp": "2026-04-01T07:10:34.171Z",
+  "utterance": "Create a primary button with a save icon",
+  "tier": "Tier 1",
+  "complexity": "Simple",
+  "scores": {
+    "slds_linter": 1,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 3,
+    "overall_readiness_label": "Production-Ready"
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 0,
+    "notes": 0
+  },
+  "utteranceId": "C01",
+  "errorsByType": {},
+  "sldsToolsEnabled": false,
+  "testMode": "baseline",
+  "baseline_slds": true,
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/c68920c7-6116-4637-be11-823632e47c69/r/019d47df-392a-7000-8000-00086d18105a",
+  "langsmithRunId": "019d47df-392a-7000-8000-00086d18105a",
+  "langsmithProjectName": "puzzled-ray-0",
+  "langsmithTraceId": "019d47df-392a-7000-8000-00086d18105a",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C01:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/primaryButtonWithASaveIcon3c7169e7/screenshots/desktop.png"
+  }
+}

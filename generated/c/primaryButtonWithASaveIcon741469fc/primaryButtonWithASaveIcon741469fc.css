@@ -1,0 +1,10 @@
+/**
+ * Styling for Primary Button with Save Icon
+ * 
+ * Minimal custom styling required as lightning-button provides
+ * SLDS 2 compliant styling out of the box. Using SLDS styling hooks
+ * for any custom adjustments to ensure theme compatibility.
+ */
+
+/* No custom styles needed - lightning-button handles all styling */
+/* SLDS utility classes applied in template for spacing */

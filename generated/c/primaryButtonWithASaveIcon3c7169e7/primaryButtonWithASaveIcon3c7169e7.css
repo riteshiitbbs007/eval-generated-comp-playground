@@ -1,0 +1,10 @@
+/**
+ * Styles for Primary Button With A Save Icon Component
+ * 
+ * Minimal styles as lightning-button handles most styling through SLDS.
+ * Any custom styles should use SLDS design tokens for consistency.
+ */
+
+:host {
+    display: inline-block;
+}

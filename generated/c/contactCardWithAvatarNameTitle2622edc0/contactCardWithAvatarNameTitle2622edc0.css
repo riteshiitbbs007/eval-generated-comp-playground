@@ -1,0 +1,93 @@
+/**
+ * Contact Card Component Styles
+ * Uses SLDS 2 styling hooks for theme-aware, accessible design
+ * All colors, spacing, and typography use styling hooks for consistency
+ */
+
+/* Contact Name - Prominent display with high emphasis */
+.contact-name {
+  /* Typography using SLDS hooks */
+  font-family: var(--slds-g-font-family-base);
+  font-size: 1.25rem; /* 20px - Use rem values for font sizes */
+  font-weight: var(--slds-g-font-weight-7); /* Bold */
+  line-height: var(--slds-g-font-lineheight-2);
+  
+  /* Color using semantic hook for high emphasis text */
+  color: var(--slds-g-color-on-surface-3);
+  
+  /* Spacing */
+  margin: 0;
+  margin-bottom: var(--slds-g-spacing-1);
+}
+
+/* Contact Title - Secondary information with medium emphasis */
+.contact-title {
+  /* Typography using SLDS hooks */
+  font-family: var(--slds-g-font-family-base);
+  font-size: var(--slds-g-font-size-base); /* Base font size */
+  font-weight: var(--slds-g-font-weight-4); /* Regular */
+  line-height: var(--slds-g-font-lineheight-3);
+  
+  /* Color using semantic hook for medium emphasis text */
+  color: var(--slds-g-color-on-surface-2);
+  
+  /* Spacing */
+  margin: 0;
+}
+
+/* Contact Detail Container - Email and phone rows */
+.contact-detail {
+  /* Typography */
+  font-family: var(--slds-g-font-family-base);
+  font-size: var(--slds-g-font-size-base);
+  font-weight: var(--slds-g-font-weight-4);
+  line-height: var(--slds-g-font-lineheight-3);
+  
+  /* Color for standard text */
+  color: var(--slds-g-color-on-surface-2);
+}
+
+/* Contact Links - Email and phone links with hover states */
+.contact-link {
+  /* Use accent color for links */
+  color: var(--slds-g-color-accent-1);
+  
+  /* Typography */
+  font-family: var(--slds-g-font-family-base);
+  font-size: var(--slds-g-font-size-base);
+  font-weight: var(--slds-g-font-weight-4);
+  
+  /* Remove default underline */
+  text-decoration: none;
+  
+  /* Smooth transition for hover effects */
+  transition: color 0.2s ease;
+}
+
+/* Link hover state */
+.contact-link:hover {
+  /* Use accent hover color */
+  color: var(--slds-g-color-accent-2);
+  
+  /* Add underline on hover for accessibility */
+  text-decoration: underline;
+}
+
+/* Link active state */
+.contact-link:active {
+  /* Use accent active color */
+  color: var(--slds-g-color-accent-3);
+}
+
+/* Link focus state for keyboard navigation */
+.contact-link:focus {
+  /* Use accent color */
+  color: var(--slds-g-color-accent-1);
+  
+  /* Add visible outline for keyboard users */
+  outline: 2px solid var(--slds-g-color-accent-1);
+  outline-offset: 2px;
+  
+  /* Add underline */
+  text-decoration: underline;
+}

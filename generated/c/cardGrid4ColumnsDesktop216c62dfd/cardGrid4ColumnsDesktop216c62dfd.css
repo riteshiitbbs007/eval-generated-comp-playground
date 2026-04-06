@@ -1,0 +1,23 @@
+/* Responsive Card Grid Styles */
+
+/* Ensure cards have consistent height and spacing */
+.slds-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure card body expands to fill available space */
+.slds-card__body {
+    flex-grow: 1;
+}
+
+/* Add consistent padding to card content */
+.slds-card__body_inner {
+    padding: 0.75rem;
+}
+
+/* Ensure proper spacing for grid items */
+.slds-col {
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,239 @@
+/**
+ * FAQ Accordion Styles
+ * 
+ * Uses SLDS 2 styling hooks for theme-aware, accessible design
+ * All colors, spacing, and typography use CSS custom properties
+ * to ensure compatibility with brand customizations and light/dark modes
+ */
+
+/* ========== FAQ Accordion Container ========== */
+
+.faq-accordion {
+  /* Spacing between accordion and card edges */
+  margin: 0;
+}
+
+/* ========== FAQ Section ========== */
+
+.faq-section {
+  /* Border between sections */
+  border-bottom: 1px solid var(--slds-g-color-border-1);
+}
+
+.faq-section:last-child {
+  /* Remove border from last section */
+  border-bottom: none;
+}
+
+/* ========== FAQ Section Header ========== */
+
+.faq-section-header {
+  /* Reset default heading margins */
+  margin: 0;
+  padding: 0;
+}
+
+/* ========== FAQ Toggle Button ========== */
+
+.faq-toggle-button {
+  /* Full width clickable area */
+  width: 100%;
+  
+  /* Flexbox layout for icon and text alignment */
+  display: flex;
+  align-items: center;
+  gap: var(--slds-g-spacing-2);
+  
+  /* Spacing using SLDS hooks */
+  padding: var(--slds-g-spacing-3) 0;
+  
+  /* Remove default button styles */
+  background: transparent;
+  border: none;
+  
+  /* Text styling using SLDS typography hooks */
+  font-family: var(--slds-g-font-family-base);
+  font-size: var(--slds-g-font-size-base);
+  font-weight: var(--slds-g-font-weight-6);
+  line-height: var(--slds-g-font-lineheight-3);
+  color: var(--slds-g-color-on-surface-3);
+  text-align: left;
+  
+  /* Cursor and interaction */
+  cursor: pointer;
+  
+  /* Smooth transition for hover state */
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Hover state - uses SLDS surface container for subtle background */
+.faq-toggle-button:hover {
+  background-color: var(--slds-g-color-surface-container-1);
+  color: var(--slds-g-color-accent-1);
+  border-radius: var(--slds-g-radius-border-1);
+}
+
+/* Focus state - accessibility requirement for keyboard navigation */
+.faq-toggle-button:focus {
+  /* Visible focus indicator using SLDS accent colors */
+  outline: 2px solid var(--slds-g-color-accent-1);
+  outline-offset: 2px;
+  border-radius: var(--slds-g-radius-border-1);
+}
+
+/* Active state - pressed appearance */
+.faq-toggle-button:active {
+  background-color: var(--slds-g-color-surface-container-2);
+  color: var(--slds-g-color-accent-2);
+}
+
+/* ========== FAQ Icon ========== */
+
+.faq-icon {
+  /* Ensure icon doesn't shrink */
+  flex-shrink: 0;
+  
+  /* Smooth rotation transition for expand/collapse */
+  transition: transform 0.3s ease;
+}
+
+/* ========== FAQ Question Text ========== */
+
+.faq-question {
+  /* Allow text to wrap and grow */
+  flex: 1;
+  word-wrap: break-word;
+}
+
+/* ========== FAQ Content Area ========== */
+
+.faq-content {
+  /* Smooth height transition for expand/collapse animation */
+  transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+  overflow: hidden;
+}
+
+/* Collapsed state - hidden from view */
+.faq-content-collapsed {
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+}
+
+/* Expanded state - visible with animation */
+.faq-content-expanded {
+  /* Large max-height to accommodate content */
+  max-height: 1000px;
+  opacity: 1;
+  
+  /* Vertical padding only when expanded */
+  padding-top: var(--slds-g-spacing-2);
+  padding-bottom: var(--slds-g-spacing-4);
+}
+
+/* ========== FAQ Answer Wrapper ========== */
+
+.faq-answer-wrapper {
+  /* Spacing using SLDS hooks */
+  padding-left: var(--slds-g-spacing-6);
+  padding-right: 0;
+}
+
+/* ========== FAQ Answer Text ========== */
+
+.faq-answer {
+  /* Typography using SLDS hooks */
+  font-family: var(--slds-g-font-family-base);
+  font-size: var(--slds-g-font-size-base);
+  font-weight: var(--slds-g-font-weight-4);
+  line-height: var(--slds-g-font-lineheight-4);
+  color: var(--slds-g-color-on-surface-2);
+  
+  /* Spacing */
+  margin: 0;
+  margin-bottom: var(--slds-g-spacing-2);
+}
+
+.faq-answer:last-child {
+  /* Remove bottom margin from last paragraph */
+  margin-bottom: 0;
+}
+
+/* ========== ACCESSIBILITY ENHANCEMENTS ========== */
+
+/**
+ * High Contrast Mode Support
+ * Ensures borders and outlines are visible in high contrast mode
+ */
+@media (prefers-contrast: high) {
+  .faq-toggle-button:focus {
+    outline-width: 3px;
+  }
+  
+  .faq-section {
+    border-bottom-width: 2px;
+  }
+}
+
+/**
+ * Reduced Motion Support
+ * Respects user preference for reduced motion
+ */
+@media (prefers-reduced-motion: reduce) {
+  .faq-toggle-button,
+  .faq-icon,
+  .faq-content {
+    transition: none;
+  }
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/**
+ * Mobile optimization
+ * Adjust padding and spacing for smaller screens
+ */
+@media (max-width: 768px) {
+  .faq-answer-wrapper {
+    /* Reduce left padding on mobile */
+    padding-left: var(--slds-g-spacing-4);
+  }
+  
+  .faq-toggle-button {
+    /* Adjust padding for touch targets */
+    padding: var(--slds-g-spacing-3) var(--slds-g-spacing-2);
+  }
+}
+
+/**
+ * SLDS STYLING HOOKS USED:
+ * 
+ * Colors:
+ * - --slds-g-color-border-1: Section borders
+ * - --slds-g-color-on-surface-3: Question text (high emphasis)
+ * - --slds-g-color-on-surface-2: Answer text (standard emphasis)
+ * - --slds-g-color-surface-container-1/2: Hover/active backgrounds
+ * - --slds-g-color-accent-1/2: Interactive states and focus
+ * 
+ * Spacing:
+ * - --slds-g-spacing-2: Small gaps and padding (8px)
+ * - --slds-g-spacing-3: Medium padding (12px)
+ * - --slds-g-spacing-4: Larger padding (16px)
+ * - --slds-g-spacing-6: Left padding for answers (32px)
+ * 
+ * Typography:
+ * - --slds-g-font-family-base: Font family
+ * - --slds-g-font-size-base: Base font size
+ * - --slds-g-font-weight-4: Regular weight (400)
+ * - --slds-g-font-weight-6: Semi-bold weight (600)
+ * - --slds-g-font-lineheight-3/4: Line height values
+ * 
+ * Borders:
+ * - --slds-g-radius-border-1: Border radius for focus/hover states
+ * 
+ * All styling hooks automatically adapt to:
+ * - Brand theme customizations
+ * - Light/dark mode
+ * - Density settings
+ * - Accessibility requirements
+ */

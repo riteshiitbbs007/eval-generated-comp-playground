@@ -1,0 +1,13 @@
+/**
+ * Styling for Primary Button with Save Icon
+ * Using SLDS 2 styling hooks for theme-aware, accessible design
+ */
+
+/* No custom styling needed as lightning-button handles all states */
+/* The component automatically inherits SLDS 2 design tokens */
+
+/* Optional: Custom styling using SLDS styling hooks if needed */
+:host {
+    /* Component uses default SLDS button styles with brand variant */
+    /* All interactive states (hover, focus, active) are handled by lightning-button */
+}

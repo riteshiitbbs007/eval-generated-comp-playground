@@ -1,0 +1,45 @@
+<template>
+    <!-- FAQ Accordion Component with 3 sections, first expanded by default -->
+    <lightning-card title="Frequently Asked Questions" icon-name="utility:questions_and_answers">
+        <div class="slds-p-around_medium">
+            <!-- Using lightning-accordion for SLDS-compliant accordion behavior -->
+            <!-- allow-multiple-sections-open enables multiple sections to be open simultaneously -->
+            <!-- active-section-name controls which section is expanded on initial render -->
+            <lightning-accordion 
+                active-section-name={activeSectionName}
+                allow-multiple-sections-open
+                class="faq-accordion">
+                
+                <!-- FAQ Section 1: What is Salesforce? (Expanded by default) -->
+                <lightning-accordion-section 
+                    name="section1" 
+                    label="What is Salesforce?">
+                    <p class="slds-text-body_regular">
+                        Salesforce is a cloud-based customer relationship management (CRM) platform 
+                        that helps businesses manage customer interactions, sales, and service.
+                    </p>
+                </lightning-accordion-section>
+                
+                <!-- FAQ Section 2: How do I reset my password? (Collapsed by default) -->
+                <lightning-accordion-section 
+                    name="section2" 
+                    label="How do I reset my password?">
+                    <p class="slds-text-body_regular">
+                        Click on 'Forgot Password' on the login page, enter your email address, 
+                        and follow the instructions sent to your email.
+                    </p>
+                </lightning-accordion-section>
+                
+                <!-- FAQ Section 3: Where can I find documentation? (Collapsed by default) -->
+                <lightning-accordion-section 
+                    name="section3" 
+                    label="Where can I find documentation?">
+                    <p class="slds-text-body_regular">
+                        Visit help.salesforce.com for comprehensive documentation, guides, and tutorials.
+                    </p>
+                </lightning-accordion-section>
+                
+            </lightning-accordion>
+        </div>
+    </lightning-card>
+</template>

@@ -47,7 +47,12 @@ function readComponentMetadata() {
     if (fs.existsSync(metadataPath)) {
       try {
         const metadata = JSON.parse(fs.readFileSync(metadataPath, 'utf-8'));
-        components.push(metadata);
+
+        // Validate essential fields to prevent calculation errors
+        if (metadata.timestamp && !isNaN(new Date(metadata.timestamp).getTime())) {
+          components.push(metadata);
+        }
+        // Silently skip components with missing or invalid timestamps
       } catch (error) {
         // Silently skip invalid metadata
       }
@@ -80,6 +85,8 @@ function groupByVariantChronological(components, rangeSize = 5) {
     const sorted = components.sort((a, b) => {
       const timeA = new Date(a.timestamp).getTime();
       const timeB = new Date(b.timestamp).getTime();
+      // Handle invalid timestamps gracefully
+      if (isNaN(timeA) || isNaN(timeB)) return 0;
       return timeA - timeB;
     });
 
@@ -93,7 +100,14 @@ function groupByVariantChronological(components, rangeSize = 5) {
 
       const firstTimestamp = new Date(batch[0].timestamp).getTime();
       const lastTimestamp = new Date(batch[batch.length - 1].timestamp).getTime();
-      const avgTimestamp = new Date((firstTimestamp + lastTimestamp) / 2).toISOString();
+
+      // Safely calculate average timestamp, fallback to first timestamp if calculation fails
+      let avgTimestamp;
+      if (!isNaN(firstTimestamp) && !isNaN(lastTimestamp)) {
+        avgTimestamp = new Date((firstTimestamp + lastTimestamp) / 2).toISOString();
+      } else {
+        avgTimestamp = batch[0].timestamp || new Date().toISOString();
+      }
 
       batches[batchKey] = {
         variant,

@@ -1,0 +1,58 @@
+<template>
+  <div class="slds-p-around_medium">
+    <!-- Section Header -->
+    <div class="slds-m-bottom_medium">
+      <h2 class="slds-text-heading_medium slds-m-bottom_x-small">
+        Card Grid
+      </h2>
+      <p class="slds-text-body_regular">
+        Responsive grid layout: 4 columns on desktop, 2 on tablet, 1 on mobile
+      </p>
+    </div>
+
+    <!-- Responsive Card Grid -->
+    <div class="slds-grid slds-wrap slds-gutters">
+      <template for:each={cards} for:item="card">
+        <div key={card.id} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4">
+          <lightning-card 
+            title={card.title} 
+            icon-name={card.iconName}
+            class="card-item">
+            <div class="slds-p-horizontal_small slds-p-bottom_small">
+              <p class="slds-text-body_regular slds-m-bottom_small">
+                {card.description}
+              </p>
+              <div class="slds-text-color_weak slds-text-body_small">
+                {card.metadata}
+              </div>
+            </div>
+            <div slot="footer">
+              <lightning-button 
+                variant="neutral" 
+                label="View Details" 
+                title="View Details"
+                onclick={handleViewDetails}
+                data-id={card.id}
+                class="slds-m-left_x-small">
+              </lightning-button>
+            </div>
+          </lightning-card>
+        </div>
+      </template>
+    </div>
+
+    <!-- Empty State -->
+    <template lwc:if={isEmptyState}>
+      <div class="slds-illustration slds-illustration_small" aria-hidden="true">
+        <div class="slds-m-vertical_xx-large slds-text-align_center">
+          <h3 class="slds-text-heading_medium slds-m-bottom_small">
+            No cards available
+          </h3>
+          <p class="slds-text-body_regular">
+            Add some cards to display in the grid
+          </p>
+        </div>
+      </div>
+    </template>
+  </div>
+</template>

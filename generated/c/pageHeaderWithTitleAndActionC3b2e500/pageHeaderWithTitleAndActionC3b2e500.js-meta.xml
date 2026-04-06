@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>SLDS 2 compliant page header component with configurable title subtitle and action buttons. Supports accessibility and responsive design.</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Page Header with Title and Action</masterLabel>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage">
+            <property name="title" type="String" default="Page Title" label="Title" description="Main title displayed in the page header"/>
+            <property name="subtitle" type="String" default="" label="Subtitle" description="Optional subtitle or metadata text displayed below the title"/>
+            <property name="iconName" type="String" default="" label="Icon Name" description="Optional icon name in format category:name (e.g., standard:account)"/>
+            <property name="iconAlternativeText" type="String" default="Icon" label="Icon Alt Text" description="Alternative text for the icon for accessibility"/>
+            <property name="primaryActionLabel" type="String" default="Primary Action" label="Primary Action Label" description="Label text for the primary action button"/>
+            <property name="secondaryActionLabel" type="String" default="Secondary Action" label="Secondary Action Label" description="Label text for the secondary action button"/>
+            <property name="showPrimaryAction" type="Boolean" default="true" label="Show Primary Action" description="Toggle visibility of the primary action button"/>
+            <property name="showSecondaryAction" type="Boolean" default="true" label="Show Secondary Action" description="Toggle visibility of the secondary action button"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
