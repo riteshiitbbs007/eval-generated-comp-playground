@@ -173,6 +173,8 @@ export default class Gallery extends LightningElement {
         showErrorBreakdown: this.errorBreakdownStates[comp.componentName] || false,
         hasBaselineSlds: comp.baseline_slds === true,
         baselineSldsLabel: 'Baseline SLDS',
+        hasSkillsMode: comp.testMode === 'skills' || comp.skillsModeEnabled === true || comp.executionMode === 'skills',
+        skillsModeLabel: 'Skills',
         hasMetadataNotes: comp.notes && Array.isArray(comp.notes) && comp.notes.length > 0,
         metadataNotesCount: comp.notes?.length || 0
       };

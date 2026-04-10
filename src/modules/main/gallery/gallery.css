@@ -144,6 +144,21 @@
   color: white;
 }
 
+.skills-mode-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  z-index: 1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  background: #9333ea;
+  color: white;
+}
+
 /* Override SLDS adjacent sibling margin that causes misalignment in grid */
 .gallery-grid .slds-card + .slds-card {
   margin-block-start: 0 !important;
