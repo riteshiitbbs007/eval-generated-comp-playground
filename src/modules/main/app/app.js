@@ -245,6 +245,10 @@ export default class HelloWorldApp extends LightningElement {
     return this.selectedComponent === 'formNameEmailMessageShowErrorsE34f2b6d';
   }
 
+  get showFormWithTextEmailPhoneDropdown3320faf7() {
+    return this.selectedComponent === 'formWithTextEmailPhoneDropdown3320faf7';
+  }
+
   get showFormWithTextEmailPhoneDropdown51b9ac1e() {
     return this.selectedComponent === 'formWithTextEmailPhoneDropdown51b9ac1e';
   }
@@ -255,6 +259,14 @@ export default class HelloWorldApp extends LightningElement {
 
   get showFormWithTextEmailPhoneDropdown8deb1ed7() {
     return this.selectedComponent === 'formWithTextEmailPhoneDropdown8deb1ed7';
+  }
+
+  get showFormWithTextEmailPhoneDropdownA57de512() {
+    return this.selectedComponent === 'formWithTextEmailPhoneDropdownA57de512';
+  }
+
+  get showFormWithTextEmailPhoneDropdownB627ae56() {
+    return this.selectedComponent === 'formWithTextEmailPhoneDropdownB627ae56';
   }
 
   get showFormWithTextEmailPhoneDropdownC0001f11() {

@@ -1,0 +1,110 @@
+/**
+ * SLDS 2 Compliant Styling for Form Component
+ * Using SLDS design tokens (styling hooks) for theme-aware, maintainable styling
+ * All colors, spacing, typography follow SLDS semantic hook guidelines
+ */
+
+/* Input field spacing - using SLDS spacing hooks */
+.input-field {
+    margin-bottom: var(--slds-g-spacing-3);
+}
+
+/* Success toast notification styling */
+.slds-notify_toast {
+    background: var(--slds-g-color-success-container-1);
+    color: var(--slds-g-color-on-success-1);
+    border-left: 4px solid var(--slds-g-color-success-1);
+    padding: var(--slds-g-spacing-3) var(--slds-g-spacing-4);
+    border-radius: var(--slds-g-radius-border-1);
+    box-shadow: var(--slds-g-shadow-2);
+    margin-top: var(--slds-g-spacing-4);
+}
+
+/* Success toast content text */
+.slds-notify__content {
+    font-family: var(--slds-g-font-family-base);
+    font-size: var(--slds-g-font-size-base);
+    font-weight: var(--slds-g-font-weight-4);
+    line-height: var(--slds-g-font-lineheight-3);
+}
+
+/* Success toast heading */
+.slds-text-heading_small {
+    font-size: 1rem;
+    font-weight: var(--slds-g-font-weight-6);
+    color: var(--slds-g-color-on-success-3);
+}
+
+/* Close button for toast */
+.slds-notify__close {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: var(--slds-g-spacing-1);
+}
+
+.slds-notify__close:hover {
+    background: var(--slds-g-color-success-container-2);
+    border-radius: var(--slds-g-radius-border-1);
+}
+
+.slds-notify__close:focus {
+    outline: 2px solid var(--slds-g-color-accent-1);
+    outline-offset: 2px;
+}
+
+/* Form container card styling - using surface containers */
+lightning-card {
+    background: var(--slds-g-color-surface-container-1);
+    color: var(--slds-g-color-on-surface-2);
+    border: 1px solid var(--slds-g-color-border-1);
+    border-radius: var(--slds-g-radius-border-1);
+    box-shadow: var(--slds-g-shadow-1);
+}
+
+/* Button spacing adjustment */
+.slds-m-right_small {
+    margin-right: var(--slds-g-spacing-2);
+}
+
+/* Responsive grid adjustments */
+.slds-gutters {
+    gap: var(--slds-g-spacing-4);
+}
+
+/* Form section top margin */
+.slds-m-top_large {
+    margin-top: var(--slds-g-spacing-5);
+}
+
+/* Accessible focus states for all interactive elements */
+lightning-input:focus-within,
+lightning-combobox:focus-within,
+lightning-checkbox-group:focus-within,
+lightning-textarea:focus-within {
+    outline: 2px solid var(--slds-g-color-accent-1);
+    outline-offset: 2px;
+    border-radius: var(--slds-g-radius-border-1);
+}
+
+/* Button hover states using accent colors */
+lightning-button:hover {
+    background: var(--slds-g-color-accent-container-2);
+    color: var(--slds-g-color-on-accent-2);
+    transition: all 0.2s ease;
+}
+
+lightning-button:active {
+    background: var(--slds-g-color-accent-container-3);
+    color: var(--slds-g-color-on-accent-3);
+}
+
+/* Ensure proper spacing in form sections */
+.slds-p-around_medium {
+    padding: var(--slds-g-spacing-4);
+}
+
+/* Text alignment utility */
+.slds-text-align_right {
+    text-align: right;
+}

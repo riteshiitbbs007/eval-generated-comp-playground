@@ -1,0 +1,42 @@
+{
+  "folderName": "formWithTextEmailPhoneDropdown-C09-Simple-20260410",
+  "componentName": "formWithTextEmailPhoneDropdownA57de512",
+  "csvId": "C09",
+  "variant": "Simple",
+  "timestamp": "2026-04-10T07:08:59.347Z",
+  "utterance": "Create form with text, email, phone, dropdown, checkboxes, textarea",
+  "tier": "Tier 2",
+  "complexity": "Intermediate",
+  "scores": {
+    "slds_linter": 0.95,
+    "slds_quality": 0.7,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.81,
+    "overall_readiness_label": "Prototype"
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 1,
+    "notes": 0
+  },
+  "utteranceId": "C09",
+  "errorsByType": {
+    "slds/no-hardcoded-values-slds2": 1
+  },
+  "sldsToolsEnabled": false,
+  "testMode": "baseline",
+  "baseline_slds": true,
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/16f36e6b-c016-4807-ad0c-dd3d09ed5339/r/019d7636-2166-7000-8000-06508c1e93da",
+  "langsmithRunId": "019d7636-2166-7000-8000-06508c1e93da",
+  "langsmithProjectName": "roasted-corn-10",
+  "langsmithTraceId": "019d7636-2166-7000-8000-06508c1e93da",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C09:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  }
+}
