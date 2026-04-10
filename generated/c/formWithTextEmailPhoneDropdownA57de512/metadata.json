@@ -38,5 +38,8 @@
     "playgroundEnabled": true,
     "screenshotsEnabled": true,
     "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/formWithTextEmailPhoneDropdownA57de512/screenshots/desktop.png"
   }
 }

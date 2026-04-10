@@ -57,5 +57,8 @@
     "screenshotsEnabled": true,
     "playgroundPath": "../lwc-slds-lbc-starter"
   },
-  "buildNotes": "ShowToastEvent import and usage commented out - not available in local LWR environment. Replaced with console.log for local development."
+  "buildNotes": "ShowToastEvent import and usage commented out - not available in local LWR environment. Replaced with console.log for local development.",
+  "screenshotUrls": {
+    "desktop": "generated/c/formWithTextEmailPhoneDropdownB627ae56/screenshots/desktop.png"
+  }
 }
