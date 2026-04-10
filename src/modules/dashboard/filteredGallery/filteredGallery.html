@@ -39,6 +39,13 @@
               </div>
             </template>
 
+            <!-- Skills Mode Badge -->
+            <template if:true={component.hasSkillsMode}>
+              <div class="skills-mode-badge">
+                {component.skillsModeLabel}
+              </div>
+            </template>
+
             <div class="slds-card__body slds-card__body_inner slds-p-around_small">
               <div class="component-header slds-m-bottom_xx-small">
                 <template if:true={component.hasMetadataNotes}>
