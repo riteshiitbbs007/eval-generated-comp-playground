@@ -245,16 +245,48 @@ export default class HelloWorldApp extends LightningElement {
     return this.selectedComponent === 'formNameEmailMessageShowErrorsE34f2b6d';
   }
 
+  get showFormWithTextEmailPhoneDropdown0c7b1359() {
+    return this.selectedComponent === 'formWithTextEmailPhoneDropdown0c7b1359';
+  }
+
+  get showFormWithTextEmailPhoneDropdown23bcdd74() {
+    return this.selectedComponent === 'formWithTextEmailPhoneDropdown23bcdd74';
+  }
+
   get showFormWithTextEmailPhoneDropdown3320faf7() {
     return this.selectedComponent === 'formWithTextEmailPhoneDropdown3320faf7';
+  }
+
+  get showFormWithTextEmailPhoneDropdown3570017d() {
+    return this.selectedComponent === 'formWithTextEmailPhoneDropdown3570017d';
   }
 
   get showFormWithTextEmailPhoneDropdown51b9ac1e() {
     return this.selectedComponent === 'formWithTextEmailPhoneDropdown51b9ac1e';
   }
 
+  get showFormWithTextEmailPhoneDropdown687b32a6() {
+    return this.selectedComponent === 'formWithTextEmailPhoneDropdown687b32a6';
+  }
+
+  get showFormWithTextEmailPhoneDropdown6d40c4a5() {
+    return this.selectedComponent === 'formWithTextEmailPhoneDropdown6d40c4a5';
+  }
+
+  get showFormWithTextEmailPhoneDropdown6f93c590() {
+    return this.selectedComponent === 'formWithTextEmailPhoneDropdown6f93c590';
+  }
+
+  get showFormWithTextEmailPhoneDropdown73651893() {
+    return this.selectedComponent === 'formWithTextEmailPhoneDropdown73651893';
+  }
+
   get showFormWithTextEmailPhoneDropdown78286eb8() {
     return this.selectedComponent === 'formWithTextEmailPhoneDropdown78286eb8';
+  }
+
+  get showFormWithTextEmailPhoneDropdown7d24c98d() {
+    return this.selectedComponent === 'formWithTextEmailPhoneDropdown7d24c98d';
   }
 
   get showFormWithTextEmailPhoneDropdown8deb1ed7() {
@@ -265,12 +297,24 @@ export default class HelloWorldApp extends LightningElement {
     return this.selectedComponent === 'formWithTextEmailPhoneDropdownA57de512';
   }
 
+  get showFormWithTextEmailPhoneDropdownAcbb1168() {
+    return this.selectedComponent === 'formWithTextEmailPhoneDropdownAcbb1168';
+  }
+
   get showFormWithTextEmailPhoneDropdownB627ae56() {
     return this.selectedComponent === 'formWithTextEmailPhoneDropdownB627ae56';
   }
 
   get showFormWithTextEmailPhoneDropdownC0001f11() {
     return this.selectedComponent === 'formWithTextEmailPhoneDropdownC0001f11';
+  }
+
+  get showFormWithTextEmailPhoneDropdownC7dd043e() {
+    return this.selectedComponent === 'formWithTextEmailPhoneDropdownC7dd043e';
+  }
+
+  get showFormWithTextEmailPhoneDropdownDbede369() {
+    return this.selectedComponent === 'formWithTextEmailPhoneDropdownDbede369';
   }
 
   get showFormWithTextEmailPhoneDropdownDecbbd5a() {
@@ -383,6 +427,10 @@ export default class HelloWorldApp extends LightningElement {
 
   get showPrimaryButtonWithASaveIcon9de0b8a7() {
     return this.selectedComponent === 'primaryButtonWithASaveIcon9de0b8a7';
+  }
+
+  get showPrimaryButtonWithASaveIcon9de0e0b6() {
+    return this.selectedComponent === 'primaryButtonWithASaveIcon9de0e0b6';
   }
 
   get showPrimaryButtonWithASaveIconA2de8ef3() {

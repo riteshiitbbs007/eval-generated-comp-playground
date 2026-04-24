@@ -38,21 +38,41 @@ function fixMissingScreenshotUrls() {
     }
 
     // Read metadata
-    const metadata = JSON.parse(fs.readFileSync(metadataPath, 'utf8'));
+    let metadata;
+    try {
+      metadata = JSON.parse(fs.readFileSync(metadataPath, 'utf8'));
+    } catch (error) {
+      console.log(`⚠️  Failed to parse metadata for ${componentName}: ${error.message}`);
+      continue;
+    }
 
-    // Check if screenshotUrls already exists
-    if (metadata.screenshotUrls) {
+    // Validate metadata has essential fields (detect corruption early)
+    const hasEssentialFields = metadata.componentName && (
+      metadata.timestamp || metadata.folderName
+    );
+
+    if (!hasEssentialFields) {
+      console.log(`⚠️  Metadata appears incomplete for ${componentName} - skipping to prevent corruption`);
+      console.log(`    Present fields: ${Object.keys(metadata).join(', ')}`);
       skipped++;
       continue;
     }
 
-    // Add screenshotUrls
+    // Check if screenshotUrls already exists and points to correct location
+    const expectedUrl = `generated/c/${componentName}/screenshots/desktop.png`;
+    if (metadata.screenshotUrls?.desktop === expectedUrl) {
+      skipped++;
+      continue;
+    }
+
+    // Add or update screenshotUrls (preserve all other fields)
     metadata.screenshotUrls = {
-      desktop: `generated/c/${componentName}/screenshots/desktop.png`
+      ...metadata.screenshotUrls, // Preserve any existing screenshot URLs
+      desktop: expectedUrl
     };
 
-    // Write back
-    fs.writeFileSync(metadataPath, JSON.stringify(metadata, null, 2), 'utf8');
+    // Write back with proper formatting
+    fs.writeFileSync(metadataPath, JSON.stringify(metadata, null, 2) + '\n', 'utf8');
     console.log(`✅ Fixed ${componentName}`);
     fixed++;
   }

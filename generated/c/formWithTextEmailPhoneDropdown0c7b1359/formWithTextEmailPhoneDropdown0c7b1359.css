@@ -1,0 +1,63 @@
+/**
+ * SLDS 2 compliant styles using styling hooks
+ * All styles use CSS custom properties (styling hooks) instead of hard-coded values
+ * This ensures theme compatibility and automatic adaptation to brand customizations
+ */
+
+/* Success message container */
+.success-message {
+    display: flex;
+    align-items: center;
+    padding: var(--slds-g-spacing-3) var(--slds-g-spacing-4);
+    background: var(--slds-g-color-success-container-1);
+    color: var(--slds-g-color-on-success-1);
+    border-left: 4px solid var(--slds-g-color-success-1);
+    border-radius: var(--slds-g-radius-border-1);
+    font-family: var(--slds-g-font-family-base);
+    font-size: var(--slds-g-font-size-base);
+    font-weight: var(--slds-g-font-weight-4);
+}
+
+/* Help text styling */
+.slds-form-element__help {
+    color: var(--slds-g-color-on-surface-1);
+    font-size: 0.75rem;
+    font-family: var(--slds-g-font-family-base);
+    font-weight: var(--slds-g-font-weight-4);
+    line-height: var(--slds-g-font-lineheight-3);
+}
+
+/* Fieldset legend styling for checkbox group */
+fieldset.slds-form-element {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+fieldset.slds-form-element legend {
+    color: var(--slds-g-color-on-surface-3);
+    font-family: var(--slds-g-font-family-base);
+    font-size: var(--slds-g-font-size-base);
+    font-weight: var(--slds-g-font-weight-5);
+    line-height: var(--slds-g-font-lineheight-2);
+    margin-bottom: var(--slds-g-spacing-2);
+}
+
+/* Card content area */
+lightning-card {
+    background: var(--slds-g-color-surface-container-1);
+}
+
+/* Ensure proper spacing between form elements */
+lightning-input,
+lightning-combobox,
+lightning-textarea {
+    margin-bottom: var(--slds-g-spacing-3);
+}
+
+/* Button group alignment */
+.slds-text-align_right {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--slds-g-spacing-2);
+}

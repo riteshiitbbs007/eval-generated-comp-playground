@@ -1,0 +1,62 @@
+{
+  "folderName": "primaryButtonWithASaveIcon-C01-Simple-20260414",
+  "componentName": "primaryButtonWithASaveIcon9de0e0b6",
+  "csvId": "C01",
+  "variant": "Simple",
+  "timestamp": "2026-04-14T07:34:15.207Z",
+  "utterance": "Create a primary button with a save icon",
+  "tier": "Tier 1",
+  "complexity": "Simple",
+  "scores": {
+    "slds_linter": 1,
+    "slds_quality": 1,
+    "prd_compliance": 0.7,
+    "security": 0.4,
+    "overall": 2.7,
+    "overall_readiness_label": "Prototype"
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 0,
+    "notes": 0
+  },
+  "utteranceId": "C01",
+  "errorsByType": {},
+  "sldsToolsEnabled": true,
+  "testMode": "skills",
+  "baseline_slds": false,
+  "skillsModeEnabled": true,
+  "executionMode": "skills",
+  "executionTrace": {
+    "executedTools": [
+      "Skill",
+      "ToolSearch",
+      "create_lwc_component_from_prd",
+      "orchestrate_lwc_component_optimization"
+    ],
+    "executedSkills": [],
+    "embeddedKnowledge": [
+      "applying-slds"
+    ],
+    "targetTools": [
+      "create_lwc_component_from_prd",
+      "orchestrate_lwc_component_optimization",
+      "Skill"
+    ]
+  },
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/95a6570d-7983-4ace-8d31-88f05e1309dc/r/019d8ae7-15c0-7000-8000-05e85f54293f",
+  "langsmithRunId": "019d8ae7-15c0-7000-8000-05e85f54293f",
+  "langsmithProjectName": "mealy-energy-91",
+  "langsmithTraceId": "019d8ae7-15c0-7000-8000-05e85f54293f",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C01:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/primaryButtonWithASaveIcon9de0e0b6/screenshots/desktop.png"
+  }
+}

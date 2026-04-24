@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <!-- Component metadata configuration for Lightning App Builder exposure -->
+    
+    <apiVersion>62.0</apiVersion>
+    
+    <description>A primary (brand) button component with a save icon positioned to the left of the label. Fully configurable with public properties for label, icon, and disabled state. Dispatches custom event on click.</description>
+    
+    <!-- GLOBAL access level for use in Lightning App Builder and other contexts -->
+    <isExposed>true</isExposed>
+    
+    <!-- Supported targets for Lightning Experience -->
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    
+    <!-- Public properties configurable in Lightning App Builder -->
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage">
+            <!-- Button label property -->
+            <property 
+                name="label" 
+                type="String" 
+                default="Save"
+                label="Button Label"
+                description="The text displayed on the button" />
+            
+            <!-- Icon name property -->
+            <property 
+                name="iconName" 
+                type="String" 
+                default="utility:save"
+                label="Icon Name"
+                description="SLDS icon name in format 'category:name' (e.g., 'utility:save', 'utility:check')" />
+            
+            <!-- Disabled state property -->
+            <property 
+                name="disabled" 
+                type="Boolean" 
+                default="false"
+                label="Disabled"
+                description="When checked, the button is disabled and cannot be clicked" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

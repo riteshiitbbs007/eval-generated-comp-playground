@@ -84,7 +84,24 @@ grep "import.*ShowToastEvent" generated/c/componentName/componentName.js
 # Should show lines starting with //
 ```
 
-### 5. Test the Component
+### 5. Rebuild and Test
+
+After making changes, rebuild the application and generate screenshots:
+
+```bash
+# Rebuild the application
+npm run build && npm start
+
+# In a separate terminal tab, generate screenshots for the fixed components
+npm run screenshots
+```
+
+**Important**: Always rebuild after making changes to ensure:
+- Bundle updates include the fixed code
+- Application loads without errors
+- Screenshots capture the working component state
+
+### 6. Test the Component
 
 Navigate to the component in the playground:
 ```
@@ -93,12 +110,13 @@ http://localhost:3001/?component=componentName
 
 The component should now load without errors.
 
-### 6. Stage the Changes
+### 7. Stage the Changes
 
 ```bash
-# Stage the fixed component
+# Stage the fixed component and screenshots
 git add generated/c/componentName/componentName.js
 git add generated/c/componentName/metadata.json
+git add generated/c/componentName/screenshots/
 ```
 
 ## Common Unavailable Modules
@@ -139,14 +157,17 @@ grep -r "lightning/platformShowToastEvent" generated/c/*/*.js
 # 3. Add notes to metadata.json
 # Add the notes array with warning message
 
-# 4. Rebuild app templates (if needed)
-npm run generate:templates
+# 4. Rebuild the application
+npm run build && npm start
 
-# 5. Stage changes
+# 5. In a separate terminal, generate screenshots
+npm run screenshots
+
+# 6. Stage changes
 git add generated/c/componentName/
 git add src/modules/main/componentDetail/
 
-# 6. Test in playground
+# 7. Test in playground
 # Visit http://localhost:3001/?component=componentName
 ```
 
@@ -156,6 +177,8 @@ git add src/modules/main/componentDetail/
 - Add clear comments explaining why code was commented out
 - Use the notes field in metadata to document all changes
 - The notes will automatically appear in the component detail page with a warning icon
+- **Always run `npm run build && npm start` after making code changes** - this ensures the bundle is updated
+- **Run `npm run screenshots` in a separate terminal** after the build to capture updated component screenshots
 - Test the component in the playground after making changes
 - Keep the original functionality intact in comments so it can be easily restored
 

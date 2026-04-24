@@ -1,0 +1,106 @@
+<template>
+  <lightning-card title="Contact Information Form" icon-name="standard:form">
+    <div class="slds-p-around_medium">
+      <!-- Text Input: First Name -->
+      <lightning-input
+        name="firstName"
+        label="First Name"
+        value={firstName}
+        onchange={handleInputChange}
+        required
+        message-when-value-missing="Please enter your first name"
+        class="slds-m-bottom_small"
+      ></lightning-input>
+
+      <!-- Email Input -->
+      <lightning-input
+        type="email"
+        name="email"
+        label="Email Address"
+        value={email}
+        onchange={handleInputChange}
+        required
+        message-when-value-missing="Please enter a valid email address"
+        message-when-bad-input="Please enter a valid email format"
+        class="slds-m-bottom_small"
+      ></lightning-input>
+
+      <!-- Phone Input -->
+      <lightning-input
+        type="tel"
+        name="phone"
+        label="Phone Number"
+        value={phone}
+        onchange={handleInputChange}
+        required
+        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+        message-when-pattern-mismatch="Phone must be formatted as 123-456-7890"
+        placeholder="123-456-7890"
+        class="slds-m-bottom_small"
+      ></lightning-input>
+
+      <!-- Dropdown: Country Selection -->
+      <lightning-combobox
+        name="country"
+        label="Country"
+        value={country}
+        placeholder="Select a country"
+        options={countryOptions}
+        onchange={handleInputChange}
+        required
+        message-when-value-missing="Please select a country"
+        class="slds-m-bottom_small"
+      ></lightning-combobox>
+
+      <!-- Checkboxes: Preferences -->
+      <lightning-checkbox-group
+        name="preferences"
+        label="Communication Preferences"
+        options={preferenceOptions}
+        value={preferences}
+        onchange={handleCheckboxChange}
+        class="slds-m-bottom_small"
+      ></lightning-checkbox-group>
+
+      <!-- Textarea: Comments -->
+      <lightning-textarea
+        name="comments"
+        label="Comments"
+        value={comments}
+        onchange={handleInputChange}
+        placeholder="Enter any additional comments here"
+        max-length="500"
+        class="slds-m-bottom_small"
+      ></lightning-textarea>
+
+      <!-- Action Buttons -->
+      <div class="slds-grid slds-grid_align-end slds-gutters slds-m-top_medium">
+        <div class="slds-col">
+          <lightning-button
+            variant="neutral"
+            label="Reset"
+            title="Reset form"
+            onclick={handleReset}
+            class="slds-m-right_x-small"
+          ></lightning-button>
+          <lightning-button
+            variant="brand"
+            label="Submit"
+            title="Submit form"
+            onclick={handleSubmit}
+          ></lightning-button>
+        </div>
+      </div>
+
+      <!-- Success Message -->
+      <template lwc:if={showSuccessMessage}>
+        <div class="slds-m-top_medium">
+          <div class="slds-notify slds-notify_alert slds-alert_success" role="alert">
+            <span class="slds-assistive-text">Success</span>
+            <h2>Form submitted successfully!</h2>
+          </div>
+        </div>
+      </template>
+    </div>
+  </lightning-card>
+</template>

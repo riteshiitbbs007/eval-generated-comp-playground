@@ -1,0 +1,24 @@
+<!--
+  Primary Button with Save Icon Component
+  Displays a brand-styled button with a save icon positioned to the left of the label
+-->
+<template>
+    <!-- 
+        Using lightning-button Lightning Base Component (LBC) for SLDS 2 compliance
+        - variant="brand" provides primary/brand styling with proper SLDS colors and states
+        - icon-name="utility:save" displays the save icon from SLDS utility icon set
+        - icon-position="left" positions the icon before the button label
+        - onclick handler dispatches custom event to parent components
+        - disabled property controls button interactivity
+        - Alternative text for icon is provided through the button label itself
+    -->
+    <lightning-button
+        label={label}
+        variant="brand"
+        icon-name={iconName}
+        icon-position="left"
+        disabled={disabled}
+        onclick={handleClick}
+        class="c-primary-button">
+    </lightning-button>
+</template>

@@ -1,0 +1,52 @@
+/* Container styling for consistent spacing */
+.slds-p-around_medium {
+    padding: var(--lwc-spacingMedium);
+}
+
+/* Form element spacing */
+.slds-m-bottom_small {
+    margin-bottom: var(--lwc-spacingSmall);
+}
+
+.slds-m-bottom_medium {
+    margin-bottom: var(--lwc-spacingMedium);
+}
+
+.slds-m-top_medium {
+    margin-top: var(--lwc-spacingMedium);
+}
+
+/* Button spacing */
+.slds-m-right_small {
+    margin-right: var(--lwc-spacingSmall);
+}
+
+/* Center align submit button section */
+.slds-text-align_center {
+    text-align: center;
+}
+
+/* Success alert styling */
+.slds-notify {
+    padding: var(--lwc-spacingSmall);
+    border-radius: var(--lwc-borderRadiusMedium);
+}
+
+.slds-alert_success {
+    background-color: var(--lwc-colorBackgroundSuccess);
+    border-left: 4px solid var(--lwc-colorBorderSuccess);
+}
+
+/* Fieldset styling for checkbox group */
+fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+/* Legend styling */
+.slds-form-element__legend {
+    font-weight: var(--lwc-fontWeightBold);
+    display: block;
+    margin-bottom: var(--lwc-spacingXxSmall);
+}

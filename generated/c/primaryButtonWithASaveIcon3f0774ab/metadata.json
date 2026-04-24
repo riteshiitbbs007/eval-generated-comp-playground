@@ -20,7 +20,7 @@
     "notes": 0
   },
   "screenshotUrls": {
-    "desktop": "/generated/c/primaryButtonWithASaveIcon3f0774ab/screenshots/desktop.png"
+    "desktop": "generated/c/primaryButtonWithASaveIcon3f0774ab/screenshots/desktop.png"
   },
   "utteranceId": "C01",
   "model": "claude-3-7-sonnet",

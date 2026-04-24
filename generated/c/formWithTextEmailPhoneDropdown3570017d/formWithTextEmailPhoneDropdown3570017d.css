@@ -1,0 +1,91 @@
+/**
+ * SLDS 2 compliant styling for the form component.
+ * Uses SLDS styling hooks for theme-aware, maintainable styling.
+ */
+
+/* Form Container */
+.c-form-container {
+    background: var(--slds-g-color-surface-container-1, #ffffff);
+    color: var(--slds-g-color-on-surface-2, #181818);
+    border: 1px solid var(--slds-g-color-border-1, #c9c9c9);
+    border-radius: var(--slds-g-radius-border-2, 0.25rem);
+    padding: var(--slds-g-spacing-5, 1.5rem);
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: var(--slds-g-shadow-1, 0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Form Header */
+.c-form-header {
+    margin-bottom: var(--slds-g-spacing-5, 1.5rem);
+    padding-bottom: var(--slds-g-spacing-4, 1rem);
+    border-bottom: 1px solid var(--slds-g-color-border-1, #c9c9c9);
+}
+
+/* Form Title */
+.c-form-title {
+    font-family: var(--slds-g-font-family-base, 'Salesforce Sans', Arial, sans-serif);
+    font-size: 1.5rem;
+    font-weight: var(--slds-g-font-weight-7, 700);
+    line-height: var(--slds-g-font-lineheight-2, 1.25);
+    color: var(--slds-g-color-on-surface-3, #181818);
+    margin: 0 0 var(--slds-g-spacing-2, 0.5rem) 0;
+}
+
+/* Form Description */
+.c-form-description {
+    font-family: var(--slds-g-font-family-base, 'Salesforce Sans', Arial, sans-serif);
+    font-size: var(--slds-g-font-size-base, 0.875rem);
+    font-weight: var(--slds-g-font-weight-4, 400);
+    line-height: var(--slds-g-font-lineheight-3, 1.5);
+    color: var(--slds-g-color-on-surface-1, #706e6b);
+    margin: 0;
+}
+
+/* Form Body */
+.c-form-body {
+    padding: var(--slds-g-spacing-4, 1rem) 0;
+}
+
+/* Form Actions */
+.c-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: var(--slds-g-spacing-5, 1.5rem);
+    padding-top: var(--slds-g-spacing-4, 1rem);
+    border-top: 1px solid var(--slds-g-color-border-1, #c9c9c9);
+}
+
+/* Success Message */
+.c-success-message {
+    display: flex;
+    align-items: center;
+    background: var(--slds-g-color-success-container-1, #f0f9e8);
+    color: var(--slds-g-color-on-success-1, #181818);
+    border: 1px solid var(--slds-g-color-success-1, #2e844a);
+    border-radius: var(--slds-g-radius-border-1, 0.25rem);
+    padding: var(--slds-g-spacing-3, 0.75rem) var(--slds-g-spacing-4, 1rem);
+    margin-top: var(--slds-g-spacing-4, 1rem);
+    font-family: var(--slds-g-font-family-base, 'Salesforce Sans', Arial, sans-serif);
+    font-size: var(--slds-g-font-size-base, 0.875rem);
+    font-weight: var(--slds-g-font-weight-5, 500);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .c-form-container {
+        padding: var(--slds-g-spacing-4, 1rem);
+        margin: var(--slds-g-spacing-2, 0.5rem);
+    }
+
+    .c-form-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .c-form-actions lightning-button {
+        width: 100%;
+        margin-bottom: var(--slds-g-spacing-2, 0.5rem);
+    }
+}

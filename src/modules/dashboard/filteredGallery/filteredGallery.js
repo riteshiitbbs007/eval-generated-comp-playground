@@ -184,6 +184,7 @@ export default class FilteredGallery extends LightningElement {
       qualityGateBadgeClass: `quality-gate-badge ${qualityGateConfig.badgeClass}`,
       hasMetadataBadges: !!comp.utteranceId || !!comp.variant || !!comp.model,
       screenshotUrls: comp.screenshotUrls || {},
+      violations: comp.violations || { warnings: 0, errors: 0, notes: 0 },
       hasBaselineSlds: comp.baseline_slds === true,
       baselineSldsLabel: 'Baseline SLDS',
       hasSkillsMode: comp.testMode === 'skills' || comp.skillsModeEnabled === true || comp.executionMode === 'skills',

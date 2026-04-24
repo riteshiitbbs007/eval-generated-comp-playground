@@ -1,0 +1,65 @@
+{
+  "folderName": "formWithTextEmailPhoneDropdown-C09-Simple-20260424",
+  "componentName": "formWithTextEmailPhoneDropdownAcbb1168",
+  "csvId": "C09",
+  "variant": "Simple",
+  "timestamp": "2026-04-24T07:05:11.469Z",
+  "utterance": "Create form with text, email, phone, dropdown, checkboxes, textarea",
+  "tier": "Tier 2",
+  "complexity": "Intermediate",
+  "scores": {
+    "slds_linter": 0.94,
+    "slds_quality": 0.4,
+    "prd_compliance": 0.7,
+    "security": 1,
+    "overall": 2.51,
+    "overall_readiness_label": "Prototype"
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 4,
+    "notes": 0
+  },
+  "utteranceId": "C09",
+  "errorsByType": {
+    "slds/no-slds-class-overrides": 3,
+    "slds/no-slds-namespace-for-custom-hooks": 1
+  },
+  "sldsToolsEnabled": true,
+  "testMode": "skills",
+  "baseline_slds": false,
+  "skillsModeEnabled": true,
+  "executionMode": "skills",
+  "executionTrace": {
+    "executedTools": [
+      "ToolSearch",
+      "Skill",
+      "create_lwc_component_from_prd",
+      "orchestrate_lwc_component_optimization"
+    ],
+    "executedSkills": [],
+    "embeddedKnowledge": [
+      "applying-slds"
+    ],
+    "targetTools": [
+      "create_lwc_component_from_prd",
+      "orchestrate_lwc_component_optimization",
+      "Skill"
+    ]
+  },
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/457b36dc-e408-40c6-9f81-25077867a19b/r/019dbe4b-d80b-7000-8000-01adc097c62a",
+  "langsmithRunId": "019dbe4b-d80b-7000-8000-01adc097c62a",
+  "langsmithProjectName": "back-stocking-81",
+  "langsmithTraceId": "019dbe4b-d80b-7000-8000-01adc097c62a",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C09:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/formWithTextEmailPhoneDropdownAcbb1168/screenshots/desktop.png"
+  }
+}
