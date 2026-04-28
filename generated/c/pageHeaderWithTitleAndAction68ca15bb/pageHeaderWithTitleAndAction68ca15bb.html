@@ -1,0 +1,45 @@
+<template>
+    <!-- Page Header with SLDS blueprint classes -->
+    <div class="slds-page-header" role="banner">
+        <!-- Main header row containing title and actions -->
+        <div class="slds-page-header__row">
+            <!-- Title section with flexible truncation -->
+            <div class="slds-page-header__col-title">
+                <div class="slds-page-header__name">
+                    <div class="slds-page-header__name-title">
+                        <h1>
+                            <span class="slds-page-header__title slds-truncate" title={pageTitle}>
+                                {pageTitle}
+                            </span>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <!-- Actions section aligned to the right -->
+            <div class="slds-page-header__col-actions">
+                <div class="slds-page-header__controls">
+                    <div class="slds-page-header__control">
+                        <lightning-button
+                            variant="neutral"
+                            label={primaryActionLabel}
+                            title={primaryActionLabel}
+                            onclick={handlePrimaryAction}
+                            class="slds-m-left_x-small">
+                        </lightning-button>
+                    </div>
+                    <template lwc:if={showSecondaryAction}>
+                        <div class="slds-page-header__control">
+                            <lightning-button
+                                variant="brand"
+                                label={secondaryActionLabel}
+                                title={secondaryActionLabel}
+                                onclick={handleSecondaryAction}
+                                class="slds-m-left_x-small">
+                            </lightning-button>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

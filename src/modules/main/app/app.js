@@ -81,6 +81,10 @@ export default class HelloWorldApp extends LightningElement {
     return this.selectedComponent === '4AlertsSuccessErrorWarningInfo5edbfc89';
   }
 
+  get show4AlertsSuccessErrorWarningInfo669eb078() {
+    return this.selectedComponent === '4AlertsSuccessErrorWarningInfo669eb078';
+  }
+
   get show4AlertsSuccessErrorWarningInfoDf286ed0() {
     return this.selectedComponent === '4AlertsSuccessErrorWarningInfoDf286ed0';
   }
@@ -103,6 +107,10 @@ export default class HelloWorldApp extends LightningElement {
 
   get showCardGrid4ColumnsDesktop220ca80e3() {
     return this.selectedComponent === 'cardGrid4ColumnsDesktop220ca80e3';
+  }
+
+  get showCardGrid4ColumnsDesktop2A2d0be2b() {
+    return this.selectedComponent === 'cardGrid4ColumnsDesktop2A2d0be2b';
   }
 
   get showCardGrid4ColumnsDesktop2Cb530bec() {
@@ -197,8 +205,16 @@ export default class HelloWorldApp extends LightningElement {
     return this.selectedComponent === 'deleteConfirmationModalWithCancelAnd27019baa';
   }
 
+  get showDeleteConfirmationModalWithCancelAndC4abe23f() {
+    return this.selectedComponent === 'deleteConfirmationModalWithCancelAndC4abe23f';
+  }
+
   get showFaqAccordionWith3SectionsEach2efd09a1() {
     return this.selectedComponent === 'faqAccordionWith3SectionsEach2efd09a1';
+  }
+
+  get showFaqAccordionWith3SectionsFirst04be6c7c() {
+    return this.selectedComponent === 'faqAccordionWith3SectionsFirst04be6c7c';
   }
 
   get showFaqAccordionWith3SectionsFirst0be93d5c() {
@@ -359,6 +375,10 @@ export default class HelloWorldApp extends LightningElement {
 
   get showPageHeaderWithTitleAndAction35185f19() {
     return this.selectedComponent === 'pageHeaderWithTitleAndAction35185f19';
+  }
+
+  get showPageHeaderWithTitleAndAction68ca15bb() {
+    return this.selectedComponent === 'pageHeaderWithTitleAndAction68ca15bb';
   }
 
   get showPageHeaderWithTitleAndAction8b50d63c() {

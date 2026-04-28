@@ -1,0 +1,68 @@
+{
+  "folderName": "pageHeaderWithTitleAndAction-C06-Simple-20260428",
+  "componentName": "pageHeaderWithTitleAndAction68ca15bb",
+  "csvId": "C06",
+  "variant": "Simple",
+  "timestamp": "2026-04-28T07:43:51.974Z",
+  "utterance": "Create page header with title and action buttons",
+  "tier": "Tier 2",
+  "complexity": "Intermediate",
+  "scores": {
+    "slds_linter": 0.85,
+    "slds_quality": 0.7,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.74,
+    "overall_readiness_label": "Prototype"
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 9,
+    "notes": 0
+  },
+  "utteranceId": "C06",
+  "errorsByType": {
+    "slds/no-hardcoded-values-slds2": 2,
+    "slds/no-slds-class-overrides": 6,
+    "slds/no-slds-namespace-for-custom-hooks": 1
+  },
+  "sldsToolsEnabled": true,
+  "testMode": "skills",
+  "baseline_slds": false,
+  "skillsModeEnabled": true,
+  "executionMode": "skills",
+  "executionTrace": {
+    "executedTools": [
+      "Skill",
+      "ToolSearch",
+      "Bash",
+      "Read",
+      "create_lwc_component_from_prd",
+      "orchestrate_lwc_component_optimization"
+    ],
+    "executedSkills": [],
+    "embeddedKnowledge": [
+      "applying-slds"
+    ],
+    "targetTools": [
+      "create_lwc_component_from_prd",
+      "orchestrate_lwc_component_optimization",
+      "Skill"
+    ]
+  },
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/e898ef15-8e2a-4dc4-9a85-b4f709c204b3/r/019dd308-b8e2-7000-8000-01b5b1ac9bfe",
+  "langsmithRunId": "019dd308-b8e2-7000-8000-01b5b1ac9bfe",
+  "langsmithProjectName": "bold-growth-7",
+  "langsmithTraceId": "019dd308-b8e2-7000-8000-01b5b1ac9bfe",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C05-C08:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/pageHeaderWithTitleAndAction68ca15bb/screenshots/desktop.png"
+  }
+}

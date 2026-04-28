@@ -318,7 +318,7 @@
         <!-- Source Code Viewer Section (Full Width) -->
         <div class="slds-col slds-size_1-of-1 slds-m-top_medium">
           <article class="slds-card">
-            <div class="slds-card__header slds-grid">
+            <div class="slds-card__header slds-grid slds-grid_align-spread">
               <header class="slds-media slds-media_center slds-has-flexi-truncate">
                 <div class="slds-media__body">
                   <h2 class="slds-card__header-title">
@@ -326,6 +326,17 @@
                   </h2>
                 </div>
               </header>
+              <div class="slds-no-flex">
+                <button
+                  class="slds-button slds-button_neutral slds-button_icon-border"
+                  onclick={handleCopyCode}
+                  title="Copy code">
+                  <svg class="slds-button__icon" aria-hidden="true">
+                    <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#copy"></use>
+                  </svg>
+                  <span class="slds-assistive-text">Copy code</span>
+                </button>
+              </div>
             </div>
             <div class="slds-card__body">
               <!-- Code Tabs -->
@@ -362,6 +373,17 @@
                       data-tab="js"
                       onclick={handleCodeTabChange}>
                       JS
+                    </a>
+                  </li>
+                  <li class={xmlTabClass} role="presentation">
+                    <a
+                      class="slds-tabs_default__link"
+                      role="tab"
+                      tabindex="0"
+                      aria-selected={isXmlTabActive}
+                      data-tab="xml"
+                      onclick={handleCodeTabChange}>
+                      XML
                     </a>
                   </li>
                 </ul>

@@ -1,0 +1,59 @@
+<template>
+  <div class="slds-m-around_medium">
+    <!-- Success Alert -->
+    <div class="slds-m-bottom_small" role="alert">
+      <span class="slds-assistive-text">Success</span>
+      <span class="slds-icon_container slds-icon-utility-success slds-m-right_x-small">
+        <lightning-icon
+          icon-name="utility:success"
+          alternative-text="Success"
+          size="x-small"
+          class="slds-icon-text-success"
+        ></lightning-icon>
+      </span>
+      <span>Operation completed successfully</span>
+    </div>
+
+    <!-- Error Alert -->
+    <div class="slds-alert_error slds-m-bottom_small" role="alert">
+      <span class="slds-assistive-text">Error</span>
+      <span class="slds-icon_container slds-icon-utility-error slds-m-right_x-small">
+        <lightning-icon
+          icon-name="utility:error"
+          alternative-text="Error"
+          size="x-small"
+          class="slds-icon-text-error"
+        ></lightning-icon>
+      </span>
+      <span>An error occurred while processing your request</span>
+    </div>
+
+    <!-- Warning Alert -->
+    <div class="slds-alert_warning slds-m-bottom_small" role="alert">
+      <span class="slds-assistive-text">Warning</span>
+      <span class="slds-icon_container slds-icon-utility-warning slds-m-right_x-small">
+        <lightning-icon
+          icon-name="utility:warning"
+          alternative-text="Warning"
+          size="x-small"
+          class="slds-icon-text-warning"
+        ></lightning-icon>
+      </span>
+      <span>Please review your input before proceeding</span>
+    </div>
+
+    <!-- Info Alert -->
+    <div class="slds-m-bottom_small" role="alert">
+      <span class="slds-assistive-text">Info</span>
+      <span class="slds-icon_container slds-icon-utility-info slds-m-right_x-small">
+        <lightning-icon
+          icon-name="utility:info_1"
+          alternative-text="Information"
+          size="x-small"
+          class="slds-icon-text-default"
+        ></lightning-icon>
+      </span>
+      <span>This is an informational message</span>
+    </div>
+  </div>
+</template>

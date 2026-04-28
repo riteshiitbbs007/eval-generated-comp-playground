@@ -1,0 +1,96 @@
+/**
+ * Responsive Card Grid Styles
+ * 
+ * All styling uses SLDS hooks (var(--slds-g-*, fallback)) for theming support
+ * No hardcoded values for colors, spacing, typography, borders, or shadows
+ */
+
+/* Card container */
+.c-card {
+    /* Surface color with fallback */
+    background: var(--slds-g-color-surface-1, #ffffff);
+    
+    /* Border with SLDS hook */
+    border: 1px solid var(--slds-g-color-border-1, #c9c9c9);
+    border-radius: var(--slds-g-radius-border-2, 0.25rem);
+    
+    /* Shadow for depth */
+    box-shadow: var(--slds-g-shadow-1, 0 2px 2px 0 rgba(0, 0, 0, 0.1));
+    
+    /* Internal spacing */
+    padding: var(--slds-g-spacing-4, 1rem);
+    
+    /* Full height for consistent card heights in grid */
+    height: 100%;
+    
+    /* Flexbox for internal layout */
+    display: flex;
+    flex-direction: column;
+    
+    /* Smooth transitions for interactive states */
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover state for cards */
+.c-card:hover {
+    /* Enhanced shadow on hover */
+    box-shadow: var(--slds-g-shadow-2, 0 4px 8px 0 rgba(0, 0, 0, 0.12));
+    
+    /* Subtle lift effect */
+    transform: translateY(-2px);
+}
+
+/* Card header section */
+.c-card__header {
+    /* Bottom spacing */
+    margin-bottom: var(--slds-g-spacing-3, 0.75rem);
+    
+    /* Icon alignment */
+    display: flex;
+    align-items: center;
+}
+
+/* Card icon styling */
+.c-card__icon {
+    /* Accent color for icons */
+    color: var(--slds-g-color-accent-1, #0176d3);
+}
+
+/* Card body section */
+.c-card__body {
+    /* Flex grow to fill available space */
+    flex: 1;
+}
+
+/* Card title */
+.c-card__title {
+    /* On-surface text color for high contrast */
+    color: var(--slds-g-color-on-surface-2, #181818);
+    
+    /* Font size using scale */
+    font-size: var(--slds-g-font-scale-2, 0.875rem);
+    
+    /* Font weight for emphasis */
+    font-weight: var(--slds-g-font-weight-bold, 700);
+    
+    /* Bottom spacing */
+    margin-bottom: var(--slds-g-spacing-2, 0.5rem);
+    
+    /* Reset default heading margin */
+    margin-top: 0;
+}
+
+/* Card description */
+.c-card__description {
+    /* Secondary text color for hierarchy */
+    color: var(--slds-g-color-on-surface-1, #3e3e3e);
+    
+    /* Base font size */
+    font-size: var(--slds-g-font-size-base, 1rem);
+    
+    /* Line height for readability */
+    line-height: var(--slds-g-line-height-text, 1.5);
+    
+    /* Reset default paragraph margin */
+    margin: 0;
+}

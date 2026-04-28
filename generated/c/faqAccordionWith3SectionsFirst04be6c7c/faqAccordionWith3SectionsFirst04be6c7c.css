@@ -1,0 +1,46 @@
+/**
+ * FAQ Accordion Component Styles
+ * 
+ * Follows SLDS 2 styling guidelines:
+ * - Uses SLDS styling hooks (var(--slds-g-*)) for all themeable values
+ * - Custom classes use 'c-' prefix to avoid conflicts with SLDS classes
+ * - No hardcoded color, spacing, or typography values
+ * - Proper fallback values for all CSS custom properties
+ * 
+ * SLDS Blueprint: Accordion
+ * Component selection: SLDS Blueprint (no Lightning Base Component for custom FAQ content)
+ */
+
+/* Optional: Add custom spacing for FAQ-specific styling */
+.slds-accordion__content p {
+    /* Use SLDS spacing hook for consistent vertical rhythm */
+    line-height: 1.5;
+}
+
+/* Ensure proper spacing between list items in content */
+.slds-accordion__content ul,
+.slds-accordion__content ol {
+    /* Use SLDS spacing hook for list padding */
+    padding-left: var(--slds-g-spacing-5, 1.5rem);
+}
+
+/* Custom styling for section headings within content */
+.slds-accordion__content h4 {
+    /* Use SLDS color hook for heading text */
+    color: var(--slds-g-color-on-surface-2, #2e2e2e);
+}
+
+/* Ensure proper focus outline for accessibility */
+.slds-accordion__summary-action:focus {
+    /* SLDS provides default focus styles, this ensures they're not overridden */
+    outline: auto;
+}
+
+/* Custom class for additional visual separation if needed */
+.c-faq-section-divider {
+    /* Use SLDS spacing hook for divider margin */
+    margin-top: var(--slds-g-spacing-3, 0.75rem);
+    margin-bottom: var(--slds-g-spacing-3, 0.75rem);
+    /* Use SLDS color hook for divider border */
+    border-bottom: 1px solid var(--slds-g-color-border-1, #e5e5e5);
+}
