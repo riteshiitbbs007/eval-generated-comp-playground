@@ -120,46 +120,126 @@
           <!-- Component Selector (only shown in component view mode) -->
           <template if:true={showComponentSelector}>
             <div class="component-selector slds-m-top_medium">
+              <!-- Header with Title and Selection Count -->
               <div class="selector-header slds-m-bottom_small">
                 <div class="selector-title">
                   <h3 class="slds-text-heading_small">
                     Select Utterance:Variant Combinations
                   </h3>
                   <span class="selection-count" if:true={selectedComponentCount}>
-                    {selectedComponentCount} selected
+                    {componentSelectionLabel}
                   </span>
                 </div>
                 <p class="slds-text-body_small slds-text-color_weak">
-                  Track specific combinations over time (e.g., C01 - Simple shows all Simple variants of utterance C01)
+                  Track specific combinations over time by execution mode
                 </p>
               </div>
-              <div class="slds-button-group">
-                <button class="slds-button slds-button_neutral slds-button_small" onclick={handleSelectAll}>
-                  <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
-                    <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#check"></use>
-                  </svg>
-                  Select All
-                </button>
-                <button class="slds-button slds-button_neutral slds-button_small" onclick={handleClearAll}>
-                  <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
-                    <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#clear"></use>
-                  </svg>
-                  Clear All
-                </button>
-              </div>
-              <div class="component-checkboxes">
-                <template for:each={availableComponents} for:item="component">
-                  <label key={component.value} class="slds-checkbox" data-is-baseline={component.isBaseline}>
+
+              <!-- Search Bar -->
+              <div class="selector-search slds-m-bottom_small">
+                <div class="slds-form-element">
+                  <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                    <svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
+                      <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#search"></use>
+                    </svg>
                     <input
-                      type="checkbox"
-                      name={component.value}
-                      value={component.value}
-                      checked={component.checked}
-                      onchange={handleComponentSelection}
+                      type="search"
+                      class="slds-input"
+                      placeholder="Search utterances (e.g., C01, search bar)..."
+                      value={searchTerm}
+                      oninput={handleSearchInput}
                     />
-                    <span class="slds-checkbox_faux"></span>
-                    <span class="slds-form-element__label">{component.label}</span>
-                  </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Action Buttons and Mode Filter Chips -->
+              <div class="selector-actions-row slds-m-bottom_small">
+                <div class="slds-button-group">
+                  <button class="slds-button slds-button_neutral slds-button_small" onclick={handleSelectAll}>
+                    <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+                      <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#check"></use>
+                    </svg>
+                    Select All
+                  </button>
+                  <button class="slds-button slds-button_neutral slds-button_small" onclick={handleClearAll}>
+                    <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+                      <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#clear"></use>
+                    </svg>
+                    Clear All
+                  </button>
+                </div>
+
+                <div class="mode-filter-chips">
+                  <button class={allModesChipClass} onclick={handleFilterAllModes}>
+                    All Modes
+                  </button>
+                  <button class={baselineChipClass} onclick={handleFilterBaseline}>
+                    <span class="chip-icon chip-icon-baseline"></span>
+                    Baseline
+                  </button>
+                  <button class={skillsChipClass} onclick={handleFilterSkills}>
+                    <span class="chip-icon chip-icon-skills"></span>
+                    Skills
+                  </button>
+                </div>
+              </div>
+
+              <!-- Execution Mode Accordions -->
+              <div class="execution-mode-accordions">
+                <template for:each={executionModeSections} for:item="section">
+                  <div key={section.name} class="mode-section" data-mode={section.name}>
+                    <!-- Mode Section Header -->
+                    <div class="mode-section-header">
+                      <div class="mode-section-title">
+                        <h4 class="slds-text-heading_small">{section.label}</h4>
+                        <span class="mode-badge">{section.badge}</span>
+                      </div>
+                    </div>
+
+                    <!-- Utterance Groups -->
+                    <div class="utterance-groups">
+                      <template for:each={section.utterances} for:item="utterance">
+                        <div key={utterance.utteranceId} class="utterance-group">
+                          <!-- Utterance Header with Master Checkbox -->
+                          <div class="utterance-header">
+                            <label class="utterance-checkbox-wrapper">
+                              <input
+                                type="checkbox"
+                                class="utterance-checkbox"
+                                data-mode={utterance.mode}
+                                data-utterance-id={utterance.utteranceId}
+                                data-selection-state={utterance.selectionState}
+                                onchange={handleUtteranceCheckboxChange}
+                              />
+                              <span class="utterance-checkbox-faux"></span>
+                            </label>
+                            <div class="utterance-info">
+                              <span class="utterance-id">{utterance.utteranceId}</span>
+                              <span class="utterance-name">{utterance.utteranceName}</span>
+                            </div>
+                          </div>
+
+                          <!-- Variant Checkboxes -->
+                          <div class="variant-checkboxes">
+                            <template for:each={utterance.variants} for:item="variant">
+                              <label key={variant.key} class="variant-checkbox-label">
+                                <input
+                                  type="checkbox"
+                                  class="variant-checkbox"
+                                  data-key={variant.key}
+                                  checked={variant.checked}
+                                  onchange={handleVariantCheckboxChange}
+                                />
+                                <span class="variant-checkbox-faux"></span>
+                                <span class="variant-label">{variant.name}</span>
+                              </label>
+                            </template>
+                          </div>
+                        </div>
+                      </template>
+                    </div>
+                  </div>
                 </template>
               </div>
             </div>
@@ -200,16 +280,23 @@
             </div>
           </template>
 
-          <!-- Component view: No components selected -->
+          <!-- Component view: No components selected or filtered -->
           <template if:true={showComponentSelector}>
             <template if:false={chartData}>
               <div class="slds-box slds-theme_info slds-text-align_center slds-p-around_large">
                 <p class="slds-text-heading_small slds-m-bottom_small">
-                  📌 Select components to track
+                  📌 {chartEmptyMessage}
                 </p>
-                <p class="slds-text-body_regular">
-                  Check the boxes above to select which components you want to see in the trend chart.
-                </p>
+                <template if:true={hasFilteredSelections}>
+                  <p class="slds-text-body_regular">
+                    You have selections from other modes. Switch to "All Modes" to see them or select components from the current mode filter.
+                  </p>
+                </template>
+                <template if:false={hasFilteredSelections}>
+                  <p class="slds-text-body_regular">
+                    Check the boxes above to select which components you want to see in the trend chart.
+                  </p>
+                </template>
               </div>
             </template>
           </template>

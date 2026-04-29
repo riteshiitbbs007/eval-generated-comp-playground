@@ -195,7 +195,7 @@ function getQualityGate(score) {
 
 // Format component data for snapshot
 function formatComponentData(component) {
-  return {
+  const snapshotData = {
     componentName: component.componentName,
     utteranceId: component.utteranceId,
     variant: component.variant,
@@ -218,6 +218,23 @@ function formatComponentData(component) {
     qualityGate: getQualityGate(component.scores?.overall || 0),
     timestamp: component.timestamp
   };
+
+  // Include execution mode metadata if present (for future mode filtering)
+  // These fields enable accurate mode-based trend filtering
+  if (component.testMode !== undefined) {
+    snapshotData.testMode = component.testMode;
+  }
+  if (component.executionMode !== undefined) {
+    snapshotData.executionMode = component.executionMode;
+  }
+  if (component.skillsModeEnabled !== undefined) {
+    snapshotData.skillsModeEnabled = component.skillsModeEnabled;
+  }
+  if (component.sldsToolsEnabled !== undefined) {
+    snapshotData.sldsToolsEnabled = component.sldsToolsEnabled;
+  }
+
+  return snapshotData;
 }
 
 // Calculate overall summary
