@@ -12,8 +12,6 @@ export default class DashboardFilters extends LightningElement {
   utteranceIdFilter = '';
   baselineOnly = false;
 
-  selectedTiers = new Set(['Tier 1', 'Tier 2', 'Tier 3']);
-  selectedComplexities = new Set(['Simple', 'Intermediate', 'Advanced']);
   selectedVariants = new Set(['Simple', 'Moderate', 'Detailed']);
   selectedModels = new Set();
 
@@ -86,22 +84,6 @@ export default class DashboardFilters extends LightningElement {
   }
 
   // Options for checkboxes
-  get tierOptions() {
-    return [
-      { id: 'tier-1', value: 'Tier 1', label: 'Tier 1', checked: this.selectedTiers.has('Tier 1') },
-      { id: 'tier-2', value: 'Tier 2', label: 'Tier 2', checked: this.selectedTiers.has('Tier 2') },
-      { id: 'tier-3', value: 'Tier 3', label: 'Tier 3', checked: this.selectedTiers.has('Tier 3') }
-    ];
-  }
-
-  get complexityOptions() {
-    return [
-      { id: 'complexity-simple', value: 'Simple', label: 'Simple', checked: this.selectedComplexities.has('Simple') },
-      { id: 'complexity-intermediate', value: 'Intermediate', label: 'Intermediate', checked: this.selectedComplexities.has('Intermediate') },
-      { id: 'complexity-advanced', value: 'Advanced', label: 'Advanced', checked: this.selectedComplexities.has('Advanced') }
-    ];
-  }
-
   get variantOptions() {
     return [
       { id: 'variant-simple', value: 'Simple', label: 'Simple', checked: this.selectedVariants.has('Simple') },
@@ -156,26 +138,6 @@ export default class DashboardFilters extends LightningElement {
     this.emitFilterChange();
   }
 
-  handleTierChange(event) {
-    const value = event.target.value;
-    if (event.target.checked) {
-      this.selectedTiers.add(value);
-    } else {
-      this.selectedTiers.delete(value);
-    }
-    this.emitFilterChange();
-  }
-
-  handleComplexityChange(event) {
-    const value = event.target.value;
-    if (event.target.checked) {
-      this.selectedComplexities.add(value);
-    } else {
-      this.selectedComplexities.delete(value);
-    }
-    this.emitFilterChange();
-  }
-
   handleVariantChange(event) {
     const value = event.target.value;
     if (event.target.checked) {
@@ -213,8 +175,6 @@ export default class DashboardFilters extends LightningElement {
     this.minSldsCompliance = 0;
     this.utteranceIdFilter = '';
     this.baselineOnly = false;
-    this.selectedTiers = new Set(['Tier 1', 'Tier 2', 'Tier 3']);
-    this.selectedComplexities = new Set(['Simple', 'Intermediate', 'Advanced']);
     this.selectedVariants = new Set(['Simple', 'Moderate', 'Detailed']);
     this.updateModelOptions();
     this.emitFilterChange();
@@ -226,8 +186,8 @@ export default class DashboardFilters extends LightningElement {
         quickFilter: this.activeQuickFilter,
         scoreRange: { min: this.minScore, max: this.maxScore },
         sldsCompliance: this.minSldsCompliance,
-        tiers: Array.from(this.selectedTiers),
-        complexities: Array.from(this.selectedComplexities),
+        tiers: [], // Empty - tier filter removed
+        complexities: [], // Empty - complexity filter removed
         variants: Array.from(this.selectedVariants),
         models: Array.from(this.selectedModels),
         utteranceId: this.utteranceIdFilter,

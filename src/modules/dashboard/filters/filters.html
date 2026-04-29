@@ -102,48 +102,6 @@
         </div>
       </div>
 
-      <!-- Tier Filter -->
-      <div class="filter-section slds-m-bottom_medium">
-        <h4 class="slds-text-heading_x-small slds-m-bottom_x-small">Tier</h4>
-        <div class="checkbox-group">
-          <template for:each={tierOptions} for:item="option">
-            <div key={option.value} class="slds-checkbox">
-              <input
-                type="checkbox"
-                id={option.id}
-                value={option.value}
-                checked={option.checked}
-                onchange={handleTierChange} />
-              <label class="slds-checkbox__label" for={option.id}>
-                <span class="slds-checkbox_faux"></span>
-                <span class="slds-form-element__label">{option.label}</span>
-              </label>
-            </div>
-          </template>
-        </div>
-      </div>
-
-      <!-- Complexity Filter -->
-      <div class="filter-section slds-m-bottom_medium">
-        <h4 class="slds-text-heading_x-small slds-m-bottom_x-small">Complexity</h4>
-        <div class="checkbox-group">
-          <template for:each={complexityOptions} for:item="option">
-            <div key={option.value} class="slds-checkbox">
-              <input
-                type="checkbox"
-                id={option.id}
-                value={option.value}
-                checked={option.checked}
-                onchange={handleComplexityChange} />
-              <label class="slds-checkbox__label" for={option.id}>
-                <span class="slds-checkbox_faux"></span>
-                <span class="slds-form-element__label">{option.label}</span>
-              </label>
-            </div>
-          </template>
-        </div>
-      </div>
-
       <!-- Variant Filter -->
       <div class="filter-section slds-m-bottom_medium">
         <h4 class="slds-text-heading_x-small slds-m-bottom_x-small">Variant</h4>
