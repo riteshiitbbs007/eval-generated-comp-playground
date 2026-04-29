@@ -35,6 +35,14 @@ export const onboardingData = {
       illustration: 'preview',
     },
     {
+      id: 'execution-modes',
+      title: 'Component Generation Modes',
+      heading: 'Three Execution Modes for AI Generation',
+      content: `<p class='slds-text-body_regular slds-m-bottom_medium'>Components are generated using different AI tooling configurations. Each mode provides different levels of SLDS guidance, directly impacting quality and compliance.</p><div class='slds-m-bottom_medium'><div class='slds-text-heading_small slds-m-bottom_x-small'>🟦 Baseline Mode (2 Tools)</div><ul class='slds-list_dotted slds-m-left_medium slds-text-body_small'><li><strong>Tools:</strong> create_lwc_component_from_prd, orchestrate_lwc_component_optimization</li><li><strong>Purpose:</strong> Minimal SLDS tooling support for benchmarking</li><li><strong>Characteristics:</strong> Lightweight, requires more manual refinement</li></ul></div><div class='slds-m-bottom_medium'><div class='slds-text-heading_small slds-m-bottom_x-small'>🟨 MCP Default Mode (5 Tools)</div><ul class='slds-list_dotted slds-m-left_medium slds-text-body_small'><li><strong>Additional Tools:</strong> guide_slds_styling, explore_slds_styling, guide_design_general</li><li><strong>Purpose:</strong> Enhanced SLDS guidance via Model Context Protocol</li><li><strong>Characteristics:</strong> Better compliance, comprehensive styling guidance</li></ul></div><div class='slds-m-bottom_medium'><div class='slds-text-heading_small slds-m-bottom_x-small'>🟩 Skills Mode (3 Tools + Embedded Knowledge)</div><ul class='slds-list_dotted slds-m-left_medium slds-text-body_small'><li><strong>Special Tool:</strong> Skill tool → applies 'applying-slds' skill with embedded knowledge</li><li><strong>Purpose:</strong> Optimal SLDS compliance for production components</li><li><strong>Characteristics:</strong> Highest scores, integrated SLDS knowledge base</li></ul></div><p class='slds-text-body_small slds-text-color_weak slds-m-top_medium'><strong>Dashboard Filters:</strong> Use "Baseline SLDS Only" and "Skills Mode Only" filters to compare components across execution modes.</p>`,
+      icon: 'utility:settings',
+      illustration: 'setup',
+    },
+    {
       id: 'features',
       title: 'Gallery Features',
       heading: 'What You Can Do Here',
