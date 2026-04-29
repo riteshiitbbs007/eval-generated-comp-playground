@@ -11,6 +11,7 @@ export default class DashboardFilters extends LightningElement {
   minSldsCompliance = 0;
   utteranceIdFilter = '';
   baselineOnly = false;
+  skillsOnly = false;
 
   selectedVariants = new Set(['Simple', 'Moderate', 'Detailed']);
   selectedModels = new Set();
@@ -56,6 +57,14 @@ export default class DashboardFilters extends LightningElement {
 
   get baselineCount() {
     return this.components.filter(c => c.baseline_slds === true).length;
+  }
+
+  get skillsCount() {
+    return this.components.filter(c =>
+      c.testMode === 'skills' ||
+      c.executionMode === 'skills' ||
+      c.skillsModeEnabled === true
+    ).length;
   }
 
   // Button classes
@@ -168,6 +177,11 @@ export default class DashboardFilters extends LightningElement {
     this.emitFilterChange();
   }
 
+  handleSkillsChange(event) {
+    this.skillsOnly = event.target.checked;
+    this.emitFilterChange();
+  }
+
   handleReset() {
     this.activeQuickFilter = 'all';
     this.minScore = 0;
@@ -175,6 +189,7 @@ export default class DashboardFilters extends LightningElement {
     this.minSldsCompliance = 0;
     this.utteranceIdFilter = '';
     this.baselineOnly = false;
+    this.skillsOnly = false;
     this.selectedVariants = new Set(['Simple', 'Moderate', 'Detailed']);
     this.updateModelOptions();
     this.emitFilterChange();
@@ -191,7 +206,8 @@ export default class DashboardFilters extends LightningElement {
         variants: Array.from(this.selectedVariants),
         models: Array.from(this.selectedModels),
         utteranceId: this.utteranceIdFilter,
-        baselineOnly: this.baselineOnly
+        baselineOnly: this.baselineOnly,
+        skillsOnly: this.skillsOnly
       }
     }));
   }

@@ -50,6 +50,21 @@
         </div>
       </div>
 
+      <!-- Skills Mode Filter -->
+      <div class="filter-section slds-m-bottom_medium">
+        <div class="slds-checkbox">
+          <input
+            type="checkbox"
+            id="skills-mode-filter"
+            checked={skillsOnly}
+            onchange={handleSkillsChange} />
+          <label class="slds-checkbox__label" for="skills-mode-filter">
+            <span class="slds-checkbox_faux"></span>
+            <span class="slds-form-element__label">Skills Mode Only ({skillsCount})</span>
+          </label>
+        </div>
+      </div>
+
       <!-- Readiness Score Range -->
       <div class="filter-section slds-m-bottom_medium">
         <h4 class="slds-text-heading_x-small slds-m-bottom_x-small">Readiness Score</h4>

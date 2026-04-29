@@ -99,6 +99,14 @@ export default class FilteredGallery extends LightningElement {
       // Baseline SLDS filter
       if (this.filters.baselineOnly && !comp.baseline_slds) return false;
 
+      // Skills Mode filter
+      if (this.filters.skillsOnly) {
+        const isSkillsMode = comp.testMode === 'skills' ||
+                            comp.executionMode === 'skills' ||
+                            comp.skillsModeEnabled === true;
+        if (!isSkillsMode) return false;
+      }
+
       return true;
     });
   }
