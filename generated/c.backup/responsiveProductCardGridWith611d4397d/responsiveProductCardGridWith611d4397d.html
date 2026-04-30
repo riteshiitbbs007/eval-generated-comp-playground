@@ -1,0 +1,49 @@
+<template>
+    <!-- Main container for the product grid -->
+    <div class="responsive-product-card-grid">
+        <!-- Grid container with responsive layout -->
+        <div class="responsive-product-card-grid__container">
+            <!-- Loop through products and create cards -->
+            <template for:each={products} for:item="product">
+                <article key={product.id} class="responsive-product-card-grid__item">
+                    <div class="responsive-product-card-grid__card">
+                        <!-- Card header with image -->
+                        <header class="responsive-product-card-grid__header">
+                            <div class="responsive-product-card-grid__image-container">
+                                <img src={product.imageUrl} alt={product.imageAlt} class="responsive-product-card-grid__image">
+
+                                <!-- New badge - only shown if isNew is true -->
+                                <template if:true={product.isNew}>
+                                    <span class="responsive-product-card-grid__badge">New</span>
+                                </template>
+                            </div>
+                        </header>
+
+                        <!-- Card body with product details -->
+                        <div class="responsive-product-card-grid__body">
+                            <h2 class="responsive-product-card-grid__title">{product.name}</h2>
+                            <p class="responsive-product-card-grid__price">{product.formattedPrice}</p>
+                            <p class="responsive-product-card-grid__description">{product.description}</p>
+                        </div>
+
+                        <!-- Card footer with action button -->
+                        <footer class="responsive-product-card-grid__footer">
+                            <button onclick={handleProductSelect} data-id={product.id}
+                                    class="responsive-product-card-grid__button"
+                                    aria-label={product.buttonAriaLabel}>
+                                View Details
+                            </button>
+                        </footer>
+                    </div>
+                </article>
+            </template>
+
+            <!-- Empty state when no products are available -->
+            <template if:true={showEmptyState}>
+                <div class="responsive-product-card-grid__empty">
+                    <p>No products available</p>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

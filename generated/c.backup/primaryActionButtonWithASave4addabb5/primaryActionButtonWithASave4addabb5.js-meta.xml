@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Primary Action Button With A Save</masterLabel>
+    <description>A primary action button component with a save icon on the left and text "Save Changes"</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage">
+            <property name="buttonLabel" type="String" default="Save Changes" label="Button Label" description="Text displayed on the button"/>
+            <property name="ariaLabel" type="String" label="ARIA Label" description="Accessibility label for screen readers"/>
+            <property name="assistiveText" type="String" label="Assistive Text" description="Additional text for screen readers"/>
+            <property name="variant" type="String" default="brand" label="Button Variant" description="Specifies the button variant">
+                <restrictedTo>
+                    <value>brand</value>
+                    <value>neutral</value>
+                    <value>destructive</value>
+                    <value>success</value>
+                </restrictedTo>
+            </property>
+            <property name="disabled" type="Boolean" default="false" label="Disabled" description="Disables the button when true"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

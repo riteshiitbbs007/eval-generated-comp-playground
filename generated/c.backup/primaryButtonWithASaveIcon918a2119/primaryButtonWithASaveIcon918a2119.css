@@ -1,0 +1,33 @@
+/**
+ * Primary Button with Save Icon - Custom Styles
+ *
+ * Uses SLDS styling hooks for theme-aware, accessible styling.
+ * Minimal custom CSS since lightning-button handles most styling.
+ */
+
+/**
+ * Custom spacing adjustment using SLDS spacing hooks
+ * Ensures consistent spacing around the button component
+ */
+:host {
+    display: inline-block;
+}
+
+/**
+ * Additional focus state enhancement for accessibility
+ * Uses SLDS accent colors for focus indication
+ */
+lightning-button::part(button):focus-visible {
+    outline: 2px solid var(--slds-g-color-accent-1);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px var(--slds-g-color-accent-container-1);
+}
+
+/**
+ * Ensure proper spacing between icon and label
+ * Lightning-button handles this internally, but this ensures consistency
+ */
+lightning-button {
+    --sds-c-button-spacing-inline-start: var(--slds-g-spacing-2);
+    --sds-c-button-spacing-inline-end: var(--slds-g-spacing-2);
+}

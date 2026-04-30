@@ -1,0 +1,29 @@
+<template>
+    <button
+        class={computedButtonClass}
+        onclick={handleClick}
+        disabled={disabled}
+        aria-label={computedAriaLabel}
+        aria-disabled={disabled}
+    >
+        <template lwc:if={showIcon}>
+            <lightning-icon
+                icon-name="utility:save"
+                size="x-small"
+                class={iconClass}
+                alternative-text="Save Icon"
+            ></lightning-icon>
+        </template>
+        <span class="slds-assistive-text slds-p-right_x-small" lwc:if={loading}>Loading</span>
+        <template lwc:if={loading}>
+            <div class="slds-is-relative slds-p-right_x-small slds-inline-block">
+                <lightning-spinner
+                    alternative-text="Loading"
+                    size="x-small"
+                    variant="inverse"
+                ></lightning-spinner>
+            </div>
+        </template>
+        <span>{label}</span>
+    </button>
+</template>

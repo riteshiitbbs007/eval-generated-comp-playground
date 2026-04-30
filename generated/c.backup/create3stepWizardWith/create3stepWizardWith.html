@@ -1,0 +1,88 @@
+<template>
+    <!-- Main container with responsive layout -->
+    <div class="slds-card slds-p-around_medium">
+        <!-- Path component for step progression -->
+        <div class="slds-path" aria-label="Steps in wizard process">
+            <div class="slds-grid slds-path__track">
+                <div class="slds-grid slds-path__scroller-container">
+                    <div class="slds-path__scroller" role="navigation">
+                        <div class="slds-path__scroller_inner">
+                            <ul class="slds-path__nav" role="tablist" aria-orientation="horizontal">
+                                <template for:each={stepsData} for:item="step" for:index="index">
+                                    <li key={step.id} class={step.classes} role="presentation">
+                                        <a
+                                            aria-selected={step.isCurrent}
+                                            class="slds-path__link"
+                                            id={step.id}
+                                            role="tab"
+                                            tabindex={step.tabIndex}
+                                            aria-label={step.ariaLabel}
+                                            aria-controls={step.contentId}
+                                            data-step-index={index}
+                                            onclick={handleStepClick}>
+                                            <span class="slds-path__stage">
+                                                <lightning-icon
+                                                    if:true={step.isComplete}
+                                                    icon-name="utility:check"
+                                                    size="x-small"
+                                                    variant="inverse"
+                                                    alternative-text="Completed"
+                                                    class="slds-icon_container">
+                                                </lightning-icon>
+                                                <span if:false={step.isComplete}>
+                                                    <span if:true={showStepNumbers} class="slds-assistive-text">
+                                                        {step.stepNumber}
+                                                    </span>
+                                                </span>
+                                            </span>
+                                            <span class="slds-path__title">{step.title}</span>
+                                        </a>
+                                    </li>
+                                </template>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content section for current step -->
+        <div class="slds-p-top_medium slds-p-bottom_medium step-content" role="tabpanel" aria-labelledby={currentStepId}>
+            <div id="step-content-1" role="tabpanel" aria-labelledby="step-0" if:true={isStepOne}>
+                <slot name="step-1"></slot>
+            </div>
+            <div id="step-content-2" role="tabpanel" aria-labelledby="step-1" if:true={isStepTwo}>
+                <slot name="step-2"></slot>
+            </div>
+            <div id="step-content-3" role="tabpanel" aria-labelledby="step-2" if:true={isStepThree}>
+                <slot name="step-3"></slot>
+            </div>
+        </div>
+
+        <!-- Navigation buttons -->
+        <div class="slds-grid slds-grid_align-spread slds-p-top_medium" role="group" aria-label="Wizard Navigation">
+            <!-- Back button - hidden on first step -->
+            <div class="slds-col">
+                <lightning-button
+                    if:false={isFirstStep}
+                    label="Back"
+                    onclick={handleBackClick}
+                    variant="neutral"
+                    class="slds-m-right_x-small"
+                    aria-label={backButtonLabel}>
+                </lightning-button>
+            </div>
+
+            <!-- Next/Complete button - hidden on last step -->
+            <div class="slds-col slds-text-align_right">
+                <lightning-button
+                    if:false={isLastStep}
+                    label="Next"
+                    onclick={handleNextClick}
+                    variant="brand"
+                    aria-label={nextButtonLabel}>
+                </lightning-button>
+            </div>
+        </div>
+    </div>
+</template>

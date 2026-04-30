@@ -1,0 +1,171 @@
+/* Apply SLDS styling hooks and tokens */
+
+/* Path component styles with SLDS 2 standards */
+.slds-path {
+    margin: var(--slds-g-spacing-vertical-medium) 0;
+    border-radius: var(--slds-g-radius-border-medium);
+}
+
+.slds-path__nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.slds-path__item {
+    flex: 1;
+    transition: background-color 0.2s ease-in-out;
+    position: relative;
+}
+
+/* Style path items based on state using SLDS semantic color tokens */
+.slds-path__item.slds-is-current {
+    background-color: var(--slds-g-color-brand-base-50);
+}
+
+.slds-path__item.slds-is-current:before,
+.slds-path__item.slds-is-current:after {
+    background-color: var(--slds-g-color-brand-base-50);
+}
+
+.slds-path__item.slds-is-complete {
+    background-color: var(--slds-g-color-success-base-50);
+}
+
+.slds-path__item.slds-is-complete:before,
+.slds-path__item.slds-is-complete:after {
+    background-color: var(--slds-g-color-success-base-50);
+}
+
+.slds-path__item.slds-is-incomplete {
+    background-color: var(--slds-g-color-neutral-base-80);
+}
+
+.slds-path__item.slds-is-incomplete:before,
+.slds-path__item.slds-is-incomplete:after {
+    background-color: var(--slds-g-color-neutral-base-80);
+}
+
+/* Path link styles with focus states for accessibility */
+.slds-path__link {
+    display: flex;
+    align-items: center;
+    padding: var(--slds-g-spacing-small);
+    color: var(--slds-g-color-neutral-base-10);
+    position: relative;
+    line-height: var(--slds-g-line-height-reset);
+    text-decoration: none;
+    z-index: 5;
+    cursor: pointer;
+    min-height: 2.5rem;
+    width: 100%;
+    transition: transform 0.1s ease-in-out;
+}
+
+.slds-path__link:focus {
+    outline: 2px solid var(--slds-g-color-brand-base-50);
+    outline-offset: -2px;
+    box-shadow: 0 0 3px var(--slds-g-color-brand-base-30);
+}
+
+.slds-path__link:hover {
+    text-decoration: none;
+}
+
+/* Path stage icon/number container */
+.slds-path__stage {
+    margin-right: var(--slds-g-spacing-small);
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: var(--slds-g-color-neutral-base-70);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slds-is-current .slds-path__stage {
+    background-color: var(--slds-g-color-neutral-base-100);
+}
+
+.slds-is-complete .slds-path__stage {
+    background-color: var(--slds-g-color-success-base-30);
+}
+
+/* Path title text */
+.slds-path__title {
+    font-size: var(--slds-g-font-size-2);
+    font-weight: var(--slds-g-font-weight-bold);
+    line-height: var(--slds-g-line-height-heading);
+}
+
+.slds-is-current .slds-path__title {
+    color: var(--slds-g-color-neutral-base-100);
+}
+
+.slds-is-complete .slds-path__title {
+    color: var(--slds-g-color-neutral-base-100);
+}
+
+.slds-is-incomplete .slds-path__title {
+    color: var(--slds-g-color-neutral-base-30);
+}
+
+/* Step content area */
+.step-content {
+    min-height: 6rem;
+    border: 1px solid var(--slds-g-color-border-base-1);
+    border-radius: var(--slds-g-radius-border-medium);
+    padding: var(--slds-g-spacing-medium);
+    background-color: var(--slds-g-color-neutral-base-95);
+}
+
+/* Animation for step transitions */
+.step-content > div {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments using SLDS breakpoints */
+@media (max-width: 48rem) {
+    .slds-path__title {
+        font-size: var(--slds-g-font-size-1);
+    }
+
+    .slds-path__stage {
+        width: 1.25rem;
+        height: 1.25rem;
+        margin-right: var(--slds-g-spacing-xx-small);
+    }
+
+    .slds-path__link {
+        padding: var(--slds-g-spacing-xx-small) var(--slds-g-spacing-x-small);
+        min-height: 2rem;
+    }
+
+    /* Improve tap targets on mobile */
+    .slds-path__link:focus {
+        outline-offset: 0;
+    }
+}
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+    .slds-path__item.slds-is-current {
+        border: 2px solid CanvasText;
+    }
+
+    .slds-path__link:focus {
+        outline: 2px solid Highlight;
+    }
+}

@@ -1,0 +1,70 @@
+/**
+ * Vertical Navigation Menu Styles
+ * Uses SLDS 2 design tokens for theme-aware styling
+ */
+
+/* Container styling */
+.slds-nav-vertical {
+    background: var(--slds-g-color-surface-container-1);
+    padding: var(--slds-g-spacing-2) 0;
+}
+
+/* Navigation items */
+.slds-nav-vertical__item {
+    list-style: none;
+}
+
+/* Navigation action links */
+.slds-nav-vertical__action {
+    display: flex;
+    align-items: center;
+    padding: var(--slds-g-spacing-2) var(--slds-g-spacing-4);
+    color: var(--slds-g-color-on-surface-2);
+    text-decoration: none;
+    font-family: var(--slds-g-font-family-base);
+    font-size: var(--slds-g-font-size-base);
+    font-weight: var(--slds-g-font-weight-4);
+    line-height: var(--slds-g-font-lineheight-3);
+    border-radius: var(--slds-g-radius-border-1);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+/* Hover state */
+.slds-nav-vertical__action:hover {
+    background: var(--slds-g-color-accent-container-1);
+    color: var(--slds-g-color-on-accent-1);
+}
+
+/* Focus state for keyboard navigation */
+.slds-nav-vertical__action:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--slds-g-color-accent-1);
+    background: var(--slds-g-color-accent-container-1);
+    color: var(--slds-g-color-on-accent-1);
+}
+
+/* Active state */
+.slds-is-active .slds-nav-vertical__action {
+    background: var(--slds-g-color-accent-container-2);
+    color: var(--slds-g-color-on-accent-2);
+    font-weight: var(--slds-g-font-weight-6);
+    border-left: 4px solid var(--slds-g-color-accent-1);
+    padding-left: calc(var(--slds-g-spacing-4) - 4px);
+}
+
+/* Active state hover */
+.slds-is-active .slds-nav-vertical__action:hover {
+    background: var(--slds-g-color-accent-container-3);
+    color: var(--slds-g-color-on-accent-3);
+}
+
+/* Icon styling */
+.slds-nav-vertical__action lightning-icon {
+    flex-shrink: 0;
+}
+
+/* Action text */
+.slds-nav-vertical__action-text {
+    flex: 1;
+}

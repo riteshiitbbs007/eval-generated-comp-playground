@@ -1,0 +1,44 @@
+/* SLDS 2 styling hooks for theming and accessibility */
+.slds-card {
+    background: var(--slds-g-color-surface-container-1);
+    border-radius: var(--slds-g-radius-border-1);
+    box-shadow: var(--slds-g-shadow-1);
+    border: 1px solid var(--slds-g-color-border-1);
+}
+
+/* Avatar styling */
+.slds-avatar_large {
+    width: 3rem;
+    height: 3rem;
+    border-radius: var(--slds-g-radius-border-circle);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--slds-g-color-surface-3);
+}
+
+.slds-avatar_large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Link hover state */
+a {
+    color: var(--slds-g-color-accent-1);
+    text-decoration: none;
+    transition: color 0.1s linear;
+}
+
+a:hover {
+    color: var(--slds-g-color-accent-2);
+    text-decoration: underline;
+}
+
+a:focus {
+    color: var(--slds-g-color-accent-2);
+    text-decoration: underline;
+    outline: 2px solid var(--slds-g-color-accent-container-1);
+    outline-offset: 2px;
+}

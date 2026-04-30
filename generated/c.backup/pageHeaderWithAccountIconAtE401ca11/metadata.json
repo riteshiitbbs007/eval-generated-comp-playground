@@ -1,0 +1,46 @@
+{
+  "folderName": "pageHeaderWithAccountIconAt-C06-Detailed-20260316",
+  "componentName": "pageHeaderWithAccountIconAtE401ca11",
+  "csvId": "C06",
+  "variant": "Detailed",
+  "timestamp": "2026-03-16T07:40:45.548Z",
+  "utterance": "Create a page header with Account icon at standard size positioned left, title \"John Smith\" using SLDS heading size and weight, subtitle \"Account • Customer\" using smaller text with neutral colors from the design system. Position a button group on the right containing Edit button (neutral variant), Delete button (destructive variant), and Clone button (neutral variant). Header should use appropriate height from design system with bottom border using SLDS border utilities",
+  "tier": "Tier 2",
+  "complexity": "Intermediate",
+  "scores": {
+    "slds_linter": 0.7959999999999999,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.85,
+    "overall_readiness_label": "Prototype"
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 23,
+    "notes": 0
+  },
+  "utteranceId": "C06",
+  "errorsByType": {
+    "slds/no-slds-var-without-fallback": 20,
+    "slds/no-hardcoded-values-slds2": 3
+  },
+  "sldsToolsEnabled": true,
+  "testMode": "normal",
+  "baseline_slds": false,
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/e840c704-4e14-4159-9a6a-d3ec226e0e65/r/019cf593-685b-7000-8000-00d9e1cda219",
+  "langsmithRunId": "019cf593-685b-7000-8000-00d9e1cda219",
+  "langsmithProjectName": "upbeat-winter-20",
+  "langsmithTraceId": "019cf593-685b-7000-8000-00d9e1cda219",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C06:Detailed",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/pageHeaderWithAccountIconAtE401ca11/screenshots/desktop.png"
+  }
+}

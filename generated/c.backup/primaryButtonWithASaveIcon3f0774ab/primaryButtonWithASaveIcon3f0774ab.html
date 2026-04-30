@@ -1,0 +1,16 @@
+<template>
+    <button
+        class="slds-button slds-button_brand"
+        onclick={handleClick}
+        aria-label={buttonAriaLabel}
+        disabled={disabled}
+        type="button">
+        <lightning-icon
+            icon-name="utility:save"
+            size="x-small"
+            class="slds-button__icon slds-button__icon_left"
+            alternative-text="Save">
+        </lightning-icon>
+        <slot>Save</slot>
+    </button>
+</template>

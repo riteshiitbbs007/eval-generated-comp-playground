@@ -1,0 +1,119 @@
+/**
+ * Page Header Component Styles
+ * Uses SLDS 2 design tokens and follows BEM methodology
+ * All styling uses --slds-g-* global hooks for theme-aware design
+ */
+
+/* ========================================
+ * Page Header Container
+ * ======================================== */
+
+/**
+ * Main header container with bottom border
+ * Uses SLDS surface container color and border utilities
+ */
+.page-header {
+    /* Background using SLDS surface token */
+    background-color: var(--slds-g-color-surface-1);
+
+    /* Bottom border using SLDS border token */
+    border-bottom: 1px solid var(--slds-g-color-border-1);
+
+    /* Padding using SLDS spacing tokens */
+    padding: var(--slds-g-spacing-4) var(--slds-g-spacing-5);
+
+    /* Ensure proper height from design system */
+    min-height: var(--slds-g-sizing-height-page-header, 5rem);
+}
+
+/* ========================================
+ * Typography Styles
+ * ======================================== */
+
+/**
+ * Title styling with SLDS heading size and weight
+ * High emphasis text color for primary content
+ */
+.page-header__title {
+    /* Typography tokens for heading */
+    font-size: 1.5rem; /* SLDS heading-medium size */
+    font-weight: var(--slds-g-font-weight-7); /* Bold */
+    line-height: var(--slds-g-font-lineheight-2);
+    font-family: var(--slds-g-font-family-base);
+
+    /* High emphasis color for primary content */
+    color: var(--slds-g-color-on-surface-3);
+
+    /* Reset default heading margins */
+    margin: 0;
+}
+
+/**
+ * Subtitle styling with smaller text and neutral color
+ * De-emphasized appearance for secondary information
+ */
+.page-header__subtitle {
+    /* Typography tokens for body text */
+    font-size: 0.875rem; /* 14px - smaller than title */
+    font-weight: var(--slds-g-font-weight-4); /* Regular */
+    line-height: var(--slds-g-font-lineheight-3);
+    font-family: var(--slds-g-font-family-base);
+
+    /* De-emphasized color using neutral token */
+    color: var(--slds-g-color-on-surface-1);
+
+    /* Spacing between title and subtitle */
+    margin-top: var(--slds-g-spacing-1);
+    margin-bottom: 0;
+}
+
+/* ========================================
+ * Responsive Design
+ * ======================================== */
+
+/**
+ * Ensure responsive behavior on smaller screens
+ * Stack elements vertically when needed
+ */
+@media (max-width: 48rem) {
+    .slds-page-header__row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .slds-page-header__col-actions {
+        margin-top: var(--slds-g-spacing-3);
+        width: 100%;
+    }
+
+    .slds-button-group-list {
+        justify-content: flex-start;
+    }
+}
+
+/* ========================================
+ * Accessibility Enhancements
+ * ======================================== */
+
+/**
+ * Ensure focus states are visible for keyboard navigation
+ * Uses SLDS accent colors for focus indicators
+ */
+.page-header lightning-button:focus-within {
+    outline: 2px solid var(--slds-g-color-accent-1);
+    outline-offset: 2px;
+}
+
+/**
+ * High contrast mode support
+ * Ensures borders and text remain visible in high contrast mode
+ */
+@media (prefers-contrast: high) {
+    .page-header {
+        border-bottom-width: 2px;
+    }
+
+    .page-header__title {
+        font-weight: var(--slds-g-font-weight-7);
+    }
+}

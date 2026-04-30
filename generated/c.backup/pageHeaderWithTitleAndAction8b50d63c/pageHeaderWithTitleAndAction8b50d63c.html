@@ -1,0 +1,53 @@
+<template>
+    <!-- SLDS Page Header Container -->
+    <div class="slds-page-header">
+        <div class="slds-page-header__row">
+            <!-- Title Section -->
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span class="slds-page-header__title slds-truncate" title={title}>
+                                        {title}
+                                    </span>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actions Section -->
+            <div class="slds-page-header__col-actions">
+                <div class="slds-page-header__controls">
+                    <div class="slds-page-header__control">
+                        <ul class="slds-button-group-list">
+                            <!-- Secondary Action Button (conditional) -->
+                            <template lwc:if={showSecondaryAction}>
+                                <li>
+                                    <lightning-button
+                                        variant="neutral"
+                                        label={secondaryActionLabel}
+                                        onclick={handleSecondaryAction}
+                                        class="slds-m-right_x-small">
+                                    </lightning-button>
+                                </li>
+                            </template>
+
+                            <!-- Primary Action Button -->
+                            <li>
+                                <lightning-button
+                                    variant="brand"
+                                    label={primaryActionLabel}
+                                    onclick={handlePrimaryAction}>
+                                </lightning-button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

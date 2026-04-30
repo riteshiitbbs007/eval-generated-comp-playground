@@ -1,0 +1,118 @@
+/**
+ * Page Header with Title and Action Buttons - Styling
+ *
+ * Uses SLDS 2.x styling hooks for theme-aware, maintainable styling.
+ * All colors, spacing, and typography use semantic global hooks (--slds-g-*)
+ * to ensure automatic adaptation to brand themes, light/dark mode, and density settings.
+ */
+
+/* Page Header Container */
+.slds-page-header {
+    /* Use SLDS semantic surface color */
+    background: var(--slds-g-color-surface-container-1);
+    color: var(--slds-g-color-on-surface-2);
+
+    /* Spacing using numbered hooks */
+    padding: var(--slds-g-spacing-4);
+    margin-bottom: var(--slds-g-spacing-4);
+
+    /* Border using semantic hooks */
+    border-bottom: 1px solid var(--slds-g-color-border-1);
+
+    /* Typography */
+    font-family: var(--slds-g-font-family-base);
+}
+
+/* Page Header Row - Flex layout for title and actions */
+.slds-page-header__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--slds-g-spacing-3);
+}
+
+/* Title Column */
+.slds-page-header__col-title {
+    flex: 1 1 auto;
+    min-width: 0; /* Allow text truncation */
+}
+
+/* Actions Column */
+.slds-page-header__col-actions {
+    flex: 0 0 auto;
+}
+
+/* Page Header Title */
+.slds-page-header__title {
+    /* Typography using numbered hooks */
+    font-size: 1.5rem; /* 24px - use rem for font sizes */
+    font-weight: var(--slds-g-font-weight-7); /* Bold */
+    line-height: var(--slds-g-font-lineheight-2);
+
+    /* Color using semantic hooks for high emphasis */
+    color: var(--slds-g-color-on-surface-3);
+
+    /* Ensure text truncates gracefully */
+    display: block;
+    max-width: 100%;
+}
+
+/* Button Group List */
+.slds-button-group-list {
+    display: flex;
+    align-items: center;
+    gap: var(--slds-g-spacing-2);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.slds-button-group-list li {
+    display: inline-flex;
+}
+
+/* Media Object for consistent spacing */
+.slds-media {
+    display: flex;
+    align-items: flex-start;
+}
+
+.slds-media__body {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 48em) {
+    .slds-page-header__row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .slds-page-header__col-actions {
+        width: 100%;
+    }
+
+    .slds-button-group-list {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
+
+/* Ensure proper spacing for button controls */
+.slds-page-header__controls {
+    display: flex;
+    gap: var(--slds-g-spacing-2);
+}
+
+.slds-page-header__control {
+    display: inline-flex;
+}
+
+/* Title truncation support */
+.slds-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

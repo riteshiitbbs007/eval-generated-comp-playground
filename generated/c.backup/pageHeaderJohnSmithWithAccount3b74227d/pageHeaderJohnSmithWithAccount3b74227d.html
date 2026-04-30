@@ -1,0 +1,73 @@
+<template>
+    <!--
+        Page Header Component
+        Displays a page header with title, icon, and action buttons
+    -->
+    <div class="slds-page-header">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <!-- Account standard icon -->
+                        <lightning-icon
+                            icon-name="standard:account"
+                            alternative-text="Account"
+                            title="Account"
+                            size={iconSize}>
+                        </lightning-icon>
+                    </div>
+                    <div class="slds-media__body">
+                        <!-- Title - Using a getter for accessibility label to avoid template literal in HTML -->
+                        <h1 class="slds-page-header__title slds-truncate"
+                            title={title}
+                            aria-label={titleAriaLabel}>
+                            {title}
+                        </h1>
+                        <!-- Subtitle if available -->
+                        <template lwc:if={hasSubtitle}>
+                            <p class="slds-page-header__name-meta">{subtitle}</p>
+                        </template>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-page-header__col-actions">
+                <div class="slds-page-header__controls">
+                    <div class="slds-page-header__control">
+                        <!-- Button Group -->
+                        <lightning-button-group>
+                            <!-- Edit Button -->
+                            <template lwc:if={showEditButton}>
+                                <lightning-button
+                                    label={editButtonLabel}
+                                    icon-name="utility:edit"
+                                    variant={editButtonVariant}
+                                    onclick={handleEditClick}>
+                                </lightning-button>
+                            </template>
+
+                            <!-- Delete Button -->
+                            <template lwc:if={showDeleteButton}>
+                                <lightning-button
+                                    label={deleteButtonLabel}
+                                    icon-name="utility:delete"
+                                    variant={deleteButtonVariant}
+                                    onclick={handleDeleteClick}>
+                                </lightning-button>
+                            </template>
+
+                            <!-- Clone Button -->
+                            <template lwc:if={showCloneButton}>
+                                <lightning-button
+                                    label={cloneButtonLabel}
+                                    icon-name="utility:copy"
+                                    variant={cloneButtonVariant}
+                                    onclick={handleCloneClick}>
+                                </lightning-button>
+                            </template>
+                        </lightning-button-group>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

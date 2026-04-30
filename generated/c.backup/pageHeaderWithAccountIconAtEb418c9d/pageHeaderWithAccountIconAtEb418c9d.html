@@ -1,0 +1,48 @@
+<template>
+    <div class="slds-page-header slds-border_bottom">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <lightning-icon
+                            icon-name="standard:account"
+                            alternative-text="Account"
+                            size="medium"
+                        ></lightning-icon>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span class="slds-page-header__title slds-truncate" title={title}>{title}</span>
+                                </h1>
+                            </div>
+                        </div>
+                        <p class="slds-page-header__name-meta slds-text-color_weak">{subtitle}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-page-header__col-actions">
+                <div class="slds-page-header__controls">
+                    <lightning-button-group>
+                        <lightning-button
+                            label="Edit"
+                            variant="neutral"
+                            onclick={handleEdit}
+                        ></lightning-button>
+                        <lightning-button
+                            label="Delete"
+                            variant="destructive"
+                            onclick={handleDelete}
+                        ></lightning-button>
+                        <lightning-button
+                            label="Clone"
+                            variant="neutral"
+                            onclick={handleClone}
+                        ></lightning-button>
+                    </lightning-button-group>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

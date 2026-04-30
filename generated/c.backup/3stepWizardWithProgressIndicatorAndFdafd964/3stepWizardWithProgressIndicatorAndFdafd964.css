@@ -1,0 +1,178 @@
+/**
+ * Three Step Wizard Styles
+ * SLDS 2 Compliant - Using design tokens and utility classes
+ */
+
+/* Wizard Container Layout */
+.slds-wizard-container {
+    display: flex;
+    gap: var(--slds-g-spacing-5);
+    padding: var(--slds-g-spacing-4);
+    background: var(--slds-g-color-surface-container-1);
+    border-radius: var(--slds-g-radius-border-1);
+}
+
+/* Progress Indicator Vertical Layout */
+.slds-progress_vertical {
+    flex: 0 0 200px;
+    min-width: 200px;
+}
+
+/* Wizard Content Area */
+.slds-wizard-content {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Progress Item Spacing */
+.slds-progress__item {
+    margin-bottom: var(--slds-g-spacing-4);
+}
+
+.slds-progress__item:last-child {
+    margin-bottom: 0;
+}
+
+/* Progress Marker Button Styles */
+.slds-progress__marker {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--slds-g-color-surface-container-2);
+    border: 2px solid var(--slds-g-color-border-1);
+    color: var(--slds-g-color-on-surface-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-weight: var(--slds-g-font-weight-6);
+    transition: all 0.2s ease;
+}
+
+/* Active Step Marker */
+.slds-is-active .slds-progress__marker {
+    background: var(--slds-g-color-accent-container-1);
+    border-color: var(--slds-g-color-border-accent-1);
+    color: var(--slds-g-color-on-accent-1);
+}
+
+/* Completed Step Marker */
+.slds-is-completed .slds-progress__marker {
+    background: var(--slds-g-color-success-container-1);
+    border-color: var(--slds-g-color-border-success-1);
+    color: var(--slds-g-color-on-success-1);
+}
+
+/* Add checkmark icon for completed steps */
+.slds-is-completed .slds-progress__marker::after {
+    content: '✓';
+    position: absolute;
+    font-size: 1rem;
+    font-weight: var(--slds-g-font-weight-7);
+}
+
+/* Progress Item Content */
+.slds-progress__item_content {
+    margin-left: var(--slds-g-spacing-3);
+    font-family: var(--slds-g-font-family-base);
+    font-size: var(--slds-g-font-size-base);
+    color: var(--slds-g-color-on-surface-2);
+}
+
+/* Active Step Content - Higher Emphasis */
+.slds-is-active .slds-progress__item_content {
+    font-weight: var(--slds-g-font-weight-6);
+    color: var(--slds-g-color-on-surface-3);
+}
+
+/* Completed Step Content - Success Color */
+.slds-is-completed .slds-progress__item_content {
+    color: var(--slds-g-color-on-success-1);
+}
+
+/* Content Box Styling */
+.slds-box {
+    padding: var(--slds-g-spacing-4);
+    background: var(--slds-g-color-surface-container-1);
+    border: 1px solid var(--slds-g-color-border-1);
+    border-radius: var(--slds-g-radius-border-1);
+    min-height: 200px;
+}
+
+/* Step Headings */
+.slds-text-heading_medium {
+    font-size: 1.25rem;
+    font-weight: var(--slds-g-font-weight-6);
+    line-height: var(--slds-g-font-lineheight-2);
+    color: var(--slds-g-color-on-surface-3);
+}
+
+/* Step Body Text */
+.slds-text-body_regular {
+    font-size: var(--slds-g-font-size-base);
+    font-weight: var(--slds-g-font-weight-4);
+    line-height: var(--slds-g-font-lineheight-3);
+    color: var(--slds-g-color-on-surface-2);
+}
+
+/* Progress Line Connector Between Steps */
+.slds-progress__list li:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    top: 2.5rem;
+    width: 2px;
+    height: calc(100% - 2rem);
+    background: var(--slds-g-color-border-1);
+}
+
+.slds-progress__list {
+    position: relative;
+}
+
+/* Active and Completed Line Connectors */
+.slds-is-active::before,
+.slds-is-completed::before {
+    background: var(--slds-g-color-accent-1);
+}
+
+/* Responsive Design - Mobile/Tablet */
+@media (max-width: 768px) {
+    .slds-wizard-container {
+        flex-direction: column;
+        gap: var(--slds-g-spacing-4);
+    }
+
+    .slds-progress_vertical {
+        flex: 1 1 auto;
+        min-width: 100%;
+    }
+
+    .slds-progress__list {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .slds-progress__list li:not(:last-child)::before {
+        display: none;
+    }
+}
+
+/* Focus States for Accessibility */
+.slds-progress__marker:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--slds-g-color-accent-container-1);
+}
+
+/* Disabled State */
+.slds-progress__marker:disabled {
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+/* Navigation Button Spacing */
+.slds-float_right {
+    display: flex;
+    gap: var(--slds-g-spacing-2);
+    justify-content: flex-end;
+}

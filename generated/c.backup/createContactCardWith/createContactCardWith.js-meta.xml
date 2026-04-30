@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Contact Card</masterLabel>
+    <description>A contact card component with avatar, name, title, email, phone, and action buttons</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage">
+            <property name="name" type="String" label="Contact Name" required="true"
+                      description="The full name of the contact" />
+            <property name="title" type="String" label="Job Title"
+                      description="The contact's job title" />
+            <property name="email" type="String" label="Email"
+                      description="The contact's email address" />
+            <property name="phone" type="String" label="Phone"
+                      description="The contact's phone number" />
+            <property name="avatarUrl" type="String" label="Avatar URL"
+                      description="URL to the contact's profile image" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

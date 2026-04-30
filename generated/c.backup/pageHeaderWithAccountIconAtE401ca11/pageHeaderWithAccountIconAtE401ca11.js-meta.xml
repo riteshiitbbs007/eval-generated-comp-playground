@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>Page header component with Account icon, title, subtitle, and action buttons following SLDS 2 design patterns. Displays John Smith as the title with Account Customer as the subtitle, along with Edit, Delete, and Clone action buttons.</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Page Header with Account Icon</masterLabel>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+</LightningComponentBundle>

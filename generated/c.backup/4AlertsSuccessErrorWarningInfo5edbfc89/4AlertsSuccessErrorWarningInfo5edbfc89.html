@@ -1,0 +1,68 @@
+<template>
+    <!-- Container for all 4 alerts with proper spacing -->
+    <div class="slds-p-around_small">
+        <!-- Success Alert -->
+        <div class="alert alert--success slds-m-bottom_small" role="status">
+            <div class="alert__content">
+                <lightning-icon
+                    icon-name="utility:success"
+                    alternative-text="Success"
+                    size="small"
+                    class="alert__icon"
+                ></lightning-icon>
+                <div class="alert__message">
+                    <span class="slds-assistive-text">Success:</span>
+                    {successMessage}
+                </div>
+            </div>
+        </div>
+
+        <!-- Error Alert -->
+        <div class="alert alert--error slds-m-bottom_small" role="alert">
+            <div class="alert__content">
+                <lightning-icon
+                    icon-name="utility:error"
+                    alternative-text="Error"
+                    size="small"
+                    class="alert__icon"
+                ></lightning-icon>
+                <div class="alert__message">
+                    <span class="slds-assistive-text">Error:</span>
+                    {errorMessage}
+                </div>
+            </div>
+        </div>
+
+        <!-- Warning Alert -->
+        <div class="alert alert--warning slds-m-bottom_small" role="status">
+            <div class="alert__content">
+                <lightning-icon
+                    icon-name="utility:warning"
+                    alternative-text="Warning"
+                    size="small"
+                    class="alert__icon"
+                ></lightning-icon>
+                <div class="alert__message">
+                    <span class="slds-assistive-text">Warning:</span>
+                    {warningMessage}
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Alert -->
+        <div class="alert alert--info" role="status">
+            <div class="alert__content">
+                <lightning-icon
+                    icon-name="utility:info"
+                    alternative-text="Info"
+                    size="small"
+                    class="alert__icon"
+                ></lightning-icon>
+                <div class="alert__message">
+                    <span class="slds-assistive-text">Info:</span>
+                    {infoMessage}
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

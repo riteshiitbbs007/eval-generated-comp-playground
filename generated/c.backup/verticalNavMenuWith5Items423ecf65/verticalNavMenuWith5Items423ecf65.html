@@ -1,0 +1,89 @@
+<template>
+    <!-- Vertical Navigation Menu with 5 Items -->
+    <nav class="slds-nav-vertical" aria-label="Main Navigation">
+        <div class="slds-nav-vertical__section">
+            <ul>
+                <!-- Dashboard - Active State -->
+                <li class="slds-nav-vertical__item slds-is-active">
+                    <a
+                        href="#"
+                        class="slds-nav-vertical__action"
+                        aria-current="page"
+                        onclick={handleNavigationClick}
+                        data-item="dashboard">
+                        <lightning-icon
+                            icon-name="standard:home"
+                            size="small"
+                            class="slds-m-right_x-small">
+                        </lightning-icon>
+                        <span class="slds-nav-vertical__action-text">Dashboard</span>
+                    </a>
+                </li>
+
+                <!-- Accounts -->
+                <li class="slds-nav-vertical__item">
+                    <a
+                        href="#"
+                        class="slds-nav-vertical__action"
+                        onclick={handleNavigationClick}
+                        data-item="accounts">
+                        <lightning-icon
+                            icon-name="standard:account"
+                            size="small"
+                            class="slds-m-right_x-small">
+                        </lightning-icon>
+                        <span class="slds-nav-vertical__action-text">Accounts</span>
+                    </a>
+                </li>
+
+                <!-- Contacts -->
+                <li class="slds-nav-vertical__item">
+                    <a
+                        href="#"
+                        class="slds-nav-vertical__action"
+                        onclick={handleNavigationClick}
+                        data-item="contacts">
+                        <lightning-icon
+                            icon-name="standard:contact"
+                            size="small"
+                            class="slds-m-right_x-small">
+                        </lightning-icon>
+                        <span class="slds-nav-vertical__action-text">Contacts</span>
+                    </a>
+                </li>
+
+                <!-- Opportunities -->
+                <li class="slds-nav-vertical__item">
+                    <a
+                        href="#"
+                        class="slds-nav-vertical__action"
+                        onclick={handleNavigationClick}
+                        data-item="opportunities">
+                        <lightning-icon
+                            icon-name="standard:opportunity"
+                            size="small"
+                            class="slds-m-right_x-small">
+                        </lightning-icon>
+                        <span class="slds-nav-vertical__action-text">Opportunities</span>
+                    </a>
+                </li>
+
+                <!-- Reports -->
+                <li class="slds-nav-vertical__item">
+                    <a
+                        href="#"
+                        class="slds-nav-vertical__action"
+                        onclick={handleNavigationClick}
+                        data-item="reports">
+                        <lightning-icon
+                            icon-name="standard:report"
+                            size="small"
+                            class="slds-m-right_x-small">
+                        </lightning-icon>
+                        <span class="slds-nav-vertical__action-text">Reports</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</template>

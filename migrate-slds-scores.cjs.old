@@ -1,0 +1,307 @@
+#!/usr/bin/env node
+/**
+ * SLDS Score Migration Script (Standalone Version)
+ *
+ * Recalculates SLDS linter scores for all generated components
+ * using the fixed baseline formula (all 16 rules included).
+ *
+ * Usage:
+ *   node migrate-slds-scores.js [--dry-run] [--verbose]
+ *
+ * Options:
+ *   --dry-run   Show what would be changed without writing files
+ *   --verbose   Show detailed scoring information for each component
+ */
+
+const fs = require('fs').promises;
+const path = require('path');
+
+// SLDS rule weights (from sldsRuleWeights.ts)
+const SLDS_RULE_WEIGHTS = {
+  'slds/lwc-token-to-slds-hook': 0.4,
+  'slds/no-deprecated-tokens-slds1': 0.4,
+  'slds/no-unsupported-hooks-slds2': 0.4,
+  'slds/enforce-component-hook-naming-convention': 0.35,
+  'slds/modal-close-button-issue': 0.35,
+  'slds/enforce-bem-usage': 0.25,
+  'slds/no-deprecated-classes-slds2': 0.25,
+  'slds/no-slds-namespace-for-custom-hooks': 0.15,
+  'slds/no-slds-class-overrides': 0.1,
+  'slds/no-slds-private-var': 0.1,
+  'slds/no-hardcoded-values-slds2': 0.1,
+  'slds/bem-naming': 0.05,
+  'slds/enforce-sds-to-slds-hooks': 0.05,
+  'slds/no-sldshook-fallback-for-lwctoken': 0.05,
+  'slds/reduce-annotations': 0.05,
+  'slds/no-slds-var-without-fallback': 0.025,
+};
+
+const MAX_SCORE = 3;
+
+function calculateSldsScore(errorsByType) {
+  let numerator = 0;
+  let denominator = 0;
+
+  for (const [ruleId, penalty] of Object.entries(SLDS_RULE_WEIGHTS)) {
+    const violationCount = errorsByType[ruleId] || 0;
+    const ruleScore = MAX_SCORE - (violationCount * penalty);
+    const weight = penalty;
+
+    numerator += ruleScore * weight;
+    denominator += weight;
+  }
+
+  const rawScore = numerator / denominator;  // 0-3 scale
+
+  // Normalize to 0-1 scale: (score - min) / (max - min) = (score - 1) / 2
+  const baseScore = (rawScore - 1) / 2;
+
+  // Apply violation count penalty to spread distribution
+  // Target: Only top 10% score excellent (≥0.9)
+  // Apply density penalty even for violations > 0 to prevent perfect scores
+  const totalViolations = Object.values(errorsByType).reduce((a, b) => a + b, 0);
+  let penaltyMultiplier = 1.0;
+
+  if (totalViolations >= 51) {
+    penaltyMultiplier = 0.28;  // Critical (51+ violations)
+  } else if (totalViolations >= 31) {
+    penaltyMultiplier = 0.40;  // Poor (31-50 violations)
+  } else if (totalViolations >= 21) {
+    penaltyMultiplier = 0.55;  // Below average (21-30 violations)
+  } else if (totalViolations >= 11) {
+    penaltyMultiplier = 0.70;  // Fair (11-20 violations)
+  } else if (totalViolations >= 5) {
+    penaltyMultiplier = 0.88;  // Good (5-10 violations)
+  } else if (totalViolations >= 1) {
+    penaltyMultiplier = 0.95;  // Excellent but not perfect (1-4 violations)
+  }
+  // else: 0 violations get 1.0 (perfect) - no penalty
+
+  const finalScore = baseScore * penaltyMultiplier;
+  return Number(finalScore.toFixed(2));
+}
+
+function getReadinessLabel(score) {
+  // Score is on 0-1 scale, overall score is weighted average of 0-1 scores
+  // Map to readiness: 1.0 = perfect, 0.75+ = good, 0.5+ = moderate, <0.5 = poor
+  if (score >= 0.9) return 'Production-Ready';
+  if (score >= 0.7) return 'Prototype';
+  return 'Draft';
+}
+
+function recalculateOverallScore(scores) {
+  const weights = { slds_linter: 3, slds_quality: 2, prd_compliance: 2, security: 1 };
+  let weightedSum = 0;
+  let totalWeight = 0;
+
+  for (const [key, weight] of Object.entries(weights)) {
+    if (scores[key] !== undefined && scores[key] !== null) {
+      weightedSum += scores[key] * weight;
+      totalWeight += weight;
+    }
+  }
+
+  const overall = totalWeight > 0 ? weightedSum / totalWeight : 0;
+  return {
+    overall: Number(overall.toFixed(2)),
+    overall_readiness_label: getReadinessLabel(overall),
+  };
+}
+
+async function findComponentDirs(baseDir) {
+  const generatedDir = path.join(baseDir, 'generated', 'c');
+  try {
+    const entries = await fs.readdir(generatedDir, { withFileTypes: true });
+    return entries
+      .filter(e => e.isDirectory() && !e.name.startsWith('.'))
+      .map(e => path.join(generatedDir, e.name));
+  } catch (error) {
+    console.error(`Error reading generated directory: ${error}`);
+    return [];
+  }
+}
+
+async function readMetadata(componentDir) {
+  try {
+    const content = await fs.readFile(path.join(componentDir, 'metadata.json'), 'utf-8');
+    return JSON.parse(content);
+  } catch (error) {
+    return null;
+  }
+}
+
+async function writeMetadata(componentDir, metadata, dryRun) {
+  if (dryRun) return;
+  await fs.writeFile(
+    path.join(componentDir, 'metadata.json'),
+    JSON.stringify(metadata, null, 2) + '\n',
+    'utf-8'
+  );
+}
+
+async function migrateComponent(componentDir, dryRun, verbose) {
+  const metadata = await readMetadata(componentDir);
+  // Skip only if errorsByType field is missing entirely (not run through SLDS linter)
+  // Process components with empty errorsByType {} (0 violations)
+  if (!metadata || !metadata.errorsByType) {
+    if (verbose && metadata) {
+      console.log(`⏭️  Skipping ${metadata.componentName} (no SLDS data)`);
+    }
+    return null;
+  }
+
+  const oldScore = metadata.scores?.slds_linter || 0;
+  const newSldsScore = calculateSldsScore(metadata.errorsByType);
+
+  // Calculate violation density (0-1 scale, capped at 50 violations)
+  // Based on dataset analysis: mean=24.6, median=22, 90th percentile=55
+  const totalViolations = Object.values(metadata.errorsByType).reduce((a, b) => a + b, 0);
+  const violationDensity = Math.min(1.0, totalViolations / 50);
+
+  const updatedMetadata = {
+    ...metadata,
+    scores: {
+      ...metadata.scores,
+      slds_linter: newSldsScore,
+      slds_violation_density: Number(violationDensity.toFixed(2))
+    },
+  };
+
+  const { overall, overall_readiness_label } = recalculateOverallScore(updatedMetadata.scores);
+  updatedMetadata.scores.overall = overall;
+  updatedMetadata.scores.overall_readiness_label = overall_readiness_label;
+
+  await writeMetadata(componentDir, updatedMetadata, dryRun);
+
+  return {
+    componentName: metadata.componentName,
+    oldScore,
+    newScore: newSldsScore,
+    newReadiness: overall_readiness_label,
+    changed: Math.abs(newSldsScore - oldScore) > 0.01,
+    totalViolations,
+    violationDensity,
+  };
+}
+
+function printSummary(results) {
+  const changed = results.filter(r => r.changed);
+
+  console.log('\n═══════════════════════════════════════════════════════════════');
+  console.log('📊 MIGRATION SUMMARY');
+  console.log('═══════════════════════════════════════════════════════════════\n');
+  console.log(`Total components processed: ${results.length}`);
+  console.log(`  ✓ Changed: ${changed.length}`);
+  console.log(`  − Unchanged: ${results.length - changed.length}\n`);
+
+  if (changed.length > 0) {
+    console.log('🔄 SCORE CHANGES (Top 10):\n');
+    const sorted = changed.sort((a, b) =>
+      Math.abs(b.newScore - b.oldScore) - Math.abs(a.newScore - a.oldScore)
+    );
+
+    sorted.slice(0, 10).forEach((r, i) => {
+      const delta = r.newScore - r.oldScore;
+      const emoji = delta > 0 ? '🟢 ↑' : '🔴 ↓';
+      console.log(
+        `${(i+1).toString().padStart(2)}. ${r.componentName.substring(0,40).padEnd(40)} ` +
+        `${emoji} ${Math.abs(delta).toFixed(3)} ` +
+        `(${r.oldScore.toFixed(2)} → ${r.newScore.toFixed(2)}) ` +
+        `[${r.totalViolations} violations]`
+      );
+    });
+
+    console.log('\n Score distribution (after migration):');
+    const ranges = [
+      ['≥0.9 (Excellent/Perfect)', r => r.newScore >= 0.9],
+      ['0.75-0.89 (Good)', r => r.newScore >= 0.75 && r.newScore < 0.9],
+      ['0.5-0.74 (Fair)', r => r.newScore >= 0.5 && r.newScore < 0.75],
+      ['0.25-0.49 (Poor)', r => r.newScore >= 0.25 && r.newScore < 0.5],
+      ['< 0.25 (Critical)', r => r.newScore < 0.25],
+    ];
+
+    console.log('\n Violation count distribution:');
+    const violationRanges = [
+      ['0-4 violations (Top 10%)', r => r.totalViolations <= 4],
+      ['5-10 violations (Good)', r => r.totalViolations >= 5 && r.totalViolations <= 10],
+      ['11-20 violations (Fair)', r => r.totalViolations >= 11 && r.totalViolations <= 20],
+      ['21-30 violations (Below Avg)', r => r.totalViolations >= 21 && r.totalViolations <= 30],
+      ['31-50 violations (Poor)', r => r.totalViolations >= 31 && r.totalViolations <= 50],
+      ['51+ violations (Critical)', r => r.totalViolations >= 51],
+    ];
+
+    ranges.forEach(([label, filter]) => {
+      const count = results.filter(filter).length;
+      if (count > 0) console.log(`  ${label.padEnd(25)} ${count} components`);
+    });
+
+    violationRanges.forEach(([label, filter]) => {
+      const count = results.filter(filter).length;
+      if (count > 0) console.log(`  ${label.padEnd(30)} ${count} components`);
+    });
+  }
+
+  console.log('\n═══════════════════════════════════════════════════════════════\n');
+}
+
+async function main() {
+  const args = process.argv.slice(2);
+  const dryRun = args.includes('--dry-run');
+  const verbose = args.includes('--verbose');
+
+  console.log('\n🔄 SLDS Score Migration\n');
+  console.log('Using fixed baseline formula with all 16 SLDS rules');
+  console.log('Formula: SLDS_score = Σ(rule_score_i × weight_i) / 3.075\n');
+
+  if (dryRun) console.log('🔍 DRY RUN MODE - No files will be modified\n');
+
+  const baseDir = process.cwd();
+  console.log(`Base directory: ${baseDir}\n`);
+
+  const componentDirs = await findComponentDirs(baseDir);
+  console.log(`Found ${componentDirs.length} components\n`);
+
+  if (componentDirs.length === 0) {
+    console.log('❌ No components found in generated/c/');
+    process.exit(1);
+  }
+
+  const results = [];
+  let processed = 0;
+
+  for (const dir of componentDirs) {
+    const result = await migrateComponent(dir, dryRun, verbose);
+    if (result) {
+      results.push(result);
+      processed++;
+
+      if (verbose) {
+        const status = result.changed ? '🔄' : '✓';
+        const delta = result.newScore - result.oldScore;
+        const deltaStr = delta !== 0 ? ` (${delta > 0 ? '+' : ''}${delta.toFixed(3)})` : '';
+        console.log(
+          `${status} ${result.componentName.substring(0,40).padEnd(40)} ` +
+          `${result.oldScore.toFixed(2)} → ${result.newScore.toFixed(2)}${deltaStr}`
+        );
+      } else if (processed % 10 === 0) {
+        process.stdout.write('.');
+      }
+    }
+  }
+
+  if (!verbose) console.log('');
+
+  printSummary(results);
+
+  if (dryRun) {
+    console.log('✅ Dry run complete - No files were modified');
+    console.log('Run without --dry-run to apply changes\n');
+  } else {
+    console.log('✅ Migration complete - All metadata files updated\n');
+  }
+}
+
+main().catch(error => {
+  console.error('❌ Migration failed:', error);
+  process.exit(1);
+});

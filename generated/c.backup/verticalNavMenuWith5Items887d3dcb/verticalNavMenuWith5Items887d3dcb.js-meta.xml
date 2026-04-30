@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>Vertical navigation menu with 5 items (Dashboard, Reports, Analytics, Settings, Help). Dashboard is active by default.</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Vertical Navigation Menu</masterLabel>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage">
+            <property name="selectedItem" type="String" default="dashboard" label="Selected Item" description="The currently selected menu item (dashboard, reports, analytics, settings, or help)" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

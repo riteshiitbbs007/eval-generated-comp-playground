@@ -1,0 +1,105 @@
+<template>
+    <!-- Success Alert -->
+    <template lwc:if={showSuccessAlert}>
+        <div class="alert-container alert-success slds-m-bottom_small slds-p-around_medium slds-border_rounded" role="alert">
+            <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+                <div class="slds-col slds-grid slds-grid_vertical-align-center">
+                    <lightning-icon
+                        icon-name="utility:success"
+                        size="small"
+                        class="slds-m-right_small alert-icon-success">
+                    </lightning-icon>
+                    <span class="alert-message">Operation completed successfully!</span>
+                </div>
+                <div class="slds-col_bump-left">
+                    <lightning-button-icon
+                        icon-name="utility:close"
+                        variant="bare"
+                        alternative-text="Close success alert"
+                        aria-label="Close success alert"
+                        onclick={handleCloseSuccess}
+                        class="alert-close-button">
+                    </lightning-button-icon>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Error Alert -->
+    <template lwc:if={showErrorAlert}>
+        <div class="alert-container alert-error slds-m-bottom_small slds-p-around_medium slds-border_rounded" role="alert">
+            <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+                <div class="slds-col slds-grid slds-grid_vertical-align-center">
+                    <lightning-icon
+                        icon-name="utility:error"
+                        size="small"
+                        class="slds-m-right_small alert-icon-error">
+                    </lightning-icon>
+                    <span class="alert-message">An error occurred. Please try again.</span>
+                </div>
+                <div class="slds-col_bump-left">
+                    <lightning-button-icon
+                        icon-name="utility:close"
+                        variant="bare"
+                        alternative-text="Close error alert"
+                        aria-label="Close error alert"
+                        onclick={handleCloseError}
+                        class="alert-close-button">
+                    </lightning-button-icon>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Warning Alert -->
+    <template lwc:if={showWarningAlert}>
+        <div class="alert-container alert-warning slds-m-bottom_small slds-p-around_medium slds-border_rounded" role="alert">
+            <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+                <div class="slds-col slds-grid slds-grid_vertical-align-center">
+                    <lightning-icon
+                        icon-name="utility:warning"
+                        size="small"
+                        class="slds-m-right_small alert-icon-warning">
+                    </lightning-icon>
+                    <span class="alert-message">This action may have consequences. Proceed with caution.</span>
+                </div>
+                <div class="slds-col_bump-left">
+                    <lightning-button-icon
+                        icon-name="utility:close"
+                        variant="bare"
+                        alternative-text="Close warning alert"
+                        aria-label="Close warning alert"
+                        onclick={handleCloseWarning}
+                        class="alert-close-button">
+                    </lightning-button-icon>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Info Alert -->
+    <template lwc:if={showInfoAlert}>
+        <div class="alert-container alert-info slds-m-bottom_small slds-p-around_medium slds-border_rounded" role="alert">
+            <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+                <div class="slds-col slds-grid slds-grid_vertical-align-center">
+                    <lightning-icon
+                        icon-name="utility:info"
+                        size="small"
+                        class="slds-m-right_small alert-icon-info">
+                    </lightning-icon>
+                    <span class="alert-message">For your information: New features are available.</span>
+                </div>
+                <div class="slds-col_bump-left">
+                    <lightning-button-icon
+                        icon-name="utility:close"
+                        variant="bare"
+                        alternative-text="Close info alert"
+                        aria-label="Close info alert"
+                        onclick={handleCloseInfo}
+                        class="alert-close-button">
+                    </lightning-button-icon>
+                </div>
+            </div>
+        </div>
+    </template>
+</template>

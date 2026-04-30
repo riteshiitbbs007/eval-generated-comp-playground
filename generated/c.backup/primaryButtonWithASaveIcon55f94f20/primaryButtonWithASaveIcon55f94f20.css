@@ -1,0 +1,33 @@
+/**
+ * Style for the primary button with save icon component
+ */
+
+:host {
+    /* Use SLDS styling hooks for theming */
+    display: inline-block;
+}
+
+.slds-button_brand {
+    /* Using styling hooks for brand button */
+    background-color: var(--slds-g-color-brand-base-50);
+    color: var(--slds-g-color-neutral-base-100);
+    border-color: var(--slds-g-color-brand-base-50);
+}
+
+.slds-button_brand:hover,
+.slds-button_brand:focus {
+    /* States for interactions */
+    background-color: var(--slds-g-color-brand-base-40);
+    border-color: var(--slds-g-color-brand-base-40);
+}
+
+.slds-button_brand:active {
+    background-color: var(--slds-g-color-brand-base-30);
+    border-color: var(--slds-g-color-brand-base-30);
+}
+
+/* Focus styles for accessibility */
+.slds-button:focus {
+    box-shadow: 0 0 3px var(--slds-g-color-brand-base-30);
+    outline: 0;
+}

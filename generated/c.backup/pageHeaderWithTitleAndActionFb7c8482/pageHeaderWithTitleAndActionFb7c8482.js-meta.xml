@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Page Header with Title and Action Buttons</masterLabel>
+    <description>A page header component that displays a title, optional subtitle, and configurable action buttons following SLDS 2 design patterns. Includes accessibility features and responsive design.</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage">
+            <property name="title" type="String" default="Page Title" label="Page Title" description="The main title displayed in the page header" />
+            <property name="subtitle" type="String" label="Subtitle" description="Optional subtitle text displayed below the main title" />
+            <property name="showActions" type="Boolean" default="false" label="Show Actions" description="Controls whether action buttons are displayed" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

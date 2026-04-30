@@ -1,0 +1,29 @@
+<template>
+    <!-- SLDS 2 Vertical Navigation Pattern -->
+    <nav class="slds-nav-vertical" aria-label="Main Navigation">
+        <div class="slds-nav-vertical__section">
+            <ul>
+                <template for:each={menuItems} for:item="item">
+                    <li key={item.id} class={item.computedClass}>
+                        <a
+                            href="#"
+                            class="slds-nav-vertical__action"
+                            aria-current={item.ariaCurrent}
+                            aria-label={item.ariaLabel}
+                            data-item-id={item.id}
+                            onclick={handleNavItemClick}
+                        >
+                            <lightning-icon
+                                icon-name={item.icon}
+                                alternative-text={item.alternativeText}
+                                size="x-small"
+                                class="slds-m-right_x-small"
+                            ></lightning-icon>
+                            <span class="slds-nav-vertical__action-text">{item.label}</span>
+                        </a>
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </nav>
+</template>

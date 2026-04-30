@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>A primary button component with a save icon that follows SLDS 2.0 design patterns. Supports customizable label, icon, variant, and disabled state with full accessibility compliance.</description>
+    <isExposed>false</isExposed>
+    <masterLabel>Primary Button with Save Icon</masterLabel>
+</LightningComponentBundle>

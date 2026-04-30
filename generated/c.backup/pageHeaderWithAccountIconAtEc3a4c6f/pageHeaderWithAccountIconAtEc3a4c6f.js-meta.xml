@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>A page header component displaying an Account record with icon, title, subtitle, and action buttons. Implements SLDS 2 design system with proper accessibility and responsive design.</description>
+    <isExposed>false</isExposed>
+    <masterLabel>Page Header With Account Icon</masterLabel>
+
+    <!-- Public Properties -->
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage">
+            <!-- Title Property -->
+            <property
+                name="title"
+                type="String"
+                label="Title"
+                description="The main title text displayed in the header"
+                default="John Smith"
+            />
+
+            <!-- Subtitle Property -->
+            <property
+                name="subtitle"
+                type="String"
+                label="Subtitle"
+                description="The subtitle text displayed below the title"
+                default="Account • Customer"
+            />
+
+            <!-- Icon Name Property -->
+            <property
+                name="iconName"
+                type="String"
+                label="Icon Name"
+                description="The SLDS icon name for the header icon"
+                default="standard:account"
+            />
+
+            <!-- Show Edit Button Property -->
+            <property
+                name="showEditButton"
+                type="Boolean"
+                label="Show Edit Button"
+                description="Controls visibility of the Edit button"
+                default="false"
+            />
+
+            <!-- Show Delete Button Property -->
+            <property
+                name="showDeleteButton"
+                type="Boolean"
+                label="Show Delete Button"
+                description="Controls visibility of the Delete button"
+                default="false"
+            />
+
+            <!-- Show Clone Button Property -->
+            <property
+                name="showCloneButton"
+                type="Boolean"
+                label="Show Clone Button"
+                description="Controls visibility of the Clone button"
+                default="false"
+            />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

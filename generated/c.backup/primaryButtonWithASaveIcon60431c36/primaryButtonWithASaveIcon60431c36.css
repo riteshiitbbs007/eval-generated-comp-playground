@@ -1,0 +1,41 @@
+/**
+ * Primary Button with Save Icon - CSS Styling
+ * 
+ * This component primarily uses Lightning Base Component styling
+ * and SLDS utility classes. Custom styling uses SLDS 2 styling hooks
+ * for theme-aware, accessible, and maintainable styles.
+ * 
+ * SLDS 2 Compliance:
+ * - Uses semantic color hooks (accent for primary buttons)
+ * - Uses numbered spacing hooks for consistency
+ * - No hardcoded values - all styling uses SLDS hooks
+ * - Supports light/dark mode automatically
+ * - Responsive and density-aware
+ */
+
+/**
+ * Custom styling for button hover state enhancement
+ * Uses SLDS accent color hooks for primary button styling
+ */
+lightning-button {
+    /* Ensure button takes appropriate space */
+    display: inline-block;
+}
+
+/**
+ * Focus state enhancement for accessibility
+ * Ensures keyboard users can see focus clearly
+ */
+lightning-button:focus-within {
+    /* SLDS automatically handles focus styling with styling hooks */
+    outline-offset: var(--slds-g-spacing-1);
+}
+
+/**
+ * Additional spacing adjustment if needed
+ * Uses SLDS numbered spacing hooks (not hardcoded values)
+ */
+:host {
+    /* Allow host to be inline for flexible layout */
+    display: inline-block;
+}

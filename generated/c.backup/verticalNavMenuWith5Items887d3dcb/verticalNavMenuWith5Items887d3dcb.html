@@ -1,0 +1,68 @@
+<template>
+    <!-- Vertical Navigation Menu with 5 items as per PRD -->
+    <nav class="slds-nav-vertical" aria-label="Main Navigation">
+        <div class="slds-nav-vertical__section">
+            <ul>
+                <!-- Dashboard Menu Item (Active by default) -->
+                <li class={dashboardItemClass}>
+                    <a
+                        href="#"
+                        class="slds-nav-vertical__action"
+                        aria-current={dashboardAriaCurrent}
+                        data-item="dashboard"
+                        onclick={handleMenuItemClick}>
+                        Dashboard
+                    </a>
+                </li>
+
+                <!-- Reports Menu Item -->
+                <li class={reportsItemClass}>
+                    <a
+                        href="#"
+                        class="slds-nav-vertical__action"
+                        aria-current={reportsAriaCurrent}
+                        data-item="reports"
+                        onclick={handleMenuItemClick}>
+                        Reports
+                    </a>
+                </li>
+
+                <!-- Analytics Menu Item -->
+                <li class={analyticsItemClass}>
+                    <a
+                        href="#"
+                        class="slds-nav-vertical__action"
+                        aria-current={analyticsAriaCurrent}
+                        data-item="analytics"
+                        onclick={handleMenuItemClick}>
+                        Analytics
+                    </a>
+                </li>
+
+                <!-- Settings Menu Item -->
+                <li class={settingsItemClass}>
+                    <a
+                        href="#"
+                        class="slds-nav-vertical__action"
+                        aria-current={settingsAriaCurrent}
+                        data-item="settings"
+                        onclick={handleMenuItemClick}>
+                        Settings
+                    </a>
+                </li>
+
+                <!-- Help Menu Item -->
+                <li class={helpItemClass}>
+                    <a
+                        href="#"
+                        class="slds-nav-vertical__action"
+                        aria-current={helpAriaCurrent}
+                        data-item="help"
+                        onclick={handleMenuItemClick}>
+                        Help
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</template>

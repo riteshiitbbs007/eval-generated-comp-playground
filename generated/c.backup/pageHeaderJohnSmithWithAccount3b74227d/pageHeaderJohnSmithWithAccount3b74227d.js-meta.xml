@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Page Header with Account Icon</masterLabel>
+    <description>A page header component with "John Smith" title, Account icon, and Edit, Delete, and Clone buttons.</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage">
+            <property name="title" type="String" label="Title" description="The title displayed in the page header" default="John Smith" />
+            <property name="subtitle" type="String" label="Subtitle" description="The subtitle displayed below the title" />
+            <property name="iconSize" type="String" label="Icon Size" description="Size of the icon" default="medium"
+                      datasource="xx-small,x-small,small,medium,large" />
+            <property name="showEditButton" type="Boolean" label="Show Edit Button" description="Whether to show the Edit button" default="false" />
+            <property name="showDeleteButton" type="Boolean" label="Show Delete Button" description="Whether to show the Delete button" default="false" />
+            <property name="showCloneButton" type="Boolean" label="Show Clone Button" description="Whether to show the Clone button" default="false" />
+            <property name="editButtonLabel" type="String" label="Edit Button Label" description="Label for the Edit button" default="Edit" />
+            <property name="deleteButtonLabel" type="String" label="Delete Button Label" description="Label for the Delete button" default="Delete" />
+            <property name="cloneButtonLabel" type="String" label="Clone Button Label" description="Label for the Clone button" default="Clone" />
+            <property name="editButtonVariant" type="String" label="Edit Button Variant" description="Variant for the Edit button" default="neutral"
+                      datasource="base,neutral,brand,destructive,success,text" />
+            <property name="deleteButtonVariant" type="String" label="Delete Button Variant" description="Variant for the Delete button" default="neutral"
+                      datasource="base,neutral,brand,destructive,success,text" />
+            <property name="cloneButtonVariant" type="String" label="Clone Button Variant" description="Variant for the Clone button" default="neutral"
+                      datasource="base,neutral,brand,destructive,success,text" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

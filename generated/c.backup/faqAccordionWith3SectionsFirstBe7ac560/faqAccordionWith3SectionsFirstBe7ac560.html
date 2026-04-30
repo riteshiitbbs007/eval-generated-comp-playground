@@ -1,0 +1,52 @@
+<template>
+    <!-- FAQ Accordion Container -->
+    <div class="slds-card slds-p-around_medium">
+        <!-- Card Header -->
+        <div class="slds-card__header slds-m-bottom_small">
+            <h2 class="slds-card__header-title slds-text-heading_medium">
+                Frequently Asked Questions
+            </h2>
+        </div>
+
+        <!-- Lightning Accordion with first section expanded -->
+        <lightning-accordion
+            active-section-name={activeSectionName}
+            allow-multiple-sections-open={allowMultipleSectionsOpen}
+            onsectiontoggle={handleSectionToggle}
+            class="faq-accordion">
+
+            <!-- Section 1: What is Salesforce? (Expanded by default) -->
+            <lightning-accordion-section
+                name="section1"
+                label="What is Salesforce?">
+                <p class="slds-p-horizontal_small">
+                    Salesforce is a cloud-based customer relationship management (CRM) platform
+                    that helps businesses connect with customers, streamline processes, and
+                    improve profitability.
+                </p>
+            </lightning-accordion-section>
+
+            <!-- Section 2: How do I get started? -->
+            <lightning-accordion-section
+                name="section2"
+                label="How do I get started?">
+                <p class="slds-p-horizontal_small">
+                    Getting started with Salesforce is easy. Sign up for a free trial, explore
+                    the Trailhead learning platform, and connect with the Salesforce community
+                    for support and best practices.
+                </p>
+            </lightning-accordion-section>
+
+            <!-- Section 3: What support is available? -->
+            <lightning-accordion-section
+                name="section3"
+                label="What support is available?">
+                <p class="slds-p-horizontal_small">
+                    Salesforce offers comprehensive support including 24/7 customer service,
+                    extensive documentation, Trailhead learning resources, and a vibrant
+                    community of experts and users.
+                </p>
+            </lightning-accordion-section>
+        </lightning-accordion>
+    </div>
+</template>

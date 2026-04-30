@@ -1,0 +1,70 @@
+<template>
+    <!--
+        Page Header Component
+        Displays account information with action buttons
+        Following SLDS Page Header pattern for consistent layout
+    -->
+    <div class="slds-page-header slds-border_bottom">
+        <div class="slds-page-header__row">
+            <!-- Left Section: Icon -->
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <!-- Account icon at standard size (medium) -->
+                        <lightning-icon
+                            icon-name="standard:account"
+                            alternative-text="Account"
+                            size="medium"
+                        ></lightning-icon>
+                    </div>
+                    <!-- Center Section: Title and Subtitle -->
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <!-- Title using SLDS heading size and weight -->
+                                    <span class="slds-page-header__title slds-truncate" title="John Smith">
+                                        John Smith
+                                    </span>
+                                </h1>
+                            </div>
+                        </div>
+                        <!-- Subtitle with neutral color and smaller text -->
+                        <p class="slds-page-header__name-meta slds-text-color_weak">
+                            Account • Customer
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Section: Action Buttons -->
+            <div class="slds-page-header__col-actions">
+                <div class="slds-page-header__controls">
+                    <!-- Button group with proper spacing -->
+                    <div class="slds-button-group" role="group">
+                        <!-- Edit Button (neutral variant) -->
+                        <lightning-button
+                            label="Edit"
+                            variant="neutral"
+                            onclick={handleEdit}
+                            aria-label="Edit John Smith"
+                        ></lightning-button>
+                        <!-- Delete Button (destructive variant) -->
+                        <lightning-button
+                            label="Delete"
+                            variant="destructive"
+                            onclick={handleDelete}
+                            aria-label="Delete John Smith"
+                        ></lightning-button>
+                        <!-- Clone Button (neutral variant) -->
+                        <lightning-button
+                            label="Clone"
+                            variant="neutral"
+                            onclick={handleClone}
+                            aria-label="Clone John Smith"
+                        ></lightning-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

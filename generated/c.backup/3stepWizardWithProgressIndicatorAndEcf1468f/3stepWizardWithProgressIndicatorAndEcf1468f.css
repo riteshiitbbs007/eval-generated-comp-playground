@@ -1,0 +1,237 @@
+/**
+ * Three Step Wizard Component Styles
+ *
+ * This stylesheet uses SLDS 2 design tokens and follows BEM methodology.
+ * All spacing, colors, typography, and other visual properties use
+ * SLDS styling hooks (--slds-g-*) for theme compatibility.
+ */
+
+/* ========================================
+   STEP CONTENT AREA
+   ======================================== */
+
+/**
+ * Step content container
+ * Provides consistent spacing and layout for each step's content
+ */
+.step-content {
+    min-height: 250px;
+    padding: var(--slds-g-spacing-4);
+}
+
+/* ========================================
+   PROGRESS INDICATOR CUSTOMIZATIONS
+   ======================================== */
+
+/**
+ * Progress indicator container
+ * Ensures proper spacing and visual hierarchy
+ */
+.slds-progress {
+    margin-bottom: var(--slds-g-spacing-5);
+}
+
+/**
+ * Progress step marker buttons
+ * Enhanced focus states for accessibility
+ */
+.slds-progress__marker:focus {
+    outline: 2px solid var(--slds-g-color-accent-1);
+    outline-offset: 2px;
+}
+
+/**
+ * Active step marker
+ * Uses accent color for current step indication
+ */
+.slds-progress__item.slds-is-active .slds-progress__marker {
+    background-color: var(--slds-g-color-accent-container-1);
+    border-color: var(--slds-g-color-border-accent-1);
+}
+
+/**
+ * Completed step marker
+ * Uses success color to indicate completion
+ */
+.slds-progress__item.slds-is-completed .slds-progress__marker {
+    background-color: var(--slds-g-color-success-container-1);
+    border-color: var(--slds-g-color-success-1);
+}
+
+/* ========================================
+   CARD CUSTOMIZATIONS
+   ======================================== */
+
+/**
+ * Main wizard card
+ * Provides elevation and proper spacing
+ */
+.slds-card {
+    border-radius: var(--slds-g-radius-border-1);
+    box-shadow: var(--slds-g-shadow-1);
+}
+
+/**
+ * Card body
+ * Ensures content area has consistent padding
+ */
+.slds-card__body {
+    background-color: var(--slds-g-color-surface-container-1);
+}
+
+/**
+ * Card footer
+ * Provides proper spacing for navigation buttons
+ */
+.slds-card__footer {
+    padding: var(--slds-g-spacing-4);
+    border-top: 1px solid var(--slds-g-color-border-1);
+    background-color: var(--slds-g-color-surface-container-1);
+}
+
+/* ========================================
+   FORM ELEMENTS
+   ======================================== */
+
+/**
+ * Form container
+ * Provides consistent spacing between form elements
+ */
+.slds-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--slds-g-spacing-3);
+}
+
+/* ========================================
+   TYPOGRAPHY ENHANCEMENTS
+   ======================================== */
+
+/**
+ * Step heading
+ * Uses SLDS typography tokens for consistency
+ */
+.slds-text-heading_medium {
+    color: var(--slds-g-color-on-surface-3);
+    font-weight: var(--slds-g-font-weight-7);
+    line-height: var(--slds-g-font-lineheight-2);
+}
+
+/**
+ * Progress item labels
+ * Ensures readable text hierarchy
+ */
+.slds-text-heading_small {
+    font-weight: var(--slds-g-font-weight-5);
+    color: var(--slds-g-color-on-surface-2);
+    line-height: var(--slds-g-font-lineheight-3);
+}
+
+/* ========================================
+   BUTTON GROUP
+   ======================================== */
+
+/**
+ * Navigation button group
+ * Ensures proper spacing between buttons
+ */
+.slds-button-group {
+    display: flex;
+    gap: var(--slds-g-spacing-2);
+}
+
+/* ========================================
+   RESPONSIVE LAYOUT
+   ======================================== */
+
+/**
+ * Mobile-first responsive adjustments
+ * Ensures wizard works on all screen sizes
+ */
+@media (max-width: 768px) {
+    .step-content {
+        min-height: 200px;
+        padding: var(--slds-g-spacing-3);
+    }
+
+    .slds-progress__item_content {
+        font-size: 0.875rem;
+    }
+
+    .slds-card__footer {
+        padding: var(--slds-g-spacing-3);
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY ENHANCEMENTS
+   ======================================== */
+
+/**
+ * Screen reader only text
+ * Ensures assistive text is properly hidden
+ */
+.slds-assistive-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/**
+ * High contrast mode support
+ * Ensures visibility in Windows High Contrast Mode
+ */
+@media (prefers-contrast: high) {
+    .slds-progress__marker {
+        border-width: 2px;
+    }
+
+    .slds-progress__item.slds-is-active .slds-progress__marker,
+    .slds-progress__item.slds-is-completed .slds-progress__marker {
+        border-width: 3px;
+    }
+}
+
+/**
+ * Focus visible for keyboard navigation
+ * Enhanced focus indicators for accessibility
+ */
+.slds-button:focus-visible {
+    outline: 2px solid var(--slds-g-color-accent-1);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px var(--slds-g-color-accent-container-1);
+}
+
+/* ========================================
+   REVIEW BOX STYLING
+   ======================================== */
+
+/**
+ * Review summary box in Step 3
+ * Uses shaded theme for visual distinction
+ */
+.slds-box {
+    background-color: var(--slds-g-color-surface-container-2);
+    border: 1px solid var(--slds-g-color-border-1);
+    border-radius: var(--slds-g-radius-border-1);
+}
+
+/**
+ * List styling in review section
+ * Ensures proper spacing and alignment
+ */
+.slds-list_dotted {
+    list-style-type: disc;
+    padding-left: var(--slds-g-spacing-4);
+}
+
+.slds-list_dotted li {
+    margin-bottom: var(--slds-g-spacing-2);
+    color: var(--slds-g-color-on-surface-2);
+}

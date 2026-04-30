@@ -1,0 +1,91 @@
+/**
+ * Comprehensive Contact Form Styles
+ *
+ * Custom styles for the contact form component.
+ * Follows SLDS design tokens and spacing scale.
+ */
+
+/* Character counter styling */
+.character-counter {
+    text-align: right;
+    margin-top: 0.25rem;
+}
+
+/* Error icon styling within error messages */
+.slds-form-element__help .slds-icon_container {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.25rem;
+}
+
+.slds-form-element__help .slds-icon {
+    width: 0.875rem;
+    height: 0.875rem;
+}
+
+/* Success message icon styling */
+.slds-notify .slds-icon_container {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Ensure form elements stretch to full width */
+lightning-input,
+lightning-textarea {
+    width: 100%;
+}
+
+/* Additional spacing for form elements */
+.slds-form-element {
+    margin-bottom: 1rem;
+}
+
+/* Submit button full width override */
+.slds-button_stretch {
+    width: 100%;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 480px) {
+    .slds-box {
+        padding: 1rem;
+    }
+
+    .slds-text-heading_medium {
+        font-size: 1.25rem;
+    }
+}
+
+/* Focus state enhancement for accessibility */
+lightning-input:focus-within,
+lightning-textarea:focus-within {
+    outline: 2px solid #1589ee;
+    outline-offset: 2px;
+}
+
+/* Error state styling enhancement */
+.slds-has-error lightning-input,
+.slds-has-error lightning-textarea {
+    border-color: #c23934;
+}
+
+/* Character counter color transitions */
+.character-counter span {
+    transition: color 0.3s ease;
+}
+
+/* Success message animation */
+.slds-notify {
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

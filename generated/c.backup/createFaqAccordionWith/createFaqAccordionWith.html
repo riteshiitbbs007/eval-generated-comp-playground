@@ -1,0 +1,115 @@
+<template>
+  <div class="faqAccordion-container">
+    <h2 class="faqAccordion-title slds-text-heading_medium">Frequently Asked Questions</h2>
+    
+    <!-- FAQ Accordion Container -->
+    <div class="faqAccordion-wrapper">
+      <!-- Section 1: Expanded by Default -->
+      <div class="faqAccordion-section">
+        <div
+          role="button"
+          class="faqAccordion-sectionHeader"
+          onclick={handleToggleSection}
+          onkeydown={handleSectionKeyDown}
+          data-section-id="section1"
+          aria-expanded="true"
+          aria-controls="faqAccordion-section-1-content"
+          tabindex="0"
+        >
+          <span aria-hidden="true" class="faqAccordion-expandIcon">
+            <lightning-icon 
+              icon-name="utility:chevrondown" 
+              size="x-small" 
+              class="faqAccordion-icon"
+            ></lightning-icon>
+          </span>
+          <h3 class="faqAccordion-sectionTitle">What is this accordion?</h3>
+        </div>
+        <div 
+          id="faqAccordion-section-1-content" 
+          class="faqAccordion-sectionContent faqAccordion-sectionContent--expanded"
+        >
+          <div class="faqAccordion-sectionBody">
+            <p>This is an expandable section that displays content when clicked. 
+              Accordions help organize large amounts of information into manageable sections.
+              They're perfect for FAQ pages where users can quickly scan questions and expand 
+              only the answers they need.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: Collapsed by Default -->
+      <div class="faqAccordion-section">
+        <div
+          role="button"
+          class="faqAccordion-sectionHeader"
+          onclick={handleToggleSection}
+          onkeydown={handleSectionKeyDown}
+          data-section-id="section2"
+          aria-expanded="false"
+          aria-controls="faqAccordion-section-2-content"
+          tabindex="0"
+        >
+          <span aria-hidden="true" class="faqAccordion-expandIcon">
+            <lightning-icon 
+              icon-name="utility:chevronright" 
+              size="x-small"
+              class="faqAccordion-icon"
+            ></lightning-icon>
+          </span>
+          <h3 class="faqAccordion-sectionTitle">How does it work?</h3>
+        </div>
+        <div 
+          id="faqAccordion-section-2-content" 
+          class="faqAccordion-sectionContent"
+        >
+          <div class="faqAccordion-sectionBody">
+            <p>Click or tap on any section header to expand or collapse it. When you expand a 
+              section, you'll see the detailed answer to the question. You can have multiple 
+              sections open at once, allowing you to compare information across different answers.</p>
+            <p>The component is designed to be responsive and works well on both desktop 
+              and mobile devices.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3: Collapsed by Default -->
+      <div class="faqAccordion-section">
+        <div
+          role="button"
+          class="faqAccordion-sectionHeader"
+          onclick={handleToggleSection}
+          onkeydown={handleSectionKeyDown}
+          data-section-id="section3"
+          aria-expanded="false"
+          aria-controls="faqAccordion-section-3-content"
+          tabindex="0"
+        >
+          <span aria-hidden="true" class="faqAccordion-expandIcon">
+            <lightning-icon 
+              icon-name="utility:chevronright" 
+              size="x-small"
+              class="faqAccordion-icon"
+            ></lightning-icon>
+          </span>
+          <h3 class="faqAccordion-sectionTitle">Can I use keyboard navigation?</h3>
+        </div>
+        <div 
+          id="faqAccordion-section-3-content" 
+          class="faqAccordion-sectionContent"
+        >
+          <div class="faqAccordion-sectionBody">
+            <p>Yes! This accordion component is fully accessible and supports keyboard navigation:</p>
+            <ul>
+              <li>Use <strong>Tab</strong> key to navigate between accordion sections</li>
+              <li>Press <strong>Enter</strong> or <strong>Space</strong> to expand or collapse the focused section</li>
+              <li>Screen readers will announce the expanded/collapsed state of each section</li>
+            </ul>
+            <p>We've designed this component following WCAG 2.1 accessibility guidelines to ensure 
+              it's usable by everyone.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

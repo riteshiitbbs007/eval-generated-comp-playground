@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>false</isExposed>
+    <masterLabel>FAQ Accordion with 3 Sections (First Expanded)</masterLabel>
+    <description>An FAQ accordion component with 3 sections where the first section is expanded by default. Uses SLDS lightning-accordion pattern for accessibility and follows SLDS 2 design system standards.</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+</LightningComponentBundle>

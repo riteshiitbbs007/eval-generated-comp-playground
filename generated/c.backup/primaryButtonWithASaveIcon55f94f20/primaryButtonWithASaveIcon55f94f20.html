@@ -1,0 +1,6 @@
+<template>
+    <button class="slds-button slds-button_brand" onclick={handleClick} aria-label={computedAriaLabel} title={computedTitle} disabled={isDisabled}>
+        <lightning-icon if:true={showIcon} icon-name="utility:save" size="x-small" class="slds-button__icon slds-button__icon_left" alternative-text="Save"></lightning-icon>
+        <span class="slds-truncate">{label}</span>
+    </button>
+</template>

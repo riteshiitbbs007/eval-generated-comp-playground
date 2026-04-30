@@ -128,45 +128,39 @@ export default class Trends extends LightningElement {
   }
 
   // Determine execution mode from component metadata
+  // STRICT mode classification - only explicit metadata matters
   getExecutionMode(component) {
-    // Check for baseline mode first (explicit)
+    // Check for baseline mode (explicit)
     if (component.testMode === 'baseline') return 'baseline';
     if (component.baseline_slds === true) return 'baseline';
 
-    // Check for explicit Skills mode indicators
+    // Check for explicit Skills mode indicators (3 tools + embedded knowledge)
     if (component.testMode === 'skills') return 'skills';
     if (component.executionMode === 'skills') return 'skills';
     if (component.skillsModeEnabled === true) return 'skills';
 
-    // Check for MCP mode (treat as skills for UI organization)
+    // MCP mode (5 tools) - Currently grouped with Skills for UI organization
+    // TODO: Can be separated into its own section if needed
     if (component.testMode === 'mcp') return 'skills';
     if (component.executionMode === 'mcp') return 'skills';
 
-    // Default: Components without explicit mode metadata
-    // These are legacy/pre-mode components - group with skills for UI but mark separately
-    return 'skills'; // Group with skills in UI, but we'll handle filtering differently
+    // IMPORTANT: Legacy components without mode metadata
+    // Return 'skills' for UI organization (appear in Skills section)
+    // But hasExplicitSkillsMode() returns false, so they're EXCLUDED from "Skills Only" filter
+    // This means: visible in Skills section UI, but ONLY show in chart when "All Modes" active
+    return 'skills';
   }
 
   // Check if component has EXPLICIT skills mode metadata (for filtering)
-  // Fallback: Since trends.json doesn't capture testMode/executionMode yet,
-  // we use baseline_slds as the discriminator
+  // STRICT: Only match components generated with Skills mode (3 tools + embedded knowledge)
+  // Does NOT include MCP mode (5 tools - different tooling configuration)
+  // Legacy components without metadata will NOT match (only visible in "All Modes")
   hasExplicitSkillsMode(component) {
-    // Check for explicit Skills mode metadata first
-    if (component.testMode === 'skills' ||
-        component.executionMode === 'skills' ||
-        component.skillsModeEnabled === true ||
-        component.testMode === 'mcp' ||
-        component.executionMode === 'mcp') {
-      return true;
-    }
-
-    // FALLBACK: If no explicit mode metadata, use baseline_slds
-    // baseline_slds: false means it's a non-baseline (skills/default) component
-    if (component.baseline_slds === false) {
-      return true;
-    }
-
-    return false;
+    return (
+      component.testMode === 'skills' ||
+      component.executionMode === 'skills' ||
+      component.skillsModeEnabled === true
+    );
   }
 
   // Check if component has EXPLICIT baseline mode metadata

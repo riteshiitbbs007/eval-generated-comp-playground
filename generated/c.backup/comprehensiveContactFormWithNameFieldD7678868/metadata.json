@@ -1,0 +1,47 @@
+{
+  "folderName": "comprehensiveContactFormWithNameField-C02-Detailed-20260312",
+  "componentName": "comprehensiveContactFormWithNameFieldD7678868",
+  "csvId": "C02",
+  "variant": "Detailed",
+  "timestamp": "2026-03-12T10:40:39.115Z",
+  "utterance": "Create a comprehensive contact form with name field (required, maximum 100 characters, letters and spaces only), email field (required with proper email validation), and message field (required, minimum 10 characters, maximum 500 characters, with visible rows and character counter showing current and max). Use stacked form layout with proper spacing from SLDS spacing scale between fields. Display validation errors on blur or form submit below each field using SLDS error styling with error icon from utility icons. Add a submit button using brand styling at full width with appropriate button sizing from the design system",
+  "tier": "Tier 1",
+  "complexity": "Simple",
+  "scores": {
+    "slds_linter": 0.553,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.67,
+    "overall_readiness_label": "Prototype"
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 23,
+    "notes": 0
+  },
+  "utteranceId": "C02",
+  "errorsByType": {
+    "slds/no-slds-class-overrides": 15,
+    "slds/no-slds-namespace-for-custom-hooks": 7,
+    "slds/no-hardcoded-values-slds2": 1
+  },
+  "sldsToolsEnabled": true,
+  "testMode": "normal",
+  "baseline_slds": false,
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/d4cc0586-3aef-4dc4-afbc-cb41eb525763/r/019ce19f-e37a-7000-8000-027762b511d8",
+  "langsmithRunId": "019ce19f-e37a-7000-8000-027762b511d8",
+  "langsmithProjectName": "worthwhile-thread-46",
+  "langsmithTraceId": "019ce19f-e37a-7000-8000-027762b511d8",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C02-C04:Detailed",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/comprehensiveContactFormWithNameFieldD7678868/screenshots/desktop.png"
+  }
+}

@@ -194,6 +194,7 @@ function getQualityGate(score) {
 }
 
 // Format component data for snapshot
+// Captures execution mode metadata for accurate mode-based filtering in Trends UI
 function formatComponentData(component) {
   const snapshotData = {
     componentName: component.componentName,
@@ -219,8 +220,20 @@ function formatComponentData(component) {
     timestamp: component.timestamp
   };
 
-  // Include execution mode metadata if present (for future mode filtering)
-  // These fields enable accurate mode-based trend filtering
+  // CRITICAL: Include execution mode metadata for accurate trend filtering
+  //
+  // Mode Detection Logic (STRICT):
+  // - Baseline Mode: testMode === 'baseline' OR baseline_slds === true
+  // - Skills Mode: testMode === 'skills' OR executionMode === 'skills' OR skillsModeEnabled === true
+  //   * Skills = 3 tools (create, optimize, Skill->applying-slds) + embedded knowledge
+  // - MCP Mode: testMode === 'mcp' OR executionMode === 'mcp'
+  //   * MCP = 5 tools (create, optimize, guide_slds, explore_slds, guide_design)
+  // - Legacy: No testMode/executionMode/skillsModeEnabled (only baseline_slds field)
+  //
+  // When "Skills Only" filter active in Trends UI:
+  // - ONLY shows components with explicit Skills mode metadata (NOT MCP, NOT legacy)
+  // - Ensures accurate historical analysis of Skills mode performance
+  //
   if (component.testMode !== undefined) {
     snapshotData.testMode = component.testMode;
   }

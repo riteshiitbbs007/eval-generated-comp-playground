@@ -1,0 +1,43 @@
+{
+  "folderName": "sortableTableProductNamePriceCategory-C03-Simple-20260306",
+  "componentName": "sortableTableProductNamePriceCategory5f50fe64",
+  "csvId": "C03",
+  "variant": "Simple",
+  "timestamp": "2026-03-06T14:29:48.179Z",
+  "utterance": "Create sortable table: Product Name, Price, Category, Stock Status",
+  "tier": "Tier 1",
+  "complexity": "Simple",
+  "scores": {
+    "slds_linter": 0.649,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.74
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 34,
+    "notes": 0
+  },
+  "utteranceId": "C03",
+  "errorsByType": {
+    "slds/no-slds-var-without-fallback": 22,
+    "slds/no-hardcoded-values-slds2": 6,
+    "slds/no-slds-class-overrides": 6
+  },
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/0463a484-f10b-4152-9741-eb23f8956692/r/019cc389-5994-7000-8000-04e36e673e71",
+  "langsmithRunId": "019cc389-5994-7000-8000-04e36e673e71",
+  "langsmithProjectName": "glossy-egg-70",
+  "langsmithTraceId": "019cc389-5994-7000-8000-04e36e673e71",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C01-C03:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/sortableTableProductNamePriceCategory5f50fe64/screenshots/desktop.png"
+  }
+}

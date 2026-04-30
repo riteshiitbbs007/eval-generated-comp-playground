@@ -1,0 +1,136 @@
+/**
+ * FAQ Accordion Component Styles
+ * Uses SLDS design tokens for theme-aware styling
+ * Follows SLDS 2 BEM methodology
+ */
+
+/* Container styling - uses SLDS surface container */
+.slds-accordion {
+    background: var(--slds-g-color-surface-container-1);
+    color: var(--slds-g-color-on-surface-2);
+    border: 1px solid var(--slds-g-color-border-1);
+    border-radius: var(--slds-g-radius-border-1);
+}
+
+/* Individual accordion section */
+.slds-accordion__section {
+    border-bottom: 1px solid var(--slds-g-color-border-1);
+}
+
+.slds-accordion__section:last-child {
+    border-bottom: none;
+}
+
+/* Summary (header) area */
+.slds-accordion__summary {
+    background: var(--slds-g-color-surface-container-1);
+    transition: background-color 0.2s ease;
+}
+
+/* Button styling - reset and customize */
+.slds-accordion__summary-action {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: var(--slds-g-spacing-3) var(--slds-g-spacing-4);
+    text-align: left;
+    font-family: var(--slds-g-font-family-base);
+    font-size: var(--slds-g-font-size-base);
+    font-weight: var(--slds-g-font-weight-5);
+    line-height: var(--slds-g-font-lineheight-3);
+    color: var(--slds-g-color-on-surface-3);
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Button hover state */
+.slds-accordion__summary-action:hover {
+    background: var(--slds-g-color-accent-container-1);
+    color: var(--slds-g-color-on-accent-1);
+}
+
+/* Button focus state - accessibility requirement */
+.slds-accordion__summary-action:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--slds-g-color-accent-1) inset;
+    background: var(--slds-g-color-accent-container-1);
+    color: var(--slds-g-color-on-accent-1);
+}
+
+/* Button active state */
+.slds-accordion__summary-action:active {
+    background: var(--slds-g-color-accent-container-2);
+    color: var(--slds-g-color-on-accent-2);
+}
+
+/* Icon styling */
+.slds-accordion__summary-action-icon {
+    margin-right: var(--slds-g-spacing-2);
+    transition: transform 0.2s ease;
+    color: var(--slds-g-color-on-surface-2);
+}
+
+/* Rotate icon when section is open */
+.slds-is-open .slds-accordion__summary-action-icon {
+    transform: rotate(90deg);
+}
+
+/* Update icon color on hover */
+.slds-accordion__summary-action:hover .slds-accordion__summary-action-icon,
+.slds-accordion__summary-action:focus .slds-accordion__summary-action-icon {
+    color: var(--slds-g-color-on-accent-1);
+}
+
+/* Summary content text */
+.slds-accordion__summary-content {
+    flex: 1;
+}
+
+/* Content area - hidden by default */
+.slds-accordion__content {
+    display: none;
+    padding: var(--slds-g-spacing-3) var(--slds-g-spacing-4);
+    padding-top: 0;
+    font-family: var(--slds-g-font-family-base);
+    font-size: var(--slds-g-font-size-base);
+    font-weight: var(--slds-g-font-weight-4);
+    line-height: var(--slds-g-font-lineheight-4);
+    color: var(--slds-g-color-on-surface-2);
+}
+
+/* Show content when section is open */
+.slds-is-open .slds-accordion__content {
+    display: block;
+    animation: fadeIn 0.2s ease;
+}
+
+/* Fade in animation for content */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Content paragraph styling */
+.slds-accordion__content p {
+    margin: 0;
+    padding: var(--slds-g-spacing-2) 0;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .slds-accordion__summary-action {
+        padding: var(--slds-g-spacing-2) var(--slds-g-spacing-3);
+        font-size: 0.875rem;
+    }
+    
+    .slds-accordion__content {
+        padding: var(--slds-g-spacing-2) var(--slds-g-spacing-3);
+        font-size: 0.875rem;
+    }
+}

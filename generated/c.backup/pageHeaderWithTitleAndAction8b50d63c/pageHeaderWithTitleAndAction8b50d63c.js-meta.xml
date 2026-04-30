@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>A responsive page header component that displays a title with primary and optional secondary action buttons. Follows SLDS 2.x design patterns with proper accessibility and semantic markup.</description>
+    <isExposed>false</isExposed>
+    <masterLabel>Page Header with Title and Action</masterLabel>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage">
+            <property
+                name="title"
+                type="String"
+                default="Page Title"
+                label="Page Title"
+                description="The title text displayed in the page header"
+                required="false" />
+            <property
+                name="primaryActionLabel"
+                type="String"
+                default="Primary Action"
+                label="Primary Action Button Label"
+                description="Label text for the primary action button"
+                required="false" />
+            <property
+                name="secondaryActionLabel"
+                type="String"
+                default="Secondary Action"
+                label="Secondary Action Button Label"
+                description="Label text for the secondary action button"
+                required="false" />
+            <property
+                name="showSecondaryAction"
+                type="Boolean"
+                default="false"
+                label="Show Secondary Action"
+                description="Controls whether the secondary action button is displayed"
+                required="false" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>A reusable modal dialog component for confirming delete actions with Cancel and Delete buttons. Implements SLDS 2 patterns with full accessibility support.</description>
+    <isExposed>false</isExposed>
+    <masterLabel>Delete Confirmation Modal</masterLabel>
+
+    <!-- Component can be used in various Lightning contexts -->
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+
+    <!-- Public Properties Configuration -->
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage">
+            <!-- Modal Title Property -->
+            <property
+                name="title"
+                type="String"
+                label="Modal Title"
+                description="The heading text displayed in the modal header"
+                default="Confirm Delete" />
+
+            <!-- Confirmation Message Property -->
+            <property
+                name="message"
+                type="String"
+                label="Confirmation Message"
+                description="The main message displayed in the modal body"
+                default="Are you sure you want to delete this item? This action cannot be undone." />
+
+            <!-- Delete Button Label Property -->
+            <property
+                name="deleteLabel"
+                type="String"
+                label="Delete Button Label"
+                description="The text displayed on the delete button"
+                default="Delete" />
+
+            <!-- Cancel Button Label Property -->
+            <property
+                name="cancelLabel"
+                type="String"
+                label="Cancel Button Label"
+                description="The text displayed on the cancel button"
+                default="Cancel" />
+
+            <!-- Show Modal Property -->
+            <property
+                name="show"
+                type="Boolean"
+                label="Show Modal"
+                description="Controls whether the modal is visible"
+                default="false" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

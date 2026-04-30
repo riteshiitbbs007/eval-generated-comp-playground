@@ -1,0 +1,129 @@
+<template>
+    <!-- Form container with SLDS card styling -->
+    <div class="slds-card slds-p-around_medium">
+        <h2 class="slds-text-heading_medium slds-m-bottom_medium">Contact Information Form</h2>
+
+        <!-- Success message display -->
+        <template lwc:if={showSuccess}>
+            <div class="slds-notify slds-notify_alert slds-theme_success slds-m-bottom_medium" role="alert">
+                <span class="slds-assistive-text">Success</span>
+                <h2>{successMessage}</h2>
+            </div>
+        </template>
+
+        <!-- Form fields -->
+        <form class="slds-form" onsubmit={handleSubmit}>
+
+            <!-- Full Name - Text Input (Required) -->
+            <div class="slds-form-element slds-m-bottom_small">
+                <lightning-input
+                    name="fullName"
+                    label="Full Name"
+                    type="text"
+                    placeholder="Enter your full name"
+                    value={fullName}
+                    onchange={handleFieldChange}
+                    required>
+                </lightning-input>
+            </div>
+
+            <!-- Email Address - Email Input (Required) -->
+            <div class="slds-form-element slds-m-bottom_small">
+                <lightning-input
+                    name="email"
+                    label="Email Address"
+                    type="email"
+                    placeholder="example@email.com"
+                    value={email}
+                    onchange={handleFieldChange}
+                    required>
+                </lightning-input>
+            </div>
+
+            <!-- Phone Number - Phone Input (Optional) -->
+            <div class="slds-form-element slds-m-bottom_small">
+                <lightning-input
+                    name="phone"
+                    label="Phone Number"
+                    type="tel"
+                    placeholder="(555) 123-4567"
+                    value={phone}
+                    onchange={handleFieldChange}>
+                </lightning-input>
+            </div>
+
+            <!-- Country - Dropdown/Combobox (Required) -->
+            <div class="slds-form-element slds-m-bottom_small">
+                <lightning-combobox
+                    name="country"
+                    label="Country"
+                    value={country}
+                    placeholder="Select a country"
+                    options={countryOptions}
+                    onchange={handleFieldChange}
+                    required>
+                </lightning-combobox>
+            </div>
+
+            <!-- Interests - Checkboxes (Optional) -->
+            <div class="slds-form-element slds-m-bottom_small">
+                <fieldset class="slds-form-element">
+                    <legend class="slds-form-element__legend slds-form-element__label">
+                        Interests
+                    </legend>
+                    <div class="slds-form-element__control">
+                        <lightning-input
+                            type="checkbox"
+                            name="newsletter"
+                            label="Newsletter"
+                            checked={newsletter}
+                            onchange={handleCheckboxChange}>
+                        </lightning-input>
+                        <lightning-input
+                            type="checkbox"
+                            name="updates"
+                            label="Product Updates"
+                            checked={updates}
+                            onchange={handleCheckboxChange}>
+                        </lightning-input>
+                        <lightning-input
+                            type="checkbox"
+                            name="promotions"
+                            label="Promotions"
+                            checked={promotions}
+                            onchange={handleCheckboxChange}>
+                        </lightning-input>
+                    </div>
+                </fieldset>
+            </div>
+
+            <!-- Comments/Message - Textarea (Optional) -->
+            <div class="slds-form-element slds-m-bottom_medium">
+                <lightning-textarea
+                    name="comments"
+                    label="Comments"
+                    placeholder="Enter any additional comments or questions..."
+                    value={comments}
+                    onchange={handleFieldChange}
+                    max-length="500">
+                </lightning-textarea>
+            </div>
+
+            <!-- Form Actions -->
+            <div class="slds-form-element">
+                <lightning-button
+                    variant="brand"
+                    type="submit"
+                    label="Submit"
+                    class="slds-m-right_x-small"
+                    disabled={isSubmitDisabled}>
+                </lightning-button>
+                <lightning-button
+                    variant="neutral"
+                    label="Reset"
+                    onclick={handleReset}>
+                </lightning-button>
+            </div>
+        </form>
+    </div>
+</template>

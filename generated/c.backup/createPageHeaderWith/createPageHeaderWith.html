@@ -1,0 +1,45 @@
+<template>
+    <div class="slds-page-header slds-page-header_record-home">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span class="slds-page-header__title slds-truncate" title={title}>{title}</span>
+                                </h1>
+                            </div>
+                        </div>
+                        <template if:true={subtitle}>
+                            <p class="slds-page-header__name-meta slds-truncate" title={subtitle}>{subtitle}</p>
+                        </template>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-page-header__col-actions">
+                <div class="slds-page-header__controls">
+                    <div class="slds-page-header__control">
+                        <template if:true={actions.length}>
+                            <div class="slds-button-group" role="group">
+                                <template for:each={actions} for:item="action">
+                                    <lightning-button
+                                        key={action.name}
+                                        label={action.label}
+                                        variant={action.variant}
+                                        icon-name={action.iconName}
+                                        icon-position={action.iconPosition}
+                                        data-name={action.name}
+                                        disabled={action.disabled}
+                                        onclick={handleActionClick}
+                                        class="slds-m-left_x-small">
+                                    </lightning-button>
+                                </template>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

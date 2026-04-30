@@ -1,0 +1,132 @@
+<template>
+    <!-- Main wizard container -->
+    <div class="slds-box slds-theme_default">
+        <!-- Progress Indicator -->
+        <div class="slds-progress slds-progress_vertical" role="progressbar" aria-valuemin="1" aria-valuemax="3" aria-valuenow={currentStep} aria-label="Wizard progress">
+            <ol class="slds-progress__list">
+                <!-- Step 1 -->
+                <li class={step1Class}>
+                    <button class="slds-button slds-progress__marker" disabled aria-label="Step 1: Basic Information">
+                        <span class="slds-assistive-text">Step 1</span>
+                    </button>
+                    <div class="slds-progress__item_content">
+                        <div class="slds-m-top_xx-small">Basic Information</div>
+                    </div>
+                </li>
+                <!-- Step 2 -->
+                <li class={step2Class}>
+                    <button class="slds-button slds-progress__marker" disabled aria-label="Step 2: Additional Details">
+                        <span class="slds-assistive-text">Step 2</span>
+                    </button>
+                    <div class="slds-progress__item_content">
+                        <div class="slds-m-top_xx-small">Additional Details</div>
+                    </div>
+                </li>
+                <!-- Step 3 -->
+                <li class={step3Class}>
+                    <button class="slds-button slds-progress__marker" disabled aria-label="Step 3: Review and Confirmation">
+                        <span class="slds-assistive-text">Step 3</span>
+                    </button>
+                    <div class="slds-progress__item_content">
+                        <div class="slds-m-top_xx-small">Review and Confirmation</div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <!-- Step Content -->
+        <div class="slds-m-top_large slds-p-around_medium">
+            <!-- Step 1 Content -->
+            <template lwc:if={isStep1}>
+                <div role="region" aria-labelledby="step1-title">
+                    <h2 id="step1-title" class="slds-text-heading_medium slds-m-bottom_small">Step 1: Basic Information</h2>
+                    <p class="slds-text-body_regular">Please provide your basic information to get started.</p>
+                    <div class="slds-m-top_medium">
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="input-name">Name</label>
+                            <div class="slds-form-element__control">
+                                <input type="text" id="input-name" class="slds-input" placeholder="Enter your name" />
+                            </div>
+                        </div>
+                        <div class="slds-form-element slds-m-top_small">
+                            <label class="slds-form-element__label" for="input-email">Email</label>
+                            <div class="slds-form-element__control">
+                                <input type="email" id="input-email" class="slds-input" placeholder="Enter your email" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <!-- Step 2 Content -->
+            <template lwc:if={isStep2}>
+                <div role="region" aria-labelledby="step2-title">
+                    <h2 id="step2-title" class="slds-text-heading_medium slds-m-bottom_small">Step 2: Additional Details</h2>
+                    <p class="slds-text-body_regular">Please provide additional details about your preferences.</p>
+                    <div class="slds-m-top_medium">
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="input-phone">Phone Number</label>
+                            <div class="slds-form-element__control">
+                                <input type="tel" id="input-phone" class="slds-input" placeholder="Enter your phone number" />
+                            </div>
+                        </div>
+                        <div class="slds-form-element slds-m-top_small">
+                            <label class="slds-form-element__label" for="input-company">Company</label>
+                            <div class="slds-form-element__control">
+                                <input type="text" id="input-company" class="slds-input" placeholder="Enter your company name" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <!-- Step 3 Content -->
+            <template lwc:if={isStep3}>
+                <div role="region" aria-labelledby="step3-title">
+                    <h2 id="step3-title" class="slds-text-heading_medium slds-m-bottom_small">Step 3: Review and Confirmation</h2>
+                    <p class="slds-text-body_regular">Please review your information and confirm to complete the wizard.</p>
+                    <div class="slds-m-top_medium slds-box slds-theme_shade">
+                        <p class="slds-text-body_regular"><strong>Summary:</strong></p>
+                        <p class="slds-text-body_regular slds-m-top_x-small">Review your information above and click Finish to complete.</p>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="slds-m-top_large slds-border_top slds-p-top_medium">
+            <div class="slds-grid slds-grid_align-spread">
+                <!-- Back Button -->
+                <div class="slds-col">
+                    <button
+                        class="slds-button slds-button_neutral"
+                        onclick={handleBack}
+                        disabled={isFirstStep}
+                        aria-label="Go to previous step">
+                        Back
+                    </button>
+                </div>
+
+                <!-- Next/Finish Button -->
+                <div class="slds-col">
+                    <template lwc:if={isLastStep}>
+                        <button
+                            class="slds-button slds-button_brand"
+                            onclick={handleFinish}
+                            aria-label="Finish wizard">
+                            Finish
+                        </button>
+                    </template>
+                    <template lwc:else>
+                        <button
+                            class="slds-button slds-button_brand"
+                            onclick={handleNext}
+                            aria-label="Go to next step">
+                            Next
+                        </button>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

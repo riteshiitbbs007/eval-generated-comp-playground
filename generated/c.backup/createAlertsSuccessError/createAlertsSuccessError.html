@@ -1,0 +1,63 @@
+<template>
+    <div class="slds-p-around_medium">
+        <!-- Success Alert -->
+        <div class="slds-notify slds-notify_alert slds-alert_success" role="alert" aria-live="polite">
+            <span class="slds-assistive-text">Success</span>
+            <lightning-icon class="slds-m-right_x-small" icon-name="utility:success" alternative-text="Success" size="small"></lightning-icon>
+            <h2 class="slds-notify__content">
+                This is a success alert with an icon
+            </h2>
+            <div class="slds-notify__close">
+                <button class="slds-button slds-button_icon slds-button_icon-small" title="Close" onclick={closeAlert} data-alert-type="success">
+                    <lightning-icon icon-name="utility:close" alternative-text="Close" size="small"></lightning-icon>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Error Alert -->
+        <div class="slds-notify slds-notify_alert slds-alert_error slds-m-top_small" role="alert" aria-live="assertive">
+            <span class="slds-assistive-text">Error</span>
+            <lightning-icon class="slds-m-right_x-small" icon-name="utility:error" alternative-text="Error" size="small"></lightning-icon>
+            <h2 class="slds-notify__content">
+                This is an error alert with an icon
+            </h2>
+            <div class="slds-notify__close">
+                <button class="slds-button slds-button_icon slds-button_icon-small" title="Close" onclick={closeAlert} data-alert-type="error">
+                    <lightning-icon icon-name="utility:close" alternative-text="Close" size="small"></lightning-icon>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Warning Alert -->
+        <div class="slds-notify slds-notify_alert slds-alert_warning slds-m-top_small" role="alert" aria-live="polite">
+            <span class="slds-assistive-text">Warning</span>
+            <lightning-icon class="slds-m-right_x-small" icon-name="utility:warning" alternative-text="Warning" size="small"></lightning-icon>
+            <h2 class="slds-notify__content">
+                This is a warning alert with an icon
+            </h2>
+            <div class="slds-notify__close">
+                <button class="slds-button slds-button_icon slds-button_icon-small" title="Close" onclick={closeAlert} data-alert-type="warning">
+                    <lightning-icon icon-name="utility:close" alternative-text="Close" size="small"></lightning-icon>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Info Alert -->
+        <div class="slds-notify slds-notify_alert slds-alert_info slds-m-top_small" role="alert" aria-live="polite">
+            <span class="slds-assistive-text">Information</span>
+            <lightning-icon class="slds-m-right_x-small" icon-name="utility:info" alternative-text="Information" size="small"></lightning-icon>
+            <h2 class="slds-notify__content">
+                This is an information alert with an icon
+            </h2>
+            <div class="slds-notify__close">
+                <button class="slds-button slds-button_icon slds-button_icon-small" title="Close" onclick={closeAlert} data-alert-type="info">
+                    <lightning-icon icon-name="utility:close" alternative-text="Close" size="small"></lightning-icon>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</template>

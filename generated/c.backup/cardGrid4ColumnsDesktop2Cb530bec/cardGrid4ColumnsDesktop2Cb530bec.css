@@ -1,0 +1,10 @@
+/**
+ * Minimal custom CSS for the card grid component.
+ * Relies primarily on SLDS utility classes for layout and spacing.
+ * Uses SLDS design tokens for any custom styling to maintain consistency.
+ */
+
+/* Ensure cards within columns have consistent height for better alignment */
+.slds-col lightning-card {
+    height: 100%;
+}

@@ -1,0 +1,131 @@
+/**
+ * Page Header Component Styles - SLDS 2 Compliant
+ *
+ * Uses SLDS styling hooks for:
+ * - Colors (semantic surface, container, border, on-surface)
+ * - Spacing (numbered spacing hooks)
+ * - Typography (font family, size, weight, line height)
+ * - Borders (border color and width hooks)
+ *
+ * All styling follows SLDS 2 best practices with proper accessibility and theming support
+ */
+
+/* Page Header Container */
+.page-header {
+    /* Surface background for the header */
+    background: var(--slds-g-color-surface-container-1, #ffffff);
+
+    /* Spacing using numbered hooks - 16px vertical, 24px horizontal */
+    padding: var(--slds-g-spacing-4) var(--slds-g-spacing-5);
+
+    /* Bottom border for visual separation */
+    border-bottom: var(--slds-g-sizing-border-1) solid var(--slds-g-color-border-1);
+
+    /* Minimum height for the header */
+    min-height: var(--slds-g-spacing-12);
+
+    /* Ensure proper display */
+    display: block;
+}
+
+/* Title Styling */
+.page-header__title {
+    /* SLDS heading size - 1.5rem (24px) */
+    font-size: 1.5rem;
+
+    /* Bold font weight using numbered hook */
+    font-weight: var(--slds-g-font-weight-7);
+
+    /* Font family from design system */
+    font-family: var(--slds-g-font-family-base);
+
+    /* Line height for proper text spacing */
+    line-height: var(--slds-g-font-lineheight-2);
+
+    /* High emphasis text color */
+    color: var(--slds-g-color-neutral-base-10, #181818);
+
+    /* Bottom margin for spacing between title and subtitle */
+    margin-bottom: var(--slds-g-spacing-1);
+
+    /* Remove default margins */
+    margin-top: 0;
+}
+
+/* Subtitle Styling */
+.page-header__subtitle {
+    /* Smaller text size - 0.875rem (14px) */
+    font-size: 0.875rem;
+
+    /* Regular font weight */
+    font-weight: var(--slds-g-font-weight-4);
+
+    /* Font family from design system */
+    font-family: var(--slds-g-font-family-base);
+
+    /* Line height for proper text spacing */
+    line-height: var(--slds-g-font-lineheight-3);
+
+    /* Neutral color for de-emphasized text */
+    color: var(--slds-g-color-neutral-base-50, #706e6b);
+
+    /* Remove default margins */
+    margin: 0;
+}
+
+/* Account Icon Styling */
+.account-icon {
+    /* Spacing to the right of the icon */
+    margin-right: var(--slds-g-spacing-3);
+}
+
+/* Button Group Container */
+.button-group {
+    /* Right-align buttons on larger screens */
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+    /* Spacing for button group */
+    gap: var(--slds-g-spacing-2);
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .button-group {
+        /* Full width on mobile */
+        width: 100%;
+
+        /* Center buttons on mobile */
+        justify-content: center;
+
+        /* Add top margin on mobile for spacing from title */
+        margin-top: var(--slds-g-spacing-3);
+    }
+
+    .page-header {
+        /* Reduce padding on mobile */
+        padding: var(--slds-g-spacing-3) var(--slds-g-spacing-4);
+    }
+}
+
+/* Focus state enhancement for accessibility */
+.page-header lightning-button:focus-visible {
+    /* Enhanced focus outline using accent color */
+    outline: var(--slds-g-sizing-border-2) solid var(--slds-g-color-border-accent-1);
+    outline-offset: var(--slds-g-spacing-1);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .page-header {
+        /* Stronger border in high contrast mode */
+        border-bottom-width: var(--slds-g-sizing-border-2);
+    }
+
+    .page-header__title,
+    .page-header__subtitle {
+        /* Ensure maximum contrast for text */
+        font-weight: var(--slds-g-font-weight-6);
+    }
+}

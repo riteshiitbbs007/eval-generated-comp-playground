@@ -1,0 +1,28 @@
+/**
+ * Page Header Styles
+ * 
+ * Uses SLDS design tokens and utilities for consistent styling.
+ * The component primarily relies on SLDS classes for styling.
+ */
+
+/* Ensure proper spacing and layout */
+.slds-page-header {
+    background-color: var(--slds-g-color-neutral-base-100, #ffffff);
+}
+
+/* Ensure icon is properly aligned with content */
+.slds-media__figure {
+    margin-right: var(--slds-g-spacing-small, 0.75rem);
+}
+
+/* Ensure title is properly sized and weighted */
+.slds-page-header__title {
+    font-size: var(--slds-g-font-size-heading-medium, 1.25rem);
+    font-weight: var(--slds-g-font-weight-bold, 700);
+    line-height: var(--slds-g-line-height-heading, 1.25);
+}
+
+/* Ensure subtitle uses neutral color */
+.slds-page-header__name-meta {
+    margin-top: var(--slds-g-spacing-xx-small, 0.25rem);
+}
