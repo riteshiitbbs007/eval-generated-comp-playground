@@ -240,6 +240,38 @@ export default class Trends extends LightningElement {
       filtered = {
         [this.activeModeFilter]: filtered[this.activeModeFilter] || {}
       };
+
+      // STRICT FILTERING: When Skills or Baseline filter is active,
+      // only show components with EXPLICIT mode metadata
+      // This ensures UI checkboxes match what actually shows in the chart
+      if (this.activeModeFilter === 'skills' || this.activeModeFilter === 'baseline') {
+        Object.keys(filtered[this.activeModeFilter] || {}).forEach(utteranceId => {
+          const utterance = filtered[this.activeModeFilter][utteranceId];
+          Object.keys(utterance.variants).forEach(variant => {
+            const components = utterance.variants[variant];
+
+            // Check if ANY component in this variant has explicit mode metadata
+            const hasExplicitMode = components.some(c => {
+              if (this.activeModeFilter === 'baseline') {
+                return this.hasExplicitBaselineMode(c);
+              } else if (this.activeModeFilter === 'skills') {
+                return this.hasExplicitSkillsMode(c);
+              }
+              return false;
+            });
+
+            // Remove variants without explicit mode metadata
+            if (!hasExplicitMode) {
+              delete utterance.variants[variant];
+            }
+          });
+
+          // Remove utterances with no variants left
+          if (Object.keys(utterance.variants).length === 0) {
+            delete filtered[this.activeModeFilter][utteranceId];
+          }
+        });
+      }
     }
 
     // Apply search filter
