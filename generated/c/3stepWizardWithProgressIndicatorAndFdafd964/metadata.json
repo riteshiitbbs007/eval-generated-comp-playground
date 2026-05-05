@@ -1,0 +1,72 @@
+{
+  "folderName": "component-3stepWizardWithProgressIndicatorAnd-C14-Simple-20260311",
+  "componentName": "3stepWizardWithProgressIndicatorAndFdafd964",
+  "csvId": "C14",
+  "variant": "Simple",
+  "timestamp": "2026-03-11T11:03:26.303Z",
+  "utterance": "Create 3-step wizard with progress indicator and next/back buttons",
+  "tier": "Tier 3",
+  "complexity": "Advanced",
+  "scores": {
+    "slds_linter": 0.26,
+    "slds_quality": 1,
+    "prd_compliance": 0.7,
+    "security": 1,
+    "overall": 2.3,
+    "overall_readiness_label": "Prototype"
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 75,
+    "notes": 0
+  },
+  "utteranceId": "C14",
+  "errorsByType": {
+    "slds/no-slds-var-without-fallback": 38,
+    "slds/no-slds-class-overrides": 23,
+    "slds/no-hardcoded-values-slds2": 14
+  },
+  "sldsToolsEnabled": true,
+  "testMode": "normal",
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/cbf16f7d-5835-4408-a99e-aa8768b0819f/r/019cdc8c-b4cb-7000-8000-022be23f10d7",
+  "langsmithRunId": "019cdc8c-b4cb-7000-8000-022be23f10d7",
+  "langsmithProjectName": "new-eye-81",
+  "langsmithTraceId": "019cdc8c-b4cb-7000-8000-022be23f10d7",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C14:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/3stepWizardWithProgressIndicatorAndFdafd964/screenshots/desktop.png"
+  },
+  "originalScoresV0": {
+    "slds_linter": 0.403,
+    "slds_quality": 1,
+    "prd_compliance": 0.7,
+    "security": 1,
+    "overall": 2.4,
+    "overall_readiness_label": "Prototype"
+  },
+  "_scoreHistory": {
+    "originalScoresV0": {
+      "date": "2026-03-18T13:56:09.563Z",
+      "reason": "Score recalculation/metadata update",
+      "changedFields": [
+        {
+          "field": "overall",
+          "old": 2.4,
+          "new": 2.3
+        },
+        {
+          "field": "slds_linter",
+          "old": 0.403,
+          "new": 0.26
+        }
+      ]
+    }
+  }
+}

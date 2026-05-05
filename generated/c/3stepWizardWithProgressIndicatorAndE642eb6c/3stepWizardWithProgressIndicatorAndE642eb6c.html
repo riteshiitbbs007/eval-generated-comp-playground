@@ -1,0 +1,154 @@
+<template>
+    <!-- 3-Step Wizard Container -->
+    <div class="slds-m-around_medium">
+        <!-- Progress Indicator using SLDS Path -->
+        <div class="slds-path">
+            <div class="slds-grid slds-path__track">
+                <div class="slds-grid slds-path__scroller-container">
+                    <div class="slds-path__scroller" role="application">
+                        <div class="slds-path__scroller_inner">
+                            <ul class="slds-path__nav" role="listbox" aria-orientation="horizontal">
+                                <!-- Step 1 -->
+                                <li class={step1Class} role="presentation">
+                                    <a aria-selected={step1Selected} class="slds-path__link" href="#" role="option" tabindex="0" onclick={handleStep1Click}>
+                                        <span class="slds-path__stage">
+                                            <lightning-icon icon-name="utility:chevronright" size="x-small" class="slds-icon_container slds-icon-utility-chevronright"></lightning-icon>
+                                        </span>
+                                        <span class="slds-path__title">Step 1</span>
+                                    </a>
+                                </li>
+                                <!-- Step 2 -->
+                                <li class={step2Class} role="presentation">
+                                    <a aria-selected={step2Selected} class="slds-path__link" href="#" role="option" tabindex="-1" onclick={handleStep2Click}>
+                                        <span class="slds-path__stage">
+                                            <lightning-icon icon-name="utility:chevronright" size="x-small" class="slds-icon_container slds-icon-utility-chevronright"></lightning-icon>
+                                        </span>
+                                        <span class="slds-path__title">Step 2</span>
+                                    </a>
+                                </li>
+                                <!-- Step 3 -->
+                                <li class={step3Class} role="presentation">
+                                    <a aria-selected={step3Selected} class="slds-path__link" href="#" role="option" tabindex="-1" onclick={handleStep3Click}>
+                                        <span class="slds-path__stage">
+                                            <lightning-icon icon-name="utility:chevronright" size="x-small" class="slds-icon_container slds-icon-utility-chevronright"></lightning-icon>
+                                        </span>
+                                        <span class="slds-path__title">Step 3</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step Content Container -->
+        <div class="slds-box slds-m-top_medium">
+            <!-- Step 1: Basic Information -->
+            <template lwc:if={isStep1}>
+                <div class="slds-text-heading_medium slds-m-bottom_medium">Step 1: Basic Information</div>
+                <div class="slds-form" role="list">
+                    <div class="slds-form__item slds-m-bottom_medium" role="listitem">
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="input-name">
+                                <abbr class="slds-required" title="required">*</abbr>
+                                Name
+                            </label>
+                            <div class="slds-form-element__control">
+                                <input type="text" id="input-name" class="slds-input" value={name} onchange={handleNameChange} placeholder="Enter your name" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-form__item" role="listitem">
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="input-email">
+                                <abbr class="slds-required" title="required">*</abbr>
+                                Email
+                            </label>
+                            <div class="slds-form-element__control">
+                                <input type="email" id="input-email" class="slds-input" value={email} onchange={handleEmailChange} placeholder="Enter your email" required />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <!-- Step 2: Additional Details -->
+            <template lwc:if={isStep2}>
+                <div class="slds-text-heading_medium slds-m-bottom_medium">Step 2: Additional Details</div>
+                <div class="slds-form" role="list">
+                    <div class="slds-form__item slds-m-bottom_medium" role="listitem">
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="input-phone">Phone</label>
+                            <div class="slds-form-element__control">
+                                <input type="tel" id="input-phone" class="slds-input" value={phone} onchange={handlePhoneChange} placeholder="Enter your phone number" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-form__item" role="listitem">
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="input-address">Address</label>
+                            <div class="slds-form-element__control">
+                                <textarea id="input-address" class="slds-textarea" value={address} onchange={handleAddressChange} placeholder="Enter your address"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <!-- Step 3: Review and Confirmation -->
+            <template lwc:if={isStep3}>
+                <div class="slds-text-heading_medium slds-m-bottom_medium">Step 3: Review and Confirmation</div>
+                <div class="slds-form" role="list">
+                    <div class="slds-form__item slds-m-bottom_small" role="listitem">
+                        <div class="slds-text-title slds-m-bottom_x-small">Basic Information</div>
+                        <div class="slds-grid slds-wrap slds-gutters_x-small">
+                            <div class="slds-col slds-size_1-of-1">
+                                <strong>Name:</strong> {name}
+                            </div>
+                            <div class="slds-col slds-size_1-of-1">
+                                <strong>Email:</strong> {email}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-form__item" role="listitem">
+                        <div class="slds-text-title slds-m-bottom_x-small">Additional Details</div>
+                        <div class="slds-grid slds-wrap slds-gutters_x-small">
+                            <div class="slds-col slds-size_1-of-1">
+                                <strong>Phone:</strong> {phoneDisplay}
+                            </div>
+                            <div class="slds-col slds-size_1-of-1">
+                                <strong>Address:</strong> {addressDisplay}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="slds-m-top_medium">
+            <lightning-button
+                label="Back"
+                variant="neutral"
+                disabled={isBackDisabled}
+                onclick={handleBack}
+                class="slds-m-right_small">
+            </lightning-button>
+            <template lwc:if={showNextButton}>
+                <lightning-button
+                    label="Next"
+                    variant="brand"
+                    onclick={handleNext}>
+                </lightning-button>
+            </template>
+            <template lwc:if={showFinishButton}>
+                <lightning-button
+                    label="Finish"
+                    variant="brand"
+                    onclick={handleFinish}>
+                </lightning-button>
+            </template>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,89 @@
+/**
+ * FAQ Accordion Component Styles
+ *
+ * This stylesheet uses SLDS 2.x design tokens (styling hooks) for:
+ * - Theme-aware styling (light/dark mode support)
+ * - Consistent spacing using SLDS spacing scale
+ * - Proper color contrast for accessibility
+ * - Responsive design that adapts to different screen sizes
+ *
+ * All styling follows SLDS best practices and uses only design tokens,
+ * ensuring the component adapts automatically to brand customizations
+ */
+
+/**
+ * FAQ Accordion Container
+ * Provides consistent styling for the accordion component
+ */
+.faq-accordion {
+    /* Background: Use surface container for card-like appearance */
+    background: var(--slds-g-color-surface-container-1);
+
+    /* Border: Subtle border using SLDS border color */
+    border: 1px solid var(--slds-g-color-border-1);
+
+    /* Border Radius: Rounded corners for modern appearance */
+    border-radius: var(--slds-g-radius-border-1);
+
+    /* Box Shadow: Subtle elevation for visual hierarchy */
+    box-shadow: var(--slds-g-shadow-1);
+
+    /* Typography: Inherit font family from SLDS */
+    font-family: var(--slds-g-font-family-base);
+}
+
+/**
+ * Section Content Typography
+ * Ensures answer text has proper spacing and readability
+ */
+.faq-accordion p {
+    /* Line Height: Optimal readability for body text */
+    line-height: var(--slds-g-font-lineheight-3);
+
+    /* Color: Standard text color with proper contrast */
+    color: var(--slds-g-color-on-surface-2);
+
+    /* Font Size: Use base font size for consistency */
+    font-size: var(--slds-g-font-size-base);
+
+    /* Font Weight: Regular weight for body text */
+    font-weight: var(--slds-g-font-weight-4);
+
+    /* Margin: Remove default paragraph margin for cleaner spacing */
+    margin: 0;
+}
+
+/**
+ * Responsive Design Notes:
+ * - The lightning-accordion component is fully responsive by default
+ * - SLDS utility classes (slds-m-around_medium) provide responsive spacing
+ * - Component adapts to mobile, tablet, and desktop viewports automatically
+ * - No custom media queries needed due to SLDS responsive foundation
+ */
+
+/**
+ * Accessibility Notes:
+ * - All colors use SLDS design tokens ensuring proper contrast ratios
+ * - Text color (on-surface-2) meets WCAG 2.1 AA contrast requirements
+ * - Focus states are handled by lightning-accordion component
+ * - No custom focus styles needed as SLDS provides accessible defaults
+ */
+
+/**
+ * Theme Adaptation:
+ * - All styling hooks automatically adapt to:
+ *   - Light/Dark mode switches
+ *   - Brand color customizations
+ *   - Density settings (compact/comfy/spacious)
+ *   - High contrast modes for accessibility
+ */
+
+/**
+ * Customization Options:
+ * To customize appearance, parent components can override these styling hooks:
+ * - --slds-c-accordion-sizing-border: Change border width
+ * - --slds-c-accordion-radius-border: Change border radius
+ * - --slds-c-accordion-color-background: Change background color
+ * - --slds-c-accordion-spacing-block-start: Change top padding
+ * - --slds-c-accordion-spacing-block-end: Change bottom padding
+ */

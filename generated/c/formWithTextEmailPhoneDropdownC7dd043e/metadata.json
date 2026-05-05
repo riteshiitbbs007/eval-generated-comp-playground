@@ -1,0 +1,66 @@
+{
+  "folderName": "formWithTextEmailPhoneDropdown-C09-Simple-20260414",
+  "componentName": "formWithTextEmailPhoneDropdownC7dd043e",
+  "csvId": "C09",
+  "variant": "Simple",
+  "timestamp": "2026-04-14T08:38:41.435Z",
+  "utterance": "Create form with text, email, phone, dropdown, checkboxes, textarea",
+  "tier": "Tier 2",
+  "complexity": "Intermediate",
+  "scores": {
+    "slds_linter": 0.86,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.9,
+    "overall_readiness_label": "Prototype"
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 6,
+    "notes": 0
+  },
+  "utteranceId": "C09",
+  "errorsByType": {
+    "slds/no-slds-namespace-for-custom-hooks": 1,
+    "slds/no-slds-class-overrides": 4,
+    "slds/no-hardcoded-values-slds2": 1
+  },
+  "sldsToolsEnabled": true,
+  "testMode": "skills",
+  "baseline_slds": false,
+  "skillsModeEnabled": true,
+  "executionMode": "skills",
+  "executionTrace": {
+    "executedTools": [
+      "Skill",
+      "ToolSearch",
+      "create_lwc_component_from_prd",
+      "orchestrate_lwc_component_optimization"
+    ],
+    "executedSkills": [],
+    "embeddedKnowledge": [
+      "applying-slds"
+    ],
+    "targetTools": [
+      "create_lwc_component_from_prd",
+      "orchestrate_lwc_component_optimization",
+      "Skill"
+    ]
+  },
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/274a8d57-c730-4173-9f7b-d5683db07ad5/r/019d8b21-ecbf-7000-8000-06ea32cd7947",
+  "langsmithRunId": "019d8b21-ecbf-7000-8000-06ea32cd7947",
+  "langsmithProjectName": "roasted-vein-66",
+  "langsmithTraceId": "019d8b21-ecbf-7000-8000-06ea32cd7947",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C09:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/formWithTextEmailPhoneDropdownC7dd043e/screenshots/desktop.png"
+  }
+}

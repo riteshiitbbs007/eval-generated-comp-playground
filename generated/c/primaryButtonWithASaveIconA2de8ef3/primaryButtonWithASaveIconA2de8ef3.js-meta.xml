@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <description>A primary button with a save icon that follows SLDS 2 compliance requirements. This reusable component provides a consistent save action with proper accessibility, theming, and user feedback.</description>
+    <isExposed>false</isExposed>
+    <masterLabel>Primary Button with Save Icon</masterLabel>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    
+    <!-- Public API Properties -->
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage,lightningCommunity__Page">
+            <property name="label" type="String" default="Save" label="Button Label" description="The text label displayed on the button"/>
+            <property name="title" type="String" default="Save changes" label="Button Title" description="The tooltip text shown when hovering over the button"/>
+            <property name="isDisabled" type="Boolean" default="false" label="Is Disabled" description="Whether the button should be disabled"/>
+            <property name="helpText" type="String" label="Help Text" description="Optional help text to display below the button"/>
+            <property name="showHelpText" type="Boolean" default="false" label="Show Help Text" description="Whether to display the help text below the button"/>
+        </targetConfig>
+        
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="label" type="String" default="Save" label="Button Label" description="The text label displayed on the button"/>
+            <property name="isDisabled" type="Boolean" default="false" label="Is Disabled" description="Whether the button should be disabled"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

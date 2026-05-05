@@ -1,0 +1,100 @@
+/**
+ * Styles for 3-Step Wizard Component
+ * Follows SLDS design patterns and accessibility guidelines
+ */
+
+/* Main wizard container styling */
+.slds-box {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Progress indicator adjustments for better visibility */
+.slds-progress {
+    margin-bottom: 0;
+}
+
+/* Ensure progress steps are properly aligned */
+.slds-progress__list {
+    margin: 0;
+    padding: 0;
+}
+
+/* Step content area styling */
+.slds-m-top_large {
+    min-height: 200px;
+}
+
+/* Form element spacing within steps */
+.slds-form-element {
+    margin-bottom: 1rem;
+}
+
+/* Navigation button container */
+.slds-grid_align-spread {
+    align-items: center;
+}
+
+/* Ensure buttons have proper spacing */
+.slds-button {
+    margin: 0.25rem;
+}
+
+/* Step marker styling for completed steps */
+.slds-progress__item.slds-is-completed .slds-progress__marker {
+    background-color: #2e844a;
+    border-color: #2e844a;
+}
+
+/* Step marker styling for active step */
+.slds-progress__item.slds-is-active .slds-progress__marker {
+    background-color: #0176d3;
+    border-color: #0176d3;
+}
+
+/* Enhanced focus styles for accessibility */
+.slds-button:focus {
+    box-shadow: 0 0 3px #0176d3;
+    outline: 2px solid #0176d3;
+    outline-offset: 2px;
+}
+
+/* Content region styling */
+[role="region"] {
+    padding: 1rem;
+    border-radius: 0.25rem;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .slds-box {
+        padding: 1rem;
+    }
+
+    .slds-grid_align-spread {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .slds-button {
+        min-width: 80px;
+    }
+}
+
+/* Ensure vertical progress indicator displays properly */
+.slds-progress_vertical .slds-progress__item {
+    padding-bottom: 1rem;
+}
+
+/* Style for step content headings */
+.slds-text-heading_medium {
+    color: #080707;
+    font-weight: 700;
+}
+
+/* Summary box styling in step 3 */
+.slds-theme_shade {
+    background-color: #f3f3f3;
+    padding: 1rem;
+    border-radius: 0.25rem;
+}

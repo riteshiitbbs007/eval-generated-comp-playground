@@ -1,0 +1,34 @@
+/* Error message styling using SLDS 2 styling hooks */
+.error-message {
+    color: var(--slds-g-color-error-1);
+    background: var(--slds-g-color-error-container-1);
+    padding: var(--slds-g-spacing-2);
+    margin-top: var(--slds-g-spacing-2);
+    border-radius: var(--slds-g-radius-border-1);
+    border-left: 4px solid var(--slds-g-color-error-1);
+    font-size: var(--slds-g-font-size-base);
+    font-weight: var(--slds-g-font-weight-4);
+}
+
+/* Success banner styling using SLDS 2 styling hooks */
+.success-banner {
+    color: var(--slds-g-color-on-success-1);
+    background: var(--slds-g-color-success-container-1);
+    padding: var(--slds-g-spacing-3);
+    border-radius: var(--slds-g-radius-border-1);
+    border-left: 4px solid var(--slds-g-color-success-1);
+    display: flex;
+    align-items: center;
+    font-size: var(--slds-g-font-size-base);
+    font-weight: var(--slds-g-font-weight-5);
+}
+
+/* Submit button styling using SLDS 2 styling hooks */
+.submit-button {
+    margin-right: 0;
+}
+
+/* Form element spacing */
+.slds-form-element {
+    margin-bottom: var(--slds-g-spacing-3);
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>Primary action button component with save icon positioned on the left. Implements SLDS 2 brand styling with proper spacing, hover, focus, and active states. Ensures WCAG 2.1 accessibility compliance with semantic HTML and ARIA attributes.</description>
+    <isExposed>false</isExposed>
+    <masterLabel>Primary Action Button With Save Icon</masterLabel>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage">
+            <property
+                name="isDisabled"
+                type="Boolean"
+                default="false"
+                label="Disabled"
+                description="Controls whether the button is disabled. When true, the button is not interactive." />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

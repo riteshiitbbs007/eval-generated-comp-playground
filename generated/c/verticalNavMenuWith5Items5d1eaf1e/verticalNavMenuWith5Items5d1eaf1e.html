@@ -1,0 +1,45 @@
+<template>
+    <!-- Vertical Navigation Menu Component -->
+    <!-- PRD: Display a vertical navigation menu with 5 items, Dashboard as active -->
+
+    <nav class="slds-nav-vertical" aria-label="Main Navigation">
+        <div class="slds-nav-vertical__section">
+            <ul>
+                <!-- Navigation Item 1: Dashboard (Active) -->
+                <li class="slds-nav-vertical__item slds-is-active">
+                    <a href="#" class="slds-nav-vertical__action" aria-current="page" onclick={handleNavClick}>
+                        Dashboard
+                    </a>
+                </li>
+
+                <!-- Navigation Item 2: Reports -->
+                <li class="slds-nav-vertical__item">
+                    <a href="#" class="slds-nav-vertical__action" onclick={handleNavClick}>
+                        Reports
+                    </a>
+                </li>
+
+                <!-- Navigation Item 3: Accounts -->
+                <li class="slds-nav-vertical__item">
+                    <a href="#" class="slds-nav-vertical__action" onclick={handleNavClick}>
+                        Accounts
+                    </a>
+                </li>
+
+                <!-- Navigation Item 4: Contacts -->
+                <li class="slds-nav-vertical__item">
+                    <a href="#" class="slds-nav-vertical__action" onclick={handleNavClick}>
+                        Contacts
+                    </a>
+                </li>
+
+                <!-- Navigation Item 5: Settings -->
+                <li class="slds-nav-vertical__item">
+                    <a href="#" class="slds-nav-vertical__action" onclick={handleNavClick}>
+                        Settings
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</template>

@@ -1,0 +1,69 @@
+/**
+ * SLDS 2 Compliant Styling using Styling Hooks
+ * 
+ * All styling uses SLDS styling hooks for theme-aware, maintainable styling.
+ * Uses semantic color hooks, spacing hooks, and typography hooks.
+ */
+
+/**
+ * Card item styling
+ * Uses styling hooks for consistent appearance across themes
+ */
+:host .card-item {
+  /* Ensure cards have consistent height in the grid */
+  height: 100%;
+  
+  /* Smooth transitions for interactive states */
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/**
+ * Card hover state for better interactivity
+ * Uses shadow styling hooks for elevation effect
+ */
+:host .card-item:hover {
+  box-shadow: var(--slds-g-shadow-2);
+  transform: translateY(-2px);
+}
+
+/**
+ * Ensure proper spacing within grid items
+ * Cards should maintain consistent padding
+ */
+:host .slds-col {
+  margin-bottom: var(--slds-g-spacing-4);
+}
+
+/**
+ * Empty state styling
+ * Uses semantic color hooks for text color
+ */
+:host .slds-illustration {
+  color: var(--slds-g-color-on-surface-1);
+}
+
+/**
+ * Responsive adjustments for different screen sizes
+ * Ensures optimal spacing at each breakpoint
+ */
+
+/* Mobile: Full width cards with adequate spacing */
+@media (max-width: 767px) {
+  :host .slds-col {
+    margin-bottom: var(--slds-g-spacing-3);
+  }
+}
+
+/* Tablet: 2 columns with balanced spacing */
+@media (min-width: 768px) and (max-width: 1023px) {
+  :host .slds-col {
+    margin-bottom: var(--slds-g-spacing-4);
+  }
+}
+
+/* Desktop: 4 columns with consistent spacing */
+@media (min-width: 1024px) {
+  :host .slds-col {
+    margin-bottom: var(--slds-g-spacing-4);
+  }
+}

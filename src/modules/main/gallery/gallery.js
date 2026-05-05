@@ -160,7 +160,8 @@ export default class Gallery extends LightningElement {
         utteranceId: comp.utteranceId || null,
         utteranceIdShort: comp.utteranceId ? comp.utteranceId.substring(0, 8) : null,
         variant: comp.variant || null,
-        hasMetadataBadges: !!comp.utteranceId || !!comp.variant,
+        model: comp.model || null,
+        hasMetadataBadges: !!comp.utteranceId || !!comp.variant || !!comp.model,
         hasErrorsByType: comp.errorsByType && Object.keys(comp.errorsByType).length > 0,
         errorTypeEntries: comp.errorsByType
           ? Object.entries(comp.errorsByType)
@@ -170,7 +171,13 @@ export default class Gallery extends LightningElement {
         totalErrorBreakdown: comp.errorsByType
           ? Object.values(comp.errorsByType).reduce((sum, count) => sum + count, 0)
           : 0,
-        showErrorBreakdown: this.errorBreakdownStates[comp.componentName] || false
+        showErrorBreakdown: this.errorBreakdownStates[comp.componentName] || false,
+        hasBaselineSlds: comp.baseline_slds === true,
+        baselineSldsLabel: 'Baseline SLDS',
+        hasSkillsMode: comp.testMode === 'skills' || comp.skillsModeEnabled === true || comp.executionMode === 'skills',
+        skillsModeLabel: 'Skills',
+        hasMetadataNotes: comp.notes && Array.isArray(comp.notes) && comp.notes.length > 0,
+        metadataNotesCount: comp.notes?.length || 0
       };
     });
   }

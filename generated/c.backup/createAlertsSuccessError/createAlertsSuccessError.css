@@ -1,0 +1,26 @@
+/**
+ * Alert component styles using SLDS styling hooks
+ */
+
+.slds-notify_alert.slds-alert_success {
+    background-color: var(--slds-g-color-success-container-1);
+    color: var(--slds-g-color-on-success-1);
+    border-color: var(--slds-g-color-border-success-1);
+}
+
+.slds-notify_alert.slds-alert_error {
+    background-color: var(--slds-g-color-error-container-1);
+    color: var(--slds-g-color-on-error-1);
+    border-color: var(--slds-g-color-border-error-1);
+}
+
+.slds-notify_alert.slds-alert_warning {
+    background-color: var(--slds-g-color-warning-container-1);
+    color: var(--slds-g-color-on-warning-1);
+    border-color: var(--slds-g-color-border-warning-1);
+}
+
+.slds-notify_alert.slds-alert_info {
+    background-color: var(--slds-g-color-info-container-1);
+    color: var(--slds-g-color-on-info-1);
+}

@@ -1,0 +1,43 @@
+{
+  "folderName": "verticalNavMenuWith5Items-C11-Simple-20260311",
+  "componentName": "verticalNavMenuWith5Items5d1eaf1e",
+  "csvId": "C11",
+  "variant": "Simple",
+  "timestamp": "2026-03-11T11:59:48.976Z",
+  "utterance": "Create vertical nav menu with 5 items, Dashboard active",
+  "tier": "Tier 2",
+  "complexity": "Intermediate",
+  "scores": {
+    "slds_linter": 1,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 3,
+    "overall_readiness_label": "Production-Ready"
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 0,
+    "notes": 0
+  },
+  "utteranceId": "C11",
+  "errorsByType": {},
+  "sldsToolsEnabled": false,
+  "testMode": "baseline",
+  "baseline_slds": true,
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/4e999bb4-989c-4891-bdc0-c6b53ac1d73d/r/019cdcc1-9c72-7000-8000-068e07cba220",
+  "langsmithRunId": "019cdcc1-9c72-7000-8000-068e07cba220",
+  "langsmithProjectName": "aching-sea-39",
+  "langsmithTraceId": "019cdcc1-9c72-7000-8000-068e07cba220",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C11:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/verticalNavMenuWith5Items5d1eaf1e/screenshots/desktop.png"
+  }
+}

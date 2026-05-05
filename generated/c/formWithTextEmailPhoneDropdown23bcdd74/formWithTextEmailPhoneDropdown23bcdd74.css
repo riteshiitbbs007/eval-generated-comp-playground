@@ -1,0 +1,12 @@
+.success-message {
+  display: flex;
+  align-items: center;
+  padding: var(--slds-g-spacing-2) var(--slds-g-spacing-4);
+  background: var(--slds-g-color-success-container-1);
+  color: var(--slds-g-color-on-success-1);
+  border-left: 4px solid var(--slds-g-color-success-1);
+  border-radius: var(--slds-g-radius-border-1);
+  font-family: var(--slds-g-font-family-base);
+  font-size: var(--slds-g-font-size-base);
+  font-weight: var(--slds-g-font-weight-4);
+}

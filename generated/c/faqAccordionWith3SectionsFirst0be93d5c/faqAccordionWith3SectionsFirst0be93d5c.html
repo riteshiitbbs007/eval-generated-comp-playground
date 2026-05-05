@@ -1,0 +1,51 @@
+<template>
+    <!-- FAQ Accordion Component: Displays 3 FAQ sections with first section expanded by default -->
+    <div class="slds-m-around_medium">
+        <!-- Component Header with proper semantic HTML -->
+        <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+            Frequently Asked Questions
+        </h2>
+
+        <!-- Lightning Accordion: Provides accessible accordion pattern with keyboard support -->
+        <!-- active-section-name: Controls which section is expanded (first section by default) -->
+        <!-- allow-multiple-sections-open: Set to false for mutually exclusive expansion -->
+        <lightning-accordion
+            active-section-name="section1"
+            allow-multiple-sections-open={allowMultipleSections}
+            class="faq-accordion"
+        >
+            <!-- Section 1: What is Salesforce? (Expanded by default) -->
+            <lightning-accordion-section
+                name="section1"
+                label={section1Label}
+            >
+                <!-- Answer content for Section 1 -->
+                <p class="slds-text-body_regular">
+                    {section1Content}
+                </p>
+            </lightning-accordion-section>
+
+            <!-- Section 2: How do I reset my password? (Collapsed by default) -->
+            <lightning-accordion-section
+                name="section2"
+                label={section2Label}
+            >
+                <!-- Answer content for Section 2 -->
+                <p class="slds-text-body_regular">
+                    {section2Content}
+                </p>
+            </lightning-accordion-section>
+
+            <!-- Section 3: Where can I find documentation? (Collapsed by default) -->
+            <lightning-accordion-section
+                name="section3"
+                label={section3Label}
+            >
+                <!-- Answer content for Section 3 -->
+                <p class="slds-text-body_regular">
+                    {section3Content}
+                </p>
+            </lightning-accordion-section>
+        </lightning-accordion>
+    </div>
+</template>

@@ -1,0 +1,78 @@
+<template>
+    <!-- Main container with responsive padding -->
+    <div class="slds-p-around_medium">
+
+        <!-- Success Alert -->
+        <div class="alert-container alert-success slds-m-bottom_small" role="alert">
+            <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+                <div class="slds-col slds-grid slds-grid_vertical-align-center">
+                    <lightning-icon
+                        icon-name="utility:success"
+                        alternative-text="Success"
+                        size="small"
+                        class="slds-m-right_x-small"
+                    ></lightning-icon>
+                    <div>
+                        <div class="alert-title slds-text-heading_small">Success</div>
+                        <div class="alert-message">{successMessage}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error Alert -->
+        <div class="alert-container alert-error slds-m-bottom_small" role="alert">
+            <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+                <div class="slds-col slds-grid slds-grid_vertical-align-center">
+                    <lightning-icon
+                        icon-name="utility:error"
+                        alternative-text="Error"
+                        size="small"
+                        class="slds-m-right_x-small"
+                    ></lightning-icon>
+                    <div>
+                        <div class="alert-title slds-text-heading_small">Error</div>
+                        <div class="alert-message">{errorMessage}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Warning Alert -->
+        <div class="alert-container alert-warning slds-m-bottom_small" role="alert">
+            <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+                <div class="slds-col slds-grid slds-grid_vertical-align-center">
+                    <lightning-icon
+                        icon-name="utility:warning"
+                        alternative-text="Warning"
+                        size="small"
+                        class="slds-m-right_x-small"
+                    ></lightning-icon>
+                    <div>
+                        <div class="alert-title slds-text-heading_small">Warning</div>
+                        <div class="alert-message">{warningMessage}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Alert -->
+        <div class="alert-container alert-info" role="alert">
+            <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+                <div class="slds-col slds-grid slds-grid_vertical-align-center">
+                    <lightning-icon
+                        icon-name="utility:info"
+                        alternative-text="Info"
+                        size="small"
+                        class="slds-m-right_x-small"
+                    ></lightning-icon>
+                    <div>
+                        <div class="alert-title slds-text-heading_small">Info</div>
+                        <div class="alert-message">{infoMessage}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</template>

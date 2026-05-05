@@ -1,0 +1,67 @@
+{
+  "folderName": "faqAccordionWith3SectionsFirst-C08-Simple-20260306",
+  "componentName": "faqAccordionWith3SectionsFirst827fabec",
+  "csvId": "C08",
+  "variant": "Simple",
+  "timestamp": "2026-03-06T09:08:05.476Z",
+  "utterance": "Create FAQ accordion with 3 sections, first expanded",
+  "tier": "Tier 2",
+  "complexity": "Intermediate",
+  "scores": {
+    "slds_linter": 0.52,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.64
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 25,
+    "notes": 0
+  },
+  "utteranceId": "C08",
+  "errorsByType": {
+    "slds/no-slds-class-overrides": 16,
+    "slds/no-hardcoded-values-slds2": 9
+  },
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/dd1795c1-d801-4994-bae5-937fb67e2ed0/r/019cc263-09f6-7000-8000-05ce469dec53",
+  "langsmithRunId": "019cc263-09f6-7000-8000-05ce469dec53",
+  "langsmithProjectName": "large-kitten-83",
+  "langsmithTraceId": "019cc263-09f6-7000-8000-05ce469dec53",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C08:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/faqAccordionWith3SectionsFirst827fabec/screenshots/desktop.png"
+  },
+  "originalScoresV0": {
+    "slds_linter": 0.43000000000000005,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.57
+  },
+  "_scoreHistory": {
+    "originalScoresV0": {
+      "date": "2026-03-18T13:56:10.932Z",
+      "reason": "Score recalculation/metadata update",
+      "changedFields": [
+        {
+          "field": "overall",
+          "old": 2.57,
+          "new": 2.64
+        },
+        {
+          "field": "slds_linter",
+          "old": 0.43000000000000005,
+          "new": 0.52
+        }
+      ]
+    }
+  }
+}

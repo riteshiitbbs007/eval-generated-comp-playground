@@ -1,0 +1,89 @@
+<template>
+  <!-- Contact Card Container -->
+  <lightning-card>
+    <!-- Card Body with padding -->
+    <div class="slds-p-around_medium">
+      <!-- Contact Header Section with Avatar and Basic Info -->
+      <div class="slds-grid slds-grid_vertical-align-center slds-m-bottom_medium">
+        <!-- Avatar -->
+        <div class="slds-col slds-no-flex slds-m-right_small">
+          <lightning-avatar
+            src={contact.avatarUrl}
+            fallback-icon-name="standard:contact"
+            alternative-text={contact.name}
+            size="large"
+          ></lightning-avatar>
+        </div>
+
+        <!-- Name and Title -->
+        <div class="slds-col">
+          <!-- Contact Name - Prominent Display -->
+          <h2 class="contact-name">
+            {contact.name}
+          </h2>
+          
+          <!-- Contact Title/Role -->
+          <p class="contact-title">
+            {contact.title}
+          </p>
+        </div>
+      </div>
+
+      <!-- Contact Details Section -->
+      <div class="slds-grid slds-grid_vertical slds-m-bottom_medium">
+        <!-- Email Address -->
+        <div class="slds-col slds-m-bottom_small">
+          <div class="slds-grid slds-grid_vertical-align-center contact-detail">
+            <lightning-icon
+              icon-name="utility:email"
+              alternative-text="Email"
+              size="x-small"
+              class="slds-m-right_x-small"
+            ></lightning-icon>
+            <a href={emailLink} class="contact-link">{contact.email}</a>
+          </div>
+        </div>
+
+        <!-- Phone Number -->
+        <div class="slds-col">
+          <div class="slds-grid slds-grid_vertical-align-center contact-detail">
+            <lightning-icon
+              icon-name="utility:phone_portrait"
+              alternative-text="Phone"
+              size="x-small"
+              class="slds-m-right_x-small"
+            ></lightning-icon>
+            <a href={phoneLink} class="contact-link">{contact.phone}</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons Section -->
+      <div class="slds-grid slds-grid_align-end slds-gutters_x-small">
+        <!-- Email Button -->
+        <div class="slds-col slds-no-flex">
+          <lightning-button
+            variant="brand"
+            label="Email"
+            title="Send Email"
+            icon-name="utility:email"
+            onclick={handleEmailClick}
+            disabled={isEmailDisabled}
+          ></lightning-button>
+        </div>
+
+        <!-- Call Button -->
+        <div class="slds-col slds-no-flex">
+          <lightning-button
+            variant="neutral"
+            label="Call"
+            title="Make Phone Call"
+            icon-name="utility:call"
+            onclick={handleCallClick}
+            disabled={isCallDisabled}
+          ></lightning-button>
+        </div>
+      </div>
+    </div>
+  </lightning-card>
+</template>

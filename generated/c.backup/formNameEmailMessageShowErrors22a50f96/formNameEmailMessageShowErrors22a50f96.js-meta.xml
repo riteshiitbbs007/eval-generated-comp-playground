@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>false</isExposed>
+    <description>A form component with name, email, and message fields. Validates that all fields are filled before submission and displays appropriate error messages for empty fields.</description>
+    <masterLabel>Form Name Email Message Show Errors</masterLabel>
+</LightningComponentBundle>

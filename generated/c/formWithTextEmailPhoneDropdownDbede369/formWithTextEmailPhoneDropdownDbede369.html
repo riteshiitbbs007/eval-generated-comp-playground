@@ -1,0 +1,105 @@
+<template>
+    <lightning-card title="Contact Information Form" icon-name="standard:form">
+        <div class="slds-p-around_medium">
+            <!-- Success Message -->
+            <template lwc:if={showSuccessMessage}>
+                <div class="slds-notify slds-notify_alert slds-alert_success" role="alert">
+                    <span class="slds-assistive-text">Success</span>
+                    <h2>Form submitted successfully!</h2>
+                </div>
+            </template>
+
+            <!-- Form Fields -->
+            <lightning-input
+                label="First Name"
+                name="firstName"
+                value={firstName}
+                onchange={handleInputChange}
+                required
+                class="slds-m-bottom_small"
+            ></lightning-input>
+
+            <lightning-input
+                label="Last Name"
+                name="lastName"
+                value={lastName}
+                onchange={handleInputChange}
+                required
+                class="slds-m-bottom_small"
+            ></lightning-input>
+
+            <lightning-input
+                type="email"
+                label="Email Address"
+                name="email"
+                value={email}
+                onchange={handleInputChange}
+                required
+                class="slds-m-bottom_small"
+            ></lightning-input>
+
+            <lightning-input
+                type="tel"
+                label="Phone Number"
+                name="phone"
+                value={phone}
+                onchange={handleInputChange}
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                message-when-pattern-mismatch="Please enter a valid phone number (e.g., 123-456-7890)"
+                required
+                class="slds-m-bottom_small"
+            ></lightning-input>
+
+            <lightning-combobox
+                label="Country"
+                name="country"
+                value={country}
+                placeholder="Select a country"
+                options={countryOptions}
+                onchange={handleInputChange}
+                required
+                class="slds-m-bottom_small"
+            ></lightning-combobox>
+
+            <!-- Checkbox Group -->
+            <div class="slds-form-element slds-m-bottom_small">
+                <label class="slds-form-element__label">Interests</label>
+                <div class="slds-form-element__control">
+                    <lightning-checkbox-group
+                        name="interests"
+                        options={interestOptions}
+                        value={interests}
+                        onchange={handleCheckboxChange}
+                    ></lightning-checkbox-group>
+                </div>
+            </div>
+
+            <lightning-textarea
+                label="Comments"
+                name="comments"
+                value={comments}
+                onchange={handleInputChange}
+                max-length="500"
+                placeholder="Please share your thoughts (max 500 characters)"
+                class="slds-m-bottom_small"
+            ></lightning-textarea>
+
+            <!-- Action Buttons -->
+            <div class="slds-m-top_medium">
+                <lightning-button
+                    variant="brand"
+                    label="Submit"
+                    title="Submit form"
+                    onclick={handleSubmit}
+                    class="slds-m-right_small"
+                ></lightning-button>
+                <lightning-button
+                    variant="neutral"
+                    label="Reset"
+                    title="Reset form"
+                    onclick={handleReset}
+                ></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

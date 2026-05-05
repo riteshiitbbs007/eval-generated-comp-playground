@@ -1,0 +1,44 @@
+{
+  "folderName": "component-4AlertsSuccessErrorWarningInfo-C07-Simple-20260311",
+  "componentName": "4AlertsSuccessErrorWarningInfo5edbfc89",
+  "csvId": "C07",
+  "variant": "Simple",
+  "timestamp": "2026-03-11T06:31:57.092Z",
+  "utterance": "Create 4 alerts: Success, Error, Warning, Info with icons",
+  "tier": "Tier 2",
+  "complexity": "Intermediate",
+  "scores": {
+    "slds_linter": 0.874,
+    "slds_quality": 0.4,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.61,
+    "overall_readiness_label": "Prototype"
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 17,
+    "notes": 0
+  },
+  "utteranceId": "C07",
+  "errorsByType": {
+    "slds/no-hardcoded-values-slds2": 1,
+    "slds/no-slds-namespace-for-custom-hooks": 1,
+    "slds/no-slds-var-without-fallback": 15
+  },
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/26763d5d-be34-447a-9be4-91798c005d1a/r/019cdb96-2f61-7000-8000-00febfe39e2d",
+  "langsmithRunId": "019cdb96-2f61-7000-8000-00febfe39e2d",
+  "langsmithProjectName": "dependable-manager-62",
+  "langsmithTraceId": "019cdb96-2f61-7000-8000-00febfe39e2d",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C06-C10:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/4AlertsSuccessErrorWarningInfo5edbfc89/screenshots/desktop.png"
+  }
+}

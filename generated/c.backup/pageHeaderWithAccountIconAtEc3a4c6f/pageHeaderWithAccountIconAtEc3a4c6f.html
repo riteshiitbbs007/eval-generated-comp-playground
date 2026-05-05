@@ -1,0 +1,81 @@
+<template>
+    <!-- Page Header Container with SLDS styling -->
+    <header class="slds-page-header page-header" role="banner">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <!-- Icon Section (Left) -->
+                    <div class="slds-media__figure">
+                        <lightning-icon
+                            icon-name={iconName}
+                            size="standard"
+                            alternative-text={iconAltText}
+                        ></lightning-icon>
+                    </div>
+
+                    <!-- Text Section (Center-Left) -->
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span class="slds-page-header__title page-header__title">
+                                        {title}
+                                    </span>
+                                </h1>
+                            </div>
+                        </div>
+                        <p class="slds-page-header__name-meta page-header__subtitle">
+                            {subtitle}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Section (Right) -->
+            <div class="slds-page-header__col-actions">
+                <div class="slds-page-header__controls">
+                    <div class="slds-page-header__control">
+                        <!-- Button Group -->
+                        <ul class="slds-button-group-list">
+                            <!-- Edit Button -->
+                            <template lwc:if={showEditButton}>
+                                <li>
+                                    <lightning-button
+                                        label="Edit"
+                                        variant="neutral"
+                                        onclick={handleEdit}
+                                        aria-label={editAriaLabel}
+                                    ></lightning-button>
+                                </li>
+                            </template>
+
+                            <!-- Delete Button -->
+                            <template lwc:if={showDeleteButton}>
+                                <li>
+                                    <lightning-button
+                                        label="Delete"
+                                        variant="destructive"
+                                        onclick={handleDelete}
+                                        aria-label={deleteAriaLabel}
+                                    ></lightning-button>
+                                </li>
+                            </template>
+
+                            <!-- Clone Button -->
+                            <template lwc:if={showCloneButton}>
+                                <li>
+                                    <lightning-button
+                                        label="Clone"
+                                        variant="neutral"
+                                        onclick={handleClone}
+                                        aria-label={cloneAriaLabel}
+                                    ></lightning-button>
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</template>

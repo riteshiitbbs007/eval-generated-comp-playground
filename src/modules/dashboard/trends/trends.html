@@ -1,0 +1,344 @@
+<template>
+  <div class="trends-container">
+    <!-- Header -->
+    <div class="slds-page-header">
+      <div class="slds-page-header__row">
+        <div class="slds-page-header__col-title">
+          <div class="slds-media">
+            <div class="slds-media__body">
+              <div class="slds-page-header__name">
+                <div class="slds-page-header__name-title">
+                  <h1>
+                    <span class="slds-page-header__title slds-truncate" title="Component Quality Trends">
+                      Component Quality Trends
+                    </span>
+                  </h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slds-page-header__col-actions">
+          <div class="slds-page-header__controls">
+            <button class="slds-button slds-button_neutral" onclick={handleRefresh}>
+              Refresh Data
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loading State -->
+    <template if:true={loading}>
+      <div class="slds-text-align_center slds-p-around_large">
+        <div class="slds-spinner slds-spinner_medium" role="status">
+          <span class="slds-assistive-text">Loading trends data...</span>
+          <div class="slds-spinner__dot-a"></div>
+          <div class="slds-spinner__dot-b"></div>
+        </div>
+      </div>
+    </template>
+
+    <!-- Error State -->
+    <template if:true={error}>
+      <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+        <span class="slds-assistive-text">Error</span>
+        <h2>{error}</h2>
+        <p class="slds-m-top_small">
+          Run <code>npm run trends:snapshot</code> to create your first snapshot.
+        </p>
+      </div>
+    </template>
+
+    <!-- Main Content -->
+    <template if:true={hasData}>
+      <!-- Filters -->
+      <div class="slds-card slds-m-top_medium">
+        <div class="slds-card__body slds-card__body_inner">
+          <div class="filter-controls">
+            <div class="filter-group">
+              <label class="slds-form-element__label" for="view-mode-select">
+                View Mode
+              </label>
+              <div class="slds-form-element__control">
+                <select
+                  id="view-mode-select"
+                  class="slds-select"
+                  value={viewMode}
+                  onchange={handleViewModeChange}
+                >
+                  <template for:each={viewModeOptions} for:item="option">
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  </template>
+                </select>
+              </div>
+            </div>
+
+            <div class="filter-group">
+              <label class="slds-form-element__label" for="date-range-select">
+                Date Range
+              </label>
+              <div class="slds-form-element__control">
+                <select
+                  id="date-range-select"
+                  class="slds-select"
+                  value={selectedDateRange}
+                  onchange={handleDateRangeChange}
+                >
+                  <template for:each={dateRangeOptions} for:item="option">
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  </template>
+                </select>
+              </div>
+            </div>
+
+            <div class="filter-group">
+              <label class="slds-form-element__label" for="metric-select">
+                Metric
+              </label>
+              <div class="slds-form-element__control">
+                <select
+                  id="metric-select"
+                  class="slds-select"
+                  value={selectedMetric}
+                  onchange={handleMetricChange}
+                >
+                  <template for:each={metricOptions} for:item="option">
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  </template>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Component Selector (only shown in component view mode) -->
+          <template if:true={showComponentSelector}>
+            <div class="component-selector slds-m-top_medium">
+              <!-- Header with Title and Selection Count -->
+              <div class="selector-header slds-m-bottom_small">
+                <div class="selector-title">
+                  <h3 class="slds-text-heading_small">
+                    Select Utterance:Variant Combinations
+                  </h3>
+                  <span class="selection-count" if:true={selectedComponentCount}>
+                    {componentSelectionLabel}
+                  </span>
+                </div>
+                <p class="slds-text-body_small slds-text-color_weak">
+                  Track specific combinations over time by execution mode
+                </p>
+              </div>
+
+              <!-- Search Bar -->
+              <div class="selector-search slds-m-bottom_small">
+                <div class="slds-form-element">
+                  <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                    <svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
+                      <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#search"></use>
+                    </svg>
+                    <input
+                      type="search"
+                      class="slds-input"
+                      placeholder="Search utterances (e.g., C01, search bar)..."
+                      value={searchTerm}
+                      oninput={handleSearchInput}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Action Buttons and Mode Filter Chips -->
+              <div class="selector-actions-row slds-m-bottom_small">
+                <div class="slds-button-group">
+                  <button class="slds-button slds-button_neutral slds-button_small" onclick={handleSelectAll}>
+                    <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+                      <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#check"></use>
+                    </svg>
+                    Select All
+                  </button>
+                  <button class="slds-button slds-button_neutral slds-button_small" onclick={handleClearAll}>
+                    <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+                      <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#clear"></use>
+                    </svg>
+                    Clear All
+                  </button>
+                </div>
+
+                <div class="mode-filter-chips">
+                  <button class={allModesChipClass} onclick={handleFilterAllModes}>
+                    All Modes
+                  </button>
+                  <button class={baselineChipClass} onclick={handleFilterBaseline}>
+                    <span class="chip-icon chip-icon-baseline"></span>
+                    Baseline
+                  </button>
+                  <button class={skillsChipClass} onclick={handleFilterSkills}>
+                    <span class="chip-icon chip-icon-skills"></span>
+                    Skills
+                  </button>
+                </div>
+              </div>
+
+              <!-- Execution Mode Accordions -->
+              <div class="execution-mode-accordions">
+                <template for:each={executionModeSections} for:item="section">
+                  <div key={section.name} class="mode-section" data-mode={section.name}>
+                    <!-- Mode Section Header -->
+                    <div class="mode-section-header">
+                      <div class="mode-section-title">
+                        <h4 class="slds-text-heading_small">{section.label}</h4>
+                        <span class="mode-badge">{section.badge}</span>
+                      </div>
+                    </div>
+
+                    <!-- Utterance Groups -->
+                    <div class="utterance-groups">
+                      <template for:each={section.utterances} for:item="utterance">
+                        <div key={utterance.utteranceId} class="utterance-group">
+                          <!-- Utterance Header with Master Checkbox -->
+                          <div class="utterance-header">
+                            <label class="utterance-checkbox-wrapper">
+                              <input
+                                type="checkbox"
+                                class="utterance-checkbox"
+                                data-mode={utterance.mode}
+                                data-utterance-id={utterance.utteranceId}
+                                data-selection-state={utterance.selectionState}
+                                onchange={handleUtteranceCheckboxChange}
+                              />
+                              <span class="utterance-checkbox-faux"></span>
+                            </label>
+                            <div class="utterance-info">
+                              <span class="utterance-id">{utterance.utteranceId}</span>
+                              <span class="utterance-name">{utterance.utteranceName}</span>
+                            </div>
+                          </div>
+
+                          <!-- Variant Checkboxes -->
+                          <div class="variant-checkboxes">
+                            <template for:each={utterance.variants} for:item="variant">
+                              <label key={variant.key} class="variant-checkbox-label">
+                                <input
+                                  type="checkbox"
+                                  class="variant-checkbox"
+                                  data-key={variant.key}
+                                  checked={variant.checked}
+                                  onchange={handleVariantCheckboxChange}
+                                />
+                                <span class="variant-checkbox-faux"></span>
+                                <span class="variant-label">{variant.name}</span>
+                              </label>
+                            </template>
+                          </div>
+                        </div>
+                      </template>
+                    </div>
+                  </div>
+                </template>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+
+      <!-- Trends Chart -->
+      <div class="slds-card slds-m-top_medium">
+        <div class="slds-card__header">
+          <h2 class="slds-card__header-title">{chartTitle}</h2>
+          <p class="slds-text-body_small slds-text-color_weak slds-m-top_x-small">
+            {chartDescription}
+          </p>
+        </div>
+        <div class="slds-card__body slds-card__body_inner">
+          <!-- Show chart only if we have multiple snapshots -->
+          <template if:true={hasMultipleSnapshots}>
+            <dashboard-batch-trends-chart
+              chart-data={chartData}
+              metric={selectedMetric}
+            ></dashboard-batch-trends-chart>
+          </template>
+
+          <!-- Single snapshot message -->
+          <template if:false={hasMultipleSnapshots}>
+            <div class="slds-box slds-theme_shade slds-text-align_center slds-p-around_large">
+              <p class="slds-text-heading_small slds-m-bottom_small">
+                📊 Need more data for trends
+              </p>
+              <p class="slds-text-body_regular">
+                You have <strong>{snapshotCount} snapshot</strong>. Trends require at least 2 snapshots to show meaningful data.
+              </p>
+              <p class="slds-text-body_small slds-m-top_medium">
+                Create another snapshot to see trends over time:<br/>
+                <code>npm run trends:snapshot</code>
+              </p>
+            </div>
+          </template>
+
+          <!-- Component view: No components selected or filtered -->
+          <template if:true={showComponentSelector}>
+            <template if:false={chartData}>
+              <div class="slds-box slds-theme_info slds-text-align_center slds-p-around_large">
+                <p class="slds-text-heading_small slds-m-bottom_small">
+                  📌 {chartEmptyMessage}
+                </p>
+                <template if:true={hasFilteredSelections}>
+                  <p class="slds-text-body_regular">
+                    You have selections from other modes. Switch to "All Modes" to see them or select components from the current mode filter.
+                  </p>
+                </template>
+                <template if:false={hasFilteredSelections}>
+                  <p class="slds-text-body_regular">
+                    Check the boxes above to select which components you want to see in the trend chart.
+                  </p>
+                </template>
+              </div>
+            </template>
+          </template>
+
+          <!-- No chart data -->
+          <template if:false={chartData}>
+            <template if:false={showComponentSelector}>
+              <p class="slds-text-align_center slds-p-vertical_large">
+                No chart data available
+              </p>
+            </template>
+          </template>
+        </div>
+      </div>
+
+      <!-- Info Box -->
+      <div class="slds-box slds-m-top_medium slds-theme_shade">
+        <p class="slds-text-body_small">
+          <strong>Note:</strong> Run <code>npm run trends:snapshot</code> to capture a new snapshot of component metrics.
+          Snapshots are stored in <code>generated/trends.json</code> and can be taken manually at meaningful points
+          (after regenerations, model changes, or weekly checkpoints).
+        </p>
+      </div>
+    </template>
+
+    <!-- Empty State -->
+    <template if:false={hasData}>
+      <template if:false={loading}>
+        <template if:false={error}>
+          <div class="slds-illustration slds-illustration_large">
+            <div class="slds-text-longform">
+              <h3 class="slds-text-heading_medium">No Trends Data Available</h3>
+              <p class="slds-text-body_regular">
+                Create your first snapshot to start tracking component quality trends over time.
+              </p>
+              <p class="slds-m-top_medium">
+                <code>npm run trends:snapshot</code>
+              </p>
+            </div>
+          </div>
+        </template>
+      </template>
+    </template>
+  </div>
+</template>

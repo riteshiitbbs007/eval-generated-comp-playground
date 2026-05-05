@@ -1,0 +1,73 @@
+{
+  "folderName": "verticalNavMenuWith5Items-C11-Simple-20260311",
+  "componentName": "verticalNavMenuWith5Items97833370",
+  "csvId": "C11",
+  "variant": "Simple",
+  "timestamp": "2026-03-11T12:04:30.402Z",
+  "utterance": "Create vertical nav menu with 5 items, Dashboard active",
+  "tier": "Tier 2",
+  "complexity": "Intermediate",
+  "scores": {
+    "slds_linter": 0.38,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.54,
+    "overall_readiness_label": "Prototype"
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 40,
+    "notes": 0
+  },
+  "utteranceId": "C11",
+  "errorsByType": {
+    "slds/no-slds-class-overrides": 14,
+    "slds/no-slds-var-without-fallback": 23,
+    "slds/no-hardcoded-values-slds2": 3
+  },
+  "sldsToolsEnabled": true,
+  "testMode": "normal",
+  "baseline_slds": false,
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/7fa374b8-e14b-4892-ad6e-5a2a3ac36696/r/019cdcc4-ecc2-7000-8000-01efcec1095f",
+  "langsmithRunId": "019cdcc4-ecc2-7000-8000-01efcec1095f",
+  "langsmithProjectName": "roasted-humor-73",
+  "langsmithTraceId": "019cdcc4-ecc2-7000-8000-01efcec1095f",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C11:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/verticalNavMenuWith5Items97833370/screenshots/desktop.png"
+  },
+  "originalScoresV0": {
+    "slds_linter": 0.616,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.71,
+    "overall_readiness_label": "Prototype"
+  },
+  "_scoreHistory": {
+    "originalScoresV0": {
+      "date": "2026-03-18T13:56:13.051Z",
+      "reason": "Score recalculation/metadata update",
+      "changedFields": [
+        {
+          "field": "overall",
+          "old": 2.71,
+          "new": 2.54
+        },
+        {
+          "field": "slds_linter",
+          "old": 0.616,
+          "new": 0.38
+        }
+      ]
+    }
+  }
+}

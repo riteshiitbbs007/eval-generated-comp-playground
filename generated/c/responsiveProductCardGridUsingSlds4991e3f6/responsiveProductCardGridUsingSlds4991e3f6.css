@@ -1,0 +1,130 @@
+/**
+ * Responsive Product Card Grid Styles
+ * Uses SLDS design tokens for consistent theming and maintainability
+ * Follows BEM methodology for custom classes
+ */
+
+/* Product Card Container */
+.product-card {
+    /* Surface & Background using SLDS semantic color tokens */
+    background: var(--slds-g-color-surface-container-1);
+
+    /* Border using SLDS border radius token */
+    border-radius: var(--slds-g-radius-border-1);
+
+    /* Elevation using SLDS shadow token - base state */
+    box-shadow: var(--slds-g-shadow-1);
+
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+
+    /* Smooth transition for hover effects using SLDS timing */
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Product Card Hover State */
+.product-card:hover {
+    /* Elevated shadow on hover using SLDS shadow token */
+    box-shadow: var(--slds-g-shadow-2);
+
+    /* Subtle lift effect */
+    transform: translateY(-2px);
+}
+
+/* Product Image Container */
+.product-card__image-container {
+    /* Fixed aspect ratio for consistent card heights */
+    position: relative;
+    width: 100%;
+    padding-top: 66.67%; /* 3:2 aspect ratio */
+    overflow: hidden;
+    background: var(--slds-g-color-palette-neutral-95);
+}
+
+/* Product Image */
+.product-card__image {
+    /* Fill container while maintaining aspect ratio */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    /* Smooth image rendering */
+    image-rendering: -webkit-optimize-contrast;
+}
+
+/* Product Content Section */
+.product-card__content {
+    /* Spacing using SLDS spacing tokens */
+    padding: var(--slds-g-spacing-4);
+
+    /* Flex grow to fill remaining card space */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--slds-g-spacing-2);
+}
+
+/* Product Title */
+.product-card__title {
+    /* Typography using SLDS font tokens */
+    font-family: var(--slds-g-font-family);
+    font-size: 1rem;
+    font-weight: var(--slds-g-font-weight-6);
+    line-height: var(--slds-g-font-lineheight-3);
+
+    /* Color using SLDS semantic color token - high emphasis */
+    color: var(--slds-g-color-on-surface-3);
+
+    /* Text handling */
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/* Product Price */
+.product-card__price {
+    /* Typography using SLDS font tokens */
+    font-family: var(--slds-g-font-family);
+    font-size: 1.125rem;
+    font-weight: var(--slds-g-font-weight-7);
+    line-height: var(--slds-g-font-lineheight-3);
+
+    /* Color using SLDS accent color for emphasis */
+    color: var(--slds-g-color-accent-1);
+
+    /* Spacing */
+    margin: 0;
+    margin-top: auto;
+}
+
+/**
+ * Responsive Adjustments
+ * The grid responsiveness is handled by SLDS utility classes in the HTML:
+ * - slds-size_1-of-1: Mobile (1 column)
+ * - slds-medium-size_1-of-2: Tablet (2 columns)
+ * - slds-large-size_1-of-4: Desktop (4 columns)
+ *
+ * Additional responsive refinements can be added here if needed.
+ */
+@media (min-width: 48em) {
+    /* Tablet and up: Adjust padding if needed */
+    .product-card__content {
+        padding: var(--slds-g-spacing-4);
+    }
+}
+
+@media (min-width: 64em) {
+    /* Desktop: Optimize card spacing */
+    .product-card__title {
+        font-size: 1.125rem;
+    }
+}

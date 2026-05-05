@@ -1,0 +1,161 @@
+<template>
+    <!-- Main Wizard Container using SLDS Card -->
+    <div class="slds-card slds-p-around_medium">
+        <!-- Progress Indicator Section -->
+        <div class="slds-m-bottom_large" role="progressbar" aria-valuemin="1" aria-valuemax="3" aria-valuenow={currentStepValue} aria-label="Wizard Progress">
+            <!-- Progress Path using SLDS styling -->
+            <div class="slds-progress slds-progress_shade" role="progressbar" aria-valuemin="1" aria-valuemax="3" aria-valuenow={currentStepValue}>
+                <ol class="slds-progress__list">
+                    <!-- Step 1 -->
+                    <li class={step1Class}>
+                        <button class="slds-button slds-progress__marker"
+                                disabled={isStep1Disabled}
+                                onclick={handleStep1Click}
+                                aria-label={step1AriaLabel}>
+                            <span class="slds-assistive-text">{step1Status}</span>
+                        </button>
+                        <div class="slds-progress__item_content slds-grid slds-grid_align-spread">
+                            <div class="slds-size_1-of-1">
+                                <div class="slds-text-heading_small">{step1Label}</div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Step 2 -->
+                    <li class={step2Class}>
+                        <button class="slds-button slds-progress__marker"
+                                disabled={isStep2Disabled}
+                                onclick={handleStep2Click}
+                                aria-label={step2AriaLabel}>
+                            <span class="slds-assistive-text">{step2Status}</span>
+                        </button>
+                        <div class="slds-progress__item_content slds-grid slds-grid_align-spread">
+                            <div class="slds-size_1-of-1">
+                                <div class="slds-text-heading_small">{step2Label}</div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Step 3 -->
+                    <li class={step3Class}>
+                        <button class="slds-button slds-progress__marker"
+                                disabled={isStep3Disabled}
+                                onclick={handleStep3Click}
+                                aria-label={step3AriaLabel}>
+                            <span class="slds-assistive-text">{step3Status}</span>
+                        </button>
+                        <div class="slds-progress__item_content slds-grid slds-grid_align-spread">
+                            <div class="slds-size_1-of-1">
+                                <div class="slds-text-heading_small">{step3Label}</div>
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Step Content Area -->
+        <div class="slds-card__body slds-card__body_inner slds-p-around_medium" role="region" aria-live="polite" aria-label={currentStepAriaLabel}>
+            <!-- Step 1 Content -->
+            <template lwc:if={isStep1}>
+                <div class="step-content">
+                    <h2 class="slds-text-heading_medium slds-m-bottom_medium">Account Information</h2>
+                    <div class="slds-form" role="form">
+                        <lightning-input
+                            label="Account Name"
+                            placeholder="Enter account name"
+                            class="slds-m-bottom_small"
+                            required>
+                        </lightning-input>
+                        <lightning-input
+                            label="Account Number"
+                            placeholder="Enter account number"
+                            class="slds-m-bottom_small">
+                        </lightning-input>
+                        <lightning-combobox
+                            label="Industry"
+                            placeholder="Select industry"
+                            class="slds-m-bottom_small"
+                            options={industryOptions}>
+                        </lightning-combobox>
+                    </div>
+                </div>
+            </template>
+
+            <!-- Step 2 Content -->
+            <template lwc:if={isStep2}>
+                <div class="step-content">
+                    <h2 class="slds-text-heading_medium slds-m-bottom_medium">Contact Details</h2>
+                    <div class="slds-form" role="form">
+                        <lightning-input
+                            label="Contact Name"
+                            placeholder="Enter contact name"
+                            class="slds-m-bottom_small"
+                            required>
+                        </lightning-input>
+                        <lightning-input
+                            type="email"
+                            label="Email"
+                            placeholder="Enter email address"
+                            class="slds-m-bottom_small"
+                            required>
+                        </lightning-input>
+                        <lightning-input
+                            type="tel"
+                            label="Phone"
+                            placeholder="Enter phone number"
+                            class="slds-m-bottom_small">
+                        </lightning-input>
+                    </div>
+                </div>
+            </template>
+
+            <!-- Step 3 Content -->
+            <template lwc:if={isStep3}>
+                <div class="step-content">
+                    <h2 class="slds-text-heading_medium slds-m-bottom_medium">Review & Submit</h2>
+                    <div class="slds-box slds-theme_shade slds-p-around_medium">
+                        <p class="slds-text-body_regular slds-m-bottom_small">
+                            <strong>Review your information before submitting:</strong>
+                        </p>
+                        <ul class="slds-list_dotted slds-m-left_medium">
+                            <li>Account Information: Complete</li>
+                            <li>Contact Details: Complete</li>
+                        </ul>
+                        <p class="slds-text-body_small slds-m-top_medium slds-text-color_weak">
+                            Click Finish to complete the wizard.
+                        </p>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+        <!-- Navigation Footer -->
+        <div class="slds-card__footer">
+            <div class="slds-grid slds-grid_align-spread">
+                <div class="slds-col">
+                    <!-- Empty left column for spacing -->
+                </div>
+                <div class="slds-col slds-no-flex">
+                    <div class="slds-button-group" role="group">
+                        <!-- Back Button -->
+                        <lightning-button
+                            label="Back"
+                            variant="neutral"
+                            disabled={isBackDisabled}
+                            onclick={handleBack}
+                            class="slds-m-right_x-small">
+                        </lightning-button>
+
+                        <!-- Next/Finish Button -->
+                        <lightning-button
+                            label={nextButtonLabel}
+                            variant="brand"
+                            onclick={handleNext}>
+                        </lightning-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

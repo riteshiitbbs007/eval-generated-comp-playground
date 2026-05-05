@@ -1,0 +1,43 @@
+{
+  "folderName": "primaryButtonWithASaveIcon-C01-Simple-20260401",
+  "componentName": "primaryButtonWithASaveIconB274ffeb",
+  "csvId": "C01",
+  "variant": "Simple",
+  "timestamp": "2026-04-01T10:17:29.907Z",
+  "utterance": "Create a primary button with a save icon",
+  "tier": "Tier 1",
+  "complexity": "Simple",
+  "scores": {
+    "slds_linter": 1,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 3,
+    "overall_readiness_label": "Production-Ready"
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 0,
+    "notes": 0
+  },
+  "utteranceId": "C01",
+  "errorsByType": {},
+  "sldsToolsEnabled": true,
+  "testMode": "normal",
+  "baseline_slds": false,
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/7cdb4240-be19-455b-afc9-8eb392fdaf37/r/019d488a-67b3-7000-8000-03ebea4ed9ba",
+  "langsmithRunId": "019d488a-67b3-7000-8000-03ebea4ed9ba",
+  "langsmithProjectName": "puzzled-music-93",
+  "langsmithTraceId": "019d488a-67b3-7000-8000-03ebea4ed9ba",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C01:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/primaryButtonWithASaveIconB274ffeb/screenshots/desktop.png"
+  }
+}

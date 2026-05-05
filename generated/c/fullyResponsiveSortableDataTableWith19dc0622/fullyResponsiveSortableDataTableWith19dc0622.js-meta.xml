@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>false</isExposed>
+    <description>A fully responsive sortable data table displaying product inventory with columns for Product Name (sortable, left-aligned), Price (sortable, right-aligned, currency format), Category (center-aligned with neutral badge), and Stock Status (center-aligned with semantic color-coded badges). Features SLDS table styling with borders and fixed layout, and responsive stacking for mobile viewports.</description>
+    <masterLabel>Fully Responsive Sortable Data Table</masterLabel>
+</LightningComponentBundle>

@@ -1,0 +1,140 @@
+<template>
+  <lightning-card title="Contact Form" icon-name="standard:contact">
+    <div class="slds-p-around_medium">
+      <form onsubmit={handleSubmit}>
+        <!-- Name Field -->
+        <div class="slds-form-element slds-m-bottom_medium" data-field="name">
+          <label class="slds-form-element__label" for="name-input">
+            <abbr class="slds-required" title="required">*</abbr>
+            Name
+          </label>
+          <div class="slds-form-element__control">
+            <input
+              type="text"
+              id="name-input"
+              class={nameInputClass}
+              placeholder="Enter your name"
+              value={nameValue}
+              maxlength="100"
+              aria-describedby={nameErrorId}
+              aria-invalid={hasNameError}
+              oninput={handleNameChange}
+              onblur={handleNameBlur}
+              required
+            />
+          </div>
+          <template lwc:if={showNameError}>
+            <div id={nameErrorId} class="slds-form-element__help error-message" role="alert">
+              <lightning-icon
+                icon-name="utility:error"
+                alternative-text="Error"
+                size="x-small"
+                class="error-icon"
+              ></lightning-icon>
+              <span>{nameError}</span>
+            </div>
+          </template>
+        </div>
+
+        <!-- Email Field -->
+        <div class="slds-form-element slds-m-bottom_medium" data-field="email">
+          <label class="slds-form-element__label" for="email-input">
+            <abbr class="slds-required" title="required">*</abbr>
+            Email
+          </label>
+          <div class="slds-form-element__control">
+            <input
+              type="email"
+              id="email-input"
+              class={emailInputClass}
+              placeholder="Enter your email"
+              value={emailValue}
+              aria-describedby={emailErrorId}
+              aria-invalid={hasEmailError}
+              oninput={handleEmailChange}
+              onblur={handleEmailBlur}
+              required
+            />
+          </div>
+          <template lwc:if={showEmailError}>
+            <div id={emailErrorId} class="slds-form-element__help error-message" role="alert">
+              <lightning-icon
+                icon-name="utility:error"
+                alternative-text="Error"
+                size="x-small"
+                class="error-icon"
+              ></lightning-icon>
+              <span>{emailError}</span>
+            </div>
+          </template>
+        </div>
+
+        <!-- Message Field -->
+        <div class="slds-form-element slds-m-bottom_medium" data-field="message">
+          <label class="slds-form-element__label" for="message-input">
+            <abbr class="slds-required" title="required">*</abbr>
+            Message
+          </label>
+          <div class="slds-form-element__control">
+            <textarea
+              id="message-input"
+              class={messageInputClass}
+              placeholder="Enter your message (minimum 10 characters)"
+              rows="5"
+              maxlength="500"
+              aria-describedby={messageDescribedBy}
+              aria-invalid={hasMessageError}
+              oninput={handleMessageChange}
+              onblur={handleMessageBlur}
+              required
+            >{messageValue}</textarea>
+          </div>
+          <div class="slds-grid slds-grid_align-spread">
+            <div class="slds-col">
+              <template lwc:if={showMessageError}>
+                <div id={messageErrorId} class="slds-form-element__help error-message" role="alert">
+                  <lightning-icon
+                    icon-name="utility:error"
+                    alternative-text="Error"
+                    size="x-small"
+                    class="error-icon"
+                  ></lightning-icon>
+                  <span>{messageError}</span>
+                </div>
+              </template>
+            </div>
+            <div class="slds-col slds-no-flex">
+              <div id="char-counter" class="char-counter">{characterCountText}</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="slds-m-top_large">
+          <lightning-button
+            type="submit"
+            label="Submit"
+            variant="brand"
+            class="slds-size_1-of-1"
+            disabled={isSubmitDisabled}
+          ></lightning-button>
+        </div>
+      </form>
+
+      <!-- Success Message -->
+      <template lwc:if={showSuccess}>
+        <div class="slds-m-top_medium" role="alert">
+          <div class="slds-notify slds-notify_alert slds-alert_success">
+            <lightning-icon
+              icon-name="utility:success"
+              alternative-text="Success"
+              size="x-small"
+              class="slds-m-right_x-small"
+            ></lightning-icon>
+            <span>Form submitted successfully!</span>
+          </div>
+        </div>
+      </template>
+    </div>
+  </lightning-card>
+</template>

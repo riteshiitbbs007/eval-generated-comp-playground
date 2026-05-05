@@ -1,0 +1,80 @@
+<template>
+    <lightning-card title="Contact Form" icon-name="standard:contact">
+        <div class="slds-p-around_medium">
+            <!-- Name Input Field -->
+            <div class="slds-form-element">
+                <lightning-input
+                    label="Name"
+                    name="name"
+                    value={nameValue}
+                    onchange={handleNameChange}
+                    required
+                    message-when-value-missing="Name is required"
+                    class={nameFieldClass}>
+                </lightning-input>
+                <template lwc:if={nameError}>
+                    <div class="slds-form-element__help error-message" role="alert">
+                        {nameError}
+                    </div>
+                </template>
+            </div>
+
+            <!-- Email Input Field -->
+            <div class="slds-form-element slds-m-top_medium">
+                <lightning-input
+                    label="Email"
+                    name="email"
+                    type="email"
+                    value={emailValue}
+                    onchange={handleEmailChange}
+                    required
+                    message-when-value-missing="Email is required"
+                    message-when-type-mismatch="Please enter a valid email address"
+                    class={emailFieldClass}>
+                </lightning-input>
+                <template lwc:if={emailError}>
+                    <div class="slds-form-element__help error-message" role="alert">
+                        {emailError}
+                    </div>
+                </template>
+            </div>
+
+            <!-- Message Textarea Field -->
+            <div class="slds-form-element slds-m-top_medium">
+                <lightning-textarea
+                    label="Message"
+                    name="message"
+                    value={messageValue}
+                    onchange={handleMessageChange}
+                    required
+                    message-when-value-missing="Message is required"
+                    class={messageFieldClass}>
+                </lightning-textarea>
+                <template lwc:if={messageError}>
+                    <div class="slds-form-element__help error-message" role="alert">
+                        {messageError}
+                    </div>
+                </template>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="slds-m-top_large slds-text-align_right">
+                <lightning-button
+                    variant="brand"
+                    label="Submit"
+                    title="Submit Form"
+                    onclick={handleSubmit}
+                    class="submit-button">
+                </lightning-button>
+            </div>
+
+            <!-- Success Message -->
+            <template lwc:if={showSuccess}>
+                <div class="slds-m-top_medium success-banner" role="alert">
+                    <lightning-icon icon-name="utility:success" size="small" class="slds-m-right_x-small"></lightning-icon>
+                    Form submitted successfully!
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

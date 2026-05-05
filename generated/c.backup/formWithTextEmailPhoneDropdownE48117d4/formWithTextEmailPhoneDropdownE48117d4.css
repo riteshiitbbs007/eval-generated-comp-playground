@@ -1,0 +1,130 @@
+/**
+ * FormWithTextEmailPhoneDropdown Component Styles
+ *
+ * Following SLDS 2 design system guidelines:
+ * - Using SLDS design tokens (--slds-*) instead of hardcoded values
+ * - Utilizing semantic color hooks for theme-aware styling
+ * - Applying proper spacing with SLDS spacing scale
+ * - Ensuring accessibility compliance
+ */
+
+/**
+ * Form container styling
+ * Uses semantic surface colors for proper theme adaptation
+ */
+:host {
+    display: block;
+}
+
+/**
+ * Form element styling
+ * Ensures consistent spacing and visual hierarchy
+ */
+.slds-form {
+    /* Use SLDS color hooks for theme-aware backgrounds */
+    background: var(--slds-g-color-surface-container-1);
+    color: var(--slds-g-color-on-surface-2);
+}
+
+/**
+ * Form element spacing
+ * Following SLDS spacing scale for consistency
+ */
+.slds-form-element {
+    /* Ensure proper spacing between form elements */
+    margin-bottom: var(--slds-g-spacing-4);
+}
+
+/**
+ * Button group alignment
+ * Ensures buttons are properly aligned to the right
+ */
+.slds-grid_align-end {
+    justify-content: flex-end;
+}
+
+/**
+ * Input focus state enhancement
+ * Uses accent colors for better focus visibility
+ */
+lightning-input::part(input):focus,
+lightning-combobox::part(input):focus,
+lightning-textarea::part(textarea):focus {
+    border-color: var(--slds-g-color-accent-1);
+    box-shadow: 0 0 0 2px var(--slds-g-color-accent-container-1);
+}
+
+/**
+ * Card container customization
+ * Ensures proper elevation and spacing
+ */
+lightning-card {
+    /* Use semantic surface container colors */
+    --slds-c-card-color-background: var(--slds-g-color-surface-container-1);
+    --slds-c-card-color-border: var(--slds-g-color-border-1);
+    --slds-c-card-shadow: var(--slds-g-shadow-1);
+
+    /* Apply proper spacing */
+    --slds-c-card-spacing-block: var(--slds-g-spacing-4);
+    --slds-c-card-spacing-inline: var(--slds-g-spacing-4);
+}
+
+/**
+ * Checkbox group styling
+ * Ensures proper vertical spacing between options
+ */
+lightning-checkbox-group {
+    --slds-c-checkbox-group-spacing-block: var(--slds-g-spacing-2);
+}
+
+/**
+ * Button styling customization
+ * Uses accent colors for primary actions
+ */
+lightning-button[variant="brand"] {
+    --slds-c-button-brand-color-background: var(--slds-g-color-accent-container-1);
+    --slds-c-button-brand-color-background-hover: var(--slds-g-color-accent-container-2);
+    --slds-c-button-brand-color-background-active: var(--slds-g-color-accent-container-3);
+    --slds-c-button-brand-text-color: var(--slds-g-color-on-accent-1);
+    --slds-c-button-brand-text-color-hover: var(--slds-g-color-on-accent-2);
+    --slds-c-button-brand-text-color-active: var(--slds-g-color-on-accent-3);
+}
+
+/**
+ * Responsive design adjustments
+ * Ensures form works well on all screen sizes
+ */
+@media (max-width: 48em) {
+    .slds-form {
+        padding: var(--slds-g-spacing-2);
+    }
+
+    .slds-grid {
+        flex-direction: column;
+    }
+
+    .slds-col {
+        width: 100%;
+        margin-bottom: var(--slds-g-spacing-2);
+    }
+}
+
+/**
+ * High contrast mode support
+ * Ensures visibility in high contrast themes
+ */
+@media (prefers-contrast: high) {
+    .slds-form {
+        border: 1px solid var(--slds-g-color-border-2);
+    }
+}
+
+/**
+ * Dark mode optimizations
+ * Semantic color hooks automatically adapt, but we can add
+ * additional dark mode specific enhancements here if needed
+ */
+@media (prefers-color-scheme: dark) {
+    /* SLDS semantic hooks handle dark mode automatically */
+    /* Additional dark mode specific styles can be added here if needed */
+}

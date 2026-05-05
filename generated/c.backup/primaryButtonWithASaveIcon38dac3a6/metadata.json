@@ -1,0 +1,43 @@
+{
+  "folderName": "primaryButtonWithASaveIcon-C01-Simple-20260306",
+  "componentName": "primaryButtonWithASaveIcon38dac3a6",
+  "csvId": "C01",
+  "variant": "Simple",
+  "timestamp": "2026-03-06T14:21:55.996Z",
+  "utterance": "Create a primary button with a save icon",
+  "tier": "Tier 1",
+  "complexity": "Simple",
+  "scores": {
+    "slds_linter": 0.9339999999999999,
+    "slds_quality": 1,
+    "prd_compliance": 0.7,
+    "security": 1,
+    "overall": 2.8
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 7,
+    "notes": 0
+  },
+  "utteranceId": "C01",
+  "errorsByType": {
+    "slds/no-slds-var-without-fallback": 5,
+    "slds/no-hardcoded-values-slds2": 1,
+    "slds/no-slds-class-overrides": 1
+  },
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/0463a484-f10b-4152-9741-eb23f8956692/r/019cc384-1912-7000-8000-02d8118ec550",
+  "langsmithRunId": "019cc384-1912-7000-8000-02d8118ec550",
+  "langsmithProjectName": "glossy-egg-70",
+  "langsmithTraceId": "019cc384-1912-7000-8000-02d8118ec550",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C01-C03:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/primaryButtonWithASaveIcon38dac3a6/screenshots/desktop.png"
+  }
+}

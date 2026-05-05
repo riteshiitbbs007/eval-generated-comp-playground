@@ -1,0 +1,49 @@
+{
+  "folderName": "formWithTextEmailPhoneDropdown-C09-Simple-20260410",
+  "componentName": "formWithTextEmailPhoneDropdown3320faf7",
+  "csvId": "C09",
+  "variant": "Simple",
+  "timestamp": "2026-04-10T07:05:02.868Z",
+  "utterance": "Create form with text, email, phone, dropdown, checkboxes, textarea",
+  "tier": "Tier 2",
+  "complexity": "Intermediate",
+  "scores": {
+    "slds_linter": 0.38,
+    "slds_quality": 0.4,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.24,
+    "overall_readiness_label": "Prototype"
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 47,
+    "notes": 0
+  },
+  "utteranceId": "C09",
+  "errorsByType": {
+    "slds/no-slds-var-without-fallback": 30,
+    "slds/no-slds-class-overrides": 11,
+    "slds/no-hardcoded-values-slds2": 5,
+    "slds/no-slds-namespace-for-custom-hooks": 1
+  },
+  "sldsToolsEnabled": true,
+  "testMode": "normal",
+  "baseline_slds": false,
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/a1ea0971-25ae-42b3-9046-0d978950d074/r/019d7632-1350-7000-8000-07983ddcaf01",
+  "langsmithRunId": "019d7632-1350-7000-8000-07983ddcaf01",
+  "langsmithProjectName": "mealy-plough-80",
+  "langsmithTraceId": "019d7632-1350-7000-8000-07983ddcaf01",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C09:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "buildNotes": "ShowToastEvent import and usage commented out - not available in local LWR environment. Replaced with console.log for local development.",
+  "screenshotUrls": {
+    "desktop": "generated/c/formWithTextEmailPhoneDropdown3320faf7/screenshots/desktop.png"
+  }
+}

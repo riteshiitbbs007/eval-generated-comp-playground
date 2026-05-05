@@ -1,0 +1,42 @@
+/**
+ * Contact form component styles
+ * Uses SLDS 2 styling hooks for theme-aware styling
+ */
+
+/* Success alert styling using SLDS hooks */
+.slds-alert_success {
+    background: var(--slds-g-color-success-container-1);
+    color: var(--slds-g-color-on-success-1);
+    border-left: 4px solid var(--slds-g-color-success-1);
+    padding: var(--slds-g-spacing-3);
+    border-radius: var(--slds-g-radius-border-1);
+    display: flex;
+    align-items: center;
+}
+
+/* Form container styling */
+.slds-p-around_medium {
+    padding: var(--slds-g-spacing-4);
+}
+
+/* Spacing utilities using SLDS hooks */
+.slds-m-bottom_small {
+    margin-bottom: var(--slds-g-spacing-3);
+}
+
+.slds-m-top_medium {
+    margin-top: var(--slds-g-spacing-4);
+}
+
+.slds-m-right_x-small {
+    margin-right: var(--slds-g-spacing-2);
+}
+
+.slds-m-left_x-small {
+    margin-left: var(--slds-g-spacing-2);
+}
+
+/* Text alignment */
+.slds-text-align_right {
+    text-align: right;
+}

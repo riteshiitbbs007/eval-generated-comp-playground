@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Four Alerts Component</masterLabel>
+    <description>A component that displays various types of alerts (success, error, warning, info) with icons, messages, and close buttons.</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage,lightningCommunity__Default">
+            <property name="successMessage" type="String" label="Success Message" description="The message to display in the success alert" default="Success! Operation completed successfully." />
+            <property name="errorMessage" type="String" label="Error Message" description="The message to display in the error alert" default="Error! There was a problem with your request." />
+            <property name="warningMessage" type="String" label="Warning Message" description="The message to display in the warning alert" default="Warning! Please review the information." />
+            <property name="infoMessage" type="String" label="Info Message" description="The message to display in the info alert" default="Information: This is an informational message." />
+            <property name="showSuccess" type="Boolean" label="Show Success Alert" description="Controls whether the success alert is displayed" default="false" />
+            <property name="showError" type="Boolean" label="Show Error Alert" description="Controls whether the error alert is displayed" default="false" />
+            <property name="showWarning" type="Boolean" label="Show Warning Alert" description="Controls whether the warning alert is displayed" default="false" />
+            <property name="showInfo" type="Boolean" label="Show Info Alert" description="Controls whether the info alert is displayed" default="false" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,47 @@
+<template>
+    <!-- FAQ Accordion Component with 3 sections, first expanded by default -->
+    <div class="slds-accordion">
+        <!-- Iterate through FAQ sections -->
+        <template for:each={faqSections} for:item="section">
+            <section key={section.id} class="slds-accordion__section">
+                <!-- Accordion Section Header (Button) -->
+                <div class="slds-accordion__summary">
+                    <h3 class="slds-accordion__summary-heading">
+                        <button
+                            class="slds-button slds-button_reset slds-accordion__summary-action"
+                            aria-expanded={section.ariaExpanded}
+                            aria-controls={section.contentId}
+                            data-index={section.index}
+                            onclick={handleToggle}
+                            type="button"
+                        >
+                            <span class="slds-accordion__summary-content">
+                                {section.question}
+                            </span>
+                            <!-- Chevron icon that rotates based on expanded state -->
+                            <lightning-icon
+                                icon-name="utility:chevronright"
+                                size="small"
+                                class={section.iconClass}
+                                alternative-text={section.iconAltText}
+                            ></lightning-icon>
+                        </button>
+                    </h3>
+                </div>
+
+                <!-- Accordion Section Content -->
+                <div
+                    id={section.contentId}
+                    class={section.contentClass}
+                    role="region"
+                    aria-labelledby={section.headingId}
+                    aria-hidden={section.ariaHidden}
+                >
+                    <div class="slds-accordion__content">
+                        <p>{section.answer}</p>
+                    </div>
+                </div>
+            </section>
+        </template>
+    </div>
+</template>

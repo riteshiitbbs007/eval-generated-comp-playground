@@ -1,0 +1,46 @@
+{
+  "folderName": "primaryActionButtonWithSaveIcon-C01-Detailed-20260312",
+  "componentName": "primaryActionButtonWithSaveIcon7194c020",
+  "csvId": "C01",
+  "variant": "Detailed",
+  "timestamp": "2026-03-12T09:25:15.420Z",
+  "utterance": "Create a primary action button with save icon positioned on the left with proper spacing from the text \"Save Changes\". Use SLDS brand button styling with appropriate sizing from the design system. Ensure proper hover and focus states using SLDS styling hooks for interactive elements. The icon should use the standard icon size for buttons and maintain proper spacing using SLDS spacing utilities",
+  "tier": "Tier 1",
+  "complexity": "Simple",
+  "scores": {
+    "slds_linter": 0.514,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.64,
+    "overall_readiness_label": "Prototype"
+  },
+  "violations": {
+    "errors": 3,
+    "warnings": 2,
+    "notes": 0
+  },
+  "utteranceId": "C01",
+  "errorsByType": {
+    "slds/lwc-token-to-slds-hook": 3,
+    "slds/no-slds-namespace-for-custom-hooks": 2
+  },
+  "sldsToolsEnabled": false,
+  "testMode": "baseline",
+  "baseline_slds": true,
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/deb51c05-5d71-4cd7-9938-3de5ea67a302/r/019ce158-f992-7000-8000-037e1d9f45b3",
+  "langsmithRunId": "019ce158-f992-7000-8000-037e1d9f45b3",
+  "langsmithProjectName": "back-experience-74",
+  "langsmithTraceId": "019ce158-f992-7000-8000-037e1d9f45b3",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C01:Detailed",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/primaryActionButtonWithSaveIcon7194c020/screenshots/desktop.png"
+  }
+}

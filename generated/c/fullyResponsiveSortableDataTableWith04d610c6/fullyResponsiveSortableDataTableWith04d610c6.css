@@ -1,0 +1,235 @@
+/**
+ * Fully Responsive Sortable Data Table Styles
+ *
+ * SLDS 2 Compliant - Uses design tokens (--slds-g-*) throughout
+ * Implements semantic badge colors and responsive layout
+ */
+
+/* =============================================================================
+   Badge Styles - Semantic Colors using SLDS Design Tokens
+   ============================================================================= */
+
+/**
+ * Neutral Badge - For Category column
+ * Uses surface-container colors for neutral appearance
+ */
+.badge-neutral {
+    background: var(--slds-g-color-surface-container-1, #f3f3f3);
+    color: var(--slds-g-color-on-surface-2, #3e3e3c);
+    border: 1px solid var(--slds-g-color-border-1, #c9c9c9);
+    padding: var(--slds-g-spacing-1, 0.25rem) var(--slds-g-spacing-2, 0.5rem);
+    border-radius: var(--slds-g-radius-border-1, 0.25rem);
+    font-size: 0.75rem;
+    font-weight: var(--slds-g-font-weight-5, 500);
+    line-height: var(--slds-g-font-lineheight-3, 1.5);
+    display: inline-block;
+}
+
+/**
+ * Success Badge - For "In Stock" status
+ * Uses semantic success colors with proper contrast
+ */
+.badge-success {
+    background: var(--slds-g-color-success-container-1, #d8eddb);
+    color: var(--slds-g-color-on-success-1, #2e844a);
+    border: 1px solid var(--slds-g-color-success-1, #2e844a);
+    padding: var(--slds-g-spacing-1, 0.25rem) var(--slds-g-spacing-2, 0.5rem);
+    border-radius: var(--slds-g-radius-border-1, 0.25rem);
+    font-size: 0.75rem;
+    font-weight: var(--slds-g-font-weight-5, 500);
+    line-height: var(--slds-g-font-lineheight-3, 1.5);
+    display: inline-block;
+}
+
+/**
+ * Warning Badge - For "Low Stock" status
+ * Uses semantic warning colors with proper contrast
+ */
+.badge-warning {
+    background: var(--slds-g-color-warning-container-1, #fef4e8);
+    color: var(--slds-g-color-on-warning-1, #8c6e1f);
+    border: 1px solid var(--slds-g-color-warning-1, #dd7a01);
+    padding: var(--slds-g-spacing-1, 0.25rem) var(--slds-g-spacing-2, 0.5rem);
+    border-radius: var(--slds-g-radius-border-1, 0.25rem);
+    font-size: 0.75rem;
+    font-weight: var(--slds-g-font-weight-5, 500);
+    line-height: var(--slds-g-font-lineheight-3, 1.5);
+    display: inline-block;
+}
+
+/**
+ * Error Badge - For "Out of Stock" status
+ * Uses semantic error colors with proper contrast
+ */
+.badge-error {
+    background: var(--slds-g-color-error-container-1, #fededb);
+    color: var(--slds-g-color-on-error-1, #ba0517);
+    border: 1px solid var(--slds-g-color-error-1, #ea001e);
+    padding: var(--slds-g-spacing-1, 0.25rem) var(--slds-g-spacing-2, 0.5rem);
+    border-radius: var(--slds-g-radius-border-1, 0.25rem);
+    font-size: 0.75rem;
+    font-weight: var(--slds-g-font-weight-5, 500);
+    line-height: var(--slds-g-font-lineheight-3, 1.5);
+    display: inline-block;
+}
+
+/* =============================================================================
+   Table Enhancements
+   ============================================================================= */
+
+/**
+ * Ensure proper spacing and alignment for table cells
+ */
+.slds-table td,
+.slds-table th {
+    padding: var(--slds-g-spacing-2, 0.5rem) var(--slds-g-spacing-3, 0.75rem);
+    vertical-align: middle;
+}
+
+/**
+ * Sortable column header hover state
+ * Uses accent colors for interactive feedback
+ */
+.slds-th__action-button:hover {
+    background: var(--slds-g-color-accent-container-1, #ecf3fe);
+    color: var(--slds-g-color-on-accent-1, #014486);
+}
+
+/**
+ * Sortable column header focus state
+ * Ensures keyboard accessibility with visible focus indicator
+ */
+.slds-th__action-button:focus {
+    outline: 2px solid var(--slds-g-color-accent-1, #0176d3);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px var(--slds-g-color-accent-container-1, #ecf3fe);
+}
+
+/**
+ * Sort icon sizing and positioning
+ */
+.slds-icon.slds-is-sortable__icon {
+    width: 0.875rem;
+    height: 0.875rem;
+    fill: currentColor;
+}
+
+/* =============================================================================
+   Mobile Card View Styles
+   ============================================================================= */
+
+/**
+ * Card spacing and layout for mobile view
+ */
+.slds-card {
+    background: var(--slds-g-color-surface-container-1, #ffffff);
+    border: 1px solid var(--slds-g-color-border-1, #c9c9c9);
+    border-radius: var(--slds-g-radius-border-1, 0.25rem);
+    box-shadow: var(--slds-g-shadow-1, 0 2px 2px 0 rgba(0, 0, 0, 0.1));
+}
+
+/**
+ * Mobile field label styling
+ * Uses title caps and reduced emphasis
+ */
+.slds-form-element__label {
+    font-size: 0.75rem;
+    font-weight: var(--slds-g-font-weight-7, 700);
+    color: var(--slds-g-color-on-surface-1, #706e6b);
+    text-transform: uppercase;
+    letter-spacing: 0.0625rem;
+    margin-bottom: var(--slds-g-spacing-1, 0.25rem);
+    display: block;
+}
+
+/**
+ * Mobile field value styling
+ */
+.slds-text-body_regular {
+    font-size: var(--slds-g-font-size-base, 1rem);
+    font-weight: var(--slds-g-font-weight-4, 400);
+    color: var(--slds-g-color-on-surface-2, #3e3e3c);
+    line-height: var(--slds-g-font-lineheight-3, 1.5);
+}
+
+/* =============================================================================
+   Responsive Utilities Enhancement
+   ============================================================================= */
+
+/**
+ * Mobile-specific adjustments (≤768px)
+ */
+@media (max-width: 768px) {
+    /* Ensure cards stack properly with consistent spacing */
+    .slds-card {
+        margin-bottom: var(--slds-g-spacing-3, 0.75rem);
+    }
+
+    /* Adjust badge sizing for mobile readability */
+    .badge-neutral,
+    .badge-success,
+    .badge-warning,
+    .badge-error {
+        font-size: 0.8125rem;
+        padding: var(--slds-g-spacing-1, 0.25rem) var(--slds-g-spacing-3, 0.75rem);
+    }
+}
+
+/**
+ * Desktop-specific adjustments (>768px)
+ */
+@media (min-width: 769px) {
+    /* Ensure table has proper minimum width */
+    .slds-table {
+        min-width: 100%;
+    }
+
+    /* Fixed column widths for consistent layout */
+    .slds-table th,
+    .slds-table td {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+/* =============================================================================
+   Accessibility Enhancements
+   ============================================================================= */
+
+/**
+ * Screen reader only content
+ * Maintains semantic structure while hiding visually
+ */
+.slds-assistive-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/**
+ * Focus visible for keyboard navigation
+ * Enhanced focus states for all interactive elements
+ */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--slds-g-color-accent-1, #0176d3);
+    outline-offset: 2px;
+}
+
+/* =============================================================================
+   No Data State
+   ============================================================================= */
+
+/**
+ * Styling for empty state message
+ */
+.slds-text-color_weak {
+    color: var(--slds-g-color-on-surface-1, #706e6b);
+    font-style: italic;
+}

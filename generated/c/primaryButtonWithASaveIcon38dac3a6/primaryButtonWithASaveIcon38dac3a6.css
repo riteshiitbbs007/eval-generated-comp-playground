@@ -1,0 +1,35 @@
+/**
+ * Primary Button with Save Icon Styles
+ *
+ * Uses SLDS design tokens (--slds-*) for theme-aware styling
+ * Follows SLDS 2 design system patterns
+ */
+
+:host {
+    /* Container uses accent colors for brand consistency */
+    display: inline-block;
+}
+
+/* Custom styling for the lightning-button if needed */
+lightning-button {
+    /* Use SLDS spacing tokens for consistent margins */
+    --slds-c-button-spacing-inline-start: var(--slds-g-spacing-3);
+    --slds-c-button-spacing-inline-end: var(--slds-g-spacing-3);
+
+    /* Use SLDS design tokens for colors - brand variant handles this automatically */
+    /* Accent colors are applied by the variant="brand" attribute */
+}
+
+/* Focus state enhancement for accessibility */
+lightning-button:focus-within {
+    /* Additional focus styling using SLDS design tokens */
+    outline: 2px solid var(--slds-g-color-accent-1);
+    outline-offset: var(--slds-g-spacing-1);
+    border-radius: var(--slds-g-radius-border-1);
+}
+
+/* Ensure proper spacing in different contexts */
+.slds-m-around_small {
+    /* SLDS utility class handles margin - no custom CSS needed */
+    /* margin: var(--slds-g-spacing-2); */
+}

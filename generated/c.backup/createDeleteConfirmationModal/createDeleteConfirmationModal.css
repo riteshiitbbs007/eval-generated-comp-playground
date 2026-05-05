@@ -1,0 +1,39 @@
+/* Modal theming using SLDS styling hooks for optimal theming */
+:host {
+    /* Ensure the modal takes the full viewport */
+    display: block;
+    position: relative;
+    z-index: 9001; /* Above other content */
+}
+
+.slds-modal__container {
+    /* Use SLDS styling hooks for theming */
+    background: var(--slds-g-color-surface-container-1);
+    color: var(--slds-g-color-on-surface-2);
+    border-radius: var(--slds-g-radius-border-2);
+}
+
+.slds-modal__header {
+    background: var(--slds-g-color-surface-container-1);
+    color: var(--slds-g-color-on-surface-3);
+    border-color: var(--slds-g-color-border-1);
+}
+
+.slds-modal__content {
+    font-family: var(--slds-g-font-family-base);
+    font-size: var(--slds-g-font-size-base);
+    font-weight: var(--slds-g-font-weight-4);
+    line-height: var(--slds-g-font-lineheight-3);
+    padding: var(--slds-g-spacing-4);
+}
+
+.slds-modal__footer {
+    background: var(--slds-g-color-surface-container-1);
+    border-color: var(--slds-g-color-border-1);
+}
+
+/* Focus styles for accessibility */
+.slds-button:focus {
+    box-shadow: 0 0 3px var(--slds-g-color-accent-1);
+    outline: none;
+}

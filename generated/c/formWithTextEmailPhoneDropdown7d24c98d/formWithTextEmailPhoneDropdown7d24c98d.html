@@ -1,0 +1,93 @@
+<template>
+    <lightning-card title="Contact Information Form" icon-name="standard:contact">
+        <div class="slds-p-around_medium">
+            <lightning-input
+                label="Name"
+                name="name"
+                type="text"
+                value={nameValue}
+                onchange={handleNameChange}
+                placeholder="Enter your name"
+                required>
+            </lightning-input>
+
+            <lightning-input
+                label="Email"
+                name="email"
+                type="email"
+                value={emailValue}
+                onchange={handleEmailChange}
+                placeholder="Enter your email"
+                required>
+            </lightning-input>
+
+            <lightning-input
+                label="Phone"
+                name="phone"
+                type="tel"
+                value={phoneValue}
+                onchange={handlePhoneChange}
+                placeholder="Enter your phone number"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                message-when-pattern-mismatch="Phone must be formatted: 123-456-7890">
+            </lightning-input>
+
+            <lightning-combobox
+                label="Preferred Contact Method"
+                name="contactMethod"
+                value={contactMethodValue}
+                options={contactMethodOptions}
+                onchange={handleContactMethodChange}
+                placeholder="Select an option"
+                required>
+            </lightning-combobox>
+
+            <fieldset class="slds-form-element">
+                <legend class="slds-form-element__legend slds-form-element__label">Interests</legend>
+                <div class="slds-form-element__control">
+                    <lightning-checkbox-group
+                        name="interests"
+                        label="Select your interests"
+                        options={interestOptions}
+                        value={selectedInterests}
+                        onchange={handleInterestChange}>
+                    </lightning-checkbox-group>
+                </div>
+            </fieldset>
+
+            <lightning-textarea
+                label="Additional Comments"
+                name="comments"
+                value={commentsValue}
+                onchange={handleCommentsChange}
+                placeholder="Enter any additional information"
+                max-length="500">
+            </lightning-textarea>
+
+            <div class="slds-m-top_medium">
+                <lightning-button
+                    variant="brand"
+                    label="Submit"
+                    title="Submit form"
+                    onclick={handleSubmit}
+                    class="slds-m-right_small">
+                </lightning-button>
+                <lightning-button
+                    variant="neutral"
+                    label="Reset"
+                    title="Reset form"
+                    onclick={handleReset}>
+                </lightning-button>
+            </div>
+
+            <template lwc:if={showSuccess}>
+                <div class="slds-m-top_medium">
+                    <div class="slds-notify slds-notify_alert slds-alert_success" role="alert">
+                        <span class="slds-assistive-text">Success</span>
+                        <h2>Form submitted successfully!</h2>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

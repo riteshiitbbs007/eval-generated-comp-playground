@@ -1,0 +1,107 @@
+<template>
+    <lightning-card title="Contact Information Form" icon-name="standard:contact">
+        <div class="slds-p-around_medium">
+            <!-- Text Input Field -->
+            <lightning-input
+                label="Full Name"
+                name="fullName"
+                value={fullName}
+                onchange={handleInputChange}
+                required
+                message-when-value-missing="Please enter your full name"
+                class="slds-m-bottom_small"
+            ></lightning-input>
+
+            <!-- Email Input Field -->
+            <lightning-input
+                type="email"
+                label="Email Address"
+                name="email"
+                value={email}
+                onchange={handleInputChange}
+                required
+                message-when-value-missing="Please enter your email address"
+                message-when-type-mismatch="Please enter a valid email address"
+                class="slds-m-bottom_small"
+            ></lightning-input>
+
+            <!-- Phone Input Field -->
+            <lightning-input
+                type="tel"
+                label="Phone Number"
+                name="phone"
+                value={phone}
+                onchange={handleInputChange}
+                required
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                message-when-pattern-mismatch="Please enter a valid phone number (format: 123-456-7890)"
+                message-when-value-missing="Please enter your phone number"
+                placeholder="123-456-7890"
+                class="slds-m-bottom_small"
+            ></lightning-input>
+
+            <!-- Dropdown/Combobox Field -->
+            <lightning-combobox
+                label="Preferred Contact Method"
+                name="contactMethod"
+                value={contactMethod}
+                placeholder="Select an option"
+                options={contactMethodOptions}
+                onchange={handleInputChange}
+                required
+                message-when-value-missing="Please select a contact method"
+                class="slds-m-bottom_small"
+            ></lightning-combobox>
+
+            <!-- Checkbox Group -->
+            <lightning-checkbox-group
+                label="Areas of Interest"
+                name="interests"
+                options={interestOptions}
+                value={selectedInterests}
+                onchange={handleCheckboxChange}
+                required
+                message-when-value-missing="Please select at least one area of interest"
+                class="slds-m-bottom_small"
+            ></lightning-checkbox-group>
+
+            <!-- Textarea Field -->
+            <lightning-textarea
+                label="Additional Comments"
+                name="comments"
+                value={comments}
+                onchange={handleInputChange}
+                placeholder="Enter any additional information or questions"
+                max-length="500"
+                class="slds-m-bottom_small"
+            ></lightning-textarea>
+
+            <!-- Form Actions -->
+            <div class="slds-m-top_medium">
+                <lightning-button
+                    variant="brand"
+                    label="Submit"
+                    title="Submit form"
+                    onclick={handleSubmit}
+                    class="slds-m-right_x-small"
+                ></lightning-button>
+                <lightning-button
+                    variant="neutral"
+                    label="Reset"
+                    title="Reset form"
+                    onclick={handleReset}
+                ></lightning-button>
+            </div>
+
+            <!-- Success Message -->
+            <template lwc:if={showSuccess}>
+                <div class="slds-m-top_medium">
+                    <div class="slds-notify slds-notify_alert slds-alert_success" role="alert">
+                        <span class="slds-assistive-text">Success</span>
+                        <h2>Form submitted successfully!</h2>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

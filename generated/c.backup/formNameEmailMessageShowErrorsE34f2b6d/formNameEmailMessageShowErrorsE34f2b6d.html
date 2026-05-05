@@ -1,0 +1,71 @@
+<template>
+    <!-- Form container with SLDS styling -->
+    <div class="slds-form" role="form">
+        <!-- Name input field -->
+        <div class="slds-form-element slds-m-bottom_medium">
+            <lightning-input
+                label="Name"
+                name="name"
+                type="text"
+                value={nameValue}
+                onchange={handleNameChange}
+                required
+                data-field="name"
+            ></lightning-input>
+            <!-- Error message for name field -->
+            <template lwc:if={nameError}>
+                <div class="slds-form-element__help error-message" role="alert">
+                    {nameError}
+                </div>
+            </template>
+        </div>
+
+        <!-- Email input field -->
+        <div class="slds-form-element slds-m-bottom_medium">
+            <lightning-input
+                label="Email"
+                name="email"
+                type="email"
+                value={emailValue}
+                onchange={handleEmailChange}
+                required
+                data-field="email"
+            ></lightning-input>
+            <!-- Error message for email field -->
+            <template lwc:if={emailError}>
+                <div class="slds-form-element__help error-message" role="alert">
+                    {emailError}
+                </div>
+            </template>
+        </div>
+
+        <!-- Message textarea field -->
+        <div class="slds-form-element slds-m-bottom_medium">
+            <lightning-textarea
+                label="Message"
+                name="message"
+                value={messageValue}
+                onchange={handleMessageChange}
+                required
+                data-field="message"
+            ></lightning-textarea>
+            <!-- Error message for message field -->
+            <template lwc:if={messageError}>
+                <div class="slds-form-element__help error-message" role="alert">
+                    {messageError}
+                </div>
+            </template>
+        </div>
+
+        <!-- Submit button -->
+        <div class="slds-form-element">
+            <lightning-button
+                variant="brand"
+                label="Submit"
+                title="Submit Form"
+                onclick={handleSubmit}
+                class="slds-m-top_small"
+            ></lightning-button>
+        </div>
+    </div>
+</template>

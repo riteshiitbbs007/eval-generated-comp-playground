@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>A three-step wizard component with visual progress indicator, navigation controls, and step content management. Provides guided workflow experience with accessibility support.</description>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__HomePage,lightning__RecordPage">
+            <property name="step1Label" type="String" default="Get Started" label="Step 1 Label" description="Label for the first step of the wizard"/>
+            <property name="step2Label" type="String" default="Configure" label="Step 2 Label" description="Label for the second step of the wizard"/>
+            <property name="step3Label" type="String" default="Review" label="Step 3 Label" description="Label for the third step of the wizard"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

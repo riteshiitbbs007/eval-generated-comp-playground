@@ -1,0 +1,21 @@
+/**
+ * Styles for formWithTextEmailPhoneDropdown component
+ * Uses SLDS utility classes for most styling
+ * Custom styles only where necessary
+ */
+
+/* Ensure proper spacing for checkbox group */
+.slds-checkbox {
+    margin-bottom: 0.5rem;
+}
+
+/* Add hover effect for submit button */
+.slds-button_brand:hover:not(:disabled) {
+    cursor: pointer;
+}
+
+/* Disabled button styling */
+.slds-button_brand:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

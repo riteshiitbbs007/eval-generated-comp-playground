@@ -1,0 +1,55 @@
+<template>
+    <!-- Page Header Container with SLDS styling -->
+    <div class="slds-page-header" role="banner">
+        <div class="slds-page-header__row">
+            <!-- Title Section -->
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <!-- Optional icon next to title -->
+                        <lightning-icon 
+                            if:true={showIcon}
+                            icon-name={iconName} 
+                            size="medium" 
+                            alternative-text={iconAlternativeText}>
+                        </lightning-icon>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span class="slds-page-header__title slds-truncate" title={title}>{title}</span>
+                                </h1>
+                            </div>
+                        </div>
+                        <!-- Optional subtitle/metadata -->
+                        <p if:true={subtitle} class="slds-page-header__name-meta">{subtitle}</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Action Buttons Section -->
+            <div class="slds-page-header__col-actions">
+                <div class="slds-page-header__controls">
+                    <div class="slds-page-header__control">
+                        <!-- Primary Action Button -->
+                        <lightning-button
+                            if:true={showPrimaryAction}
+                            label={primaryActionLabel}
+                            variant="brand"
+                            onclick={handlePrimaryAction}
+                            class="slds-m-left_x-small">
+                        </lightning-button>
+                        <!-- Secondary Action Button -->
+                        <lightning-button
+                            if:true={showSecondaryAction}
+                            label={secondaryActionLabel}
+                            variant="neutral"
+                            onclick={handleSecondaryAction}
+                            class="slds-m-left_x-small">
+                        </lightning-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

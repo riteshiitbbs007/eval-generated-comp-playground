@@ -1,0 +1,70 @@
+{
+  "folderName": "verticalNavMenuWith5Items-C11-Simple-20260311",
+  "componentName": "verticalNavMenuWith5Items47126c35",
+  "csvId": "C11",
+  "variant": "Simple",
+  "timestamp": "2026-03-11T07:25:11.151Z",
+  "utterance": "Create vertical nav menu with 5 items, Dashboard active",
+  "tier": "Tier 2",
+  "complexity": "Intermediate",
+  "scores": {
+    "slds_linter": 0.53,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.65,
+    "overall_readiness_label": "Prototype"
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 30,
+    "notes": 0
+  },
+  "utteranceId": "C11",
+  "errorsByType": {
+    "slds/no-slds-class-overrides": 9,
+    "slds/no-slds-var-without-fallback": 19,
+    "slds/no-hardcoded-values-slds2": 2
+  },
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/455582b7-7727-439e-a42c-3fdfc8775a04/r/019cdbc6-3473-7000-8000-0655fd4304a0",
+  "langsmithRunId": "019cdbc6-3473-7000-8000-0655fd4304a0",
+  "langsmithProjectName": "diligent-key-39",
+  "langsmithTraceId": "019cdbc6-3473-7000-8000-0655fd4304a0",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C11:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/verticalNavMenuWith5Items47126c35/screenshots/desktop.png"
+  },
+  "originalScoresV0": {
+    "slds_linter": 0.685,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.76,
+    "overall_readiness_label": "Prototype"
+  },
+  "_scoreHistory": {
+    "originalScoresV0": {
+      "date": "2026-03-18T13:56:12.848Z",
+      "reason": "Score recalculation/metadata update",
+      "changedFields": [
+        {
+          "field": "overall",
+          "old": 2.76,
+          "new": 2.65
+        },
+        {
+          "field": "slds_linter",
+          "old": 0.685,
+          "new": 0.53
+        }
+      ]
+    }
+  }
+}

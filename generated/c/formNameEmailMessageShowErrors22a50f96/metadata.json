@@ -1,0 +1,68 @@
+{
+  "folderName": "formNameEmailMessageShowErrors-C02-Simple-20260303",
+  "componentName": "formNameEmailMessageShowErrors22a50f96",
+  "csvId": "C02",
+  "variant": "Simple",
+  "timestamp": "2026-03-03T13:41:31.994Z",
+  "utterance": "Create form: name, email, message. Show errors for empty fields",
+  "tier": "Tier 1",
+  "complexity": "Simple",
+  "scores": {
+    "slds_linter": 0.65,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.74
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 16,
+    "notes": 0
+  },
+  "utteranceId": "C02",
+  "errorsByType": {
+    "slds/no-hardcoded-values-slds2": 2,
+    "slds/no-slds-namespace-for-custom-hooks": 9,
+    "slds/no-slds-class-overrides": 5
+  },
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/1df57aab-9d12-4fa5-9ef5-03cb21894ee0/r/019cb3ec-3a0a-7000-8000-03dc19aee19c",
+  "langsmithRunId": "019cb3ec-3a0a-7000-8000-03dc19aee19c",
+  "langsmithProjectName": "aching-circle-64",
+  "langsmithTraceId": "019cb3ec-3a0a-7000-8000-03dc19aee19c",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C02:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/formNameEmailMessageShowErrors22a50f96/screenshots/desktop.png"
+  },
+  "originalScoresV0": {
+    "slds_linter": 0.661,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.75
+  },
+  "_scoreHistory": {
+    "originalScoresV0": {
+      "date": "2026-03-18T13:56:11.057Z",
+      "reason": "Score recalculation/metadata update",
+      "changedFields": [
+        {
+          "field": "overall",
+          "old": 2.75,
+          "new": 2.74
+        },
+        {
+          "field": "slds_linter",
+          "old": 0.661,
+          "new": 0.65
+        }
+      ]
+    }
+  }
+}

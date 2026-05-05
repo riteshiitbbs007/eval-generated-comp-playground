@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>FAQ Accordion Component - Displays FAQ content in an accordion format with 3 sections. First section is expanded by default. Implements WCAG 2.1 AA accessibility standards.</description>
+    <isExposed>true</isExposed>
+    <masterLabel>FAQ Accordion with 3 Sections First</masterLabel>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__HomePage,lightning__RecordPage,lightningCommunity__Page,lightningCommunity__Default">
+            <property
+                name="sections"
+                type="String"
+                label="FAQ Sections (JSON)"
+                description="JSON array of FAQ section objects with question and answer properties. Example: [{'question':'Q1','answer':'A1'}]"
+            />
+            <property
+                name="defaultExpandedIndex"
+                type="Integer"
+                label="Default Expanded Section Index"
+                description="Index of the section to expand by default (0-based). Default is 0 (first section)."
+                default="0"
+            />
+            <property
+                name="allowMultipleOpen"
+                type="Boolean"
+                label="Allow Multiple Sections Open"
+                description="Allow multiple accordion sections to be open simultaneously. Default is false (only one section open at a time)."
+                default="false"
+            />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,73 @@
+{
+  "folderName": "component-3stepWizardWithProgressIndicatorAnd-C14-Simple-20260311",
+  "componentName": "3stepWizardWithProgressIndicatorAndEcf1468f",
+  "csvId": "C14",
+  "variant": "Simple",
+  "timestamp": "2026-03-11T12:34:04.896Z",
+  "utterance": "Create 3-step wizard with progress indicator and next/back buttons",
+  "tier": "Tier 3",
+  "complexity": "Advanced",
+  "scores": {
+    "slds_linter": 0.26,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.45,
+    "overall_readiness_label": "Prototype"
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 63,
+    "notes": 0
+  },
+  "utteranceId": "C14",
+  "errorsByType": {
+    "slds/no-hardcoded-values-slds2": 12,
+    "slds/no-slds-var-without-fallback": 31,
+    "slds/no-slds-class-overrides": 20
+  },
+  "sldsToolsEnabled": true,
+  "testMode": "normal",
+  "baseline_slds": false,
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/7eb08380-5c89-43f7-9ef9-db792c7155bd/r/019cdcde-80de-7000-8000-07865fd420ba",
+  "langsmithRunId": "019cdcde-80de-7000-8000-07865fd420ba",
+  "langsmithProjectName": "excellent-bridge-96",
+  "langsmithTraceId": "019cdcde-80de-7000-8000-07865fd420ba",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C14:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/3stepWizardWithProgressIndicatorAndEcf1468f/screenshots/desktop.png"
+  },
+  "originalScoresV0": {
+    "slds_linter": 0.41500000000000004,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.56,
+    "overall_readiness_label": "Prototype"
+  },
+  "_scoreHistory": {
+    "originalScoresV0": {
+      "date": "2026-03-18T13:56:09.501Z",
+      "reason": "Score recalculation/metadata update",
+      "changedFields": [
+        {
+          "field": "overall",
+          "old": 2.56,
+          "new": 2.45
+        },
+        {
+          "field": "slds_linter",
+          "old": 0.41500000000000004,
+          "new": 0.26
+        }
+      ]
+    }
+  }
+}

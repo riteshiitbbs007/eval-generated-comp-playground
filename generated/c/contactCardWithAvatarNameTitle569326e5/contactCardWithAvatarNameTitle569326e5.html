@@ -1,0 +1,106 @@
+<template>
+    <!-- Contact Card Container -->
+    <article class="slds-card contact-card">
+        <div class="slds-card__body slds-card__body_inner">
+            <div class="slds-grid slds-gutters slds-wrap">
+
+                <!-- Avatar Section -->
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_2-of-12">
+                    <div class="avatar-container">
+                        <template lwc:if={hasAvatarUrl}>
+                            <img
+                                src={avatarUrl}
+                                alt={avatarAltText}
+                                class="contact-card__avatar"
+                            />
+                        </template>
+                        <template lwc:else>
+                            <div class="contact-card__avatar contact-card__avatar_initials" role="img" aria-label={avatarAltText}>
+                                <span class="contact-card__initials">{displayInitials}</span>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+
+                <!-- Contact Information Section -->
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_7-of-12">
+                    <div class="contact-info">
+                        <!-- Name -->
+                        <h2 class="contact-card__name slds-truncate" title={name}>
+                            {name}
+                        </h2>
+
+                        <!-- Title -->
+                        <template lwc:if={title}>
+                            <p class="contact-card__title slds-truncate" title={title}>
+                                {title}
+                            </p>
+                        </template>
+
+                        <!-- Contact Details -->
+                        <div class="contact-card__details">
+                            <!-- Email -->
+                            <template lwc:if={email}>
+                                <div class="contact-card__detail-item">
+                                    <lightning-icon
+                                        icon-name="utility:email"
+                                        size="x-small"
+                                        alternative-text="Email"
+                                        class="contact-card__icon"
+                                    ></lightning-icon>
+                                    <a
+                                        href={emailHref}
+                                        class="contact-card__link"
+                                        aria-label={emailAriaLabel}
+                                    >
+                                        {email}
+                                    </a>
+                                </div>
+                            </template>
+
+                            <!-- Phone -->
+                            <template lwc:if={phone}>
+                                <div class="contact-card__detail-item">
+                                    <lightning-icon
+                                        icon-name="utility:phone"
+                                        size="x-small"
+                                        alternative-text="Phone"
+                                        class="contact-card__icon"
+                                    ></lightning-icon>
+                                    <a
+                                        href={phoneHref}
+                                        class="contact-card__link"
+                                        aria-label={phoneAriaLabel}
+                                    >
+                                        {phone}
+                                    </a>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons Section -->
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_3-of-12">
+                    <div class="contact-card__actions">
+                        <lightning-button
+                            label="Edit"
+                            icon-name="utility:edit"
+                            onclick={handleEdit}
+                            variant="neutral"
+                            aria-label={editAriaLabel}
+                            class="slds-m-bottom_x-small"
+                        ></lightning-button>
+                        <lightning-button
+                            label="Delete"
+                            icon-name="utility:delete"
+                            onclick={handleDelete}
+                            variant="destructive"
+                            aria-label={deleteAriaLabel}
+                        ></lightning-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</template>

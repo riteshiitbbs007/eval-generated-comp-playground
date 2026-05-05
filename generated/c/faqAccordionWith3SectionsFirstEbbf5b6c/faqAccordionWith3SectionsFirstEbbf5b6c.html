@@ -1,0 +1,137 @@
+<template>
+  <!-- FAQ Accordion Container -->
+  <!-- Accessible accordion with 3 sections, first expanded by default -->
+  <div class="slds-card slds-p-around_medium">
+    <!-- Card Header -->
+    <div class="slds-card__header slds-grid">
+      <header class="slds-media slds-media_center slds-has-flexi-truncate">
+        <div class="slds-media__figure">
+          <lightning-icon
+            icon-name="utility:questions_and_answers"
+            size="small"
+            alternative-text="FAQ"
+          ></lightning-icon>
+        </div>
+        <div class="slds-media__body">
+          <h2 class="slds-card__header-title">
+            <span class="slds-text-heading_medium">Frequently Asked Questions</span>
+          </h2>
+        </div>
+      </header>
+    </div>
+
+    <!-- Card Body with Accordion Sections -->
+    <div class="slds-card__body slds-card__body_inner">
+      <div class="faq-accordion" role="region" aria-label="Frequently Asked Questions Accordion">
+        
+        <!-- FAQ Section 1 - Expanded by default -->
+        <section class="faq-section" data-section-id="section1">
+          <h3 class="faq-section-header">
+            <button
+              class="faq-toggle-button"
+              type="button"
+              aria-expanded={section1Expanded}
+              aria-controls="faq-section1-content"
+              onclick={handleToggle}
+              data-section="section1"
+            >
+              <lightning-icon
+                icon-name={section1Icon}
+                size="x-small"
+                class="faq-icon"
+              ></lightning-icon>
+              <span class="faq-question">What is Salesforce Lightning Web Components?</span>
+            </button>
+          </h3>
+          <div
+            id="faq-section1-content"
+            class={section1ContentClass}
+            aria-hidden={section1Hidden}
+            role="region"
+          >
+            <div class="faq-answer-wrapper">
+              <p class="faq-answer">
+                Lightning Web Components (LWC) is a modern framework for building enterprise web applications on the Salesforce platform. 
+                It uses web standards like custom elements, shadow DOM, and ES modules to create fast, efficient, and secure components. 
+                LWC provides a component-based architecture that makes it easy to build reusable UI elements while maintaining excellent performance.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- FAQ Section 2 - Collapsed by default -->
+        <section class="faq-section" data-section-id="section2">
+          <h3 class="faq-section-header">
+            <button
+              class="faq-toggle-button"
+              type="button"
+              aria-expanded={section2Expanded}
+              aria-controls="faq-section2-content"
+              onclick={handleToggle}
+              data-section="section2"
+            >
+              <lightning-icon
+                icon-name={section2Icon}
+                size="x-small"
+                class="faq-icon"
+              ></lightning-icon>
+              <span class="faq-question">How does the Lightning Design System improve accessibility?</span>
+            </button>
+          </h3>
+          <div
+            id="faq-section2-content"
+            class={section2ContentClass}
+            aria-hidden={section2Hidden}
+            role="region"
+          >
+            <div class="faq-answer-wrapper">
+              <p class="faq-answer">
+                The Lightning Design System (SLDS) is built with accessibility at its core, following WCAG 2.1 guidelines. 
+                It includes semantic HTML, proper ARIA attributes, keyboard navigation support, and high contrast color tokens. 
+                SLDS components are tested with screen readers and assistive technologies to ensure all users can interact with Salesforce applications effectively. 
+                The design system also provides comprehensive accessibility documentation and best practices for developers.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- FAQ Section 3 - Collapsed by default -->
+        <section class="faq-section" data-section-id="section3">
+          <h3 class="faq-section-header">
+            <button
+              class="faq-toggle-button"
+              type="button"
+              aria-expanded={section3Expanded}
+              aria-controls="faq-section3-content"
+              onclick={handleToggle}
+              data-section="section3"
+            >
+              <lightning-icon
+                icon-name={section3Icon}
+                size="x-small"
+                class="faq-icon"
+              ></lightning-icon>
+              <span class="faq-question">What are SLDS styling hooks and why should I use them?</span>
+            </button>
+          </h3>
+          <div
+            id="faq-section3-content"
+            class={section3ContentClass}
+            aria-hidden={section3Hidden}
+            role="region"
+          >
+            <div class="faq-answer-wrapper">
+              <p class="faq-answer">
+                SLDS styling hooks are CSS custom properties that provide a theme-aware styling system. 
+                They allow components to automatically adapt to brand customizations, light/dark mode switches, and density settings. 
+                By using styling hooks instead of hard-coded values, your components remain maintainable and consistent with the overall design system. 
+                Styling hooks include semantic colors, spacing scales, typography settings, and more - all designed to ensure accessibility and visual consistency across the platform.
+              </p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</template>

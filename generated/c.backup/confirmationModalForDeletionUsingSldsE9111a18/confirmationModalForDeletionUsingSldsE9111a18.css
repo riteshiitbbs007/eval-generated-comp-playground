@@ -1,0 +1,27 @@
+/**
+ * Confirmation Modal for Deletion - Custom Styles
+ *
+ * This component primarily uses SLDS utility classes.
+ * Custom CSS is minimal and only for specific adjustments.
+ */
+
+/* Ensure modal and backdrop have proper stacking */
+.slds-modal {
+    z-index: 9000;
+}
+
+.slds-backdrop {
+    z-index: 8999;
+}
+
+/* Ensure warning icon maintains proper color */
+.slds-icon-text-warning {
+    fill: var(--slds-g-color-warning-base-50, #fe9339);
+}
+
+/* Ensure proper focus visibility on all interactive elements */
+button:focus,
+button:focus-visible {
+    outline: 2px solid var(--slds-g-color-brand-base-50, #0176d3);
+    outline-offset: 2px;
+}

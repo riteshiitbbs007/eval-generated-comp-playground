@@ -1,0 +1,34 @@
+<template>
+    <!-- Responsive Card Grid Container -->
+    <!-- Uses SLDS grid utilities for responsive layout:
+         - Mobile (default): 1 column (slds-size_1-of-1)
+         - Tablet: 2 columns (slds-medium-size_1-of-2)
+         - Desktop: 4 columns (slds-large-size_1-of-4) -->
+    <div class="slds-grid slds-wrap slds-gutters">
+        <template for:each={cards} for:item="card">
+            <div key={card.id} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4">
+                <!-- SLDS Card Component -->
+                <article class="slds-card">
+                    <div class="slds-card__header slds-grid">
+                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                            <!-- Card Icon -->
+                            <div class="slds-media__figure">
+                                <lightning-icon icon-name={card.icon} size="small"></lightning-icon>
+                            </div>
+                            <!-- Card Title -->
+                            <div class="slds-media__body">
+                                <h2 class="slds-card__header-title">
+                                    <span class="slds-truncate" title={card.title}>{card.title}</span>
+                                </h2>
+                            </div>
+                        </header>
+                    </div>
+                    <!-- Card Body with Description -->
+                    <div class="slds-card__body slds-card__body_inner">
+                        <p>{card.description}</p>
+                    </div>
+                </article>
+            </div>
+        </template>
+    </div>
+</template>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Form With Text Email Phone Dropdown</masterLabel>
+    <description>A comprehensive form component with text input, email input, phone input, dropdown/picklist, checkboxes, and textarea fields. Follows SLDS 2 guidelines with proper validation and accessibility features.</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+</LightningComponentBundle>

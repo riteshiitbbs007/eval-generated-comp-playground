@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>Page Header with Title and Action Buttons - A component that implements a page header following SLDS 2 Page Headers blueprint with configurable title and action buttons. Provides consistent page structure with proper accessibility and responsive design.</description>
+    <isExposed>false</isExposed>
+    <masterLabel>Page Header with Title and Action</masterLabel>
+</LightningComponentBundle>

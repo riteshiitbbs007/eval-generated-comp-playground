@@ -1,0 +1,92 @@
+/**
+ * Sortable Product Table Component Styles
+ * Uses SLDS 2 design tokens for all styling
+ */
+
+/* Sortable header hover effect */
+.sortable-header button:hover {
+    background: var(--slds-g-color-surface-container-2);
+    cursor: pointer;
+}
+
+/* Active/pressed state for sortable headers */
+.sortable-header button:active {
+    background: var(--slds-g-color-surface-container-3);
+}
+
+/* Focus state for keyboard navigation */
+.sortable-header button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--slds-g-color-accent-1);
+}
+
+/* Table row hover effect */
+tbody tr:hover {
+    background: var(--slds-g-color-surface-container-1);
+}
+
+/* Stock status badges - using SLDS badge classes with design token overrides */
+.slds-badge_success {
+    background: var(--slds-g-color-success-container-1);
+    color: var(--slds-g-color-on-success-1);
+    border: 1px solid var(--slds-g-color-border-success-1);
+}
+
+.slds-badge_warning {
+    background: var(--slds-g-color-warning-container-1);
+    color: var(--slds-g-color-on-warning-1);
+    border: 1px solid var(--slds-g-color-border-warning-1);
+}
+
+.slds-badge_error {
+    background: var(--slds-g-color-error-container-1);
+    color: var(--slds-g-color-on-error-1);
+    border: 1px solid var(--slds-g-color-border-error-1);
+}
+
+/* Ensure table is responsive */
+.slds-table_container {
+    overflow-x: auto;
+}
+
+/* Header button full width for better click target */
+.slds-th__action {
+    width: 100%;
+    padding: var(--slds-g-spacing-2);
+    border-radius: var(--slds-g-radius-border-1);
+    transition: background-color 0.2s ease;
+}
+
+/* Card spacing adjustments */
+.slds-card__body_inner {
+    padding: var(--slds-g-spacing-4);
+}
+
+.slds-card__header {
+    padding: var(--slds-g-spacing-4);
+    border-bottom: 1px solid var(--slds-g-color-border-1);
+}
+
+/* Typography adjustments using SLDS tokens */
+.slds-card__header-title {
+    font-weight: var(--slds-g-font-weight-7);
+    color: var(--slds-g-color-on-surface-3);
+}
+
+/* Table cell padding using SLDS spacing tokens */
+.slds-table th,
+.slds-table td {
+    padding: var(--slds-g-spacing-2) var(--slds-g-spacing-3);
+}
+
+/* Sort icon visibility */
+.sortable-header lightning-icon {
+    visibility: visible;
+    opacity: 0.5;
+}
+
+.sortable-header button:hover lightning-icon,
+.sortable-header[aria-sort="ascending"] lightning-icon,
+.sortable-header[aria-sort="descending"] lightning-icon {
+    opacity: 1;
+}

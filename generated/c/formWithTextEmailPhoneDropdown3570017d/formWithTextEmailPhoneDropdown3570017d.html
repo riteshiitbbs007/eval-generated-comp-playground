@@ -1,0 +1,121 @@
+<template>
+    <div class="c-form-container">
+        <div class="c-form-header">
+            <h2 class="c-form-title">Contact Information Form</h2>
+            <p class="c-form-description">Please fill out all required fields below</p>
+        </div>
+
+        <form class="c-form-body" onsubmit={handleSubmit}>
+            <!-- Text Input Field -->
+            <div class="slds-form-element slds-m-bottom_medium">
+                <lightning-input
+                    label="Full Name"
+                    name="fullName"
+                    value={formData.fullName}
+                    onchange={handleInputChange}
+                    required
+                    placeholder="Enter your full name"
+                    message-when-value-missing="Please enter your full name"
+                ></lightning-input>
+            </div>
+
+            <!-- Email Input Field -->
+            <div class="slds-form-element slds-m-bottom_medium">
+                <lightning-input
+                    type="email"
+                    label="Email Address"
+                    name="email"
+                    value={formData.email}
+                    onchange={handleInputChange}
+                    required
+                    placeholder="example@email.com"
+                    message-when-value-missing="Please enter a valid email address"
+                    message-when-bad-input="Please enter a valid email format"
+                ></lightning-input>
+            </div>
+
+            <!-- Phone Input Field -->
+            <div class="slds-form-element slds-m-bottom_medium">
+                <lightning-input
+                    type="tel"
+                    label="Phone Number"
+                    name="phone"
+                    value={formData.phone}
+                    onchange={handleInputChange}
+                    required
+                    placeholder="(555) 123-4567"
+                    pattern="[0-9()\-\s]+"
+                    message-when-value-missing="Please enter your phone number"
+                    message-when-pattern-mismatch="Please enter a valid phone number"
+                ></lightning-input>
+            </div>
+
+            <!-- Dropdown/Picklist Field -->
+            <div class="slds-form-element slds-m-bottom_medium">
+                <lightning-combobox
+                    label="Category"
+                    name="category"
+                    value={formData.category}
+                    placeholder="Select a category"
+                    options={categoryOptions}
+                    onchange={handleInputChange}
+                    required
+                    message-when-value-missing="Please select a category"
+                ></lightning-combobox>
+            </div>
+
+            <!-- Checkbox Group Field -->
+            <div class="slds-form-element slds-m-bottom_medium">
+                <lightning-checkbox-group
+                    label="Preferences"
+                    name="preferences"
+                    options={preferenceOptions}
+                    value={formData.preferences}
+                    onchange={handleInputChange}
+                ></lightning-checkbox-group>
+            </div>
+
+            <!-- Textarea Field -->
+            <div class="slds-form-element slds-m-bottom_medium">
+                <lightning-textarea
+                    label="Comments"
+                    name="comments"
+                    value={formData.comments}
+                    onchange={handleInputChange}
+                    placeholder="Enter any additional comments or information"
+                    max-length="500"
+                ></lightning-textarea>
+            </div>
+
+            <!-- Form Actions -->
+            <div class="c-form-actions">
+                <lightning-button
+                    variant="neutral"
+                    label="Reset"
+                    title="Reset form"
+                    onclick={handleReset}
+                    class="slds-m-right_small"
+                ></lightning-button>
+                <lightning-button
+                    variant="brand"
+                    label="Submit"
+                    title="Submit form"
+                    type="submit"
+                ></lightning-button>
+            </div>
+        </form>
+
+        <!-- Success Message -->
+        <template lwc:if={showSuccess}>
+            <div class="c-success-message" role="alert">
+                <lightning-icon
+                    icon-name="utility:success"
+                    alternative-text="Success"
+                    size="small"
+                    class="slds-m-right_small"
+                ></lightning-icon>
+                <span>Form submitted successfully!</span>
+            </div>
+        </template>
+    </div>
+</template>

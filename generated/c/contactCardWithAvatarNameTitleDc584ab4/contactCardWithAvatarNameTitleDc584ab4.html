@@ -1,0 +1,116 @@
+<template>
+  <!-- Contact Card Container - SLDS Card Pattern -->
+  <article class="slds-card contact-card">
+    <!-- Card Header with Avatar and Basic Info -->
+    <div class="slds-card__header slds-grid">
+      <header class="slds-media slds-media_center slds-has-flexi-truncate">
+        <!-- Avatar Section -->
+        <div class="slds-media__figure">
+          <lightning-avatar
+            src={avatarUrl}
+            fallback-icon-name="standard:person_account"
+            alternative-text={avatarAltText}
+            size="large"
+          ></lightning-avatar>
+        </div>
+
+        <!-- Contact Name and Title Section -->
+        <div class="slds-media__body">
+          <h2 class="slds-card__header-title">
+            <span class="contact-name">{contactName}</span>
+          </h2>
+          <template lwc:if={title}>
+            <p class="slds-text-body_small contact-title">{title}</p>
+          </template>
+        </div>
+      </header>
+    </div>
+
+    <!-- Card Body with Contact Information -->
+    <div class="slds-card__body slds-card__body_inner">
+      <div class="slds-form" role="list">
+        <!-- Email Section -->
+        <template lwc:if={email}>
+          <div class="slds-form__item contact-info-item" role="listitem">
+            <div class="slds-grid slds-grid_vertical-align-center">
+              <div class="slds-col slds-size_1-of-12">
+                <lightning-icon
+                  icon-name="utility:email"
+                  size="x-small"
+                  alternative-text="Email"
+                ></lightning-icon>
+              </div>
+              <div class="slds-col slds-size_11-of-12">
+                <a
+                  href={emailHref}
+                  aria-label={emailAriaLabel}
+                  class="contact-link"
+                >
+                  {email}
+                </a>
+              </div>
+            </div>
+          </div>
+        </template>
+
+        <!-- Phone Section -->
+        <template lwc:if={phone}>
+          <div class="slds-form__item contact-info-item" role="listitem">
+            <div class="slds-grid slds-grid_vertical-align-center">
+              <div class="slds-col slds-size_1-of-12">
+                <lightning-icon
+                  icon-name="utility:phone_portrait"
+                  size="x-small"
+                  alternative-text="Phone"
+                ></lightning-icon>
+              </div>
+              <div class="slds-col slds-size_11-of-12">
+                <a
+                  href={phoneHref}
+                  aria-label={phoneAriaLabel}
+                  class="contact-link"
+                >
+                  {phone}
+                </a>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+
+    <!-- Card Footer with Action Buttons -->
+    <template lwc:if={showActions}>
+      <footer class="slds-card__footer">
+        <div class="slds-button-group" role="group" aria-label="Contact Actions">
+          <!-- Edit Button -->
+          <lightning-button
+            label="Edit"
+            icon-name="utility:edit"
+            variant="neutral"
+            onclick={handleEdit}
+            aria-label={editAriaLabel}
+          ></lightning-button>
+
+          <!-- Delete Button -->
+          <lightning-button
+            label="Delete"
+            icon-name="utility:delete"
+            variant="neutral"
+            onclick={handleDelete}
+            aria-label={deleteAriaLabel}
+          ></lightning-button>
+
+          <!-- Share Button -->
+          <lightning-button
+            label="Share"
+            icon-name="utility:share"
+            variant="neutral"
+            onclick={handleShare}
+            aria-label={shareAriaLabel}
+          ></lightning-button>
+        </div>
+      </footer>
+    </template>
+  </article>
+</template>

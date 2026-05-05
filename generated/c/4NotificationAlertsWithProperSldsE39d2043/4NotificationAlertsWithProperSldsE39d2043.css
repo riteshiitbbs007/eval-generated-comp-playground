@@ -1,0 +1,142 @@
+/**
+ * SLDS 2 Notification Alerts Styling
+ *
+ * This stylesheet uses SLDS design tokens (--slds-*) exclusively for all styling.
+ * It implements semantic color hooks from the feedback category to ensure:
+ * - Accessibility compliance (WCAG 2.1 AA)
+ * - Theme support (light/dark mode)
+ * - Consistent visual hierarchy
+ * - Proper color contrast ratios
+ */
+
+/* ===== Alert Container Base Styles ===== */
+.alert-container {
+    /* Full width as per requirements */
+    width: 100%;
+
+    /* Display as flex for icon + message + button layout */
+    display: block;
+
+    /* Box model */
+    box-sizing: border-box;
+}
+
+/* ===== Success Alert Styles ===== */
+.alert-success {
+    /* Background: SLDS semantic success container color (light green background) */
+    background-color: var(--slds-g-color-success-container-1, #4bca81);
+
+    /* Optional border using SLDS success border color for additional visual emphasis */
+    border: 1px solid var(--slds-g-color-border-success-1, #2e844a);
+}
+
+.alert-success .alert-message {
+    /* Foreground text: SLDS semantic on-success color for proper contrast */
+    color: var(--slds-g-color-on-success-1, #0b400e);
+}
+
+.alert-icon-success {
+    /* Icon color matches text color for visual consistency */
+    --sds-c-icon-color-foreground-default: var(--slds-g-color-on-success-1, #0b400e);
+}
+
+/* ===== Error Alert Styles ===== */
+.alert-error {
+    /* Background: SLDS semantic error container color (light red background) */
+    background-color: var(--slds-g-color-error-container-1, #fe5c4c);
+
+    /* Optional border using SLDS error border color for additional visual emphasis */
+    border: 1px solid var(--slds-g-color-border-error-1, #ba0517);
+}
+
+.alert-error .alert-message {
+    /* Foreground text: SLDS semantic on-error color for proper contrast */
+    color: var(--slds-g-color-on-error-1, #4a0303);
+}
+
+.alert-icon-error {
+    /* Icon color matches text color for visual consistency */
+    --sds-c-icon-color-foreground-default: var(--slds-g-color-on-error-1, #4a0303);
+}
+
+/* ===== Warning Alert Styles ===== */
+.alert-warning {
+    /* Background: SLDS semantic warning container color (light yellow/amber background) */
+    background-color: var(--slds-g-color-warning-container-1, #ffb75d);
+
+    /* Optional border using SLDS warning border color for additional visual emphasis */
+    border: 1px solid var(--slds-g-color-border-warning-1, #dd7a01);
+}
+
+.alert-warning .alert-message {
+    /* Foreground text: SLDS semantic on-warning color for proper contrast */
+    color: var(--slds-g-color-on-warning-1, #3e2200);
+}
+
+.alert-icon-warning {
+    /* Icon color matches text color for visual consistency */
+    --sds-c-icon-color-foreground-default: var(--slds-g-color-on-warning-1, #3e2200);
+}
+
+/* ===== Info Alert Styles ===== */
+.alert-info {
+    /* Background: SLDS semantic info container color (light blue background) */
+    background-color: var(--slds-g-color-info-container-1, #57b9f0);
+
+    /* No border variant available for info in SLDS 2, but we can use a subtle border */
+    border: 1px solid var(--slds-g-color-palette-cloud-blue-65, #0b7cbd);
+}
+
+.alert-info .alert-message {
+    /* Foreground text: SLDS semantic on-info color for proper contrast */
+    color: var(--slds-g-color-on-info-1, #001b2b);
+}
+
+.alert-icon-info {
+    /* Icon color matches text color for visual consistency */
+    --sds-c-icon-color-foreground-default: var(--slds-g-color-on-info-1, #001b2b);
+}
+
+/* ===== Alert Message Text Styles ===== */
+.alert-message {
+    /* Standard SLDS text sizing (14px base) */
+    font-size: var(--slds-g-font-size-3, 0.875rem);
+
+    /* Standard line height for readability */
+    line-height: var(--slds-g-line-height-text, 1.5);
+
+    /* Flex grow to take available space */
+    flex: 1;
+}
+
+/* ===== Close Button Styles ===== */
+.alert-close-button {
+    /* Ensure button inherits the appropriate color from its container */
+    /* The lightning-button-icon variant="bare" will use the inherited text color */
+    color: inherit;
+
+    /* Optional: Add slight hover effect for better UX */
+    cursor: pointer;
+}
+
+/* ===== Accessibility Enhancements ===== */
+
+/**
+ * Focus indicators for keyboard navigation
+ * Ensures close buttons have visible focus state
+ */
+.alert-close-button:focus {
+    outline: 2px solid var(--slds-g-color-accent-2, #0176d3);
+    outline-offset: 2px;
+}
+
+/**
+ * Responsive adjustments
+ * Ensure alerts remain readable and functional at all viewport sizes
+ */
+@media (max-width: 768px) {
+    .alert-message {
+        /* Slightly smaller text on mobile for better fit */
+        font-size: var(--slds-g-font-size-2, 0.8125rem);
+    }
+}

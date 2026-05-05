@@ -1,0 +1,68 @@
+{
+  "folderName": "confirmationModalForDeletionUsingSlds-C04-Detailed-20260312",
+  "componentName": "confirmationModalForDeletionUsingSldsE9111a18",
+  "csvId": "C04",
+  "variant": "Detailed",
+  "timestamp": "2026-03-12T10:35:54.681Z",
+  "utterance": "Create a confirmation modal for deletion using SLDS medium modal sizing with proper backdrop. Header should include warning icon from utility icons using appropriate warning colors, with title \"Confirm Delete\" using SLDS heading typography. Body contains message \"Are you sure you want to delete this item? This action cannot be undone\" using standard SLDS text size and line-height. Footer has Cancel button (neutral variant, standard sizing) and Delete button (destructive variant, standard sizing) with proper button spacing from SLDS. Implement full focus trap: on open focus moves to Delete button, Tab cycles through close button, Cancel, and Delete with proper keyboard handling, ESC key closes modal, clicking backdrop closes modal, on close focus returns to trigger element",
+  "tier": "Tier 1",
+  "complexity": "Simple",
+  "scores": {
+    "slds_linter": 0.83,
+    "slds_quality": 1,
+    "prd_compliance": 0.7,
+    "security": 1,
+    "overall": 2.72,
+    "overall_readiness_label": "Prototype"
+  },
+  "violations": {
+    "errors": 1,
+    "warnings": 4,
+    "notes": 0
+  },
+  "utteranceId": "C04",
+  "errorsByType": {
+    "slds/no-slds-class-overrides": 3,
+    "slds/no-hardcoded-values-slds2": 1,
+    "slds/modal-close-button-issue": 1
+  },
+  "sldsToolsEnabled": false,
+  "testMode": "baseline",
+  "baseline_slds": true,
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/d1acde78-f61a-47ae-a9c5-2426e952a0b8/r/019ce19a-733b-7000-8000-06f97893d6be",
+  "langsmithRunId": "019ce19a-733b-7000-8000-06f97893d6be",
+  "langsmithProjectName": "abandoned-show-4",
+  "langsmithTraceId": "019ce19a-733b-7000-8000-06f97893d6be",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C02-C04:Detailed",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/confirmationModalForDeletionUsingSldsE9111a18/screenshots/desktop.png"
+  },
+  "originalScoresV0": {
+    "slds_linter": 0.823,
+    "slds_quality": 1,
+    "prd_compliance": 0.7,
+    "security": 1,
+    "overall": 2.72,
+    "overall_readiness_label": "Prototype"
+  },
+  "_scoreHistory": {
+    "originalScoresV0": {
+      "date": "2026-03-18T13:56:10.168Z",
+      "reason": "Score recalculation/metadata update",
+      "changedFields": [
+        {
+          "field": "slds_linter",
+          "old": 0.823,
+          "new": 0.83
+        }
+      ]
+    }
+  }
+}

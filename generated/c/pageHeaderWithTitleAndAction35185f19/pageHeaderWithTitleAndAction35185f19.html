@@ -1,0 +1,38 @@
+<template>
+    <!-- Page Header Component following SLDS Page Headers blueprint -->
+    <div class="slds-page-header">
+        <!-- Main header row containing title and actions -->
+        <div class="slds-page-header__row">
+            <!-- Title section with truncation support -->
+            <div class="slds-page-header__col-title">
+                <div class="slds-page-header__name">
+                    <div class="slds-page-header__name-title">
+                        <h1>
+                            <span class="slds-page-header__title slds-truncate" title={title}>{title}</span>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actions section - conditionally rendered based on showActions property -->
+            <template lwc:if={showActions}>
+                <div class="slds-page-header__col-actions">
+                    <div class="slds-page-header__controls">
+                        <!-- Render action buttons dynamically from actionButtons array -->
+                        <template for:each={actionButtons} for:item="button">
+                            <div key={button.id} class="slds-page-header__control">
+                                <lightning-button
+                                    label={button.label}
+                                    variant={button.variant}
+                                    onclick={handleButtonClick}
+                                    data-button-id={button.id}
+                                    aria-label={button.ariaLabel}>
+                                </lightning-button>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

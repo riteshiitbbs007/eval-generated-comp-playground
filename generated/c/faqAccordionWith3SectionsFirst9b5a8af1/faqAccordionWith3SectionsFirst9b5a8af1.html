@@ -1,0 +1,37 @@
+<template>
+    <div class="slds-accordion" role="group" aria-label="Frequently Asked Questions">
+        <template for:each={faqSections} for:item="section" for:index="index">
+            <div key={section.id} class="slds-accordion__section" data-expanded={section.isExpanded}>
+                <div class="slds-accordion__summary">
+                    <h2 class="slds-accordion__summary-heading">
+                        <button 
+                            class="slds-accordion__summary-action slds-button_reset slds-grow slds-text-align_left"
+                            aria-controls={section.contentId}
+                            aria-expanded={section.isExpanded}
+                            data-section-id={section.id}
+                            onclick={toggleSection}
+                            type="button">
+                            <template lwc:if={showIcons}>
+                                <lightning-icon 
+                                    icon-name="utility:chevronright" 
+                                    size="small" 
+                                    class="slds-accordion__summary-action-icon slds-button__icon slds-button__icon_left">
+                                </lightning-icon>
+                            </template>
+                            <span class="slds-accordion__summary-content">{section.question}</span>
+                        </button>
+                    </h2>
+                </div>
+                <div 
+                    id={section.contentId}
+                    class="slds-accordion__content-wrapper"
+                    aria-labelledby={section.buttonId}
+                    role="region">
+                    <div class="slds-accordion__content">
+                        <p class="slds-text-body_regular">{section.answer}</p>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

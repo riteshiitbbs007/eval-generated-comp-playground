@@ -1,0 +1,100 @@
+<template>
+    <!-- Container for all alerts using SLDS grid -->
+    <div class="slds-grid slds-wrap slds-gutters_small">
+        <!-- Success Alert -->
+        <div class="slds-col slds-size_1-of-1">
+            <div class="alert alert--success slds-p-around_small" role="alert">
+                <div class="slds-grid slds-grid_vertical-align-start">
+                    <div class="slds-col slds-no-flex">
+                        <lightning-icon
+                            icon-name="utility:success"
+                            alternative-text="Success"
+                            size="small"
+                            class="alert__icon alert__icon--success">
+                        </lightning-icon>
+                    </div>
+                    <div class="slds-col slds-m-left_small">
+                        <h2 class="alert__title slds-text-heading_small slds-m-bottom_xx-small">
+                            Success!
+                        </h2>
+                        <p class="alert__message">
+                            Your changes have been saved successfully.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error Alert -->
+        <div class="slds-col slds-size_1-of-1">
+            <div class="alert alert--error slds-p-around_small" role="alert">
+                <div class="slds-grid slds-grid_vertical-align-start">
+                    <div class="slds-col slds-no-flex">
+                        <lightning-icon
+                            icon-name="utility:error"
+                            alternative-text="Error"
+                            size="small"
+                            class="alert__icon alert__icon--error">
+                        </lightning-icon>
+                    </div>
+                    <div class="slds-col slds-m-left_small">
+                        <h2 class="alert__title slds-text-heading_small slds-m-bottom_xx-small">
+                            Error!
+                        </h2>
+                        <p class="alert__message">
+                            There was a problem with your request.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Warning Alert -->
+        <div class="slds-col slds-size_1-of-1">
+            <div class="alert alert--warning slds-p-around_small" role="alert">
+                <div class="slds-grid slds-grid_vertical-align-start">
+                    <div class="slds-col slds-no-flex">
+                        <lightning-icon
+                            icon-name="utility:warning"
+                            alternative-text="Warning"
+                            size="small"
+                            class="alert__icon alert__icon--warning">
+                        </lightning-icon>
+                    </div>
+                    <div class="slds-col slds-m-left_small">
+                        <h2 class="alert__title slds-text-heading_small slds-m-bottom_xx-small">
+                            Warning!
+                        </h2>
+                        <p class="alert__message">
+                            Please review the following information.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Alert -->
+        <div class="slds-col slds-size_1-of-1">
+            <div class="alert alert--info slds-p-around_small" role="alert">
+                <div class="slds-grid slds-grid_vertical-align-start">
+                    <div class="slds-col slds-no-flex">
+                        <lightning-icon
+                            icon-name="utility:info"
+                            alternative-text="Info"
+                            size="small"
+                            class="alert__icon alert__icon--info">
+                        </lightning-icon>
+                    </div>
+                    <div class="slds-col slds-m-left_small">
+                        <h2 class="alert__title slds-text-heading_small slds-m-bottom_xx-small">
+                            Info!
+                        </h2>
+                        <p class="alert__message">
+                            Here's some helpful information for you.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

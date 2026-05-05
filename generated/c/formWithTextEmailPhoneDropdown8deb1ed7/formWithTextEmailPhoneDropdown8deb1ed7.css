@@ -1,0 +1,163 @@
+/**
+ * SLDS 2 Compliant Styling for FormWithTextEmailPhoneDropdown Component
+ *
+ * Uses SLDS styling hooks (CSS custom properties) for theme-aware styling
+ * Follows SLDS design tokens and responsive grid system
+ * Ensures accessibility compliance with proper contrast and spacing
+ */
+
+/* Main form container styling */
+.slds-form {
+    display: block;
+    width: 100%;
+}
+
+/* Form element wrapper with proper spacing */
+.slds-form-element {
+    margin-bottom: var(--slds-g-spacing-4);
+}
+
+/* Success message alert styling using SLDS semantic feedback colors */
+.success-message {
+    border-radius: var(--slds-g-radius-border-1);
+    padding: var(--slds-g-spacing-3);
+    background: var(--slds-g-color-success-container-1);
+    color: var(--slds-g-color-on-success-1);
+    border-left: 4px solid var(--slds-g-color-success-1);
+}
+
+/* Success alert notification styling */
+.slds-notify_alert.slds-alert_success {
+    display: flex;
+    align-items: center;
+    padding: var(--slds-g-spacing-2) var(--slds-g-spacing-3);
+    background: var(--slds-g-color-success-container-1);
+    color: var(--slds-g-color-on-success-1);
+    border-radius: var(--slds-g-radius-border-1);
+}
+
+/* Success alert heading text */
+.slds-notify_alert h2 {
+    font-family: var(--slds-g-font-family-base);
+    font-size: var(--slds-g-font-size-base);
+    font-weight: var(--slds-g-font-weight-6);
+    line-height: var(--slds-g-font-lineheight-3);
+    color: var(--slds-g-color-on-success-1);
+    margin: 0;
+}
+
+/* Icon container within success alert */
+.slds-icon_container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Button container alignment */
+.slds-align_absolute-center {
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive grid gutters for button spacing */
+.slds-gutters_small {
+    gap: var(--slds-g-spacing-2);
+}
+
+/* Custom focus state for form inputs - ensures accessibility */
+lightning-input:focus-within,
+lightning-combobox:focus-within,
+lightning-checkbox-group:focus-within,
+lightning-textarea:focus-within {
+    outline: 2px solid var(--slds-g-color-accent-1);
+    outline-offset: 2px;
+    border-radius: var(--slds-g-radius-border-1);
+}
+
+/* Responsive layout adjustments for mobile devices */
+@media (max-width: 768px) {
+    .slds-form-element {
+        margin-bottom: var(--slds-g-spacing-3);
+    }
+
+    .slds-align_absolute-center {
+        flex-direction: column;
+        gap: var(--slds-g-spacing-2);
+    }
+
+    .slds-col {
+        width: 100%;
+    }
+}
+
+/* Responsive layout adjustments for tablet and desktop */
+@media (min-width: 769px) {
+    .slds-form {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+/* Enhanced spacing for form sections */
+.slds-m-top_large {
+    margin-top: var(--slds-g-spacing-6);
+}
+
+.slds-m-bottom_medium {
+    margin-bottom: var(--slds-g-spacing-4);
+}
+
+.slds-m-bottom_small {
+    margin-bottom: var(--slds-g-spacing-2);
+}
+
+.slds-m-right_small {
+    margin-right: var(--slds-g-spacing-2);
+}
+
+.slds-m-left_small {
+    margin-left: var(--slds-g-spacing-2);
+}
+
+/* Card padding using SLDS spacing hooks */
+.slds-p-around_medium {
+    padding: var(--slds-g-spacing-4);
+}
+
+/* Ensure proper spacing and typography for all text elements */
+.slds-form label,
+.slds-form-element__label {
+    font-family: var(--slds-g-font-family-base);
+    font-size: var(--slds-g-font-size-base);
+    font-weight: var(--slds-g-font-weight-5);
+    line-height: var(--slds-g-font-lineheight-3);
+    color: var(--slds-g-color-on-surface-3);
+    margin-bottom: var(--slds-g-spacing-1);
+}
+
+/* Error message styling for form validation */
+.slds-form-element__help {
+    font-family: var(--slds-g-font-family-base);
+    font-size: 0.75rem;
+    font-weight: var(--slds-g-font-weight-4);
+    color: var(--slds-g-color-error-1);
+    margin-top: var(--slds-g-spacing-1);
+}
+
+/* Maintain consistent border styling across form elements */
+lightning-input,
+lightning-combobox,
+lightning-textarea {
+    --slds-c-input-color-border: var(--slds-g-color-border-1);
+    --slds-c-input-color-border-focus: var(--slds-g-color-accent-1);
+    --slds-c-input-spacing-block-start: var(--slds-g-spacing-2);
+    --slds-c-input-spacing-block-end: var(--slds-g-spacing-2);
+    --slds-c-input-spacing-inline-start: var(--slds-g-spacing-3);
+    --slds-c-input-spacing-inline-end: var(--slds-g-spacing-3);
+}
+
+/* Checkbox group styling */
+lightning-checkbox-group {
+    --slds-c-checkbox-color-border: var(--slds-g-color-border-1);
+    --slds-c-checkbox-color-border-focus: var(--slds-g-color-accent-1);
+}

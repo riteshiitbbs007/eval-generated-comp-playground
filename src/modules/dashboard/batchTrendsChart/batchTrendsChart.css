@@ -1,0 +1,17 @@
+.chart-container {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  padding: 1rem;
+}
+
+.chart-canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    min-height: 300px;
+  }
+}

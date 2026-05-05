@@ -1,0 +1,170 @@
+<template>
+  <div class="dashboard-container">
+    <!-- Fixed Header -->
+    <header class="dashboard-header-fixed">
+      <div class="dashboard-header-content">
+        <div class="slds-grid slds-grid_vertical-align-center">
+          <div class="slds-col slds-size_1-of-2">
+            <h1 class="slds-text-heading_large slds-m-bottom_xx-small">Component Evaluation Dashboard</h1>
+            <p class="slds-text-body_small slds-text-color_weak">
+              Comprehensive overview of AI-generated LWC components with advanced filtering and quality metrics
+            </p>
+          </div>
+          <div class="slds-col slds-size_1-of-2">
+            <div class="slds-form-element">
+              <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                <svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
+                  <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#search"></use>
+                </svg>
+                <input
+                  type="text"
+                  class="slds-input"
+                  placeholder="Search components..."
+                  value={searchTerm}
+                  oninput={handleSearch}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Loading State -->
+    <template if:true={isLoading}>
+      <div class="slds-align_absolute-center slds-m-top_xx-large">
+        <lightning-spinner alternative-text="Loading components..." size="large"></lightning-spinner>
+      </div>
+    </template>
+
+    <!-- Error State -->
+    <template if:true={error}>
+      <div class="slds-m-around_medium">
+        <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+          <span class="slds-assistive-text">error</span>
+          <h2>Error loading components: {error}</h2>
+        </div>
+      </div>
+    </template>
+
+    <!-- Tabs Navigation -->
+    <template if:false={isLoading}>
+      <template if:false={error}>
+        <div class="tabs-container slds-m-top_medium">
+          <div class="slds-tabs_default">
+            <ul class="slds-tabs_default__nav" role="tablist">
+              <li class={overviewTabClass} title="Overview" role="presentation">
+                <a
+                  class="slds-tabs_default__link"
+                  href="javascript:void(0);"
+                  role="tab"
+                  tabindex={isOverviewTab}
+                  aria-selected={isOverviewTab}
+                  aria-controls="overview-content"
+                  data-tab="overview"
+                  onclick={handleTabChange}
+                >
+                  Overview
+                </a>
+              </li>
+              <li class={trendsTabClass} title="Trends" role="presentation">
+                <a
+                  class="slds-tabs_default__link"
+                  href="javascript:void(0);"
+                  role="tab"
+                  tabindex={isTrendsTab}
+                  aria-selected={isTrendsTab}
+                  aria-controls="trends-content"
+                  data-tab="trends"
+                  onclick={handleTabChange}
+                >
+                  Trends
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </template>
+    </template>
+
+    <!-- Dashboard Content -->
+    <template if:false={isLoading}>
+      <template if:false={error}>
+        <!-- Overview Tab Content -->
+        <template if:true={isOverviewTab}>
+        <div class="dashboard-content" id="overview-content" role="tabpanel">
+          <!-- Metrics Overview -->
+          <div class="metrics-section slds-m-around_medium">
+            <dashboard-metrics
+              components={components}
+              onfilterbyquality={handleFilterByQuality}>
+            </dashboard-metrics>
+          </div>
+
+          <!-- Main Layout: Filters + Gallery -->
+          <div class="main-layout slds-grid slds-wrap slds-gutters">
+            <!-- Filters Sidebar -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-4 slds-large-size_1-of-5">
+              <div class="slds-m-around_medium">
+                <dashboard-filters
+                  components={components}
+                  onfilterchange={handleFilterChange}>
+                </dashboard-filters>
+              </div>
+            </div>
+
+            <!-- Gallery -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_3-of-4 slds-large-size_4-of-5">
+              <div class="slds-m-around_medium">
+                <dashboard-filtered-gallery
+                  components={components}
+                  filters={currentFilters}
+                  oncomponentselect={handleComponentSelect}>
+                </dashboard-filtered-gallery>
+              </div>
+            </div>
+          </div>
+        </div>
+        </template>
+
+        <!-- Trends Tab Content -->
+        <template if:true={isTrendsTab}>
+          <div class="dashboard-content" id="trends-content" role="tabpanel">
+            <dashboard-trends></dashboard-trends>
+          </div>
+        </template>
+
+        <!-- Footer -->
+        <footer class="dashboard-footer">
+          <div class="footer-content">
+            <div class="footer-left">
+              <p class="slds-text-body_small slds-text-color_weak">
+                Made with ❤️ by UXF Tooling Team • 2026
+              </p>
+            </div>
+            <div class="footer-right">
+              <a href="/?view=utterances" class="slds-button slds-button_neutral slds-button_small">
+                <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+                  <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#textbox"></use>
+                </svg>
+                View Utterances
+              </a>
+              <a href="https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/datasets/8b3bfd1c-8b88-4d04-bddf-41857eeb48a8" target="_blank" rel="noopener noreferrer" class="slds-button slds-button_neutral slds-button_small">
+                <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+                  <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#settings"></use>
+                </svg>
+                View Langsmith Runs
+              </a>
+              <button class="slds-button slds-button_neutral slds-button_small" onclick={handleShowTutorial}>
+                <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+                  <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#info"></use>
+                </svg>
+                View Tutorial
+              </button>
+            </div>
+          </div>
+        </footer>
+      </template>
+    </template>
+  </div>
+</template>

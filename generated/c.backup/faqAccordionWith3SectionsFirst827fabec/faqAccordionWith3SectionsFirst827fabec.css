@@ -1,0 +1,164 @@
+/**
+ * FAQ Accordion Component Styles
+ * SLDS 2 Compliant - Uses design tokens and semantic color hooks
+ * Implements smooth transitions and proper visual hierarchy
+ */
+
+/* Accordion container - uses SLDS base styles */
+.slds-accordion {
+    /* Use semantic surface container colors for background */
+    background: var(--slds-g-color-surface-container-1, #ffffff);
+    border-radius: var(--slds-g-radius-border-1, 0.25rem);
+}
+
+/* Accordion section - individual FAQ item */
+.slds-accordion__section {
+    /* Border using semantic border color */
+    border-bottom: 1px solid var(--slds-g-color-border-1, #e5e5e5);
+}
+
+.slds-accordion__section:last-child {
+    border-bottom: none;
+}
+
+/* Accordion summary (header/button container) */
+.slds-accordion__summary {
+    /* Ensure full width for clickable area */
+    display: block;
+}
+
+/* Accordion header button */
+.slds-button_reset.slds-accordion__summary-action {
+    /* Layout */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    /* Spacing using SLDS spacing tokens */
+    padding: var(--slds-g-spacing-3, 0.75rem) var(--slds-g-spacing-4, 1rem);
+
+    /* Typography using SLDS font tokens */
+    font-family: var(--slds-g-font-family-base, 'Salesforce Sans', Arial, sans-serif);
+    font-size: var(--slds-g-font-size-base, 1rem);
+    font-weight: var(--slds-g-font-weight-5, 500);
+    line-height: var(--slds-g-font-lineheight-3, 1.5);
+
+    /* Colors using semantic hooks */
+    color: var(--slds-g-color-on-surface-3, #181818);
+    background: transparent;
+
+    /* Border and cursor */
+    border: none;
+    cursor: pointer;
+    text-align: left;
+
+    /* Transition for smooth interactions */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Hover state - using semantic accent colors */
+.slds-button_reset.slds-accordion__summary-action:hover {
+    background: var(--slds-g-color-surface-container-2, #f3f3f3);
+    color: var(--slds-g-color-accent-1, #0176d3);
+}
+
+/* Focus state - accessibility requirement */
+.slds-button_reset.slds-accordion__summary-action:focus {
+    /* Use accent color for focus indication */
+    outline: 2px solid var(--slds-g-color-accent-1, #0176d3);
+    outline-offset: 2px;
+    /* Ensure high contrast for accessibility */
+    box-shadow: 0 0 0 2px var(--slds-g-color-surface-container-1, #ffffff);
+}
+
+/* Active/pressed state */
+.slds-button_reset.slds-accordion__summary-action:active {
+    background: var(--slds-g-color-surface-container-3, #e5e5e5);
+}
+
+/* Accordion summary content (question text) */
+.slds-accordion__summary-content {
+    flex: 1;
+    margin-right: var(--slds-g-spacing-3, 0.75rem);
+}
+
+/* Chevron icon base styles */
+.slds-accordion__icon {
+    /* Smooth rotation transition */
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+/* Icon rotation when section is expanded */
+.slds-icon_rotate-90 {
+    transform: rotate(90deg);
+}
+
+/* Content wrapper for expand/collapse animation */
+.slds-accordion__content-wrapper {
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+/* Collapsed state */
+.slds-accordion__content-wrapper.slds-is-closed {
+    max-height: 0;
+    opacity: 0;
+}
+
+/* Expanded state */
+.slds-accordion__content-wrapper.slds-is-open {
+    max-height: 500px; /* Large enough for content */
+    opacity: 1;
+}
+
+/* Accordion content (answer text) */
+.slds-accordion__content {
+    /* Spacing using SLDS tokens */
+    padding: var(--slds-g-spacing-3, 0.75rem) var(--slds-g-spacing-4, 1rem);
+    padding-top: 0;
+
+    /* Typography */
+    font-family: var(--slds-g-font-family-base, 'Salesforce Sans', Arial, sans-serif);
+    font-size: var(--slds-g-font-size-base, 1rem);
+    font-weight: var(--slds-g-font-weight-4, 400);
+    line-height: var(--slds-g-font-lineheight-3, 1.5);
+
+    /* Color using semantic on-surface token */
+    color: var(--slds-g-color-on-surface-2, #3e3e3c);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .slds-button_reset.slds-accordion__summary-action {
+        padding: var(--slds-g-spacing-2, 0.5rem) var(--slds-g-spacing-3, 0.75rem);
+        font-size: 0.9375rem; /* 15px */
+    }
+
+    .slds-accordion__content {
+        padding: var(--slds-g-spacing-2, 0.5rem) var(--slds-g-spacing-3, 0.75rem);
+        padding-top: 0;
+        font-size: 0.875rem; /* 14px */
+    }
+}
+
+/* High contrast mode support for accessibility */
+@media (prefers-contrast: high) {
+    .slds-button_reset.slds-accordion__summary-action:focus {
+        outline-width: 3px;
+    }
+
+    .slds-accordion__section {
+        border-bottom-width: 2px;
+    }
+}
+
+/* Reduced motion support for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .slds-button_reset.slds-accordion__summary-action,
+    .slds-accordion__icon,
+    .slds-accordion__content-wrapper {
+        transition: none;
+    }
+}

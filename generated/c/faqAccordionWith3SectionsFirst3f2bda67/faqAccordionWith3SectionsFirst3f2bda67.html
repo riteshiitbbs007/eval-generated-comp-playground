@@ -1,0 +1,98 @@
+<template>
+    <div class="slds-m-around_medium">
+        <!-- FAQ Accordion with 3 sections, first expanded by default -->
+        <div class="slds-accordion">
+            <!-- Section 1: What is Salesforce? (Expanded by default) -->
+            <section class="slds-accordion__section slds-is-open">
+                <div class="slds-accordion__summary">
+                    <h3 class="slds-accordion__summary-heading">
+                        <button
+                            class="slds-button slds-button_reset slds-accordion__summary-action"
+                            aria-controls="faq-content-1"
+                            aria-expanded="true"
+                            onclick={handleToggleSection}
+                            data-section="section1"
+                            type="button">
+                            <lightning-icon
+                                icon-name="utility:switch"
+                                size="x-small"
+                                class="slds-accordion__summary-action-icon slds-button__icon slds-button__icon_left"></lightning-icon>
+                            <span class="slds-accordion__summary-content">What is Salesforce?</span>
+                        </button>
+                    </h3>
+                </div>
+                <div
+                    id="faq-content-1"
+                    class="slds-accordion__content"
+                    role="region"
+                    aria-labelledby="faq-section-1">
+                    <p>
+                        Salesforce is a cloud-based Customer Relationship Management (CRM) platform that helps businesses manage customer interactions, sales processes, marketing campaigns, and customer service operations. It provides a unified view of customer data and enables teams to work together more effectively to deliver exceptional customer experiences.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 2: How do I get started? -->
+            <section class="slds-accordion__section">
+                <div class="slds-accordion__summary">
+                    <h3 class="slds-accordion__summary-heading">
+                        <button
+                            class="slds-button slds-button_reset slds-accordion__summary-action"
+                            aria-controls="faq-content-2"
+                            aria-expanded="false"
+                            onclick={handleToggleSection}
+                            data-section="section2"
+                            type="button">
+                            <lightning-icon
+                                icon-name="utility:switch"
+                                size="x-small"
+                                class="slds-accordion__summary-action-icon slds-button__icon slds-button__icon_left"></lightning-icon>
+                            <span class="slds-accordion__summary-content">How do I get started?</span>
+                        </button>
+                    </h3>
+                </div>
+                <div
+                    id="faq-content-2"
+                    class="slds-accordion__content"
+                    role="region"
+                    aria-labelledby="faq-section-2"
+                    aria-hidden="true">
+                    <p>
+                        Getting started with Salesforce is easy! First, sign up for a free trial or developer edition account at salesforce.com. Next, complete the guided setup to configure your organization. Then, explore the Trailhead learning platform to build your skills through interactive tutorials and projects. Finally, start customizing Salesforce to match your business needs using the declarative tools and Lightning App Builder.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 3: What support is available? -->
+            <section class="slds-accordion__section">
+                <div class="slds-accordion__summary">
+                    <h3 class="slds-accordion__summary-heading">
+                        <button
+                            class="slds-button slds-button_reset slds-accordion__summary-action"
+                            aria-controls="faq-content-3"
+                            aria-expanded="false"
+                            onclick={handleToggleSection}
+                            data-section="section3"
+                            type="button">
+                            <lightning-icon
+                                icon-name="utility:switch"
+                                size="x-small"
+                                class="slds-accordion__summary-action-icon slds-button__icon slds-button__icon_left"></lightning-icon>
+                            <span class="slds-accordion__summary-content">What support is available?</span>
+                        </button>
+                    </h3>
+                </div>
+                <div
+                    id="faq-content-3"
+                    class="slds-accordion__content"
+                    role="region"
+                    aria-labelledby="faq-section-3"
+                    aria-hidden="true">
+                    <p>
+                        We offer comprehensive 24/7 customer support through multiple channels. Access our extensive Knowledge Base and Help documentation for self-service solutions. Join the vibrant Trailblazer Community to connect with other users and experts. Submit support cases through the Help & Training portal for technical assistance. Premium customers can access phone support and dedicated success managers for personalized guidance.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </div>
+</template>

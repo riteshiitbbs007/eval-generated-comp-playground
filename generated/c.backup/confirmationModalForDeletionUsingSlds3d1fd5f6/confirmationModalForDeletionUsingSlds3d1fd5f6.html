@@ -1,0 +1,71 @@
+<template>
+    <!-- Modal Backdrop - only shown when modal is visible -->
+    <template lwc:if={show}>
+        <div class="slds-backdrop slds-backdrop_open" onclick={handleBackdropClick}></div>
+
+        <!-- Modal Container -->
+        <section
+            role="dialog"
+            tabindex="-1"
+            aria-modal="true"
+            aria-labelledby="modal-heading"
+            aria-describedby="modal-content"
+            class="slds-modal slds-fade-in-open slds-modal_medium"
+            onkeydown={handleKeyDown}>
+
+            <div class="slds-modal__container">
+                <!-- Modal Header -->
+                <header class="slds-modal__header">
+                    <button
+                        class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close"
+                        aria-label="Close"
+                        onclick={handleCancel}
+                        data-element="close-button">
+                        <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                        </svg>
+                    </button>
+
+                    <div class="slds-modal__header-content">
+                        <div class="slds-media slds-media_center">
+                            <div class="slds-media__figure">
+                                <lightning-icon
+                                    icon-name="utility:warning"
+                                    variant="warning"
+                                    size="small"
+                                    alternative-text="Warning">
+                                </lightning-icon>
+                            </div>
+                            <div class="slds-media__body">
+                                <h2 id="modal-heading" class="slds-text-heading_medium">Confirm Delete</h2>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Modal Body -->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content">
+                    <p class="slds-text-body_regular">
+                        Are you sure you want to delete this item? This action cannot be undone.
+                    </p>
+                </div>
+
+                <!-- Modal Footer -->
+                <footer class="slds-modal__footer">
+                    <lightning-button
+                        label="Cancel"
+                        onclick={handleCancel}
+                        data-element="cancel-button">
+                    </lightning-button>
+                    <lightning-button
+                        label="Delete"
+                        variant="destructive"
+                        onclick={handleConfirm}
+                        data-element="delete-button">
+                    </lightning-button>
+                </footer>
+            </div>
+        </section>
+    </template>
+</template>

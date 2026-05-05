@@ -121,11 +121,42 @@
 }
 
 .component-card {
+  position: relative;
   transition: box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
   height: 100%;
   align-self: start;
+}
+
+.baseline-slds-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  z-index: 1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  background: #7f8de1;
+  color: white;
+}
+
+.skills-mode-badge {
+  position: absolute;
+  top: 2.75rem;
+  right: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  z-index: 1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  background: #9333ea;
+  color: white;
 }
 
 /* Override SLDS adjacent sibling margin that causes misalignment in grid */
@@ -213,7 +244,30 @@
 .component-header {
   display: flex;
   align-items: center;
-  gap: var(--lwc-spacingXxSmall, 0.5rem);
+  gap: 8px;
+}
+
+.component-header h2 {
+  flex: 1;
+  min-width: 0;
+}
+
+.warning-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: var(--lwc-colorBackgroundWarning, #ffeaa9);
+  border: 1px solid var(--lwc-colorBorderWarning, #fe9339);
+  color: var(--lwc-colorTextWarning, #514f4d);
+  border-radius: 50%;
+  flex-shrink: 0;
+  cursor: help;
+}
+
+.warning-badge .slds-icon {
+  fill: var(--lwc-colorTextWarning, #514f4d);
 }
 
 .note-badge {
@@ -403,6 +457,24 @@
 
 .variant-badge .slds-icon {
   fill: #0176d3;
+  flex-shrink: 0;
+}
+
+/* Model badge - AI model identifier */
+.model-badge {
+  background-color: #fdf6e3;
+  border: 1px solid #ffb75d;
+  color: #514f4d;
+  padding-left: 6px;
+}
+
+.model-badge:hover {
+  background-color: #ffecc2;
+  border-color: #fe9339;
+}
+
+.model-badge .slds-icon {
+  fill: #fe9339;
   flex-shrink: 0;
 }
 

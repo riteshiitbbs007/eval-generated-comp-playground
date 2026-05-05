@@ -1,0 +1,34 @@
+/**
+ * FAQ Accordion Styles
+ * Uses SLDS design tokens for theme-aware styling
+ */
+
+/* Card container styling */
+.slds-card {
+    background: var(--slds-g-color-surface-container-1);
+    border: 1px solid var(--slds-g-color-border-1);
+    border-radius: var(--slds-g-radius-border-1);
+    box-shadow: var(--slds-g-shadow-1);
+}
+
+/* Card header title styling */
+.slds-card__header-title {
+    color: var(--slds-g-color-on-surface-3);
+    font-weight: var(--slds-g-font-weight-7);
+    font-family: var(--slds-g-font-family-base);
+}
+
+/* Accordion section content text styling */
+.faq-accordion p {
+    color: var(--slds-g-color-on-surface-2);
+    font-family: var(--slds-g-font-family-base);
+    font-size: var(--slds-g-font-size-base);
+    font-weight: var(--slds-g-font-weight-4);
+    line-height: var(--slds-g-font-lineheight-3);
+    margin: var(--slds-g-spacing-2) 0;
+}
+
+/* Ensure proper spacing for accordion sections */
+.faq-accordion lightning-accordion-section {
+    margin-bottom: var(--slds-g-spacing-1);
+}

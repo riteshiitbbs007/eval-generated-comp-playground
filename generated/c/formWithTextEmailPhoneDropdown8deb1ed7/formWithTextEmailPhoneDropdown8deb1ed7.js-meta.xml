@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>A comprehensive contact information form component with text, email, phone, dropdown, checkboxes, and textarea fields. Features SLDS 2 compliant styling, form validation, accessibility support, and responsive layout.</description>
+    <isExposed>false</isExposed>
+    <masterLabel>Form With Text Email Phone Dropdown</masterLabel>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+</LightningComponentBundle>

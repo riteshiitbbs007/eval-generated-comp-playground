@@ -6,7 +6,7 @@
         <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
           <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#back"></use>
         </svg>
-        Back to Gallery
+        Back to Dashboard
       </a>
     </div>
 
@@ -100,6 +100,24 @@
                   <dd class="slds-dl__detail">{variant}</dd>
                 </template>
 
+                <!-- NEW: Model Information -->
+                <template if:true={hasModel}>
+                  <dt class="slds-dl__label">Model:</dt>
+                  <dd class="slds-dl__detail">
+                    <span class="slds-badge slds-badge_lightest">{modelDisplay}</span>
+                  </dd>
+                </template>
+
+                <!-- NEW: Test Configuration -->
+                <template if:true={hasTestConfig}>
+                  <template if:true={testConfig.csvUtteranceFilter}>
+                    <dt class="slds-dl__label">CSV Filter:</dt>
+                    <dd class="slds-dl__detail">
+                      <code>{testConfig.csvUtteranceFilter}</code>
+                    </dd>
+                  </template>
+                </template>
+
                 <!-- NEW: LangSmith Run Link -->
                 <template if:true={hasLangsmithUrl}>
                   <dt class="slds-dl__label">LangSmith Run:</dt>
@@ -119,6 +137,33 @@
               </dl>
             </div>
           </article>
+
+          <!-- Notes Card (if notes exist) -->
+          <template if:true={hasNotes}>
+            <article class="slds-card slds-m-bottom_medium">
+              <div class="slds-card__header slds-grid">
+                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                  <div class="slds-media__figure">
+                    <svg class="slds-icon slds-icon_small slds-icon-text-warning" aria-hidden="true">
+                      <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#warning"></use>
+                    </svg>
+                  </div>
+                  <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                      <span>Important Notes</span>
+                    </h2>
+                  </div>
+                </header>
+              </div>
+              <div class="slds-card__body slds-card__body_inner">
+                <ul class="slds-list_dotted">
+                  <template for:each={notes} for:item="note">
+                    <li key={note} class="slds-text-body_small">{note}</li>
+                  </template>
+                </ul>
+              </div>
+            </article>
+          </template>
 
           <!-- Scores Card -->
           <article class="slds-card slds-m-bottom_medium">
@@ -169,7 +214,7 @@
               <template if:true={hasErrorsByType}>
                 <div class="error-breakdown-detail">
                   <h3 class="slds-text-heading_small slds-m-bottom_small">
-                    Error Breakdown by Type
+                    Violations Breakdown by Type
                   </h3>
                   <ul class="slds-list_vertical slds-has-dividers_top-space">
                     <template for:each={errorsByType} for:item="error">
@@ -273,7 +318,7 @@
         <!-- Source Code Viewer Section (Full Width) -->
         <div class="slds-col slds-size_1-of-1 slds-m-top_medium">
           <article class="slds-card">
-            <div class="slds-card__header slds-grid">
+            <div class="slds-card__header slds-grid slds-grid_align-spread">
               <header class="slds-media slds-media_center slds-has-flexi-truncate">
                 <div class="slds-media__body">
                   <h2 class="slds-card__header-title">
@@ -281,6 +326,17 @@
                   </h2>
                 </div>
               </header>
+              <div class="slds-no-flex">
+                <button
+                  class="slds-button slds-button_neutral slds-button_icon-border"
+                  onclick={handleCopyCode}
+                  title="Copy code">
+                  <svg class="slds-button__icon" aria-hidden="true">
+                    <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#copy"></use>
+                  </svg>
+                  <span class="slds-assistive-text">Copy code</span>
+                </button>
+              </div>
             </div>
             <div class="slds-card__body">
               <!-- Code Tabs -->
@@ -317,6 +373,17 @@
                       data-tab="js"
                       onclick={handleCodeTabChange}>
                       JS
+                    </a>
+                  </li>
+                  <li class={xmlTabClass} role="presentation">
+                    <a
+                      class="slds-tabs_default__link"
+                      role="tab"
+                      tabindex="0"
+                      aria-selected={isXmlTabActive}
+                      data-tab="xml"
+                      onclick={handleCodeTabChange}>
+                      XML
                     </a>
                   </li>
                 </ul>

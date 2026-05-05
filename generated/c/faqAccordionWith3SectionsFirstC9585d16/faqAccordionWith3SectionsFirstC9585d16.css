@@ -1,0 +1,15 @@
+/**
+ * FAQ Accordion Component Styles
+ * Minimal styling required as lightning-accordion provides SLDS-compliant styles
+ */
+
+/* Ensure FAQ accordion has proper spacing and readability */
+.faq-accordion {
+    /* Lightning accordion handles all internal styling */
+    /* Additional customization can be added here if needed */
+}
+
+/* Ensure answer text has proper line height for readability */
+.slds-text-body_regular {
+    line-height: 1.5;
+}

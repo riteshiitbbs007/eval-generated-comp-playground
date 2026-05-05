@@ -1,0 +1,46 @@
+{
+  "folderName": "pageHeaderWithTitleAndAction-C06-Simple-20260403",
+  "componentName": "pageHeaderWithTitleAndAction8d363961",
+  "csvId": "C06",
+  "variant": "Simple",
+  "timestamp": "2026-04-03T09:24:34.571Z",
+  "utterance": "Create page header with title and action buttons",
+  "tier": "Tier 2",
+  "complexity": "Intermediate",
+  "scores": {
+    "slds_linter": 0.87,
+    "slds_quality": 0.4,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.6,
+    "overall_readiness_label": "Prototype"
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 5,
+    "notes": 0
+  },
+  "utteranceId": "C06",
+  "errorsByType": {
+    "slds/no-slds-class-overrides": 4,
+    "slds/no-hardcoded-values-slds2": 1
+  },
+  "sldsToolsEnabled": false,
+  "testMode": "baseline",
+  "baseline_slds": true,
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/4511a871-6284-47fc-9e4a-b2a40f1c8980/r/019d52a6-c614-7000-8000-050116ac31c6",
+  "langsmithRunId": "019d52a6-c614-7000-8000-050116ac31c6",
+  "langsmithProjectName": "notable-touch-80",
+  "langsmithTraceId": "019d52a6-c614-7000-8000-050116ac31c6",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C06-C09:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/pageHeaderWithTitleAndAction8d363961/screenshots/desktop.png"
+  }
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>false</isExposed>
+    <masterLabel>Page Header With Account Icon</masterLabel>
+    <description>A page header component displaying an account icon, title, subtitle, and action buttons (Edit, Delete, Clone). Follows SLDS design system patterns.</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage">
+            <property name="title" type="String" default="John Smith" label="Title" description="The title to display in the page header"/>
+            <property name="subtitle" type="String" default="Account • Customer" label="Subtitle" description="The subtitle to display below the title"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

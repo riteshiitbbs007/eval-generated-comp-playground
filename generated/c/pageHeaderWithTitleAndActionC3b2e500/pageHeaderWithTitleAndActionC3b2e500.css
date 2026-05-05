@@ -1,0 +1,129 @@
+/**
+ * SLDS 2 Compliant Styling for Page Header Component
+ * Uses SLDS design tokens (styling hooks) for theme-aware styling
+ */
+
+/* Page Header Container */
+.slds-page-header {
+    /* Use semantic surface colors for background */
+    background: var(--slds-g-color-surface-container-1);
+    color: var(--slds-g-color-on-surface-2);
+    
+    /* Apply consistent spacing using numbered spacing hooks */
+    padding: var(--slds-g-spacing-4) var(--slds-g-spacing-5);
+    
+    /* Add subtle border for visual separation */
+    border-bottom: 1px solid var(--slds-g-color-border-1);
+    
+    /* Ensure proper border radius */
+    border-radius: var(--slds-g-radius-border-1);
+}
+
+/* Page Header Row Layout */
+.slds-page-header__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--slds-g-spacing-4);
+    flex-wrap: wrap;
+}
+
+/* Title Column */
+.slds-page-header__col-title {
+    flex: 1 1 auto;
+    min-width: 0; /* Allow text truncation */
+}
+
+/* Actions Column */
+.slds-page-header__col-actions {
+    flex: 0 0 auto;
+}
+
+/* Media Object for Icon + Title Layout */
+.slds-media {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--slds-g-spacing-3);
+}
+
+.slds-media__figure {
+    flex: 0 0 auto;
+}
+
+.slds-media__body {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+/* Title Styling */
+.slds-page-header__title {
+    /* Use typography design tokens */
+    font-family: var(--slds-g-font-family-base);
+    font-size: 1.5rem;
+    font-weight: var(--slds-g-font-weight-7);
+    line-height: var(--slds-g-font-lineheight-2);
+    
+    /* High emphasis text color */
+    color: var(--slds-g-color-on-surface-3);
+    
+    /* Enable text truncation */
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Subtitle/Metadata Styling */
+.slds-page-header__name-meta {
+    /* Lower emphasis for secondary text */
+    font-family: var(--slds-g-font-family-base);
+    font-size: var(--slds-g-font-size-base);
+    font-weight: var(--slds-g-font-weight-4);
+    line-height: var(--slds-g-font-lineheight-3);
+    
+    /* De-emphasized text color */
+    color: var(--slds-g-color-on-surface-1);
+    
+    /* Add spacing above subtitle */
+    margin-top: var(--slds-g-spacing-1);
+}
+
+/* Action Controls Container */
+.slds-page-header__controls {
+    display: flex;
+    align-items: center;
+    gap: var(--slds-g-spacing-2);
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 48em) {
+    .slds-page-header__row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .slds-page-header__col-actions {
+        width: 100%;
+    }
+    
+    .slds-page-header__controls {
+        width: 100%;
+        flex-direction: column;
+    }
+    
+    .slds-page-header__control {
+        width: 100%;
+    }
+}
+
+/* Focus State for Accessibility */
+.slds-page-header:focus-within {
+    /* Enhance focus visibility using accent colors */
+    outline: 2px solid var(--slds-g-color-accent-1);
+    outline-offset: 2px;
+}
+
+/* Ensure proper spacing between action buttons */
+.slds-m-left_x-small {
+    margin-left: var(--slds-g-spacing-2);
+}

@@ -1,0 +1,109 @@
+/**
+ * Page Header with Account Icon - SLDS 2 Compliant Styles
+ *
+ * This stylesheet uses SLDS styling hooks for all visual properties:
+ * - Semantic color hooks (--slds-g-color-*)
+ * - Numbered spacing hooks (--slds-g-spacing-*)
+ * - Typography hooks (--slds-g-font-*)
+ * - No hard-coded values
+ */
+
+/* Page Header Container */
+.slds-page-header {
+    /* Use SLDS styling hooks for background and padding */
+    background: var(--slds-g-color-surface-container-1);
+    padding: var(--slds-g-spacing-4);
+}
+
+/* Page Header Row - Flex container for layout */
+.slds-page-header__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--slds-g-spacing-4);
+}
+
+/* Title Column - Left and center section */
+.slds-page-header__col-title {
+    flex: 1;
+    min-width: 0; /* Allows text truncation if needed */
+}
+
+/* Actions Column - Right section */
+.slds-page-header__col-actions {
+    flex-shrink: 0; /* Prevents buttons from shrinking */
+}
+
+/* Media Object for Icon and Text Layout */
+.slds-media {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--slds-g-spacing-3);
+}
+
+/* Icon Figure Container */
+.slds-media__figure {
+    flex-shrink: 0;
+}
+
+/* Text Body Container */
+.slds-media__body {
+    flex: 1;
+    min-width: 0; /* Allows text truncation if needed */
+}
+
+/* Page Header Name Container */
+.slds-page-header__name {
+    margin-bottom: var(--slds-g-spacing-1);
+}
+
+/* Page Header Title */
+.slds-page-header__title {
+    /* Use SLDS typography hooks for heading */
+    font-family: var(--slds-g-font-family-base);
+    font-size: 1.25rem; /* SLDS heading size - 20px */
+    font-weight: var(--slds-g-font-weight-7); /* Bold weight */
+    line-height: var(--slds-g-font-lineheight-2);
+    color: var(--slds-g-color-on-surface-3); /* Highest emphasis */
+    margin: 0;
+}
+
+/* Page Header Subtitle/Meta */
+.slds-page-header__name-meta {
+    /* Use SLDS typography hooks for smaller text */
+    font-family: var(--slds-g-font-family-base);
+    font-size: 0.875rem; /* Smaller text - 14px */
+    font-weight: var(--slds-g-font-weight-4); /* Regular weight */
+    line-height: var(--slds-g-font-lineheight-3);
+    color: var(--slds-g-color-on-surface-2); /* Medium emphasis - neutral color */
+    margin: 0;
+    margin-top: var(--slds-g-spacing-1);
+}
+
+/* Button Group Container */
+.slds-button-group {
+    display: flex;
+    gap: var(--slds-g-spacing-2); /* Spacing between buttons */
+}
+
+/* Border Bottom Utility */
+.slds-border_bottom {
+    border-bottom: 1px solid var(--slds-g-color-border-1);
+}
+
+/* Responsive Design - Mobile/Tablet */
+@media (max-width: 768px) {
+    .slds-page-header__row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .slds-page-header__col-actions {
+        width: 100%;
+    }
+
+    .slds-button-group {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+}

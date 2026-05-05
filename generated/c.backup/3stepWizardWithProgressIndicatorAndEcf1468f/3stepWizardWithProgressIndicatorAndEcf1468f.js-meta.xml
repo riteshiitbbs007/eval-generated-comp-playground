@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Three Step Wizard</masterLabel>
+    <description>A wizard component that guides users through a 3-step process with visual progress indicator and navigation controls. Features include step tracking, Back/Next/Finish buttons, and SLDS 2-compliant design.</description>
+
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__HomePage,lightning__RecordPage,lightningCommunity__Page">
+            <property name="showStepNumbers" type="Boolean" default="false" label="Show Step Numbers"
+                      description="Display step numbers in the progress indicator"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

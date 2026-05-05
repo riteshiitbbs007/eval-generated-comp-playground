@@ -1,0 +1,77 @@
+<template>
+    <!-- Success Alert -->
+    <template lwc:if={showSuccessAlert}>
+        <div class="slds-notify slds-notify_alert slds-theme_success slds-m-bottom_small slds-border_radius" role="alert">
+            <span class="slds-assistive-text">success</span>
+            <span class="slds-icon_container slds-icon-utility-success slds-m-right_small" title="Success">
+                <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#success"></use>
+                </svg>
+            </span>
+            <h2 class="slds-text-heading_small">Operation completed successfully!</h2>
+            <button class="slds-button slds-button_icon slds-notify__close" title="Close" onclick={handleCloseSuccess}>
+                <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                </svg>
+                <span class="slds-assistive-text">Close</span>
+            </button>
+        </div>
+    </template>
+
+    <!-- Error Alert -->
+    <template lwc:if={showErrorAlert}>
+        <div class="slds-notify slds-notify_alert slds-theme_error slds-m-bottom_small slds-border_radius" role="alert">
+            <span class="slds-assistive-text">error</span>
+            <span class="slds-icon_container slds-icon-utility-error slds-m-right_small" title="Error">
+                <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#error"></use>
+                </svg>
+            </span>
+            <h2 class="slds-text-heading_small">An error has occurred. Please try again.</h2>
+            <button class="slds-button slds-button_icon slds-notify__close" title="Close" onclick={handleCloseError}>
+                <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                </svg>
+                <span class="slds-assistive-text">Close</span>
+            </button>
+        </div>
+    </template>
+
+    <!-- Warning Alert -->
+    <template lwc:if={showWarningAlert}>
+        <div class="slds-notify slds-notify_alert slds-theme_warning slds-m-bottom_small slds-border_radius" role="alert">
+            <span class="slds-assistive-text">warning</span>
+            <span class="slds-icon_container slds-icon-utility-warning slds-m-right_small" title="Warning">
+                <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#warning"></use>
+                </svg>
+            </span>
+            <h2 class="slds-text-heading_small">Please review the following items before proceeding.</h2>
+            <button class="slds-button slds-button_icon slds-notify__close" title="Close" onclick={handleCloseWarning}>
+                <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                </svg>
+                <span class="slds-assistive-text">Close</span>
+            </button>
+        </div>
+    </template>
+
+    <!-- Info Alert -->
+    <template lwc:if={showInfoAlert}>
+        <div class="slds-notify slds-notify_alert slds-theme_info slds-m-bottom_small slds-border_radius" role="alert">
+            <span class="slds-assistive-text">info</span>
+            <span class="slds-icon_container slds-icon-utility-info slds-m-right_small" title="Info">
+                <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#info"></use>
+                </svg>
+            </span>
+            <h2 class="slds-text-heading_small">Here is some important information for you.</h2>
+            <button class="slds-button slds-button_icon slds-notify__close" title="Close" onclick={handleCloseInfo}>
+                <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                </svg>
+                <span class="slds-assistive-text">Close</span>
+            </button>
+        </div>
+    </template>
+</template>

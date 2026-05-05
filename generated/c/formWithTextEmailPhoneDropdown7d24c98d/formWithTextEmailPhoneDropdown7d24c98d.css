@@ -1,0 +1,13 @@
+/**
+ * Styles for FormWithTextEmailPhoneDropdown Component
+ * Uses SLDS spacing utilities and follows design guidelines
+ */
+
+/* Ensure consistent spacing between form elements */
+lightning-input,
+lightning-combobox,
+lightning-textarea,
+fieldset {
+    display: block;
+    margin-bottom: 1rem;
+}

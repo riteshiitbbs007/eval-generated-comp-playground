@@ -1,0 +1,83 @@
+<template>
+  <div class="metrics-overview">
+    <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+      Component Quality Overview
+    </h2>
+
+    <!-- Quality Gate Cards -->
+    <div class="slds-grid slds-gutters slds-wrap">
+      <!-- Production-Ready -->
+      <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+        <div class="metric-card metric-card-success slds-box" onclick={filterProduction}>
+          <div class="metric-icon">
+            <lightning-icon icon-name={productionIcon} alternative-text={productionLabel} size="large"></lightning-icon>
+          </div>
+          <div class="metric-content">
+            <div class="metric-value">{productionReadyCount}</div>
+            <div class="metric-label">{productionLabel}</div>
+            <div class="metric-percentage">{productionReadyPercent}%</div>
+            <div class="metric-criteria">{productionCriteria}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prototype -->
+      <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+        <div class="metric-card metric-card-info slds-box" onclick={filterPrototype}>
+          <div class="metric-icon">
+            <lightning-icon icon-name={prototypeIcon} alternative-text={prototypeLabel} size="large"></lightning-icon>
+          </div>
+          <div class="metric-content">
+            <div class="metric-value">{prototypeCount}</div>
+            <div class="metric-label">{prototypeLabel}</div>
+            <div class="metric-percentage">{prototypePercent}%</div>
+            <div class="metric-criteria">{prototypeCriteria}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Draft -->
+      <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+        <div class="metric-card metric-card-warning slds-box" onclick={filterDraft}>
+          <div class="metric-icon">
+            <lightning-icon icon-name={draftIcon} alternative-text={draftLabel} size="large"></lightning-icon>
+          </div>
+          <div class="metric-content">
+            <div class="metric-value">{draftCount}</div>
+            <div class="metric-label">{draftLabel}</div>
+            <div class="metric-percentage">{draftPercent}%</div>
+            <div class="metric-criteria">{draftCriteria}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Summary Stats -->
+    <div class="slds-grid slds-gutters slds-wrap slds-m-top_medium">
+      <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4">
+        <div class="summary-stat slds-box slds-text-align_center">
+          <div class="stat-value">{averageScore}</div>
+          <div class="stat-label">Avg Score</div>
+        </div>
+      </div>
+      <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4">
+        <div class="summary-stat slds-box slds-text-align_center">
+          <div class="stat-value">{sldsCompliance}%</div>
+          <div class="stat-label">SLDS Compliance</div>
+        </div>
+      </div>
+      <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4">
+        <div class="summary-stat slds-box slds-text-align_center">
+          <div class="stat-value">{avgViolations}</div>
+          <div class="stat-label">Avg Violations</div>
+        </div>
+      </div>
+      <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4">
+        <div class="summary-stat slds-box slds-text-align_center">
+          <div class="stat-value">{totalComponents}</div>
+          <div class="stat-label">Total Components</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

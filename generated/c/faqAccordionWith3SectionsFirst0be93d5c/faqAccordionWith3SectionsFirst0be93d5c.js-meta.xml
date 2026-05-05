@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <!--
+        FAQ Accordion Component Metadata
+
+        Description: A Lightning Web Component that displays a Frequently Asked Questions
+        section using an accessible accordion pattern with 3 sections. The first section
+        is expanded by default, while the other two sections are collapsed.
+
+        Features:
+        - 3 FAQ sections in accordion format
+        - First section expanded by default
+        - Mutually exclusive expansion (only one section open at a time)
+        - Full keyboard navigation support
+        - WCAG 2.1 AA compliant
+        - Uses Lightning Base Component for best practices
+    -->
+
+    <apiVersion>62.0</apiVersion>
+
+    <!--
+        isExposed: false
+        Component is not exposed globally as it contains specific FAQ content.
+        This component is designed for internal use or to be composed into other components.
+        To make it available in App Builder, change isExposed to true and add appropriate targets.
+    -->
+    <isExposed>false</isExposed>
+
+    <!--
+        Targets: Define where this component can be used
+        Currently no targets specified as component is not exposed.
+
+        Available targets when exposed:
+        - lightning__AppPage: Lightning App Builder pages
+        - lightning__HomePage: Home pages
+        - lightning__RecordPage: Record pages
+        - lightningCommunity__Page: Experience Cloud pages
+        - lightningCommunity__Default: Experience Cloud default
+    -->
+
+    <!--
+        Properties: Public API properties that can be configured
+
+        Note: The allowMultipleSections property is included but defaults to false
+        to maintain mutually exclusive accordion behavior as specified in the PRD.
+    -->
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__HomePage,lightning__RecordPage">
+            <!--
+                allowMultipleSections Property
+                Type: Boolean
+                Default: false
+                Description: Controls whether multiple accordion sections can be open simultaneously.
+                When false (default), only one section can be expanded at a time (mutually exclusive).
+                When true, multiple sections can be expanded simultaneously.
+            -->
+            <property
+                name="allowMultipleSections"
+                type="Boolean"
+                default="false"
+                label="Allow Multiple Sections Open"
+                description="Allow multiple FAQ sections to be expanded at the same time. Default is false for mutually exclusive expansion."
+            />
+        </targetConfig>
+    </targetConfigs>
+
+    <!--
+        Metadata Standards:
+        - Follows Salesforce LightningComponentBundle schema
+        - Uses apiVersion 62.0 (Winter '25)
+        - Component is self-contained with no external dependencies
+        - Accessibility compliant (WCAG 2.1 AA)
+    -->
+</LightningComponentBundle>

@@ -18,18 +18,30 @@
               </div>
             </div>
             <div class="slds-page-header__col-actions">
-              <div class="slds-form-element">
-                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
-                  <svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
-                    <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#search"></use>
-                  </svg>
-                  <input
-                    type="text"
-                    class="slds-input"
-                    placeholder="Search components..."
-                    value={searchTerm}
-                    oninput={handleSearch}
-                  />
+              <div class="slds-grid slds-gutters_x-small">
+                <div class="slds-col">
+                  <a href="/?view=dashboard" class="slds-button slds-button_neutral">
+                    <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+                      <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#metrics"></use>
+                    </svg>
+                    Dashboard
+                  </a>
+                </div>
+                <div class="slds-col">
+                  <div class="slds-form-element">
+                    <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                      <svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
+                        <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#search"></use>
+                      </svg>
+                      <input
+                        type="text"
+                        class="slds-input"
+                        placeholder="Search components..."
+                        value={searchTerm}
+                        oninput={handleSearch}
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -85,9 +97,30 @@
               <div class="gallery-grid slds-m-top_small">
                 <template for:each={group.components} for:item="component">
                   <article key={component.componentName} class="slds-card component-card">
+                    <!-- Baseline SLDS Badge -->
+                    <template if:true={component.hasBaselineSlds}>
+                      <div class="baseline-slds-badge">
+                        {component.baselineSldsLabel}
+                      </div>
+                    </template>
+
+                    <!-- Skills Mode Badge -->
+                    <template if:true={component.hasSkillsMode}>
+                      <div class="skills-mode-badge">
+                        {component.skillsModeLabel}
+                      </div>
+                    </template>
+
                     <!-- Component info -->
                     <div class="slds-card__body slds-card__body_inner slds-p-around_small">
                       <div class="component-header slds-m-bottom_xx-small">
+                        <template if:true={component.hasMetadataNotes}>
+                          <span class="warning-badge" title="Component has important notes - click View Details to read">
+                            <svg class="slds-icon slds-icon_xx-small" aria-hidden="true">
+                              <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#warning"></use>
+                            </svg>
+                          </span>
+                        </template>
                         <h2 class="slds-text-heading_small slds-truncate" title={component.displayName}>
                           {component.displayName}
                         </h2>
@@ -109,7 +142,7 @@
                         • {component.formattedDate}
                       </div>
 
-                      <!-- Utterance ID and Variant badges -->
+                      <!-- Utterance ID, Variant, and Model badges -->
                       <template if:true={component.hasMetadataBadges}>
                         <div class="metadata-badges slds-m-bottom_small">
                           <template if:true={component.utteranceId}>
@@ -123,6 +156,14 @@
                                 <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#layers"></use>
                               </svg>
                               <span class="metadata-badge-text">{component.variant}</span>
+                            </span>
+                          </template>
+                          <template if:true={component.model}>
+                            <span class="metadata-badge model-badge" title="AI Model">
+                              <svg class="slds-icon slds-icon_xx-small" aria-hidden="true">
+                                <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#einstein"></use>
+                              </svg>
+                              <span class="metadata-badge-text">{component.model}</span>
                             </span>
                           </template>
                         </div>
@@ -172,7 +213,7 @@
                               </template>
                             </svg>
                             <span class="slds-text-body_small slds-text-color_weak">
-                              {component.totalErrorBreakdown} errors by type
+                              {component.totalErrorBreakdown} violations by type
                             </span>
                           </button>
 
@@ -241,6 +282,12 @@
               <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#textbox"></use>
             </svg>
             View Utterances
+          </a>
+          <a href="https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/datasets/8b3bfd1c-8b88-4d04-bddf-41857eeb48a8" target="_blank" rel="noopener noreferrer" class="slds-button slds-button_neutral slds-button_small">
+            <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+              <use xlink:href="/public/slds/icons/utility-sprite/svg/symbols.svg#settings"></use>
+            </svg>
+            View Langsmith Runs
           </a>
           <button class="slds-button slds-button_neutral slds-button_small" onclick={handleShowOnboarding}>
             <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">

@@ -1,0 +1,117 @@
+<template>
+    <lightning-card title="Contact Information Form" icon-name="standard:contact">
+        <div class="slds-p-around_medium">
+            <!-- Success Message -->
+            <template lwc:if={showSuccessMessage}>
+                <div class="slds-scoped-notification slds-media slds-media_center slds-theme_success slds-m-bottom_medium" role="status">
+                    <div class="slds-media__figure">
+                        <lightning-icon icon-name="utility:success" alternative-text="Success" size="small" variant="inverse"></lightning-icon>
+                    </div>
+                    <div class="slds-media__body">
+                        <p>Form submitted successfully!</p>
+                    </div>
+                </div>
+            </template>
+
+            <!-- Form Container -->
+            <form class="slds-form" onsubmit={handleSubmit}>
+                <!-- Form Layout Grid -->
+                <div class="slds-grid slds-wrap slds-gutters">
+                    <!-- Full Name Field -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-input
+                            name="fullName"
+                            label="Full Name"
+                            value={fullName}
+                            onchange={handleInputChange}
+                            required
+                            placeholder="Enter your full name"
+                            aria-describedby="full-name-help"
+                        ></lightning-input>
+                    </div>
+
+                    <!-- Email Field -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-input
+                            name="email"
+                            label="Email Address"
+                            type="email"
+                            value={email}
+                            onchange={handleInputChange}
+                            required
+                            placeholder="name@example.com"
+                            aria-describedby="email-help"
+                        ></lightning-input>
+                    </div>
+
+                    <!-- Phone Field -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-input
+                            name="phone"
+                            label="Phone Number"
+                            type="tel"
+                            value={phone}
+                            onchange={handleInputChange}
+                            placeholder="(555) 123-4567"
+                            aria-describedby="phone-help"
+                        ></lightning-input>
+                    </div>
+
+                    <!-- Country Dropdown -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-combobox
+                            name="country"
+                            label="Country"
+                            value={country}
+                            placeholder="Select a country"
+                            options={countryOptions}
+                            onchange={handleInputChange}
+                            aria-describedby="country-help"
+                        ></lightning-combobox>
+                    </div>
+
+                    <!-- Interests Checkboxes -->
+                    <div class="slds-col slds-size_1-of-1">
+                        <lightning-checkbox-group
+                            name="interests"
+                            label="Interests"
+                            options={interestOptions}
+                            value={interests}
+                            onchange={handleCheckboxChange}
+                            aria-describedby="interests-help"
+                        ></lightning-checkbox-group>
+                    </div>
+
+                    <!-- Comments Textarea -->
+                    <div class="slds-col slds-size_1-of-1">
+                        <lightning-textarea
+                            name="comments"
+                            label="Comments"
+                            value={comments}
+                            onchange={handleInputChange}
+                            placeholder="Enter your comments or message here"
+                            max-length="500"
+                            aria-describedby="comments-help"
+                        ></lightning-textarea>
+                    </div>
+                </div>
+
+                <!-- Form Actions -->
+                <div class="slds-m-top_medium slds-text-align_right">
+                    <lightning-button
+                        label="Reset"
+                        onclick={handleReset}
+                        class="slds-m-right_small"
+                        aria-label="Reset form"
+                    ></lightning-button>
+                    <lightning-button
+                        variant="brand"
+                        type="submit"
+                        label="Submit"
+                        aria-label="Submit form"
+                    ></lightning-button>
+                </div>
+            </form>
+        </div>
+    </lightning-card>
+</template>

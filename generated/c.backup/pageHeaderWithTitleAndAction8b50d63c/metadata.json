@@ -1,0 +1,44 @@
+{
+  "folderName": "pageHeaderWithTitleAndAction-C06-Simple-20260311",
+  "componentName": "pageHeaderWithTitleAndAction8b50d63c",
+  "csvId": "C06",
+  "variant": "Simple",
+  "timestamp": "2026-03-11T06:29:37.224Z",
+  "utterance": "Create page header with title and action buttons",
+  "tier": "Tier 2",
+  "complexity": "Intermediate",
+  "scores": {
+    "slds_linter": 0.646,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.73,
+    "overall_readiness_label": "Prototype"
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 31,
+    "notes": 0
+  },
+  "utteranceId": "C06",
+  "errorsByType": {
+    "slds/no-slds-class-overrides": 15,
+    "slds/no-slds-var-without-fallback": 11,
+    "slds/no-hardcoded-values-slds2": 5
+  },
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/26763d5d-be34-447a-9be4-91798c005d1a/r/019cdb93-64f0-7000-8000-04a5f22c1547",
+  "langsmithRunId": "019cdb93-64f0-7000-8000-04a5f22c1547",
+  "langsmithProjectName": "dependable-manager-62",
+  "langsmithTraceId": "019cdb93-64f0-7000-8000-04a5f22c1547",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C06-C10:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/pageHeaderWithTitleAndAction8b50d63c/screenshots/desktop.png"
+  }
+}

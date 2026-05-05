@@ -1,0 +1,15 @@
+/**
+ * Primary Button with Save Icon Styles
+ * Uses SLDS styling hooks for theme-aware, accessible styling
+ */
+
+.save-button {
+    /* Spacing using SLDS hooks */
+    margin: var(--slds-g-spacing-2);
+}
+
+/* Focus state enhancement for accessibility */
+.save-button:focus-visible {
+    outline: 2px solid var(--slds-g-color-accent-1);
+    outline-offset: var(--slds-g-spacing-1);
+}

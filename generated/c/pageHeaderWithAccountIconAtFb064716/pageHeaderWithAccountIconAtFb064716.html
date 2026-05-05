@@ -1,0 +1,61 @@
+<template>
+    <!-- Page Header Container with SLDS grid and bottom border -->
+    <div class="slds-page-header slds-border_bottom">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <!-- Icon Area (Left Section) -->
+                    <div class="slds-media__figure">
+                        <lightning-icon
+                            icon-name="standard:account"
+                            alternative-text="Account"
+                            size="medium">
+                        </lightning-icon>
+                    </div>
+
+                    <!-- Text Content (Center Section) -->
+                    <div class="slds-media__body">
+                        <!-- Primary Title with SLDS heading -->
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span class="slds-page-header__title">John Smith</span>
+                                </h1>
+                            </div>
+                        </div>
+                        <!-- Subtitle with smaller text and neutral colors -->
+                        <p class="slds-page-header__name-meta">Account • Customer</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons (Right Section) -->
+            <div class="slds-page-header__col-actions">
+                <div class="slds-page-header__controls">
+                    <div class="slds-button-group" role="group">
+                        <!-- Edit Button (Neutral Variant) -->
+                        <lightning-button
+                            label="Edit"
+                            variant="neutral"
+                            onclick={handleEdit}>
+                        </lightning-button>
+
+                        <!-- Delete Button (Destructive Variant) -->
+                        <lightning-button
+                            label="Delete"
+                            variant="destructive"
+                            onclick={handleDelete}>
+                        </lightning-button>
+
+                        <!-- Clone Button (Neutral Variant) -->
+                        <lightning-button
+                            label="Clone"
+                            variant="neutral"
+                            onclick={handleClone}>
+                        </lightning-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

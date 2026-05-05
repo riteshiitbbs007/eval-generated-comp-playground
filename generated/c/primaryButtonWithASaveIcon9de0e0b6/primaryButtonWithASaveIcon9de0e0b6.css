@@ -1,0 +1,26 @@
+/**
+ * Primary Button with Save Icon - Styles
+ * 
+ * Minimal custom styling since lightning-button handles all SLDS 2 styling.
+ * This file provides a hook for future customizations if needed.
+ * 
+ * Note: Do not override .slds-* classes directly. Use custom classes with proper prefixes.
+ */
+
+/**
+ * Custom wrapper class for potential future styling needs
+ * Currently no custom styles needed as lightning-button provides:
+ * - Brand color styling via variant="brand"
+ * - Proper focus states and keyboard accessibility
+ * - Icon positioning and spacing
+ * - Hover, active, and disabled states
+ * - Responsive behavior
+ */
+.c-primary-button {
+    /* 
+     * Reserved for future custom styling needs
+     * Example future use cases:
+     * - Custom width: width: var(--slds-g-sizing-width-large, 100%);
+     * - Custom margin: margin: var(--slds-g-spacing-4, 1rem);
+     */
+}

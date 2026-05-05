@@ -1,0 +1,125 @@
+<template>
+    <lightning-card title="Product Catalog" icon-name="standard:products">
+        <div class="slds-p-around_small">
+            <!-- Table container with responsive wrapper -->
+            <div class="slds-scrollable_x">
+                <table class="slds-table slds-table_bordered slds-table_col-bordered slds-table_fixed-layout" role="grid" aria-label="Product catalog table">
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <!-- Product Name Column Header -->
+                            <th scope="col" class="slds-is-sortable" style="width: 35%;">
+                                <button
+                                    class="slds-button slds-button_reset slds-th__action slds-text-link_reset"
+                                    onclick={handleSortByName}
+                                    aria-label={nameSortAriaLabel}
+                                    title="Sort by Product Name"
+                                >
+                                    <span class="slds-assistive-text">Sort by: </span>
+                                    <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                        <span class="slds-truncate" title="Product Name">Product Name</span>
+                                        <span class="slds-icon_container slds-icon-utility-arrowdown">
+                                            <lightning-icon
+                                                if:true={showNameSortIcon}
+                                                icon-name={nameSortIcon}
+                                                size="xx-small"
+                                                alternative-text={nameSortIconAltText}
+                                            ></lightning-icon>
+                                        </span>
+                                    </div>
+                                </button>
+                            </th>
+
+                            <!-- Price Column Header -->
+                            <th scope="col" class="slds-is-sortable" style="width: 20%;">
+                                <button
+                                    class="slds-button slds-button_reset slds-th__action slds-text-link_reset"
+                                    onclick={handleSortByPrice}
+                                    aria-label={priceSortAriaLabel}
+                                    title="Sort by Price"
+                                >
+                                    <span class="slds-assistive-text">Sort by: </span>
+                                    <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                        <span class="slds-truncate" title="Price">Price</span>
+                                        <span class="slds-icon_container slds-icon-utility-arrowdown">
+                                            <lightning-icon
+                                                if:true={showPriceSortIcon}
+                                                icon-name={priceSortIcon}
+                                                size="xx-small"
+                                                alternative-text={priceSortIconAltText}
+                                            ></lightning-icon>
+                                        </span>
+                                    </div>
+                                </button>
+                            </th>
+
+                            <!-- Category Column Header -->
+                            <th scope="col" class="slds-is-sortable" style="width: 25%;">
+                                <button
+                                    class="slds-button slds-button_reset slds-th__action slds-text-link_reset"
+                                    onclick={handleSortByCategory}
+                                    aria-label={categorySortAriaLabel}
+                                    title="Sort by Category"
+                                >
+                                    <span class="slds-assistive-text">Sort by: </span>
+                                    <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                        <span class="slds-truncate" title="Category">Category</span>
+                                        <span class="slds-icon_container slds-icon-utility-arrowdown">
+                                            <lightning-icon
+                                                if:true={showCategorySortIcon}
+                                                icon-name={categorySortIcon}
+                                                size="xx-small"
+                                                alternative-text={categorySortIconAltText}
+                                            ></lightning-icon>
+                                        </span>
+                                    </div>
+                                </button>
+                            </th>
+
+                            <!-- Stock Status Column Header -->
+                            <th scope="col" class="slds-is-sortable" style="width: 20%;">
+                                <button
+                                    class="slds-button slds-button_reset slds-th__action slds-text-link_reset"
+                                    onclick={handleSortByStock}
+                                    aria-label={stockSortAriaLabel}
+                                    title="Sort by Stock Status"
+                                >
+                                    <span class="slds-assistive-text">Sort by: </span>
+                                    <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                        <span class="slds-truncate" title="Stock Status">Stock Status</span>
+                                        <span class="slds-icon_container slds-icon-utility-arrowdown">
+                                            <lightning-icon
+                                                if:true={showStockSortIcon}
+                                                icon-name={stockSortIcon}
+                                                size="xx-small"
+                                                alternative-text={stockSortIconAltText}
+                                            ></lightning-icon>
+                                        </span>
+                                    </div>
+                                </button>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data rows -->
+                        <template for:each={sortedProducts} for:item="product">
+                            <tr key={product.id} class="slds-hint-parent">
+                                <td role="gridcell">
+                                    <div class="slds-truncate" title={product.name}>{product.name}</div>
+                                </td>
+                                <td role="gridcell">
+                                    <div class="slds-truncate" title={product.formattedPrice}>{product.formattedPrice}</div>
+                                </td>
+                                <td role="gridcell">
+                                    <div class="slds-truncate" title={product.category}>{product.category}</div>
+                                </td>
+                                <td role="gridcell">
+                                    <lightning-badge label={product.stockStatus} class={product.stockBadgeClass}></lightning-badge>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </lightning-card>
+</template>

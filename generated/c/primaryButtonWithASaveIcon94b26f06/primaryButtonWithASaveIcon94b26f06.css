@@ -1,0 +1,28 @@
+/**
+ * Custom styling for primary button with save icon
+ * Uses SLDS styling hooks for theme-aware, maintainable styling
+ */
+
+:host {
+    display: block;
+}
+
+/* Button container spacing using SLDS styling hooks */
+lightning-button {
+    /* Component inherits SLDS brand variant styling automatically */
+    --slds-c-button-brand-color-background: var(--slds-g-color-accent-container-1);
+    --slds-c-button-brand-color-border: var(--slds-g-color-border-accent-1);
+    --slds-c-button-brand-text-color: var(--slds-g-color-on-accent-1);
+}
+
+/* Hover state using SLDS styling hooks */
+lightning-button:hover {
+    --slds-c-button-brand-color-background-hover: var(--slds-g-color-accent-container-2);
+    --slds-c-button-brand-text-color-hover: var(--slds-g-color-on-accent-2);
+}
+
+/* Active state using SLDS styling hooks */
+lightning-button:active {
+    --slds-c-button-brand-color-background-active: var(--slds-g-color-accent-container-3);
+    --slds-c-button-brand-text-color-active: var(--slds-g-color-on-accent-3);
+}

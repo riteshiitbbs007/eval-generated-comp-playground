@@ -1,0 +1,51 @@
+/**
+ * Page Header Component Styles
+ * 
+ * Uses SLDS styling hooks for themeable, accessible design.
+ * All custom styles use SLDS design tokens to ensure proper theming support.
+ */
+
+/* Ensure proper spacing and layout for the page header */
+:host {
+    display: block;
+    background: var(--slds-g-color-surface-1, #ffffff);
+    border-bottom: 1px solid var(--slds-g-color-border-1, #c9c9c9);
+}
+
+/* Additional spacing for better visual hierarchy */
+.slds-page-header {
+    padding: var(--slds-g-spacing-5, 1.5rem) var(--slds-g-spacing-6, 2rem);
+}
+
+/* Ensure title text uses proper typography scale */
+.slds-page-header__title {
+    font-size: var(--slds-g-font-scale-5, 1.5rem);
+    font-weight: var(--slds-g-font-weight-bold, 700);
+    color: var(--slds-g-color-on-surface-1, #080707);
+    line-height: var(--slds-g-line-height-heading, 1.25);
+}
+
+/* Ensure controls section has proper alignment */
+.slds-page-header__col-actions {
+    margin-left: auto;
+}
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 48em) {
+    .slds-page-header__row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .slds-page-header__col-actions {
+        margin-left: 0;
+        margin-top: var(--slds-g-spacing-4, 1rem);
+        width: 100%;
+    }
+    
+    .slds-page-header__controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--slds-g-spacing-2, 0.5rem);
+    }
+}

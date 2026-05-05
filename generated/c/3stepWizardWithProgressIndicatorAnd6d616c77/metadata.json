@@ -1,0 +1,74 @@
+{
+  "folderName": "component-3stepWizardWithProgressIndicatorAnd-C14-Simple-20260311",
+  "componentName": "3stepWizardWithProgressIndicatorAnd6d616c77",
+  "csvId": "C14",
+  "variant": "Simple",
+  "timestamp": "2026-03-11T11:22:42.437Z",
+  "utterance": "Create 3-step wizard with progress indicator and next/back buttons",
+  "tier": "Tier 3",
+  "complexity": "Advanced",
+  "scores": {
+    "slds_linter": 0.63,
+    "slds_quality": 1,
+    "prd_compliance": 0.7,
+    "security": 1,
+    "overall": 2.57,
+    "overall_readiness_label": "Prototype"
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 15,
+    "notes": 0
+  },
+  "utteranceId": "C14",
+  "errorsByType": {
+    "slds/no-slds-class-overrides": 8,
+    "slds/no-hardcoded-values-slds2": 5,
+    "slds/no-slds-namespace-for-custom-hooks": 1,
+    "slds/no-unsupported-hooks-slds2": 1
+  },
+  "sldsToolsEnabled": false,
+  "testMode": "baseline",
+  "baseline_slds": true,
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/c2be9a74-71d8-4f71-9081-388ef6296c90/r/019cdc9e-556c-7000-8000-06eaf27427ae",
+  "langsmithRunId": "019cdc9e-556c-7000-8000-06eaf27427ae",
+  "langsmithProjectName": "unique-transport-64",
+  "langsmithTraceId": "019cdc9e-556c-7000-8000-06eaf27427ae",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C14:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/3stepWizardWithProgressIndicatorAnd6d616c77/screenshots/desktop.png"
+  },
+  "originalScoresV0": {
+    "slds_linter": 0.7509999999999999,
+    "slds_quality": 1,
+    "prd_compliance": 0.7,
+    "security": 1,
+    "overall": 2.66,
+    "overall_readiness_label": "Prototype"
+  },
+  "_scoreHistory": {
+    "originalScoresV0": {
+      "date": "2026-03-18T13:56:09.240Z",
+      "reason": "Score recalculation/metadata update",
+      "changedFields": [
+        {
+          "field": "overall",
+          "old": 2.66,
+          "new": 2.57
+        },
+        {
+          "field": "slds_linter",
+          "old": 0.7509999999999999,
+          "new": 0.63
+        }
+      ]
+    }
+  }
+}

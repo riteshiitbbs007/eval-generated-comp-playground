@@ -1,0 +1,143 @@
+<template>
+    <!-- FAQ Accordion with 3 sections, first section expanded by default -->
+    <!-- PRD: Display 3 FAQ sections in an accordion pattern -->
+    <!-- PRD: First section should be expanded by default (open state) -->
+    <!-- PRD: Other sections start in collapsed state -->
+    <!-- PRD: Users can expand/collapse sections by clicking section headers -->
+    <!-- PRD: Only one section can be expanded at a time (mutual exclusion) -->
+    
+    <div class="slds-accordion">
+        <!-- Section 1: What is Lightning Web Components? (Expanded by default) -->
+        <section class={section1Class}>
+            <div class="slds-accordion__summary" id="accordion-summary-01">
+                <h3 class="slds-accordion__summary-heading">
+                    <button 
+                        class="slds-accordion__summary-action slds-button slds-button_reset" 
+                        aria-controls="accordion-details-01" 
+                        aria-expanded={section1AriaExpanded}
+                        onclick={handleToggleSection1}
+                        type="button"
+                    >
+                        <lightning-icon 
+                            icon-name="utility:switch" 
+                            size="x-small"
+                            alternative-text="Toggle section"
+                            class="slds-accordion__summary-action-icon slds-button__icon slds-button__icon_left"
+                        ></lightning-icon>
+                        <span class="slds-accordion__summary-content">
+                            What is Lightning Web Components?
+                        </span>
+                    </button>
+                </h3>
+            </div>
+            <div class={section1ContentClass} id="accordion-details-01">
+                <p class="slds-m-bottom_small">
+                    Lightning Web Components (LWC) is a modern framework developed by Salesforce for building 
+                    fast, efficient, and standards-based web components on the Salesforce platform.
+                </p>
+                <p class="slds-m-bottom_small">
+                    It leverages native web standards like custom elements, templates, shadow DOM, decorators, 
+                    modules, and other new language constructs available in ECMAScript 7 and beyond.
+                </p>
+                <ul class="slds-list_dotted">
+                    <li>Built on modern web standards</li>
+                    <li>Enhanced performance and faster rendering</li>
+                    <li>Improved developer experience with modern JavaScript</li>
+                    <li>Seamless integration with Salesforce platform features</li>
+                    <li>Supports server-side rendering and mobile optimization</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 2: How do I get started? (Collapsed by default) -->
+        <section class={section2Class}>
+            <div class="slds-accordion__summary" id="accordion-summary-02">
+                <h3 class="slds-accordion__summary-heading">
+                    <button 
+                        class="slds-accordion__summary-action slds-button slds-button_reset" 
+                        aria-controls="accordion-details-02" 
+                        aria-expanded={section2AriaExpanded}
+                        onclick={handleToggleSection2}
+                        type="button"
+                    >
+                        <lightning-icon 
+                            icon-name="utility:switch" 
+                            size="x-small"
+                            alternative-text="Toggle section"
+                            class="slds-accordion__summary-action-icon slds-button__icon slds-button__icon_left"
+                        ></lightning-icon>
+                        <span class="slds-accordion__summary-content">
+                            How do I get started?
+                        </span>
+                    </button>
+                </h3>
+            </div>
+            <div class={section2ContentClass} id="accordion-details-02">
+                <p class="slds-m-bottom_small">
+                    Getting started with Lightning Web Components is straightforward. Follow these steps to begin your journey:
+                </p>
+                <ol class="slds-list_ordered">
+                    <li>Set up your Salesforce Developer Edition org or sandbox environment</li>
+                    <li>Install Salesforce CLI (Command Line Interface) on your local machine</li>
+                    <li>Install Visual Studio Code with Salesforce Extensions Pack</li>
+                    <li>Create your first Lightning Web Component using the CLI command</li>
+                    <li>Deploy your component to your Salesforce org</li>
+                    <li>Add the component to a Lightning page using the Lightning App Builder</li>
+                </ol>
+                <p class="slds-m-top_small">
+                    Complete the official Trailhead modules to learn best practices and advanced patterns.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 3: Where can I find more resources? (Collapsed by default) -->
+        <section class={section3Class}>
+            <div class="slds-accordion__summary" id="accordion-summary-03">
+                <h3 class="slds-accordion__summary-heading">
+                    <button 
+                        class="slds-accordion__summary-action slds-button slds-button_reset" 
+                        aria-controls="accordion-details-03" 
+                        aria-expanded={section3AriaExpanded}
+                        onclick={handleToggleSection3}
+                        type="button"
+                    >
+                        <lightning-icon 
+                            icon-name="utility:switch" 
+                            size="x-small"
+                            alternative-text="Toggle section"
+                            class="slds-accordion__summary-action-icon slds-button__icon slds-button__icon_left"
+                        ></lightning-icon>
+                        <span class="slds-accordion__summary-content">
+                            Where can I find more resources?
+                        </span>
+                    </button>
+                </h3>
+            </div>
+            <div class={section3ContentClass} id="accordion-details-03">
+                <p class="slds-m-bottom_small">
+                    Salesforce provides comprehensive resources to help you master Lightning Web Components:
+                </p>
+                <div class="slds-grid slds-wrap slds-gutters">
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <h4 class="slds-text-heading_small slds-m-bottom_x-small">Documentation</h4>
+                        <ul class="slds-list_vertical">
+                            <li class="slds-list__item">Lightning Web Components Developer Guide</li>
+                            <li class="slds-list__item">Component Library reference documentation</li>
+                            <li class="slds-list__item">Salesforce DX Developer Guide</li>
+                            <li class="slds-list__item">Lightning Design System guidelines</li>
+                        </ul>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <h4 class="slds-text-heading_small slds-m-bottom_x-small">Learning Platforms</h4>
+                        <ul class="slds-list_vertical">
+                            <li class="slds-list__item">Trailhead: Lightning Web Components modules</li>
+                            <li class="slds-list__item">Trailhead Live sessions and webinars</li>
+                            <li class="slds-list__item">Salesforce Developer blog and tutorials</li>
+                            <li class="slds-list__item">Community forums and Trailblazer Community</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</template>

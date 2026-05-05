@@ -1,0 +1,132 @@
+<template>
+    <!-- Form Container Card -->
+    <lightning-card title="User Information Form" icon-name="standard:form">
+        <!-- Form Content with SLDS Grid Layout -->
+        <div class="slds-p-around_medium">
+            <form>
+                <!-- SLDS Grid Container for Responsive Layout -->
+                <div class="slds-grid slds-wrap slds-gutters">
+                    <!-- Text Input Field (Full Name) -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-input
+                            name="fullName"
+                            label="Full Name"
+                            type="text"
+                            value={formData.fullName}
+                            onchange={handleInputChange}
+                            required
+                            message-when-value-missing="Please enter your full name"
+                            class="input-field">
+                        </lightning-input>
+                    </div>
+
+                    <!-- Email Input Field -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-input
+                            name="email"
+                            label="Email Address"
+                            type="email"
+                            value={formData.email}
+                            onchange={handleInputChange}
+                            required
+                            message-when-value-missing="Please enter your email"
+                            message-when-type-mismatch="Please enter a valid email address"
+                            class="input-field">
+                        </lightning-input>
+                    </div>
+
+                    <!-- Phone Input Field -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-input
+                            name="phone"
+                            label="Phone Number"
+                            type="tel"
+                            value={formData.phone}
+                            onchange={handleInputChange}
+                            required
+                            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                            message-when-value-missing="Please enter your phone number"
+                            message-when-pattern-mismatch="Phone must be in format: 123-456-7890"
+                            placeholder="123-456-7890"
+                            class="input-field">
+                        </lightning-input>
+                    </div>
+
+                    <!-- Dropdown/Combobox Field -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-combobox
+                            name="department"
+                            label="Department"
+                            value={formData.department}
+                            placeholder="Select a department"
+                            options={departmentOptions}
+                            onchange={handleInputChange}
+                            required
+                            message-when-value-missing="Please select a department"
+                            class="input-field">
+                        </lightning-combobox>
+                    </div>
+
+                    <!-- Checkbox Group -->
+                    <div class="slds-col slds-size_1-of-1">
+                        <lightning-checkbox-group
+                            name="interests"
+                            label="Areas of Interest"
+                            options={interestOptions}
+                            value={formData.interests}
+                            onchange={handleInputChange}
+                            required
+                            message-when-value-missing="Please select at least one interest"
+                            class="input-field">
+                        </lightning-checkbox-group>
+                    </div>
+
+                    <!-- Textarea Field -->
+                    <div class="slds-col slds-size_1-of-1">
+                        <lightning-textarea
+                            name="comments"
+                            label="Additional Comments"
+                            value={formData.comments}
+                            onchange={handleInputChange}
+                            placeholder="Enter any additional information here..."
+                            max-length="500"
+                            class="input-field">
+                        </lightning-textarea>
+                    </div>
+                </div>
+
+                <!-- Form Actions (Right-aligned per SLDS guidelines) -->
+                <div class="slds-m-top_large slds-text-align_right">
+                    <lightning-button
+                        label="Reset"
+                        variant="neutral"
+                        onclick={handleReset}
+                        class="slds-m-right_small">
+                    </lightning-button>
+                    <lightning-button
+                        label="Submit"
+                        variant="brand"
+                        onclick={handleSubmit}>
+                    </lightning-button>
+                </div>
+            </form>
+        </div>
+    </lightning-card>
+
+    <!-- Success Toast Message (conditionally rendered) -->
+    <template if:true={showSuccessMessage}>
+        <div class="slds-notify_container slds-is-relative">
+            <div class="slds-notify slds-notify_toast slds-theme_success" role="status" aria-live="polite">
+                <span class="slds-assistive-text">success</span>
+                <lightning-icon icon-name="utility:success" variant="inverse" size="small" class="slds-m-right_small"></lightning-icon>
+                <div class="slds-notify__content">
+                    <h2 class="slds-text-heading_small">Form submitted successfully!</h2>
+                </div>
+                <button class="slds-button slds-button_icon slds-notify__close slds-button_icon-inverse" title="Close" onclick={closeSuccessMessage}>
+                    <lightning-icon icon-name="utility:close" size="small" alternative-text="Close"></lightning-icon>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+            </div>
+        </div>
+    </template>
+</template>

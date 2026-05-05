@@ -1,0 +1,44 @@
+{
+  "folderName": "contactCardWithAvatarNameTitle-C10-Simple-20260311",
+  "componentName": "contactCardWithAvatarNameTitleDc584ab4",
+  "csvId": "C10",
+  "variant": "Simple",
+  "timestamp": "2026-03-11T06:42:31.682Z",
+  "utterance": "Create contact card with avatar, name, title, email, phone, action buttons",
+  "tier": "Tier 2",
+  "complexity": "Intermediate",
+  "scores": {
+    "slds_linter": 0.724,
+    "slds_quality": 1,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.79,
+    "overall_readiness_label": "Prototype"
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 31,
+    "notes": 0
+  },
+  "utteranceId": "C10",
+  "errorsByType": {
+    "slds/no-slds-var-without-fallback": 23,
+    "slds/no-hardcoded-values-slds2": 5,
+    "slds/no-slds-class-overrides": 3
+  },
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/26763d5d-be34-447a-9be4-91798c005d1a/r/019cdb9e-50b7-7000-8000-001126c006b1",
+  "langsmithRunId": "019cdb9e-50b7-7000-8000-001126c006b1",
+  "langsmithProjectName": "dependable-manager-62",
+  "langsmithTraceId": "019cdb9e-50b7-7000-8000-001126c006b1",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C06-C10:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/contactCardWithAvatarNameTitleDc584ab4/screenshots/desktop.png"
+  }
+}

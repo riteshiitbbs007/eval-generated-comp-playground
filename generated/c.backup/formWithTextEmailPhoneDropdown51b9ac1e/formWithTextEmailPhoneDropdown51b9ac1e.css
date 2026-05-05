@@ -1,0 +1,70 @@
+/**
+ * Contact Information Form Styles
+ * 
+ * Uses SLDS 2 design tokens for consistent theming and accessibility
+ * Follows SLDS styling hooks pattern for maintainability
+ */
+
+/* Success Alert Styling */
+.slds-alert_success {
+    background: var(--slds-g-color-success-container-1);
+    color: var(--slds-g-color-on-success-1);
+    border-left: 4px solid var(--slds-g-color-success-1);
+    border-radius: var(--slds-g-radius-border-1);
+    padding: var(--slds-g-spacing-2) var(--slds-g-spacing-4);
+    margin-bottom: var(--slds-g-spacing-4);
+    display: flex;
+    align-items: center;
+}
+
+/* Error Alert Styling */
+.slds-alert_error {
+    background: var(--slds-g-color-error-container-1);
+    color: var(--slds-g-color-on-error-1);
+    border-left: 4px solid var(--slds-g-color-error-1);
+    border-radius: var(--slds-g-radius-border-1);
+    padding: var(--slds-g-spacing-2) var(--slds-g-spacing-4);
+    margin-bottom: var(--slds-g-spacing-4);
+    display: flex;
+    align-items: center;
+}
+
+/* Form Container */
+.slds-form {
+    font-family: var(--slds-g-font-family-base);
+}
+
+/* Fieldset for Checkbox Group */
+fieldset.slds-form-element {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Legend Styling */
+.slds-form-element__legend {
+    font-weight: var(--slds-g-font-weight-6);
+    color: var(--slds-g-color-on-surface-3);
+    margin-bottom: var(--slds-g-spacing-2);
+}
+
+/* Ensure proper spacing for form elements */
+.slds-m-bottom_small {
+    margin-bottom: var(--slds-g-spacing-3);
+}
+
+/* Button container alignment */
+.slds-grid_align-end {
+    justify-content: flex-end;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .slds-grid_align-end {
+        justify-content: stretch;
+    }
+    
+    .slds-grid_align-end .slds-col {
+        flex: 1;
+    }
+}

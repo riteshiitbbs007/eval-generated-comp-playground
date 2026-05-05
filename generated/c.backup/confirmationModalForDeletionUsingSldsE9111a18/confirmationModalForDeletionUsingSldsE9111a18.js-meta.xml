@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>A reusable confirmation modal component for deletion actions using SLDS design patterns with full accessibility support including focus trap and keyboard navigation.</description>
+    <isExposed>false</isExposed>
+    <masterLabel>Confirmation Modal For Deletion Using SLDS</masterLabel>
+</LightningComponentBundle>

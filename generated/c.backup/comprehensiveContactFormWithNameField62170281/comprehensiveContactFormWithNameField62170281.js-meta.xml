@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>Comprehensive contact form with name, email, and message fields. Features robust validation, error handling, character counter, and SLDS styling. Includes accessibility support with ARIA labels and error announcements.</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Comprehensive Contact Form</masterLabel>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage">
+            <supportedFormFactors>
+                <supportedFormFactor type="Small"/>
+                <supportedFormFactor type="Large"/>
+            </supportedFormFactors>
+        </targetConfig>
+        <targetConfig targets="lightningCommunity__Default">
+            <supportedFormFactors>
+                <supportedFormFactor type="Small"/>
+                <supportedFormFactor type="Large"/>
+            </supportedFormFactors>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

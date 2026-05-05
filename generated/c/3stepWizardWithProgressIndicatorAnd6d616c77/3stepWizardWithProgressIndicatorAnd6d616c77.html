@@ -1,0 +1,113 @@
+<template>
+    <!-- 3-Step Wizard with Progress Indicator -->
+    <div class="slds-card">
+        <!-- Progress Indicator Section -->
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                        <span>Setup Wizard</span>
+                    </h2>
+                </div>
+            </header>
+        </div>
+
+        <!-- SLDS Progress Indicator -->
+        <div class="slds-progress slds-progress_shade slds-m-around_medium" role="progressbar" aria-valuemin="1" aria-valuemax="3" aria-valuenow={currentStep} aria-label="Wizard Progress">
+            <ol class="slds-progress__list">
+                <!-- Step 1 -->
+                <li class={step1Class}>
+                    <button class="slds-button slds-progress__marker" disabled aria-describedby="step-1">
+                        <span class="slds-assistive-text">{step1Status}</span>
+                    </button>
+                    <div class="slds-progress__item_content slds-grid slds-grid_align-spread">
+                        <span id="step-1">{step1Label}</span>
+                    </div>
+                </li>
+                <!-- Step 2 -->
+                <li class={step2Class}>
+                    <button class="slds-button slds-progress__marker" disabled aria-describedby="step-2">
+                        <span class="slds-assistive-text">{step2Status}</span>
+                    </button>
+                    <div class="slds-progress__item_content slds-grid slds-grid_align-spread">
+                        <span id="step-2">{step2Label}</span>
+                    </div>
+                </li>
+                <!-- Step 3 -->
+                <li class={step3Class}>
+                    <button class="slds-button slds-progress__marker" disabled aria-describedby="step-3">
+                        <span class="slds-assistive-text">{step3Status}</span>
+                    </button>
+                    <div class="slds-progress__item_content slds-grid slds-grid_align-spread">
+                        <span id="step-3">{step3Label}</span>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <!-- Step Content Area -->
+        <div class="slds-card__body slds-card__body_inner">
+            <!-- Step 1 Content -->
+            <template lwc:if={isStep1}>
+                <div class="slds-text-align_center slds-p-around_large" role="region" aria-labelledby="step-1">
+                    <h3 class="slds-text-heading_medium slds-m-bottom_small">{step1Label}</h3>
+                    <p class="slds-text-body_regular slds-text-color_weak">
+                        Welcome to the setup wizard. This guide will help you get started with the configuration process.
+                        Click "Next" to continue.
+                    </p>
+                    <div class="slds-m-top_medium">
+                        <lightning-icon icon-name="action:approval" size="large" alternative-text="Get Started"></lightning-icon>
+                    </div>
+                </div>
+            </template>
+
+            <!-- Step 2 Content -->
+            <template lwc:if={isStep2}>
+                <div class="slds-text-align_center slds-p-around_large" role="region" aria-labelledby="step-2">
+                    <h3 class="slds-text-heading_medium slds-m-bottom_small">{step2Label}</h3>
+                    <p class="slds-text-body_regular slds-text-color_weak">
+                        Configure your preferences and settings. Review the available options and make your selections.
+                        Use the navigation buttons to move between steps.
+                    </p>
+                    <div class="slds-m-top_medium">
+                        <lightning-icon icon-name="action:settings" size="large" alternative-text="Configure"></lightning-icon>
+                    </div>
+                </div>
+            </template>
+
+            <!-- Step 3 Content -->
+            <template lwc:if={isStep3}>
+                <div class="slds-text-align_center slds-p-around_large" role="region" aria-labelledby="step-3">
+                    <h3 class="slds-text-heading_medium slds-m-bottom_small">{step3Label}</h3>
+                    <p class="slds-text-body_regular slds-text-color_weak">
+                        Review your selections and confirm your setup. Click "Finish" to complete the wizard
+                        or go back to make changes.
+                    </p>
+                    <div class="slds-m-top_medium">
+                        <lightning-icon icon-name="action:check" size="large" alternative-text="Review"></lightning-icon>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+        <!-- Navigation Footer -->
+        <footer class="slds-card__footer">
+            <div class="slds-grid slds-grid_align-spread">
+                <!-- Back Button -->
+                <template lwc:if={showBackButton}>
+                    <button class="slds-button slds-button_neutral" onclick={handleBack} aria-label="Go to previous step">
+                        Back
+                    </button>
+                </template>
+                <template lwc:else>
+                    <span></span>
+                </template>
+
+                <!-- Next/Finish Button -->
+                <button class="slds-button slds-button_brand" onclick={handleNext} aria-label={nextButtonAriaLabel}>
+                    {nextButtonLabel}
+                </button>
+            </div>
+        </footer>
+    </div>
+</template>

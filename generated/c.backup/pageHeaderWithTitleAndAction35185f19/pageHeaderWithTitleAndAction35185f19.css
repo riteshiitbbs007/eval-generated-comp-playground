@@ -1,0 +1,111 @@
+/**
+ * Page Header with Title and Action Buttons - Component Styles
+ *
+ * This CSS file provides custom styling hooks and enhancements for the page header component.
+ * All styles use SLDS design tokens and styling hooks for theme-aware, maintainable styling.
+ *
+ * Design System: Salesforce Lightning Design System (SLDS) 2.x
+ * Color Strategy: Semantic UI colors with SLDS global hooks
+ */
+
+/* Root component styling - ensures proper display and layout */
+:host {
+    display: block;
+}
+
+/* Page header container - uses SLDS surface colors for background */
+.slds-page-header {
+    /* Background using SLDS surface container for consistency */
+    background-color: var(--slds-g-color-surface-container-1, #ffffff);
+
+    /* Border using SLDS semantic border color */
+    border-bottom: 1px solid var(--slds-g-color-border-1, #e5e5e5);
+
+    /* Padding using SLDS spacing tokens for consistent rhythm */
+    padding: var(--slds-g-spacing-4, 1rem) var(--slds-g-spacing-5, 1.5rem);
+}
+
+/* Header row - flexbox layout for title and actions */
+.slds-page-header__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    /* Gap between columns using SLDS spacing */
+    gap: var(--slds-g-spacing-4, 1rem);
+}
+
+/* Title column - allows for flexible width and truncation */
+.slds-page-header__col-title {
+    flex: 1 1 auto;
+    min-width: 0; /* Allows text truncation to work properly */
+}
+
+/* Actions column - fixed width for action buttons */
+.slds-page-header__col-actions {
+    flex: 0 0 auto;
+}
+
+/* Page title styling - uses SLDS typography tokens */
+.slds-page-header__title {
+    /* Font family using SLDS token */
+    font-family: var(--slds-g-font-family-base, 'Salesforce Sans', Arial, sans-serif);
+
+    /* Font size for h1 heading - using rem for scalability */
+    font-size: 1.25rem;
+
+    /* Font weight using SLDS token - bold for emphasis */
+    font-weight: var(--slds-g-font-weight-7, 700);
+
+    /* Line height using SLDS token for proper vertical rhythm */
+    line-height: var(--slds-g-font-lineheight-2, 1.25);
+
+    /* Text color using SLDS on-surface for high emphasis */
+    color: var(--slds-g-color-on-surface-3, #181818);
+
+    /* Margin for spacing */
+    margin: 0;
+}
+
+/* Controls container - flexbox layout for action buttons */
+.slds-page-header__controls {
+    display: flex;
+    align-items: center;
+
+    /* Gap between buttons using SLDS spacing token */
+    gap: var(--slds-g-spacing-2, 0.5rem);
+}
+
+/* Individual control wrapper */
+.slds-page-header__control {
+    flex: 0 0 auto;
+}
+
+/* Responsive design - stack title and actions on small screens */
+@media (max-width: 48em) {
+    .slds-page-header__row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .slds-page-header__col-title,
+    .slds-page-header__col-actions {
+        width: 100%;
+    }
+
+    .slds-page-header__controls {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+/* Enhanced focus states for accessibility */
+.slds-page-header__control lightning-button:focus-visible {
+    /* Focus outline using SLDS accent color for visibility */
+    outline: 2px solid var(--slds-g-color-accent-1, #0176d3);
+    outline-offset: 2px;
+
+    /* Border radius for smooth focus indicator */
+    border-radius: var(--slds-g-radius-border-1, 0.25rem);
+}

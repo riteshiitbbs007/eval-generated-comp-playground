@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Page Header with Title and Action</masterLabel>
+    <description>A reusable page header component with a prominent title and configurable action buttons. Follows SLDS blueprint patterns for consistent page structure.</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage,lightningCommunity__Page">
+            <property name="pageTitle" type="String" default="Page Title" label="Page Title" description="The main title to display in the page header"/>
+            <property name="primaryActionLabel" type="String" default="New" label="Primary Action Label" description="Label text for the primary action button"/>
+            <property name="secondaryActionLabel" type="String" default="Edit" label="Secondary Action Label" description="Label text for the secondary action button"/>
+            <property name="showSecondaryAction" type="Boolean" default="false" label="Show Secondary Action" description="Controls visibility of the secondary action button"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

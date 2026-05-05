@@ -1,0 +1,72 @@
+/**
+ * SLDS 2 Compliant Styling for Four Alerts Component
+ * Using SLDS feedback color hooks for semantic meaning
+ */
+
+/* Base alert container styling */
+.alert-container {
+    padding: var(--lwc-spacingSmall, 0.75rem);
+    border-radius: var(--lwc-borderRadiusMedium, 0.25rem);
+    border-width: var(--slds-g-sizing-border-1, 1px);
+    border-style: solid;
+}
+
+/* Success Alert - using SLDS success feedback colors */
+.alert-success {
+    background-color: var(--slds-g-color-success-container-1, #4bca81);
+    color: var(--slds-g-color-on-success-1, #181818);
+    border-color: var(--slds-g-color-border-success-1, #2e844a);
+}
+
+/* Success Alert icon color override */
+.alert-success lightning-icon {
+    --slds-c-icon-color-foreground: var(--slds-g-color-on-success-1, #181818);
+}
+
+/* Error Alert - using SLDS error feedback colors */
+.alert-error {
+    background-color: var(--slds-g-color-error-container-1, #fe5c4c);
+    color: var(--slds-g-color-on-error-1, #181818);
+    border-color: var(--slds-g-color-border-error-1, #c23934);
+}
+
+/* Error Alert icon color override */
+.alert-error lightning-icon {
+    --slds-c-icon-color-foreground: var(--slds-g-color-on-error-1, #181818);
+}
+
+/* Warning Alert - using SLDS warning feedback colors */
+.alert-warning {
+    background-color: var(--slds-g-color-warning-container-1, #ffb75d);
+    color: var(--slds-g-color-on-warning-1, #181818);
+    border-color: var(--slds-g-color-border-warning-1, #dd7a01);
+}
+
+/* Warning Alert icon color override */
+.alert-warning lightning-icon {
+    --slds-c-icon-color-foreground: var(--slds-g-color-on-warning-1, #181818);
+}
+
+/* Info Alert - using SLDS info feedback colors */
+.alert-info {
+    background-color: var(--slds-g-color-info-container-1, #57b3f1);
+    color: var(--slds-g-color-on-info-1, #181818);
+    border-color: var(--slds-g-color-info-1, #0176d3);
+}
+
+/* Info Alert icon color override */
+.alert-info lightning-icon {
+    --slds-c-icon-color-foreground: var(--slds-g-color-on-info-1, #181818);
+}
+
+/* Alert title styling */
+.alert-title {
+    font-weight: var(--slds-g-font-weight-bold, 700);
+    margin-bottom: var(--lwc-spacingXxSmall, 0.25rem);
+}
+
+/* Alert message styling */
+.alert-message {
+    font-size: var(--slds-g-font-size-2, 0.875rem);
+    line-height: var(--slds-g-line-height-body, 1.5);
+}

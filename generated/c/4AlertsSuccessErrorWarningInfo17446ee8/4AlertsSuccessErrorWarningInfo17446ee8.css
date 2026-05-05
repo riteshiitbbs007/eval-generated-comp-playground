@@ -1,0 +1,14 @@
+/* Container styling for alert spacing */
+:host {
+    display: block;
+}
+
+/* Add spacing between alerts */
+lightning-alert {
+    margin-bottom: var(--lwc-spacingMedium, 1rem);
+}
+
+/* Remove margin from the last alert */
+lightning-alert:last-child {
+    margin-bottom: 0;
+}

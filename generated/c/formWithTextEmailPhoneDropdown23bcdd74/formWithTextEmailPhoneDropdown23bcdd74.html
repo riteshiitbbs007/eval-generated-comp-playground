@@ -1,0 +1,120 @@
+<template>
+  <lightning-card title="Contact Information Form" icon-name="standard:contact">
+    <div class="slds-p-around_medium">
+      <form onsubmit={handleSubmit}>
+        <lightning-input
+          label="Name"
+          name="name"
+          type="text"
+          value={formData.name}
+          onchange={handleInputChange}
+          required
+          message-when-value-missing="Please enter your name"
+          class="slds-m-bottom_small"
+        ></lightning-input>
+
+        <lightning-input
+          label="Email"
+          name="email"
+          type="email"
+          value={formData.email}
+          onchange={handleInputChange}
+          required
+          message-when-value-missing="Please enter your email"
+          message-when-type-mismatch="Please enter a valid email address"
+          class="slds-m-bottom_small"
+        ></lightning-input>
+
+        <lightning-input
+          label="Phone"
+          name="phone"
+          type="tel"
+          value={formData.phone}
+          onchange={handleInputChange}
+          required
+          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+          message-when-pattern-mismatch="Please enter phone in format: 123-456-7890"
+          message-when-value-missing="Please enter your phone number"
+          placeholder="123-456-7890"
+          class="slds-m-bottom_small"
+        ></lightning-input>
+
+        <lightning-combobox
+          label="Country"
+          name="country"
+          value={formData.country}
+          placeholder="Select a country"
+          options={countryOptions}
+          onchange={handleInputChange}
+          required
+          message-when-value-missing="Please select a country"
+          class="slds-m-bottom_small"
+        ></lightning-combobox>
+
+        <div class="slds-form-element slds-m-bottom_small">
+          <fieldset class="slds-form-element">
+            <legend class="slds-form-element__legend slds-form-element__label">Interests</legend>
+            <div class="slds-form-element__control">
+              <template for:each={interestOptions} for:item="option">
+                <div class="slds-checkbox" key={option.value}>
+                  <input
+                    type="checkbox"
+                    name="interests"
+                    id={option.value}
+                    value={option.value}
+                    onchange={handleCheckboxChange}
+                  />
+                  <label class="slds-checkbox__label" for={option.value}>
+                    <span class="slds-checkbox__faux"></span>
+                    <span class="slds-form-element__label">{option.label}</span>
+                  </label>
+                </div>
+              </template>
+            </div>
+          </fieldset>
+        </div>
+
+        <lightning-textarea
+          label="Comments"
+          name="comments"
+          value={formData.comments}
+          onchange={handleInputChange}
+          placeholder="Enter your comments here"
+          max-length="500"
+          class="slds-m-bottom_medium"
+        ></lightning-textarea>
+
+        <div class="slds-grid slds-grid_align-end slds-gutters_small">
+          <div class="slds-col">
+            <lightning-button
+              variant="neutral"
+              label="Cancel"
+              onclick={handleCancel}
+            ></lightning-button>
+          </div>
+          <div class="slds-col">
+            <lightning-button
+              variant="brand"
+              label="Submit"
+              type="submit"
+            ></lightning-button>
+          </div>
+        </div>
+      </form>
+
+      <template lwc:if={showSuccessMessage}>
+        <div class="slds-m-top_medium" role="alert">
+          <div class="success-message">
+            <lightning-icon
+              icon-name="utility:success"
+              alternative-text="Success"
+              size="small"
+              class="slds-m-right_x-small"
+            ></lightning-icon>
+            <span>Form submitted successfully!</span>
+          </div>
+        </div>
+      </template>
+    </div>
+  </lightning-card>
+</template>

@@ -1,0 +1,125 @@
+<template>
+    <lightning-card title="Contact Information Form" icon-name="standard:form">
+        <div class="slds-p-around_medium">
+            <!-- Text Input Field -->
+            <lightning-input
+                label="Full Name"
+                name="fullName"
+                value={fullName}
+                onchange={handleFullNameChange}
+                required
+                placeholder="Enter your full name"
+                aria-describedby="fullname-help"
+            ></lightning-input>
+            <div id="fullname-help" class="slds-form-element__help slds-m-bottom_small">
+                Please enter your complete name
+            </div>
+
+            <!-- Email Input Field -->
+            <lightning-input
+                type="email"
+                label="Email Address"
+                name="email"
+                value={email}
+                onchange={handleEmailChange}
+                required
+                placeholder="example@email.com"
+                aria-describedby="email-help"
+            ></lightning-input>
+            <div id="email-help" class="slds-form-element__help slds-m-bottom_small">
+                We'll never share your email
+            </div>
+
+            <!-- Phone Input Field -->
+            <lightning-input
+                type="tel"
+                label="Phone Number"
+                name="phone"
+                value={phone}
+                onchange={handlePhoneChange}
+                required
+                placeholder="(555) 123-4567"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                aria-describedby="phone-help"
+            ></lightning-input>
+            <div id="phone-help" class="slds-form-element__help slds-m-bottom_small">
+                Format: 555-123-4567
+            </div>
+
+            <!-- Dropdown/Select Field -->
+            <lightning-combobox
+                label="Country"
+                name="country"
+                value={country}
+                placeholder="Select a country"
+                options={countryOptions}
+                onchange={handleCountryChange}
+                required
+                aria-describedby="country-help"
+            ></lightning-combobox>
+            <div id="country-help" class="slds-form-element__help slds-m-bottom_small">
+                Select your country of residence
+            </div>
+
+            <!-- Multiple Checkboxes -->
+            <fieldset class="slds-form-element slds-m-top_small">
+                <legend class="slds-form-element__legend slds-form-element__label">
+                    Interests (Select all that apply)
+                </legend>
+                <div class="slds-form-element__control">
+                    <lightning-checkbox-group
+                        name="interests"
+                        label="Select your interests"
+                        options={interestOptions}
+                        value={selectedInterests}
+                        onchange={handleInterestsChange}
+                        aria-describedby="interests-help"
+                    ></lightning-checkbox-group>
+                </div>
+                <div id="interests-help" class="slds-form-element__help">
+                    Choose one or more areas of interest
+                </div>
+            </fieldset>
+
+            <!-- Textarea Field -->
+            <lightning-textarea
+                label="Additional Comments"
+                name="comments"
+                value={comments}
+                onchange={handleCommentsChange}
+                placeholder="Enter any additional information..."
+                maxlength="500"
+                aria-describedby="comments-help"
+            ></lightning-textarea>
+            <div id="comments-help" class="slds-form-element__help slds-m-bottom_small">
+                Maximum 500 characters
+            </div>
+
+            <!-- Form Actions -->
+            <div class="slds-m-top_medium slds-text-align_right">
+                <lightning-button
+                    variant="neutral"
+                    label="Clear Form"
+                    title="Clear all form fields"
+                    onclick={handleClear}
+                    class="slds-m-right_x-small"
+                ></lightning-button>
+                <lightning-button
+                    variant="brand"
+                    label="Submit"
+                    title="Submit form"
+                    onclick={handleSubmit}
+                    disabled={isSubmitDisabled}
+                ></lightning-button>
+            </div>
+
+            <!-- Success Message -->
+            <template lwc:if={showSuccessMessage}>
+                <div class="success-message slds-m-top_medium" role="alert" aria-live="polite">
+                    <lightning-icon icon-name="utility:success" size="small" alternative-text="Success"></lightning-icon>
+                    <span class="slds-m-left_x-small">Form submitted successfully!</span>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

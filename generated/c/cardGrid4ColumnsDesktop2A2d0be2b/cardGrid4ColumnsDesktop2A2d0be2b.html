@@ -1,0 +1,29 @@
+<template>
+    <!-- Responsive card grid container with SLDS grid system -->
+    <!-- Mobile: 1 column, Tablet: 2 columns, Desktop: 4 columns -->
+    <div class="slds-grid slds-wrap slds-gutters_small">
+        <!-- Iterate through card data -->
+        <template for:each={cards} for:item="card">
+            <div key={card.id} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4">
+                <!-- Card component using custom styling with SLDS hooks -->
+                <article class="c-card">
+                    <!-- Card header with icon -->
+                    <div class="c-card__header">
+                        <lightning-icon 
+                            icon-name={card.iconName} 
+                            alternative-text={card.iconAlt}
+                            size="small"
+                            class="c-card__icon">
+                        </lightning-icon>
+                    </div>
+                    
+                    <!-- Card body with title and description -->
+                    <div class="c-card__body">
+                        <h3 class="c-card__title">{card.title}</h3>
+                        <p class="c-card__description">{card.description}</p>
+                    </div>
+                </article>
+            </div>
+        </template>
+    </div>
+</template>

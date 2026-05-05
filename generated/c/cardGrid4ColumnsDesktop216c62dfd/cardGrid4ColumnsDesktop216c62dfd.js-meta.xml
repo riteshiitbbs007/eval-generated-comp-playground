@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>Responsive card grid component that displays 4 columns on desktop, 2 columns on tablet, and 1 column on mobile devices.</description>
+    <isExposed>false</isExposed>
+    <masterLabel>Card Grid 4 Columns Desktop</masterLabel>
+</LightningComponentBundle>

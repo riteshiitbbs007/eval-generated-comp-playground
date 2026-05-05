@@ -1,0 +1,174 @@
+<template>
+    <!-- Desktop Table View - Hidden on mobile (≤768px) -->
+    <div class="slds-hide slds-medium-show">
+        <table class="slds-table slds-table_bordered slds-table_fixed-layout slds-table_col-bordered" role="grid">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <!-- Product Name Column - Sortable, Left-aligned -->
+                    <th scope="col" style="width: 40%;">
+                        <div class="slds-th__action slds-text-link_reset">
+                            <a
+                                href="#"
+                                class="slds-th__action-button"
+                                role="button"
+                                tabindex="0"
+                                aria-label={productNameSortAriaLabel}
+                                aria-sort={productNameAriaSortValue}
+                                onclick={handleSortByName}
+                                onkeydown={handleKeyDown}>
+                                <span class="slds-assistive-text">Sort by: </span>
+                                <span class="slds-truncate" title="Product Name">Product Name</span>
+                                <span class="slds-icon_container">
+                                    <template lwc:if={isNameSorted}>
+                                        <svg class="slds-icon slds-icon-text-default slds-is-sortable__icon" aria-hidden="true">
+                                            <use xlink:href={sortIconHref}></use>
+                                        </svg>
+                                    </template>
+                                </span>
+                            </a>
+                        </div>
+                    </th>
+
+                    <!-- Price Column - Sortable, Right-aligned -->
+                    <th scope="col" style="width: 20%;">
+                        <div class="slds-th__action slds-text-link_reset">
+                            <a
+                                href="#"
+                                class="slds-th__action-button"
+                                role="button"
+                                tabindex="0"
+                                aria-label={priceSortAriaLabel}
+                                aria-sort={priceAriaSortValue}
+                                onclick={handleSortByPrice}
+                                onkeydown={handleKeyDown}>
+                                <span class="slds-assistive-text">Sort by: </span>
+                                <span class="slds-truncate" title="Price">Price</span>
+                                <span class="slds-icon_container">
+                                    <template lwc:if={isPriceSorted}>
+                                        <svg class="slds-icon slds-icon-text-default slds-is-sortable__icon" aria-hidden="true">
+                                            <use xlink:href={sortIconHref}></use>
+                                        </svg>
+                                    </template>
+                                </span>
+                            </a>
+                        </div>
+                    </th>
+
+                    <!-- Category Column - Not sortable, Center-aligned -->
+                    <th scope="col" style="width: 20%;">
+                        <div class="slds-text-align_center">
+                            <span class="slds-truncate" title="Category">Category</span>
+                        </div>
+                    </th>
+
+                    <!-- Stock Status Column - Not sortable, Center-aligned -->
+                    <th scope="col" style="width: 20%;">
+                        <div class="slds-text-align_center">
+                            <span class="slds-truncate" title="Stock Status">Stock Status</span>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- No Data Message -->
+                <template lwc:if={hasNoData}>
+                    <tr>
+                        <td colspan="4" class="slds-text-align_center slds-p-around_medium">
+                            <span class="slds-text-color_weak">No data available</span>
+                        </td>
+                    </tr>
+                </template>
+
+                <!-- Data Rows -->
+                <template lwc:else>
+                    <template for:each={displayedProducts} for:item="product">
+                        <tr key={product.id} class="slds-hint-parent">
+                            <!-- Product Name - Left-aligned -->
+                            <td data-label="Product Name" role="gridcell">
+                                <div class="slds-truncate" title={product.name}>
+                                    {product.name}
+                                </div>
+                            </td>
+
+                            <!-- Price - Right-aligned, Currency format -->
+                            <td data-label="Price" role="gridcell">
+                                <div class="slds-text-align_right slds-truncate" title={product.priceFormatted}>
+                                    {product.priceFormatted}
+                                </div>
+                            </td>
+
+                            <!-- Category - Center-aligned with neutral badge -->
+                            <td data-label="Category" role="gridcell">
+                                <div class="slds-text-align_center">
+                                    <span class="slds-badge badge-neutral">{product.category}</span>
+                                </div>
+                            </td>
+
+                            <!-- Stock Status - Center-aligned with semantic badge -->
+                            <td data-label="Stock Status" role="gridcell">
+                                <div class="slds-text-align_center">
+                                    <span class={product.statusBadgeClass}>{product.stockStatus}</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </template>
+                </template>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Mobile Card View - Visible only on mobile (≤768px) -->
+    <div class="slds-show slds-medium-hide">
+        <!-- No Data Message -->
+        <template lwc:if={hasNoData}>
+            <div class="slds-box slds-text-align_center slds-p-around_medium">
+                <span class="slds-text-color_weak">No data available</span>
+            </div>
+        </template>
+
+        <!-- Product Cards -->
+        <template lwc:else>
+            <div class="slds-grid slds-wrap slds-gutters_small">
+                <template for:each={displayedProducts} for:item="product">
+                    <div key={product.id} class="slds-col slds-size_1-of-1">
+                        <article class="slds-card slds-card_boundary slds-m-bottom_small">
+                            <div class="slds-card__body slds-card__body_inner">
+                                <!-- Product Name Field -->
+                                <div class="slds-form-element slds-m-bottom_x-small">
+                                    <span class="slds-form-element__label slds-text-title_caps">Product Name</span>
+                                    <div class="slds-form-element__control">
+                                        <span class="slds-text-body_regular">{product.name}</span>
+                                    </div>
+                                </div>
+
+                                <!-- Price Field -->
+                                <div class="slds-form-element slds-m-bottom_x-small">
+                                    <span class="slds-form-element__label slds-text-title_caps">Price</span>
+                                    <div class="slds-form-element__control">
+                                        <span class="slds-text-body_regular slds-text-align_left">{product.priceFormatted}</span>
+                                    </div>
+                                </div>
+
+                                <!-- Category Field -->
+                                <div class="slds-form-element slds-m-bottom_x-small">
+                                    <span class="slds-form-element__label slds-text-title_caps">Category</span>
+                                    <div class="slds-form-element__control">
+                                        <span class="slds-badge badge-neutral">{product.category}</span>
+                                    </div>
+                                </div>
+
+                                <!-- Stock Status Field -->
+                                <div class="slds-form-element">
+                                    <span class="slds-form-element__label slds-text-title_caps">Stock Status</span>
+                                    <div class="slds-form-element__control">
+                                        <span class={product.statusBadgeClass}>{product.stockStatus}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </template>
+            </div>
+        </template>
+    </div>
+</template>

@@ -196,3 +196,12 @@
   background-color: #264f78;
   color: #ffffff;
 }
+
+/* Copy button in source code header */
+.slds-card__header .slds-button_neutral {
+  border-color: var(--lwc-colorBorder, #c9c7c5);
+}
+
+.slds-card__header .slds-button_neutral:hover {
+  background-color: var(--lwc-colorBackgroundButtonDefaultHover, #f3f2f2);
+}

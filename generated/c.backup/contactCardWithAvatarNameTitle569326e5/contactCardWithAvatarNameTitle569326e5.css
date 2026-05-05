@@ -1,0 +1,175 @@
+/**
+ * Contact Card Component Styles
+ * Using SLDS 2.x design tokens (--slds-g-*) for theme-aware styling
+ * All colors, spacing, and typography use styling hooks for consistency
+ */
+
+/* Card Container */
+.contact-card {
+    background: var(--slds-g-color-surface-container-1);
+    border: 1px solid var(--slds-g-color-border-1);
+    border-radius: var(--slds-g-radius-border-1);
+    box-shadow: var(--slds-g-shadow-1);
+}
+
+/* Avatar Container */
+.avatar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--slds-g-spacing-2);
+}
+
+/* Avatar Image */
+.contact-card__avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--slds-g-color-border-1);
+}
+
+/* Avatar Initials (Fallback) */
+.contact-card__avatar_initials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--slds-g-color-accent-container-1);
+    color: var(--slds-g-color-on-accent-1);
+}
+
+.contact-card__initials {
+    font-family: var(--slds-g-font-family-base);
+    font-size: 1.5rem;
+    font-weight: var(--slds-g-font-weight-6);
+    line-height: var(--slds-g-font-lineheight-1);
+    text-transform: uppercase;
+}
+
+/* Contact Information Section */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--slds-g-spacing-2);
+    padding: var(--slds-g-spacing-2);
+}
+
+/* Contact Name */
+.contact-card__name {
+    font-family: var(--slds-g-font-family-base);
+    font-size: 1.25rem;
+    font-weight: var(--slds-g-font-weight-7);
+    line-height: var(--slds-g-font-lineheight-2);
+    color: var(--slds-g-color-on-surface-3);
+    margin: 0;
+    padding: 0;
+}
+
+/* Contact Title */
+.contact-card__title {
+    font-family: var(--slds-g-font-family-base);
+    font-size: var(--slds-g-font-size-base);
+    font-weight: var(--slds-g-font-weight-4);
+    line-height: var(--slds-g-font-lineheight-3);
+    color: var(--slds-g-color-on-surface-2);
+    margin: 0;
+    padding: 0;
+}
+
+/* Contact Details Container */
+.contact-card__details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--slds-g-spacing-2);
+    margin-top: var(--slds-g-spacing-2);
+}
+
+/* Individual Detail Item */
+.contact-card__detail-item {
+    display: flex;
+    align-items: center;
+    gap: var(--slds-g-spacing-2);
+}
+
+/* Detail Icon */
+.contact-card__icon {
+    flex-shrink: 0;
+    color: var(--slds-g-color-on-surface-1);
+}
+
+/* Contact Link (Email/Phone) */
+.contact-card__link {
+    font-family: var(--slds-g-font-family-base);
+    font-size: var(--slds-g-font-size-base);
+    font-weight: var(--slds-g-font-weight-4);
+    line-height: var(--slds-g-font-lineheight-3);
+    color: var(--slds-g-color-accent-1);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-card__link:hover {
+    color: var(--slds-g-color-accent-2);
+    text-decoration: underline;
+}
+
+.contact-card__link:active {
+    color: var(--slds-g-color-accent-3);
+}
+
+.contact-card__link:focus {
+    outline: 2px solid var(--slds-g-color-accent-1);
+    outline-offset: 2px;
+    border-radius: var(--slds-g-radius-border-1);
+}
+
+/* Action Buttons Section */
+.contact-card__actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--slds-g-spacing-2);
+    padding: var(--slds-g-spacing-2);
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+/* Responsive Layout Adjustments */
+@media (min-width: 768px) {
+    .contact-card__actions {
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+}
+
+@media (max-width: 767px) {
+    .avatar-container {
+        justify-content: flex-start;
+    }
+
+    .contact-info {
+        padding-top: var(--slds-g-spacing-3);
+    }
+}
+
+/* Focus States for Accessibility */
+.contact-card:focus-within {
+    box-shadow: var(--slds-g-shadow-2);
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .contact-card__avatar {
+        border-width: 3px;
+    }
+
+    .contact-card__link {
+        text-decoration: underline;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .contact-card__link {
+        transition: none;
+    }
+}

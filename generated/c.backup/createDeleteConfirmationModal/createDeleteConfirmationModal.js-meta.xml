@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Delete Confirmation Modal</masterLabel>
+    <description>Modal component for confirming deletion with Cancel and Delete buttons</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage,lightningCommunity__Default">
+            <property name="title" type="String" default="Delete Confirmation" label="Modal Title" description="Title displayed in the modal header" />
+            <property name="message" type="String" default="Are you sure you want to delete this item? This action cannot be undone." label="Confirmation Message" description="Message displayed in the modal body" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

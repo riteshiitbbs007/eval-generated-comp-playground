@@ -1,0 +1,78 @@
+<template>
+    <!-- Modal Container - Only rendered when show property is true -->
+    <template lwc:if={show}>
+        <!-- SLDS Modal Backdrop -->
+        <section
+            role="dialog"
+            tabindex="-1"
+            aria-labelledby="modal-heading"
+            aria-describedby="modal-content"
+            aria-modal="true"
+            class="slds-modal slds-fade-in-open"
+            onkeydown={handleKeyDown}>
+
+            <!-- Modal Container -->
+            <div class="slds-modal__container">
+
+                <!-- Modal Header -->
+                <header class="slds-modal__header slds-theme_error">
+                    <button
+                        class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close"
+                        onclick={handleCancel}
+                        aria-label={closeButtonAriaLabel}>
+                        <lightning-icon
+                            icon-name="utility:close"
+                            alternative-text="Close"
+                            size="small">
+                        </lightning-icon>
+                    </button>
+                    <h2 id="modal-heading" class="slds-modal__title slds-hyphenate">
+                        {title}
+                    </h2>
+                </header>
+
+                <!-- Modal Body -->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content">
+                    <div class="slds-text-align_center">
+                        <!-- Warning Icon -->
+                        <lightning-icon
+                            icon-name="utility:warning"
+                            alternative-text="Warning"
+                            variant="error"
+                            size="large"
+                            class="slds-m-bottom_small">
+                        </lightning-icon>
+
+                        <!-- Confirmation Message -->
+                        <p class="slds-text-body_regular">
+                            {message}
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Modal Footer with Action Buttons -->
+                <footer class="slds-modal__footer">
+                    <!-- Cancel Button (Secondary/Neutral) -->
+                    <lightning-button
+                        label={cancelLabel}
+                        variant="neutral"
+                        onclick={handleCancel}
+                        class="slds-m-right_x-small">
+                    </lightning-button>
+
+                    <!-- Delete Button (Destructive/Brand) -->
+                    <lightning-button
+                        label={deleteLabel}
+                        variant="brand"
+                        onclick={handleDelete}
+                        class="slds-button_destructive">
+                    </lightning-button>
+                </footer>
+            </div>
+        </section>
+
+        <!-- Modal Backdrop -->
+        <div class="slds-backdrop slds-backdrop_open" onclick={handleBackdropClick}></div>
+    </template>
+</template>

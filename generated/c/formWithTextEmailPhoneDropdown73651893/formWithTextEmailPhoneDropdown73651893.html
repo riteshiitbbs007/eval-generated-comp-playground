@@ -1,0 +1,119 @@
+<template>
+    <!-- Form Container with SLDS styling -->
+    <div class="slds-card slds-p-around_medium">
+        <!-- Form Header -->
+        <div class="slds-text-heading_medium slds-m-bottom_medium">
+            Contact Information Form
+        </div>
+
+        <!-- Success Message -->
+        <template lwc:if={showSuccessMessage}>
+            <div class="slds-notify slds-notify_alert slds-alert_success slds-m-bottom_small" role="alert">
+                <span class="slds-assistive-text">Success</span>
+                <h2>Form submitted successfully!</h2>
+            </div>
+        </template>
+
+        <!-- Form Fields in Responsive Grid -->
+        <div class="slds-form" role="form">
+            <!-- Two-column responsive grid for form fields -->
+            <div class="slds-grid slds-wrap slds-gutters">
+                <!-- Full Name Field (Required) -->
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                    <lightning-input
+                        name="fullName"
+                        label="Full Name"
+                        type="text"
+                        value={fullName}
+                        onchange={handleInputChange}
+                        required
+                        message-when-value-missing="Please enter your full name">
+                    </lightning-input>
+                </div>
+
+                <!-- Email Field (Required) -->
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                    <lightning-input
+                        name="email"
+                        label="Email Address"
+                        type="email"
+                        value={email}
+                        onchange={handleInputChange}
+                        required
+                        message-when-value-missing="Please enter your email address"
+                        message-when-type-mismatch="Please enter a valid email address">
+                    </lightning-input>
+                </div>
+
+                <!-- Phone Field -->
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                    <lightning-input
+                        name="phone"
+                        label="Phone Number"
+                        type="tel"
+                        value={phone}
+                        onchange={handleInputChange}
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                        message-when-pattern-mismatch="Phone must be formatted: 123-456-7890">
+                    </lightning-input>
+                </div>
+
+                <!-- Country Dropdown -->
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                    <lightning-combobox
+                        name="country"
+                        label="Country"
+                        value={country}
+                        placeholder="Select a country"
+                        options={countryOptions}
+                        onchange={handleInputChange}>
+                    </lightning-combobox>
+                </div>
+
+                <!-- Interests Checkbox Group (Full Width) -->
+                <div class="slds-col slds-size_1-of-1">
+                    <lightning-checkbox-group
+                        name="interests"
+                        label="Interests"
+                        options={interestOptions}
+                        value={interests}
+                        onchange={handleCheckboxChange}>
+                    </lightning-checkbox-group>
+                </div>
+
+                <!-- Comments Textarea (Full Width) -->
+                <div class="slds-col slds-size_1-of-1">
+                    <lightning-textarea
+                        name="comments"
+                        label="Comments"
+                        value={comments}
+                        onchange={handleInputChange}
+                        max-length="500"
+                        placeholder="Enter any additional comments (optional)">
+                    </lightning-textarea>
+                </div>
+            </div>
+
+            <!-- Button Group -->
+            <div class="slds-m-top_medium slds-grid slds-grid_align-center slds-gutters_small">
+                <div class="slds-col">
+                    <lightning-button
+                        variant="brand"
+                        label="Submit"
+                        title="Submit form"
+                        onclick={handleSubmit}
+                        class="slds-m-right_x-small">
+                    </lightning-button>
+                </div>
+                <div class="slds-col">
+                    <lightning-button
+                        variant="neutral"
+                        label="Reset"
+                        title="Reset form"
+                        onclick={handleReset}>
+                    </lightning-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

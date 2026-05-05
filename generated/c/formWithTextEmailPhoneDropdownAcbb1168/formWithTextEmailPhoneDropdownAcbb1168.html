@@ -1,0 +1,162 @@
+<template>
+    <div class="slds-card">
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                        <span class="slds-text-heading_small">Contact Information Form</span>
+                    </h2>
+                </div>
+            </header>
+        </div>
+        <div class="slds-card__body slds-card__body_inner">
+            <!-- Form container with proper SLDS form layout -->
+            <form class="slds-form" onsubmit={handleSubmit}>
+                <!-- Two-column responsive grid layout -->
+                <div class="slds-grid slds-wrap slds-gutters">
+                    <!-- First Name - Text Input -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-input
+                            name="firstName"
+                            label="First Name"
+                            type="text"
+                            value={firstName}
+                            onchange={handleInputChange}
+                            required
+                            field-level-help="Enter your first name"
+                        ></lightning-input>
+                    </div>
+
+                    <!-- Last Name - Text Input -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-input
+                            name="lastName"
+                            label="Last Name"
+                            type="text"
+                            value={lastName}
+                            onchange={handleInputChange}
+                            required
+                            field-level-help="Enter your last name"
+                        ></lightning-input>
+                    </div>
+
+                    <!-- Email - Email Input -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-input
+                            name="email"
+                            label="Email Address"
+                            type="email"
+                            value={email}
+                            onchange={handleInputChange}
+                            required
+                            field-level-help="Enter a valid email address"
+                        ></lightning-input>
+                    </div>
+
+                    <!-- Phone - Phone Input -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-input
+                            name="phone"
+                            label="Phone Number"
+                            type="tel"
+                            value={phone}
+                            onchange={handleInputChange}
+                            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                            field-level-help="Format: 123-456-7890"
+                        ></lightning-input>
+                    </div>
+
+                    <!-- Department - Dropdown/Combobox -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-combobox
+                            name="department"
+                            label="Department"
+                            value={department}
+                            placeholder="Select Department"
+                            options={departmentOptions}
+                            onchange={handleInputChange}
+                            required
+                            field-level-help="Select your department"
+                        ></lightning-combobox>
+                    </div>
+
+                    <!-- Country - Dropdown/Combobox -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-combobox
+                            name="country"
+                            label="Country"
+                            value={country}
+                            placeholder="Select Country"
+                            options={countryOptions}
+                            onchange={handleInputChange}
+                            field-level-help="Select your country"
+                        ></lightning-combobox>
+                    </div>
+
+                    <!-- Interests - Checkboxes -->
+                    <div class="slds-col slds-size_1-of-1">
+                        <lightning-checkbox-group
+                            name="interests"
+                            label="Areas of Interest"
+                            options={interestOptions}
+                            value={selectedInterests}
+                            onchange={handleCheckboxChange}
+                        ></lightning-checkbox-group>
+                    </div>
+
+                    <!-- Comments - Textarea -->
+                    <div class="slds-col slds-size_1-of-1">
+                        <lightning-textarea
+                            name="comments"
+                            label="Comments"
+                            value={comments}
+                            onchange={handleInputChange}
+                            placeholder="Enter any additional comments or questions"
+                            max-length="500"
+                            field-level-help="Maximum 500 characters"
+                        ></lightning-textarea>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="slds-m-top_large">
+                    <div class="slds-grid slds-grid_align-end slds-gutters">
+                        <div class="slds-col">
+                            <lightning-button
+                                variant="neutral"
+                                label="Clear"
+                                title="Clear all form fields"
+                                onclick={handleClear}
+                            ></lightning-button>
+                        </div>
+                        <div class="slds-col">
+                            <lightning-button
+                                variant="brand"
+                                label="Submit"
+                                title="Submit form"
+                                onclick={handleSubmit}
+                                disabled={isSubmitDisabled}
+                            ></lightning-button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Success Message -->
+            <template lwc:if={showSuccessMessage}>
+                <div class="slds-m-top_medium">
+                    <div class="slds-notify slds-notify_alert slds-alert_success" role="alert">
+                        <span class="slds-assistive-text">Success</span>
+                        <lightning-icon
+                            icon-name="utility:success"
+                            alternative-text="Success"
+                            size="x-small"
+                            class="slds-m-right_x-small"
+                        ></lightning-icon>
+                        <h2>Form submitted successfully!</h2>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>FAQ Accordion component that displays frequently asked questions in an expandable/collapsible accordion format. Features 3 default sections with the first section expanded by default, exclusive accordion behavior, full keyboard navigation, ARIA compliance, and complete SLDS 2 styling with semantic color system. Optimized for performance and accessibility.</description>
+    <isExposed>false</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__HomePage,lightning__RecordPage,lightningCommunity__Page">
+            <property 
+                name="sections" 
+                type="String" 
+                label="FAQ Sections (JSON)" 
+                description="JSON array of FAQ objects with question and answer properties. Format: [{&quot;id&quot;:&quot;unique-id&quot;,&quot;question&quot;:&quot;Your question?&quot;,&quot;answer&quot;:&quot;Your answer&quot;,&quot;isExpanded&quot;:false}]. Leave empty to use default FAQ content."
+                placeholder='[{"question":"Your question?","answer":"Your answer"}]'
+            />
+            <property 
+                name="allowMultipleExpanded" 
+                type="Boolean" 
+                label="Allow Multiple Expanded" 
+                description="When false (default), only one section can be expanded at a time (exclusive accordion). When true, multiple sections can be expanded simultaneously."
+                default="false"
+            />
+            <property 
+                name="showIcons" 
+                type="Boolean" 
+                label="Show Expand/Collapse Icons" 
+                description="Display chevron icons next to section headers to indicate expand/collapse state. Icons automatically rotate when sections are expanded."
+                default="false"
+            />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

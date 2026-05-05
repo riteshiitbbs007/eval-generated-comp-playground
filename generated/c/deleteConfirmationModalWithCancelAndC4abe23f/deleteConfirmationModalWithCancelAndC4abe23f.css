@@ -1,0 +1,98 @@
+/**
+ * SLDS 2 Compliant Styling for Delete Confirmation Modal
+ * 
+ * Uses SLDS styling hooks (--slds-g-*) for all themeable values
+ * Follows SLDS modal blueprint structure
+ * All custom classes use 'my-' prefix to avoid SLDS namespace collision
+ */
+
+/* Custom styling for confirmation message text */
+.my-confirmation-text {
+    /* Use SLDS font scale for consistent typography */
+    font-size: var(--slds-g-font-scale-2, 0.875rem);
+    
+    /* Use SLDS on-surface color for text on surface background */
+    color: var(--slds-g-color-on-surface-2, #181818);
+    
+    /* Add subtle bottom margin for spacing */
+    margin-bottom: var(--slds-g-spacing-2, 0.5rem);
+    
+    /* Ensure readable line height */
+    line-height: 1.5;
+}
+
+/* Ensure modal container has proper surface color */
+.slds-modal__container {
+    /* Use SLDS surface color for modal background */
+    background-color: var(--slds-g-color-surface-1, #ffffff);
+    
+    /* Use SLDS shadow for elevation effect */
+    box-shadow: var(--slds-g-shadow-4, 0 4px 16px rgba(0, 0, 0, 0.16));
+    
+    /* Use SLDS border radius for rounded corners */
+    border-radius: var(--slds-g-radius-border-3, 0.5rem);
+}
+
+/* Ensure modal header has proper styling */
+.slds-modal__header {
+    /* Use flexbox for icon and title alignment */
+    display: flex;
+    align-items: center;
+    
+    /* Use SLDS spacing for padding */
+    padding: var(--slds-g-spacing-5, 1.25rem) var(--slds-g-spacing-6, 1.5rem);
+    
+    /* Add bottom border with SLDS color */
+    border-bottom: 1px solid var(--slds-g-color-border-1, #e5e5e5);
+}
+
+/* Modal title styling */
+.slds-modal__title {
+    /* Use SLDS font scale for heading */
+    font-size: var(--slds-g-font-scale-4, 1.125rem);
+    
+    /* Use bold font weight */
+    font-weight: var(--slds-g-font-weight-bold, 700);
+    
+    /* Use SLDS on-surface color for text */
+    color: var(--slds-g-color-on-surface-3, #080707);
+}
+
+/* Modal footer button spacing */
+.slds-modal__footer {
+    /* Use SLDS spacing for padding */
+    padding: var(--slds-g-spacing-4, 1rem) var(--slds-g-spacing-6, 1.5rem);
+    
+    /* Ensure buttons are right-aligned */
+    display: flex;
+    justify-content: flex-end;
+    
+    /* Add spacing between buttons */
+    gap: var(--slds-g-spacing-3, 0.75rem);
+    
+    /* Add top border with SLDS color */
+    border-top: 1px solid var(--slds-g-color-border-1, #e5e5e5);
+}
+
+/* Ensure destructive button has proper styling */
+.slds-button_destructive {
+    /* Use SLDS destructive feedback color */
+    background-color: var(--slds-g-color-feedback-destructive-1, #c23934);
+    
+    /* Use SLDS on-destructive color for button text */
+    color: var(--slds-g-color-on-feedback-destructive-1, #ffffff);
+    
+    /* Add hover state */
+    transition: background-color 0.15s linear;
+}
+
+.slds-button_destructive:hover {
+    /* Slightly darker on hover */
+    background-color: var(--slds-g-color-feedback-destructive-2, #a61e1a);
+}
+
+.slds-button_destructive:focus {
+    /* Ensure focus outline is visible */
+    outline: 2px solid var(--slds-g-color-accent-1, #0176d3);
+    outline-offset: 2px;
+}

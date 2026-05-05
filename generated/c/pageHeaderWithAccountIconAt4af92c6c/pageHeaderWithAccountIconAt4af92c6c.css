@@ -1,0 +1,37 @@
+/**
+ * Page Header Component Styles
+ *
+ * Custom styles to enhance the SLDS page header pattern
+ * Ensures proper spacing, alignment, and responsive behavior
+ */
+
+/**
+ * Ensure proper spacing on mobile devices
+ * Stack buttons vertically on small screens
+ */
+@media (max-width: 48em) {
+    .slds-button-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .slds-button-group lightning-button {
+        margin-bottom: 0.5rem;
+        width: 100%;
+    }
+}
+
+/**
+ * Ensure icon and text are vertically centered
+ */
+.slds-media {
+    align-items: center;
+}
+
+/**
+ * Add subtle hover effect to action buttons for better interactivity
+ */
+.slds-button-group lightning-button:hover {
+    transform: translateY(-1px);
+    transition: transform 0.1s ease-in-out;
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Card Grid 4 Columns Desktop</masterLabel>
+    <description>A responsive card grid component that displays cards in 4 columns on desktop, 2 columns on tablet, and 1 column on mobile. Uses SLDS grid utilities for responsive layout and follows SLDS 2 design patterns.</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+</LightningComponentBundle>

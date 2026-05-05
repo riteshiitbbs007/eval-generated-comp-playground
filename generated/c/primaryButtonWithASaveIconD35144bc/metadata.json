@@ -1,0 +1,50 @@
+{
+  "folderName": "primaryButtonWithASaveIcon-C01-Simple-20260401",
+  "componentName": "primaryButtonWithASaveIconD35144bc",
+  "csvId": "C01",
+  "variant": "Simple",
+  "timestamp": "2026-04-01T14:31:14.507Z",
+  "utterance": "Create a primary button with a save icon",
+  "tier": "Tier 1",
+  "complexity": "Simple",
+  "scores": {
+    "slds_linter": 0.87,
+    "slds_quality": 0.4,
+    "prd_compliance": 0.7,
+    "security": 1,
+    "overall": 2.45,
+    "overall_readiness_label": "Prototype"
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 9,
+    "notes": 0
+  },
+  "utteranceId": "C01",
+  "errorsByType": {
+    "slds/no-slds-var-without-fallback": 7,
+    "slds/no-slds-namespace-for-custom-hooks": 1,
+    "slds/no-hardcoded-values-slds2": 1
+  },
+  "sldsToolsEnabled": true,
+  "testMode": "normal",
+  "baseline_slds": false,
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/f4027661-2a79-4aea-a5e9-e17a2c34b186/r/019d4971-a892-7000-8000-0684e0fb521e",
+  "langsmithRunId": "019d4971-a892-7000-8000-0684e0fb521e",
+  "langsmithProjectName": "kind-produce-7",
+  "langsmithTraceId": "019d4971-a892-7000-8000-0684e0fb521e",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C01:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "notes": [
+    "⚠️ COMMENTED CODE: The 'lightning/platformShowToastEvent' import and ShowToastEvent usage have been commented out for playground testing. This module is not available in the local development environment. Uncomment these codes if you want to deploy this component to a Salesforce org."
+  ],
+  "screenshotUrls": {
+    "desktop": "generated/c/primaryButtonWithASaveIconD35144bc/screenshots/desktop.png"
+  }
+}

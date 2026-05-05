@@ -1,0 +1,16 @@
+<template>
+    <!--
+        Primary Button with Save Icon Component
+        Uses lightning-button base component for SLDS compliance and accessibility
+        Icon position is set to "left" to display save icon before label text
+    -->
+    <lightning-button
+        label={label}
+        icon-name={iconName}
+        icon-position="left"
+        variant={variant}
+        disabled={disabled}
+        onclick={handleClick}
+        class="slds-m-around_small">
+    </lightning-button>
+</template>

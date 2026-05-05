@@ -114,7 +114,8 @@ async function captureScreenshot(page, componentName, viewport, outputPath) {
 
   await page.setViewportSize({ width, height });
 
-  const url = `${SERVER_URL}/?component=${componentName}`;
+  // Add screenshot parameter to disable onboarding modal
+  const url = `${SERVER_URL}/?component=${componentName}&screenshot=true`;
   console.log(`    📸 Capturing ${viewport} (${width}x${height})...`);
 
   try {
@@ -249,7 +250,12 @@ async function main() {
   }
 
   const manifest = JSON.parse(fs.readFileSync(COMPONENTS_JSON, 'utf8'));
-  const allComponents = manifest.components || [];
+  const allComponentsData = manifest.components || [];
+
+  // Extract component names from manifest objects
+  const allComponents = allComponentsData.map(comp =>
+    typeof comp === 'string' ? comp : comp.componentName
+  );
 
   console.log(`📦 Found ${allComponents.length} components in manifest\n`);
 
@@ -345,6 +351,12 @@ async function main() {
   console.log('═'.repeat(60) + '\n');
 
   console.log('✨ Screenshot capture complete!');
+
+  if (summary.completed > 0 || summary.partial > 0) {
+    console.log('\n💡 Next steps will run automatically:');
+    console.log('   1. Updating metadata files with screenshot URLs');
+    console.log('   2. Regenerating app templates');
+  }
 }
 
 // Run the script

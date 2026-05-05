@@ -1,0 +1,22 @@
+{
+  "collection": {
+    "granularity": "both",
+    "includeComponentData": true,
+    "includeBatchAggregates": true
+  },
+  "batching": {
+    "strategy": "variant-chronological",
+    "rangeSize": 5,
+    "customRanges": []
+  },
+  "storage": {
+    "maxSnapshots": 100,
+    "autoCleanup": true,
+    "backupEnabled": false
+  },
+  "visualization": {
+    "defaultView": "batch-trends",
+    "defaultMetric": "overall",
+    "defaultDateRange": "30days"
+  }
+}

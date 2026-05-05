@@ -12,7 +12,8 @@ export default class ComponentDetail extends LightningElement {
   sourceCode = {
     html: '',
     css: '',
-    js: ''
+    js: '',
+    xml: ''
   };
   loadingCode = false;
   codeError = null;
@@ -135,6 +136,32 @@ export default class ComponentDetail extends LightningElement {
     return this.metadata?.variant || null;
   }
 
+  get hasModel() {
+    return !!this.metadata?.model;
+  }
+
+  get model() {
+    return this.metadata?.model || null;
+  }
+
+  get modelProvider() {
+    return this.metadata?.modelProvider || null;
+  }
+
+  get modelDisplay() {
+    if (!this.hasModel) return null;
+    const provider = this.modelProvider ? ` (${this.modelProvider})` : '';
+    return `${this.model}${provider}`;
+  }
+
+  get hasTestConfig() {
+    return !!this.metadata?.testConfig;
+  }
+
+  get testConfig() {
+    return this.metadata?.testConfig || null;
+  }
+
   get hasErrorsByType() {
     return this.metadata?.errorsByType && Object.keys(this.metadata.errorsByType).length > 0;
   }
@@ -150,6 +177,14 @@ export default class ComponentDetail extends LightningElement {
     return this.errorsByType.reduce((sum, item) => sum + item.count, 0);
   }
 
+  get hasNotes() {
+    return this.metadata?.notes && Array.isArray(this.metadata.notes) && this.metadata.notes.length > 0;
+  }
+
+  get notes() {
+    return this.metadata?.notes || [];
+  }
+
   handleCopyUtteranceId() {
     if (this.utteranceId) {
       navigator.clipboard.writeText(this.utteranceId)
@@ -162,6 +197,20 @@ export default class ComponentDetail extends LightningElement {
     }
   }
 
+  handleCopyCode() {
+    const code = this.activeSourceCode;
+    if (code) {
+      navigator.clipboard.writeText(code)
+        .then(() => {
+          console.log('Copied code to clipboard');
+          // TODO: Could add a toast notification here
+        })
+        .catch(err => {
+          console.error('Failed to copy code:', err);
+        });
+    }
+  }
+
   async loadSourceCode() {
     if (!this.componentName) return;
 
@@ -170,20 +219,22 @@ export default class ComponentDetail extends LightningElement {
 
     try {
       const basePath = `/generated/c/${this.componentName}`;
-      const files = ['html', 'css', 'js'];
+      const files = ['html', 'css', 'js', 'js-meta.xml'];
 
       const results = await Promise.all(
-        files.map(ext =>
-          fetch(`${basePath}/${this.componentName}.${ext}`)
+        files.map((ext, index) => {
+          const fileName = index === 3 ? `${this.componentName}.${ext}` : `${this.componentName}.${ext}`;
+          return fetch(`${basePath}/${fileName}`)
             .then(res => res.ok ? res.text() : '')
-            .catch(() => '')
-        )
+            .catch(() => '');
+        })
       );
 
       this.sourceCode = {
         html: results[0] || '// No HTML file found',
         css: results[1] || '/* No CSS file found */',
-        js: results[2] || '// No JS file found'
+        js: results[2] || '// No JS file found',
+        xml: results[3] || '<!-- No XML metadata file found -->'
       };
 
     } catch (err) {
@@ -214,6 +265,10 @@ export default class ComponentDetail extends LightningElement {
     return this.activeCodeTab === 'js';
   }
 
+  get isXmlTabActive() {
+    return this.activeCodeTab === 'xml';
+  }
+
   get htmlTabClass() {
     return this.activeCodeTab === 'html' ? 'slds-is-active' : '';
   }
@@ -226,11 +281,16 @@ export default class ComponentDetail extends LightningElement {
     return this.activeCodeTab === 'js' ? 'slds-is-active' : '';
   }
 
+  get xmlTabClass() {
+    return this.activeCodeTab === 'xml' ? 'slds-is-active' : '';
+  }
+
   get codeLanguage() {
     const languageMap = {
       html: 'HTML',
       css: 'CSS',
-      js: 'JavaScript'
+      js: 'JavaScript',
+      xml: 'XML'
     };
     return languageMap[this.activeCodeTab] || 'Code';
   }

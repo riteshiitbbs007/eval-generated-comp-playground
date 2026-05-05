@@ -1,0 +1,16 @@
+/**
+ * Styles for 4 Alerts component
+ * 
+ * This component follows SLDS patterns and uses SLDS utility classes
+ * for spacing and layout. No custom styling is needed as SLDS provides
+ * complete styling through modifier classes (slds-alert_error, slds-alert_warning)
+ * and utility classes.
+ * 
+ * All visual styling is handled by:
+ * - SLDS alert modifier classes for variant styling
+ * - SLDS icon utility classes for icon colors
+ * - SLDS spacing utilities (slds-m-*) for margins
+ * - SLDS icon container classes for proper icon display
+ */
+
+/* No custom styles required - component uses SLDS classes only */

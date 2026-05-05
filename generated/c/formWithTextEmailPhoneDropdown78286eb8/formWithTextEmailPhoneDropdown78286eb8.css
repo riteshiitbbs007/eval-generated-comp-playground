@@ -1,0 +1,39 @@
+/**
+ * Styles for FormWithTextEmailPhoneDropdown Component
+ *
+ * This stylesheet provides custom styling to enhance the SLDS base styles
+ * and ensure consistent spacing and layout for the form component.
+ */
+
+/* Card container styling */
+.slds-card {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Form element spacing */
+.slds-form-element {
+    margin-bottom: 1rem;
+}
+
+/* Ensure checkboxes are properly spaced */
+.slds-form-element__control lightning-input[type="checkbox"] {
+    margin-bottom: 0.5rem;
+}
+
+/* Success message styling */
+.slds-notify {
+    border-radius: 0.25rem;
+}
+
+/* Button group spacing */
+.slds-form-element lightning-button {
+    margin-right: 0.5rem;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .slds-card {
+        margin: 0 1rem;
+    }
+}

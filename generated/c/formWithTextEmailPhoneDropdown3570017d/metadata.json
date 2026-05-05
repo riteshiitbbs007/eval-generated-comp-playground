@@ -1,0 +1,67 @@
+{
+  "folderName": "formWithTextEmailPhoneDropdown-C09-Simple-20260423",
+  "componentName": "formWithTextEmailPhoneDropdown3570017d",
+  "csvId": "C09",
+  "variant": "Simple",
+  "timestamp": "2026-04-23T12:02:08.566Z",
+  "utterance": "Create form with text, email, phone, dropdown, checkboxes, textarea",
+  "tier": "Tier 2",
+  "complexity": "Intermediate",
+  "scores": {
+    "slds_linter": 0.86,
+    "slds_quality": 0.7,
+    "prd_compliance": 1,
+    "security": 1,
+    "overall": 2.75,
+    "overall_readiness_label": "Prototype"
+  },
+  "violations": {
+    "errors": 0,
+    "warnings": 7,
+    "notes": 0
+  },
+  "utteranceId": "C09",
+  "errorsByType": {
+    "slds/no-hardcoded-values-slds2": 7
+  },
+  "sldsToolsEnabled": true,
+  "testMode": "skills",
+  "baseline_slds": false,
+  "skillsModeEnabled": true,
+  "executionMode": "skills",
+  "executionTrace": {
+    "executedTools": [
+      "Skill",
+      "ToolSearch",
+      "create_lwc_component_from_prd",
+      "orchestrate_lwc_component_optimization",
+      "guide_lwc_best_practices",
+      "guide_component_accessibility",
+      "guide_slds_styling"
+    ],
+    "executedSkills": [],
+    "embeddedKnowledge": [
+      "applying-slds"
+    ],
+    "targetTools": [
+      "create_lwc_component_from_prd",
+      "orchestrate_lwc_component_optimization",
+      "Skill"
+    ]
+  },
+  "langsmithRunUrl": "https://smith.langchain.com/o/202f6189-9577-4db2-8e08-3e3b64429c31/projects/p/e8af4cd1-a85d-4e81-8c74-39ef0e1da977/r/019dba35-544c-7000-8000-0532990003a4",
+  "langsmithRunId": "019dba35-544c-7000-8000-0532990003a4",
+  "langsmithProjectName": "monthly-condition-95",
+  "langsmithTraceId": "019dba35-544c-7000-8000-0532990003a4",
+  "model": "claude-4-5-sonnet",
+  "modelProvider": "anthropic",
+  "testConfig": {
+    "csvUtteranceFilter": "C09:Simple",
+    "playgroundEnabled": true,
+    "screenshotsEnabled": true,
+    "playgroundPath": "../lwc-slds-lbc-starter"
+  },
+  "screenshotUrls": {
+    "desktop": "generated/c/formWithTextEmailPhoneDropdown3570017d/screenshots/desktop.png"
+  }
+}

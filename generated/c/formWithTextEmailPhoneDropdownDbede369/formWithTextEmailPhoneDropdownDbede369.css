@@ -1,0 +1,28 @@
+/**
+ * Form container styling
+ */
+:host {
+    display: block;
+}
+
+/**
+ * Success message styling
+ */
+.slds-alert_success {
+    margin-bottom: 1rem;
+}
+
+/**
+ * Ensure consistent spacing for form elements
+ */
+.slds-form-element {
+    margin-bottom: 0.5rem;
+}
+
+/**
+ * Button container styling
+ */
+.slds-m-top_medium {
+    display: flex;
+    gap: 0.5rem;
+}

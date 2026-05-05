@@ -1,0 +1,26 @@
+/**
+ * Styles for Page Header Component
+ * Minimal custom styling to complement SLDS classes
+ */
+
+/* Ensure proper spacing and alignment */
+.slds-page-header {
+    background-color: var(--slds-g-color-neutral-base-100, #ffffff);
+}
+
+/* Ensure title truncates properly on small screens */
+.slds-page-header__title {
+    max-width: 100%;
+}
+
+/* Ensure buttons are properly aligned in the button group */
+.slds-button-group-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.slds-button-group-list li {
+    display: inline-block;
+}

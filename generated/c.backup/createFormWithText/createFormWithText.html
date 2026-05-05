@@ -1,0 +1,133 @@
+<template>
+    <div class="slds-card slds-p-around_medium">
+        <div class="slds-text-heading_medium slds-p-bottom_medium">Contact Information Form</div>
+        <div class="slds-form" role="form">
+            <!-- Text input -->
+            <div class="slds-form-element slds-form-element_stacked">
+                <label class="slds-form-element__label" for="text-input">
+                    <abbr class="slds-required" title="required">*</abbr> Name
+                </label>
+                <div class="slds-form-element__control">
+                    <lightning-input
+                        type="text"
+                        id="text-input"
+                        name="name"
+                        required
+                        value={formData.name}
+                        onchange={handleInputChange}
+                        class="slds-input">
+                    </lightning-input>
+                </div>
+                <div if:true={errors.name} class="slds-form-element__help slds-has-error" role="alert">{errors.name}</div>
+            </div>
+
+            <!-- Email input -->
+            <div class="slds-form-element slds-form-element_stacked">
+                <label class="slds-form-element__label" for="email-input">
+                    <abbr class="slds-required" title="required">*</abbr> Email
+                </label>
+                <div class="slds-form-element__control">
+                    <lightning-input
+                        type="email"
+                        id="email-input"
+                        name="email"
+                        required
+                        value={formData.email}
+                        onchange={handleInputChange}
+                        class="slds-input">
+                    </lightning-input>
+                </div>
+                <div if:true={errors.email} class="slds-form-element__help slds-has-error" role="alert">{errors.email}</div>
+            </div>
+
+            <!-- Phone input -->
+            <div class="slds-form-element slds-form-element_stacked">
+                <label class="slds-form-element__label" for="phone-input">Phone</label>
+                <div class="slds-form-element__control">
+                    <lightning-input
+                        type="tel"
+                        id="phone-input"
+                        name="phone"
+                        value={formData.phone}
+                        onchange={handleInputChange}
+                        class="slds-input">
+                    </lightning-input>
+                </div>
+                <div if:true={errors.phone} class="slds-form-element__help slds-has-error" role="alert">{errors.phone}</div>
+            </div>
+
+            <!-- Dropdown (combobox) -->
+            <div class="slds-form-element slds-form-element_stacked">
+                <label class="slds-form-element__label" for="dropdown-input">
+                    <abbr class="slds-required" title="required">*</abbr> Preferred Contact Method
+                </label>
+                <div class="slds-form-element__control">
+                    <lightning-combobox
+                        id="dropdown-input"
+                        name="preferredContact"
+                        value={formData.preferredContact}
+                        options={contactOptions}
+                        onchange={handleInputChange}
+                        required>
+                    </lightning-combobox>
+                </div>
+                <div if:true={errors.preferredContact} class="slds-form-element__help slds-has-error" role="alert">{errors.preferredContact}</div>
+            </div>
+
+            <!-- Checkboxes -->
+            <fieldset class="slds-form-element slds-form-element_stacked">
+                <legend class="slds-form-element__legend slds-form-element__label">Interests</legend>
+                <div class="slds-form-element__control">
+                    <div class="slds-checkbox_standalone">
+                        <lightning-checkbox-group
+                            name="interests"
+                            options={interestOptions}
+                            value={formData.interests}
+                            onchange={handleCheckboxChange}>
+                        </lightning-checkbox-group>
+                    </div>
+                </div>
+                <div if:true={errors.interests} class="slds-form-element__help slds-has-error" role="alert">{errors.interests}</div>
+            </fieldset>
+
+            <!-- Textarea -->
+            <div class="slds-form-element slds-form-element_stacked">
+                <label class="slds-form-element__label" for="textarea-input">Comments</label>
+                <div class="slds-form-element__control">
+                    <lightning-textarea
+                        id="textarea-input"
+                        name="comments"
+                        value={formData.comments}
+                        onchange={handleInputChange}
+                        class="slds-textarea">
+                    </lightning-textarea>
+                </div>
+                <div if:true={errors.comments} class="slds-form-element__help slds-has-error" role="alert">{errors.comments}</div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="slds-grid slds-grid_align-end slds-m-top_medium">
+                <lightning-button
+                    label="Submit"
+                    variant="brand"
+                    onclick={handleSubmit}
+                    class="slds-m-left_x-small">
+                </lightning-button>
+            </div>
+        </div>
+
+        <!-- Success message -->
+        <div if:true={isSuccess} class="slds-m-top_medium">
+            <div class="slds-notify slds-notify_alert slds-alert_success" role="alert">
+                <span class="slds-assistive-text">Success</span>
+                <span class="slds-icon_container slds-icon-utility-success slds-m-right_x-small">
+                    <lightning-icon icon-name="utility:success" size="x-small" variant="inverse" alternative-text="Success"></lightning-icon>
+                </span>
+                <h2>Form submitted successfully!</h2>
+                <div class="slds-notify__close">
+                    <lightning-button-icon icon-name="utility:close" size="small" variant="bare-inverse" alternative-text="Close" onclick={closeSuccess}></lightning-button-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
